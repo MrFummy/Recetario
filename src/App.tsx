@@ -69,21 +69,19 @@ function App() {
             <nav className="flex items-center gap-1">
               <button
                 onClick={() => setActiveTab('catalogo')}
-                className={`px-4 py-2 text-sm font-semibold rounded-md transition-colors ${
-                  activeTab === 'catalogo'
-                    ? 'bg-ink text-paper'
-                    : 'text-ink hover:bg-ink/5'
-                }`}
+                className={`px-4 py-2 text-sm font-semibold rounded-md transition-colors ${activeTab === 'catalogo'
+                  ? 'bg-ink text-paper'
+                  : 'text-ink hover:bg-ink/5'
+                  }`}
               >
                 Catálogo
               </button>
               <button
                 onClick={() => setActiveTab('nueva')}
-                className={`px-4 py-2 text-sm font-bold rounded-md transition-transform flex items-center gap-1.5 ${
-                  activeTab === 'nueva'
-                    ? 'bg-yellow text-ink -rotate-1 shadow-brut'
-                    : 'text-ink hover:bg-ink/5'
-                }`}
+                className={`px-4 py-2 text-sm font-bold rounded-md transition-transform flex items-center gap-1.5 ${activeTab === 'nueva'
+                  ? 'bg-yellow text-ink -rotate-1 shadow-brut'
+                  : 'text-ink hover:bg-ink/5'
+                  }`}
               >
                 <PlusCircle size={16} />
                 <span className="hidden sm:inline">Nueva</span>
@@ -133,13 +131,13 @@ function App() {
                 cocinando.exe · {recipes.length} recetas en local
               </div>
               <h2 className="font-display font-black text-5xl sm:text-7xl leading-[0.98] tracking-tight text-ink mb-3 max-w-3xl mx-auto">
-                ¿Qué cocinamos <span className="hl-mark">hoy,</span>{' '}
+                ¿Qué cocinamos <span className="hl-mark">hoy?</span>{' '}
                 <span className="font-script font-bold text-accent -rotate-2 inline-block text-[0.85em]">
-                  chef novato?
+                  by un chef novato
                 </span>
               </h2>
               <p className="text-base sm:text-lg text-ink-soft max-w-xl mx-auto leading-relaxed">
-                Explorá tu colección o buscá por ingredientes. Sin algoritmos sospechosos,
+                Explorá el recetario o busca por ingredientes. Sin algoritmos sospechosos,
                 sin ads, sin "primero te cuento la historia de mi abuela".
               </p>
             </div>

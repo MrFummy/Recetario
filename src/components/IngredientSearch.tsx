@@ -15,7 +15,7 @@ export function IngredientSearch({ searchQuery, setSearchQuery, matchCount }: In
           type="text"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          placeholder="qué tenés en la nevera... (tomate, queso, albahaca)"
+          placeholder="¿Qué tenemos en la nevera?... (tomate, queso, albahaca)"
           className="w-full pl-12 pr-24 py-3.5 bg-transparent text-ink placeholder:text-ink-soft focus:outline-none font-sans text-[15px]"
         />
         {searchQuery.trim() ? (
