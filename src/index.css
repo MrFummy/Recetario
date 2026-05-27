@@ -1,42 +1,80 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #81b29a;
-  --color-background: #FAFAF8;
-  --color-text: #1A1A1A;
+  /* ── Paleta cuaderno ───────────────────────── */
+  --color-paper:       #f6f1e4;
+  --color-paper-2:     #fbf7eb;
+  --color-ink:         #1f2536;
+  --color-ink-soft:    #5a6275;
+  --color-ink-dim:     #8a8576;
+  --color-rule:        #d9d2c0;
+  --color-accent:      #2a5fb8;
+  --color-accent-soft: #d6e4fa;
+  --color-hot:         #d63c2e;
+  --color-hot-soft:    #f6d8d3;
+  --color-yellow:      #ffd45a;
+  --color-yellow-soft: #fff3a8;
+  --color-tape:        rgba(255, 217, 102, 0.55);
+  --color-tape-blue:   rgba(111, 184, 214, 0.55);
+
+  /* Alias de compatibilidad con el theme antiguo */
+  --color-primary:    #2a5fb8;
+  --color-background: #f6f1e4;
+  --color-text:       #1f2536;
+
+  /* ── Fuentes ───────────────────────────────── */
+  --font-sans:    'Schibsted Grotesk', system-ui, sans-serif;
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-script:  'Caveat', cursive;
+  --font-mono:    'JetBrains Mono', ui-monospace, monospace;
 }
 
 body {
-  background-color: var(--color-background);
-  background-image: radial-gradient(at 0% 0%, hsla(150, 40%, 65%, 0.22) 0px, transparent 50%),
-                    radial-gradient(at 100% 100%, hsla(150, 30%, 50%, 0.15) 0px, transparent 50%);
+  background-color: var(--color-paper);
+  background-image:
+    linear-gradient(rgba(31, 37, 54, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(31, 37, 54, 0.06) 1px, transparent 1px);
+  background-size: 28px 28px;
   background-attachment: fixed;
-  color: var(--color-text);
-  font-family: 'Inter', system-ui, sans-serif;
+  color: var(--color-ink);
+  font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Custom scrollbar for better aesthetics */
-::-webkit-scrollbar {
-  width: 8px;
-}
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
-  border-radius: 4px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+/* ── Scrollbar ─────────────────────────────── */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--color-rule); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-ink-soft); }
+
+/* ── Utilidades custom ─────────────────────── */
+.no-scrollbar { scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+
+/* Highlighter de marcador amarillo */
+.hl-mark {
+  background: linear-gradient(180deg, transparent 60%, var(--color-yellow) 60%, var(--color-yellow) 92%, transparent 92%);
+  padding: 0 4px;
 }
 
-/* Base masonry grid setup for standard CSS Grid */
+/* Sombra brutalist (botón/input con offset) */
+.shadow-brut {
+  box-shadow: 2px 2px 0 var(--color-ink);
+}
+.shadow-brut-lg {
+  box-shadow: 4px 4px 0 var(--color-ink);
+}
+
+/* Dot blink (status, contador, etc.) */
+@keyframes blink-soft { 50% { opacity: 0.3; } }
+.dot-blink { animation: blink-soft 1.4s infinite; }
+
+/* ── Masonry grid (preservado del original) ─── */
 .masonry-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   grid-auto-rows: minmax(100px, auto);
-  gap: 1.5rem;
+  gap: 2rem 1.5rem;
   align-items: start;
 }

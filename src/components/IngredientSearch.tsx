@@ -8,24 +8,28 @@ interface IngredientSearchProps {
 
 export function IngredientSearch({ searchQuery, setSearchQuery, matchCount }: IngredientSearchProps) {
   return (
-    <div className="relative w-full max-w-2xl mx-auto mb-8">
-      <div className="relative flex items-center">
-        <Search className="absolute left-4 text-gray-400" size={20} />
+    <div className="w-full max-w-2xl mx-auto mb-8">
+      <div className="relative flex items-center bg-paper-2 border-2 border-ink shadow-brut-lg focus-within:shadow-[6px_6px_0_var(--color-accent)] focus-within:-translate-x-px focus-within:-translate-y-px transition-all">
+        <Search className="absolute left-4 text-ink" size={18} strokeWidth={2.2} />
         <input
           type="text"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          placeholder="Busca por ingredientes (ej. tomate, queso, albahaca)..."
-          className="w-full pl-12 pr-24 py-4 rounded-2xl border border-gray-200 bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] transition-all"
+          placeholder="qué tenés en la nevera... (tomate, queso, albahaca)"
+          className="w-full pl-12 pr-24 py-3.5 bg-transparent text-ink placeholder:text-ink-soft focus:outline-none font-sans text-[15px]"
         />
-        {searchQuery.trim() && (
-          <div className="absolute right-4 bg-gray-100 text-gray-600 text-xs font-semibold px-3 py-1 rounded-full">
-            {matchCount} {matchCount === 1 ? 'receta' : 'recetas'}
+        {searchQuery.trim() ? (
+          <div className="absolute right-3 bg-accent text-paper text-[11px] font-mono px-2.5 py-1 rounded-sm">
+            {matchCount} {matchCount === 1 ? 'match' : 'matches'}
+          </div>
+        ) : (
+          <div className="absolute right-3 hidden sm:block font-mono text-[11px] text-ink-soft bg-paper px-1.5 py-0.5 border border-rule rounded-sm">
+            ⌘K
           </div>
         )}
       </div>
-      <p className="text-xs text-gray-400 mt-2 text-center">
-        Separa los ingredientes con comas para buscar recetas que los contengan TODOS.
+      <p className="text-[12px] text-ink-soft mt-2.5 text-center font-mono">
+        // separá con comas para encontrar recetas que los contengan TODOS
       </p>
     </div>
   );

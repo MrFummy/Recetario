@@ -7,43 +7,63 @@ interface RecipeCardProps {
   onClick: () => void;
 }
 
+// Rotación pseudo-aleatoria estable basada en el id de la receta
+function tiltFor(id: string): string {
+  let hash = 0;
+  for (let i = 0; i < id.length; i++) hash = (hash << 5) - hash + id.charCodeAt(i);
+  const tilts = ['-rotate-1', 'rotate-1', '-rotate-[0.6deg]', 'rotate-[1.2deg]', '-rotate-[1.4deg]'];
+  return tilts[Math.abs(hash) % tilts.length];
+}
+
 export function RecipeCard({ recipe, onClick }: RecipeCardProps) {
-  // Use placeholder if no image URL is present
   const imageUrl = recipe.foto_url || placeholderImg;
 
-  // Format date if present
-  const formattedDate = recipe.fecha_clase 
-    ? new Date(recipe.fecha_clase).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })
+  const formattedDate = recipe.fecha_clase
+    ? new Date(recipe.fecha_clase).toLocaleDateString('es-ES', {
+        day: 'numeric', month: 'short', year: 'numeric',
+      })
     : '';
 
+  const tilt = tiltFor(recipe.id);
+
   return (
-    <div 
+    <div
       onClick={onClick}
-      className="group cursor-pointer bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col h-full border border-gray-100"
+      className="group cursor-pointer transition-transform duration-200 hover:-translate-y-1"
     >
-      <div className="w-full h-48 sm:h-56 overflow-hidden relative">
-        <img 
-          src={imageUrl} 
-          alt={recipe.titulo} 
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+      {/* Marco polaroid */}
+      <div className={`relative bg-white p-2.5 pb-3.5 shadow-md group-hover:shadow-xl transition-shadow duration-300 ${tilt}`}>
+        {/* Washi tape */}
+        <span
+          className="absolute -top-2 left-1/2 -translate-x-1/2 w-14 h-4 rotate-[-3deg] shadow-sm"
+          style={{ background: 'var(--color-tape)' }}
         />
-        <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold text-[var(--color-primary)] shadow-sm">
+        {/* Cat tag */}
+        <span className="absolute top-3 right-3 z-[1] bg-white/95 border border-ink px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider text-ink">
           {recipe.categoria}
+        </span>
+        {/* Foto */}
+        <div className="w-full aspect-[4/3] overflow-hidden bg-ink/10">
+          <img
+            src={imageUrl}
+            alt={recipe.titulo}
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+            loading="lazy"
+          />
         </div>
       </div>
-      
-      <div className="p-5 flex flex-col flex-grow">
-        <h3 className="font-semibold text-lg leading-tight mb-2 text-[var(--color-text)] group-hover:text-[var(--color-primary)] transition-colors">
+
+      {/* Info debajo del polaroid */}
+      <div className="pt-3 px-1">
+        <h3 className="font-display font-semibold text-lg leading-tight text-ink group-hover:text-accent transition-colors line-clamp-2 mb-1.5">
           {recipe.titulo}
         </h3>
-        
-        {recipe.rating ? (
-          <div className="mb-2">
-            <StarRating rating={recipe.rating} size={14} />
-          </div>
-        ) : null}
-        
-        <div className="mt-auto pt-4 flex justify-between items-center text-xs text-gray-500">
+        <div className="flex justify-between items-center font-mono text-[11px] text-ink-soft">
+          {recipe.rating ? (
+            <StarRating rating={recipe.rating} size={12} />
+          ) : (
+            <span className="opacity-50">sin valorar</span>
+          )}
           <span>{formattedDate}</span>
         </div>
       </div>

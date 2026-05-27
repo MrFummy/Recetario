@@ -11,7 +11,7 @@ export function StarRating({ rating, onRate, readonly = true, size = 20 }: StarR
   const stars = [1, 2, 3, 4, 5];
 
   return (
-    <div className="flex items-center gap-1">
+    <div className="flex items-center gap-0.5">
       {stars.map((star) => {
         const isFilled = star <= rating;
         return (
@@ -20,17 +20,17 @@ export function StarRating({ rating, onRate, readonly = true, size = 20 }: StarR
             type="button"
             disabled={readonly}
             onClick={() => onRate && onRate(star)}
-            className={`${readonly ? 'cursor-default' : 'cursor-pointer hover:scale-110 transition-transform'} 
-              focus:outline-none`}
-            aria-label={`Rate ${star} stars`}
+            className={`${readonly ? 'cursor-default' : 'cursor-pointer hover:scale-110 transition-transform'} focus:outline-none p-0`}
+            aria-label={`Valorar ${star} estrellas`}
           >
             <Star
               size={size}
-              className={`${
-                isFilled 
-                  ? 'fill-yellow-400 text-yellow-400' 
-                  : 'fill-transparent text-gray-300'
-              } transition-colors`}
+              strokeWidth={1.6}
+              className={`transition-colors ${
+                isFilled
+                  ? 'fill-yellow text-yellow'
+                  : 'fill-transparent text-ink/25'
+              }`}
             />
           </button>
         );
