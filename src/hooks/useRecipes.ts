@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { supabase } from '../lib/supabase';
+import { N8N_WEBHOOKS } from '../lib/n8n';
 import type { Recipe } from '../types';
 
 export function useRecipes(user?: any) {
@@ -38,6 +39,15 @@ export function useRecipes(user?: any) {
       .eq('id', id);
     if (error) throw error;
     setRecipes(prev => prev.map(r => r.id === id ? { ...r, notas } : r));
+  };
+
+  const updateRecipeDate = async (id: string, fecha: string) => {
+    const { error } = await supabase
+      .from('recetas')
+      .update({ fecha_clase: fecha })
+      .eq('id', id);
+    if (error) throw error;
+    setRecipes(prev => prev.map(r => r.id === id ? { ...r, fecha_clase: fecha } : r));
   };
 
   const updateRecipeRating = async (id: string, rating: number) => {
@@ -96,7 +106,7 @@ export function useRecipes(user?: any) {
 
   const deleteRecipe = async (recipe: Recipe) => {
     // LLamar al webhook de n8n
-    const response = await fetch('https://n8n.emtel.cloud/webhook/eliminar-receta', {
+    const response = await fetch(N8N_WEBHOOKS.eliminarReceta, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -117,7 +127,7 @@ export function useRecipes(user?: any) {
   };
 
   const shareRecipeByEmail = async (recipe: Recipe, email_destino: string) => {
-    const response = await fetch('https://n8n.emtel.cloud/webhook/compartir-receta', {
+    const response = await fetch(N8N_WEBHOOKS.compartirReceta, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -144,6 +154,7 @@ export function useRecipes(user?: any) {
     updateRecipeNotes, 
     updateRecipeRating, 
     updateRecipePhoto,
+    updateRecipeDate,
     deleteRecipe,
     shareRecipeByEmail
   };

@@ -27,7 +27,7 @@ function App() {
 
   const {
     recipes, loading, error,
-    updateRecipeNotes, updateRecipePhoto, updateRecipeRating,
+    updateRecipeNotes, updateRecipePhoto, updateRecipeRating, updateRecipeDate,
     deleteRecipe, shareRecipeByEmail,
   } = useRecipes(user);
 
@@ -41,7 +41,10 @@ function App() {
     return () => subscription.unsubscribe();
   }, []);
 
-  const handleLogout = async () => { await supabase.auth.signOut(); };
+  const handleLogout = async () => {
+    await supabase.auth.signOut();
+    setActiveTab('catalogo');
+  };
 
   const categoryFilteredRecipes = recipes.filter(
     (r) => activeCategory === 'Todas' || r.categoria === activeCategory
@@ -76,16 +79,18 @@ function App() {
               >
                 Catálogo
               </button>
-              <button
-                onClick={() => setActiveTab('nueva')}
-                className={`px-4 py-2 text-sm font-bold rounded-md transition-transform flex items-center gap-1.5 ${activeTab === 'nueva'
-                  ? 'bg-yellow text-ink -rotate-1 shadow-brut'
-                  : 'text-ink hover:bg-ink/5'
-                  }`}
-              >
-                <PlusCircle size={16} />
-                <span className="hidden sm:inline">Nueva</span>
-              </button>
+              {isAdmin && (
+                <button
+                  onClick={() => setActiveTab('nueva')}
+                  className={`px-4 py-2 text-sm font-bold rounded-md transition-transform flex items-center gap-1.5 ${activeTab === 'nueva'
+                    ? 'bg-yellow text-ink -rotate-1 shadow-brut'
+                    : 'text-ink hover:bg-ink/5'
+                    }`}
+                >
+                  <PlusCircle size={16} />
+                  <span className="hidden sm:inline">Nueva</span>
+                </button>
+              )}
             </nav>
 
             {user ? (
@@ -137,7 +142,7 @@ function App() {
                 </span>
               </h2>
               <p className="text-base sm:text-lg text-ink-soft max-w-xl mx-auto leading-relaxed">
-                Explorá el recetario o busca por ingredientes. Sin algoritmos sospechosos,
+                Explora el recetario o busca por ingredientes. Sin algoritmos sospechosos,
                 sin ads, sin "primero te cuento la historia de mi abuela".
               </p>
             </div>
@@ -160,9 +165,20 @@ function App() {
               loading={loading}
             />
           </div>
-        ) : (
+        ) : isAdmin ? (
           <div className="animate-in fade-in zoom-in-95 duration-300 pt-4">
             <AddRecipeForm />
+          </div>
+        ) : (
+          <div className="text-center py-20 animate-in fade-in zoom-in-95 duration-300">
+            <h2 className="text-2xl font-bold text-ink mb-2">Acceso denegado</h2>
+            <p className="text-ink-soft">No tienes permisos para añadir recetas.</p>
+            <button 
+              onClick={() => setActiveTab('catalogo')}
+              className="mt-6 px-6 py-2 bg-ink text-paper rounded-md hover:bg-ink-soft transition-colors"
+            >
+              Volver al catálogo
+            </button>
           </div>
         )}
       </main>
@@ -177,6 +193,10 @@ function App() {
           onUpdateNotes={(notas) => {
             updateRecipeNotes(selectedRecipe.id, notas);
             setSelectedRecipe({ ...selectedRecipe, notas });
+          }}
+          onUpdateDate={(fecha) => {
+            updateRecipeDate(selectedRecipe.id, fecha);
+            setSelectedRecipe({ ...selectedRecipe, fecha_clase: fecha });
           }}
           onUpdatePhoto={(file) => {
             updateRecipePhoto(selectedRecipe.id, file, selectedRecipe.foto_url);

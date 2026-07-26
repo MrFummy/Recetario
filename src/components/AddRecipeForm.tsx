@@ -3,10 +3,11 @@ import type { FormEvent } from 'react';
 import { FileText, Image as ImageIcon, Send, Loader2 } from 'lucide-react';
 import { UploadProgress } from './UploadProgress';
 import type { UploadStatus } from './UploadProgress';
-const WEBHOOK_URL = 'https://n8n.emtel.cloud/webhook/nueva-receta';
+import { N8N_WEBHOOKS } from '../lib/n8n';
 
 export function AddRecipeForm() {
   const [nombre, setNombre] = useState('');
+  const [fechaClase, setFechaClase] = useState(new Date().toISOString().split('T')[0]);
   const [recetaFile, setRecetaFile] = useState<File | null>(null);
   const [fotoFile, setFotoFile] = useState<File | null>(null);
   const [status, setStatus] = useState<UploadStatus>('idle');
@@ -24,6 +25,7 @@ export function AddRecipeForm() {
 
     const formData = new FormData();
     formData.append('nombre', nombre);
+    formData.append('fecha_clase', fechaClase);
     // Mantenemos el nombre de campo 'receta_pdf' para no romper el webhook si espera este nombre,
     // aunque ahora puede ser un PDF o una imagen.
     formData.append('receta_pdf', recetaFile);
@@ -33,7 +35,7 @@ export function AddRecipeForm() {
 
     try {
       // Simulate processing time UX or handle real fetch
-      const response = await fetch(WEBHOOK_URL, {
+      const response = await fetch(N8N_WEBHOOKS.nuevaReceta, {
         method: 'POST',
         body: formData,
         // mode: 'no-cors' // if n8n doesn't return CORS headers, we might need this, but we won't get a readable response. Let's assume CORS is setup or we rely on standard fetch.
@@ -70,16 +72,29 @@ export function AddRecipeForm() {
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-6">
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">Nombre de la receta *</label>
-          <input
-            type="text"
-            required
-            value={nombre}
-            onChange={(e) => setNombre(e.target.value)}
-            className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] transition-all"
-            placeholder="Ej. Lasaña de carne tradicional"
-          />
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">Nombre de la receta *</label>
+            <input
+              type="text"
+              required
+              value={nombre}
+              onChange={(e) => setNombre(e.target.value)}
+              className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] transition-all"
+              placeholder="Ej. Lasaña de carne tradicional"
+            />
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">Fecha de elaboración *</label>
+            <input
+              type="date"
+              required
+              value={fechaClase}
+              onChange={(e) => setFechaClase(e.target.value)}
+              className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] transition-all"
+            />
+          </div>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">

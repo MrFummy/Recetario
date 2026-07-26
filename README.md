@@ -6,11 +6,11 @@ Una aplicación web moderna para organizar recetas y subirlas mediante un flujo 
 - **Frontend**: React + TypeScript + Vite
 - **Estilos**: Tailwind CSS v4
 - **Base de Datos**: Supabase (cliente JS directo)
-- **Automatización**: Webhook de n8n para la ingesta de recetas
+- **Automatización**: Webhooks de n8n para ingesta, borrado y envío por email de recetas
 
 ## Configuración y Entorno
 
-1. Copia el archivo `.env.example` a `.env` y configura tus variables de Supabase:
+1. Copia el archivo `.env.example` a `.env` y configura tus variables de Supabase y n8n:
    ```bash
    cp .env.example .env
    ```
@@ -18,6 +18,7 @@ Una aplicación web moderna para organizar recetas y subirlas mediante un flujo 
    Variables necesarias:
    - `VITE_SUPABASE_URL`: Tu URL del proyecto de Supabase.
    - `VITE_SUPABASE_ANON_KEY`: Tu clave pública (anon) de Supabase.
+   - `VITE_N8N_WEBHOOK_BASE`: URL base de los webhooks de tu instancia de n8n (sin barra final), por ejemplo `https://n8n.ejemplo.com/webhook`. La app deriva de ella las tres rutas: `/nueva-receta`, `/eliminar-receta` y `/compartir-receta`.
 
 2. Instala las dependencias:
    ```bash

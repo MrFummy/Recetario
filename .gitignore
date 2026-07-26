@@ -12,6 +12,16 @@ dist
 dist-ssr
 *.local
 
+# Variables de entorno (usa .env.example como plantilla)
+.env
+
+# Configuración local de Claude Code
+.claude/settings.local.json
+
+# Rutas absolutas de la máquina local (graphify)
+graphify-out/.graphify_python
+graphify-out/.graphify_root
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

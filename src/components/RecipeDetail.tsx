@@ -13,6 +13,7 @@ interface RecipeDetailProps {
   onUpdateNotes?: (notas: string) => void;
   onUpdatePhoto?: (file: File) => void;
   onUpdateRating?: (rating: number) => void;
+  onUpdateDate?: (date: string) => void;
   onDelete?: (recipe: Recipe) => void;
   onShareByEmail?: (recipe: Recipe, email: string) => Promise<void>;
 }
@@ -123,11 +124,14 @@ function renderNotas(notas: any) {
   return String(notas);
 }
 
-export function RecipeDetail({ recipe, onClose, isAdmin, user, onUpdateNotes, onUpdatePhoto, onUpdateRating, onDelete, onShareByEmail }: RecipeDetailProps) {
+export function RecipeDetail({ recipe, onClose, isAdmin, user, onUpdateNotes, onUpdatePhoto, onUpdateRating, onUpdateDate, onDelete, onShareByEmail }: RecipeDetailProps) {
   const isAfan = !!user;
   const [isEditing, setIsEditing] = useState(false);
   const [editedNotes, setEditedNotes] = useState(
     typeof recipe.notas === 'string' ? recipe.notas : JSON.stringify(recipe.notas || '')
+  );
+  const [editedFecha, setEditedFecha] = useState(
+    recipe.fecha_clase ? recipe.fecha_clase.split('T')[0] : ''
   );
   const [newPhoto, setNewPhoto] = useState<File | null>(null);
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
@@ -154,6 +158,7 @@ export function RecipeDetail({ recipe, onClose, isAdmin, user, onUpdateNotes, on
     try {
       if (onUpdateNotes && editedNotes !== recipe.notas) await onUpdateNotes(editedNotes);
       if (onUpdatePhoto && newPhoto) await onUpdatePhoto(newPhoto);
+      if (onUpdateDate && editedFecha !== (recipe.fecha_clase?.split('T')[0] || '')) await onUpdateDate(editedFecha);
       setIsEditing(false);
     } catch (e) {
       console.error('Error saving:', e); alert('Error al guardar los cambios');
@@ -191,7 +196,7 @@ export function RecipeDetail({ recipe, onClose, isAdmin, user, onUpdateNotes, on
         {/* ── Toolbar ──────────────────────────────────────── */}
         <div className="flex items-center justify-between px-5 sm:px-8 py-3 border-b border-dashed border-ink/25 bg-paper-2 shrink-0">
           <div className="font-mono text-[11px] text-ink-soft truncate max-w-[60%]">
-            ~/recetas/{recipe.categoria.toLowerCase().replace(/[/ ]+/g, '-')}/{recipe.titulo.toLowerCase().replace(/[^a-z0-9]+/gi, '-')}.md
+            ~/recetas/{(recipe.categoria ?? 'sin-categoria').toLowerCase().replace(/[/ ]+/g, '-')}/{(recipe.titulo ?? 'sin-titulo').toLowerCase().replace(/[^a-z0-9]+/gi, '-')}.md
           </div>
           <div className="flex items-center gap-1.5">
             {isAdmin && !isEditing && (
@@ -262,9 +267,19 @@ export function RecipeDetail({ recipe, onClose, isAdmin, user, onUpdateNotes, on
                 <div className="w-full aspect-[4/5] bg-ink/10 overflow-hidden">
                   <img src={imageUrl} alt={recipe.titulo} className="w-full h-full object-cover" />
                 </div>
-                {recipe.fecha_clase && (
+                {recipe.fecha_clase && !isEditing && (
                   <div className="absolute bottom-3 left-0 right-0 text-center font-script text-[20px] text-ink">
                     {new Date(recipe.fecha_clase).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}
+                  </div>
+                )}
+                {isEditing && (
+                  <div className="absolute bottom-2 left-2 right-2 text-center">
+                    <input
+                      type="date"
+                      value={editedFecha}
+                      onChange={(e) => setEditedFecha(e.target.value)}
+                      className="w-full bg-white/90 border border-ink/50 text-center font-mono text-sm p-1 focus:outline-none"
+                    />
                   </div>
                 )}
                 {isEditing && (

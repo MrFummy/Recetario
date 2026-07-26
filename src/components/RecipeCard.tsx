@@ -47,6 +47,7 @@ export function RecipeCard({ recipe, onClick }: RecipeCardProps) {
           <img
             src={imageUrl}
             alt={recipe.titulo}
+            draggable={false}
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
             loading="lazy"
           />
