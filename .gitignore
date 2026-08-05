@@ -22,6 +22,11 @@ dist-ssr
 graphify-out/.graphify_python
 graphify-out/.graphify_root
 
+# Material de trabajo local: recetas de prueba, scripts sueltos y builds empaquetados
+scratch/
+*.zip
+*.pdf
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

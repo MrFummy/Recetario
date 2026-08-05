@@ -3,9 +3,15 @@ import type { FormEvent } from 'react';
 import { FileText, Image as ImageIcon, Send, Loader2 } from 'lucide-react';
 import { UploadProgress } from './UploadProgress';
 import type { UploadStatus } from './UploadProgress';
-import { N8N_WEBHOOKS } from '../lib/n8n';
+import { N8N_WEBHOOKS, postToWebhook } from '../lib/n8n';
+import { errorMessage } from '../lib/errors';
 
-export function AddRecipeForm() {
+interface AddRecipeFormProps {
+  /** Se dispara cuando n8n acepta la receta, para recargar el catálogo. */
+  onSuccess?: () => void;
+}
+
+export function AddRecipeForm({ onSuccess }: AddRecipeFormProps) {
   const [nombre, setNombre] = useState('');
   const [fechaClase, setFechaClase] = useState(new Date().toISOString().split('T')[0]);
   const [recetaFile, setRecetaFile] = useState<File | null>(null);
@@ -34,81 +40,88 @@ export function AddRecipeForm() {
     }
 
     try {
-      // Simulate processing time UX or handle real fetch
-      const response = await fetch(N8N_WEBHOOKS.nuevaReceta, {
-        method: 'POST',
-        body: formData,
-        // mode: 'no-cors' // if n8n doesn't return CORS headers, we might need this, but we won't get a readable response. Let's assume CORS is setup or we rely on standard fetch.
-      });
+      // El estado 'done' se marca cuando n8n responde de verdad, no tras un
+      // temporizador: antes se mostraba éxito aunque el flujo hubiese fallado.
+      await postToWebhook(N8N_WEBHOOKS.nuevaReceta, formData, 'nueva receta');
 
-      setStatus('processing');
-      
-      if (!response.ok && response.type !== 'opaque') {
-        throw new Error('El servidor respondió con un error');
-      }
-
-      // Simulate a small delay for "processing" UX before showing done
-      setTimeout(() => {
-        setStatus('done');
-        setNombre('');
-        setRecetaFile(null);
-        setFotoFile(null);
-        if (fileInputRef.current) fileInputRef.current.value = '';
-        if (photoInputRef.current) photoInputRef.current.value = '';
-      }, 1500);
-
-    } catch (err: any) {
+      setStatus('done');
+      setNombre('');
+      setRecetaFile(null);
+      setFotoFile(null);
+      if (fileInputRef.current) fileInputRef.current.value = '';
+      if (photoInputRef.current) photoInputRef.current.value = '';
+      onSuccess?.();
+    } catch (err) {
       console.error(err);
       setStatus('error');
-      setErrorMsg(err.message);
+      setErrorMsg(errorMessage(err, 'Hubo un problema de conexión con el webhook.'));
     }
   };
 
+  const isBusy = status === 'uploading';
+
+  const dropzone = (active: boolean) =>
+    `relative flex flex-col items-center justify-center p-6 border-2 border-dashed transition-all cursor-pointer ${
+      active
+        ? 'border-accent bg-accent-soft text-accent'
+        : 'border-ink/40 text-ink-soft hover:border-ink hover:bg-ink/5'
+    }`;
+
   return (
-    <div className="max-w-2xl mx-auto bg-white p-8 sm:p-10 rounded-3xl shadow-sm border border-gray-100">
+    <div className="max-w-2xl mx-auto bg-paper-2 p-8 sm:p-10 border-2 border-ink shadow-brut-lg">
       <div className="text-center mb-8">
-        <h2 className="text-3xl font-bold text-gray-900 mb-2">Añadir nueva receta</h2>
-        <p className="text-gray-500">Sube el documento de la receta (PDF o Imagen) y automáticamente se procesará e incluirá en tu catálogo.</p>
+        <div className="inline-flex items-center gap-2 font-mono text-[11px] tracking-[0.18em] uppercase text-accent mb-3">
+          <span className="w-2 h-2 rounded-full bg-hot dot-blink" />
+          nueva-receta.n8n
+        </div>
+        <h2 className="font-display font-black text-4xl leading-[0.98] tracking-tight text-ink mb-3">
+          Añadir <span className="hl-mark">receta</span>
+        </h2>
+        <p className="text-ink-soft text-[15px] leading-relaxed max-w-md mx-auto">
+          Sube el documento (PDF o imagen) y el flujo lo procesa e incluye en el catálogo solo.
+        </p>
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Nombre de la receta *</label>
+            <label className="block font-mono text-[10px] uppercase tracking-wider text-ink-soft mb-2">
+              Nombre de la receta *
+            </label>
             <input
               type="text"
               required
               value={nombre}
               onChange={(e) => setNombre(e.target.value)}
-              className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] transition-all"
+              className="w-full px-3.5 py-2.5 bg-paper border-2 border-ink text-ink placeholder:text-ink-soft/70 focus:outline-none focus:shadow-brut focus:-translate-x-px focus:-translate-y-px transition-all"
               placeholder="Ej. Lasaña de carne tradicional"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Fecha de elaboración *</label>
+            <label className="block font-mono text-[10px] uppercase tracking-wider text-ink-soft mb-2">
+              Fecha de elaboración *
+            </label>
             <input
               type="date"
               required
               value={fechaClase}
               onChange={(e) => setFechaClase(e.target.value)}
-              className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] transition-all"
+              className="w-full px-3.5 py-2.5 bg-paper border-2 border-ink text-ink font-mono text-sm focus:outline-none focus:shadow-brut focus:-translate-x-px focus:-translate-y-px transition-all"
             />
           </div>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          {/* Document Input */}
+          {/* Documento de la receta */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Archivo (PDF o Imagen) *</label>
-            <div 
-              className={`relative flex flex-col items-center justify-center p-6 border-2 border-dashed rounded-2xl transition-colors cursor-pointer
-                ${recetaFile ? 'border-[var(--color-primary)] bg-orange-50' : 'border-gray-300 hover:border-[var(--color-primary)] hover:bg-gray-50'}`}
-              onClick={() => fileInputRef.current?.click()}
-            >
-              <FileText className={recetaFile ? "text-[var(--color-primary)]" : "text-gray-400"} size={32} />
-              <span className="mt-2 text-sm font-medium text-center text-gray-600 truncate max-w-full">
-                {recetaFile ? recetaFile.name : 'Seleccionar Archivo'}
+            <label className="block font-mono text-[10px] uppercase tracking-wider text-ink-soft mb-2">
+              Archivo (PDF o imagen) *
+            </label>
+            <div className={dropzone(!!recetaFile)} onClick={() => fileInputRef.current?.click()}>
+              <FileText size={30} strokeWidth={1.8} />
+              <span className="mt-2 font-mono text-[12px] text-center truncate max-w-full">
+                {recetaFile ? recetaFile.name : 'seleccionar archivo'}
               </span>
               <input
                 ref={fileInputRef}
@@ -121,17 +134,15 @@ export function AddRecipeForm() {
             </div>
           </div>
 
-          {/* Photo Input */}
+          {/* Foto del plato */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Foto del plato (Opcional)</label>
-            <div 
-              className={`relative flex flex-col items-center justify-center p-6 border-2 border-dashed rounded-2xl transition-colors cursor-pointer
-                ${fotoFile ? 'border-[var(--color-primary)] bg-orange-50' : 'border-gray-300 hover:border-[var(--color-primary)] hover:bg-gray-50'}`}
-              onClick={() => photoInputRef.current?.click()}
-            >
-              <ImageIcon className={fotoFile ? "text-[var(--color-primary)]" : "text-gray-400"} size={32} />
-              <span className="mt-2 text-sm font-medium text-center text-gray-600 truncate max-w-full">
-                {fotoFile ? fotoFile.name : 'Seleccionar Foto'}
+            <label className="block font-mono text-[10px] uppercase tracking-wider text-ink-soft mb-2">
+              Foto del plato (opcional)
+            </label>
+            <div className={dropzone(!!fotoFile)} onClick={() => photoInputRef.current?.click()}>
+              <ImageIcon size={30} strokeWidth={1.8} />
+              <span className="mt-2 font-mono text-[12px] text-center truncate max-w-full">
+                {fotoFile ? fotoFile.name : 'seleccionar foto'}
               </span>
               <input
                 ref={photoInputRef}
@@ -146,13 +157,13 @@ export function AddRecipeForm() {
 
         <button
           type="submit"
-          disabled={status === 'uploading' || status === 'processing' || !nombre || !recetaFile}
-          className="w-full mt-4 bg-[var(--color-text)] hover:bg-black text-white py-4 rounded-xl font-medium transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+          disabled={isBusy || !nombre || !recetaFile}
+          className="w-full mt-2 bg-yellow text-ink py-3.5 font-display font-bold text-[17px] border-2 border-ink shadow-brut hover:-translate-x-px hover:-translate-y-px hover:shadow-brut-lg active:translate-x-0 active:translate-y-0 active:shadow-brut transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:shadow-brut disabled:translate-x-0 disabled:translate-y-0"
         >
-          {status === 'uploading' || status === 'processing' ? (
-            <>Procesando... <Loader2 className="animate-spin" size={18} /></>
+          {isBusy ? (
+            <>Enviando… <Loader2 className="animate-spin" size={18} /></>
           ) : (
-            <>Enviar Receta <Send size={18} /></>
+            <>Enviar receta <Send size={18} /></>
           )}
         </button>
       </form>

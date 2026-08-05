@@ -1,38 +1,53 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
+import type { User } from '@supabase/supabase-js';
 import { supabase } from '../lib/supabase';
-import { N8N_WEBHOOKS } from '../lib/n8n';
-import type { Recipe } from '../types';
+import { N8N_WEBHOOKS, postToWebhook } from '../lib/n8n';
+import { errorMessage, idUnico } from '../lib/errors';
+import type { Json, Recipe } from '../types';
 
-export function useRecipes(user?: any) {
+export function useRecipes(user?: User | null) {
   const [recipes, setRecipes] = useState<Recipe[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
+  const [reloadToken, setReloadToken] = useState(0);
+
+  // Las RLS pueden devolver filas o columnas distintas según el rol, así que el
+  // catálogo se recarga cuando cambia la sesión (login / logout).
+  const userId = user?.id;
+
+  const refetch = useCallback(() => setReloadToken((t) => t + 1), []);
+
   useEffect(() => {
-    async function fetchRecipes() {
-      try {
-        setLoading(true);
-        const { data, error } = await supabase
-          .from('recetas')
-          .select('*')
-          .order('created_at', { ascending: false });
+    // `active` descarta la respuesta de una carga que ya quedó obsoleta (p. ej.
+    // el usuario inicia sesión mientras la petición anónima sigue en vuelo).
+    let active = true;
 
-        if (error) {
-          throw error;
-        }
+    async function load() {
+      setLoading(true);
+      setError(null);
 
+      const { data, error } = await supabase
+        .from('recetas')
+        .select('*')
+        .order('created_at', { ascending: false });
+
+      if (!active) return;
+
+      if (error) {
+        setError(errorMessage(error, 'No se pudieron cargar las recetas.'));
+      } else {
         setRecipes(data || []);
-      } catch (err: any) {
-        setError(err.message);
-      } finally {
-        setLoading(false);
       }
+      setLoading(false);
     }
 
-    fetchRecipes();
-  }, []);
+    void load();
 
-  const updateRecipeNotes = async (id: string, notas: any) => {
+    return () => { active = false; };
+  }, [userId, reloadToken]);
+
+  const updateRecipeNotes = async (id: string, notas: Json) => {
     const { error } = await supabase
       .from('recetas')
       .update({ notas })
@@ -52,14 +67,13 @@ export function useRecipes(user?: any) {
 
   const updateRecipeRating = async (id: string, rating: number) => {
     if (!user) {
-      alert("Debes iniciar sesión para votar");
-      return;
+      throw new Error('Debes iniciar sesión para votar.');
     }
-    
+
     const { error } = await supabase
       .from('valoraciones')
       .upsert({ receta_id: id, user_id: user.id, puntuacion: rating }, { onConflict: 'receta_id,user_id' });
-    
+
     if (error) throw error;
 
     // Recargar la media calculada por el trigger
@@ -72,8 +86,7 @@ export function useRecipes(user?: any) {
   const updateRecipePhoto = async (id: string, newPhoto: File, oldPhotoUrl?: string) => {
     // 1. Upload new photo
     const fileExt = newPhoto.name.split('.').pop();
-    const fileName = `${Math.random()}.${fileExt}`;
-    const filePath = `fotos/${fileName}`;
+    const filePath = `fotos/${idUnico()}.${fileExt}`;
 
     const { error: uploadError } = await supabase.storage
       .from('fotos-recetas')
@@ -99,60 +112,55 @@ export function useRecipes(user?: any) {
       .from('recetas')
       .update({ foto_url: publicUrl })
       .eq('id', id);
-    
+
     if (updateError) throw updateError;
     setRecipes(prev => prev.map(r => r.id === id ? { ...r, foto_url: publicUrl } : r));
   };
 
   const deleteRecipe = async (recipe: Recipe) => {
-    // LLamar al webhook de n8n
-    const response = await fetch(N8N_WEBHOOKS.eliminarReceta, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
+    // Llamar al webhook de n8n. Si falla, `postToWebhook` lanza y la receta
+    // sigue en pantalla: nunca la quitamos de la vista sin confirmación.
+    await postToWebhook(
+      N8N_WEBHOOKS.eliminarReceta,
+      JSON.stringify({
         supabase_id: recipe.id,
         titulo: recipe.titulo,
         foto_url: recipe.foto_url,
         pdf_url: recipe.pdf_url,
-        notion_id: recipe.notion_id
-      })
-    });
+        notion_id: recipe.notion_id,
+      }),
+      'borrado',
+      true
+    );
 
-    if (!response.ok && response.type !== 'opaque') {
-      throw new Error('Error al conectar con la automatización de borrado.');
-    }
-
-    // Borrar localmente del estado para que desaparezca de la vista inmediatamente
     setRecipes(prev => prev.filter(r => r.id !== recipe.id));
   };
 
   const shareRecipeByEmail = async (recipe: Recipe, email_destino: string) => {
-    const response = await fetch(N8N_WEBHOOKS.compartirReceta, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
+    await postToWebhook(
+      N8N_WEBHOOKS.compartirReceta,
+      JSON.stringify({
         email_destino,
         recipe: {
           id: recipe.id,
           titulo: recipe.titulo,
           foto_url: recipe.foto_url,
           pdf_url: recipe.pdf_url,
-          notion_id: recipe.notion_id
-        }
-      })
-    });
-
-    if (!response.ok && response.type !== 'opaque') {
-      throw new Error('Error al conectar con la automatización de envío por email.');
-    }
+          notion_id: recipe.notion_id,
+        },
+      }),
+      'envío por email',
+      true
+    );
   };
 
-  return { 
-    recipes, 
-    loading, 
-    error, 
-    updateRecipeNotes, 
-    updateRecipeRating, 
+  return {
+    recipes,
+    loading,
+    error,
+    refetch,
+    updateRecipeNotes,
+    updateRecipeRating,
     updateRecipePhoto,
     updateRecipeDate,
     deleteRecipe,

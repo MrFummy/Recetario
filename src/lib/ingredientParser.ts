@@ -1,4 +1,5 @@
-import type { Recipe } from '../types';
+import type { Json, Recipe } from '../types';
+import { normalizeIngredients } from './recipeContent';
 
 /**
  * Normalizes a string for search (lowercase, removes accents)
@@ -11,31 +12,12 @@ export const normalizeString = (str: string): string => {
 };
 
 /**
- * Extracts a flat array of ingredient names from the JSONB field
- * Supports various formats: array of strings, array of objects, nested objects
+ * Extracts a flat array of ingredient names from the JSONB field.
+ * Delega en `normalizeIngredients` para que el buscador y el detalle de receta
+ * interpreten el JSONB exactamente igual.
  */
-export const extractIngredientsText = (ingredientes: any): string[] => {
-  if (!ingredientes) return [];
-  
-  let flatList: string[] = [];
-
-  const processItem = (item: any) => {
-    if (typeof item === 'string') {
-      flatList.push(item);
-    } else if (Array.isArray(item)) {
-      item.forEach(processItem);
-    } else if (typeof item === 'object' && item !== null) {
-      if (item.nombre) {
-        flatList.push(item.nombre);
-      } else {
-        // Nested object (e.g. { "Para la salsa": [...] })
-        Object.values(item).forEach(processItem);
-      }
-    }
-  };
-
-  processItem(ingredientes);
-  return flatList;
+export const extractIngredientsText = (ingredientes: Json): string[] => {
+  return normalizeIngredients(ingredientes).map((item) => item.name);
 };
 
 /**
@@ -43,11 +25,11 @@ export const extractIngredientsText = (ingredientes: any): string[] => {
  */
 export const recipeMatchesIngredients = (recipe: Recipe, searchTerms: string[]): boolean => {
   if (searchTerms.length === 0) return true;
-  
+
   const recipeIngredients = extractIngredientsText(recipe.ingredientes);
   const normalizedRecipeIngredients = recipeIngredients.map(normalizeString).join(' ');
 
-  return searchTerms.every(term => 
+  return searchTerms.every(term =>
     normalizedRecipeIngredients.includes(normalizeString(term))
   );
 };

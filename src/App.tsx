@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import type { User } from '@supabase/supabase-js';
 import { ChefHat, PlusCircle, LogIn, LogOut } from 'lucide-react';
 import { FilterBar } from './components/FilterBar';
 import { IngredientSearch } from './components/IngredientSearch';
@@ -9,6 +10,7 @@ import { LoginModal } from './components/LoginModal';
 import { useRecipes } from './hooks/useRecipes';
 import { useIngredientSearch } from './hooks/useIngredientSearch';
 import { supabase } from './lib/supabase';
+import { errorMessage } from './lib/errors';
 import type { Category, Recipe } from './types';
 
 const CATEGORIES: Category[] = [
@@ -22,11 +24,14 @@ function App() {
   const [selectedRecipe, setSelectedRecipe] = useState<Recipe | null>(null);
 
   const [showLoginModal, setShowLoginModal] = useState(false);
-  const [user, setUser] = useState<any>(null);
+  const [authError, setAuthError] = useState<string | null>(null);
+  const [user, setUser] = useState<User | null>(null);
+  // Ojo: esto solo decide qué botones se pintan. La autorización real vive en
+  // las RLS policies de Supabase y en la validación del flujo de n8n.
   const isAdmin = user?.email === 'marcos.garciafdz@gmail.com';
 
   const {
-    recipes, loading, error,
+    recipes, loading, error, refetch,
     updateRecipeNotes, updateRecipePhoto, updateRecipeRating, updateRecipeDate,
     deleteRecipe, shareRecipeByEmail,
   } = useRecipes(user);
@@ -42,7 +47,12 @@ function App() {
   }, []);
 
   const handleLogout = async () => {
-    await supabase.auth.signOut();
+    const { error } = await supabase.auth.signOut();
+    if (error) {
+      setAuthError(errorMessage(error, 'No se pudo cerrar la sesión.'));
+      return;
+    }
+    setAuthError(null);
     setActiveTab('catalogo');
   };
 
@@ -127,6 +137,12 @@ function App() {
           </div>
         )}
 
+        {authError && (
+          <div className="bg-hot-soft border-2 border-hot text-hot p-4 rounded-md mb-6 font-mono text-sm">
+            {authError}
+          </div>
+        )}
+
         {activeTab === 'catalogo' ? (
           <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
             {/* ── Hero ───────────────────────────────────── */}
@@ -167,7 +183,7 @@ function App() {
           </div>
         ) : isAdmin ? (
           <div className="animate-in fade-in zoom-in-95 duration-300 pt-4">
-            <AddRecipeForm />
+            <AddRecipeForm onSuccess={() => void refetch()} />
           </div>
         ) : (
           <div className="text-center py-20 animate-in fade-in zoom-in-95 duration-300">
@@ -190,23 +206,23 @@ function App() {
           onClose={() => setSelectedRecipe(null)}
           isAdmin={isAdmin}
           user={user}
-          onUpdateNotes={(notas) => {
-            updateRecipeNotes(selectedRecipe.id, notas);
+          onUpdateNotes={async (notas) => {
+            await updateRecipeNotes(selectedRecipe.id, notas);
             setSelectedRecipe({ ...selectedRecipe, notas });
           }}
-          onUpdateDate={(fecha) => {
-            updateRecipeDate(selectedRecipe.id, fecha);
+          onUpdateDate={async (fecha) => {
+            await updateRecipeDate(selectedRecipe.id, fecha);
             setSelectedRecipe({ ...selectedRecipe, fecha_clase: fecha });
           }}
-          onUpdatePhoto={(file) => {
-            updateRecipePhoto(selectedRecipe.id, file, selectedRecipe.foto_url);
+          onUpdatePhoto={async (file) => {
+            await updateRecipePhoto(selectedRecipe.id, file, selectedRecipe.foto_url);
           }}
-          onUpdateRating={(rating) => {
-            updateRecipeRating(selectedRecipe.id, rating);
+          onUpdateRating={async (rating) => {
+            await updateRecipeRating(selectedRecipe.id, rating);
             setSelectedRecipe({ ...selectedRecipe, rating });
           }}
-          onDelete={(recipe) => {
-            deleteRecipe(recipe);
+          onDelete={async (recipe) => {
+            await deleteRecipe(recipe);
             setSelectedRecipe(null);
           }}
           onShareByEmail={(recipe, email) => shareRecipeByEmail(recipe, email)}
