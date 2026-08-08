@@ -1,10 +1,11 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import type { User } from '@supabase/supabase-js';
-import { X, ExternalLink, Edit2, Save, Upload, Trash2, Loader2, AlertTriangle } from 'lucide-react';
+import { X, ExternalLink, Edit2, Save, Trash2, Loader2, AlertTriangle } from 'lucide-react';
 import type { Recipe } from '../types';
 import { StarRating } from './StarRating';
 import { IngredientsList, StepsList } from './RecipeContent';
 import { ShareByEmail } from './ShareByEmail';
+import { RecipePolaroid } from './RecipePolaroid';
 import { hasNotas, renderNotas } from '../lib/recipeContent';
 import { errorMessage } from '../lib/errors';
 import { supabase } from '../lib/supabase';
@@ -17,13 +18,14 @@ interface RecipeDetailProps {
   user?: User | null;
   onUpdateNotes?: (notas: string) => Promise<void>;
   onUpdatePhoto?: (file: File) => Promise<void>;
+  onRemovePhoto?: () => Promise<void>;
   onUpdateRating?: (rating: number) => Promise<void>;
   onUpdateDate?: (date: string) => Promise<void>;
   onDelete?: (recipe: Recipe) => Promise<void>;
   onShareByEmail?: (recipe: Recipe, email: string) => Promise<void>;
 }
 
-export function RecipeDetail({ recipe, onClose, isAdmin, user, onUpdateNotes, onUpdatePhoto, onUpdateRating, onUpdateDate, onDelete, onShareByEmail }: RecipeDetailProps) {
+export function RecipeDetail({ recipe, onClose, isAdmin, user, onUpdateNotes, onUpdatePhoto, onRemovePhoto, onUpdateRating, onUpdateDate, onDelete, onShareByEmail }: RecipeDetailProps) {
   const isAfan = !!user;
   const initialNotes = renderNotas(recipe.notas);
 
@@ -34,13 +36,14 @@ export function RecipeDetail({ recipe, onClose, isAdmin, user, onUpdateNotes, on
   );
   const [newPhoto, setNewPhoto] = useState<File | null>(null);
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
+  const [quitarFoto, setQuitarFoto] = useState(false);
   const [isSaving, setIsSaving] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
   const [actionError, setActionError] = useState<string | null>(null);
   const [personalRating, setPersonalRating] = useState<number | null>(null);
-  const fileInputRef = useRef<HTMLInputElement>(null);
 
-  const imageUrl = previewUrl || recipe.foto_url || placeholderImg;
+  const imageUrl = quitarFoto ? placeholderImg : (previewUrl || recipe.foto_url || placeholderImg);
+  const tieneFoto = !!recipe.foto_url || !!previewUrl;
   const showNotas = hasNotas(recipe.notas) || isEditing;
 
   useEffect(() => {
@@ -61,10 +64,13 @@ export function RecipeDetail({ recipe, onClose, isAdmin, user, onUpdateNotes, on
     setActionError(null);
     try {
       if (onUpdateNotes && editedNotes !== initialNotes) await onUpdateNotes(editedNotes);
-      if (onUpdatePhoto && newPhoto) await onUpdatePhoto(newPhoto);
+      if (onRemovePhoto && quitarFoto) await onRemovePhoto();
+      else if (onUpdatePhoto && newPhoto) await onUpdatePhoto(newPhoto);
       if (onUpdateDate && editedFecha !== (recipe.fecha_clase?.split('T')[0] || '')) await onUpdateDate(editedFecha);
       setIsEditing(false);
       setNewPhoto(null);
+      setPreviewUrl(null);
+      setQuitarFoto(false);
     } catch (err) {
       console.error('Error saving:', err);
       setActionError(errorMessage(err, 'No se pudieron guardar los cambios.'));
@@ -73,16 +79,19 @@ export function RecipeDetail({ recipe, onClose, isAdmin, user, onUpdateNotes, on
     }
   };
 
+  /** `rating` a 0 retira el voto (pulsar la estrella ya marcada, o "quitar mi voto"). */
   const handleRate = async (rating: number) => {
     if (!onUpdateRating) return;
     const previous = personalRating;
-    setPersonalRating(rating); // optimista: se revierte si el guardado falla
+    setPersonalRating(rating === 0 ? null : rating); // optimista: se revierte si falla
     setActionError(null);
     try {
       await onUpdateRating(rating);
     } catch (err) {
       setPersonalRating(previous);
-      setActionError(errorMessage(err, 'No se pudo guardar tu voto.'));
+      setActionError(errorMessage(err, rating === 0
+        ? 'No se pudo quitar tu voto.'
+        : 'No se pudo guardar tu voto.'));
     }
   };
 
@@ -101,9 +110,10 @@ export function RecipeDetail({ recipe, onClose, isAdmin, user, onUpdateNotes, on
     }
   };
 
-  const handlePhotoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (file) { setNewPhoto(file); setPreviewUrl(URL.createObjectURL(file)); }
+  const handlePhotoSelected = (file: File) => {
+    setNewPhoto(file);
+    setPreviewUrl(URL.createObjectURL(file));
+    setQuitarFoto(false); // elegir una foto cancela el quitarla
   };
 
   return (
@@ -168,38 +178,19 @@ export function RecipeDetail({ recipe, onClose, isAdmin, user, onUpdateNotes, on
 
           {/* Hero: polaroid + título */}
           <div className="grid grid-cols-1 md:grid-cols-[300px_1fr] gap-10 mb-10">
-            <div className="relative mt-2 mx-auto md:mx-0 max-w-[300px] w-full">
-              <span className="absolute -top-3 left-7 w-24 h-5 rotate-[-7deg] shadow-sm" style={{ background: 'var(--color-tape)' }} />
-              <span className="absolute -top-2 right-6 w-24 h-5 rotate-[9deg] shadow-sm" style={{ background: 'var(--color-tape-blue)' }} />
-              <div className="bg-white p-3 pb-10 shadow-xl -rotate-2 relative">
-                <div className="w-full aspect-[4/5] bg-ink/10 overflow-hidden">
-                  <img src={imageUrl} alt={recipe.titulo} className="w-full h-full object-cover" />
-                </div>
-                {recipe.fecha_clase && !isEditing && (
-                  <div className="absolute bottom-3 left-0 right-0 text-center font-script text-[20px] text-ink">
-                    {new Date(recipe.fecha_clase).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}
-                  </div>
-                )}
-                {isEditing && (
-                  <div className="absolute bottom-2 left-2 right-2 text-center">
-                    <input
-                      type="date"
-                      value={editedFecha}
-                      onChange={(e) => setEditedFecha(e.target.value)}
-                      className="w-full bg-white/90 border border-ink/50 text-center font-mono text-sm p-1 focus:outline-none"
-                    />
-                  </div>
-                )}
-                {isEditing && (
-                  <button onClick={() => fileInputRef.current?.click()}
-                    className="absolute inset-3 bottom-10 bg-ink/70 text-paper flex items-center justify-center gap-2 font-mono text-xs hover:bg-ink/85 transition-colors">
-                    <Upload size={16} /> cambiar foto
-                  </button>
-                )}
-                <input type="file" ref={fileInputRef} className="hidden" accept="image/*" onChange={handlePhotoChange} />
-              </div>
-            </div>
-
+            <RecipePolaroid
+              imageUrl={imageUrl}
+              titulo={recipe.titulo}
+              fechaClase={recipe.fecha_clase}
+              isEditing={isEditing}
+              editedFecha={editedFecha}
+              onFechaChange={setEditedFecha}
+              onPhotoSelected={handlePhotoSelected}
+              quitarFoto={quitarFoto}
+              onQuitarFoto={() => { setQuitarFoto(true); setNewPhoto(null); setPreviewUrl(null); }}
+              onDeshacerQuitar={() => setQuitarFoto(false)}
+              puedeQuitarse={tieneFoto && !!onRemovePhoto}
+            />
             <div className="pt-2">
               <div className="inline-flex items-center gap-1.5 font-mono text-[11px] tracking-widest uppercase text-accent bg-accent-soft px-2.5 py-1 mb-4">
                 <span className="opacity-60">#</span>{recipe.categoria}
@@ -210,17 +201,26 @@ export function RecipeDetail({ recipe, onClose, isAdmin, user, onUpdateNotes, on
               <div className="flex items-center gap-3 mb-1">
                 <StarRating
                   rating={personalRating || recipe.rating || 0}
+                  votoPropio={personalRating}
                   onRate={handleRate}
                   readonly={!isAfan}
                   size={20}
                 />
                 <span className="font-mono text-[11px] text-ink-soft">
                   {personalRating
-                    ? `tu voto: ${personalRating} · media: ${recipe.rating || 0}`
+                    ? `tu voto: ${personalRating} · media: ${recipe.rating || 'sin valorar'}`
                     : isAfan
-                      ? `media: ${recipe.rating || 0}`
-                      : `media: ${recipe.rating || 0} · iniciá sesión para votar`}
+                      ? `media: ${recipe.rating || 'sin valorar'}`
+                      : `media: ${recipe.rating || 'sin valorar'} · iniciá sesión para votar`}
                 </span>
+                {personalRating && (
+                  <button
+                    onClick={() => handleRate(0)}
+                    className="font-mono text-[11px] text-ink-soft underline decoration-dotted underline-offset-2 hover:text-hot transition-colors"
+                  >
+                    quitar mi voto
+                  </button>
+                )}
               </div>
             </div>
           </div>

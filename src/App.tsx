@@ -32,7 +32,7 @@ function App() {
 
   const {
     recipes, loading, error, refetch,
-    updateRecipeNotes, updateRecipePhoto, updateRecipeRating, updateRecipeDate,
+    updateRecipeNotes, updateRecipePhoto, removeRecipePhoto, updateRecipeRating, updateRecipeDate,
     deleteRecipe, shareRecipeByEmail,
   } = useRecipes(user);
 
@@ -216,6 +216,10 @@ function App() {
           }}
           onUpdatePhoto={async (file) => {
             await updateRecipePhoto(selectedRecipe.id, file, selectedRecipe.foto_url);
+          }}
+          onRemovePhoto={async () => {
+            await removeRecipePhoto(selectedRecipe.id, selectedRecipe.foto_url);
+            setSelectedRecipe({ ...selectedRecipe, foto_url: '' });
           }}
           onUpdateRating={async (rating) => {
             await updateRecipeRating(selectedRecipe.id, rating);

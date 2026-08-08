@@ -65,22 +65,79 @@ export function useRecipes(user?: User | null) {
     setRecipes(prev => prev.map(r => r.id === id ? { ...r, fecha_clase: fecha } : r));
   };
 
+  /**
+   * Guarda el voto del usuario. `rating` a 0 significa retirarlo.
+   *
+   * Retirar borra la fila en lugar de guardar un cero: la media la calcula un
+   * trigger con `avg(puntuacion)`, así que un cero contaría como voto y hundiría
+   * la media en vez de desaparecer de ella.
+   */
   const updateRecipeRating = async (id: string, rating: number) => {
     if (!user) {
       throw new Error('Debes iniciar sesión para votar.');
     }
 
-    const { error } = await supabase
-      .from('valoraciones')
-      .upsert({ receta_id: id, user_id: user.id, puntuacion: rating }, { onConflict: 'receta_id,user_id' });
+    if (rating === 0) {
+      const { error } = await supabase
+        .from('valoraciones')
+        .delete()
+        .eq('receta_id', id)
+        .eq('user_id', user.id);
+      if (error) throw error;
+    } else {
+      const { error } = await supabase
+        .from('valoraciones')
+        .upsert({ receta_id: id, user_id: user.id, puntuacion: rating }, { onConflict: 'receta_id,user_id' });
+      if (error) throw error;
+    }
 
-    if (error) throw error;
-
-    // Recargar la media calculada por el trigger
+    // Recargar la media recalculada por el trigger. Queda a null si esa era la
+    // última valoración de la receta.
     const { data } = await supabase.from('recetas').select('rating').eq('id', id).single();
     if (data) {
        setRecipes(prev => prev.map(r => r.id === id ? { ...r, rating: data.rating } : r));
     }
+  };
+
+  /**
+   * Borra del bucket la foto que deja de usarse.
+   *
+   * No es fatal: la operación que el usuario pidió ya se ha hecho, y un fichero
+   * huérfano es mantenimiento, no un error suyo. Pero el resultado deja de
+   * ignorarse, que es como se acumularon tres sin que nadie se enterara.
+   *
+   * Nunca toca `_default.jpg`: no es la foto de ninguna receta sino la plantilla
+   * que n8n copia cuando un alta llega sin foto del plato. La policy de Storage
+   * también lo impide, pero más vale no depender solo de eso.
+   */
+  const borrarFotoAnterior = async (fotoUrl?: string) => {
+    if (!fotoUrl) return;
+
+    const match = fotoUrl.match(/fotos-recetas\/(.*)$/);
+    const ruta = match?.[1];
+    if (!ruta || ruta === '_default.jpg') return;
+
+    const { data: borrados, error } = await supabase.storage
+      .from('fotos-recetas')
+      .remove([ruta]);
+
+    if (error) {
+      console.warn(`No se pudo borrar la foto anterior (${ruta}):`, error.message);
+    } else if (!borrados || borrados.length === 0) {
+      console.warn(`La foto anterior (${ruta}) no se borró: queda huérfana en el bucket.`);
+    }
+  };
+
+  /** Quita la foto de una receta; la ficha pasa a mostrar la imagen por defecto. */
+  const removeRecipePhoto = async (id: string, oldPhotoUrl?: string) => {
+    const { error } = await supabase
+      .from('recetas')
+      .update({ foto_url: null })
+      .eq('id', id);
+    if (error) throw error;
+
+    await borrarFotoAnterior(oldPhotoUrl);
+    setRecipes(prev => prev.map(r => r.id === id ? { ...r, foto_url: '' } : r));
   };
 
   const updateRecipePhoto = async (id: string, newPhoto: File, oldPhotoUrl?: string) => {
@@ -98,14 +155,7 @@ export function useRecipes(user?: User | null) {
       .getPublicUrl(filePath);
 
     // 2. Delete old photo if exists
-    if (oldPhotoUrl) {
-      const oldPathMatch = oldPhotoUrl.match(/fotos-recetas\/(.*)$/);
-      if (oldPathMatch && oldPathMatch[1]) {
-        await supabase.storage
-          .from('fotos-recetas')
-          .remove([oldPathMatch[1]]);
-      }
-    }
+    await borrarFotoAnterior(oldPhotoUrl);
 
     // 3. Update database
     const { error: updateError } = await supabase
@@ -162,6 +212,7 @@ export function useRecipes(user?: User | null) {
     updateRecipeNotes,
     updateRecipeRating,
     updateRecipePhoto,
+    removeRecipePhoto,
     updateRecipeDate,
     deleteRecipe,
     shareRecipeByEmail
