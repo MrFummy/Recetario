@@ -147,30 +147,10 @@ create policy "Borrado de fotos por admin"
 commit;
 
 -- ═══════════════════════════════════════════════════════════════════════════
--- PENDIENTE DE EJECUTAR A MANO
+-- Las dos funciones SECURITY DEFINER de arriba quedaban expuestas como RPC en
+-- /rest/v1/rpc/, porque Postgres concede EXECUTE a PUBLIC por defecto. Se
+-- corrige en 20260808_revocar_execute_funciones.sql.
 --
--- Postgres concede EXECUTE a PUBLIC por defecto, así que las dos funciones
--- SECURITY DEFINER de arriba quedan expuestas como RPC en /rest/v1/rpc/. El
--- linter de Supabase lo marca (lints 0028 y 0029).
---
---   - update_recipe_average_rating es una función de trigger: invocarla por RPC
---     falla igualmente ("can only be called as a trigger"), pero no debe estar
---     expuesta. Comprobado en una transacción con rollback que, tras revocar,
---     el trigger sigue disparándose y recalculando la media: el privilegio se
---     valida al crear el trigger, no en cada disparo.
---   - es_admin sí necesita EXECUTE para `authenticated`, porque las policies de
---     recetas y storage la evalúan con los privilegios de quien consulta. Solo
---     se le retira a anon y a PUBLIC.
---
--- No lo apliqué automáticamente porque el clasificador de permisos bloqueó la
--- operación por tratarse de una retirada de privilegios.
--- ═══════════════════════════════════════════════════════════════════════════
-
--- revoke all on function public.update_recipe_average_rating() from public, anon, authenticated;
--- revoke all on function public.es_admin() from public, anon;
--- grant execute on function public.es_admin() to authenticated;
-
--- ═══════════════════════════════════════════════════════════════════════════
 -- Comprobación posterior sugerida:
 --   select tablename, rowsecurity from pg_tables where schemaname='public';
 --   select tablename, policyname, roles::text, cmd, qual, with_check
