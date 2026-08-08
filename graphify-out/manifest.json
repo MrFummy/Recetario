@@ -15,9 +15,9 @@
     "semantic_hash": "b21666ca88d4c981fa5fe3b3db7926c8"
   },
   "src/App.tsx": {
-    "mtime": 1785936351.9395702,
-    "ast_hash": "063ab40c8d64259e6f075a4c48f67cd4",
-    "semantic_hash": "063ab40c8d64259e6f075a4c48f67cd4"
+    "mtime": 1786177202.4847836,
+    "ast_hash": "9c53b7a934d9ca4d2979e87ccba1c27d",
+    "semantic_hash": ""
   },
   "src/components/AddRecipeForm.tsx": {
     "mtime": 1785935983.9667213,
@@ -45,9 +45,9 @@
     "semantic_hash": "0bb06f88e50e3e4dc7078caacc89753d"
   },
   "src/components/RecipeDetail.tsx": {
-    "mtime": 1785936134.8255675,
-    "ast_hash": "452c4079f8001fdd6672dde8afa5b212",
-    "semantic_hash": "452c4079f8001fdd6672dde8afa5b212"
+    "mtime": 1786177281.151275,
+    "ast_hash": "2a12a6039ca31ca37a8b725b2902c387",
+    "semantic_hash": ""
   },
   "src/components/RecipeGrid.tsx": {
     "mtime": 1779908153.9533832,
@@ -55,9 +55,9 @@
     "semantic_hash": "d62f11318072a269ccee83eeb913afea"
   },
   "src/components/StarRating.tsx": {
-    "mtime": 1779908153.957012,
-    "ast_hash": "af8d0c14c4265ae11425c98efd329a1a",
-    "semantic_hash": "af8d0c14c4265ae11425c98efd329a1a"
+    "mtime": 1786177059.0446866,
+    "ast_hash": "2ae48bdb0bdd3aa900995b766940fdc7",
+    "semantic_hash": ""
   },
   "src/components/UploadProgress.tsx": {
     "mtime": 1785935955.5962086,
@@ -70,9 +70,9 @@
     "semantic_hash": "e3aff6228c8d6b0457bd817adae8e008"
   },
   "src/hooks/useRecipes.ts": {
-    "mtime": 1785938405.3312669,
-    "ast_hash": "65de4a63e0cc0cf9bc94449c86c767d7",
-    "semantic_hash": "65de4a63e0cc0cf9bc94449c86c767d7"
+    "mtime": 1786177104.22128,
+    "ast_hash": "13809aaf51bddc63b6673d00f6767bb2",
+    "semantic_hash": ""
   },
   "src/lib/ingredientParser.ts": {
     "mtime": 1785935915.5688047,
@@ -175,8 +175,33 @@
     "semantic_hash": "6ebc486a5e33af9e18506bf70b3bdee1"
   },
   "supabase/migrations/20260805_endurecer_rls.sql": {
-    "mtime": 1785937481.9942281,
-    "ast_hash": "d678f325e5eb60a53dce34609021827e",
-    "semantic_hash": "d678f325e5eb60a53dce34609021827e"
+    "mtime": 1786177562.2465656,
+    "ast_hash": "477d94e4eccc5b72d71a35635c55157c",
+    "semantic_hash": ""
+  },
+  "src/components/RecipePolaroid.tsx": {
+    "mtime": 1786177251.4256144,
+    "ast_hash": "6fbd7d7970a727d7fe8962bbaf4d0d42",
+    "semantic_hash": ""
+  },
+  "supabase/migrations/20260808_fotos_en_raiz_visibles.sql": {
+    "mtime": 1786176223.5385222,
+    "ast_hash": "4e0afa42977dfa2679ed740d891b3d6e",
+    "semantic_hash": ""
+  },
+  "supabase/migrations/20260808_proteger_default_jpg.sql": {
+    "mtime": 1786176425.0032747,
+    "ast_hash": "03c5f944af12896fd0f608b743a1ecb9",
+    "semantic_hash": ""
+  },
+  "supabase/migrations/20260808_revocar_execute_funciones.sql": {
+    "mtime": 1786177571.7600577,
+    "ast_hash": "14004b900c1465b4862f510f72ceb028",
+    "semantic_hash": ""
+  },
+  "CLAUDE.md": {
+    "mtime": 1786177474.9353921,
+    "ast_hash": "88dbd09259c90b631e8df05909328397",
+    "semantic_hash": ""
   }
 }

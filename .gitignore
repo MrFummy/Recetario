@@ -22,6 +22,9 @@ dist-ssr
 graphify-out/.graphify_python
 graphify-out/.graphify_root
 
+# Copias de seguridad que graphify deja en cada reconstrucción (una por fecha)
+graphify-out/[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]/
+
 # Material de trabajo local: recetas de prueba, scripts sueltos y builds empaquetados
 scratch/
 *.zip

@@ -1,1 +1,21 @@
-{"0": "Arquitectura, servicios y seguridad", "1": "Componentes de interfaz", "2": "Tooling de desarrollo", "3": "Config TypeScript de la app", "4": "Config TypeScript de build", "5": "Catalogo y busqueda", "6": "Dependencias de runtime", "7": "Detalle y normalizacion JSONB", "8": "Scripts de npm", "9": "Raiz de TypeScript", "10": "Config de ESLint", "11": "Sprite de iconos", "12": "Migracion de RLS", "13": "Config de Vite"}
+{
+  "0": "Arquitectura, servicios y seguridad",
+  "1": "Componentes de interfaz",
+  "2": "Tooling de desarrollo",
+  "3": "Config TypeScript de la app",
+  "4": "Config TypeScript de build",
+  "5": "Catalogo y busqueda",
+  "6": "Dependencias de runtime",
+  "7": "Detalle y normalizacion JSONB",
+  "8": "Scripts de npm",
+  "9": "Raiz de TypeScript",
+  "10": "Config de ESLint",
+  "11": "Sprite de iconos",
+  "12": "Migracion de RLS",
+  "13": "Config de Vite",
+  "14": "Mi Recetario — contexto del proyecto",
+  "15": "Q: Por que Supabase JS client with no backend layer aparece semanticamente similar a n8n webhook recipe ingestion?",
+  "16": "20260808_fotos_en_raiz_visibles.sql",
+  "17": "20260808_proteger_default_jpg.sql",
+  "18": "20260808_revocar_execute_funciones.sql"
+}

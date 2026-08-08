@@ -33,7 +33,7 @@ Mapa de comunidades, para saber a cuál preguntar:
 | Migración de RLS | Policies de Supabase |
 | Config TypeScript / Vite / ESLint / npm | Tooling y dependencias |
 
-## Estado actual (5 ago 2026)
+## Estado actual (8 ago 2026)
 
 **La autorización real no está en el frontend.** El `isAdmin` de
 [App.tsx](src/App.tsx) solo decide qué botones se pintan. Quien autoriza de
@@ -58,13 +58,26 @@ Dos trampas que ya han mordido y conviene no repetir:
   con cuerpo vacío**, no un 5xx. Por eso borrado y compartir exigen
   `{"success": true}` explícito en [n8n.ts](src/lib/n8n.ts); sin esa comprobación
   la UI da por buena una operación que no ocurrió.
+- Los nodos `Verificar sesion (…)` de n8n **no deben llevar credencial de
+  Supabase**. Si se les asigna, inyecta `Authorization: Bearer <service_role>`,
+  que pisa el token del usuario; ese JWT no tiene claim `sub` y `/auth/v1/user`
+  responde `403 bad_jwt`. Su trabajo es solo reenviar las cabeceras de quien llama.
+- `_default.jpg` **no es la foto de ninguna receta**: es la plantilla que n8n
+  copia cuando un alta llega sin foto. Una auditoría de huérfanos lo señala por
+  error. Está protegido en la policy de borrado y también en el código.
+
+### Camino feliz, verificado el 8 ago 2026
+
+Votar, editar notas y fecha, cambiar foto, compartir por email, alta y borrado en
+cascada: los seis pasos comprobados de punta a punta contra producción, con
+sesión de admin.
 
 ### Pendiente
 
-- Ejecutar el bloque `REVOKE` comentado al final de la migración (quita `EXECUTE`
-  público sobre las funciones `SECURITY DEFINER`; ya verificado como seguro).
-- Activar *Leaked password protection* en el panel de Supabase.
-- Probar el camino feliz con sesión de admin: alta, borrado, compartir y voto.
+- Activar *Leaked password protection* en el panel de Supabase (Authentication →
+  Policies). Es lo único que no se puede hacer por SQL ni por API.
+- Limpiar dos fotos huérfanas del bucket: `Raxo_de_la_abuela.jpg` y
+  `Wok_de_verduras_al_curry.jpeg`.
 
 ## graphify
 
