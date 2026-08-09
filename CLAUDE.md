@@ -79,6 +79,13 @@ sesión de admin.
 - Limpiar dos fotos huérfanas del bucket: `Raxo_de_la_abuela.jpg` y
   `Wok_de_verduras_al_curry.jpeg`.
 
+## Hacia dónde puede crecer
+
+[docs/ideas.md](docs/ideas.md) recoge una lluvia de ideas de posibles
+funcionalidades, con un orden sugerido. Nada de eso está decidido ni
+implementado. La primera de la lista es la más barata: Vertex ya extrae
+`tiempo`, `porciones` y `dificultad` de cada receta y se descartan al guardar.
+
 ## graphify
 
 This project has a knowledge graph at graphify-out/ with god nodes, community structure, and cross-file relationships.
