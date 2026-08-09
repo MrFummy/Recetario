@@ -203,5 +203,10 @@
     "mtime": 1786177474.9353921,
     "ast_hash": "88dbd09259c90b631e8df05909328397",
     "semantic_hash": ""
+  },
+  ".graph_antes.json": {
+    "mtime": 1786268074.8299787,
+    "ast_hash": "2116fbc89f0dda8432bac30de85508eb",
+    "semantic_hash": ""
   }
 }
