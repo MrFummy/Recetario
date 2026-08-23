@@ -1,0 +1,52 @@
+-- ═══════════════════════════════════════════════════════════════════════════
+-- Ingredientes estructurados (23 ago 2026) — REGISTRO, no re-ejecutable
+--
+-- Hasta ahora `recetas.ingredientes` era un array de cadenas planas
+-- ("500 gr Carne picada"), con la cantidad, la unidad y el nombre pegados. Así
+-- es imposible saber que la cebolla de una receta es la misma que la de otra,
+-- que es lo que necesitan la despensa y la futura lista de la compra.
+--
+-- Cada ingrediente pasa a ser un objeto:
+--
+--   { "id": "uuid", "nombre": "Cebolla morada", "cantidad": "2 unidades",
+--     "base": "cebolla", "valor": 2, "unidad": "unidad" }
+--
+-- Las cabeceras de sección siguen siendo cadenas ("— Para la salsa —"), de
+-- modo que la web, el PDF, Notion y Google Sheets las siguen pintando igual:
+-- el cambio es aditivo y ninguno de los cuatro destinos necesitó tocarse salvo
+-- el nodo `Rellenar HTML`, que asumía cadenas.
+--
+-- ── Cómo se hizo ───────────────────────────────────────────────────────────
+-- Para las altas NUEVAS: cambiando el prompt del nodo `Vertex AI` del flujo
+-- "Recetas con Frontend", más `Limpia respuesta`, que añade el id y normaliza.
+--
+-- Para las 56 EXISTENTES: elemento a elemento, no con un parser. Se intentó
+-- uno por expresiones regulares y se descartó: los registros venían en seis
+-- formatos distintos ("Azúcar - 60 g", "Chocolate blanco 200 gr", "½ cp de
+-- sal", "20 gr + 20 gr Maizena"...) y producía nombres como "+ 20 gr Maizena".
+-- Además el `base` genérico, que es el motivo de toda la migración, no sale de
+-- una expresión regular.
+--
+-- Por eso este fichero NO es re-ejecutable: los 454 valores fueron decisiones
+-- caso por caso. Queda como registro de qué se hizo y por qué.
+--
+-- ── Verificación ───────────────────────────────────────────────────────────
+--   56 recetas migradas, 0 pendientes, 0 descuadres de recuento
+--   441 ingredientes con id único, 13 cabeceras, 454 elementos (idéntico)
+--   0 sin nombre, 0 sin base, 0 con `valor` mal tipado
+--   143 ingredientes base distintos; huevo en 24 recetas, cebolla en 19
+--
+-- ── Reversión ──────────────────────────────────────────────────────────────
+-- `public.respaldo_ingredientes` conserva los 454 originales:
+--
+--   update public.recetas r set ingredientes = b.ingredientes
+--   from public.respaldo_ingredientes b where b.receta_id = r.id;
+--
+-- Se puede borrar esa tabla cuando la nueva forma esté asentada.
+--
+-- ── Limitación conocida ────────────────────────────────────────────────────
+-- Once ingredientes son combinados ("Sal y pimienta negra") y su `base` es la
+-- frase entera, así que no casan con `sal` ni con `pimienta`. Se mantuvo el
+-- 1:1 a propósito para que la migración fuese verificable; separarlos habría
+-- cambiado los recuentos.
+-- ═══════════════════════════════════════════════════════════════════════════
