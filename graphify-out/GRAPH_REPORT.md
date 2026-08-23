@@ -1,7 +1,7 @@
 # Graph Report - Recetario  (2026-08-23)
 
 ## Corpus Check
-- 41 files · ~41,504 words
+- 41 files · ~41,588 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `c1412254`
+- Built from commit: `f0242f7a`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 

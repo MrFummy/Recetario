@@ -1,5 +1,5 @@
 import type { User } from '@supabase/supabase-js';
-import { Eraser, AlertTriangle } from 'lucide-react';
+import { Eraser, AlertTriangle, LogIn } from 'lucide-react';
 import type { Json } from '../types';
 import { normalizeIngredients, normalizeSteps } from '../lib/recipeContent';
 import { useDespensa } from '../hooks/useDespensa';
@@ -80,7 +80,7 @@ export function IngredientsList({ data, user }: IngredientsListProps) {
             ? `tienes ${marcados.length} de ${marcables.length}`
             : 'marca lo que ya tengas en casa'}
         </span>
-        {marcados.length > 0 && (
+        {user && marcados.length > 0 && (
           <button
             onClick={() => void quitarVarios(marcados.map((i) => i.base!))}
             className="flex items-center gap-1.5 underline decoration-dotted underline-offset-2 hover:text-hot transition-colors"
@@ -91,10 +91,22 @@ export function IngredientsList({ data, user }: IngredientsListProps) {
         )}
       </div>
 
+      {/*
+        Sin sesión el marcado solo vive en memoria. El aviso tiene que ser
+        imposible de pasar por alto: la sesión se guarda por origen, así que
+        estar dentro en el sitio publicado no implica estarlo en otro, y el
+        síntoma —marco algo y al volver no está— parece un fallo del programa.
+      */}
       {!user && (
-        <p className="mt-2 font-mono text-[11px] text-ink-soft/80">
-          inicia sesión para que se guarden entre visitas
-        </p>
+        <div className="mt-3 flex items-start gap-2 border-2 border-dashed border-ink/30 bg-yellow/25 px-3 py-2">
+          <LogIn size={14} className="shrink-0 mt-0.5 text-ink" />
+          <p className="font-mono text-[11px] leading-snug text-ink">
+            Sin sesión iniciada.{' '}
+            <span className="text-ink-soft">
+              Puedes marcar ingredientes, pero se perderán al cerrar la receta.
+            </span>
+          </p>
+        </div>
       )}
     </>
   );

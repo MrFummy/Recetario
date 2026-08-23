@@ -155,8 +155,8 @@
     "semantic_hash": ""
   },
   "src/components/RecipeContent.tsx": {
-    "mtime": 1787508206.3446662,
-    "ast_hash": "5f536bfeef5bb122986a8f900d7bd9bc",
+    "mtime": 1787509119.490327,
+    "ast_hash": "11db52ac35b7ad3d2b0b5743f40e5a3a",
     "semantic_hash": ""
   },
   "src/components/ShareByEmail.tsx": {
@@ -200,8 +200,8 @@
     "semantic_hash": ""
   },
   "CLAUDE.md": {
-    "mtime": 1787508490.2369728,
-    "ast_hash": "aeba262716fa724b29980f54b2de5356",
+    "mtime": 1787508515.6184874,
+    "ast_hash": "52f5d1d7d95fb13753555696ae1c65f7",
     "semantic_hash": ""
   },
   "src/hooks/useDespensa.ts": {
