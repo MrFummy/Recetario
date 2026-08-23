@@ -1,44 +1,102 @@
-import { useState } from 'react';
+import type { User } from '@supabase/supabase-js';
+import { Eraser, AlertTriangle } from 'lucide-react';
 import type { Json } from '../types';
 import { normalizeIngredients, normalizeSteps } from '../lib/recipeContent';
+import { useDespensa } from '../hooks/useDespensa';
 
-/** Lista de ingredientes con checkboxes locales (no persisten entre visitas). */
-export function IngredientsList({ data }: { data: Json }) {
+interface IngredientsListProps {
+  data: Json;
+  user?: User | null;
+}
+
+/**
+ * Lista de ingredientes con la despensa del usuario.
+ *
+ * Marcar un ingrediente lo guarda como "lo tengo en casa", no como "lo tengo
+ * para esta receta": vale para todas las que lo lleven. Sin sesión el marcado
+ * sigue funcionando, pero solo durante la visita.
+ */
+export function IngredientsList({ data, user }: IngredientsListProps) {
   const items = normalizeIngredients(data);
-  const [checked, setChecked] = useState<Record<number, boolean>>({});
+  const { tengo, alternar, quitarVarios, error } = useDespensa(user);
 
   if (items.length === 0) {
     return <p className="text-ink-soft italic font-mono text-sm">sin ingredientes</p>;
   }
 
+  const marcables = items.filter((i) => !i.esGrupo && i.base);
+  const marcados = marcables.filter((i) => tengo(i.base!));
+
   return (
-    <ul className="list-none p-0 m-0">
-      {items.map((item, idx) => {
-        const done = !!checked[idx];
-        return (
-          <li
-            key={idx}
-            className={`grid grid-cols-[20px_auto_1fr] gap-2.5 py-2 text-[14.5px] leading-snug items-baseline border-b border-dashed border-ink/15 last:border-0 cursor-pointer select-none ${done ? 'opacity-40' : ''}`}
-            onClick={() => setChecked((c) => ({ ...c, [idx]: !c[idx] }))}
-          >
-            <span
-              className={`relative w-4 h-4 border-[1.6px] border-ink rounded-[3px] self-center transition-colors ${done ? 'bg-ink' : 'bg-white'}`}
-              aria-hidden
+    <>
+      <ul className="list-none p-0 m-0">
+        {items.map((item, idx) => {
+          if (item.esGrupo) {
+            return (
+              <li
+                key={item.id ?? `grupo-${idx}`}
+                className="pt-4 pb-1 first:pt-0 font-mono text-[11px] uppercase tracking-wider text-accent"
+              >
+                {item.name}
+              </li>
+            );
+          }
+          const clave = item.base;
+          const done = !!clave && tengo(clave);
+          return (
+            <li
+              key={item.id ?? idx}
+              className={`grid grid-cols-[20px_auto_1fr] gap-2.5 py-2 text-[14.5px] leading-snug items-baseline border-b border-dashed border-ink/15 last:border-0 cursor-pointer select-none ${done ? 'opacity-40' : ''}`}
+              onClick={() => clave && void alternar(clave)}
             >
-              {done && (
-                <span className="absolute -top-1 left-px font-script text-[22px] leading-none text-hot">✓</span>
-              )}
-            </span>
-            <span className={`font-mono text-[12.5px] font-medium text-accent whitespace-nowrap ${done ? 'line-through decoration-hot decoration-[1.5px]' : ''}`}>
-              {item.qty || '—'}
-            </span>
-            <span className={`text-ink ${done ? 'line-through decoration-hot decoration-[1.5px]' : ''}`}>
-              {item.name}
-            </span>
-          </li>
-        );
-      })}
-    </ul>
+              <span
+                className={`relative w-4 h-4 border-[1.6px] border-ink rounded-[3px] self-center transition-colors ${done ? 'bg-ink' : 'bg-white'}`}
+                aria-hidden
+              >
+                {done && (
+                  <span className="absolute -top-1 left-px font-script text-[22px] leading-none text-hot">✓</span>
+                )}
+              </span>
+              <span className={`font-mono text-[12.5px] font-medium text-accent whitespace-nowrap ${done ? 'line-through decoration-hot decoration-[1.5px]' : ''}`}>
+                {item.qty || '—'}
+              </span>
+              <span className={`text-ink ${done ? 'line-through decoration-hot decoration-[1.5px]' : ''}`}>
+                {item.name}
+              </span>
+            </li>
+          );
+        })}
+      </ul>
+
+      {error && (
+        <p className="mt-3 flex items-start gap-1.5 font-mono text-[11px] text-hot leading-snug">
+          <AlertTriangle size={13} className="shrink-0 mt-px" /> {error}
+        </p>
+      )}
+
+      <div className="mt-4 flex items-center justify-between gap-3 font-mono text-[11px] text-ink-soft">
+        <span>
+          {marcados.length > 0
+            ? `tienes ${marcados.length} de ${marcables.length}`
+            : 'marca lo que ya tengas en casa'}
+        </span>
+        {marcados.length > 0 && (
+          <button
+            onClick={() => void quitarVarios(marcados.map((i) => i.base!))}
+            className="flex items-center gap-1.5 underline decoration-dotted underline-offset-2 hover:text-hot transition-colors"
+            title="Los quita de tu despensa, para empezar de cero con la próxima elaboración"
+          >
+            <Eraser size={12} /> vaciar los de esta receta
+          </button>
+        )}
+      </div>
+
+      {!user && (
+        <p className="mt-2 font-mono text-[11px] text-ink-soft/80">
+          inicia sesión para que se guarden entre visitas
+        </p>
+      )}
+    </>
   );
 }
 

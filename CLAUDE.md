@@ -11,8 +11,8 @@ despliegue está en el [README](README.md).
 
 ## Empieza por el grafo
 
-`graphify-out/` contiene un grafo de conocimiento del proyecto: 209 nodos y 316
-aristas sobre 36 ficheros, en 14 comunidades. Combina extracción estructural del
+`graphify-out/` contiene un grafo de conocimiento del proyecto: 249 nodos y 360
+aristas sobre 44 ficheros, en 20 comunidades. Combina extracción estructural del
 código (AST) con una capa semántica que recoge lo que el código no dice por sí
 solo: la arquitectura, los servicios externos y el modelo de autorización.
 
@@ -33,7 +33,7 @@ Mapa de comunidades, para saber a cuál preguntar:
 | Migración de RLS | Policies de Supabase |
 | Config TypeScript / Vite / ESLint / npm | Tooling y dependencias |
 
-## Estado actual (8 ago 2026)
+## Estado actual (23 ago 2026)
 
 **La autorización real no está en el frontend.** El `isAdmin` de
 [App.tsx](src/App.tsx) solo decide qué botones se pintan. Quien autoriza de
@@ -66,6 +66,36 @@ Dos trampas que ya han mordido y conviene no repetir:
   copia cuando un alta llega sin foto. Una auditoría de huérfanos lo señala por
   error. Está protegido en la policy de borrado y también en el código.
 
+### Los ingredientes son objetos, no cadenas
+
+Desde el 23 de agosto, cada elemento de `recetas.ingredientes` es:
+
+```json
+{ "id": "uuid", "nombre": "Cebolla morada", "cantidad": "2 unidades",
+  "base": "cebolla", "valor": 2, "unidad": "unidad" }
+```
+
+`base` es el ingrediente genérico y **la clave con la que se cruzan recetas**:
+huevo aparece en 24, cebolla en 19. De ahí come la despensa y comerá la lista de
+la compra. Las cabeceras de sección siguen siendo cadenas (`"— Para la salsa —"`)
+para no romper el PDF, Notion ni Sheets; en la web se detectan y se pintan como
+sección, sin casilla.
+
+Lo produce el prompt del nodo `Vertex AI`, y `Limpia respuesta` añade el `id` y
+normaliza. Las 56 recetas anteriores se migraron a mano, elemento a elemento —ver
+[la migración](supabase/migrations/20260823_estructurar_ingredientes.sql)—, con
+`respaldo_ingredientes` guardando los originales por si hay que revertir.
+
+**Al tocar el prompt, revisa `Rellenar HTML`**: asume que puede recibir cadenas
+u objetos, y si vuelve a asumir solo cadenas, el PDF se rompe.
+
+### La despensa
+
+`despensa` guarda por `(user_id, base)` lo que cada usuario tiene en casa. No es
+por receta a propósito: marcar cebolla vale para las 19 que la llevan. Cuando
+llegue la lista de la compra, tachar en el súper será añadir a la despensa, sin
+dos tablas que sincronizar.
+
 ### Camino feliz, verificado el 8 ago 2026
 
 Votar, editar notas y fecha, cambiar foto, compartir por email, alta y borrado en
@@ -78,13 +108,19 @@ sesión de admin.
   Policies). Es lo único que no se puede hacer por SQL ni por API.
 - Limpiar dos fotos huérfanas del bucket: `Raxo_de_la_abuela.jpg` y
   `Wok_de_verduras_al_curry.jpeg`.
+- Confirmar con sesión iniciada que la despensa persiste entre visitas y entre
+  recetas. La lógica de interfaz está probada; lo que falta necesita login.
+- Once ingredientes son combinados (`"Sal y pimienta negra"`) y su `base` es la
+  frase entera, así que no casan con `sal` ni con `pimienta`. Se verá si molesta
+  cuando exista la lista de la compra.
 
 ## Hacia dónde puede crecer
 
 [docs/ideas.md](docs/ideas.md) recoge una lluvia de ideas de posibles
-funcionalidades, con un orden sugerido. Nada de eso está decidido ni
-implementado. La primera de la lista es la más barata: Vertex ya extrae
-`tiempo`, `porciones` y `dificultad` de cada receta y se descartan al guardar.
+funcionalidades, con un orden sugerido. La primera —estructurar los
+ingredientes— ya está hecha; el resto sigue sin decidir. Sigue en pie que Vertex
+extrae `tiempo`, `porciones` y `dificultad` de cada receta y se descartan al
+guardar, que es lo más barato que queda por rescatar.
 
 ## graphify
 

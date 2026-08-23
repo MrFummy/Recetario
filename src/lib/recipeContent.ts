@@ -3,6 +3,23 @@ import type { Json } from '../types';
 export interface Ingredient {
   qty: string;
   name: string;
+  /** Identificador estable del ingrediente dentro de la receta, si lo trae. */
+  id?: string;
+  /**
+   * Ingrediente genérico en minúsculas ("cebolla" para "2 unidades Cebolla
+   * morada"). Es la clave con la que la despensa reconoce el mismo ingrediente
+   * en recetas distintas. Las recetas anteriores a agosto de 2026 no lo traían;
+   * la migración `20260823_estructurar_ingredientes` lo añadió.
+   */
+  base?: string;
+  /** Cabecera de sección ("— Para la salsa —"), no un ingrediente marcable. */
+  esGrupo?: boolean;
+}
+
+/** Las cabeceras de sección llegan como cadenas sueltas entre guiones largos. */
+function esCabeceraDeGrupo(texto: string): boolean {
+  const t = texto.trim();
+  return t.length > 2 && t.startsWith('—') && t.endsWith('—');
 }
 
 /** Convierte un escalar JSONB a texto; devuelve '' para objetos y arrays. */
@@ -35,14 +52,26 @@ export function normalizeIngredients(data: Json): Ingredient[] {
   if (isRecord(data)) {
     const name = asText(data.nombre);
     if (name) {
-      return [{ qty: asText(data.cantidad), name }];
+      const base = asText(data.base).trim().toLowerCase();
+      return [{
+        qty: asText(data.cantidad),
+        name,
+        id: asText(data.id) || undefined,
+        // Sin `base` explícito, el propio nombre sirve de clave: peor para
+        // cruzar recetas, pero permite marcarlo igualmente.
+        base: base || name.trim().toLowerCase(),
+      }];
     }
     // Objeto agrupador: bajamos un nivel.
     return Object.values(data).flatMap(normalizeIngredients);
   }
 
   const text = asText(data);
-  return text ? [{ qty: '', name: text }] : [];
+  if (!text) return [];
+  if (esCabeceraDeGrupo(text)) {
+    return [{ qty: '', name: text.replace(/^—\s*|\s*—$/g, '').trim(), esGrupo: true }];
+  }
+  return [{ qty: '', name: text, base: text.trim().toLowerCase() }];
 }
 
 /** Aplana el JSONB de pasos a una lista de textos. */

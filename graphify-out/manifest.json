@@ -45,8 +45,8 @@
     "semantic_hash": "0bb06f88e50e3e4dc7078caacc89753d"
   },
   "src/components/RecipeDetail.tsx": {
-    "mtime": 1786177281.151275,
-    "ast_hash": "2a12a6039ca31ca37a8b725b2902c387",
+    "mtime": 1787508216.3430262,
+    "ast_hash": "6fa99878382aa5d51ff87ad00dfda6a6",
     "semantic_hash": ""
   },
   "src/components/RecipeGrid.tsx": {
@@ -75,9 +75,9 @@
     "semantic_hash": ""
   },
   "src/lib/ingredientParser.ts": {
-    "mtime": 1785935915.5688047,
-    "ast_hash": "319b15254cc68bc28ac51d94d26f51bd",
-    "semantic_hash": "319b15254cc68bc28ac51d94d26f51bd"
+    "mtime": 1787508192.4710593,
+    "ast_hash": "d1a8241eba21e3c95037f9052d17a28c",
+    "semantic_hash": ""
   },
   "src/lib/supabase.ts": {
     "mtime": 1785937749.052987,
@@ -155,9 +155,9 @@
     "semantic_hash": ""
   },
   "src/components/RecipeContent.tsx": {
-    "mtime": 1785935761.0731828,
-    "ast_hash": "769a3006e26bc2e47df9d04648244c3c",
-    "semantic_hash": "769a3006e26bc2e47df9d04648244c3c"
+    "mtime": 1787508206.3446662,
+    "ast_hash": "5f536bfeef5bb122986a8f900d7bd9bc",
+    "semantic_hash": ""
   },
   "src/components/ShareByEmail.tsx": {
     "mtime": 1785936109.7676122,
@@ -170,9 +170,9 @@
     "semantic_hash": "f7b8ac7964a42ec3ddb1c8103cbdb636"
   },
   "src/lib/recipeContent.ts": {
-    "mtime": 1785935746.8775096,
-    "ast_hash": "6ebc486a5e33af9e18506bf70b3bdee1",
-    "semantic_hash": "6ebc486a5e33af9e18506bf70b3bdee1"
+    "mtime": 1787508178.0572252,
+    "ast_hash": "6ceadaeee4a88aa85cc19544c5b2e0af",
+    "semantic_hash": ""
   },
   "supabase/migrations/20260805_endurecer_rls.sql": {
     "mtime": 1786177562.2465656,
@@ -200,13 +200,28 @@
     "semantic_hash": ""
   },
   "CLAUDE.md": {
-    "mtime": 1786177474.9353921,
-    "ast_hash": "88dbd09259c90b631e8df05909328397",
+    "mtime": 1787508490.2369728,
+    "ast_hash": "aeba262716fa724b29980f54b2de5356",
     "semantic_hash": ""
   },
-  ".graph_antes.json": {
-    "mtime": 1786268074.8299787,
-    "ast_hash": "2116fbc89f0dda8432bac30de85508eb",
+  "src/hooks/useDespensa.ts": {
+    "mtime": 1787508261.5178552,
+    "ast_hash": "1c282891dec6051ab792e88f5b10e6a8",
+    "semantic_hash": ""
+  },
+  "supabase/migrations/20260823_despensa.sql": {
+    "mtime": 1787508373.8682468,
+    "ast_hash": "fd9c5f3802f8480e9db4bcb0e1161ad1",
+    "semantic_hash": ""
+  },
+  "supabase/migrations/20260823_estructurar_ingredientes.sql": {
+    "mtime": 1787508354.55661,
+    "ast_hash": "a8656291a4656804daac8ccdb6d9e253",
+    "semantic_hash": ""
+  },
+  "docs/ideas.md": {
+    "mtime": 1786304580.460236,
+    "ast_hash": "fad8c112b83f39af497ed3422de6e99e",
     "semantic_hash": ""
   }
 }

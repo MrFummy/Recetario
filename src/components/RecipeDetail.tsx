@@ -239,7 +239,7 @@ export function RecipeDetail({ recipe, onClose, isAdmin, user, onUpdateNotes, on
                 <span className="relative z-10">Ingredientes</span>
                 <span className="absolute left-[-2px] right-[-4px] bottom-[2px] h-2 bg-yellow -z-0 -skew-x-6" />
               </h3>
-              <IngredientsList data={recipe.ingredientes} />
+              <IngredientsList data={recipe.ingredientes} user={user} />
             </section>
 
             <section>

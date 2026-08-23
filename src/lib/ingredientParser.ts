@@ -17,7 +17,11 @@ export const normalizeString = (str: string): string => {
  * interpreten el JSONB exactamente igual.
  */
 export const extractIngredientsText = (ingredientes: Json): string[] => {
-  return normalizeIngredients(ingredientes).map((item) => item.name);
+  // Las cabeceras de sección no son ingredientes: buscar "para la salsa" no
+  // debería devolver todas las recetas que agrupan sus ingredientes.
+  return normalizeIngredients(ingredientes)
+    .filter((item) => !item.esGrupo)
+    .map((item) => item.name);
 };
 
 /**

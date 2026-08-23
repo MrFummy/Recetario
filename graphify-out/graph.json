@@ -21,8 +21,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "package",
-      "community": 8,
-      "community_name": "Scripts de npm",
+      "community": 6,
+      "community_name": "Dependencias de runtime",
       "norm_label": "package.json"
     },
     {
@@ -32,8 +32,8 @@
       "source_location": "L2",
       "_origin": "ast",
       "id": "package_name",
-      "community": 8,
-      "community_name": "Scripts de npm",
+      "community": 6,
+      "community_name": "Dependencias de runtime",
       "norm_label": "name"
     },
     {
@@ -43,8 +43,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "package_private",
-      "community": 8,
-      "community_name": "Scripts de npm",
+      "community": 6,
+      "community_name": "Dependencias de runtime",
       "norm_label": "private"
     },
     {
@@ -54,8 +54,8 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "package_version",
-      "community": 8,
-      "community_name": "Scripts de npm",
+      "community": 6,
+      "community_name": "Dependencias de runtime",
       "norm_label": "version"
     },
     {
@@ -65,8 +65,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "package_type",
-      "community": 8,
-      "community_name": "Scripts de npm",
+      "community": 6,
+      "community_name": "Dependencias de runtime",
       "norm_label": "type"
     },
     {
@@ -76,8 +76,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "package_scripts",
-      "community": 8,
-      "community_name": "Scripts de npm",
+      "community": 6,
+      "community_name": "Dependencias de runtime",
       "norm_label": "scripts"
     },
     {
@@ -87,8 +87,8 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "package_scripts_dev",
-      "community": 8,
-      "community_name": "Scripts de npm",
+      "community": 6,
+      "community_name": "Dependencias de runtime",
       "norm_label": "dev"
     },
     {
@@ -98,8 +98,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "package_scripts_build",
-      "community": 8,
-      "community_name": "Scripts de npm",
+      "community": 6,
+      "community_name": "Dependencias de runtime",
       "norm_label": "build"
     },
     {
@@ -109,8 +109,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "package_scripts_lint",
-      "community": 8,
-      "community_name": "Scripts de npm",
+      "community": 6,
+      "community_name": "Dependencias de runtime",
       "norm_label": "lint"
     },
     {
@@ -120,8 +120,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "package_scripts_preview",
-      "community": 8,
-      "community_name": "Scripts de npm",
+      "community": 6,
+      "community_name": "Dependencias de runtime",
       "norm_label": "preview"
     },
     {
@@ -593,8 +593,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_app",
-      "community": 1,
-      "community_name": "Componentes de interfaz",
+      "community": 5,
+      "community_name": "Catalogo y busqueda",
       "norm_label": "app.tsx"
     },
     {
@@ -604,8 +604,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "src_app_categories",
-      "community": 1,
-      "community_name": "Componentes de interfaz",
+      "community": 5,
+      "community_name": "Catalogo y busqueda",
       "norm_label": "categories"
     },
     {
@@ -659,8 +659,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_filterbar",
-      "community": 1,
-      "community_name": "Componentes de interfaz",
+      "community": 5,
+      "community_name": "Catalogo y busqueda",
       "norm_label": "filterbar.tsx"
     },
     {
@@ -670,8 +670,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "src_components_filterbar_filterbarprops",
-      "community": 1,
-      "community_name": "Componentes de interfaz",
+      "community": 5,
+      "community_name": "Catalogo y busqueda",
       "norm_label": "filterbarprops"
     },
     {
@@ -681,8 +681,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "src_components_filterbar_filterbar",
-      "community": 1,
-      "community_name": "Componentes de interfaz",
+      "community": 5,
+      "community_name": "Catalogo y busqueda",
       "norm_label": "filterbar()"
     },
     {
@@ -692,8 +692,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_ingredientsearch",
-      "community": 1,
-      "community_name": "Componentes de interfaz",
+      "community": 5,
+      "community_name": "Catalogo y busqueda",
       "norm_label": "ingredientsearch.tsx"
     },
     {
@@ -703,8 +703,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "src_components_ingredientsearch_ingredientsearchprops",
-      "community": 1,
-      "community_name": "Componentes de interfaz",
+      "community": 5,
+      "community_name": "Catalogo y busqueda",
       "norm_label": "ingredientsearchprops"
     },
     {
@@ -714,8 +714,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "src_components_ingredientsearch_ingredientsearch",
-      "community": 1,
-      "community_name": "Componentes de interfaz",
+      "community": 5,
+      "community_name": "Catalogo y busqueda",
       "norm_label": "ingredientsearch()"
     },
     {
@@ -807,10 +807,21 @@
       "norm_label": "recipecontent.tsx"
     },
     {
+      "label": "IngredientsListProps",
+      "file_type": "code",
+      "source_file": "src/components/RecipeContent.tsx",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "src_components_recipecontent_ingredientslistprops",
+      "community": 7,
+      "community_name": "Detalle y normalizacion JSONB",
+      "norm_label": "ingredientslistprops"
+    },
+    {
       "label": "IngredientsList()",
       "file_type": "code",
       "source_file": "src/components/RecipeContent.tsx",
-      "source_location": "L6",
+      "source_location": "L19",
       "_origin": "ast",
       "id": "src_components_recipecontent_ingredientslist",
       "community": 7,
@@ -821,7 +832,7 @@
       "label": "StepsList()",
       "file_type": "code",
       "source_file": "src/components/RecipeContent.tsx",
-      "source_location": "L46",
+      "source_location": "L104",
       "_origin": "ast",
       "id": "src_components_recipecontent_stepslist",
       "community": 7,
@@ -978,8 +989,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_starrating",
-      "community": 5,
-      "community_name": "Catalogo y busqueda",
+      "community": 7,
+      "community_name": "Detalle y normalizacion JSONB",
       "norm_label": "starrating.tsx"
     },
     {
@@ -989,8 +1000,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "src_components_starrating_starratingprops",
-      "community": 5,
-      "community_name": "Catalogo y busqueda",
+      "community": 7,
+      "community_name": "Detalle y normalizacion JSONB",
       "norm_label": "starratingprops"
     },
     {
@@ -1000,8 +1011,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "src_components_starrating_starrating",
-      "community": 5,
-      "community_name": "Catalogo y busqueda",
+      "community": 7,
+      "community_name": "Detalle y normalizacion JSONB",
       "norm_label": "starrating()"
     },
     {
@@ -1049,14 +1060,47 @@
       "norm_label": "uploadprogress()"
     },
     {
+      "label": "useDespensa.ts",
+      "file_type": "code",
+      "source_file": "src/hooks/useDespensa.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "src_hooks_usedespensa",
+      "community": 7,
+      "community_name": "Detalle y normalizacion JSONB",
+      "norm_label": "usedespensa.ts"
+    },
+    {
+      "label": "claveDespensa()",
+      "file_type": "code",
+      "source_file": "src/hooks/useDespensa.ts",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "src_hooks_usedespensa_clavedespensa",
+      "community": 7,
+      "community_name": "Detalle y normalizacion JSONB",
+      "norm_label": "clavedespensa()"
+    },
+    {
+      "label": "useDespensa()",
+      "file_type": "code",
+      "source_file": "src/hooks/useDespensa.ts",
+      "source_location": "L18",
+      "_origin": "ast",
+      "id": "src_hooks_usedespensa_usedespensa",
+      "community": 7,
+      "community_name": "Detalle y normalizacion JSONB",
+      "norm_label": "usedespensa()"
+    },
+    {
       "label": "useIngredientSearch.ts",
       "file_type": "code",
       "source_file": "src/hooks/useIngredientSearch.ts",
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_hooks_useingredientsearch",
-      "community": 7,
-      "community_name": "Detalle y normalizacion JSONB",
+      "community": 5,
+      "community_name": "Catalogo y busqueda",
       "norm_label": "useingredientsearch.ts"
     },
     {
@@ -1066,8 +1110,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "src_hooks_useingredientsearch_useingredientsearch",
-      "community": 7,
-      "community_name": "Detalle y normalizacion JSONB",
+      "community": 5,
+      "community_name": "Catalogo y busqueda",
       "norm_label": "useingredientsearch()"
     },
     {
@@ -1132,8 +1176,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_lib_ingredientparser",
-      "community": 7,
-      "community_name": "Detalle y normalizacion JSONB",
+      "community": 5,
+      "community_name": "Catalogo y busqueda",
       "norm_label": "ingredientparser.ts"
     },
     {
@@ -1143,8 +1187,8 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "src_lib_ingredientparser_normalizestring",
-      "community": 7,
-      "community_name": "Detalle y normalizacion JSONB",
+      "community": 5,
+      "community_name": "Catalogo y busqueda",
       "norm_label": "normalizestring()"
     },
     {
@@ -1154,19 +1198,19 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "src_lib_ingredientparser_extractingredientstext",
-      "community": 7,
-      "community_name": "Detalle y normalizacion JSONB",
+      "community": 5,
+      "community_name": "Catalogo y busqueda",
       "norm_label": "extractingredientstext()"
     },
     {
       "label": "recipeMatchesIngredients()",
       "file_type": "code",
       "source_file": "src/lib/ingredientParser.ts",
-      "source_location": "L26",
+      "source_location": "L30",
       "_origin": "ast",
       "id": "src_lib_ingredientparser_recipematchesingredients",
-      "community": 7,
-      "community_name": "Detalle y normalizacion JSONB",
+      "community": 5,
+      "community_name": "Catalogo y busqueda",
       "norm_label": "recipematchesingredients()"
     },
     {
@@ -1236,10 +1280,21 @@
       "norm_label": "ingredient"
     },
     {
+      "label": "esCabeceraDeGrupo()",
+      "file_type": "code",
+      "source_file": "src/lib/recipeContent.ts",
+      "source_location": "L20",
+      "_origin": "ast",
+      "id": "src_lib_recipecontent_escabeceradegrupo",
+      "community": 7,
+      "community_name": "Detalle y normalizacion JSONB",
+      "norm_label": "escabeceradegrupo()"
+    },
+    {
       "label": "asText()",
       "file_type": "code",
       "source_file": "src/lib/recipeContent.ts",
-      "source_location": "L9",
+      "source_location": "L26",
       "_origin": "ast",
       "id": "src_lib_recipecontent_astext",
       "community": 7,
@@ -1250,7 +1305,7 @@
       "label": "isRecord()",
       "file_type": "code",
       "source_file": "src/lib/recipeContent.ts",
-      "source_location": "L16",
+      "source_location": "L33",
       "_origin": "ast",
       "id": "src_lib_recipecontent_isrecord",
       "community": 7,
@@ -1261,7 +1316,7 @@
       "label": "normalizeIngredients()",
       "file_type": "code",
       "source_file": "src/lib/recipeContent.ts",
-      "source_location": "L28",
+      "source_location": "L45",
       "_origin": "ast",
       "id": "src_lib_recipecontent_normalizeingredients",
       "community": 7,
@@ -1272,7 +1327,7 @@
       "label": "normalizeSteps()",
       "file_type": "code",
       "source_file": "src/lib/recipeContent.ts",
-      "source_location": "L49",
+      "source_location": "L78",
       "_origin": "ast",
       "id": "src_lib_recipecontent_normalizesteps",
       "community": 7,
@@ -1283,7 +1338,7 @@
       "label": "hasNotas()",
       "file_type": "code",
       "source_file": "src/lib/recipeContent.ts",
-      "source_location": "L66",
+      "source_location": "L95",
       "_origin": "ast",
       "id": "src_lib_recipecontent_hasnotas",
       "community": 7,
@@ -1294,7 +1349,7 @@
       "label": "renderNotas()",
       "file_type": "code",
       "source_file": "src/lib/recipeContent.ts",
-      "source_location": "L81",
+      "source_location": "L110",
       "_origin": "ast",
       "id": "src_lib_recipecontent_rendernotas",
       "community": 7,
@@ -1330,8 +1385,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_main",
-      "community": 1,
-      "community_name": "Componentes de interfaz",
+      "community": 5,
+      "community_name": "Catalogo y busqueda",
       "norm_label": "main.tsx"
     },
     {
@@ -1341,8 +1396,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_types",
-      "community": 7,
-      "community_name": "Detalle y normalizacion JSONB",
+      "community": 5,
+      "community_name": "Catalogo y busqueda",
       "norm_label": "types.ts"
     },
     {
@@ -1374,8 +1429,8 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "src_types_category",
-      "community": 1,
-      "community_name": "Componentes de interfaz",
+      "community": 5,
+      "community_name": "Catalogo y busqueda",
       "norm_label": "category"
     },
     {
@@ -1421,6 +1476,39 @@
       "community": 18,
       "community_name": "20260808_revocar_execute_funciones.sql",
       "norm_label": "20260808_revocar_execute_funciones.sql"
+    },
+    {
+      "label": "20260823_despensa.sql",
+      "file_type": "code",
+      "source_file": "supabase/migrations/20260823_despensa.sql",
+      "source_location": null,
+      "_origin": "ast",
+      "id": "supabase_migrations_20260823_despensa",
+      "community": 8,
+      "community_name": "Scripts de npm",
+      "norm_label": "20260823_despensa.sql"
+    },
+    {
+      "label": "public.despensa",
+      "file_type": "code",
+      "source_file": "supabase/migrations/20260823_despensa.sql",
+      "source_location": "L21",
+      "_origin": "ast",
+      "id": "supabase_migrations_20260823_despensa_public_despensa",
+      "community": 8,
+      "community_name": "Scripts de npm",
+      "norm_label": "public.despensa"
+    },
+    {
+      "label": "20260823_estructurar_ingredientes.sql",
+      "file_type": "code",
+      "source_file": "supabase/migrations/20260823_estructurar_ingredientes.sql",
+      "source_location": null,
+      "_origin": "ast",
+      "id": "supabase_migrations_20260823_estructurar_ingredientes",
+      "community": 19,
+      "community_name": "20260823_estructurar_ingredientes.sql",
+      "norm_label": "20260823_estructurar_ingredientes.sql"
     },
     {
       "label": "tsconfig.app.json",
@@ -1984,21 +2072,43 @@
       "norm_label": "empieza por el grafo"
     },
     {
-      "label": "Estado actual (8 ago 2026)",
+      "label": "Estado actual (23 ago 2026)",
       "file_type": "document",
       "source_file": "CLAUDE.md",
       "source_location": "L36",
       "_origin": "ast",
-      "id": "claude_estado_actual_8_ago_2026",
+      "id": "claude_estado_actual_23_ago_2026",
       "community": 14,
       "community_name": "Mi Recetario \u2014 contexto del proyecto",
-      "norm_label": "estado actual (8 ago 2026)"
+      "norm_label": "estado actual (23 ago 2026)"
+    },
+    {
+      "label": "Los ingredientes son objetos, no cadenas",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": "L69",
+      "_origin": "ast",
+      "id": "claude_los_ingredientes_son_objetos_no_cadenas",
+      "community": 14,
+      "community_name": "Mi Recetario \u2014 contexto del proyecto",
+      "norm_label": "los ingredientes son objetos, no cadenas"
+    },
+    {
+      "label": "La despensa",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": "L92",
+      "_origin": "ast",
+      "id": "claude_la_despensa",
+      "community": 14,
+      "community_name": "Mi Recetario \u2014 contexto del proyecto",
+      "norm_label": "la despensa"
     },
     {
       "label": "Camino feliz, verificado el 8 ago 2026",
       "file_type": "document",
       "source_file": "CLAUDE.md",
-      "source_location": "L69",
+      "source_location": "L99",
       "_origin": "ast",
       "id": "claude_camino_feliz_verificado_el_8_ago_2026",
       "community": 14,
@@ -2009,7 +2119,7 @@
       "label": "Pendiente",
       "file_type": "document",
       "source_file": "CLAUDE.md",
-      "source_location": "L75",
+      "source_location": "L105",
       "_origin": "ast",
       "id": "claude_pendiente",
       "community": 14,
@@ -2017,15 +2127,147 @@
       "norm_label": "pendiente"
     },
     {
+      "label": "Hacia d\u00f3nde puede crecer",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": "L117",
+      "_origin": "ast",
+      "id": "claude_hacia_d\u00f3nde_puede_crecer",
+      "community": 14,
+      "community_name": "Mi Recetario \u2014 contexto del proyecto",
+      "norm_label": "hacia donde puede crecer"
+    },
+    {
       "label": "graphify",
       "file_type": "document",
       "source_file": "CLAUDE.md",
-      "source_location": "L82",
+      "source_location": "L125",
       "_origin": "ast",
       "id": "claude_graphify",
       "community": 14,
       "community_name": "Mi Recetario \u2014 contexto del proyecto",
       "norm_label": "graphify"
+    },
+    {
+      "label": "ideas.md",
+      "file_type": "document",
+      "source_file": "docs/ideas.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "docs_ideas",
+      "community": 14,
+      "community_name": "Mi Recetario \u2014 contexto del proyecto",
+      "norm_label": "ideas.md"
+    },
+    {
+      "label": "Ideas para el Recetario",
+      "file_type": "document",
+      "source_file": "docs/ideas.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "docs_ideas_ideas_para_el_recetario",
+      "community": 14,
+      "community_name": "Mi Recetario \u2014 contexto del proyecto",
+      "norm_label": "ideas para el recetario"
+    },
+    {
+      "label": "El punto de partida: datos que ya se pagan y se tiran",
+      "file_type": "document",
+      "source_file": "docs/ideas.md",
+      "source_location": "L13",
+      "_origin": "ast",
+      "id": "docs_ideas_el_punto_de_partida_datos_que_ya_se_pagan_y_se_tiran",
+      "community": 14,
+      "community_name": "Mi Recetario \u2014 contexto del proyecto",
+      "norm_label": "el punto de partida: datos que ya se pagan y se tiran"
+    },
+    {
+      "label": "Cocinar de verdad",
+      "file_type": "document",
+      "source_file": "docs/ideas.md",
+      "source_location": "L37",
+      "_origin": "ast",
+      "id": "docs_ideas_cocinar_de_verdad",
+      "community": 14,
+      "community_name": "Mi Recetario \u2014 contexto del proyecto",
+      "norm_label": "cocinar de verdad"
+    },
+    {
+      "label": "Men\u00fa semanal y lista de la compra",
+      "file_type": "document",
+      "source_file": "docs/ideas.md",
+      "source_location": "L53",
+      "_origin": "ast",
+      "id": "docs_ideas_men\u00fa_semanal_y_lista_de_la_compra",
+      "community": 14,
+      "community_name": "Mi Recetario \u2014 contexto del proyecto",
+      "norm_label": "menu semanal y lista de la compra"
+    },
+    {
+      "label": "Encontrar recetas",
+      "file_type": "document",
+      "source_file": "docs/ideas.md",
+      "source_location": "L72",
+      "_origin": "ast",
+      "id": "docs_ideas_encontrar_recetas",
+      "community": 14,
+      "community_name": "Mi Recetario \u2014 contexto del proyecto",
+      "norm_label": "encontrar recetas"
+    },
+    {
+      "label": "Dar de alta con menos fricci\u00f3n",
+      "file_type": "document",
+      "source_file": "docs/ideas.md",
+      "source_location": "L90",
+      "_origin": "ast",
+      "id": "docs_ideas_dar_de_alta_con_menos_fricci\u00f3n",
+      "community": 14,
+      "community_name": "Mi Recetario \u2014 contexto del proyecto",
+      "norm_label": "dar de alta con menos friccion"
+    },
+    {
+      "label": "Los afans",
+      "file_type": "document",
+      "source_file": "docs/ideas.md",
+      "source_location": "L106",
+      "_origin": "ast",
+      "id": "docs_ideas_los_afans",
+      "community": 14,
+      "community_name": "Mi Recetario \u2014 contexto del proyecto",
+      "norm_label": "los afans"
+    },
+    {
+      "label": "Automatismos con n8n",
+      "file_type": "document",
+      "source_file": "docs/ideas.md",
+      "source_location": "L117",
+      "_origin": "ast",
+      "id": "docs_ideas_automatismos_con_n8n",
+      "community": 14,
+      "community_name": "Mi Recetario \u2014 contexto del proyecto",
+      "norm_label": "automatismos con n8n"
+    },
+    {
+      "label": "Orden sugerido",
+      "file_type": "document",
+      "source_file": "docs/ideas.md",
+      "source_location": "L128",
+      "_origin": "ast",
+      "id": "docs_ideas_orden_sugerido",
+      "community": 14,
+      "community_name": "Mi Recetario \u2014 contexto del proyecto",
+      "norm_label": "orden sugerido"
+    },
+    {
+      "label": "Dos avisos de realidad",
+      "file_type": "document",
+      "source_file": "docs/ideas.md",
+      "source_location": "L142",
+      "_origin": "ast",
+      "id": "docs_ideas_dos_avisos_de_realidad",
+      "community": 14,
+      "community_name": "Mi Recetario \u2014 contexto del proyecto",
+      "norm_label": "dos avisos de realidad"
     },
     {
       "label": "query_20260726_092833_por_que_supabase_js_client_with_no_backend_layer_a.md",
@@ -2102,8 +2344,8 @@
       "_origin": "semantic",
       "community": 0,
       "norm_label": "mi recetario (spa)",
-      "id": "recetario_app",
-      "community_name": "Arquitectura, servicios y seguridad"
+      "community_name": "Arquitectura, servicios y seguridad",
+      "id": "recetario_app"
     },
     {
       "label": "Arquitectura sin backend",
@@ -2114,8 +2356,8 @@
       "_origin": "semantic",
       "community": 0,
       "norm_label": "arquitectura sin backend",
-      "id": "arq_sin_backend",
-      "community_name": "Arquitectura, servicios y seguridad"
+      "community_name": "Arquitectura, servicios y seguridad",
+      "id": "arq_sin_backend"
     },
     {
       "label": "Build estatico para Nginx",
@@ -2126,8 +2368,8 @@
       "_origin": "semantic",
       "community": 0,
       "norm_label": "build estatico para nginx",
-      "id": "build_estatico",
-      "community_name": "Arquitectura, servicios y seguridad"
+      "community_name": "Arquitectura, servicios y seguridad",
+      "id": "build_estatico"
     },
     {
       "label": "Despliegue en Synology",
@@ -2138,8 +2380,8 @@
       "_origin": "semantic",
       "community": 0,
       "norm_label": "despliegue en synology",
-      "id": "despliegue_synology",
-      "community_name": "Arquitectura, servicios y seguridad"
+      "community_name": "Arquitectura, servicios y seguridad",
+      "id": "despliegue_synology"
     },
     {
       "label": "SPA sin router",
@@ -2150,8 +2392,8 @@
       "_origin": "semantic",
       "community": 0,
       "norm_label": "spa sin router",
-      "id": "spa_sin_router",
-      "community_name": "Arquitectura, servicios y seguridad"
+      "community_name": "Arquitectura, servicios y seguridad",
+      "id": "spa_sin_router"
     },
     {
       "label": "Supabase",
@@ -2162,8 +2404,8 @@
       "_origin": "semantic",
       "community": 0,
       "norm_label": "supabase",
-      "id": "supabase",
-      "community_name": "Arquitectura, servicios y seguridad"
+      "community_name": "Arquitectura, servicios y seguridad",
+      "id": "supabase"
     },
     {
       "label": "n8n",
@@ -2174,8 +2416,8 @@
       "_origin": "semantic",
       "community": 0,
       "norm_label": "n8n",
-      "id": "n8n",
-      "community_name": "Arquitectura, servicios y seguridad"
+      "community_name": "Arquitectura, servicios y seguridad",
+      "id": "n8n"
     },
     {
       "label": "Notion",
@@ -2186,8 +2428,8 @@
       "_origin": "semantic",
       "community": 0,
       "norm_label": "notion",
-      "id": "notion",
-      "community_name": "Arquitectura, servicios y seguridad"
+      "community_name": "Arquitectura, servicios y seguridad",
+      "id": "notion"
     },
     {
       "label": "Google Drive",
@@ -2198,8 +2440,8 @@
       "_origin": "semantic",
       "community": 0,
       "norm_label": "google drive",
-      "id": "google_drive",
-      "community_name": "Arquitectura, servicios y seguridad"
+      "community_name": "Arquitectura, servicios y seguridad",
+      "id": "google_drive"
     },
     {
       "label": "Google Sheets",
@@ -2210,8 +2452,8 @@
       "_origin": "semantic",
       "community": 0,
       "norm_label": "google sheets",
-      "id": "google_sheets",
-      "community_name": "Arquitectura, servicios y seguridad"
+      "community_name": "Arquitectura, servicios y seguridad",
+      "id": "google_sheets"
     },
     {
       "label": "Gmail",
@@ -2222,8 +2464,8 @@
       "_origin": "semantic",
       "community": 0,
       "norm_label": "gmail",
-      "id": "gmail",
-      "community_name": "Arquitectura, servicios y seguridad"
+      "community_name": "Arquitectura, servicios y seguridad",
+      "id": "gmail"
     },
     {
       "label": "Vertex AI (Gemini 2.5 Pro)",
@@ -2234,8 +2476,8 @@
       "_origin": "semantic",
       "community": 0,
       "norm_label": "vertex ai (gemini 2.5 pro)",
-      "id": "vertex_ai",
-      "community_name": "Arquitectura, servicios y seguridad"
+      "community_name": "Arquitectura, servicios y seguridad",
+      "id": "vertex_ai"
     },
     {
       "label": "Gotenberg",
@@ -2246,8 +2488,8 @@
       "_origin": "semantic",
       "community": 0,
       "norm_label": "gotenberg",
-      "id": "gotenberg",
-      "community_name": "Arquitectura, servicios y seguridad"
+      "community_name": "Arquitectura, servicios y seguridad",
+      "id": "gotenberg"
     },
     {
       "label": "Webhook nueva-receta",
@@ -2258,8 +2500,8 @@
       "_origin": "semantic",
       "community": 0,
       "norm_label": "webhook nueva-receta",
-      "id": "wh_nueva",
-      "community_name": "Arquitectura, servicios y seguridad"
+      "community_name": "Arquitectura, servicios y seguridad",
+      "id": "wh_nueva"
     },
     {
       "label": "Webhook eliminar-receta",
@@ -2270,8 +2512,8 @@
       "_origin": "semantic",
       "community": 0,
       "norm_label": "webhook eliminar-receta",
-      "id": "wh_eliminar",
-      "community_name": "Arquitectura, servicios y seguridad"
+      "community_name": "Arquitectura, servicios y seguridad",
+      "id": "wh_eliminar"
     },
     {
       "label": "Webhook compartir-receta",
@@ -2282,8 +2524,8 @@
       "_origin": "semantic",
       "community": 0,
       "norm_label": "webhook compartir-receta",
-      "id": "wh_compartir",
-      "community_name": "Arquitectura, servicios y seguridad"
+      "community_name": "Arquitectura, servicios y seguridad",
+      "id": "wh_compartir"
     },
     {
       "label": "Modelo de seguridad",
@@ -2294,8 +2536,8 @@
       "_origin": "semantic",
       "community": 0,
       "norm_label": "modelo de seguridad",
-      "id": "modelo_seguridad",
-      "community_name": "Arquitectura, servicios y seguridad"
+      "community_name": "Arquitectura, servicios y seguridad",
+      "id": "modelo_seguridad"
     },
     {
       "label": "RLS de recetas",
@@ -2306,8 +2548,8 @@
       "_origin": "semantic",
       "community": 0,
       "norm_label": "rls de recetas",
-      "id": "rls_recetas",
-      "community_name": "Arquitectura, servicios y seguridad"
+      "community_name": "Arquitectura, servicios y seguridad",
+      "id": "rls_recetas"
     },
     {
       "label": "RLS de valoraciones",
@@ -2318,8 +2560,8 @@
       "_origin": "semantic",
       "community": 0,
       "norm_label": "rls de valoraciones",
-      "id": "rls_valoraciones",
-      "community_name": "Arquitectura, servicios y seguridad"
+      "community_name": "Arquitectura, servicios y seguridad",
+      "id": "rls_valoraciones"
     },
     {
       "label": "RLS del bucket fotos-recetas",
@@ -2330,8 +2572,8 @@
       "_origin": "semantic",
       "community": 0,
       "norm_label": "rls del bucket fotos-recetas",
-      "id": "rls_storage",
-      "community_name": "Arquitectura, servicios y seguridad"
+      "community_name": "Arquitectura, servicios y seguridad",
+      "id": "rls_storage"
     },
     {
       "label": "Tabla admins y es_admin()",
@@ -2342,8 +2584,8 @@
       "_origin": "semantic",
       "community": 0,
       "norm_label": "tabla admins y es_admin()",
-      "id": "tabla_admins",
-      "community_name": "Arquitectura, servicios y seguridad"
+      "community_name": "Arquitectura, servicios y seguridad",
+      "id": "tabla_admins"
     },
     {
       "label": "Trigger de la media",
@@ -2354,8 +2596,8 @@
       "_origin": "semantic",
       "community": 0,
       "norm_label": "trigger de la media",
-      "id": "trigger_media",
-      "community_name": "Arquitectura, servicios y seguridad"
+      "community_name": "Arquitectura, servicios y seguridad",
+      "id": "trigger_media"
     },
     {
       "label": "Validacion de JWT en n8n",
@@ -2366,8 +2608,8 @@
       "_origin": "semantic",
       "community": 0,
       "norm_label": "validacion de jwt en n8n",
-      "id": "validacion_jwt",
-      "community_name": "Arquitectura, servicios y seguridad"
+      "community_name": "Arquitectura, servicios y seguridad",
+      "id": "validacion_jwt"
     },
     {
       "label": "Rol admin",
@@ -2378,8 +2620,8 @@
       "_origin": "semantic",
       "community": 0,
       "norm_label": "rol admin",
-      "id": "rol_admin",
-      "community_name": "Arquitectura, servicios y seguridad"
+      "community_name": "Arquitectura, servicios y seguridad",
+      "id": "rol_admin"
     },
     {
       "label": "Rol afan",
@@ -2390,8 +2632,8 @@
       "_origin": "semantic",
       "community": 0,
       "norm_label": "rol afan",
-      "id": "rol_afan",
-      "community_name": "Arquitectura, servicios y seguridad"
+      "community_name": "Arquitectura, servicios y seguridad",
+      "id": "rol_afan"
     },
     {
       "label": "Visitante anonimo",
@@ -2402,8 +2644,8 @@
       "_origin": "semantic",
       "community": 0,
       "norm_label": "visitante anonimo",
-      "id": "rol_anonimo",
-      "community_name": "Arquitectura, servicios y seguridad"
+      "community_name": "Arquitectura, servicios y seguridad",
+      "id": "rol_anonimo"
     },
     {
       "label": "Catalogo",
@@ -2414,8 +2656,8 @@
       "_origin": "semantic",
       "community": 0,
       "norm_label": "catalogo",
-      "id": "mod_catalogo",
-      "community_name": "Arquitectura, servicios y seguridad"
+      "community_name": "Arquitectura, servicios y seguridad",
+      "id": "mod_catalogo"
     },
     {
       "label": "Busqueda por ingredientes",
@@ -2426,8 +2668,8 @@
       "_origin": "semantic",
       "community": 0,
       "norm_label": "busqueda por ingredientes",
-      "id": "mod_busqueda",
-      "community_name": "Arquitectura, servicios y seguridad"
+      "community_name": "Arquitectura, servicios y seguridad",
+      "id": "mod_busqueda"
     },
     {
       "label": "Detalle de receta",
@@ -2438,8 +2680,8 @@
       "_origin": "semantic",
       "community": 0,
       "norm_label": "detalle de receta",
-      "id": "mod_detalle",
-      "community_name": "Arquitectura, servicios y seguridad"
+      "community_name": "Arquitectura, servicios y seguridad",
+      "id": "mod_detalle"
     },
     {
       "label": "Alta de receta",
@@ -2450,8 +2692,8 @@
       "_origin": "semantic",
       "community": 0,
       "norm_label": "alta de receta",
-      "id": "mod_alta",
-      "community_name": "Arquitectura, servicios y seguridad"
+      "community_name": "Arquitectura, servicios y seguridad",
+      "id": "mod_alta"
     },
     {
       "label": "Valoraciones",
@@ -2462,8 +2704,8 @@
       "_origin": "semantic",
       "community": 0,
       "norm_label": "valoraciones",
-      "id": "mod_valoraciones",
-      "community_name": "Arquitectura, servicios y seguridad"
+      "community_name": "Arquitectura, servicios y seguridad",
+      "id": "mod_valoraciones"
     },
     {
       "label": "JSONB heterogeneo",
@@ -2474,8 +2716,8 @@
       "_origin": "semantic",
       "community": 0,
       "norm_label": "jsonb heterogeneo",
-      "id": "jsonb_heterogeneo",
-      "community_name": "Arquitectura, servicios y seguridad"
+      "community_name": "Arquitectura, servicios y seguridad",
+      "id": "jsonb_heterogeneo"
     },
     {
       "label": "Reglas de AGENTS.md",
@@ -2486,8 +2728,8 @@
       "_origin": "semantic",
       "community": 0,
       "norm_label": "reglas de agents.md",
-      "id": "reglas_agentes",
-      "community_name": "Arquitectura, servicios y seguridad"
+      "community_name": "Arquitectura, servicios y seguridad",
+      "id": "reglas_agentes"
     },
     {
       "label": "index.html",
@@ -2498,8 +2740,8 @@
       "_origin": "semantic",
       "community": 0,
       "norm_label": "index.html",
-      "id": "index_html",
-      "community_name": "Arquitectura, servicios y seguridad"
+      "community_name": "Arquitectura, servicios y seguridad",
+      "id": "index_html"
     },
     {
       "label": "favicon.svg",
@@ -2510,8 +2752,8 @@
       "_origin": "semantic",
       "community": 0,
       "norm_label": "favicon.svg",
-      "id": "public_favicon",
-      "community_name": "Arquitectura, servicios y seguridad"
+      "community_name": "Arquitectura, servicios y seguridad",
+      "id": "public_favicon"
     },
     {
       "label": "icons.svg",
@@ -2522,8 +2764,8 @@
       "_origin": "semantic",
       "community": 11,
       "norm_label": "icons.svg",
-      "id": "public_icons_sprite",
-      "community_name": "Sprite de iconos"
+      "community_name": "Sprite de iconos",
+      "id": "public_icons_sprite"
     },
     {
       "label": "placeholder.jpg",
@@ -2534,8 +2776,8 @@
       "_origin": "semantic",
       "community": 0,
       "norm_label": "placeholder.jpg",
-      "id": "src_assets_placeholder_img",
-      "community_name": "Arquitectura, servicios y seguridad"
+      "community_name": "Arquitectura, servicios y seguridad",
+      "id": "src_assets_placeholder_img"
     }
   ],
   "links": [
@@ -3903,7 +4145,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/RecipeContent.tsx",
-      "source_location": "L6",
+      "source_location": "L19",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_recipecontent",
@@ -3914,7 +4156,18 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/RecipeContent.tsx",
-      "source_location": "L46",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_recipecontent",
+      "target": "src_components_recipecontent_ingredientslistprops",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/RecipeContent.tsx",
+      "source_location": "L104",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_recipecontent",
@@ -3926,7 +4179,31 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/RecipeContent.tsx",
-      "source_location": "L3",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_recipecontent",
+      "target": "src_hooks_usedespensa",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/RecipeContent.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_recipecontent",
+      "target": "src_hooks_usedespensa_usedespensa",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/RecipeContent.tsx",
+      "source_location": "L4",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_recipecontent",
@@ -3938,7 +4215,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/RecipeContent.tsx",
-      "source_location": "L3",
+      "source_location": "L4",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_recipecontent",
@@ -3950,7 +4227,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/RecipeContent.tsx",
-      "source_location": "L3",
+      "source_location": "L4",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_recipecontent",
@@ -3962,7 +4239,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/RecipeContent.tsx",
-      "source_location": "L2",
+      "source_location": "L3",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_recipecontent",
@@ -3974,7 +4251,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/RecipeContent.tsx",
-      "source_location": "L2",
+      "source_location": "L3",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_recipecontent",
@@ -3994,12 +4271,36 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "references",
+      "context": "field",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/RecipeContent.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_recipecontent_ingredientslistprops",
+      "target": "src_types_json",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/RecipeContent.tsx",
-      "source_location": "L7",
+      "source_location": "L21",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_recipecontent_ingredientslist",
+      "target": "src_hooks_usedespensa_usedespensa"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/RecipeContent.tsx",
+      "source_location": "L20",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_recipecontent_ingredientslist",
@@ -4023,7 +4324,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/RecipeContent.tsx",
-      "source_location": "L47",
+      "source_location": "L105",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_recipecontent_stepslist",
@@ -4498,6 +4799,100 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useDespensa.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_hooks_usedespensa",
+      "target": "src_hooks_usedespensa_clavedespensa",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useDespensa.ts",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_hooks_usedespensa",
+      "target": "src_hooks_usedespensa_usedespensa",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useDespensa.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_hooks_usedespensa",
+      "target": "src_lib_errors",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useDespensa.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_hooks_usedespensa",
+      "target": "src_lib_errors_errormessage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useDespensa.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_hooks_usedespensa",
+      "target": "src_lib_supabase",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useDespensa.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_hooks_usedespensa",
+      "target": "src_lib_supabase_supabase",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useDespensa.ts",
+      "source_location": "L55",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_hooks_usedespensa_usedespensa",
+      "target": "src_hooks_usedespensa_clavedespensa",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/hooks/useDespensa.ts",
+      "source_location": "L78",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_hooks_usedespensa_usedespensa",
+      "target": "src_lib_errors_errormessage"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "src/hooks/useIngredientSearch.ts",
       "source_location": "L5",
       "weight": 1.0,
@@ -4781,7 +5176,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/lib/ingredientParser.ts",
-      "source_location": "L26",
+      "source_location": "L30",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_lib_ingredientparser",
@@ -4853,7 +5248,7 @@
       "context": "argument",
       "confidence": "INFERRED",
       "source_file": "src/lib/ingredientParser.ts",
-      "source_location": "L30",
+      "source_location": "L34",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_lib_ingredientparser_recipematchesingredients",
@@ -4866,7 +5261,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/lib/ingredientParser.ts",
-      "source_location": "L20",
+      "source_location": "L22",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_lib_ingredientparser_extractingredientstext",
@@ -4877,7 +5272,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/lib/ingredientParser.ts",
-      "source_location": "L29",
+      "source_location": "L33",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_lib_ingredientparser_recipematchesingredients",
@@ -4957,7 +5352,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/lib/recipeContent.ts",
-      "source_location": "L9",
+      "source_location": "L26",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_lib_recipecontent",
@@ -4968,7 +5363,18 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/lib/recipeContent.ts",
-      "source_location": "L66",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_lib_recipecontent",
+      "target": "src_lib_recipecontent_escabeceradegrupo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/recipeContent.ts",
+      "source_location": "L95",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_lib_recipecontent",
@@ -4990,7 +5396,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/lib/recipeContent.ts",
-      "source_location": "L16",
+      "source_location": "L33",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_lib_recipecontent",
@@ -5001,7 +5407,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/lib/recipeContent.ts",
-      "source_location": "L28",
+      "source_location": "L45",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_lib_recipecontent",
@@ -5012,7 +5418,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/lib/recipeContent.ts",
-      "source_location": "L49",
+      "source_location": "L78",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_lib_recipecontent",
@@ -5023,7 +5429,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/lib/recipeContent.ts",
-      "source_location": "L81",
+      "source_location": "L110",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_lib_recipecontent",
@@ -5059,70 +5465,82 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/lib/recipeContent.ts",
-      "source_location": "L36",
+      "source_location": "L71",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_lib_recipecontent_normalizeingredients",
-      "target": "src_lib_recipecontent_astext",
+      "target": "src_lib_recipecontent_escabeceradegrupo",
       "confidence_score": 1.0
     },
     {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
-      "source_file": "src/lib/recipeContent.ts",
-      "source_location": "L57",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_lib_recipecontent_normalizesteps",
-      "target": "src_lib_recipecontent_astext",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "src/lib/recipeContent.ts",
-      "source_location": "L35",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_lib_recipecontent_normalizeingredients",
-      "target": "src_lib_recipecontent_isrecord",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "src/lib/recipeContent.ts",
-      "source_location": "L56",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_lib_recipecontent_normalizesteps",
-      "target": "src_lib_recipecontent_isrecord",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "references",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/lib/recipeContent.ts",
-      "source_location": "L32",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_lib_recipecontent_normalizeingredients",
-      "target": "src_types_json"
-    },
-    {
-      "relation": "references",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
       "source_file": "src/lib/recipeContent.ts",
       "source_location": "L53",
       "weight": 1.0,
       "_origin": "ast",
+      "source": "src_lib_recipecontent_normalizeingredients",
+      "target": "src_lib_recipecontent_astext",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/recipeContent.ts",
+      "source_location": "L86",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_lib_recipecontent_normalizesteps",
+      "target": "src_lib_recipecontent_astext",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/recipeContent.ts",
+      "source_location": "L52",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_lib_recipecontent_normalizeingredients",
+      "target": "src_lib_recipecontent_isrecord",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/recipeContent.ts",
+      "source_location": "L85",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_lib_recipecontent_normalizesteps",
+      "target": "src_lib_recipecontent_isrecord",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/lib/recipeContent.ts",
+      "source_location": "L49",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_lib_recipecontent_normalizeingredients",
+      "target": "src_types_json"
+    },
+    {
+      "relation": "references",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/lib/recipeContent.ts",
+      "source_location": "L82",
+      "weight": 1.0,
+      "_origin": "ast",
       "source": "src_lib_recipecontent_normalizesteps",
       "target": "src_types_json"
     },
@@ -5132,7 +5550,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/lib/recipeContent.ts",
-      "source_location": "L68",
+      "source_location": "L97",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_lib_recipecontent_hasnotas",
@@ -5180,6 +5598,17 @@
       "_origin": "ast",
       "source": "src_types",
       "target": "src_types_recipe",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "supabase/migrations/20260823_despensa.sql",
+      "source_location": "L21",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "supabase_migrations_20260823_despensa",
+      "target": "supabase_migrations_20260823_despensa_public_despensa",
       "confidence_score": 1.0
     },
     {
@@ -5685,6 +6114,17 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "CLAUDE.md",
+      "source_location": "L119",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "claude",
+      "target": "docs_ideas",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "CLAUDE.md",
@@ -5703,14 +6143,14 @@
       "weight": 1.0,
       "_origin": "ast",
       "source": "claude_mi_recetario_contexto_del_proyecto",
-      "target": "claude_estado_actual_8_ago_2026",
+      "target": "claude_estado_actual_23_ago_2026",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "CLAUDE.md",
-      "source_location": "L82",
+      "source_location": "L125",
       "weight": 1.0,
       "_origin": "ast",
       "source": "claude_mi_recetario_contexto_del_proyecto",
@@ -5721,10 +6161,21 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "CLAUDE.md",
-      "source_location": "L69",
+      "source_location": "L117",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "claude_estado_actual_8_ago_2026",
+      "source": "claude_mi_recetario_contexto_del_proyecto",
+      "target": "claude_hacia_d\u00f3nde_puede_crecer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CLAUDE.md",
+      "source_location": "L99",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "claude_estado_actual_23_ago_2026",
       "target": "claude_camino_feliz_verificado_el_8_ago_2026",
       "confidence_score": 1.0
     },
@@ -5732,11 +6183,143 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "CLAUDE.md",
-      "source_location": "L75",
+      "source_location": "L92",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "claude_estado_actual_8_ago_2026",
+      "source": "claude_estado_actual_23_ago_2026",
+      "target": "claude_la_despensa",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CLAUDE.md",
+      "source_location": "L69",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "claude_estado_actual_23_ago_2026",
+      "target": "claude_los_ingredientes_son_objetos_no_cadenas",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CLAUDE.md",
+      "source_location": "L105",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "claude_estado_actual_23_ago_2026",
       "target": "claude_pendiente",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/ideas.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_ideas",
+      "target": "docs_ideas_ideas_para_el_recetario",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/ideas.md",
+      "source_location": "L117",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_ideas_ideas_para_el_recetario",
+      "target": "docs_ideas_automatismos_con_n8n",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/ideas.md",
+      "source_location": "L37",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_ideas_ideas_para_el_recetario",
+      "target": "docs_ideas_cocinar_de_verdad",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/ideas.md",
+      "source_location": "L90",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_ideas_ideas_para_el_recetario",
+      "target": "docs_ideas_dar_de_alta_con_menos_fricci\u00f3n",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/ideas.md",
+      "source_location": "L142",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_ideas_ideas_para_el_recetario",
+      "target": "docs_ideas_dos_avisos_de_realidad",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/ideas.md",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_ideas_ideas_para_el_recetario",
+      "target": "docs_ideas_el_punto_de_partida_datos_que_ya_se_pagan_y_se_tiran",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/ideas.md",
+      "source_location": "L72",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_ideas_ideas_para_el_recetario",
+      "target": "docs_ideas_encontrar_recetas",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/ideas.md",
+      "source_location": "L106",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_ideas_ideas_para_el_recetario",
+      "target": "docs_ideas_los_afans",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/ideas.md",
+      "source_location": "L53",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_ideas_ideas_para_el_recetario",
+      "target": "docs_ideas_men\u00fa_semanal_y_lista_de_la_compra",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/ideas.md",
+      "source_location": "L128",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_ideas_ideas_para_el_recetario",
+      "target": "docs_ideas_orden_sugerido",
       "confidence_score": 1.0
     },
     {
@@ -6373,5 +6956,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "333d6183d1f5dcac44cea9fcbf8955ef4f591263"
+  "built_at_commit": "c14122548cecc31d731b25ea15d2fdbab189ee50"
 }
