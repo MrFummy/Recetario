@@ -114,13 +114,38 @@ sesión de admin.
   frase entera, así que no casan con `sal` ni con `pimienta`. Se verá si molesta
   cuando exista la lista de la compra.
 
+## Siguiente paso acordado: la sección de despensa
+
+La despensa existe pero solo se toca desde dentro de una receta. Lo acordado el
+23 de agosto es darle **sección propia**, y en este orden:
+
+1. **Router primero.** Sería la cuarta pantalla —catálogo, nueva, despensa, y la
+   lista de la compra que vendrá— y la app entera vive en `/` con pestañas en
+   estado de React. Ha dejado de ser una comodidad: sin rutas no se puede
+   enlazar la despensa, ni una receta concreta.
+2. **La sección**, cuya función estrella es *"qué puedo cocinar con lo que
+   tengo"*: ordenar el catálogo por cuántos ingredientes te faltan. Ya casi
+   existe — el buscador por ingredientes hace hoy una versión manual y peor.
+   Además: quitar lo que se acabó sin buscar una receta que lo contenga, verlo
+   todo de un vistazo, y añadir cosas que no salen en ninguna receta (sal,
+   aceite, especias).
+3. **Autocompletado obligatorio** al añadir a mano, sobre los `base` que ya
+   existen. Con texto libre convivirían "cebolla" y "cebollas" como cosas
+   distintas, que es justo lo que la migración vino a arreglar.
+
+**Decidido que la despensa NO guarda cantidades.** Se planteó, porque tener
+"cebolla" no dice si llega para la lasaña que pide 2, y se descartó: un
+inventario se desactualiza solo y uno falso es peor que ninguno, porque te fías
+de él. Las cantidades importan en la lista de la compra, donde la pregunta es
+puntual y no hay estado que envejezca. El razonamiento completo está en
+[docs/ideas.md](docs/ideas.md); conviene releerlo antes de volver a proponerlo.
+
 ## Hacia dónde puede crecer
 
 [docs/ideas.md](docs/ideas.md) recoge una lluvia de ideas de posibles
-funcionalidades, con un orden sugerido. La primera —estructurar los
-ingredientes— ya está hecha; el resto sigue sin decidir. Sigue en pie que Vertex
-extrae `tiempo`, `porciones` y `dificultad` de cada receta y se descartan al
-guardar, que es lo más barato que queda por rescatar.
+funcionalidades, con lo hecho y lo decidido anotado encima. Sigue en pie que
+Vertex extrae `tiempo`, `porciones` y `dificultad` de cada receta y se descartan
+al guardar: es lo más barato que queda por rescatar.
 
 ## graphify
 

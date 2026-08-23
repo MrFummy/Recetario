@@ -1,16 +1,16 @@
 # Graph Report - Recetario  (2026-08-23)
 
 ## Corpus Check
-- 41 files · ~41,588 words
+- 41 files · ~42,437 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 249 nodes · 360 edges · 20 communities (18 shown, 2 thin omitted)
+- 252 nodes · 363 edges · 20 communities (18 shown, 2 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 2 edges (avg confidence: 0.5)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `f0242f7a`
+- Built from commit: `f4ca7bf2`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -34,8 +34,8 @@
 3. `errorMessage()` - 14 edges
 4. `Mi Recetario (SPA)` - 12 edges
 5. `Recipe` - 11 edges
-6. `n8n` - 11 edges
-7. `Ideas para el Recetario` - 10 edges
+6. `Ideas para el Recetario` - 11 edges
+7. `n8n` - 11 edges
 8. `normalizeIngredients()` - 9 edges
 9. `Json` - 9 edges
 10. `supabase` - 7 edges
@@ -62,8 +62,8 @@ Cohesion: 0.08
 Nodes (33): Arquitectura sin backend, Build estatico para Nginx, Despliegue en Synology, Gmail, Google Drive, Google Sheets, Gotenberg, JSONB heterogeneo (+25 more)
 
 ### Community 1 - "Componentes de interfaz"
-Cohesion: 0.15
-Nodes (18): App(), AddRecipeForm(), AddRecipeFormProps, LoginModal(), LoginModalProps, ShareByEmail(), ShareByEmailProps, UploadProgress() (+10 more)
+Cohesion: 0.14
+Nodes (20): App(), AddRecipeForm(), AddRecipeFormProps, LoginModal(), LoginModalProps, ShareByEmail(), ShareByEmailProps, UploadProgress() (+12 more)
 
 ### Community 2 - "Tooling de desarrollo"
 Cohesion: 0.08
@@ -86,19 +86,19 @@ Cohesion: 0.07
 Nodes (26): clsx, lucide-react, dependencies, clsx, lucide-react, react, react-dom, @supabase/supabase-js (+18 more)
 
 ### Community 7 - "Detalle y normalizacion JSONB"
-Cohesion: 0.17
-Nodes (19): IngredientsList(), IngredientsListProps, StepsList(), RecipeDetail(), RecipePolaroid(), RecipePolaroidProps, StarRating(), StarRatingProps (+11 more)
+Cohesion: 0.19
+Nodes (17): IngredientsList(), IngredientsListProps, StepsList(), RecipeDetail(), RecipePolaroid(), RecipePolaroidProps, StarRating(), StarRatingProps (+9 more)
 
 ### Community 14 - "Mi Recetario — contexto del proyecto"
-Cohesion: 0.10
-Nodes (19): Camino feliz, verificado el 8 ago 2026, Empieza por el grafo, Estado actual (23 ago 2026), graphify, Hacia dónde puede crecer, La despensa, Los ingredientes son objetos, no cadenas, Mi Recetario — contexto del proyecto (+11 more)
+Cohesion: 0.08
+Nodes (22): Camino feliz, verificado el 8 ago 2026, Empieza por el grafo, Estado actual (23 ago 2026), graphify, Hacia dónde puede crecer, La despensa, Los ingredientes son objetos, no cadenas, Mi Recetario — contexto del proyecto (+14 more)
 
 ### Community 15 - "Q: Por que Supabase JS client with no backend layer aparece semanticamente similar a n8n webhook recipe ingestion?"
 Cohesion: 0.40
 Nodes (4): Answer, Outcome, Q: Por que Supabase JS client with no backend layer aparece semanticamente similar a n8n webhook recipe ingestion?, Source Nodes
 
 ## Knowledge Gaps
-- **107 isolated node(s):** `name`, `private`, `version`, `type`, `dev` (+102 more)
+- **109 isolated node(s):** `name`, `private`, `version`, `type`, `dev` (+104 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **2 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -106,16 +106,16 @@ Nodes (4): Answer, Outcome, Q: Por que Supabase JS client with no backend layer 
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `devDependencies` connect `Tooling de desarrollo` to `Dependencias de runtime`?**
-  _High betweenness centrality (0.030) - this node is a cross-community bridge._
+  _High betweenness centrality (0.029) - this node is a cross-community bridge._
 - **What connects `name`, `private`, `version` to the rest of the system?**
-  _107 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _109 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Arquitectura, servicios y seguridad` be split into smaller, more focused modules?**
   _Cohesion score 0.07777777777777778 - nodes in this community are weakly interconnected._
+- **Should `Componentes de interfaz` be split into smaller, more focused modules?**
+  _Cohesion score 0.14039408866995073 - nodes in this community are weakly interconnected._
 - **Should `Tooling de desarrollo` be split into smaller, more focused modules?**
   _Cohesion score 0.08 - nodes in this community are weakly interconnected._
 - **Should `Config TypeScript de la app` be split into smaller, more focused modules?**
   _Cohesion score 0.08695652173913043 - nodes in this community are weakly interconnected._
 - **Should `Config TypeScript de build` be split into smaller, more focused modules?**
   _Cohesion score 0.09523809523809523 - nodes in this community are weakly interconnected._
-- **Should `Catalogo y busqueda` be split into smaller, more focused modules?**
-  _Cohesion score 0.1452991452991453 - nodes in this community are weakly interconnected._

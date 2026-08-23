@@ -1,7 +1,10 @@
 # Ideas para el Recetario
 
-Lluvia de ideas del 9 de agosto de 2026. **Nada de esto está implementado ni
-decidido**: es material para elegir, no un plan.
+Lluvia de ideas del 9 de agosto de 2026, con lo decidido y lo hecho anotado
+encima. Lo que no lleva marca sigue siendo material para elegir, no un plan.
+
+**Hecho el 23 de agosto**: estructurar los ingredientes y la despensa. Ver
+[CLAUDE.md](../CLAUDE.md) para el estado real del proyecto.
 
 Muchas se apoyan en n8n antes que en la web, igual que la ingesta actual. Esa es
 la forma natural de crecer aquí: la SPA es estática y sin backend propio, así
@@ -11,6 +14,10 @@ procesos largos encaja mejor en un flujo.
 ---
 
 ## El punto de partida: datos que ya se pagan y se tiran
+
+> **23 ago 2026 — hecho a medias.** Los ingredientes ya están estructurados:
+> cada uno es un objeto con `nombre`, `cantidad`, `base`, `valor` y `unidad`. Lo
+> que sigue pendiente es lo de abajo: `tiempo`, `porciones` y `dificultad`.
 
 Vertex AI **ya extrae** `tiempo`, `porciones` y `dificultad` de cada receta. Se
 puede ver en cualquier ejecución del flujo, en la salida del nodo
@@ -45,10 +52,64 @@ uso diario.
 **Marcar "lo he cocinado"**, con fecha. Da historial por usuario y abre la
 puerta a avisos del tipo "hace ocho meses que no haces el marmitako".
 
-**Persistir los checkboxes de ingredientes.** Hoy se pierden al cerrar el modal;
-guardarlos por usuario y receta es barato.
+~~**Persistir los checkboxes de ingredientes.**~~ **Hecho el 23 de agosto**, y
+mejor de lo planteado: no se guardan por receta sino por usuario e ingrediente.
+Ver la sección de la despensa más abajo.
 
 ---
+
+## La despensa (hecha) y su sección propia (siguiente paso)
+
+> **23 ago 2026.** La despensa existe: tabla `despensa` con clave
+> `(user_id, base)`, sus policies de RLS y los checks de la receta guardando
+> contra ella. Marcar cebolla vale para las 19 recetas que la llevan.
+
+Lo siguiente acordado es **una sección propia para la despensa**, al margen de
+las recetas. Lo que aporta, por orden de importancia:
+
+- **"Qué puedo cocinar con lo que tengo"**: ordenar el catálogo por *"te faltan
+  2 ingredientes"*. Es lo que de verdad la justifica, y ya casi existe — el
+  buscador por ingredientes hace hoy una versión manual y peor de lo mismo.
+- **Quitar lo que se ha acabado** sin buscar una receta que lo contenga. Hoy, si
+  se acaba el pimentón, hay que acordarse de en qué receta salía.
+- **Ver de un vistazo** todo lo que hay, que hoy solo se descubre receta a receta.
+- **Añadir cosas que no están en ninguna receta**: sal, aceite, especias.
+
+Dos requisitos que conviene no descubrir a mitad:
+
+1. **Hace falta el router antes o a la vez.** Sería la cuarta pantalla —catálogo,
+   nueva, despensa, lista de la compra— y la app entera vive en `/` con pestañas
+   en estado de React. Sin rutas no podrás enlazar tu propia despensa desde el
+   móvil.
+2. **Añadir a mano necesita autocompletado** sobre los 143 `base` que ya existen.
+   Con texto libre acabarían conviviendo "cebolla" y "cebollas" como cosas
+   distintas, que es justo lo que la migración vino a arreglar.
+
+### Decidido: la despensa NO guarda cantidades
+
+Se planteó guardar cuánto tienes de cada cosa, porque tener "cebolla" no dice si
+llega para la lasaña, que pide 2. **Se descartó**, y conviene no volver a
+proponerlo sin releer esto:
+
+- **Un inventario se desactualiza solo.** Si dice "2 cebollas" y cocinas el
+  gazpacho, alguien tiene que restar una. Si no, a los tres días el dato es
+  falso — y un inventario falso es *peor* que no tenerlo, porque te fías: irías
+  al súper sin cebollas creyendo que tienes dos. La casilla booleana no puede
+  mentir tanto, porque solo afirma algo que acabas de decir tú.
+- **Mantenerlo al día** exigiría descontar automáticamente al marcar "ya lo he
+  preparado" —atando una función a otra— o que alguien lo actualice a mano, que
+  no lo hace nadie.
+- **Las unidades no casan.** La despensa diría "500 g de cebolla" y la receta
+  pide "2 unidades". Restar exige saber cuánto pesa una cebolla, por cada uno de
+  los 143 ingredientes.
+
+**Dónde sí importan las cantidades: en la lista de la compra**, donde la pregunta
+es puntual ("voy a hacer estas tres recetas, ¿cuánto compro?") y no hay estado
+que envejezca.
+
+Término medio barato si alguna vez se echa en falta: **una nota de texto libre
+por ingrediente** ("media bolsa", "queda poco"). No se usa para calcular nada,
+así que no puede mentir.
 
 ## Menú semanal y lista de la compra
 
@@ -127,14 +188,17 @@ Sois cuatro, así que lo social tiene sentido a escala pequeña:
 
 ## Orden sugerido
 
-1. **Rescatar `tiempo`, `porciones` y `dificultad`.** Una tarde, e información
+~~1. Estructurar los ingredientes.~~ **Hecho el 23 de agosto.**
+
+1. **El router.** Ha pasado de comodidad a requisito: bloquea la sección de
+   despensa y la lista de la compra, y de paso arregla los enlaces por receta.
+2. **Sección de despensa**, con "qué puedo cocinar con lo que tengo".
+3. **Lista de la compra**, que cae casi sola encima de la despensa: tachar en el
+   súper será añadir a ella.
+4. **Rescatar `tiempo`, `porciones` y `dificultad`.** Una tarde, e información
    que ya se está pagando.
-2. **Modo cocina.** Solo frontend, y lo que más se agradece con la sartén
-   puesta.
-3. **Menú semanal y lista de la compra.** La funcionalidad grande, y la que
-   mejor encaja con tener n8n detrás.
-4. **Enlaces por receta.** Barato, y arregla algo que hoy no se puede hacer.
-5. **Búsqueda semántica.** La más vistosa, pero mejor con las anteriores ya
+5. **Modo cocina.** Solo frontend, y lo que más se agradece con la sartén puesta.
+6. **Búsqueda semántica.** La más vistosa, pero mejor con las anteriores ya
    asentadas.
 
 ---
