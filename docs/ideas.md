@@ -77,10 +77,9 @@ las recetas. Lo que aporta, por orden de importancia:
 
 Dos requisitos que conviene no descubrir a mitad:
 
-1. **Hace falta el router antes o a la vez.** Sería la cuarta pantalla —catálogo,
-   nueva, despensa, lista de la compra— y la app entera vive en `/` con pestañas
-   en estado de React. Sin rutas no podrás enlazar tu propia despensa desde el
-   móvil.
+1. ~~**Hace falta el router antes o a la vez.**~~ **Hecho el 31 de agosto**: la
+   app enruta por hash (`#/`, `#/nueva`, `#/receta/<id>`). Añadir `#/despensa`
+   es un caso más en el tipo `Ruta`.
 2. **Añadir a mano necesita autocompletado** sobre los 143 `base` que ya existen.
    Con texto libre acabarían conviviendo "cebolla" y "cebollas" como cosas
    distintas, que es justo lo que la migración vino a arreglar.
@@ -142,9 +141,9 @@ cuesta una miseria.
 exigir que estén todos, ordenar por cuántos faltan. Se toca solo
 `ingredientParser.ts` y `hooks/useIngredientSearch.ts`.
 
-**Enlaces a una receta concreta.** No hay router: todo vive en `/` y no se puede
-enviar el enlace de una receta. Compartir hoy significa mandar un PDF por email;
-con rutas, ese correo podría llevar además el enlace a la versión web.
+~~**Enlaces a una receta concreta.**~~ **Hecho el 31 de agosto**: `#/receta/<id>`
+abre la ficha directamente. Queda una mejora encima, barata: que el correo de
+*compartir* lleve además del PDF el enlace a la versión web.
 
 ---
 
@@ -190,15 +189,15 @@ Sois cuatro, así que lo social tiene sentido a escala pequeña:
 
 ~~1. Estructurar los ingredientes.~~ **Hecho el 23 de agosto.**
 
-1. **El router.** Ha pasado de comodidad a requisito: bloquea la sección de
-   despensa y la lista de la compra, y de paso arregla los enlaces por receta.
-2. **Sección de despensa**, con "qué puedo cocinar con lo que tengo".
-3. **Lista de la compra**, que cae casi sola encima de la despensa: tachar en el
+~~2. El router.~~ **Hecho el 31 de agosto.**
+
+1. **Sección de despensa**, con "qué puedo cocinar con lo que tengo".
+2. **Lista de la compra**, que cae casi sola encima de la despensa: tachar en el
    súper será añadir a ella.
-4. **Rescatar `tiempo`, `porciones` y `dificultad`.** Una tarde, e información
+3. **Rescatar `tiempo`, `porciones` y `dificultad`.** Una tarde, e información
    que ya se está pagando.
-5. **Modo cocina.** Solo frontend, y lo que más se agradece con la sartén puesta.
-6. **Búsqueda semántica.** La más vistosa, pero mejor con las anteriores ya
+4. **Modo cocina.** Solo frontend, y lo que más se agradece con la sartén puesta.
+5. **Búsqueda semántica.** La más vistosa, pero mejor con las anteriores ya
    asentadas.
 
 ---

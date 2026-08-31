@@ -114,15 +114,41 @@ sesión de admin.
   frase entera, así que no casan con `sal` ni con `pimienta`. Se verá si molesta
   cuando exista la lista de la compra.
 
+### Las rutas van por el hash
+
+Desde el 31 de agosto la app enruta: `#/` el catálogo, `#/nueva` el alta y
+`#/receta/<id>` una ficha concreta, que ya se puede enlazar y compartir.
+
+Es un router propio de dos ficheros —[rutas.ts](src/lib/rutas.ts) define el tipo
+`Ruta` y lo traduce a hash y de vuelta, [useRuta.ts](src/hooks/useRuta.ts) lo
+escucha— en vez de `react-router`, porque son tres rutas planas sin anidamiento
+ni parámetros de búsqueda.
+
+**Va por el hash a propósito**, no por comodidad: los estáticos se sirven desde
+un Synology sin reescritura, así que `/receta/123` devolvería un 404 —no existe
+ese fichero— y el enlace compartido no abriría nada. Con hash, esa parte no se le
+pide nunca al servidor. Para pasar a rutas limpias hay que tocar las dos
+funciones de `rutas.ts` **y** configurar el `try_files` de Nginx; una sin la otra
+rompe los enlaces.
+
+Dos detalles que parecen menores y no lo son:
+
+- **La ficha abierta se deriva de la URL**, no de un `useState` aparte. Por eso
+  desapareció el `setSelectedRecipe({ ...receta, campo })` que había tras cada
+  edición: `useRecipes` ya mantiene su lista al día y la ficha lee de ahí.
+- **Cerrar la ficha llama a `volverAtras`**, que hace un `history.back()` solo si
+  esta pestaña ha navegado antes. Quien llega por un enlace compartido no tiene
+  nada nuestro detrás, y un `back()` ahí lo sacaría de la web. Tras borrar una
+  receta se usa `reemplazarPor`, que pisa la entrada del historial para que el
+  atrás no devuelva a una ficha que ya no existe.
+
 ## Siguiente paso acordado: la sección de despensa
 
 La despensa existe pero solo se toca desde dentro de una receta. Lo acordado el
-23 de agosto es darle **sección propia**, y en este orden:
+23 de agosto es darle **sección propia**:
 
-1. **Router primero.** Sería la cuarta pantalla —catálogo, nueva, despensa, y la
-   lista de la compra que vendrá— y la app entera vive en `/` con pestañas en
-   estado de React. Ha dejado de ser una comodidad: sin rutas no se puede
-   enlazar la despensa, ni una receta concreta.
+1. ~~**Router primero.**~~ Hecho el 31 de agosto, ver arriba. Añadir
+   `#/despensa` es un caso más en `Ruta`.
 2. **La sección**, cuya función estrella es *"qué puedo cocinar con lo que
    tengo"*: ordenar el catálogo por cuántos ingredientes te faltan. Ya casi
    existe — el buscador por ingredientes hace hoy una versión manual y peor.

@@ -75,17 +75,24 @@ docker run -d --name recetario --restart unless-stopped \
   nginx:alpine
 ```
 
-### 3. Fallback de SPA
+### 3. Rutas: por qué no hace falta tocar Nginx
 
-La app **no usa router**: todo ocurre en `/` con pestañas en estado de React, así
-que no hay rutas profundas que arreglar y la configuración por defecto sirve. Si
-en el futuro se añade `react-router`, hará falta esto en Nginx:
+La app enruta **por el hash** (`#/`, `#/nueva`, `#/receta/<id>`), y esa parte de
+la URL no se le pide nunca al servidor: para Nginx todo es `/index.html`. Por eso
+un enlace a una receta concreta funciona con la configuración por defecto.
+
+Si algún día se quieren rutas limpias (`/receta/<id>`), harán falta dos cosas:
+cambiar `aHash` y `parsearRuta` en [src/lib/rutas.ts](src/lib/rutas.ts) —el resto
+de la app habla de rutas, no de cadenas— y añadir el fallback en Nginx:
 
 ```nginx
 location / {
     try_files $uri $uri/ /index.html;
 }
 ```
+
+Sin ese fallback, abrir `/receta/<id>` daría un 404: Nginx buscaría un fichero
+que no existe.
 
 ### 4. HTTPS (recomendado, no opcional del todo)
 
@@ -111,10 +118,13 @@ policies de Supabase:
 | Añadir receta | webhook `nueva-receta` + validación de JWT y de admin |
 | Compartir por email | webhook `compartir-receta` + lectura del `pdf_url` real |
 | Borrar receta | webhook `eliminar-receta`, la cascada completa |
+| Abrir `#/receta/<id>` en otra pestaña | las rutas por hash, sin tocar Nginx |
 
 Si algo falla, mira la ejecución concreta en n8n (*Executions*): el nodo donde se
 detiene indica si fue el gate de sesión, el de admin o un paso posterior.
 
 ## Módulos
+- **Rutas:** `#/` el catálogo, `#/nueva` el alta y `#/receta/<id>` una ficha
+  concreta, que así se puede enlazar y compartir.
 - **Catálogo:** Visor estilo "masonry" de recetas almacenadas en Supabase con buscador por ingredientes.
 - **Añadir Receta:** Formulario simple para enviar PDFs de recetas a tu flujo automatizado de n8n.

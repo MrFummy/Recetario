@@ -7,11 +7,14 @@ import { RecipeGrid } from './components/RecipeGrid';
 import { RecipeDetail } from './components/RecipeDetail';
 import { AddRecipeForm } from './components/AddRecipeForm';
 import { LoginModal } from './components/LoginModal';
+import { RecetaNoEncontrada, SoloAdmin } from './components/Avisos';
 import { useRecipes } from './hooks/useRecipes';
 import { useIngredientSearch } from './hooks/useIngredientSearch';
+import { useRuta, irA, reemplazarPor, volverAtras } from './hooks/useRuta';
+import { aHash, CATALOGO } from './lib/rutas';
 import { supabase } from './lib/supabase';
 import { errorMessage } from './lib/errors';
-import type { Category, Recipe } from './types';
+import type { Category } from './types';
 
 const CATEGORIES: Category[] = [
   'Todas', 'Sopas/Cremas', 'Carnes', 'Pescados y mariscos',
@@ -19,13 +22,16 @@ const CATEGORIES: Category[] = [
 ];
 
 function App() {
-  const [activeTab, setActiveTab] = useState<'catalogo' | 'nueva'>('catalogo');
+  const ruta = useRuta();
   const [activeCategory, setActiveCategory] = useState<Category>('Todas');
-  const [selectedRecipe, setSelectedRecipe] = useState<Recipe | null>(null);
 
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [authError, setAuthError] = useState<string | null>(null);
   const [user, setUser] = useState<User | null>(null);
+  // `getSession` es asíncrono: hasta que resuelve no sabemos si hay admin. Sin
+  // esto, entrar directo a #/nueva enseña "acceso denegado" y un instante
+  // después el formulario, que parece un fallo de permisos y no lo es.
+  const [sesionCargada, setSesionCargada] = useState(false);
   // Ojo: esto solo decide qué botones se pintan. La autorización real vive en
   // las RLS policies de Supabase y en la validación del flujo de n8n.
   const isAdmin = user?.email === 'marcos.garciafdz@gmail.com';
@@ -39,6 +45,7 @@ function App() {
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
       setUser(session?.user || null);
+      setSesionCargada(true);
     });
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
       (_event, session) => setUser(session?.user || null)
@@ -53,7 +60,7 @@ function App() {
       return;
     }
     setAuthError(null);
-    setActiveTab('catalogo');
+    irA(CATALOGO);
   };
 
   const categoryFilteredRecipes = recipes.filter(
@@ -62,12 +69,20 @@ function App() {
   const { searchQuery, setSearchQuery, filteredRecipes, matchCount } =
     useIngredientSearch(categoryFilteredRecipes);
 
+  // La ficha abierta sale de la URL y no de un estado aparte: así un enlace a
+  // #/receta/… la abre igual que un clic, y las ediciones se reflejan solas
+  // porque `useRecipes` ya mantiene su lista al día tras cada cambio.
+  const recetaAbierta = ruta.vista === 'receta'
+    ? recipes.find((r) => r.id === ruta.id) ?? null
+    : null;
+  const enNueva = ruta.vista === 'nueva';
+
   return (
     <div className="min-h-screen pb-20">
       {/* ═════ Header ═════════════════════════════════════ */}
       <header className="bg-paper/85 backdrop-blur-md sticky top-0 z-30 border-b border-dashed border-ink/25">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
-          <div className="flex items-center gap-3 group cursor-default">
+          <a href={aHash(CATALOGO)} className="flex items-center gap-3 group">
             <div className="w-10 h-10 bg-ink text-paper rounded-lg flex items-center justify-center
                             -rotate-3 group-hover:rotate-6 transition-transform duration-300
                             shadow-[3px_3px_0_var(--color-yellow)]">
@@ -76,30 +91,30 @@ function App() {
             <h1 className="font-script text-2xl sm:text-3xl leading-none">
               El Recetario de <span className="text-accent font-bold">Markis</span>
             </h1>
-          </div>
+          </a>
 
           <div className="flex items-center gap-3">
             <nav className="flex items-center gap-1">
-              <button
-                onClick={() => setActiveTab('catalogo')}
-                className={`px-4 py-2 text-sm font-semibold rounded-md transition-colors ${activeTab === 'catalogo'
+              <a
+                href={aHash(CATALOGO)}
+                className={`px-4 py-2 text-sm font-semibold rounded-md transition-colors ${!enNueva
                   ? 'bg-ink text-paper'
                   : 'text-ink hover:bg-ink/5'
                   }`}
               >
                 Catálogo
-              </button>
+              </a>
               {isAdmin && (
-                <button
-                  onClick={() => setActiveTab('nueva')}
-                  className={`px-4 py-2 text-sm font-bold rounded-md transition-transform flex items-center gap-1.5 ${activeTab === 'nueva'
+                <a
+                  href={aHash({ vista: 'nueva' })}
+                  className={`px-4 py-2 text-sm font-bold rounded-md transition-transform flex items-center gap-1.5 ${enNueva
                     ? 'bg-yellow text-ink -rotate-1 shadow-brut'
                     : 'text-ink hover:bg-ink/5'
                     }`}
                 >
                   <PlusCircle size={16} />
                   <span className="hidden sm:inline">Nueva</span>
-                </button>
+                </a>
               )}
             </nav>
 
@@ -143,7 +158,11 @@ function App() {
           </div>
         )}
 
-        {activeTab === 'catalogo' ? (
+        {enNueva ? (
+          <SoloAdmin sesionCargada={sesionCargada} isAdmin={isAdmin}>
+            <AddRecipeForm onSuccess={() => void refetch()} />
+          </SoloAdmin>
+        ) : (
           <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
             {/* ── Hero ───────────────────────────────────── */}
             <div className="text-center mb-10 relative">
@@ -177,61 +196,37 @@ function App() {
 
             <RecipeGrid
               recipes={filteredRecipes}
-              onRecipeClick={setSelectedRecipe}
+              onRecipeClick={(recipe) => irA({ vista: 'receta', id: recipe.id })}
               loading={loading}
             />
-          </div>
-        ) : isAdmin ? (
-          <div className="animate-in fade-in zoom-in-95 duration-300 pt-4">
-            <AddRecipeForm onSuccess={() => void refetch()} />
-          </div>
-        ) : (
-          <div className="text-center py-20 animate-in fade-in zoom-in-95 duration-300">
-            <h2 className="text-2xl font-bold text-ink mb-2">Acceso denegado</h2>
-            <p className="text-ink-soft">No tienes permisos para añadir recetas.</p>
-            <button 
-              onClick={() => setActiveTab('catalogo')}
-              className="mt-6 px-6 py-2 bg-ink text-paper rounded-md hover:bg-ink-soft transition-colors"
-            >
-              Volver al catálogo
-            </button>
           </div>
         )}
       </main>
 
       {/* ═════ Modales ═════════════════════════════════════ */}
-      {selectedRecipe && (
+      {recetaAbierta && (
         <RecipeDetail
-          recipe={selectedRecipe}
-          onClose={() => setSelectedRecipe(null)}
+          recipe={recetaAbierta}
+          onClose={volverAtras}
           isAdmin={isAdmin}
           user={user}
-          onUpdateNotes={async (notas) => {
-            await updateRecipeNotes(selectedRecipe.id, notas);
-            setSelectedRecipe({ ...selectedRecipe, notas });
-          }}
-          onUpdateDate={async (fecha) => {
-            await updateRecipeDate(selectedRecipe.id, fecha);
-            setSelectedRecipe({ ...selectedRecipe, fecha_clase: fecha });
-          }}
-          onUpdatePhoto={async (file) => {
-            await updateRecipePhoto(selectedRecipe.id, file, selectedRecipe.foto_url);
-          }}
-          onRemovePhoto={async () => {
-            await removeRecipePhoto(selectedRecipe.id, selectedRecipe.foto_url);
-            setSelectedRecipe({ ...selectedRecipe, foto_url: '' });
-          }}
-          onUpdateRating={async (rating) => {
-            await updateRecipeRating(selectedRecipe.id, rating);
-            setSelectedRecipe({ ...selectedRecipe, rating });
-          }}
+          onUpdateNotes={(notas) => updateRecipeNotes(recetaAbierta.id, notas)}
+          onUpdateDate={(fecha) => updateRecipeDate(recetaAbierta.id, fecha)}
+          onUpdatePhoto={(file) => updateRecipePhoto(recetaAbierta.id, file, recetaAbierta.foto_url)}
+          onRemovePhoto={() => removeRecipePhoto(recetaAbierta.id, recetaAbierta.foto_url)}
+          onUpdateRating={(rating) => updateRecipeRating(recetaAbierta.id, rating)}
           onDelete={async (recipe) => {
             await deleteRecipe(recipe);
-            setSelectedRecipe(null);
+            // Pisamos la entrada del historial: el atrás no debe devolver a una
+            // ficha que acabamos de borrar.
+            reemplazarPor(CATALOGO);
           }}
           onShareByEmail={(recipe, email) => shareRecipeByEmail(recipe, email)}
         />
       )}
+
+      {/* Enlace a una receta que ya no está, o con el id mal copiado. */}
+      {ruta.vista === 'receta' && !recetaAbierta && !loading && <RecetaNoEncontrada />}
 
       {showLoginModal && (
         <LoginModal

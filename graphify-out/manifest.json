@@ -15,8 +15,8 @@
     "semantic_hash": "b21666ca88d4c981fa5fe3b3db7926c8"
   },
   "src/App.tsx": {
-    "mtime": 1786177202.4847836,
-    "ast_hash": "9c53b7a934d9ca4d2979e87ccba1c27d",
+    "mtime": 1788202910.1254008,
+    "ast_hash": "ee050d47baef96870eeec18fff008c54",
     "semantic_hash": ""
   },
   "src/components/AddRecipeForm.tsx": {
@@ -120,9 +120,9 @@
     "semantic_hash": "4ff9eeca4ab53927478aaa5c2f62c99d"
   },
   "README.md": {
-    "mtime": 1785938493.6907775,
-    "ast_hash": "86aa0e09e39092b5737bf22e13e1a4ac",
-    "semantic_hash": "86aa0e09e39092b5737bf22e13e1a4ac"
+    "mtime": 1788203128.405582,
+    "ast_hash": "2f719efc74a8a4142bfb4f457bbb0cbf",
+    "semantic_hash": ""
   },
   "index.html": {
     "mtime": 1779908153.9185586,
@@ -200,8 +200,8 @@
     "semantic_hash": ""
   },
   "CLAUDE.md": {
-    "mtime": 1787509661.1131113,
-    "ast_hash": "f2e68b26ce1dc88dc8d007497f217e57",
+    "mtime": 1788203149.4425943,
+    "ast_hash": "820cb81be4f149aff8f85489f658b9a5",
     "semantic_hash": ""
   },
   "src/hooks/useDespensa.ts": {
@@ -220,8 +220,23 @@
     "semantic_hash": ""
   },
   "docs/ideas.md": {
-    "mtime": 1787509637.7162006,
-    "ast_hash": "505c67100d8731e307545d415ccc5172",
+    "mtime": 1788203167.1301327,
+    "ast_hash": "895f75ffb0199a2f9b72472cff197480",
+    "semantic_hash": ""
+  },
+  "src/components/Avisos.tsx": {
+    "mtime": 1788202925.5089176,
+    "ast_hash": "bb3cfd85a3815e351c51327a0bada026",
+    "semantic_hash": ""
+  },
+  "src/hooks/useRuta.ts": {
+    "mtime": 1788202816.8588269,
+    "ast_hash": "da3680be32aff103f9da849bba6a45e0",
+    "semantic_hash": ""
+  },
+  "src/lib/rutas.ts": {
+    "mtime": 1788202804.2601128,
+    "ast_hash": "c50f39d2ce26d3bf3054172de92708a8",
     "semantic_hash": ""
   }
 }
