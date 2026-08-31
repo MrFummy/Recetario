@@ -14,6 +14,7 @@
 export type Ruta =
   | { vista: 'catalogo' }
   | { vista: 'nueva' }
+  | { vista: 'despensa' }
   | { vista: 'receta'; id: string };
 
 export const CATALOGO: Ruta = { vista: 'catalogo' };
@@ -28,6 +29,7 @@ export function parsearRuta(hash: string): Ruta {
   const partes = hash.replace(/^#/, '').split('/').filter(Boolean);
 
   if (partes[0] === 'nueva') return { vista: 'nueva' };
+  if (partes[0] === 'despensa') return { vista: 'despensa' };
   if (partes[0] === 'receta' && partes[1]) {
     return { vista: 'receta', id: decodeURIComponent(partes[1]) };
   }
@@ -39,6 +41,8 @@ export function aHash(ruta: Ruta): string {
   switch (ruta.vista) {
     case 'nueva':
       return '#/nueva';
+    case 'despensa':
+      return '#/despensa';
     case 'receta':
       return `#/receta/${encodeURIComponent(ruta.id)}`;
     case 'catalogo':

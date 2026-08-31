@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import type { User } from '@supabase/supabase-js';
-import { ChefHat, PlusCircle, LogIn, LogOut } from 'lucide-react';
+import { ChefHat, PlusCircle, LogIn, LogOut, ShoppingBasket } from 'lucide-react';
 import { FilterBar } from './components/FilterBar';
 import { IngredientSearch } from './components/IngredientSearch';
 import { RecipeGrid } from './components/RecipeGrid';
@@ -8,7 +8,9 @@ import { RecipeDetail } from './components/RecipeDetail';
 import { AddRecipeForm } from './components/AddRecipeForm';
 import { LoginModal } from './components/LoginModal';
 import { RecetaNoEncontrada, SoloAdmin } from './components/Avisos';
+import { SeccionDespensa } from './components/DespensaSection';
 import { useRecipes } from './hooks/useRecipes';
+import { useDespensa } from './hooks/useDespensa';
 import { useIngredientSearch } from './hooks/useIngredientSearch';
 import { useRuta, irA, reemplazarPor, volverAtras } from './hooks/useRuta';
 import { aHash, CATALOGO } from './lib/rutas';
@@ -41,6 +43,10 @@ function App() {
     updateRecipeNotes, updateRecipePhoto, removeRecipePhoto, updateRecipeRating, updateRecipeDate,
     deleteRecipe, shareRecipeByEmail,
   } = useRecipes(user);
+
+  // Una sola despensa para toda la app: la sección y las listas de ingredientes
+  // de cada receta son la misma cosa vista desde dos sitios.
+  const despensa = useDespensa(user);
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
@@ -76,6 +82,9 @@ function App() {
     ? recipes.find((r) => r.id === ruta.id) ?? null
     : null;
   const enNueva = ruta.vista === 'nueva';
+  const enDespensa = ruta.vista === 'despensa';
+  // El catálogo queda detrás de la ficha abierta, como hasta ahora.
+  const enCatalogo = !enNueva && !enDespensa;
 
   return (
     <div className="min-h-screen pb-20">
@@ -97,12 +106,27 @@ function App() {
             <nav className="flex items-center gap-1">
               <a
                 href={aHash(CATALOGO)}
-                className={`px-4 py-2 text-sm font-semibold rounded-md transition-colors ${!enNueva
+                className={`px-4 py-2 text-sm font-semibold rounded-md transition-colors ${enCatalogo
                   ? 'bg-ink text-paper'
                   : 'text-ink hover:bg-ink/5'
                   }`}
               >
                 Catálogo
+              </a>
+              <a
+                href={aHash({ vista: 'despensa' })}
+                className={`px-4 py-2 text-sm font-semibold rounded-md transition-colors flex items-center gap-1.5 ${enDespensa
+                  ? 'bg-ink text-paper'
+                  : 'text-ink hover:bg-ink/5'
+                  }`}
+              >
+                <ShoppingBasket size={16} />
+                <span className="hidden sm:inline">Despensa</span>
+                {despensa.total > 0 && (
+                  <span className="font-mono text-[10px] px-1.5 py-0.5 rounded-sm bg-yellow text-ink">
+                    {despensa.total}
+                  </span>
+                )}
               </a>
               {isAdmin && (
                 <a
@@ -162,6 +186,8 @@ function App() {
           <SoloAdmin sesionCargada={sesionCargada} isAdmin={isAdmin}>
             <AddRecipeForm onSuccess={() => void refetch()} />
           </SoloAdmin>
+        ) : enDespensa ? (
+          <SeccionDespensa recipes={recipes} despensa={despensa} user={user} />
         ) : (
           <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
             {/* ── Hero ───────────────────────────────────── */}
@@ -210,6 +236,7 @@ function App() {
           onClose={volverAtras}
           isAdmin={isAdmin}
           user={user}
+          despensa={despensa}
           onUpdateNotes={(notas) => updateRecipeNotes(recetaAbierta.id, notas)}
           onUpdateDate={(fecha) => updateRecipeDate(recetaAbierta.id, fecha)}
           onUpdatePhoto={(file) => updateRecipePhoto(recetaAbierta.id, file, recetaAbierta.foto_url)}

@@ -96,6 +96,24 @@ por receta a propósito: marcar cebolla vale para las 19 que la llevan. Cuando
 llegue la lista de la compra, tachar en el súper será añadir a la despensa, sin
 dos tablas que sincronizar.
 
+Se toca desde dos sitios: las casillas de cualquier receta y la sección
+`#/despensa` ([DespensaSection.tsx](src/components/DespensaSection.tsx)), cuya
+función estrella es leerlo al revés —*qué puedo cocinar con lo que tengo*—
+ordenando el catálogo por cuántos ingredientes faltan
+([inventario.ts](src/lib/inventario.ts)).
+
+**`useDespensa` se monta una sola vez, en `App`, y baja por props.** No es
+cosmético: la ficha de una receta se dibuja sobre el catálogo, así que dos
+llamadas al hook conviven en pantalla, y con una copia del conjunto por lista lo
+marcado en la ficha no se vería en el resto. Si algún día aparece un tercer sitio
+que la use, antes que seguir pasándola por props conviene un contexto.
+
+Añadir a mano autocompleta sobre los `base` que ya existen, y solo deja crear uno
+nuevo con un segundo clic deliberado. Es el compromiso entre las dos cosas que se
+pidieron: que se puedan añadir cosas que no salen en ninguna receta (sal, aceite)
+sin que acaben conviviendo "cebolla" y "cebollas". La comparación ignora tildes,
+así que escribir `azucar` reconoce `azúcar` en lugar de duplicarlo.
+
 ### Camino feliz, verificado el 8 ago 2026
 
 Votar, editar notas y fecha, cambiar foto, compartir por email, alta y borrado en
@@ -110,9 +128,15 @@ sesión de admin.
   `Wok_de_verduras_al_curry.jpeg`.
 - Confirmar con sesión iniciada que la despensa persiste entre visitas y entre
   recetas. La lógica de interfaz está probada; lo que falta necesita login.
-- Once ingredientes son combinados (`"Sal y pimienta negra"`) y su `base` es la
-  frase entera, así que no casan con `sal` ni con `pimienta`. Se verá si molesta
-  cuando exista la lista de la compra.
+- **Los `base` combinados ya molestan.** Son siete, y los siete son mezclas de
+  condimentos: `sal y pimienta negra` (11 recetas), `sal, pimienta negra y nuez
+  moscada` (2) y cinco más de una receta cada una. Su `base` es la frase entera,
+  así que no casan con `sal` ni con `pimienta`. Con la despensa esto salió de lo
+  teórico: 18 apariciones dicen *"te falta: sal y pimienta negra"* a alguien que
+  tiene sal y pimienta. Se arregla con una migración que parta esos elementos en
+  varios —tocaría 18 filas de `recetas.ingredientes`— y con el prompt de Vertex,
+  para que no vuelva a generarlos. Ojo: cambia el contenido que ven el PDF,
+  Notion y Sheets.
 
 ### Las rutas van por el hash
 
@@ -142,22 +166,20 @@ Dos detalles que parecen menores y no lo son:
   receta se usa `reemplazarPor`, que pisa la entrada del historial para que el
   atrás no devuelva a una ficha que ya no existe.
 
-## Siguiente paso acordado: la sección de despensa
+## Siguiente paso acordado: la lista de la compra
 
-La despensa existe pero solo se toca desde dentro de una receta. Lo acordado el
-23 de agosto es darle **sección propia**:
+El plan del 23 de agosto —router, sección de despensa, lista de la compra— va por
+el tercer punto: los dos primeros se hicieron el 31 de agosto.
 
-1. ~~**Router primero.**~~ Hecho el 31 de agosto, ver arriba. Añadir
-   `#/despensa` es un caso más en `Ruta`.
-2. **La sección**, cuya función estrella es *"qué puedo cocinar con lo que
-   tengo"*: ordenar el catálogo por cuántos ingredientes te faltan. Ya casi
-   existe — el buscador por ingredientes hace hoy una versión manual y peor.
-   Además: quitar lo que se acabó sin buscar una receta que lo contenga, verlo
-   todo de un vistazo, y añadir cosas que no salen en ninguna receta (sal,
-   aceite, especias).
-3. **Autocompletado obligatorio** al añadir a mano, sobre los `base` que ya
-   existen. Con texto libre convivirían "cebolla" y "cebollas" como cosas
-   distintas, que es justo lo que la migración vino a arreglar.
+Cae casi sola encima de lo que ya hay: eliges recetas, se agregan sus
+ingredientes, se descuenta lo que la despensa dice que tienes y queda la lista.
+**Tachar en el súper será añadir a la despensa**, así que no hay dos tablas que
+sincronizar. Y es donde sí importan las cantidades, porque la pregunta es puntual
+y no hay estado que envejezca.
+
+Antes conviene partir los `base` combinados (ver *Pendiente*): una lista de la
+compra que pida "sal y pimienta negra" como si fuera un producto es peor que la
+que ya tienes en la cabeza.
 
 **Decidido que la despensa NO guarda cantidades.** Se planteó, porque tener
 "cebolla" no dice si llega para la lasaña que pide 2, y se descartó: un

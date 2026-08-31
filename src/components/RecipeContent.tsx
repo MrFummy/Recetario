@@ -2,11 +2,13 @@ import type { User } from '@supabase/supabase-js';
 import { Eraser, AlertTriangle, LogIn } from 'lucide-react';
 import type { Json } from '../types';
 import { normalizeIngredients, normalizeSteps } from '../lib/recipeContent';
-import { useDespensa } from '../hooks/useDespensa';
+import { aHash } from '../lib/rutas';
+import type { Despensa } from '../hooks/useDespensa';
 
 interface IngredientsListProps {
   data: Json;
   user?: User | null;
+  despensa: Despensa;
 }
 
 /**
@@ -15,10 +17,14 @@ interface IngredientsListProps {
  * Marcar un ingrediente lo guarda como "lo tengo en casa", no como "lo tengo
  * para esta receta": vale para todas las que lo lleven. Sin sesión el marcado
  * sigue funcionando, pero solo durante la visita.
+ *
+ * La despensa llega por props y no de un `useDespensa` propio: es la misma que
+ * usa la sección `#/despensa`, y con una copia por lista lo marcado aquí no se
+ * vería allí.
  */
-export function IngredientsList({ data, user }: IngredientsListProps) {
+export function IngredientsList({ data, user, despensa }: IngredientsListProps) {
   const items = normalizeIngredients(data);
-  const { tengo, alternar, quitarVarios, error } = useDespensa(user);
+  const { tengo, alternar, quitarVarios, error } = despensa;
 
   if (items.length === 0) {
     return <p className="text-ink-soft italic font-mono text-sm">sin ingredientes</p>;
@@ -77,8 +83,14 @@ export function IngredientsList({ data, user }: IngredientsListProps) {
       <div className="mt-4 flex items-center justify-between gap-3 font-mono text-[11px] text-ink-soft">
         <span>
           {marcados.length > 0
-            ? `tienes ${marcados.length} de ${marcables.length}`
-            : 'marca lo que ya tengas en casa'}
+            ? `tienes ${marcados.length} de ${marcables.length} · `
+            : 'marca lo que ya tengas en casa · '}
+          <a
+            href={aHash({ vista: 'despensa' })}
+            className="underline decoration-dotted underline-offset-2 hover:text-accent transition-colors"
+          >
+            tu despensa
+          </a>
         </span>
         {user && marcados.length > 0 && (
           <button

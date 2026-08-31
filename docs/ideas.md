@@ -3,8 +3,9 @@
 Lluvia de ideas del 9 de agosto de 2026, con lo decidido y lo hecho anotado
 encima. Lo que no lleva marca sigue siendo material para elegir, no un plan.
 
-**Hecho el 23 de agosto**: estructurar los ingredientes y la despensa. Ver
-[CLAUDE.md](../CLAUDE.md) para el estado real del proyecto.
+**Hecho el 23 de agosto**: estructurar los ingredientes y la despensa. **El 31**:
+el router y la sección de despensa. Ver [CLAUDE.md](../CLAUDE.md) para el estado
+real del proyecto.
 
 Muchas se apoyan en n8n antes que en la web, igual que la ingesta actual. Esa es
 la forma natural de crecer aquí: la SPA es estática y sin backend propio, así
@@ -58,18 +59,17 @@ Ver la sección de la despensa más abajo.
 
 ---
 
-## La despensa (hecha) y su sección propia (siguiente paso)
+## La despensa y su sección propia — hechas
 
-> **23 ago 2026.** La despensa existe: tabla `despensa` con clave
-> `(user_id, base)`, sus policies de RLS y los checks de la receta guardando
-> contra ella. Marcar cebolla vale para las 19 recetas que la llevan.
+> **23 ago 2026.** La despensa: tabla `despensa` con clave `(user_id, base)`,
+> sus policies de RLS y los checks de la receta guardando contra ella.
+> **31 ago 2026.** Su sección propia en `#/despensa`, con todo lo de abajo.
 
-Lo siguiente acordado es **una sección propia para la despensa**, al margen de
-las recetas. Lo que aporta, por orden de importancia:
+Lo que aporta la sección, por orden de importancia:
 
 - **"Qué puedo cocinar con lo que tengo"**: ordenar el catálogo por *"te faltan
-  2 ingredientes"*. Es lo que de verdad la justifica, y ya casi existe — el
-  buscador por ingredientes hace hoy una versión manual y peor de lo mismo.
+  2 ingredientes"*. Es lo que de verdad la justifica, y era lo que el buscador
+  por ingredientes hacía a mano y peor.
 - **Quitar lo que se ha acabado** sin buscar una receta que lo contenga. Hoy, si
   se acaba el pimentón, hay que acordarse de en qué receta salía.
 - **Ver de un vistazo** todo lo que hay, que hoy solo se descubre receta a receta.
@@ -80,9 +80,15 @@ Dos requisitos que conviene no descubrir a mitad:
 1. ~~**Hace falta el router antes o a la vez.**~~ **Hecho el 31 de agosto**: la
    app enruta por hash (`#/`, `#/nueva`, `#/receta/<id>`). Añadir `#/despensa`
    es un caso más en el tipo `Ruta`.
-2. **Añadir a mano necesita autocompletado** sobre los 143 `base` que ya existen.
-   Con texto libre acabarían conviviendo "cebolla" y "cebollas" como cosas
-   distintas, que es justo lo que la migración vino a arreglar.
+2. ~~**Añadir a mano necesita autocompletado**~~ sobre los `base` que ya existen.
+   Resuelto sugiriendo siempre sobre los existentes y dejando crear uno nuevo
+   solo con un segundo clic deliberado, que es lo que hacía falta para meter lo
+   que no sale en ninguna receta sin acabar con "cebolla" y "cebollas".
+
+**Lo que la sección destapó**: siete `base` son mezclas de condimentos
+(`sal y pimienta negra` y compañía, 18 apariciones). Quien tiene sal y pimienta
+lee "te falta: sal y pimienta negra". Ya no es teórico; conviene partirlos antes
+de la lista de la compra.
 
 ### Decidido: la despensa NO guarda cantidades
 
@@ -137,9 +143,10 @@ por Vertex al dar de alta, se podría preguntar *"algo ligero de pescado para
 verano"*. Es el mayor salto cualitativo de la lista, y con 58 recetas indexar
 cuesta una miseria.
 
-**"Me faltan dos ingredientes".** Mejora barata sobre lo existente: en vez de
-exigir que estén todos, ordenar por cuántos faltan. Se toca solo
-`ingredientParser.ts` y `hooks/useIngredientSearch.ts`.
+~~**"Me faltan dos ingredientes".**~~ **Hecho el 31 de agosto**, aunque no donde
+se planteaba: vive en la sección de despensa, que ordena el catálogo por lo que
+te falta. El buscador de la portada sigue con su lógica Y estricta, que para
+buscar *"algo con merluza"* es lo que se quiere.
 
 ~~**Enlaces a una receta concreta.**~~ **Hecho el 31 de agosto**: `#/receta/<id>`
 abre la ficha directamente. Queda una mejora encima, barata: que el correo de
@@ -189,15 +196,14 @@ Sois cuatro, así que lo social tiene sentido a escala pequeña:
 
 ~~1. Estructurar los ingredientes.~~ **Hecho el 23 de agosto.**
 
-~~2. El router.~~ **Hecho el 31 de agosto.**
+~~2. El router.~~ ~~3. Sección de despensa.~~ **Ambos hechos el 31 de agosto.**
 
-1. **Sección de despensa**, con "qué puedo cocinar con lo que tengo".
-2. **Lista de la compra**, que cae casi sola encima de la despensa: tachar en el
+1. **Lista de la compra**, que cae casi sola encima de la despensa: tachar en el
    súper será añadir a ella.
-3. **Rescatar `tiempo`, `porciones` y `dificultad`.** Una tarde, e información
+2. **Rescatar `tiempo`, `porciones` y `dificultad`.** Una tarde, e información
    que ya se está pagando.
-4. **Modo cocina.** Solo frontend, y lo que más se agradece con la sartén puesta.
-5. **Búsqueda semántica.** La más vistosa, pero mejor con las anteriores ya
+3. **Modo cocina.** Solo frontend, y lo que más se agradece con la sartén puesta.
+4. **Búsqueda semántica.** La más vistosa, pero mejor con las anteriores ya
    asentadas.
 
 ---

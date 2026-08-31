@@ -1,16 +1,16 @@
 # Graph Report - Recetario  (2026-08-31)
 
 ## Corpus Check
-- 44 files · ~43,572 words
+- 47 files · ~45,853 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 266 nodes · 402 edges · 21 communities (19 shown, 2 thin omitted)
+- 280 nodes · 462 edges · 21 communities (19 shown, 2 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 2 edges (avg confidence: 0.5)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `875b8fbd`
+- Built from commit: `c67f12ec`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -33,13 +33,13 @@
 1. `compilerOptions` - 17 edges
 2. `compilerOptions` - 16 edges
 3. `errorMessage()` - 14 edges
-4. `Mi Recetario (SPA)` - 12 edges
-5. `Ideas para el Recetario` - 11 edges
-6. `n8n` - 11 edges
-7. `Recipe` - 10 edges
-8. `normalizeIngredients()` - 9 edges
-9. `aHash()` - 9 edges
-10. `Json` - 9 edges
+4. `Recipe` - 14 edges
+5. `aHash()` - 13 edges
+6. `Mi Recetario (SPA)` - 12 edges
+7. `normalizeIngredients()` - 11 edges
+8. `Ideas para el Recetario` - 11 edges
+9. `n8n` - 11 edges
+10. `App()` - 9 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `Mi Recetario (SPA)` --incluye--> `Valoraciones`  [EXTRACTED]
@@ -63,8 +63,8 @@ Cohesion: 0.08
 Nodes (33): Arquitectura sin backend, Build estatico para Nginx, Despliegue en Synology, Gmail, Google Drive, Google Sheets, Gotenberg, JSONB heterogeneo (+25 more)
 
 ### Community 1 - "Componentes de interfaz"
-Cohesion: 0.11
-Nodes (24): AddRecipeForm(), AddRecipeFormProps, LoginModal(), LoginModalProps, RecipeDetail(), RecipePolaroid(), RecipePolaroidProps, ShareByEmail() (+16 more)
+Cohesion: 0.15
+Nodes (19): AddRecipeForm(), AddRecipeFormProps, LoginModal(), LoginModalProps, ShareByEmail(), ShareByEmailProps, UploadProgress(), UploadProgressProps (+11 more)
 
 ### Community 2 - "Tooling de desarrollo"
 Cohesion: 0.08
@@ -79,16 +79,16 @@ Cohesion: 0.10
 Nodes (20): node, vite.config.ts, compilerOptions, allowImportingTsExtensions, erasableSyntaxOnly, lib, module, moduleDetection (+12 more)
 
 ### Community 5 - "Catalogo y busqueda"
-Cohesion: 0.17
-Nodes (15): FilterBar(), FilterBarProps, RecipeCard(), RecipeCardProps, tiltFor(), RecipeDetailProps, RecipeGrid(), RecipeGridProps (+7 more)
+Cohesion: 0.15
+Nodes (22): AnadirIngrediente(), Props, Props, SeccionDespensa(), RecipeCard(), RecipeCardProps, tiltFor(), RecipeDetailProps (+14 more)
 
 ### Community 6 - "Dependencias de runtime"
 Cohesion: 0.07
 Nodes (26): clsx, lucide-react, dependencies, clsx, lucide-react, react, react-dom, @supabase/supabase-js (+18 more)
 
 ### Community 7 - "Detalle y normalizacion JSONB"
-Cohesion: 0.29
-Nodes (12): IngredientsList(), IngredientsListProps, StepsList(), claveDespensa(), useDespensa(), asText(), esCabeceraDeGrupo(), Ingredient (+4 more)
+Cohesion: 0.19
+Nodes (18): IngredientsList(), IngredientsListProps, StepsList(), RecipeDetail(), RecipePolaroid(), RecipePolaroidProps, useIngredientSearch(), extractIngredientsText() (+10 more)
 
 ### Community 14 - "Mi Recetario — contexto del proyecto"
 Cohesion: 0.08
@@ -99,8 +99,8 @@ Cohesion: 0.40
 Nodes (4): Answer, Outcome, Q: Por que Supabase JS client with no backend layer aparece semanticamente similar a n8n webhook recipe ingestion?, Source Nodes
 
 ### Community 20 - "App.tsx"
-Cohesion: 0.24
-Nodes (14): App(), CATEGORIES, RecetaNoEncontrada(), SoloAdmin(), IngredientSearch(), IngredientSearchProps, irA(), reemplazarPor() (+6 more)
+Cohesion: 0.19
+Nodes (17): App(), CATEGORIES, RecetaNoEncontrada(), SoloAdmin(), FilterBar(), FilterBarProps, IngredientSearch(), IngredientSearchProps (+9 more)
 
 ## Knowledge Gaps
 - **110 isolated node(s):** `name`, `private`, `version`, `type`, `dev` (+105 more)
@@ -111,16 +111,16 @@ Nodes (14): App(), CATEGORIES, RecetaNoEncontrada(), SoloAdmin(), IngredientSear
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `devDependencies` connect `Tooling de desarrollo` to `Dependencias de runtime`?**
-  _High betweenness centrality (0.026) - this node is a cross-community bridge._
+  _High betweenness centrality (0.024) - this node is a cross-community bridge._
+- **Why does `Recipe` connect `Catalogo y busqueda` to `Componentes de interfaz`, `Detalle y normalizacion JSONB`?**
+  _High betweenness centrality (0.011) - this node is a cross-community bridge._
 - **What connects `name`, `private`, `version` to the rest of the system?**
   _110 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Arquitectura, servicios y seguridad` be split into smaller, more focused modules?**
   _Cohesion score 0.07777777777777778 - nodes in this community are weakly interconnected._
 - **Should `Componentes de interfaz` be split into smaller, more focused modules?**
-  _Cohesion score 0.11260504201680673 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.1455026455026455 - nodes in this community are weakly interconnected._
 - **Should `Tooling de desarrollo` be split into smaller, more focused modules?**
   _Cohesion score 0.08 - nodes in this community are weakly interconnected._
 - **Should `Config TypeScript de la app` be split into smaller, more focused modules?**
   _Cohesion score 0.08695652173913043 - nodes in this community are weakly interconnected._
-- **Should `Config TypeScript de build` be split into smaller, more focused modules?**
-  _Cohesion score 0.09523809523809523 - nodes in this community are weakly interconnected._

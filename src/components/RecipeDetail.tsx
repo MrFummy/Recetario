@@ -4,6 +4,7 @@ import { X, ExternalLink, Edit2, Save, Trash2, Loader2, AlertTriangle } from 'lu
 import type { Recipe } from '../types';
 import { StarRating } from './StarRating';
 import { IngredientsList, StepsList } from './RecipeContent';
+import type { Despensa } from '../hooks/useDespensa';
 import { ShareByEmail } from './ShareByEmail';
 import { RecipePolaroid } from './RecipePolaroid';
 import { hasNotas, renderNotas } from '../lib/recipeContent';
@@ -16,6 +17,7 @@ interface RecipeDetailProps {
   onClose: () => void;
   isAdmin?: boolean;
   user?: User | null;
+  despensa: Despensa;
   onUpdateNotes?: (notas: string) => Promise<void>;
   onUpdatePhoto?: (file: File) => Promise<void>;
   onRemovePhoto?: () => Promise<void>;
@@ -25,7 +27,7 @@ interface RecipeDetailProps {
   onShareByEmail?: (recipe: Recipe, email: string) => Promise<void>;
 }
 
-export function RecipeDetail({ recipe, onClose, isAdmin, user, onUpdateNotes, onUpdatePhoto, onRemovePhoto, onUpdateRating, onUpdateDate, onDelete, onShareByEmail }: RecipeDetailProps) {
+export function RecipeDetail({ recipe, onClose, isAdmin, user, despensa, onUpdateNotes, onUpdatePhoto, onRemovePhoto, onUpdateRating, onUpdateDate, onDelete, onShareByEmail }: RecipeDetailProps) {
   const isAfan = !!user;
   const initialNotes = renderNotas(recipe.notas);
 
@@ -239,7 +241,7 @@ export function RecipeDetail({ recipe, onClose, isAdmin, user, onUpdateNotes, on
                 <span className="relative z-10">Ingredientes</span>
                 <span className="absolute left-[-2px] right-[-4px] bottom-[2px] h-2 bg-yellow -z-0 -skew-x-6" />
               </h3>
-              <IngredientsList data={recipe.ingredientes} user={user} />
+              <IngredientsList data={recipe.ingredientes} user={user} despensa={despensa} />
             </section>
 
             <section>
