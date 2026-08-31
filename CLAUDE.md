@@ -122,8 +122,12 @@ sesión de admin.
 
 ### Pendiente
 
-- Activar *Leaked password protection* en el panel de Supabase (Authentication →
-  Policies). Es lo único que no se puede hacer por SQL ni por API.
+- ~~Activar *Leaked password protection*.~~ **No se puede: es de plan Pro y la
+  organización `Orballo` está en el gratuito.** Se queda como aviso permanente
+  del linter de Supabase; no es una tarea pendiente. Vive en *Authentication →
+  Sign In / Providers → Email*, no en *Policies* como decía esta nota antes.
+  Lo que sí se puede tocar en gratuito, en esa misma pantalla, es la longitud
+  mínima de contraseña y los tipos de carácter exigidos.
 - Limpiar dos fotos huérfanas del bucket: `Raxo_de_la_abuela.jpg` y
   `Wok_de_verduras_al_curry.jpeg`.
 - Confirmar con sesión iniciada que la despensa persiste entre visitas y entre
