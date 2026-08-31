@@ -120,6 +120,11 @@ Votar, editar notas y fecha, cambiar foto, compartir por email, alta y borrado e
 cascada: los seis pasos comprobados de punta a punta contra producción, con
 sesión de admin.
 
+**31 ago 2026**: la despensa persiste entre visitas y entre recetas, comprobado
+con sesión iniciada. El bucket quedó sin huérfanas —`Raxo_de_la_abuela.jpg` y
+`Wok_de_verduras_al_curry.jpeg` borradas— y `_default.jpg` sigue donde tiene que
+estar.
+
 ### Pendiente
 
 - ~~Activar *Leaked password protection*.~~ **No se puede: es de plan Pro y la
@@ -128,10 +133,6 @@ sesión de admin.
   Sign In / Providers → Email*, no en *Policies* como decía esta nota antes.
   Lo que sí se puede tocar en gratuito, en esa misma pantalla, es la longitud
   mínima de contraseña y los tipos de carácter exigidos.
-- Limpiar dos fotos huérfanas del bucket: `Raxo_de_la_abuela.jpg` y
-  `Wok_de_verduras_al_curry.jpeg`.
-- Confirmar con sesión iniciada que la despensa persiste entre visitas y entre
-  recetas. La lógica de interfaz está probada; lo que falta necesita login.
 - **Los `base` combinados ya molestan.** Son siete, y los siete son mezclas de
   condimentos: `sal y pimienta negra` (11 recetas), `sal, pimienta negra y nuez
   moscada` (2) y cinco más de una receta cada una. Su `base` es la frase entera,
