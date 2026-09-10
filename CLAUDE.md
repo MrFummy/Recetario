@@ -11,10 +11,21 @@ despliegue está en el [README](README.md).
 
 ## Empieza por el grafo
 
-`graphify-out/` contiene un grafo de conocimiento del proyecto: 249 nodos y 360
-aristas sobre 44 ficheros, en 20 comunidades. Combina extracción estructural del
+`graphify-out/` contiene un grafo de conocimiento del proyecto: 280 nodos y 462
+aristas sobre 50 ficheros, en 21 comunidades. Combina extracción estructural del
 código (AST) con una capa semántica que recoge lo que el código no dice por sí
 solo: la arquitectura, los servicios externos y el modelo de autorización.
+
+**La capa semántica lleva congelada en 37 nodos desde antes del 13 de agosto**,
+mientras la de AST ha pasado de 190 a 243. Todo lo que ha entrado después —la
+despensa, el router, `inventario.ts`— está en el grafo como estructura pero sin
+una sola descripción. `graphify update .` mantiene eso así: resella el AST y no
+toca la capa semántica, que exige la pasada completa y sí gasta API. Para las
+partes nuevas, entonces, el grafo localiza pero no explica: lee el código.
+
+Y ojo con las cifras de arriba, que ya se han quedado obsoletas dos veces: el
+grafo está sellado en `c67f12e` (`built_at_commit` en `graph.json`), un par de
+commits por detrás. Si no cuadran, manda el fichero, no esta nota.
 
 Para orientarte antes de tocar nada:
 
@@ -121,12 +132,20 @@ cascada: los seis pasos comprobados de punta a punta contra producción, con
 sesión de admin.
 
 **31 ago 2026**: la despensa persiste entre visitas y entre recetas, comprobado
-con sesión iniciada. El bucket quedó sin huérfanas —`Raxo_de_la_abuela.jpg` y
-`Wok_de_verduras_al_curry.jpeg` borradas— y `_default.jpg` sigue donde tiene que
-estar.
+con sesión iniciada. Se borraron dos huérfanas del bucket —`Raxo_de_la_abuela.jpg`
+y `Wok_de_verduras_al_curry.jpeg`— y `_default.jpg` sigue donde tiene que estar,
+que era el riesgo real de esa limpieza.
 
 ### Pendiente
 
+- **Queda una tercera foto huérfana en el bucket**, la más pesada de todas: un
+  objeto llamado literalmente `.jpg`, de 1.429 kB, del 24 de mayo. Tiene pinta de
+  subida con el nombre vacío. No entró en la limpieza del 31 de agosto porque la
+  lista de entonces solo tenía dos; verificado el 10 de septiembre que sigue ahí.
+  Al auditar el bucket, el filtro correcto es comparar contra
+  `recetas.foto_url` y excluir `_default.jpg` a mano: un `LIKE '%'||name` da
+  falsos positivos precisamente con este fichero, porque `.jpg` casa con
+  cualquier URL terminada en `.jpg`.
 - ~~Activar *Leaked password protection*.~~ **No se puede: es de plan Pro y la
   organización `Orballo` está en el gratuito.** Se queda como aviso permanente
   del linter de Supabase; no es una tarea pendiente. Vive en *Authentication →

@@ -165,8 +165,9 @@ entre sola. Ya existe un flujo *Bot recetas* activo: quizá esté medio hecho.
 **Detección de duplicados** al dar de alta, comparando título e ingredientes.
 Sale casi gratis si antes se hace lo de los embeddings.
 
-**Rellenar las 11 recetas sin foto**, que hoy muestran el placeholder. Un flujo
+**Rellenar las 12 recetas sin foto**, que hoy muestran el placeholder. Un flujo
 podría generar o buscar una imagen y quitar esa sensación de catálogo a medias.
+De paso aligeraría el build: ese placeholder pesa 806 KiB, más que todo el JS.
 
 ---
 
