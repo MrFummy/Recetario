@@ -76,6 +76,16 @@ Dos trampas que ya han mordido y conviene no repetir:
 - `_default.jpg` **no es la foto de ninguna receta**: es la plantilla que n8n
   copia cuando un alta llega sin foto. Una auditoría de huérfanos lo señala por
   error. Está protegido en la policy de borrado y también en el código.
+- **Auditar huérfanos del bucket tiene dos trampas**, y las dos han mordido ya.
+  La primera: comparar con `LIKE '%' || o.name` contra `recetas.foto_url` da
+  falsos positivos, porque un fichero llamado `.jpg` casa con *cualquier* URL
+  terminada en `.jpg` y aparece como si estuviera en uso — así se escondió uno
+  durante meses. Compara la ruta completa y excluye `_default.jpg` a mano.
+  La segunda: **borrarlos con `delete from storage.objects` no borra el fichero
+  físico**, solo la fila; el fichero se queda ocupando espacio y ya no lo
+  encuentra ninguna auditoría, que es peor que no tocarlo. Hay que ir por la
+  Storage API: el panel, `supabase storage rm`, o `remove()` con sesión de admin,
+  que es quien tiene la policy de borrado.
 
 ### Los ingredientes son objetos, no cadenas
 
@@ -136,24 +146,15 @@ con sesión iniciada. Se borraron dos huérfanas del bucket —`Raxo_de_la_abuel
 y `Wok_de_verduras_al_curry.jpeg`— y `_default.jpg` sigue donde tiene que estar,
 que era el riesgo real de esa limpieza.
 
+**10 sep 2026**: el bucket queda limpio del todo. Faltaba una tercera huérfana,
+la más pesada —un objeto llamado literalmente `.jpg`, de 1.429 kB, del 24 de
+mayo, con pinta de subida con el nombre vacío—, que se escapó de la limpieza
+anterior por la primera de las dos trampas de arriba. Borrada desde el panel y
+verificado después: 48 objetos, 54 MB, y el único fichero sin referencia en
+`recetas.foto_url` es `_default.jpg`, como debe ser.
+
 ### Pendiente
 
-- **Queda una tercera foto huérfana en el bucket**, la más pesada de todas: un
-  objeto llamado literalmente `.jpg`, de 1.429 kB, del 24 de mayo. Tiene pinta de
-  subida con el nombre vacío. No entró en la limpieza del 31 de agosto porque la
-  lista de entonces solo tenía dos; verificado el 10 de septiembre que sigue ahí.
-  Al auditar el bucket, el filtro correcto es comparar contra
-  `recetas.foto_url` y excluir `_default.jpg` a mano: un `LIKE '%'||name` da
-  falsos positivos precisamente con este fichero, porque `.jpg` casa con
-  cualquier URL terminada en `.jpg`.
-
-  **Para borrarlo hace falta la Storage API, no SQL.** Un `delete from
-  storage.objects` quita la fila pero deja el fichero físico en el bucket
-  consumiendo espacio, y encima ya no aparece en ninguna auditoría: queda peor
-  que antes. Sirve el panel de Storage, `supabase storage rm`, o
-  `supabase.storage.from('fotos-recetas').remove(['.jpg'])` con sesión de admin,
-  que es quien tiene la policy de borrado. En el panel cuesta verlo: al llamarse
-  solo `.jpg`, la fila aparece con el nombre en blanco.
 - ~~Activar *Leaked password protection*.~~ **No se puede: es de plan Pro y la
   organización `Orballo` está en el gratuito.** Se queda como aviso permanente
   del linter de Supabase; no es una tarea pendiente. Vive en *Authentication →
