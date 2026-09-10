@@ -146,6 +146,14 @@ que era el riesgo real de esa limpieza.
   `recetas.foto_url` y excluir `_default.jpg` a mano: un `LIKE '%'||name` da
   falsos positivos precisamente con este fichero, porque `.jpg` casa con
   cualquier URL terminada en `.jpg`.
+
+  **Para borrarlo hace falta la Storage API, no SQL.** Un `delete from
+  storage.objects` quita la fila pero deja el fichero físico en el bucket
+  consumiendo espacio, y encima ya no aparece en ninguna auditoría: queda peor
+  que antes. Sirve el panel de Storage, `supabase storage rm`, o
+  `supabase.storage.from('fotos-recetas').remove(['.jpg'])` con sesión de admin,
+  que es quien tiene la policy de borrado. En el panel cuesta verlo: al llamarse
+  solo `.jpg`, la fila aparece con el nombre en blanco.
 - ~~Activar *Leaked password protection*.~~ **No se puede: es de plan Pro y la
   organización `Orballo` está en el gratuito.** Se queda como aviso permanente
   del linter de Supabase; no es una tarea pendiente. Vive en *Authentication →
