@@ -83,6 +83,7 @@ formato absoluto.
 | 10 oct 2026 | `graphify update .` (280 nodos / 461 aristas / 23 comunidades) + creación de este panel | `50e4ac8`, `793d5e5` | Sin cambios de código; solo grafo y seguimiento |
 | 10 oct 2026 | Partidos los 7 `base` combinados (19 filas, no 18) en producción | `14caec3` | Migración aplicada vía MCP de Supabase |
 | 10 oct 2026 | Ajustado el prompt del nodo Vertex AI en n8n para no generar más `base` combinados | — | Cambio solo en n8n (nueva versión del workflow "Recetas con Frontend"); nada que commitear en este repo |
+| 10 oct 2026 | `npm run deploy` (scripts/deploy.ps1): compila, comprueba el `.env` embebido y espeja `dist/` contra `W:\recetario` con `robocopy /MIR` | — | Primer uso purgó 25 ficheros de builds sueltos acumulados en `assets/` desde mayo de 2026 — las opciones A/B del README (zip manual) nunca limpiaban. Solo funciona desde un equipo con esa unidad de red montada |
 | 10 oct 2026 | Lista de la compra (`#/lista-compra`) | `fc5a374` | `listaCompra.ts`, `ListaCompraSection.tsx`; `recipeContent.ts` ya expone `valor`/`unidad`. Verificado en el navegador: suma por `base`+`unidad`, descuenta despensa, persiste selección en localStorage |
 | 10 oct 2026 | `tiempo`/`porciones`/`dificultad`: columnas + webhook + badges en RecipeDetail | — | Sin backfill de recetas antiguas, a propósito. Columnas y `Guardar en Supabase` aplicados directamente en producción (Supabase MCP, n8n MCP) |
 

@@ -10,9 +10,9 @@
     "semantic_hash": "0355276bc79439afe3c53e3a2470ca1e"
   },
   "package.json": {
-    "mtime": 1779042842.6088307,
-    "ast_hash": "b21666ca88d4c981fa5fe3b3db7926c8",
-    "semantic_hash": "b21666ca88d4c981fa5fe3b3db7926c8"
+    "mtime": 1791626075.6579063,
+    "ast_hash": "866817c937a32bb7ef0cfda814fef9cd",
+    "semantic_hash": ""
   },
   "src/App.tsx": {
     "mtime": 1791624787.61434,
@@ -120,8 +120,8 @@
     "semantic_hash": "4ff9eeca4ab53927478aaa5c2f62c99d"
   },
   "README.md": {
-    "mtime": 1788203128.405582,
-    "ast_hash": "2f719efc74a8a4142bfb4f457bbb0cbf",
+    "mtime": 1791626083.4626637,
+    "ast_hash": "e991db0afe5ba39b7c547d6e39867bc9",
     "semantic_hash": ""
   },
   "index.html": {
@@ -277,6 +277,11 @@
   "supabase/migrations/20261010_anade_tiempo_porciones_dificultad.sql": {
     "mtime": 1791625712.9028094,
     "ast_hash": "180c615c12ba3f25ca527d2d5ffc4bfd",
+    "semantic_hash": ""
+  },
+  "scripts/deploy.ps1": {
+    "mtime": 1791626071.3720927,
+    "ast_hash": "ebe6e19fedc8eb059352ebce4d3707ba",
     "semantic_hash": ""
   }
 }

@@ -20,7 +20,7 @@
       "source_file": "package.json",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_json",
+      "id": "package",
       "community": 6,
       "community_name": "Dependencias de runtime",
       "norm_label": "package.json"
@@ -31,7 +31,7 @@
       "source_file": "package.json",
       "source_location": "L2",
       "_origin": "ast",
-      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_name",
+      "id": "package_name",
       "community": 6,
       "community_name": "Dependencias de runtime",
       "norm_label": "name"
@@ -42,7 +42,7 @@
       "source_file": "package.json",
       "source_location": "L3",
       "_origin": "ast",
-      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_private",
+      "id": "package_private",
       "community": 6,
       "community_name": "Dependencias de runtime",
       "norm_label": "private"
@@ -53,7 +53,7 @@
       "source_file": "package.json",
       "source_location": "L4",
       "_origin": "ast",
-      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_version",
+      "id": "package_version",
       "community": 6,
       "community_name": "Dependencias de runtime",
       "norm_label": "version"
@@ -64,7 +64,7 @@
       "source_file": "package.json",
       "source_location": "L5",
       "_origin": "ast",
-      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_type",
+      "id": "package_type",
       "community": 6,
       "community_name": "Dependencias de runtime",
       "norm_label": "type"
@@ -75,7 +75,7 @@
       "source_file": "package.json",
       "source_location": "L6",
       "_origin": "ast",
-      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_scripts",
+      "id": "package_scripts",
       "community": 6,
       "community_name": "Dependencias de runtime",
       "norm_label": "scripts"
@@ -86,7 +86,7 @@
       "source_file": "package.json",
       "source_location": "L7",
       "_origin": "ast",
-      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_scripts_dev",
+      "id": "package_scripts_dev",
       "community": 6,
       "community_name": "Dependencias de runtime",
       "norm_label": "dev"
@@ -97,7 +97,7 @@
       "source_file": "package.json",
       "source_location": "L8",
       "_origin": "ast",
-      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_scripts_build",
+      "id": "package_scripts_build",
       "community": 6,
       "community_name": "Dependencias de runtime",
       "norm_label": "build"
@@ -108,7 +108,7 @@
       "source_file": "package.json",
       "source_location": "L9",
       "_origin": "ast",
-      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_scripts_lint",
+      "id": "package_scripts_lint",
       "community": 6,
       "community_name": "Dependencias de runtime",
       "norm_label": "lint"
@@ -119,18 +119,29 @@
       "source_file": "package.json",
       "source_location": "L10",
       "_origin": "ast",
-      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_scripts_preview",
+      "id": "package_scripts_preview",
       "community": 6,
       "community_name": "Dependencias de runtime",
       "norm_label": "preview"
     },
     {
+      "label": "deploy",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L11",
+      "_origin": "ast",
+      "id": "package_scripts_deploy",
+      "community": 6,
+      "community_name": "Dependencias de runtime",
+      "norm_label": "deploy"
+    },
+    {
       "label": "dependencies",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L12",
+      "source_location": "L13",
       "_origin": "ast",
-      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_dependencies",
+      "id": "package_dependencies",
       "community": 6,
       "community_name": "Dependencias de runtime",
       "norm_label": "dependencies"
@@ -139,9 +150,9 @@
       "label": "@supabase/supabase-js",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L13",
+      "source_location": "L14",
       "_origin": "ast",
-      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_dependencies_supabase_supabase_js",
+      "id": "package_dependencies_supabase_supabase_js",
       "community": 6,
       "community_name": "Dependencias de runtime",
       "norm_label": "@supabase/supabase-js"
@@ -150,7 +161,7 @@
       "label": "@supabase/supabase-js",
       "file_type": "concept",
       "source_file": "package.json",
-      "source_location": "L13",
+      "source_location": "L14",
       "_origin": "ast",
       "id": "supabase_supabase_js",
       "community": 6,
@@ -161,9 +172,9 @@
       "label": "@tailwindcss/vite",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L14",
+      "source_location": "L15",
       "_origin": "ast",
-      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_dependencies_tailwindcss_vite",
+      "id": "package_dependencies_tailwindcss_vite",
       "community": 6,
       "community_name": "Dependencias de runtime",
       "norm_label": "@tailwindcss/vite"
@@ -172,7 +183,7 @@
       "label": "@tailwindcss/vite",
       "file_type": "concept",
       "source_file": "package.json",
-      "source_location": "L14",
+      "source_location": "L15",
       "_origin": "ast",
       "id": "tailwindcss_vite",
       "community": 6,
@@ -183,9 +194,9 @@
       "label": "clsx",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L15",
+      "source_location": "L16",
       "_origin": "ast",
-      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_dependencies_clsx",
+      "id": "package_dependencies_clsx",
       "community": 6,
       "community_name": "Dependencias de runtime",
       "norm_label": "clsx"
@@ -194,7 +205,7 @@
       "label": "clsx",
       "file_type": "concept",
       "source_file": "package.json",
-      "source_location": "L15",
+      "source_location": "L16",
       "_origin": "ast",
       "id": "clsx",
       "community": 6,
@@ -205,9 +216,9 @@
       "label": "lucide-react",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L16",
+      "source_location": "L17",
       "_origin": "ast",
-      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_dependencies_lucide_react",
+      "id": "package_dependencies_lucide_react",
       "community": 6,
       "community_name": "Dependencias de runtime",
       "norm_label": "lucide-react"
@@ -216,7 +227,7 @@
       "label": "lucide-react",
       "file_type": "concept",
       "source_file": "package.json",
-      "source_location": "L16",
+      "source_location": "L17",
       "_origin": "ast",
       "id": "lucide_react",
       "community": 6,
@@ -227,9 +238,9 @@
       "label": "react",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L17",
+      "source_location": "L18",
       "_origin": "ast",
-      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_dependencies_react",
+      "id": "package_dependencies_react",
       "community": 6,
       "community_name": "Dependencias de runtime",
       "norm_label": "react"
@@ -238,7 +249,7 @@
       "label": "react",
       "file_type": "concept",
       "source_file": "package.json",
-      "source_location": "L17",
+      "source_location": "L18",
       "_origin": "ast",
       "id": "react",
       "community": 6,
@@ -249,9 +260,9 @@
       "label": "react-dom",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L18",
+      "source_location": "L19",
       "_origin": "ast",
-      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_dependencies_react_dom",
+      "id": "package_dependencies_react_dom",
       "community": 6,
       "community_name": "Dependencias de runtime",
       "norm_label": "react-dom"
@@ -260,7 +271,7 @@
       "label": "react-dom",
       "file_type": "concept",
       "source_file": "package.json",
-      "source_location": "L18",
+      "source_location": "L19",
       "_origin": "ast",
       "id": "react_dom",
       "community": 6,
@@ -271,9 +282,9 @@
       "label": "tailwind-merge",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L19",
+      "source_location": "L20",
       "_origin": "ast",
-      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_dependencies_tailwind_merge",
+      "id": "package_dependencies_tailwind_merge",
       "community": 6,
       "community_name": "Dependencias de runtime",
       "norm_label": "tailwind-merge"
@@ -282,7 +293,7 @@
       "label": "tailwind-merge",
       "file_type": "concept",
       "source_file": "package.json",
-      "source_location": "L19",
+      "source_location": "L20",
       "_origin": "ast",
       "id": "tailwind_merge",
       "community": 6,
@@ -293,9 +304,9 @@
       "label": "tailwindcss",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L20",
+      "source_location": "L21",
       "_origin": "ast",
-      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_dependencies_tailwindcss",
+      "id": "package_dependencies_tailwindcss",
       "community": 6,
       "community_name": "Dependencias de runtime",
       "norm_label": "tailwindcss"
@@ -304,7 +315,7 @@
       "label": "tailwindcss",
       "file_type": "concept",
       "source_file": "package.json",
-      "source_location": "L20",
+      "source_location": "L21",
       "_origin": "ast",
       "id": "tailwindcss",
       "community": 6,
@@ -315,9 +326,9 @@
       "label": "devDependencies",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L22",
+      "source_location": "L23",
       "_origin": "ast",
-      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies",
+      "id": "package_devdependencies",
       "community": 2,
       "community_name": "Tooling de desarrollo",
       "norm_label": "devdependencies"
@@ -326,9 +337,9 @@
       "label": "@eslint/js",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L23",
+      "source_location": "L24",
       "_origin": "ast",
-      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies_eslint_js",
+      "id": "package_devdependencies_eslint_js",
       "community": 2,
       "community_name": "Tooling de desarrollo",
       "norm_label": "@eslint/js"
@@ -337,7 +348,7 @@
       "label": "@eslint/js",
       "file_type": "concept",
       "source_file": "package.json",
-      "source_location": "L23",
+      "source_location": "L24",
       "_origin": "ast",
       "id": "eslint_js",
       "community": 2,
@@ -348,9 +359,9 @@
       "label": "@types/node",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L24",
+      "source_location": "L25",
       "_origin": "ast",
-      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies_types_node",
+      "id": "package_devdependencies_types_node",
       "community": 2,
       "community_name": "Tooling de desarrollo",
       "norm_label": "@types/node"
@@ -359,7 +370,7 @@
       "label": "@types/node",
       "file_type": "concept",
       "source_file": "package.json",
-      "source_location": "L24",
+      "source_location": "L25",
       "_origin": "ast",
       "id": "types_node",
       "community": 2,
@@ -370,9 +381,9 @@
       "label": "@types/react",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L25",
+      "source_location": "L26",
       "_origin": "ast",
-      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies_types_react",
+      "id": "package_devdependencies_types_react",
       "community": 2,
       "community_name": "Tooling de desarrollo",
       "norm_label": "@types/react"
@@ -381,7 +392,7 @@
       "label": "@types/react",
       "file_type": "concept",
       "source_file": "package.json",
-      "source_location": "L25",
+      "source_location": "L26",
       "_origin": "ast",
       "id": "types_react",
       "community": 2,
@@ -392,9 +403,9 @@
       "label": "@types/react-dom",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L26",
+      "source_location": "L27",
       "_origin": "ast",
-      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies_types_react_dom",
+      "id": "package_devdependencies_types_react_dom",
       "community": 2,
       "community_name": "Tooling de desarrollo",
       "norm_label": "@types/react-dom"
@@ -403,7 +414,7 @@
       "label": "@types/react-dom",
       "file_type": "concept",
       "source_file": "package.json",
-      "source_location": "L26",
+      "source_location": "L27",
       "_origin": "ast",
       "id": "types_react_dom",
       "community": 2,
@@ -414,9 +425,9 @@
       "label": "@vitejs/plugin-react",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L27",
+      "source_location": "L28",
       "_origin": "ast",
-      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies_vitejs_plugin_react",
+      "id": "package_devdependencies_vitejs_plugin_react",
       "community": 2,
       "community_name": "Tooling de desarrollo",
       "norm_label": "@vitejs/plugin-react"
@@ -425,7 +436,7 @@
       "label": "@vitejs/plugin-react",
       "file_type": "concept",
       "source_file": "package.json",
-      "source_location": "L27",
+      "source_location": "L28",
       "_origin": "ast",
       "id": "vitejs_plugin_react",
       "community": 2,
@@ -436,9 +447,9 @@
       "label": "eslint",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L28",
+      "source_location": "L29",
       "_origin": "ast",
-      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies_eslint",
+      "id": "package_devdependencies_eslint",
       "community": 2,
       "community_name": "Tooling de desarrollo",
       "norm_label": "eslint"
@@ -447,7 +458,7 @@
       "label": "eslint",
       "file_type": "concept",
       "source_file": "package.json",
-      "source_location": "L28",
+      "source_location": "L29",
       "_origin": "ast",
       "id": "eslint",
       "community": 2,
@@ -458,9 +469,9 @@
       "label": "eslint-plugin-react-hooks",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L29",
+      "source_location": "L30",
       "_origin": "ast",
-      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies_eslint_plugin_react_hooks",
+      "id": "package_devdependencies_eslint_plugin_react_hooks",
       "community": 2,
       "community_name": "Tooling de desarrollo",
       "norm_label": "eslint-plugin-react-hooks"
@@ -469,7 +480,7 @@
       "label": "eslint-plugin-react-hooks",
       "file_type": "concept",
       "source_file": "package.json",
-      "source_location": "L29",
+      "source_location": "L30",
       "_origin": "ast",
       "id": "eslint_plugin_react_hooks",
       "community": 2,
@@ -480,9 +491,9 @@
       "label": "eslint-plugin-react-refresh",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L30",
+      "source_location": "L31",
       "_origin": "ast",
-      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies_eslint_plugin_react_refresh",
+      "id": "package_devdependencies_eslint_plugin_react_refresh",
       "community": 2,
       "community_name": "Tooling de desarrollo",
       "norm_label": "eslint-plugin-react-refresh"
@@ -491,7 +502,7 @@
       "label": "eslint-plugin-react-refresh",
       "file_type": "concept",
       "source_file": "package.json",
-      "source_location": "L30",
+      "source_location": "L31",
       "_origin": "ast",
       "id": "eslint_plugin_react_refresh",
       "community": 2,
@@ -502,9 +513,9 @@
       "label": "globals",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L31",
+      "source_location": "L32",
       "_origin": "ast",
-      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies_globals",
+      "id": "package_devdependencies_globals",
       "community": 2,
       "community_name": "Tooling de desarrollo",
       "norm_label": "globals"
@@ -513,7 +524,7 @@
       "label": "globals",
       "file_type": "concept",
       "source_file": "package.json",
-      "source_location": "L31",
+      "source_location": "L32",
       "_origin": "ast",
       "id": "globals",
       "community": 2,
@@ -524,9 +535,9 @@
       "label": "typescript",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L32",
+      "source_location": "L33",
       "_origin": "ast",
-      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies_typescript",
+      "id": "package_devdependencies_typescript",
       "community": 2,
       "community_name": "Tooling de desarrollo",
       "norm_label": "typescript"
@@ -535,7 +546,7 @@
       "label": "typescript",
       "file_type": "concept",
       "source_file": "package.json",
-      "source_location": "L32",
+      "source_location": "L33",
       "_origin": "ast",
       "id": "typescript",
       "community": 2,
@@ -546,9 +557,9 @@
       "label": "typescript-eslint",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L33",
+      "source_location": "L34",
       "_origin": "ast",
-      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies_typescript_eslint",
+      "id": "package_devdependencies_typescript_eslint",
       "community": 2,
       "community_name": "Tooling de desarrollo",
       "norm_label": "typescript-eslint"
@@ -557,7 +568,7 @@
       "label": "typescript-eslint",
       "file_type": "concept",
       "source_file": "package.json",
-      "source_location": "L33",
+      "source_location": "L34",
       "_origin": "ast",
       "id": "typescript_eslint",
       "community": 2,
@@ -568,9 +579,9 @@
       "label": "vite",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L34",
+      "source_location": "L35",
       "_origin": "ast",
-      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies_vite",
+      "id": "package_devdependencies_vite",
       "community": 2,
       "community_name": "Tooling de desarrollo",
       "norm_label": "vite"
@@ -579,12 +590,23 @@
       "label": "vite",
       "file_type": "concept",
       "source_file": "package.json",
-      "source_location": "L34",
+      "source_location": "L35",
       "_origin": "ast",
       "id": "vite",
       "community": 2,
       "community_name": "Tooling de desarrollo",
       "norm_label": "vite"
+    },
+    {
+      "label": "deploy.ps1",
+      "file_type": "code",
+      "source_file": "scripts/deploy.ps1",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "scripts_deploy",
+      "community": 24,
+      "community_name": "deploy.ps1",
+      "norm_label": "deploy.ps1"
     },
     {
       "label": "App.tsx",
@@ -593,8 +615,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_app",
-      "community": 1,
-      "community_name": "Componentes de interfaz",
+      "community": 20,
+      "community_name": "App.tsx",
       "norm_label": "app.tsx"
     },
     {
@@ -604,8 +626,8 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "src_app_categories",
-      "community": 1,
-      "community_name": "Componentes de interfaz",
+      "community": 20,
+      "community_name": "App.tsx",
       "norm_label": "categories"
     },
     {
@@ -615,8 +637,8 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "src_app_app",
-      "community": 1,
-      "community_name": "Componentes de interfaz",
+      "community": 20,
+      "community_name": "App.tsx",
       "norm_label": "app()"
     },
     {
@@ -692,8 +714,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_avisos",
-      "community": 1,
-      "community_name": "Componentes de interfaz",
+      "community": 20,
+      "community_name": "App.tsx",
       "norm_label": "avisos.tsx"
     },
     {
@@ -703,8 +725,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "src_components_avisos_soloadmin",
-      "community": 1,
-      "community_name": "Componentes de interfaz",
+      "community": 20,
+      "community_name": "App.tsx",
       "norm_label": "soloadmin()"
     },
     {
@@ -714,8 +736,8 @@
       "source_location": "L48",
       "_origin": "ast",
       "id": "src_components_avisos_recetanoencontrada",
-      "community": 1,
-      "community_name": "Componentes de interfaz",
+      "community": 20,
+      "community_name": "App.tsx",
       "norm_label": "recetanoencontrada()"
     },
     {
@@ -736,8 +758,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "src_components_despensasection_props",
-      "community": 8,
-      "community_name": "Scripts de npm",
+      "community": 5,
+      "community_name": "DespensaSection.tsx",
       "norm_label": "props"
     },
     {
@@ -791,8 +813,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_ingredientsearch",
-      "community": 1,
-      "community_name": "Componentes de interfaz",
+      "community": 20,
+      "community_name": "App.tsx",
       "norm_label": "ingredientsearch.tsx"
     },
     {
@@ -802,8 +824,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "src_components_ingredientsearch_ingredientsearchprops",
-      "community": 1,
-      "community_name": "Componentes de interfaz",
+      "community": 20,
+      "community_name": "App.tsx",
       "norm_label": "ingredientsearchprops"
     },
     {
@@ -813,8 +835,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "src_components_ingredientsearch_ingredientsearch",
-      "community": 1,
-      "community_name": "Componentes de interfaz",
+      "community": 20,
+      "community_name": "App.tsx",
       "norm_label": "ingredientsearch()"
     },
     {
@@ -824,8 +846,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_listacomprasection",
-      "community": 8,
-      "community_name": "Scripts de npm",
+      "community": 5,
+      "community_name": "DespensaSection.tsx",
       "norm_label": "listacomprasection.tsx"
     },
     {
@@ -835,8 +857,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "src_components_listacomprasection_props",
-      "community": 8,
-      "community_name": "Scripts de npm",
+      "community": 5,
+      "community_name": "DespensaSection.tsx",
       "norm_label": "props"
     },
     {
@@ -846,8 +868,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "src_components_listacomprasection_leerseleccionguardada",
-      "community": 8,
-      "community_name": "Scripts de npm",
+      "community": 5,
+      "community_name": "DespensaSection.tsx",
       "norm_label": "leerseleccionguardada()"
     },
     {
@@ -857,8 +879,8 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "src_components_listacomprasection_seccionlistacompra",
-      "community": 8,
-      "community_name": "Scripts de npm",
+      "community": 5,
+      "community_name": "DespensaSection.tsx",
       "norm_label": "seccionlistacompra()"
     },
     {
@@ -989,8 +1011,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_recipedetail",
-      "community": 7,
-      "community_name": "Detalle y normalizacion JSONB",
+      "community": 1,
+      "community_name": "Componentes de interfaz",
       "norm_label": "recipedetail.tsx"
     },
     {
@@ -1000,8 +1022,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "src_components_recipedetail_recipedetailprops",
-      "community": 8,
-      "community_name": "Scripts de npm",
+      "community": 5,
+      "community_name": "DespensaSection.tsx",
       "norm_label": "recipedetailprops"
     },
     {
@@ -1011,8 +1033,8 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "src_components_recipedetail_recipedetail",
-      "community": 7,
-      "community_name": "Detalle y normalizacion JSONB",
+      "community": 1,
+      "community_name": "Componentes de interfaz",
       "norm_label": "recipedetail()"
     },
     {
@@ -1066,8 +1088,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_recipepolaroid",
-      "community": 7,
-      "community_name": "Detalle y normalizacion JSONB",
+      "community": 1,
+      "community_name": "Componentes de interfaz",
       "norm_label": "recipepolaroid.tsx"
     },
     {
@@ -1077,8 +1099,8 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "src_components_recipepolaroid_recipepolaroidprops",
-      "community": 7,
-      "community_name": "Detalle y normalizacion JSONB",
+      "community": 1,
+      "community_name": "Componentes de interfaz",
       "norm_label": "recipepolaroidprops"
     },
     {
@@ -1088,8 +1110,8 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "src_components_recipepolaroid_recipepolaroid",
-      "community": 7,
-      "community_name": "Detalle y normalizacion JSONB",
+      "community": 1,
+      "community_name": "Componentes de interfaz",
       "norm_label": "recipepolaroid()"
     },
     {
@@ -1231,8 +1253,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "src_hooks_usedespensa_despensa",
-      "community": 8,
-      "community_name": "Scripts de npm",
+      "community": 5,
+      "community_name": "DespensaSection.tsx",
       "norm_label": "despensa"
     },
     {
@@ -1253,8 +1275,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_hooks_useingredientsearch",
-      "community": 7,
-      "community_name": "Detalle y normalizacion JSONB",
+      "community": 5,
+      "community_name": "DespensaSection.tsx",
       "norm_label": "useingredientsearch.ts"
     },
     {
@@ -1264,8 +1286,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "src_hooks_useingredientsearch_useingredientsearch",
-      "community": 7,
-      "community_name": "Detalle y normalizacion JSONB",
+      "community": 20,
+      "community_name": "App.tsx",
       "norm_label": "useingredientsearch()"
     },
     {
@@ -1297,8 +1319,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_hooks_useruta",
-      "community": 1,
-      "community_name": "Componentes de interfaz",
+      "community": 20,
+      "community_name": "App.tsx",
       "norm_label": "useruta.ts"
     },
     {
@@ -1308,8 +1330,8 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "src_hooks_useruta_ira",
-      "community": 1,
-      "community_name": "Componentes de interfaz",
+      "community": 20,
+      "community_name": "App.tsx",
       "norm_label": "ira()"
     },
     {
@@ -1319,8 +1341,8 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "src_hooks_useruta_reemplazarpor",
-      "community": 1,
-      "community_name": "Componentes de interfaz",
+      "community": 20,
+      "community_name": "App.tsx",
       "norm_label": "reemplazarpor()"
     },
     {
@@ -1330,8 +1352,8 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "src_hooks_useruta_volveratras",
-      "community": 1,
-      "community_name": "Componentes de interfaz",
+      "community": 20,
+      "community_name": "App.tsx",
       "norm_label": "volveratras()"
     },
     {
@@ -1341,8 +1363,8 @@
       "source_location": "L38",
       "_origin": "ast",
       "id": "src_hooks_useruta_useruta",
-      "community": 1,
-      "community_name": "Componentes de interfaz",
+      "community": 20,
+      "community_name": "App.tsx",
       "norm_label": "useruta()"
     },
     {
@@ -1385,8 +1407,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_lib_ingredientparser",
-      "community": 7,
-      "community_name": "Detalle y normalizacion JSONB",
+      "community": 5,
+      "community_name": "DespensaSection.tsx",
       "norm_label": "ingredientparser.ts"
     },
     {
@@ -1407,8 +1429,8 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "src_lib_ingredientparser_extractingredientstext",
-      "community": 7,
-      "community_name": "Detalle y normalizacion JSONB",
+      "community": 5,
+      "community_name": "DespensaSection.tsx",
       "norm_label": "extractingredientstext()"
     },
     {
@@ -1418,8 +1440,8 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "src_lib_ingredientparser_recipematchesingredients",
-      "community": 7,
-      "community_name": "Detalle y normalizacion JSONB",
+      "community": 5,
+      "community_name": "DespensaSection.tsx",
       "norm_label": "recipematchesingredients()"
     },
     {
@@ -1473,8 +1495,8 @@
       "source_location": "L49",
       "_origin": "ast",
       "id": "src_lib_inventario_recetaconfaltantes",
-      "community": 8,
-      "community_name": "Scripts de npm",
+      "community": 5,
+      "community_name": "DespensaSection.tsx",
       "norm_label": "recetaconfaltantes"
     },
     {
@@ -1506,8 +1528,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_lib_listacompra",
-      "community": 8,
-      "community_name": "Scripts de npm",
+      "community": 5,
+      "community_name": "DespensaSection.tsx",
       "norm_label": "listacompra.ts"
     },
     {
@@ -1517,8 +1539,8 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "src_lib_listacompra_itemlistacompra",
-      "community": 8,
-      "community_name": "Scripts de npm",
+      "community": 5,
+      "community_name": "DespensaSection.tsx",
       "norm_label": "itemlistacompra"
     },
     {
@@ -1528,8 +1550,8 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "src_lib_listacompra_listadelacompra",
-      "community": 8,
-      "community_name": "Scripts de npm",
+      "community": 5,
+      "community_name": "DespensaSection.tsx",
       "norm_label": "listadelacompra()"
     },
     {
@@ -1682,8 +1704,8 @@
       "source_location": "L129",
       "_origin": "ast",
       "id": "src_lib_recipecontent_rendernotas",
-      "community": 7,
-      "community_name": "Detalle y normalizacion JSONB",
+      "community": 1,
+      "community_name": "Componentes de interfaz",
       "norm_label": "rendernotas()"
     },
     {
@@ -1693,8 +1715,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_lib_rutas",
-      "community": 1,
-      "community_name": "Componentes de interfaz",
+      "community": 20,
+      "community_name": "App.tsx",
       "norm_label": "rutas.ts"
     },
     {
@@ -1704,8 +1726,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "src_lib_rutas_ruta",
-      "community": 1,
-      "community_name": "Componentes de interfaz",
+      "community": 20,
+      "community_name": "App.tsx",
       "norm_label": "ruta"
     },
     {
@@ -1715,8 +1737,8 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "src_lib_rutas_catalogo",
-      "community": 1,
-      "community_name": "Componentes de interfaz",
+      "community": 20,
+      "community_name": "App.tsx",
       "norm_label": "catalogo"
     },
     {
@@ -1726,8 +1748,8 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "src_lib_rutas_parsearruta",
-      "community": 1,
-      "community_name": "Componentes de interfaz",
+      "community": 20,
+      "community_name": "App.tsx",
       "norm_label": "parsearruta()"
     },
     {
@@ -1737,8 +1759,8 @@
       "source_location": "L42",
       "_origin": "ast",
       "id": "src_lib_rutas_ahash",
-      "community": 1,
-      "community_name": "Componentes de interfaz",
+      "community": 20,
+      "community_name": "App.tsx",
       "norm_label": "ahash()"
     },
     {
@@ -1770,8 +1792,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_main",
-      "community": 1,
-      "community_name": "Componentes de interfaz",
+      "community": 20,
+      "community_name": "App.tsx",
       "norm_label": "main.tsx"
     },
     {
@@ -1781,8 +1803,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_types",
-      "community": 7,
-      "community_name": "Detalle y normalizacion JSONB",
+      "community": 5,
+      "community_name": "DespensaSection.tsx",
       "norm_label": "types.ts"
     },
     {
@@ -1803,8 +1825,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "src_types_recipe",
-      "community": 8,
-      "community_name": "Scripts de npm",
+      "community": 5,
+      "community_name": "DespensaSection.tsx",
       "norm_label": "recipe"
     },
     {
@@ -3335,22 +3357,22 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L12",
+      "source_location": "L13",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_json",
-      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_dependencies",
+      "source": "package",
+      "target": "package_dependencies",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L22",
+      "source_location": "L23",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_json",
-      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies",
+      "source": "package",
+      "target": "package_devdependencies",
       "confidence_score": 1.0
     },
     {
@@ -3360,8 +3382,8 @@
       "source_location": "L2",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_json",
-      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_name",
+      "source": "package",
+      "target": "package_name",
       "confidence_score": 1.0
     },
     {
@@ -3371,8 +3393,8 @@
       "source_location": "L3",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_json",
-      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_private",
+      "source": "package",
+      "target": "package_private",
       "confidence_score": 1.0
     },
     {
@@ -3382,8 +3404,8 @@
       "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_json",
-      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_scripts",
+      "source": "package",
+      "target": "package_scripts",
       "confidence_score": 1.0
     },
     {
@@ -3393,8 +3415,8 @@
       "source_location": "L5",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_json",
-      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_type",
+      "source": "package",
+      "target": "package_type",
       "confidence_score": 1.0
     },
     {
@@ -3404,8 +3426,8 @@
       "source_location": "L4",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_json",
-      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_version",
+      "source": "package",
+      "target": "package_version",
       "confidence_score": 1.0
     },
     {
@@ -3415,8 +3437,19 @@
       "source_location": "L8",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_scripts",
-      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_scripts_build",
+      "source": "package_scripts",
+      "target": "package_scripts_build",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "package_scripts",
+      "target": "package_scripts_deploy",
       "confidence_score": 1.0
     },
     {
@@ -3426,8 +3459,8 @@
       "source_location": "L7",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_scripts",
-      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_scripts_dev",
+      "source": "package_scripts",
+      "target": "package_scripts_dev",
       "confidence_score": 1.0
     },
     {
@@ -3437,8 +3470,8 @@
       "source_location": "L9",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_scripts",
-      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_scripts_lint",
+      "source": "package_scripts",
+      "target": "package_scripts_lint",
       "confidence_score": 1.0
     },
     {
@@ -3448,19 +3481,8 @@
       "source_location": "L10",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_scripts",
-      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_scripts_preview",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L15",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_dependencies",
-      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_dependencies_clsx",
+      "source": "package_scripts",
+      "target": "package_scripts_preview",
       "confidence_score": 1.0
     },
     {
@@ -3470,8 +3492,8 @@
       "source_location": "L16",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_dependencies",
-      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_dependencies_lucide_react",
+      "source": "package_dependencies",
+      "target": "package_dependencies_clsx",
       "confidence_score": 1.0
     },
     {
@@ -3481,8 +3503,8 @@
       "source_location": "L17",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_dependencies",
-      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_dependencies_react",
+      "source": "package_dependencies",
+      "target": "package_dependencies_lucide_react",
       "confidence_score": 1.0
     },
     {
@@ -3492,19 +3514,8 @@
       "source_location": "L18",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_dependencies",
-      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_dependencies_react_dom",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L13",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_dependencies",
-      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_dependencies_supabase_supabase_js",
+      "source": "package_dependencies",
+      "target": "package_dependencies_react",
       "confidence_score": 1.0
     },
     {
@@ -3514,19 +3525,8 @@
       "source_location": "L19",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_dependencies",
-      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_dependencies_tailwind_merge",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L20",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_dependencies",
-      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_dependencies_tailwindcss",
+      "source": "package_dependencies",
+      "target": "package_dependencies_react_dom",
       "confidence_score": 1.0
     },
     {
@@ -3536,19 +3536,52 @@
       "source_location": "L14",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_dependencies",
-      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_dependencies_tailwindcss_vite",
+      "source": "package_dependencies",
+      "target": "package_dependencies_supabase_supabase_js",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "package_dependencies",
+      "target": "package_dependencies_tailwind_merge",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L21",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "package_dependencies",
+      "target": "package_dependencies_tailwindcss",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "package_dependencies",
+      "target": "package_dependencies_tailwindcss_vite",
       "confidence_score": 1.0
     },
     {
       "relation": "imports",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L13",
+      "source_location": "L14",
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
-      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_dependencies_supabase_supabase_js",
+      "source": "package_dependencies_supabase_supabase_js",
       "target": "supabase_supabase_js",
       "confidence_score": 1.0
     },
@@ -3556,24 +3589,12 @@
       "relation": "imports",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L14",
-      "weight": 1.0,
-      "context": "import",
-      "_origin": "ast",
-      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_dependencies_tailwindcss_vite",
-      "target": "tailwindcss_vite",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
       "source_location": "L15",
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
-      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_dependencies_clsx",
-      "target": "clsx",
+      "source": "package_dependencies_tailwindcss_vite",
+      "target": "tailwindcss_vite",
       "confidence_score": 1.0
     },
     {
@@ -3584,8 +3605,8 @@
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
-      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_dependencies_lucide_react",
-      "target": "lucide_react",
+      "source": "package_dependencies_clsx",
+      "target": "clsx",
       "confidence_score": 1.0
     },
     {
@@ -3596,8 +3617,8 @@
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
-      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_dependencies_react",
-      "target": "react",
+      "source": "package_dependencies_lucide_react",
+      "target": "lucide_react",
       "confidence_score": 1.0
     },
     {
@@ -3608,8 +3629,8 @@
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
-      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_dependencies_react_dom",
-      "target": "react_dom",
+      "source": "package_dependencies_react",
+      "target": "react",
       "confidence_score": 1.0
     },
     {
@@ -3620,8 +3641,8 @@
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
-      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_dependencies_tailwind_merge",
-      "target": "tailwind_merge",
+      "source": "package_dependencies_react_dom",
+      "target": "react_dom",
       "confidence_score": 1.0
     },
     {
@@ -3632,7 +3653,19 @@
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
-      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_dependencies_tailwindcss",
+      "source": "package_dependencies_tailwind_merge",
+      "target": "tailwind_merge",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L21",
+      "weight": 1.0,
+      "context": "import",
+      "_origin": "ast",
+      "source": "package_dependencies_tailwindcss",
       "target": "tailwindcss",
       "confidence_score": 1.0
     },
@@ -3640,55 +3673,11 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L28",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies",
-      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies_eslint",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L23",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies",
-      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies_eslint_js",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
       "source_location": "L29",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies",
-      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies_eslint_plugin_react_hooks",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L30",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies",
-      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies_eslint_plugin_react_refresh",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L31",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies",
-      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies_globals",
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_eslint",
       "confidence_score": 1.0
     },
     {
@@ -3698,30 +3687,30 @@
       "source_location": "L24",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies",
-      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies_types_node",
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_eslint_js",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L25",
+      "source_location": "L30",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies",
-      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies_types_react",
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_eslint_plugin_react_hooks",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L26",
+      "source_location": "L31",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies",
-      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies_types_react_dom",
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_eslint_plugin_react_refresh",
       "confidence_score": 1.0
     },
     {
@@ -3731,30 +3720,30 @@
       "source_location": "L32",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies",
-      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies_typescript",
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_globals",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L33",
+      "source_location": "L25",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies",
-      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies_typescript_eslint",
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_types_node",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L34",
+      "source_location": "L26",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies",
-      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies_vite",
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_types_react",
       "confidence_score": 1.0
     },
     {
@@ -3764,19 +3753,63 @@
       "source_location": "L27",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies",
-      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies_vitejs_plugin_react",
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_types_react_dom",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L33",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_typescript",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L34",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_typescript_eslint",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L35",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_vite",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L28",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_vitejs_plugin_react",
       "confidence_score": 1.0
     },
     {
       "relation": "imports",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L23",
+      "source_location": "L24",
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
-      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies_eslint_js",
+      "source": "package_devdependencies_eslint_js",
       "target": "eslint_js",
       "confidence_score": 1.0
     },
@@ -3784,24 +3817,12 @@
       "relation": "imports",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L24",
-      "weight": 1.0,
-      "context": "import",
-      "_origin": "ast",
-      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies_types_node",
-      "target": "types_node",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
       "source_location": "L25",
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
-      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies_types_react",
-      "target": "types_react",
+      "source": "package_devdependencies_types_node",
+      "target": "types_node",
       "confidence_score": 1.0
     },
     {
@@ -3812,8 +3833,8 @@
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
-      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies_types_react_dom",
-      "target": "types_react_dom",
+      "source": "package_devdependencies_types_react",
+      "target": "types_react",
       "confidence_score": 1.0
     },
     {
@@ -3824,8 +3845,8 @@
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
-      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies_vitejs_plugin_react",
-      "target": "vitejs_plugin_react",
+      "source": "package_devdependencies_types_react_dom",
+      "target": "types_react_dom",
       "confidence_score": 1.0
     },
     {
@@ -3836,8 +3857,8 @@
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
-      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies_eslint",
-      "target": "eslint",
+      "source": "package_devdependencies_vitejs_plugin_react",
+      "target": "vitejs_plugin_react",
       "confidence_score": 1.0
     },
     {
@@ -3848,8 +3869,8 @@
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
-      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies_eslint_plugin_react_hooks",
-      "target": "eslint_plugin_react_hooks",
+      "source": "package_devdependencies_eslint",
+      "target": "eslint",
       "confidence_score": 1.0
     },
     {
@@ -3860,8 +3881,8 @@
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
-      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies_eslint_plugin_react_refresh",
-      "target": "eslint_plugin_react_refresh",
+      "source": "package_devdependencies_eslint_plugin_react_hooks",
+      "target": "eslint_plugin_react_hooks",
       "confidence_score": 1.0
     },
     {
@@ -3872,8 +3893,8 @@
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
-      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies_globals",
-      "target": "globals",
+      "source": "package_devdependencies_eslint_plugin_react_refresh",
+      "target": "eslint_plugin_react_refresh",
       "confidence_score": 1.0
     },
     {
@@ -3884,8 +3905,8 @@
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
-      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies_typescript",
-      "target": "typescript",
+      "source": "package_devdependencies_globals",
+      "target": "globals",
       "confidence_score": 1.0
     },
     {
@@ -3896,8 +3917,8 @@
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
-      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies_typescript_eslint",
-      "target": "typescript_eslint",
+      "source": "package_devdependencies_typescript",
+      "target": "typescript",
       "confidence_score": 1.0
     },
     {
@@ -3908,7 +3929,19 @@
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
-      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies_vite",
+      "source": "package_devdependencies_typescript_eslint",
+      "target": "typescript_eslint",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L35",
+      "weight": 1.0,
+      "context": "import",
+      "_origin": "ast",
+      "source": "package_devdependencies_vite",
       "target": "vite",
       "confidence_score": 1.0
     },
@@ -9109,5 +9142,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "fc5a3743e7c8c7d4a38b3ad56be7a94c225250dd"
+  "built_at_commit": "300960b99942228e495161d4df41a488510493e1"
 }

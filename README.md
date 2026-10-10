@@ -75,6 +75,23 @@ docker run -d --name recetario --restart unless-stopped \
   nginx:alpine
 ```
 
+**Opción C — automatizado, si tienes `W:\recetario` montado (el equipo de desarrollo)**
+
+El recurso `\\10.99.1.70\web` suele estar montado como `W:\` en el equipo
+desde el que se desarrolla. Con eso montado:
+
+```bash
+npm run deploy
+```
+
+Ejecuta [scripts/deploy.ps1](scripts/deploy.ps1): compila, comprueba que el
+bundle lleva el `.env` embebido, y espeja `dist/` contra `W:\recetario` con
+`robocopy /MIR` — copia lo nuevo y **borra** lo que ya no esté en el build
+actual. Eso es a propósito: las opciones A y B suben el zip encima sin
+limpiar, y en `assets/` se van acumulando los ficheros con hash de cada
+build anterior (en agosto de 2026 había 26 sueltos desde mayo). `/MIR` deja
+siempre la carpeta igual que `dist/`, ni un fichero de más.
+
 ### 3. Rutas: por qué no hace falta tocar Nginx
 
 La app enruta **por el hash** (`#/`, `#/nueva`, `#/receta/<id>`), y esa parte de
