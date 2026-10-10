@@ -14,6 +14,13 @@ export interface Ingredient {
   base?: string;
   /** Cabecera de sección ("— Para la salsa —"), no un ingrediente marcable. */
   esGrupo?: boolean;
+  /**
+   * Cantidad como número, o `null` si no es numérica ("al gusto", "C/S"...).
+   * Solo la usa la lista de la compra, para sumar cuando se puede.
+   */
+  valor?: number | null;
+  /** Unidad normalizada (g, ml, unidad, al gusto...), o `null` si no la trae. */
+  unidad?: string | null;
 }
 
 /** Las cabeceras de sección llegan como cadenas sueltas entre guiones largos. */
@@ -32,6 +39,16 @@ function asText(value: Json | undefined): string {
 
 function isRecord(value: Json): value is { [key: string]: Json } {
   return typeof value === 'object' && value !== null && !Array.isArray(value);
+}
+
+/** Convierte a número aceptando coma decimal; `null` si no es numérico. */
+function asNumero(value: Json | undefined): number | null {
+  if (typeof value === 'number' && isFinite(value)) return value;
+  if (typeof value === 'string') {
+    const n = parseFloat(value.replace(',', '.'));
+    if (isFinite(n)) return n;
+  }
+  return null;
 }
 
 /**
@@ -60,6 +77,8 @@ export function normalizeIngredients(data: Json): Ingredient[] {
         // Sin `base` explícito, el propio nombre sirve de clave: peor para
         // cruzar recetas, pero permite marcarlo igualmente.
         base: base || name.trim().toLowerCase(),
+        valor: asNumero(data.valor),
+        unidad: asText(data.unidad).trim().toLowerCase() || null,
       }];
     }
     // Objeto agrupador: bajamos un nivel.

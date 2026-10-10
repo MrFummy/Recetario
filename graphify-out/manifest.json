@@ -15,8 +15,8 @@
     "semantic_hash": "b21666ca88d4c981fa5fe3b3db7926c8"
   },
   "src/App.tsx": {
-    "mtime": 1788203497.151261,
-    "ast_hash": "df9c89ba54eac852ba1226692d7274a6",
+    "mtime": 1791624787.61434,
+    "ast_hash": "75b51f4b4a7481f60fe3939ea8343ef4",
     "semantic_hash": ""
   },
   "src/components/AddRecipeForm.tsx": {
@@ -170,8 +170,8 @@
     "semantic_hash": "f7b8ac7964a42ec3ddb1c8103cbdb636"
   },
   "src/lib/recipeContent.ts": {
-    "mtime": 1787508178.0572252,
-    "ast_hash": "6ceadaeee4a88aa85cc19544c5b2e0af",
+    "mtime": 1791624718.4472063,
+    "ast_hash": "53d886de0cd3e15156e2f2c46f0c0a13",
     "semantic_hash": ""
   },
   "supabase/migrations/20260805_endurecer_rls.sql": {
@@ -200,8 +200,8 @@
     "semantic_hash": ""
   },
   "CLAUDE.md": {
-    "mtime": 1791623621.57346,
-    "ast_hash": "8d4df1bd35c8752512fa3d84f30510bd",
+    "mtime": 1791624905.272568,
+    "ast_hash": "446ddac7ba502fd414360cb3dec05502",
     "semantic_hash": ""
   },
   "src/hooks/useDespensa.ts": {
@@ -220,8 +220,8 @@
     "semantic_hash": ""
   },
   "docs/ideas.md": {
-    "mtime": 1791623629.6677787,
-    "ast_hash": "8e24d0a46e2cd85603c100114acc8c76",
+    "mtime": 1791624922.4132352,
+    "ast_hash": "6d7854312d864323683e1608d43befbd",
     "semantic_hash": ""
   },
   "src/components/Avisos.tsx": {
@@ -235,8 +235,8 @@
     "semantic_hash": ""
   },
   "src/lib/rutas.ts": {
-    "mtime": 1788203337.7825565,
-    "ast_hash": "192e641c0f776cd03cb959df726892e7",
+    "mtime": 1791624729.6562157,
+    "ast_hash": "8a6f9e38f05a1988a924d111a19cb12b",
     "semantic_hash": ""
   },
   "src/components/AnadirIngrediente.tsx": {
@@ -260,8 +260,18 @@
     "semantic_hash": ""
   },
   "docs/seguimiento.md": {
-    "mtime": 1791623693.83244,
-    "ast_hash": "bf7bc0e01241d426cd09c3b1ab562e9d",
+    "mtime": 1791624945.759207,
+    "ast_hash": "026849e929eafdc826b875ae4657628b",
+    "semantic_hash": ""
+  },
+  "src/components/ListaCompraSection.tsx": {
+    "mtime": 1791624884.4009962,
+    "ast_hash": "b9d4d7c0d6e654172d52c632c7befb68",
+    "semantic_hash": ""
+  },
+  "src/lib/listaCompra.ts": {
+    "mtime": 1791624740.985927,
+    "ast_hash": "6240f5cc7b54eccb2619fe267725da94",
     "semantic_hash": ""
   }
 }

@@ -172,20 +172,35 @@ Dos detalles que parecen menores y no lo son:
   receta se usa `reemplazarPor`, que pisa la entrada del historial para que el
   atrás no devuelva a una ficha que ya no existe.
 
-## Siguiente paso acordado: la lista de la compra
+## La lista de la compra
 
-El plan del 23 de agosto —router, sección de despensa, lista de la compra— va por
-el tercer punto: los dos primeros se hicieron el 31 de agosto.
+**Hecha el 10 de octubre de 2026** — tercer y último punto del plan del 23 de
+agosto (router, sección de despensa, lista de la compra). Vive en
+`#/lista-compra` ([ListaCompraSection.tsx](src/components/ListaCompraSection.tsx)),
+con la agregación en [listaCompra.ts](src/lib/listaCompra.ts).
 
-Cae casi sola encima de lo que ya hay: eliges recetas, se agregan sus
-ingredientes, se descuenta lo que la despensa dice que tienes y queda la lista.
-**Tachar en el súper será añadir a la despensa**, así que no hay dos tablas que
-sincronizar. Y es donde sí importan las cantidades, porque la pregunta es puntual
-y no hay estado que envejezca.
+Eliges recetas de una lista con checkboxes (la selección se recuerda en
+`localStorage` de ese navegador, no en Supabase: es de la semana, no de la
+cuenta), se agregan sus ingredientes por `base`, se descuenta lo que la
+despensa dice que tienes, y queda la lista. **Tachar un ítem llama a
+`despensa.anadir`** —añadir a la despensa—, así que no hay una tabla de
+"comprado" aparte ni dos sitios que sincronizar.
 
-Antes conviene partir los `base` combinados (ver *Pendiente*): una lista de la
-compra que pida "sal y pimienta negra" como si fuera un producto es peor que la
-que ya tienes en la cabeza.
+**Todo el cálculo es en el cliente, sin n8n ni Vertex**, al contrario de lo
+que proponía la lluvia de ideas original: `valor`/`unidad` son poco fiables
+en la BD (muchos condimentos son "al gusto", no numéricos), así que sumar a
+ciegas habría sido peor que no sumar. Se suma `valor` solo cuando es numérico
+y coincide la `unidad` entre todas las apariciones de un `base`; el resto
+se lista tal cual viene, una línea por variante, sin inventar una suma entre
+cosas que no se sabe si son comparables. Esto exigió que
+[recipeContent.ts](src/lib/recipeContent.ts) dejara de descartar `valor` y
+`unidad` del JSONB —hasta ahora `normalizeIngredients()` solo exponía
+`qty`/`name`/`base`, aunque la BD ya los traía desde la migración del 23 de
+agosto.
+
+Partir los `base` combinados (hecho el mismo 10 de octubre, ver *Pendiente*)
+era condición previa: una lista que pidiera "sal y pimienta negra" como un
+solo producto habría sido peor que la que ya tienes en la cabeza.
 
 **Decidido que la despensa NO guarda cantidades.** Se planteó, porque tener
 "cebolla" no dice si llega para la lasaña que pide 2, y se descartó: un

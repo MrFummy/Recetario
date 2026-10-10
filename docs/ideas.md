@@ -117,22 +117,21 @@ Término medio barato si alguna vez se echa en falta: **una nota de texto libre
 por ingrediente** ("media bolsa", "queda poco"). No se usa para calcular nada,
 así que no puede mentir.
 
-## Menú semanal y lista de la compra
+## Menú semanal y lista de la compra — hecha
 
-La funcionalidad grande, y donde la arquitectura actual brilla.
+**Hecha el 10 de octubre de 2026**, y más barata de lo planteado aquí: sin
+webhook ni Vertex. Eliges recetas en `#/lista-compra`, se agregan sus
+ingredientes en el cliente, se descuenta la despensa y queda la lista. Ver
+[CLAUDE.md § La lista de la compra](../CLAUDE.md) para el detalle.
 
-Eliges recetas para la semana, un webhook recibe los ids, agrega los
-ingredientes de todas y devuelve la lista de la compra. n8n puede mandarla por
-email, escribirla en Google Keep, en una hoja de Sheets o en Todoist.
-
-Buena parte del trabajo ya está hecha: `lib/ingredientParser.ts` sabe aplanar el
-JSONB heterogéneo que entrega n8n, y lo comparte con el detalle de receta para
-que ambos interpreten lo mismo.
-
-La dificultad no es técnica sino de datos: sumar "2 unidades de cebolla" con
+~~La dificultad no es técnica sino de datos: sumar "2 unidades de cebolla" con
 "1 cebolla" exige normalizar cantidades. Encaja bien una llamada a Vertex que
-consolide la lista, que es justo lo que un LLM hace bien y lo que ya se usa
-aquí.
+consolide la lista.~~ Se resolvió sin IA: se suma cuando `valor` es numérico y
+la `unidad` coincide: en el catálogo real eso cubre casi todo. El resto
+—condimentos "al gusto", sobre todo— se lista tal cual viene, una línea por
+variante, en vez de inventar una suma entre cosas no comparables. Si el
+catálogo crece con datos más sucios y esto deja de bastar, aquí queda la idea
+de la llamada a Vertex como siguiente paso, no como necesidad de partida.
 
 ---
 
@@ -199,12 +198,12 @@ Sois cuatro, así que lo social tiene sentido a escala pequeña:
 
 ~~2. El router.~~ ~~3. Sección de despensa.~~ **Ambos hechos el 31 de agosto.**
 
-1. **Lista de la compra**, que cae casi sola encima de la despensa: tachar en el
-   súper será añadir a ella.
-2. **Rescatar `tiempo`, `porciones` y `dificultad`.** Una tarde, e información
+~~1. Lista de la compra.~~ **Hecha el 10 de octubre de 2026.**
+
+1. **Rescatar `tiempo`, `porciones` y `dificultad`.** Una tarde, e información
    que ya se está pagando.
-3. **Modo cocina.** Solo frontend, y lo que más se agradece con la sartén puesta.
-4. **Búsqueda semántica.** La más vistosa, pero mejor con las anteriores ya
+2. **Modo cocina.** Solo frontend, y lo que más se agradece con la sartén puesta.
+3. **Búsqueda semántica.** La más vistosa, pero mejor con las anteriores ya
    asentadas.
 
 ---

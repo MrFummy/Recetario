@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import type { User } from '@supabase/supabase-js';
-import { ChefHat, PlusCircle, LogIn, LogOut, ShoppingBasket } from 'lucide-react';
+import { ChefHat, PlusCircle, LogIn, LogOut, ShoppingBasket, ShoppingCart } from 'lucide-react';
 import { FilterBar } from './components/FilterBar';
 import { IngredientSearch } from './components/IngredientSearch';
 import { RecipeGrid } from './components/RecipeGrid';
@@ -9,6 +9,7 @@ import { AddRecipeForm } from './components/AddRecipeForm';
 import { LoginModal } from './components/LoginModal';
 import { RecetaNoEncontrada, SoloAdmin } from './components/Avisos';
 import { SeccionDespensa } from './components/DespensaSection';
+import { SeccionListaCompra } from './components/ListaCompraSection';
 import { useRecipes } from './hooks/useRecipes';
 import { useDespensa } from './hooks/useDespensa';
 import { useIngredientSearch } from './hooks/useIngredientSearch';
@@ -83,8 +84,9 @@ function App() {
     : null;
   const enNueva = ruta.vista === 'nueva';
   const enDespensa = ruta.vista === 'despensa';
+  const enListaCompra = ruta.vista === 'lista-compra';
   // El catálogo queda detrás de la ficha abierta, como hasta ahora.
-  const enCatalogo = !enNueva && !enDespensa;
+  const enCatalogo = !enNueva && !enDespensa && !enListaCompra;
 
   return (
     <div className="min-h-screen pb-20">
@@ -127,6 +129,16 @@ function App() {
                     {despensa.total}
                   </span>
                 )}
+              </a>
+              <a
+                href={aHash({ vista: 'lista-compra' })}
+                className={`px-4 py-2 text-sm font-semibold rounded-md transition-colors flex items-center gap-1.5 ${enListaCompra
+                  ? 'bg-ink text-paper'
+                  : 'text-ink hover:bg-ink/5'
+                  }`}
+              >
+                <ShoppingCart size={16} />
+                <span className="hidden sm:inline">Compra</span>
               </a>
               {isAdmin && (
                 <a
@@ -188,6 +200,8 @@ function App() {
           </SoloAdmin>
         ) : enDespensa ? (
           <SeccionDespensa recipes={recipes} despensa={despensa} user={user} />
+        ) : enListaCompra ? (
+          <SeccionListaCompra recipes={recipes} despensa={despensa} />
         ) : (
           <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
             {/* ── Hero ───────────────────────────────────── */}
