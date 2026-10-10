@@ -85,10 +85,11 @@ Dos requisitos que conviene no descubrir a mitad:
    solo con un segundo clic deliberado, que es lo que hacía falta para meter lo
    que no sale en ninguna receta sin acabar con "cebolla" y "cebollas".
 
-**Lo que la sección destapó**: siete `base` son mezclas de condimentos
-(`sal y pimienta negra` y compañía, 18 apariciones). Quien tiene sal y pimienta
-lee "te falta: sal y pimienta negra". Ya no es teórico; conviene partirlos antes
-de la lista de la compra.
+~~**Lo que la sección destapó**: siete `base` son mezclas de condimentos
+(`sal y pimienta negra` y compañía, 18 apariciones).~~ **Partidos el 10 de
+octubre de 2026** (eran 19 apariciones, no 18 — ver
+[CLAUDE.md § Pendiente](../CLAUDE.md)). Sigue pendiente ajustar el prompt de
+Vertex para que no vuelva a generarlos en altas nuevas.
 
 ### Decidido: la despensa NO guarda cantidades
 

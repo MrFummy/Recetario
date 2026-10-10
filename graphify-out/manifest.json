@@ -200,8 +200,8 @@
     "semantic_hash": ""
   },
   "CLAUDE.md": {
-    "mtime": 1788205703.1189685,
-    "ast_hash": "35145ac9cd67178214e5ec5f707f8c8e",
+    "mtime": 1791623621.57346,
+    "ast_hash": "8d4df1bd35c8752512fa3d84f30510bd",
     "semantic_hash": ""
   },
   "src/hooks/useDespensa.ts": {
@@ -220,8 +220,8 @@
     "semantic_hash": ""
   },
   "docs/ideas.md": {
-    "mtime": 1788203712.280035,
-    "ast_hash": "0f1f16a9e403abb1cbd50c373ae72007",
+    "mtime": 1791623629.6677787,
+    "ast_hash": "8e24d0a46e2cd85603c100114acc8c76",
     "semantic_hash": ""
   },
   "src/components/Avisos.tsx": {
@@ -252,6 +252,16 @@
   "src/lib/inventario.ts": {
     "mtime": 1788203357.0612469,
     "ast_hash": "f998560446564903b01f1e44ff5172a1",
+    "semantic_hash": ""
+  },
+  "supabase/migrations/20261010_partir_base_combinados.sql": {
+    "mtime": 1791623487.3092647,
+    "ast_hash": "af41e7dca8e49e60244d209c733e4bb8",
+    "semantic_hash": ""
+  },
+  "docs/seguimiento.md": {
+    "mtime": 1791623693.83244,
+    "ast_hash": "bf7bc0e01241d426cd09c3b1ab562e9d",
     "semantic_hash": ""
   }
 }

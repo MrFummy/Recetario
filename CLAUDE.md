@@ -133,15 +133,16 @@ estar.
   Sign In / Providers → Email*, no en *Policies* como decía esta nota antes.
   Lo que sí se puede tocar en gratuito, en esa misma pantalla, es la longitud
   mínima de contraseña y los tipos de carácter exigidos.
-- **Los `base` combinados ya molestan.** Son siete, y los siete son mezclas de
-  condimentos: `sal y pimienta negra` (11 recetas), `sal, pimienta negra y nuez
-  moscada` (2) y cinco más de una receta cada una. Su `base` es la frase entera,
-  así que no casan con `sal` ni con `pimienta`. Con la despensa esto salió de lo
-  teórico: 18 apariciones dicen *"te falta: sal y pimienta negra"* a alguien que
-  tiene sal y pimienta. Se arregla con una migración que parta esos elementos en
-  varios —tocaría 18 filas de `recetas.ingredientes`— y con el prompt de Vertex,
-  para que no vuelva a generarlos. Ojo: cambia el contenido que ven el PDF,
-  Notion y Sheets.
+- ~~Los `base` combinados.~~ **Partidos el 10 de octubre de 2026** — ver
+  [la migración](supabase/migrations/20261010_partir_base_combinados.sql).
+  Eran 7 valores distintos (no 7 recetas: una variante nueva, `sal y
+  pimienta` sin "negra", apareció al consultar con SQL en vez de contar a
+  ojo) en 19 filas de `recetas.ingredientes`, no 18. Cada fila combinada pasó
+  a una fila por condimento. **Sigue pendiente ajustar el prompt de Vertex**:
+  sin eso, una receta nueva puede volver a generar un `base` combinado y esta
+  migración habría que repetirla. El PDF, Notion y Sheets sí notan el cambio:
+  donde antes salía una línea "Sal y pimienta negra" ahora salen dos, "Sal" y
+  "Pimienta negra" — correcto, pero distinto a como estaba.
 
 ### Las rutas van por el hash
 

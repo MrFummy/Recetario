@@ -758,8 +758,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_filterbar",
-      "community": 20,
-      "community_name": "App.tsx",
+      "community": 7,
+      "community_name": "Detalle y normalizacion JSONB",
       "norm_label": "filterbar.tsx"
     },
     {
@@ -769,8 +769,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "src_components_filterbar_filterbarprops",
-      "community": 20,
-      "community_name": "App.tsx",
+      "community": 7,
+      "community_name": "Detalle y normalizacion JSONB",
       "norm_label": "filterbarprops"
     },
     {
@@ -780,8 +780,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "src_components_filterbar_filterbar",
-      "community": 20,
-      "community_name": "App.tsx",
+      "community": 7,
+      "community_name": "Detalle y normalizacion JSONB",
       "norm_label": "filterbar()"
     },
     {
@@ -945,8 +945,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_recipedetail",
-      "community": 7,
-      "community_name": "Detalle y normalizacion JSONB",
+      "community": 1,
+      "community_name": "Componentes de interfaz",
       "norm_label": "recipedetail.tsx"
     },
     {
@@ -967,8 +967,8 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "src_components_recipedetail_recipedetail",
-      "community": 7,
-      "community_name": "Detalle y normalizacion JSONB",
+      "community": 1,
+      "community_name": "Componentes de interfaz",
       "norm_label": "recipedetail()"
     },
     {
@@ -1022,8 +1022,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_recipepolaroid",
-      "community": 7,
-      "community_name": "Detalle y normalizacion JSONB",
+      "community": 1,
+      "community_name": "Componentes de interfaz",
       "norm_label": "recipepolaroid.tsx"
     },
     {
@@ -1033,8 +1033,8 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "src_components_recipepolaroid_recipepolaroidprops",
-      "community": 7,
-      "community_name": "Detalle y normalizacion JSONB",
+      "community": 1,
+      "community_name": "Componentes de interfaz",
       "norm_label": "recipepolaroidprops"
     },
     {
@@ -1044,8 +1044,8 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "src_components_recipepolaroid_recipepolaroid",
-      "community": 7,
-      "community_name": "Detalle y normalizacion JSONB",
+      "community": 1,
+      "community_name": "Componentes de interfaz",
       "norm_label": "recipepolaroid()"
     },
     {
@@ -1583,8 +1583,8 @@
       "source_location": "L95",
       "_origin": "ast",
       "id": "src_lib_recipecontent_hasnotas",
-      "community": 7,
-      "community_name": "Detalle y normalizacion JSONB",
+      "community": 1,
+      "community_name": "Componentes de interfaz",
       "norm_label": "hasnotas()"
     },
     {
@@ -1594,8 +1594,8 @@
       "source_location": "L110",
       "_origin": "ast",
       "id": "src_lib_recipecontent_rendernotas",
-      "community": 7,
-      "community_name": "Detalle y normalizacion JSONB",
+      "community": 1,
+      "community_name": "Componentes de interfaz",
       "norm_label": "rendernotas()"
     },
     {
@@ -1726,8 +1726,8 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "src_types_category",
-      "community": 20,
-      "community_name": "App.tsx",
+      "community": 7,
+      "community_name": "Detalle y normalizacion JSONB",
       "norm_label": "category"
     },
     {
@@ -1806,6 +1806,17 @@
       "community": 22,
       "community_name": "20260823_estructurar_ingredientes.sql",
       "norm_label": "20260823_estructurar_ingredientes.sql"
+    },
+    {
+      "label": "20261010_partir_base_combinados.sql",
+      "file_type": "code",
+      "source_file": "supabase/migrations/20261010_partir_base_combinados.sql",
+      "source_location": null,
+      "_origin": "ast",
+      "id": "supabase_migrations_20261010_partir_base_combinados",
+      "community": 23,
+      "community_name": "20261010_partir_base_combinados.sql",
+      "norm_label": "20261010_partir_base_combinados.sql"
     },
     {
       "label": "tsconfig.app.json",
@@ -2427,7 +2438,7 @@
       "label": "Las rutas van por el hash",
       "file_type": "document",
       "source_file": "CLAUDE.md",
-      "source_location": "L146",
+      "source_location": "L147",
       "_origin": "ast",
       "id": "claude_las_rutas_van_por_el_hash",
       "community": 14,
@@ -2438,7 +2449,7 @@
       "label": "Siguiente paso acordado: la lista de la compra",
       "file_type": "document",
       "source_file": "CLAUDE.md",
-      "source_location": "L174",
+      "source_location": "L175",
       "_origin": "ast",
       "id": "claude_siguiente_paso_acordado_la_lista_de_la_compra",
       "community": 14,
@@ -2449,7 +2460,7 @@
       "label": "Hacia d\u00f3nde puede crecer",
       "file_type": "document",
       "source_file": "CLAUDE.md",
-      "source_location": "L196",
+      "source_location": "L197",
       "_origin": "ast",
       "id": "claude_hacia_d\u00f3nde_puede_crecer",
       "community": 14,
@@ -2460,7 +2471,7 @@
       "label": "graphify",
       "file_type": "document",
       "source_file": "CLAUDE.md",
-      "source_location": "L203",
+      "source_location": "L204",
       "_origin": "ast",
       "id": "claude_graphify",
       "community": 14,
@@ -2473,9 +2484,9 @@
       "source_file": "docs/ideas.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_docs_ideas_md",
-      "community": 9,
-      "community_name": "Raiz de TypeScript",
+      "id": "docs_ideas",
+      "community": 14,
+      "community_name": "Mi Recetario \u2014 contexto del proyecto",
       "norm_label": "ideas.md"
     },
     {
@@ -2484,7 +2495,7 @@
       "source_file": "docs/ideas.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_docs_ideas_ideas_para_el_recetario",
+      "id": "docs_ideas_ideas_para_el_recetario",
       "community": 9,
       "community_name": "Raiz de TypeScript",
       "norm_label": "ideas para el recetario"
@@ -2495,7 +2506,7 @@
       "source_file": "docs/ideas.md",
       "source_location": "L17",
       "_origin": "ast",
-      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_docs_ideas_el_punto_de_partida_datos_que_ya_se_pagan_y_se_tiran",
+      "id": "docs_ideas_el_punto_de_partida_datos_que_ya_se_pagan_y_se_tiran",
       "community": 9,
       "community_name": "Raiz de TypeScript",
       "norm_label": "el punto de partida: datos que ya se pagan y se tiran"
@@ -2506,7 +2517,7 @@
       "source_file": "docs/ideas.md",
       "source_location": "L45",
       "_origin": "ast",
-      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_docs_ideas_cocinar_de_verdad",
+      "id": "docs_ideas_cocinar_de_verdad",
       "community": 9,
       "community_name": "Raiz de TypeScript",
       "norm_label": "cocinar de verdad"
@@ -2517,7 +2528,7 @@
       "source_file": "docs/ideas.md",
       "source_location": "L62",
       "_origin": "ast",
-      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_docs_ideas_la_despensa_y_su_secci\u00f3n_propia_hechas",
+      "id": "docs_ideas_la_despensa_y_su_secci\u00f3n_propia_hechas",
       "community": 9,
       "community_name": "Raiz de TypeScript",
       "norm_label": "la despensa y su seccion propia \u2014 hechas"
@@ -2526,9 +2537,9 @@
       "label": "Decidido: la despensa NO guarda cantidades",
       "file_type": "document",
       "source_file": "docs/ideas.md",
-      "source_location": "L93",
+      "source_location": "L94",
       "_origin": "ast",
-      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_docs_ideas_decidido_la_despensa_no_guarda_cantidades",
+      "id": "docs_ideas_decidido_la_despensa_no_guarda_cantidades",
       "community": 9,
       "community_name": "Raiz de TypeScript",
       "norm_label": "decidido: la despensa no guarda cantidades"
@@ -2537,9 +2548,9 @@
       "label": "Men\u00fa semanal y lista de la compra",
       "file_type": "document",
       "source_file": "docs/ideas.md",
-      "source_location": "L119",
+      "source_location": "L120",
       "_origin": "ast",
-      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_docs_ideas_men\u00fa_semanal_y_lista_de_la_compra",
+      "id": "docs_ideas_men\u00fa_semanal_y_lista_de_la_compra",
       "community": 9,
       "community_name": "Raiz de TypeScript",
       "norm_label": "menu semanal y lista de la compra"
@@ -2548,9 +2559,9 @@
       "label": "Encontrar recetas",
       "file_type": "document",
       "source_file": "docs/ideas.md",
-      "source_location": "L138",
+      "source_location": "L139",
       "_origin": "ast",
-      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_docs_ideas_encontrar_recetas",
+      "id": "docs_ideas_encontrar_recetas",
       "community": 9,
       "community_name": "Raiz de TypeScript",
       "norm_label": "encontrar recetas"
@@ -2559,9 +2570,9 @@
       "label": "Dar de alta con menos fricci\u00f3n",
       "file_type": "document",
       "source_file": "docs/ideas.md",
-      "source_location": "L157",
+      "source_location": "L158",
       "_origin": "ast",
-      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_docs_ideas_dar_de_alta_con_menos_fricci\u00f3n",
+      "id": "docs_ideas_dar_de_alta_con_menos_fricci\u00f3n",
       "community": 9,
       "community_name": "Raiz de TypeScript",
       "norm_label": "dar de alta con menos friccion"
@@ -2570,9 +2581,9 @@
       "label": "Los afans",
       "file_type": "document",
       "source_file": "docs/ideas.md",
-      "source_location": "L173",
+      "source_location": "L174",
       "_origin": "ast",
-      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_docs_ideas_los_afans",
+      "id": "docs_ideas_los_afans",
       "community": 9,
       "community_name": "Raiz de TypeScript",
       "norm_label": "los afans"
@@ -2581,9 +2592,9 @@
       "label": "Automatismos con n8n",
       "file_type": "document",
       "source_file": "docs/ideas.md",
-      "source_location": "L184",
+      "source_location": "L185",
       "_origin": "ast",
-      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_docs_ideas_automatismos_con_n8n",
+      "id": "docs_ideas_automatismos_con_n8n",
       "community": 9,
       "community_name": "Raiz de TypeScript",
       "norm_label": "automatismos con n8n"
@@ -2592,9 +2603,9 @@
       "label": "Orden sugerido",
       "file_type": "document",
       "source_file": "docs/ideas.md",
-      "source_location": "L195",
+      "source_location": "L196",
       "_origin": "ast",
-      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_docs_ideas_orden_sugerido",
+      "id": "docs_ideas_orden_sugerido",
       "community": 9,
       "community_name": "Raiz de TypeScript",
       "norm_label": "orden sugerido"
@@ -2603,12 +2614,89 @@
       "label": "Dos avisos de realidad",
       "file_type": "document",
       "source_file": "docs/ideas.md",
-      "source_location": "L211",
+      "source_location": "L212",
       "_origin": "ast",
-      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_docs_ideas_dos_avisos_de_realidad",
+      "id": "docs_ideas_dos_avisos_de_realidad",
       "community": 9,
       "community_name": "Raiz de TypeScript",
       "norm_label": "dos avisos de realidad"
+    },
+    {
+      "label": "seguimiento.md",
+      "file_type": "document",
+      "source_file": "docs/seguimiento.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "docs_seguimiento",
+      "community": 14,
+      "community_name": "Mi Recetario \u2014 contexto del proyecto",
+      "norm_label": "seguimiento.md"
+    },
+    {
+      "label": "Seguimiento del proyecto",
+      "file_type": "document",
+      "source_file": "docs/seguimiento.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "docs_seguimiento_seguimiento_del_proyecto",
+      "community": 14,
+      "community_name": "Mi Recetario \u2014 contexto del proyecto",
+      "norm_label": "seguimiento del proyecto"
+    },
+    {
+      "label": "Mapa del proyecto",
+      "file_type": "document",
+      "source_file": "docs/seguimiento.md",
+      "source_location": "L15",
+      "_origin": "ast",
+      "id": "docs_seguimiento_mapa_del_proyecto",
+      "community": 14,
+      "community_name": "Mi Recetario \u2014 contexto del proyecto",
+      "norm_label": "mapa del proyecto"
+    },
+    {
+      "label": "Estado por \u00e1rea (10 oct 2026)",
+      "file_type": "document",
+      "source_file": "docs/seguimiento.md",
+      "source_location": "L34",
+      "_origin": "ast",
+      "id": "docs_seguimiento_estado_por_\u00e1rea_10_oct_2026",
+      "community": 14,
+      "community_name": "Mi Recetario \u2014 contexto del proyecto",
+      "norm_label": "estado por area (10 oct 2026)"
+    },
+    {
+      "label": "Pendientes priorizados",
+      "file_type": "document",
+      "source_file": "docs/seguimiento.md",
+      "source_location": "L51",
+      "_origin": "ast",
+      "id": "docs_seguimiento_pendientes_priorizados",
+      "community": 14,
+      "community_name": "Mi Recetario \u2014 contexto del proyecto",
+      "norm_label": "pendientes priorizados"
+    },
+    {
+      "label": "Registro de cambios",
+      "file_type": "document",
+      "source_file": "docs/seguimiento.md",
+      "source_location": "L70",
+      "_origin": "ast",
+      "id": "docs_seguimiento_registro_de_cambios",
+      "community": 14,
+      "community_name": "Mi Recetario \u2014 contexto del proyecto",
+      "norm_label": "registro de cambios"
+    },
+    {
+      "label": "C\u00f3mo mantener esto",
+      "file_type": "document",
+      "source_file": "docs/seguimiento.md",
+      "source_location": "L85",
+      "_origin": "ast",
+      "id": "docs_seguimiento_c\u00f3mo_mantener_esto",
+      "community": 14,
+      "community_name": "Mi Recetario \u2014 contexto del proyecto",
+      "norm_label": "como mantener esto"
     },
     {
       "label": "query_20260726_092833_por_que_supabase_js_client_with_no_backend_layer_a.md",
@@ -7610,6 +7698,28 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "CLAUDE.md",
+      "source_location": "L195",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "claude",
+      "target": "docs_ideas",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/seguimiento.md",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_seguimiento",
+      "target": "claude",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "CLAUDE.md",
@@ -7635,7 +7745,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "CLAUDE.md",
-      "source_location": "L203",
+      "source_location": "L204",
       "weight": 1.0,
       "_origin": "ast",
       "source": "claude_mi_recetario_contexto_del_proyecto",
@@ -7646,7 +7756,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "CLAUDE.md",
-      "source_location": "L196",
+      "source_location": "L197",
       "weight": 1.0,
       "_origin": "ast",
       "source": "claude_mi_recetario_contexto_del_proyecto",
@@ -7657,7 +7767,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "CLAUDE.md",
-      "source_location": "L174",
+      "source_location": "L175",
       "weight": 1.0,
       "_origin": "ast",
       "source": "claude_mi_recetario_contexto_del_proyecto",
@@ -7690,7 +7800,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "CLAUDE.md",
-      "source_location": "L146",
+      "source_location": "L147",
       "weight": 1.0,
       "_origin": "ast",
       "source": "claude_estado_actual_23_ago_2026",
@@ -7726,19 +7836,30 @@
       "source_location": "L1",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_docs_ideas_md",
-      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_docs_ideas_ideas_para_el_recetario",
+      "source": "docs_ideas",
+      "target": "docs_ideas_ideas_para_el_recetario",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/seguimiento.md",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_seguimiento",
+      "target": "docs_ideas",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/ideas.md",
-      "source_location": "L184",
+      "source_location": "L185",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_docs_ideas_ideas_para_el_recetario",
-      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_docs_ideas_automatismos_con_n8n",
+      "source": "docs_ideas_ideas_para_el_recetario",
+      "target": "docs_ideas_automatismos_con_n8n",
       "confidence_score": 1.0
     },
     {
@@ -7748,30 +7869,30 @@
       "source_location": "L45",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_docs_ideas_ideas_para_el_recetario",
-      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_docs_ideas_cocinar_de_verdad",
+      "source": "docs_ideas_ideas_para_el_recetario",
+      "target": "docs_ideas_cocinar_de_verdad",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/ideas.md",
-      "source_location": "L157",
+      "source_location": "L158",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_docs_ideas_ideas_para_el_recetario",
-      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_docs_ideas_dar_de_alta_con_menos_fricci\u00f3n",
+      "source": "docs_ideas_ideas_para_el_recetario",
+      "target": "docs_ideas_dar_de_alta_con_menos_fricci\u00f3n",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/ideas.md",
-      "source_location": "L211",
+      "source_location": "L212",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_docs_ideas_ideas_para_el_recetario",
-      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_docs_ideas_dos_avisos_de_realidad",
+      "source": "docs_ideas_ideas_para_el_recetario",
+      "target": "docs_ideas_dos_avisos_de_realidad",
       "confidence_score": 1.0
     },
     {
@@ -7781,19 +7902,19 @@
       "source_location": "L17",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_docs_ideas_ideas_para_el_recetario",
-      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_docs_ideas_el_punto_de_partida_datos_que_ya_se_pagan_y_se_tiran",
+      "source": "docs_ideas_ideas_para_el_recetario",
+      "target": "docs_ideas_el_punto_de_partida_datos_que_ya_se_pagan_y_se_tiran",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/ideas.md",
-      "source_location": "L138",
+      "source_location": "L139",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_docs_ideas_ideas_para_el_recetario",
-      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_docs_ideas_encontrar_recetas",
+      "source": "docs_ideas_ideas_para_el_recetario",
+      "target": "docs_ideas_encontrar_recetas",
       "confidence_score": 1.0
     },
     {
@@ -7803,52 +7924,118 @@
       "source_location": "L62",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_docs_ideas_ideas_para_el_recetario",
-      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_docs_ideas_la_despensa_y_su_secci\u00f3n_propia_hechas",
+      "source": "docs_ideas_ideas_para_el_recetario",
+      "target": "docs_ideas_la_despensa_y_su_secci\u00f3n_propia_hechas",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/ideas.md",
-      "source_location": "L173",
+      "source_location": "L174",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_docs_ideas_ideas_para_el_recetario",
-      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_docs_ideas_los_afans",
+      "source": "docs_ideas_ideas_para_el_recetario",
+      "target": "docs_ideas_los_afans",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/ideas.md",
-      "source_location": "L119",
+      "source_location": "L120",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_docs_ideas_ideas_para_el_recetario",
-      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_docs_ideas_men\u00fa_semanal_y_lista_de_la_compra",
+      "source": "docs_ideas_ideas_para_el_recetario",
+      "target": "docs_ideas_men\u00fa_semanal_y_lista_de_la_compra",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/ideas.md",
-      "source_location": "L195",
+      "source_location": "L196",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_docs_ideas_ideas_para_el_recetario",
-      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_docs_ideas_orden_sugerido",
+      "source": "docs_ideas_ideas_para_el_recetario",
+      "target": "docs_ideas_orden_sugerido",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/ideas.md",
-      "source_location": "L93",
+      "source_location": "L94",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_docs_ideas_la_despensa_y_su_secci\u00f3n_propia_hechas",
-      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_docs_ideas_decidido_la_despensa_no_guarda_cantidades",
+      "source": "docs_ideas_la_despensa_y_su_secci\u00f3n_propia_hechas",
+      "target": "docs_ideas_decidido_la_despensa_no_guarda_cantidades",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/seguimiento.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_seguimiento",
+      "target": "docs_seguimiento_seguimiento_del_proyecto",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/seguimiento.md",
+      "source_location": "L85",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_seguimiento_seguimiento_del_proyecto",
+      "target": "docs_seguimiento_c\u00f3mo_mantener_esto",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/seguimiento.md",
+      "source_location": "L34",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_seguimiento_seguimiento_del_proyecto",
+      "target": "docs_seguimiento_estado_por_\u00e1rea_10_oct_2026",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/seguimiento.md",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_seguimiento_seguimiento_del_proyecto",
+      "target": "docs_seguimiento_mapa_del_proyecto",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/seguimiento.md",
+      "source_location": "L51",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_seguimiento_seguimiento_del_proyecto",
+      "target": "docs_seguimiento_pendientes_priorizados",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/seguimiento.md",
+      "source_location": "L70",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_seguimiento_seguimiento_del_proyecto",
+      "target": "docs_seguimiento_registro_de_cambios",
       "confidence_score": 1.0
     },
     {
@@ -8485,5 +8672,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "f4917c65d656f0eea7691fea506c3192cd071a3c"
+  "built_at_commit": "793d5e5cd4f499258ca09327b6ce285c227285f5"
 }
