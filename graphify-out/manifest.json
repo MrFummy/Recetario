@@ -220,8 +220,8 @@
     "semantic_hash": ""
   },
   "docs/ideas.md": {
-    "mtime": 1791625775.6511588,
-    "ast_hash": "2e301f809b8c48af9b681575b6bc1acd",
+    "mtime": 1791626983.747071,
+    "ast_hash": "4b04e791ea7fa034373a74bb8e40b358",
     "semantic_hash": ""
   },
   "src/components/Avisos.tsx": {
@@ -260,8 +260,8 @@
     "semantic_hash": ""
   },
   "docs/seguimiento.md": {
-    "mtime": 1791625806.4037042,
-    "ast_hash": "f2b843b1bc194cea153a1a39805ed357",
+    "mtime": 1791626998.9020948,
+    "ast_hash": "48c8631ff8f53f45b1a24c8c2848ae75",
     "semantic_hash": ""
   },
   "src/components/ListaCompraSection.tsx": {

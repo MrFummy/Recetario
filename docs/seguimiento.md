@@ -64,8 +64,12 @@ uno:
    de 2026**, sin backfill: las recetas anteriores quedan con esos campos en
    `null` y sin badge. El backfill (reprocesar PDFs antiguos por Vertex)
    queda como idea suelta en ideas.md, sin decidir.
-4. **Modo cocina** — 100% frontend, sin dependencias pendientes.
-5. **Búsqueda semántica (pgvector)** — mejor después de que las anteriores
+4. **Para hacer, realizaciones y el muro de notas** — **siguiente a
+   atacar**, acordado el 10 de octubre de 2026. Diseño cerrado en
+   [ideas.md § Para hacer, realizaciones y el muro de notas](ideas.md);
+   toca llevarlo a un plan de implementación en la próxima sesión.
+5. **Modo cocina** — 100% frontend, sin dependencias pendientes.
+6. **Búsqueda semántica (pgvector)** — mejor después de que las anteriores
    estén asentadas.
 
 ---
@@ -86,6 +90,7 @@ formato absoluto.
 | 10 oct 2026 | `npm run deploy` (scripts/deploy.ps1): compila, comprueba el `.env` embebido y espeja `dist/` contra `W:\recetario` con `robocopy /MIR` | — | Primer uso purgó 25 ficheros de builds sueltos acumulados en `assets/` desde mayo de 2026 — las opciones A/B del README (zip manual) nunca limpiaban. Solo funciona desde un equipo con esa unidad de red montada |
 | 10 oct 2026 | Lista de la compra (`#/lista-compra`) | `fc5a374` | `listaCompra.ts`, `ListaCompraSection.tsx`; `recipeContent.ts` ya expone `valor`/`unidad`. Verificado en el navegador: suma por `base`+`unidad`, descuenta despensa, persiste selección en localStorage |
 | 10 oct 2026 | `tiempo`/`porciones`/`dificultad`: columnas + webhook + badges en RecipeDetail | — | Sin backfill de recetas antiguas, a propósito. Columnas y `Guardar en Supabase` aplicados directamente en producción (Supabase MCP, n8n MCP) |
+| 10 oct 2026 | Diseño cerrado de "para hacer, realizaciones y muro de notas" (8 decisiones) | — | Solo documentación, sin código. **Prioridad para la próxima sesión**: llevarlo a un plan de implementación |
 
 ---
 

@@ -45,12 +45,68 @@ API), para usarlo con las manos pringadas. Los pasos ya mencionan tiempos
 Es 100 % frontend, sin backend ni n8n, y probablemente lo que más se nota en el
 uso diario.
 
-**Marcar "lo he cocinado"**, con fecha. Da historial por usuario y abre la
-puerta a avisos del tipo "hace ocho meses que no haces el marmitako".
+~~**Marcar "lo he cocinado"**, con fecha.~~ Desarrollada en
+*Para hacer, realizaciones y el muro de notas*, más abajo.
 
 ~~**Persistir los checkboxes de ingredientes.**~~ **Hecho el 23 de agosto**, y
 mejor de lo planteado: no se guardan por receta sino por usuario e ingrediente.
 Ver la sección de la despensa más abajo.
+
+---
+
+## Para hacer, realizaciones y el muro de notas
+
+> **10 oct 2026 — diseño cerrado, sin implementar.** Conecta tres piezas
+> sueltas de esta lista: "marcar lo he cocinado" (arriba), y "comentarios por
+> receta" / "notas por usuario" (en *Los afans*, más abajo). Las ocho
+> decisiones de aquí salieron de una conversación de diseño; falta llevarlas
+> a un plan de implementación.
+
+La idea: marcar una receta como **"para hacer"** añade sus ingredientes a la
+lista de la compra, descontando la despensa, igual que hace hoy la selección
+manual de `#/lista-compra`. Cuando la cocinas de verdad, la marcas como
+**"ya hecha"**: fecha (automática, hoy), nota libre opcional ("cambié las
+cantidades del pan de molde y queda guay") y puntuación opcional de esa vez
+concreta. El `rating` de la receta deja de ser un voto único editable y pasa
+a ser la media de las puntuaciones de todas sus realizaciones. Cada receta
+muestra un muro de post-its con las realizaciones de los cuatro afans: fecha,
+quién la hizo, la nota y la puntuación.
+
+Las ocho decisiones:
+
+1. **`para_hacer (user_id, receta_id)` en Supabase**, calcada de
+   `despensa (user_id, base)`. Sustituye a la selección manual en
+   `localStorage` de `#/lista-compra` en vez de convivir con ella: una sola
+   fuente de verdad para "qué tengo intención de cocinar", que cruza
+   dispositivo y sesión.
+2. **La despensa no se toca al marcar "ya hecha"**, solo al comprar (como ya
+   funciona). Descontar al cocinar reabriría el problema ya descartado en
+   *Decidido: la despensa NO guarda cantidades*, más arriba: un inventario
+   que se desactualiza solo.
+3. **Nota y puntuación opcionales** al marcar "ya hecha"; solo la fecha es
+   obligatoria. Si hay que rellenar nota+estrellas cada vez, es fácil que se
+   deje de marcar por pereza.
+4. **"Ya hecha" cierra el "para hacer"** correspondiente: sale de la lista
+   de la compra. No impide volver a marcar la receta "para hacer" más
+   adelante, para repetirla.
+5. **Se evoluciona `valoraciones`** añadiéndole `fecha` y `notas`, en vez de
+   crear una tabla `realizaciones` nueva y retirar la vieja. Reaprovecha las
+   RLS y el trigger `update_recipe_average_rating` que ya existen, aunque
+   ese trigger —una de las "dos trampas" de [CLAUDE.md](../CLAUDE.md), por
+   su `SECURITY DEFINER`— tiene que pasar a promediar sobre las
+   realizaciones de cada receta en vez de sobre un voto único; fácil de
+   repetir el mismo error si no se presta atención al migrarlo.
+6. **El voto rápido de estrella de hoy desaparece.** Un solo mecanismo en
+   vez de dos: puntuar siempre es marcar una realización. Se pierde el voto
+   instantáneo sin rellenar nada, a cambio de no mantener dos caminos para
+   lo mismo.
+7. **Nombre de pila por usuario**, para identificar quién escribió cada nota
+   del muro. Hoy la app solo conoce el email (`isAdmin` compara contra uno
+   fijo); mostrar el email completo en un post-it público resultaba raro
+   entre cuatro personas que se conocen.
+8. **El admin puede borrar notas ajenas** del muro (policy de RLS extra +
+   botón de borrado visible solo para el admin en notas de otros). Cada
+   usuario puede editar o borrar las suyas propias sin restricción.
 
 ---
 
@@ -169,10 +225,11 @@ podría generar o buscar una imagen y quitar esa sensación de catálogo a media
 
 Sois cuatro, así que lo social tiene sentido a escala pequeña:
 
-- **Comentarios por receta**, con moderación del admin.
-- **Favoritos**, separados de la valoración.
-- **Notas por usuario.** Hoy `notas` es un campo global que solo edita el admin,
-  así que nadie más puede apuntar "yo le pongo menos sal".
+- ~~**Comentarios por receta**, con moderación del admin.~~ ~~**Notas por
+  usuario.**~~ Ambas resueltas en *Para hacer, realizaciones y el muro de
+  notas*, más arriba: las notas de cada realización son justo esto, con
+  fecha y puntuación de propina.
+- **Favoritos**, separados de la valoración. Sigue sin desarrollar.
 
 ---
 
@@ -193,10 +250,11 @@ Sois cuatro, así que lo social tiene sentido a escala pequeña:
 
 ~~2. El router.~~ ~~3. Sección de despensa.~~ **Ambos hechos el 31 de agosto.**
 
-~~1. Lista de la compra.~~ **Hecha el 10 de octubre de 2026.**
+~~1. Lista de la compra.~~ ~~2. Rescatar `tiempo`, `porciones` y
+`dificultad`.~~ **Ambos hechos el 10 de octubre de 2026.**
 
-1. **Rescatar `tiempo`, `porciones` y `dificultad`.** Una tarde, e información
-   que ya se está pagando.
+1. **Para hacer, realizaciones y el muro de notas.** Diseño ya cerrado (ver
+   más arriba) — **siguiente en atacarse**, decidido el 10 de octubre de 2026.
 2. **Modo cocina.** Solo frontend, y lo que más se agradece con la sartén puesta.
 3. **Búsqueda semántica.** La más vistosa, pero mejor con las anteriores ya
    asentadas.
