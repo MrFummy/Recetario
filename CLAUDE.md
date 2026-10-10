@@ -209,6 +209,21 @@ de él. Las cantidades importan en la lista de la compra, donde la pregunta es
 puntual y no hay estado que envejezca. El razonamiento completo está en
 [docs/ideas.md](docs/ideas.md); conviene releerlo antes de volver a proponerlo.
 
+## Tiempo, porciones y dificultad
+
+**Hecho el 10 de octubre de 2026.** Vertex ya los extraía de cada receta,
+pero el nodo `Guardar en Supabase` de "Recetas con Frontend" no los escribía
+y la tabla no tenía columnas para ellos: se calculaban, se pagaban y se
+descartaban. Ahora `recetas` tiene `tiempo`/`porciones`/`dificultad` (`text`,
+`nullable`) y se ven como badges en
+[RecipeDetail.tsx](src/components/RecipeDetail.tsx).
+
+**Sin backfill, a propósito**: las recetas anteriores a esa fecha quedan con
+los tres campos en `null` y simplemente no muestran los badges. Rellenarlas
+exige volver a pasarlas por Vertex —no solo regenerar el PDF desde Supabase,
+que es lo que hace el flujo *Regenerar PDFs antiguos*—, y es trabajo aparte,
+no decidido todavía.
+
 ## Hacia dónde puede crecer
 
 [docs/ideas.md](docs/ideas.md) recoge una lluvia de ideas de posibles

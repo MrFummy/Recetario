@@ -15,6 +15,13 @@ export interface Recipe {
   pasos: Json; // JSONB
   notas: Json; // JSONB
   rating?: number;
+  /**
+   * Vertex ya las extrae al dar de alta, pero hasta el 10 de octubre de 2026
+   * se descartaban: `null` en recetas anteriores a esa fecha.
+   */
+  tiempo?: string | null;
+  porciones?: string | null;
+  dificultad?: string | null;
   fecha_clase: string;
   foto_url: string;
   pdf_url: string;

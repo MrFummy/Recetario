@@ -45,8 +45,8 @@
     "semantic_hash": "0bb06f88e50e3e4dc7078caacc89753d"
   },
   "src/components/RecipeDetail.tsx": {
-    "mtime": 1788203468.9054952,
-    "ast_hash": "ccf9c8978f3425d0e2592cd8b82bc147",
+    "mtime": 1791625441.0253983,
+    "ast_hash": "3d07bc28783b49090405e76dc0352c2e",
     "semantic_hash": ""
   },
   "src/components/RecipeGrid.tsx": {
@@ -90,9 +90,9 @@
     "semantic_hash": "787e5a07efeb2bf6209d5937195f2f68"
   },
   "src/types.ts": {
-    "mtime": 1785935646.7547307,
-    "ast_hash": "4ec35074f3d4c847918e3f904d0ed08b",
-    "semantic_hash": "4ec35074f3d4c847918e3f904d0ed08b"
+    "mtime": 1791625423.4209604,
+    "ast_hash": "9b42818bb11efb7752feef044edcbeea",
+    "semantic_hash": ""
   },
   "tsconfig.app.json": {
     "mtime": 1779042821.3993108,
@@ -200,8 +200,8 @@
     "semantic_hash": ""
   },
   "CLAUDE.md": {
-    "mtime": 1791624905.272568,
-    "ast_hash": "446ddac7ba502fd414360cb3dec05502",
+    "mtime": 1791625787.044977,
+    "ast_hash": "6f50e5b68d588774cb29dd2d0b738bc8",
     "semantic_hash": ""
   },
   "src/hooks/useDespensa.ts": {
@@ -220,8 +220,8 @@
     "semantic_hash": ""
   },
   "docs/ideas.md": {
-    "mtime": 1791624922.4132352,
-    "ast_hash": "6d7854312d864323683e1608d43befbd",
+    "mtime": 1791625775.6511588,
+    "ast_hash": "2e301f809b8c48af9b681575b6bc1acd",
     "semantic_hash": ""
   },
   "src/components/Avisos.tsx": {
@@ -260,8 +260,8 @@
     "semantic_hash": ""
   },
   "docs/seguimiento.md": {
-    "mtime": 1791624945.759207,
-    "ast_hash": "026849e929eafdc826b875ae4657628b",
+    "mtime": 1791625806.4037042,
+    "ast_hash": "f2b843b1bc194cea153a1a39805ed357",
     "semantic_hash": ""
   },
   "src/components/ListaCompraSection.tsx": {
@@ -272,6 +272,11 @@
   "src/lib/listaCompra.ts": {
     "mtime": 1791624740.985927,
     "ast_hash": "6240f5cc7b54eccb2619fe267725da94",
+    "semantic_hash": ""
+  },
+  "supabase/migrations/20261010_anade_tiempo_porciones_dificultad.sql": {
+    "mtime": 1791625712.9028094,
+    "ast_hash": "180c615c12ba3f25ca527d2d5ffc4bfd",
     "semantic_hash": ""
   }
 }

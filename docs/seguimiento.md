@@ -44,7 +44,7 @@ borrado exigen además que el email sea el del admin). No hay backend propio.
 | Bucket Storage | Sin huérfanas, `_default.jpg` protegido | 31 ago 2026 | — |
 | Leaked password protection | No aplicable (requiere plan Pro) | 2026 | aviso permanente del linter |
 | `base` combinados (sal y pimienta, etc.) | Partidos (19 filas) y prompt de Vertex ajustado | 10 oct 2026 | [migración](../supabase/migrations/20261010_partir_base_combinados.sql) |
-| `tiempo`/`porciones`/`dificultad` | Se calculan en Vertex y se descartan | — | [ideas.md § punto de partida](ideas.md) |
+| `tiempo`/`porciones`/`dificultad` | Hecho, sin backfill de recetas antiguas | 10 oct 2026 | [CLAUDE.md § Tiempo, porciones y dificultad](../CLAUDE.md) |
 | Lista de la compra (`#/lista-compra`) | Hecho, cálculo en el cliente | 10 oct 2026 | [CLAUDE.md § La lista de la compra](../CLAUDE.md) |
 
 ---
@@ -60,11 +60,12 @@ uno:
 2. ~~**Lista de la compra**~~ **Hecha el 10 de octubre de 2026** — cálculo
    100% en el cliente, sin webhook ni Vertex (ver CLAUDE.md § La lista de la
    compra).
-3. **Rescatar `tiempo`/`porciones`/`dificultad`** — una tarde: tres columnas +
-   una línea en `Guardar en Supabase` + reprocesar 58 PDFs con *Regenerar PDFs
-   antiguos*.
+3. ~~**Rescatar `tiempo`/`porciones`/`dificultad`**~~ **Hecho el 10 de octubre
+   de 2026**, sin backfill: las recetas anteriores quedan con esos campos en
+   `null` y sin badge. El backfill (reprocesar PDFs antiguos por Vertex)
+   queda como idea suelta en ideas.md, sin decidir.
 4. **Modo cocina** — 100% frontend, sin dependencias pendientes.
-5. **Búsqueda semántica (pgvector)** — mejor después de que las tres de arriba
+5. **Búsqueda semántica (pgvector)** — mejor después de que las anteriores
    estén asentadas.
 
 ---
@@ -82,7 +83,8 @@ formato absoluto.
 | 10 oct 2026 | `graphify update .` (280 nodos / 461 aristas / 23 comunidades) + creación de este panel | `50e4ac8`, `793d5e5` | Sin cambios de código; solo grafo y seguimiento |
 | 10 oct 2026 | Partidos los 7 `base` combinados (19 filas, no 18) en producción | `14caec3` | Migración aplicada vía MCP de Supabase |
 | 10 oct 2026 | Ajustado el prompt del nodo Vertex AI en n8n para no generar más `base` combinados | — | Cambio solo en n8n (nueva versión del workflow "Recetas con Frontend"); nada que commitear en este repo |
-| 10 oct 2026 | Lista de la compra (`#/lista-compra`) | — | `listaCompra.ts`, `ListaCompraSection.tsx`; `recipeContent.ts` ya expone `valor`/`unidad`. Verificado en el navegador: suma por `base`+`unidad`, descuenta despensa, persiste selección en localStorage |
+| 10 oct 2026 | Lista de la compra (`#/lista-compra`) | `fc5a374` | `listaCompra.ts`, `ListaCompraSection.tsx`; `recipeContent.ts` ya expone `valor`/`unidad`. Verificado en el navegador: suma por `base`+`unidad`, descuenta despensa, persiste selección en localStorage |
+| 10 oct 2026 | `tiempo`/`porciones`/`dificultad`: columnas + webhook + badges en RecipeDetail | — | Sin backfill de recetas antiguas, a propósito. Columnas y `Guardar en Supabase` aplicados directamente en producción (Supabase MCP, n8n MCP) |
 
 ---
 

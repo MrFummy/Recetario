@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import type { User } from '@supabase/supabase-js';
-import { X, ExternalLink, Edit2, Save, Trash2, Loader2, AlertTriangle } from 'lucide-react';
+import { X, ExternalLink, Edit2, Save, Trash2, Loader2, AlertTriangle, Clock, Users, Gauge } from 'lucide-react';
 import type { Recipe } from '../types';
 import { StarRating } from './StarRating';
 import { IngredientsList, StepsList } from './RecipeContent';
@@ -200,6 +200,25 @@ export function RecipeDetail({ recipe, onClose, isAdmin, user, despensa, onUpdat
               <h2 className="font-display font-black text-4xl sm:text-5xl leading-[0.98] tracking-tight text-ink mb-4">
                 {recipe.titulo}
               </h2>
+              {(recipe.tiempo || recipe.porciones || recipe.dificultad) && (
+                <div className="flex flex-wrap items-center gap-2 mb-4">
+                  {recipe.tiempo && (
+                    <span className="flex items-center gap-1 font-mono text-[11px] text-ink-soft border border-ink/25 px-2 py-1">
+                      <Clock size={12} /> {recipe.tiempo}
+                    </span>
+                  )}
+                  {recipe.porciones && (
+                    <span className="flex items-center gap-1 font-mono text-[11px] text-ink-soft border border-ink/25 px-2 py-1">
+                      <Users size={12} /> {recipe.porciones}
+                    </span>
+                  )}
+                  {recipe.dificultad && (
+                    <span className="flex items-center gap-1 font-mono text-[11px] text-ink-soft border border-ink/25 px-2 py-1">
+                      <Gauge size={12} /> {recipe.dificultad}
+                    </span>
+                  )}
+                </div>
+              )}
               <div className="flex items-center gap-3 mb-1">
                 <StarRating
                   rating={personalRating || recipe.rating || 0}

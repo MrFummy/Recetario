@@ -14,31 +14,26 @@ procesos largos encaja mejor en un flujo.
 
 ---
 
-## El punto de partida: datos que ya se pagan y se tiran
+## El punto de partida: datos que ya se pagan y se tiran — hecho
 
-> **23 ago 2026 — hecho a medias.** Los ingredientes ya están estructurados:
-> cada uno es un objeto con `nombre`, `cantidad`, `base`, `valor` y `unidad`. Lo
-> que sigue pendiente es lo de abajo: `tiempo`, `porciones` y `dificultad`.
+> **23 ago 2026 — hecho a medias.** Los ingredientes ya están estructurados.
+> **10 oct 2026 — hecho del todo**, con el alcance de abajo.
 
-Vertex AI **ya extrae** `tiempo`, `porciones` y `dificultad` de cada receta. Se
-puede ver en cualquier ejecución del flujo, en la salida del nodo
-`Recupera foto`:
+Vertex AI **ya extraía** `tiempo`, `porciones` y `dificultad` de cada receta,
+pero el nodo `Guardar en Supabase` no los escribía y la tabla no tenía esas
+columnas: se calculaban, se pagaban y se descartaban.
 
-```json
-"tiempo": "Preparación: 15' + 1 h de reposo. Cocción: 20'",
-"porciones": "2",
-"dificultad": "Fácil"
-```
+Ahora hay tres columnas nuevas (`tiempo`, `porciones`, `dificultad`, todas
+`text`) y esa línea en el nodo, y se ven como badges en
+[RecipeDetail.tsx](../src/components/RecipeDetail.tsx). **Sin backfill**:
+las recetas anteriores al 10 de octubre quedan con esos tres campos en
+`null` a propósito —rellenarlas exige volver a pasarlas por Vertex, no solo
+regenerar el PDF desde Supabase como hace *Regenerar PDFs antiguos*—, así
+que los badges simplemente no aparecen en ellas. Queda como idea suelta si
+alguna vez se decide abordarlo:
 
-Pero el nodo `Guardar en Supabase` no los escribe y la tabla `recetas` no tiene
-esas columnas: se calculan, se pagan y se descartan.
-
-Tres columnas nuevas y una línea en ese nodo desbloquean filtros por tiempo,
-badges en las tarjetas y ordenar por dificultad. Las 58 recetas antiguas se
-rellenarían reprocesando sus PDFs; ya existe un flujo parecido para eso,
-*Regenerar PDFs antiguos*.
-
-Es lo más barato de toda esta lista, con diferencia.
+- Filtrar el catálogo por tiempo y ordenarlo por dificultad.
+- Backfill de las recetas antiguas, reprocesando sus PDFs por Vertex.
 
 ---
 

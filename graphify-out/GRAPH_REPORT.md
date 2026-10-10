@@ -1,16 +1,16 @@
 # Graph Report - Recetario  (2026-10-10)
 
 ## Corpus Check
-- 51 files · ~49,819 words
+- 52 files · ~50,331 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 296 nodes · 495 edges · 22 communities (20 shown, 2 thin omitted)
+- 299 nodes · 497 edges · 24 communities (21 shown, 3 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 3 edges (avg confidence: 0.5)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `14caec36`
+- Built from commit: `fc5a3743`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -20,9 +20,11 @@
 - Tooling de desarrollo
 - Config TypeScript de la app
 - Config TypeScript de build
+- DespensaSection.tsx
 - Dependencias de runtime
 - Detalle y normalizacion JSONB
 - Scripts de npm
+- 20261010_anade_tiempo_porciones_dificultad.sql
 - Migracion de RLS
 - Mi Recetario — contexto del proyecto
 - Q: Por que Supabase JS client with no backend layer aparece semanticamente similar a n8n webhook recipe ingestion?
@@ -56,15 +58,15 @@
 ## Import Cycles
 - None detected.
 
-## Communities (22 total, 2 thin omitted)
+## Communities (24 total, 3 thin omitted)
 
 ### Community 0 - "Arquitectura, servicios y seguridad"
 Cohesion: 0.08
 Nodes (33): Arquitectura sin backend, Build estatico para Nginx, Despliegue en Synology, Gmail, Google Drive, Google Sheets, Gotenberg, JSONB heterogeneo (+25 more)
 
 ### Community 1 - "Componentes de interfaz"
-Cohesion: 0.12
-Nodes (24): AddRecipeForm(), AddRecipeFormProps, LoginModal(), LoginModalProps, RecipeDetail(), RecipePolaroid(), RecipePolaroidProps, ShareByEmail() (+16 more)
+Cohesion: 0.10
+Nodes (33): App(), CATEGORIES, AddRecipeForm(), AddRecipeFormProps, RecetaNoEncontrada(), SoloAdmin(), IngredientSearch(), IngredientSearchProps (+25 more)
 
 ### Community 2 - "Tooling de desarrollo"
 Cohesion: 0.08
@@ -78,17 +80,21 @@ Nodes (22): compilerOptions, allowImportingTsExtensions, erasableSyntaxOnly, jsx
 Cohesion: 0.10
 Nodes (20): compilerOptions, allowImportingTsExtensions, erasableSyntaxOnly, lib, module, moduleDetection, moduleResolution, noEmit (+12 more)
 
+### Community 5 - "DespensaSection.tsx"
+Cohesion: 0.39
+Nodes (9): AnadirIngrediente(), Props, SeccionDespensa(), normalizeString(), basesDeReceta(), buscarIngredientes(), IngredienteDelCatalogo, ingredientesDelCatalogo() (+1 more)
+
 ### Community 6 - "Dependencias de runtime"
 Cohesion: 0.07
 Nodes (26): dependencies, clsx, lucide-react, react, react-dom, @supabase/supabase-js, tailwind-merge, tailwindcss (+18 more)
 
 ### Community 7 - "Detalle y normalizacion JSONB"
-Cohesion: 0.13
-Nodes (33): AnadirIngrediente(), Props, Props, SeccionDespensa(), leerSeleccionGuardada(), Props, SeccionListaCompra(), IngredientsList() (+25 more)
+Cohesion: 0.18
+Nodes (19): IngredientsList(), IngredientsListProps, StepsList(), RecipeDetail(), RecipePolaroid(), RecipePolaroidProps, useIngredientSearch(), extractIngredientsText() (+11 more)
 
 ### Community 8 - "Scripts de npm"
-Cohesion: 0.24
-Nodes (8): RecipeCard(), RecipeCardProps, tiltFor(), RecipeGrid(), RecipeGridProps, SKELETON_TILTS, StarRating(), StarRatingProps
+Cohesion: 0.14
+Nodes (18): Props, leerSeleccionGuardada(), Props, SeccionListaCompra(), RecipeCard(), RecipeCardProps, tiltFor(), RecipeDetailProps (+10 more)
 
 ### Community 12 - "Migracion de RLS"
 Cohesion: 0.40
@@ -96,30 +102,30 @@ Nodes (4): Answer, Outcome, Q: Por que Supabase JS client with no backend layer 
 
 ### Community 14 - "Mi Recetario — contexto del proyecto"
 Cohesion: 0.06
-Nodes (29): Camino feliz, verificado el 8 ago 2026, Empieza por el grafo, Estado actual (23 ago 2026), graphify, Hacia dónde puede crecer, La despensa, La lista de la compra, Las rutas van por el hash (+21 more)
+Nodes (30): Camino feliz, verificado el 8 ago 2026, Empieza por el grafo, Estado actual (23 ago 2026), graphify, Hacia dónde puede crecer, La despensa, La lista de la compra, Las rutas van por el hash (+22 more)
 
 ### Community 20 - "App.tsx"
-Cohesion: 0.19
-Nodes (17): App(), CATEGORIES, RecetaNoEncontrada(), SoloAdmin(), FilterBar(), FilterBarProps, IngredientSearch(), IngredientSearchProps (+9 more)
+Cohesion: 0.67
+Nodes (3): FilterBar(), FilterBarProps, Category
 
 ## Knowledge Gaps
-- **116 isolated node(s):** `name`, `private`, `version`, `type`, `dev` (+111 more)
+- **118 isolated node(s):** `name`, `private`, `version`, `type`, `dev` (+113 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **2 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **3 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `devDependencies` connect `Tooling de desarrollo` to `Dependencias de runtime`?**
   _High betweenness centrality (0.021) - this node is a cross-community bridge._
-- **Why does `Recipe` connect `Detalle y normalizacion JSONB` to `Scripts de npm`, `Componentes de interfaz`?**
+- **Why does `Recipe` connect `Scripts de npm` to `Componentes de interfaz`, `DespensaSection.tsx`, `Detalle y normalizacion JSONB`?**
   _High betweenness centrality (0.012) - this node is a cross-community bridge._
 - **What connects `name`, `private`, `version` to the rest of the system?**
-  _116 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _118 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Arquitectura, servicios y seguridad` be split into smaller, more focused modules?**
   _Cohesion score 0.07777777777777778 - nodes in this community are weakly interconnected._
 - **Should `Componentes de interfaz` be split into smaller, more focused modules?**
-  _Cohesion score 0.12100840336134454 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.10283687943262411 - nodes in this community are weakly interconnected._
 - **Should `Tooling de desarrollo` be split into smaller, more focused modules?**
   _Cohesion score 0.08 - nodes in this community are weakly interconnected._
 - **Should `Config TypeScript de la app` be split into smaller, more focused modules?**

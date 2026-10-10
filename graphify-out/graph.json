@@ -593,8 +593,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_app",
-      "community": 20,
-      "community_name": "App.tsx",
+      "community": 1,
+      "community_name": "Componentes de interfaz",
       "norm_label": "app.tsx"
     },
     {
@@ -604,8 +604,8 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "src_app_categories",
-      "community": 20,
-      "community_name": "App.tsx",
+      "community": 1,
+      "community_name": "Componentes de interfaz",
       "norm_label": "categories"
     },
     {
@@ -615,8 +615,8 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "src_app_app",
-      "community": 20,
-      "community_name": "App.tsx",
+      "community": 1,
+      "community_name": "Componentes de interfaz",
       "norm_label": "app()"
     },
     {
@@ -659,8 +659,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_anadiringrediente",
-      "community": 7,
-      "community_name": "Detalle y normalizacion JSONB",
+      "community": 5,
+      "community_name": "DespensaSection.tsx",
       "norm_label": "anadiringrediente.tsx"
     },
     {
@@ -670,8 +670,8 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "src_components_anadiringrediente_props",
-      "community": 7,
-      "community_name": "Detalle y normalizacion JSONB",
+      "community": 5,
+      "community_name": "DespensaSection.tsx",
       "norm_label": "props"
     },
     {
@@ -681,8 +681,8 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "src_components_anadiringrediente_anadiringrediente",
-      "community": 7,
-      "community_name": "Detalle y normalizacion JSONB",
+      "community": 5,
+      "community_name": "DespensaSection.tsx",
       "norm_label": "anadiringrediente()"
     },
     {
@@ -692,8 +692,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_avisos",
-      "community": 20,
-      "community_name": "App.tsx",
+      "community": 1,
+      "community_name": "Componentes de interfaz",
       "norm_label": "avisos.tsx"
     },
     {
@@ -703,8 +703,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "src_components_avisos_soloadmin",
-      "community": 20,
-      "community_name": "App.tsx",
+      "community": 1,
+      "community_name": "Componentes de interfaz",
       "norm_label": "soloadmin()"
     },
     {
@@ -714,8 +714,8 @@
       "source_location": "L48",
       "_origin": "ast",
       "id": "src_components_avisos_recetanoencontrada",
-      "community": 20,
-      "community_name": "App.tsx",
+      "community": 1,
+      "community_name": "Componentes de interfaz",
       "norm_label": "recetanoencontrada()"
     },
     {
@@ -725,8 +725,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_despensasection",
-      "community": 7,
-      "community_name": "Detalle y normalizacion JSONB",
+      "community": 5,
+      "community_name": "DespensaSection.tsx",
       "norm_label": "despensasection.tsx"
     },
     {
@@ -736,8 +736,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "src_components_despensasection_props",
-      "community": 7,
-      "community_name": "Detalle y normalizacion JSONB",
+      "community": 8,
+      "community_name": "Scripts de npm",
       "norm_label": "props"
     },
     {
@@ -747,8 +747,8 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "src_components_despensasection_secciondespensa",
-      "community": 7,
-      "community_name": "Detalle y normalizacion JSONB",
+      "community": 5,
+      "community_name": "DespensaSection.tsx",
       "norm_label": "secciondespensa()"
     },
     {
@@ -791,8 +791,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_ingredientsearch",
-      "community": 20,
-      "community_name": "App.tsx",
+      "community": 1,
+      "community_name": "Componentes de interfaz",
       "norm_label": "ingredientsearch.tsx"
     },
     {
@@ -802,8 +802,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "src_components_ingredientsearch_ingredientsearchprops",
-      "community": 20,
-      "community_name": "App.tsx",
+      "community": 1,
+      "community_name": "Componentes de interfaz",
       "norm_label": "ingredientsearchprops"
     },
     {
@@ -813,8 +813,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "src_components_ingredientsearch_ingredientsearch",
-      "community": 20,
-      "community_name": "App.tsx",
+      "community": 1,
+      "community_name": "Componentes de interfaz",
       "norm_label": "ingredientsearch()"
     },
     {
@@ -824,8 +824,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_listacomprasection",
-      "community": 7,
-      "community_name": "Detalle y normalizacion JSONB",
+      "community": 8,
+      "community_name": "Scripts de npm",
       "norm_label": "listacomprasection.tsx"
     },
     {
@@ -835,8 +835,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "src_components_listacomprasection_props",
-      "community": 7,
-      "community_name": "Detalle y normalizacion JSONB",
+      "community": 8,
+      "community_name": "Scripts de npm",
       "norm_label": "props"
     },
     {
@@ -846,8 +846,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "src_components_listacomprasection_leerseleccionguardada",
-      "community": 7,
-      "community_name": "Detalle y normalizacion JSONB",
+      "community": 8,
+      "community_name": "Scripts de npm",
       "norm_label": "leerseleccionguardada()"
     },
     {
@@ -857,8 +857,8 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "src_components_listacomprasection_seccionlistacompra",
-      "community": 7,
-      "community_name": "Detalle y normalizacion JSONB",
+      "community": 8,
+      "community_name": "Scripts de npm",
       "norm_label": "seccionlistacompra()"
     },
     {
@@ -989,8 +989,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_recipedetail",
-      "community": 1,
-      "community_name": "Componentes de interfaz",
+      "community": 7,
+      "community_name": "Detalle y normalizacion JSONB",
       "norm_label": "recipedetail.tsx"
     },
     {
@@ -1000,8 +1000,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "src_components_recipedetail_recipedetailprops",
-      "community": 7,
-      "community_name": "Detalle y normalizacion JSONB",
+      "community": 8,
+      "community_name": "Scripts de npm",
       "norm_label": "recipedetailprops"
     },
     {
@@ -1011,8 +1011,8 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "src_components_recipedetail_recipedetail",
-      "community": 1,
-      "community_name": "Componentes de interfaz",
+      "community": 7,
+      "community_name": "Detalle y normalizacion JSONB",
       "norm_label": "recipedetail()"
     },
     {
@@ -1066,8 +1066,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_recipepolaroid",
-      "community": 1,
-      "community_name": "Componentes de interfaz",
+      "community": 7,
+      "community_name": "Detalle y normalizacion JSONB",
       "norm_label": "recipepolaroid.tsx"
     },
     {
@@ -1077,8 +1077,8 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "src_components_recipepolaroid_recipepolaroidprops",
-      "community": 1,
-      "community_name": "Componentes de interfaz",
+      "community": 7,
+      "community_name": "Detalle y normalizacion JSONB",
       "norm_label": "recipepolaroidprops"
     },
     {
@@ -1088,8 +1088,8 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "src_components_recipepolaroid_recipepolaroid",
-      "community": 1,
-      "community_name": "Componentes de interfaz",
+      "community": 7,
+      "community_name": "Detalle y normalizacion JSONB",
       "norm_label": "recipepolaroid()"
     },
     {
@@ -1231,8 +1231,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "src_hooks_usedespensa_despensa",
-      "community": 7,
-      "community_name": "Detalle y normalizacion JSONB",
+      "community": 8,
+      "community_name": "Scripts de npm",
       "norm_label": "despensa"
     },
     {
@@ -1297,8 +1297,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_hooks_useruta",
-      "community": 20,
-      "community_name": "App.tsx",
+      "community": 1,
+      "community_name": "Componentes de interfaz",
       "norm_label": "useruta.ts"
     },
     {
@@ -1308,8 +1308,8 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "src_hooks_useruta_ira",
-      "community": 20,
-      "community_name": "App.tsx",
+      "community": 1,
+      "community_name": "Componentes de interfaz",
       "norm_label": "ira()"
     },
     {
@@ -1319,8 +1319,8 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "src_hooks_useruta_reemplazarpor",
-      "community": 20,
-      "community_name": "App.tsx",
+      "community": 1,
+      "community_name": "Componentes de interfaz",
       "norm_label": "reemplazarpor()"
     },
     {
@@ -1330,8 +1330,8 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "src_hooks_useruta_volveratras",
-      "community": 20,
-      "community_name": "App.tsx",
+      "community": 1,
+      "community_name": "Componentes de interfaz",
       "norm_label": "volveratras()"
     },
     {
@@ -1341,8 +1341,8 @@
       "source_location": "L38",
       "_origin": "ast",
       "id": "src_hooks_useruta_useruta",
-      "community": 20,
-      "community_name": "App.tsx",
+      "community": 1,
+      "community_name": "Componentes de interfaz",
       "norm_label": "useruta()"
     },
     {
@@ -1396,8 +1396,8 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "src_lib_ingredientparser_normalizestring",
-      "community": 7,
-      "community_name": "Detalle y normalizacion JSONB",
+      "community": 5,
+      "community_name": "DespensaSection.tsx",
       "norm_label": "normalizestring()"
     },
     {
@@ -1429,8 +1429,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_lib_inventario",
-      "community": 7,
-      "community_name": "Detalle y normalizacion JSONB",
+      "community": 5,
+      "community_name": "DespensaSection.tsx",
       "norm_label": "inventario.ts"
     },
     {
@@ -1440,8 +1440,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "src_lib_inventario_ingredientedelcatalogo",
-      "community": 7,
-      "community_name": "Detalle y normalizacion JSONB",
+      "community": 5,
+      "community_name": "DespensaSection.tsx",
       "norm_label": "ingredientedelcatalogo"
     },
     {
@@ -1451,8 +1451,8 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "src_lib_inventario_ingredientesdelcatalogo",
-      "community": 7,
-      "community_name": "Detalle y normalizacion JSONB",
+      "community": 5,
+      "community_name": "DespensaSection.tsx",
       "norm_label": "ingredientesdelcatalogo()"
     },
     {
@@ -1462,8 +1462,8 @@
       "source_location": "L42",
       "_origin": "ast",
       "id": "src_lib_inventario_basesdereceta",
-      "community": 7,
-      "community_name": "Detalle y normalizacion JSONB",
+      "community": 5,
+      "community_name": "DespensaSection.tsx",
       "norm_label": "basesdereceta()"
     },
     {
@@ -1473,8 +1473,8 @@
       "source_location": "L49",
       "_origin": "ast",
       "id": "src_lib_inventario_recetaconfaltantes",
-      "community": 7,
-      "community_name": "Detalle y normalizacion JSONB",
+      "community": 8,
+      "community_name": "Scripts de npm",
       "norm_label": "recetaconfaltantes"
     },
     {
@@ -1484,8 +1484,8 @@
       "source_location": "L66",
       "_origin": "ast",
       "id": "src_lib_inventario_ordenarporloquefalta",
-      "community": 7,
-      "community_name": "Detalle y normalizacion JSONB",
+      "community": 5,
+      "community_name": "DespensaSection.tsx",
       "norm_label": "ordenarporloquefalta()"
     },
     {
@@ -1495,8 +1495,8 @@
       "source_location": "L88",
       "_origin": "ast",
       "id": "src_lib_inventario_buscaringredientes",
-      "community": 7,
-      "community_name": "Detalle y normalizacion JSONB",
+      "community": 5,
+      "community_name": "DespensaSection.tsx",
       "norm_label": "buscaringredientes()"
     },
     {
@@ -1506,8 +1506,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_lib_listacompra",
-      "community": 7,
-      "community_name": "Detalle y normalizacion JSONB",
+      "community": 8,
+      "community_name": "Scripts de npm",
       "norm_label": "listacompra.ts"
     },
     {
@@ -1517,8 +1517,8 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "src_lib_listacompra_itemlistacompra",
-      "community": 7,
-      "community_name": "Detalle y normalizacion JSONB",
+      "community": 8,
+      "community_name": "Scripts de npm",
       "norm_label": "itemlistacompra"
     },
     {
@@ -1528,8 +1528,8 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "src_lib_listacompra_listadelacompra",
-      "community": 7,
-      "community_name": "Detalle y normalizacion JSONB",
+      "community": 8,
+      "community_name": "Scripts de npm",
       "norm_label": "listadelacompra()"
     },
     {
@@ -1671,8 +1671,8 @@
       "source_location": "L114",
       "_origin": "ast",
       "id": "src_lib_recipecontent_hasnotas",
-      "community": 1,
-      "community_name": "Componentes de interfaz",
+      "community": 7,
+      "community_name": "Detalle y normalizacion JSONB",
       "norm_label": "hasnotas()"
     },
     {
@@ -1682,8 +1682,8 @@
       "source_location": "L129",
       "_origin": "ast",
       "id": "src_lib_recipecontent_rendernotas",
-      "community": 1,
-      "community_name": "Componentes de interfaz",
+      "community": 7,
+      "community_name": "Detalle y normalizacion JSONB",
       "norm_label": "rendernotas()"
     },
     {
@@ -1693,8 +1693,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_lib_rutas",
-      "community": 20,
-      "community_name": "App.tsx",
+      "community": 1,
+      "community_name": "Componentes de interfaz",
       "norm_label": "rutas.ts"
     },
     {
@@ -1704,8 +1704,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "src_lib_rutas_ruta",
-      "community": 20,
-      "community_name": "App.tsx",
+      "community": 1,
+      "community_name": "Componentes de interfaz",
       "norm_label": "ruta"
     },
     {
@@ -1715,8 +1715,8 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "src_lib_rutas_catalogo",
-      "community": 20,
-      "community_name": "App.tsx",
+      "community": 1,
+      "community_name": "Componentes de interfaz",
       "norm_label": "catalogo"
     },
     {
@@ -1726,8 +1726,8 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "src_lib_rutas_parsearruta",
-      "community": 20,
-      "community_name": "App.tsx",
+      "community": 1,
+      "community_name": "Componentes de interfaz",
       "norm_label": "parsearruta()"
     },
     {
@@ -1737,8 +1737,8 @@
       "source_location": "L42",
       "_origin": "ast",
       "id": "src_lib_rutas_ahash",
-      "community": 20,
-      "community_name": "App.tsx",
+      "community": 1,
+      "community_name": "Componentes de interfaz",
       "norm_label": "ahash()"
     },
     {
@@ -1770,8 +1770,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_main",
-      "community": 20,
-      "community_name": "App.tsx",
+      "community": 1,
+      "community_name": "Componentes de interfaz",
       "norm_label": "main.tsx"
     },
     {
@@ -1803,15 +1803,15 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "src_types_recipe",
-      "community": 7,
-      "community_name": "Detalle y normalizacion JSONB",
+      "community": 8,
+      "community_name": "Scripts de npm",
       "norm_label": "recipe"
     },
     {
       "label": "Category",
       "file_type": "code",
       "source_file": "src/types.ts",
-      "source_location": "L25",
+      "source_location": "L32",
       "_origin": "ast",
       "id": "src_types_category",
       "community": 20,
@@ -1894,6 +1894,28 @@
       "community": 22,
       "community_name": "20260823_estructurar_ingredientes.sql",
       "norm_label": "20260823_estructurar_ingredientes.sql"
+    },
+    {
+      "label": "20261010_anade_tiempo_porciones_dificultad.sql",
+      "file_type": "code",
+      "source_file": "supabase/migrations/20261010_anade_tiempo_porciones_dificultad.sql",
+      "source_location": null,
+      "_origin": "ast",
+      "id": "supabase_migrations_20261010_anade_tiempo_porciones_dificultad",
+      "community": 9,
+      "community_name": "20261010_anade_tiempo_porciones_dificultad.sql",
+      "norm_label": "20261010_anade_tiempo_porciones_dificultad.sql"
+    },
+    {
+      "label": "public.recetas",
+      "file_type": "code",
+      "source_file": "supabase/migrations/20261010_anade_tiempo_porciones_dificultad.sql",
+      "source_location": "L16",
+      "_origin": "ast",
+      "id": "supabase_migrations_20261010_anade_tiempo_porciones_dificultad_public_recetas",
+      "community": 9,
+      "community_name": "20261010_anade_tiempo_porciones_dificultad.sql",
+      "norm_label": "public.recetas"
     },
     {
       "label": "20261010_partir_base_combinados.sql",
@@ -2545,10 +2567,21 @@
       "norm_label": "la lista de la compra"
     },
     {
-      "label": "Hacia d\u00f3nde puede crecer",
+      "label": "Tiempo, porciones y dificultad",
       "file_type": "document",
       "source_file": "CLAUDE.md",
       "source_location": "L212",
+      "_origin": "ast",
+      "id": "claude_tiempo_porciones_y_dificultad",
+      "community": 14,
+      "community_name": "Mi Recetario \u2014 contexto del proyecto",
+      "norm_label": "tiempo, porciones y dificultad"
+    },
+    {
+      "label": "Hacia d\u00f3nde puede crecer",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": "L227",
       "_origin": "ast",
       "id": "claude_hacia_d\u00f3nde_puede_crecer",
       "community": 14,
@@ -2559,7 +2592,7 @@
       "label": "graphify",
       "file_type": "document",
       "source_file": "CLAUDE.md",
-      "source_location": "L219",
+      "source_location": "L234",
       "_origin": "ast",
       "id": "claude_graphify",
       "community": 14,
@@ -2589,21 +2622,21 @@
       "norm_label": "ideas para el recetario"
     },
     {
-      "label": "El punto de partida: datos que ya se pagan y se tiran",
+      "label": "El punto de partida: datos que ya se pagan y se tiran \u2014 hecho",
       "file_type": "document",
       "source_file": "docs/ideas.md",
       "source_location": "L17",
       "_origin": "ast",
-      "id": "docs_ideas_el_punto_de_partida_datos_que_ya_se_pagan_y_se_tiran",
+      "id": "docs_ideas_el_punto_de_partida_datos_que_ya_se_pagan_y_se_tiran_hecho",
       "community": 14,
       "community_name": "Mi Recetario \u2014 contexto del proyecto",
-      "norm_label": "el punto de partida: datos que ya se pagan y se tiran"
+      "norm_label": "el punto de partida: datos que ya se pagan y se tiran \u2014 hecho"
     },
     {
       "label": "Cocinar de verdad",
       "file_type": "document",
       "source_file": "docs/ideas.md",
-      "source_location": "L45",
+      "source_location": "L40",
       "_origin": "ast",
       "id": "docs_ideas_cocinar_de_verdad",
       "community": 14,
@@ -2614,7 +2647,7 @@
       "label": "La despensa y su secci\u00f3n propia \u2014 hechas",
       "file_type": "document",
       "source_file": "docs/ideas.md",
-      "source_location": "L62",
+      "source_location": "L57",
       "_origin": "ast",
       "id": "docs_ideas_la_despensa_y_su_secci\u00f3n_propia_hechas",
       "community": 14,
@@ -2625,7 +2658,7 @@
       "label": "Decidido: la despensa NO guarda cantidades",
       "file_type": "document",
       "source_file": "docs/ideas.md",
-      "source_location": "L94",
+      "source_location": "L89",
       "_origin": "ast",
       "id": "docs_ideas_decidido_la_despensa_no_guarda_cantidades",
       "community": 14,
@@ -2636,7 +2669,7 @@
       "label": "Men\u00fa semanal y lista de la compra \u2014 hecha",
       "file_type": "document",
       "source_file": "docs/ideas.md",
-      "source_location": "L120",
+      "source_location": "L115",
       "_origin": "ast",
       "id": "docs_ideas_men\u00fa_semanal_y_lista_de_la_compra_hecha",
       "community": 14,
@@ -2647,7 +2680,7 @@
       "label": "Encontrar recetas",
       "file_type": "document",
       "source_file": "docs/ideas.md",
-      "source_location": "L138",
+      "source_location": "L133",
       "_origin": "ast",
       "id": "docs_ideas_encontrar_recetas",
       "community": 14,
@@ -2658,7 +2691,7 @@
       "label": "Dar de alta con menos fricci\u00f3n",
       "file_type": "document",
       "source_file": "docs/ideas.md",
-      "source_location": "L157",
+      "source_location": "L152",
       "_origin": "ast",
       "id": "docs_ideas_dar_de_alta_con_menos_fricci\u00f3n",
       "community": 14,
@@ -2669,7 +2702,7 @@
       "label": "Los afans",
       "file_type": "document",
       "source_file": "docs/ideas.md",
-      "source_location": "L173",
+      "source_location": "L168",
       "_origin": "ast",
       "id": "docs_ideas_los_afans",
       "community": 14,
@@ -2680,7 +2713,7 @@
       "label": "Automatismos con n8n",
       "file_type": "document",
       "source_file": "docs/ideas.md",
-      "source_location": "L184",
+      "source_location": "L179",
       "_origin": "ast",
       "id": "docs_ideas_automatismos_con_n8n",
       "community": 14,
@@ -2691,7 +2724,7 @@
       "label": "Orden sugerido",
       "file_type": "document",
       "source_file": "docs/ideas.md",
-      "source_location": "L195",
+      "source_location": "L190",
       "_origin": "ast",
       "id": "docs_ideas_orden_sugerido",
       "community": 14,
@@ -2702,7 +2735,7 @@
       "label": "Dos avisos de realidad",
       "file_type": "document",
       "source_file": "docs/ideas.md",
-      "source_location": "L211",
+      "source_location": "L206",
       "_origin": "ast",
       "id": "docs_ideas_dos_avisos_de_realidad",
       "community": 14,
@@ -2768,7 +2801,7 @@
       "label": "Registro de cambios",
       "file_type": "document",
       "source_file": "docs/seguimiento.md",
-      "source_location": "L72",
+      "source_location": "L73",
       "_origin": "ast",
       "id": "docs_seguimiento_registro_de_cambios",
       "community": 14,
@@ -2779,7 +2812,7 @@
       "label": "C\u00f3mo mantener esto",
       "file_type": "document",
       "source_file": "docs/seguimiento.md",
-      "source_location": "L89",
+      "source_location": "L91",
       "_origin": "ast",
       "id": "docs_seguimiento_c\u00f3mo_mantener_esto",
       "community": 14,
@@ -7537,7 +7570,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/types.ts",
-      "source_location": "L25",
+      "source_location": "L32",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_types",
@@ -7575,6 +7608,17 @@
       "_origin": "ast",
       "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_supabase_migrations_20260823_despensa_sql",
       "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_supabase_migrations_20260823_despensa_public_despensa",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "supabase/migrations/20261010_anade_tiempo_porciones_dificultad.sql",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "supabase_migrations_20261010_anade_tiempo_porciones_dificultad",
+      "target": "supabase_migrations_20261010_anade_tiempo_porciones_dificultad_public_recetas",
       "confidence_score": 1.0
     },
     {
@@ -8127,7 +8171,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "CLAUDE.md",
-      "source_location": "L219",
+      "source_location": "L234",
       "weight": 1.0,
       "_origin": "ast",
       "source": "claude_mi_recetario_contexto_del_proyecto",
@@ -8138,7 +8182,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "CLAUDE.md",
-      "source_location": "L212",
+      "source_location": "L227",
       "weight": 1.0,
       "_origin": "ast",
       "source": "claude_mi_recetario_contexto_del_proyecto",
@@ -8154,6 +8198,17 @@
       "_origin": "ast",
       "source": "claude_mi_recetario_contexto_del_proyecto",
       "target": "claude_la_lista_de_la_compra",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CLAUDE.md",
+      "source_location": "L212",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "claude_mi_recetario_contexto_del_proyecto",
+      "target": "claude_tiempo_porciones_y_dificultad",
       "confidence_score": 1.0
     },
     {
@@ -8237,7 +8292,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/ideas.md",
-      "source_location": "L184",
+      "source_location": "L179",
       "weight": 1.0,
       "_origin": "ast",
       "source": "docs_ideas_ideas_para_el_recetario",
@@ -8248,7 +8303,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/ideas.md",
-      "source_location": "L45",
+      "source_location": "L40",
       "weight": 1.0,
       "_origin": "ast",
       "source": "docs_ideas_ideas_para_el_recetario",
@@ -8259,7 +8314,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/ideas.md",
-      "source_location": "L157",
+      "source_location": "L152",
       "weight": 1.0,
       "_origin": "ast",
       "source": "docs_ideas_ideas_para_el_recetario",
@@ -8270,7 +8325,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/ideas.md",
-      "source_location": "L211",
+      "source_location": "L206",
       "weight": 1.0,
       "_origin": "ast",
       "source": "docs_ideas_ideas_para_el_recetario",
@@ -8285,14 +8340,14 @@
       "weight": 1.0,
       "_origin": "ast",
       "source": "docs_ideas_ideas_para_el_recetario",
-      "target": "docs_ideas_el_punto_de_partida_datos_que_ya_se_pagan_y_se_tiran",
+      "target": "docs_ideas_el_punto_de_partida_datos_que_ya_se_pagan_y_se_tiran_hecho",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/ideas.md",
-      "source_location": "L138",
+      "source_location": "L133",
       "weight": 1.0,
       "_origin": "ast",
       "source": "docs_ideas_ideas_para_el_recetario",
@@ -8303,7 +8358,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/ideas.md",
-      "source_location": "L62",
+      "source_location": "L57",
       "weight": 1.0,
       "_origin": "ast",
       "source": "docs_ideas_ideas_para_el_recetario",
@@ -8314,7 +8369,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/ideas.md",
-      "source_location": "L173",
+      "source_location": "L168",
       "weight": 1.0,
       "_origin": "ast",
       "source": "docs_ideas_ideas_para_el_recetario",
@@ -8325,7 +8380,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/ideas.md",
-      "source_location": "L120",
+      "source_location": "L115",
       "weight": 1.0,
       "_origin": "ast",
       "source": "docs_ideas_ideas_para_el_recetario",
@@ -8336,7 +8391,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/ideas.md",
-      "source_location": "L195",
+      "source_location": "L190",
       "weight": 1.0,
       "_origin": "ast",
       "source": "docs_ideas_ideas_para_el_recetario",
@@ -8347,7 +8402,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/ideas.md",
-      "source_location": "L94",
+      "source_location": "L89",
       "weight": 1.0,
       "_origin": "ast",
       "source": "docs_ideas_la_despensa_y_su_secci\u00f3n_propia_hechas",
@@ -8369,7 +8424,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/seguimiento.md",
-      "source_location": "L89",
+      "source_location": "L91",
       "weight": 1.0,
       "_origin": "ast",
       "source": "docs_seguimiento_seguimiento_del_proyecto",
@@ -8413,7 +8468,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/seguimiento.md",
-      "source_location": "L72",
+      "source_location": "L73",
       "weight": 1.0,
       "_origin": "ast",
       "source": "docs_seguimiento_seguimiento_del_proyecto",
@@ -9054,5 +9109,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "14caec36b6397718da731b03d963283ae9d77919"
+  "built_at_commit": "fc5a3743e7c8c7d4a38b3ad56be7a94c225250dd"
 }
