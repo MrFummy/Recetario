@@ -20,7 +20,7 @@
       "source_file": "package.json",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "package",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_json",
       "community": 6,
       "community_name": "Dependencias de runtime",
       "norm_label": "package.json"
@@ -31,7 +31,7 @@
       "source_file": "package.json",
       "source_location": "L2",
       "_origin": "ast",
-      "id": "package_name",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_name",
       "community": 6,
       "community_name": "Dependencias de runtime",
       "norm_label": "name"
@@ -42,7 +42,7 @@
       "source_file": "package.json",
       "source_location": "L3",
       "_origin": "ast",
-      "id": "package_private",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_private",
       "community": 6,
       "community_name": "Dependencias de runtime",
       "norm_label": "private"
@@ -53,7 +53,7 @@
       "source_file": "package.json",
       "source_location": "L4",
       "_origin": "ast",
-      "id": "package_version",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_version",
       "community": 6,
       "community_name": "Dependencias de runtime",
       "norm_label": "version"
@@ -64,7 +64,7 @@
       "source_file": "package.json",
       "source_location": "L5",
       "_origin": "ast",
-      "id": "package_type",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_type",
       "community": 6,
       "community_name": "Dependencias de runtime",
       "norm_label": "type"
@@ -75,7 +75,7 @@
       "source_file": "package.json",
       "source_location": "L6",
       "_origin": "ast",
-      "id": "package_scripts",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_scripts",
       "community": 6,
       "community_name": "Dependencias de runtime",
       "norm_label": "scripts"
@@ -86,7 +86,7 @@
       "source_file": "package.json",
       "source_location": "L7",
       "_origin": "ast",
-      "id": "package_scripts_dev",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_scripts_dev",
       "community": 6,
       "community_name": "Dependencias de runtime",
       "norm_label": "dev"
@@ -97,7 +97,7 @@
       "source_file": "package.json",
       "source_location": "L8",
       "_origin": "ast",
-      "id": "package_scripts_build",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_scripts_build",
       "community": 6,
       "community_name": "Dependencias de runtime",
       "norm_label": "build"
@@ -108,7 +108,7 @@
       "source_file": "package.json",
       "source_location": "L9",
       "_origin": "ast",
-      "id": "package_scripts_lint",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_scripts_lint",
       "community": 6,
       "community_name": "Dependencias de runtime",
       "norm_label": "lint"
@@ -119,7 +119,7 @@
       "source_file": "package.json",
       "source_location": "L10",
       "_origin": "ast",
-      "id": "package_scripts_preview",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_scripts_preview",
       "community": 6,
       "community_name": "Dependencias de runtime",
       "norm_label": "preview"
@@ -130,7 +130,7 @@
       "source_file": "package.json",
       "source_location": "L12",
       "_origin": "ast",
-      "id": "package_dependencies",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_dependencies",
       "community": 6,
       "community_name": "Dependencias de runtime",
       "norm_label": "dependencies"
@@ -141,7 +141,7 @@
       "source_file": "package.json",
       "source_location": "L13",
       "_origin": "ast",
-      "id": "package_dependencies_supabase_supabase_js",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_dependencies_supabase_supabase_js",
       "community": 6,
       "community_name": "Dependencias de runtime",
       "norm_label": "@supabase/supabase-js"
@@ -163,7 +163,7 @@
       "source_file": "package.json",
       "source_location": "L14",
       "_origin": "ast",
-      "id": "package_dependencies_tailwindcss_vite",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_dependencies_tailwindcss_vite",
       "community": 6,
       "community_name": "Dependencias de runtime",
       "norm_label": "@tailwindcss/vite"
@@ -185,7 +185,7 @@
       "source_file": "package.json",
       "source_location": "L15",
       "_origin": "ast",
-      "id": "package_dependencies_clsx",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_dependencies_clsx",
       "community": 6,
       "community_name": "Dependencias de runtime",
       "norm_label": "clsx"
@@ -207,7 +207,7 @@
       "source_file": "package.json",
       "source_location": "L16",
       "_origin": "ast",
-      "id": "package_dependencies_lucide_react",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_dependencies_lucide_react",
       "community": 6,
       "community_name": "Dependencias de runtime",
       "norm_label": "lucide-react"
@@ -229,7 +229,7 @@
       "source_file": "package.json",
       "source_location": "L17",
       "_origin": "ast",
-      "id": "package_dependencies_react",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_dependencies_react",
       "community": 6,
       "community_name": "Dependencias de runtime",
       "norm_label": "react"
@@ -251,7 +251,7 @@
       "source_file": "package.json",
       "source_location": "L18",
       "_origin": "ast",
-      "id": "package_dependencies_react_dom",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_dependencies_react_dom",
       "community": 6,
       "community_name": "Dependencias de runtime",
       "norm_label": "react-dom"
@@ -273,7 +273,7 @@
       "source_file": "package.json",
       "source_location": "L19",
       "_origin": "ast",
-      "id": "package_dependencies_tailwind_merge",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_dependencies_tailwind_merge",
       "community": 6,
       "community_name": "Dependencias de runtime",
       "norm_label": "tailwind-merge"
@@ -295,7 +295,7 @@
       "source_file": "package.json",
       "source_location": "L20",
       "_origin": "ast",
-      "id": "package_dependencies_tailwindcss",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_dependencies_tailwindcss",
       "community": 6,
       "community_name": "Dependencias de runtime",
       "norm_label": "tailwindcss"
@@ -317,7 +317,7 @@
       "source_file": "package.json",
       "source_location": "L22",
       "_origin": "ast",
-      "id": "package_devdependencies",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies",
       "community": 2,
       "community_name": "Tooling de desarrollo",
       "norm_label": "devdependencies"
@@ -328,7 +328,7 @@
       "source_file": "package.json",
       "source_location": "L23",
       "_origin": "ast",
-      "id": "package_devdependencies_eslint_js",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies_eslint_js",
       "community": 2,
       "community_name": "Tooling de desarrollo",
       "norm_label": "@eslint/js"
@@ -350,7 +350,7 @@
       "source_file": "package.json",
       "source_location": "L24",
       "_origin": "ast",
-      "id": "package_devdependencies_types_node",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies_types_node",
       "community": 2,
       "community_name": "Tooling de desarrollo",
       "norm_label": "@types/node"
@@ -372,7 +372,7 @@
       "source_file": "package.json",
       "source_location": "L25",
       "_origin": "ast",
-      "id": "package_devdependencies_types_react",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies_types_react",
       "community": 2,
       "community_name": "Tooling de desarrollo",
       "norm_label": "@types/react"
@@ -394,7 +394,7 @@
       "source_file": "package.json",
       "source_location": "L26",
       "_origin": "ast",
-      "id": "package_devdependencies_types_react_dom",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies_types_react_dom",
       "community": 2,
       "community_name": "Tooling de desarrollo",
       "norm_label": "@types/react-dom"
@@ -416,7 +416,7 @@
       "source_file": "package.json",
       "source_location": "L27",
       "_origin": "ast",
-      "id": "package_devdependencies_vitejs_plugin_react",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies_vitejs_plugin_react",
       "community": 2,
       "community_name": "Tooling de desarrollo",
       "norm_label": "@vitejs/plugin-react"
@@ -438,7 +438,7 @@
       "source_file": "package.json",
       "source_location": "L28",
       "_origin": "ast",
-      "id": "package_devdependencies_eslint",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies_eslint",
       "community": 2,
       "community_name": "Tooling de desarrollo",
       "norm_label": "eslint"
@@ -460,7 +460,7 @@
       "source_file": "package.json",
       "source_location": "L29",
       "_origin": "ast",
-      "id": "package_devdependencies_eslint_plugin_react_hooks",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies_eslint_plugin_react_hooks",
       "community": 2,
       "community_name": "Tooling de desarrollo",
       "norm_label": "eslint-plugin-react-hooks"
@@ -482,7 +482,7 @@
       "source_file": "package.json",
       "source_location": "L30",
       "_origin": "ast",
-      "id": "package_devdependencies_eslint_plugin_react_refresh",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies_eslint_plugin_react_refresh",
       "community": 2,
       "community_name": "Tooling de desarrollo",
       "norm_label": "eslint-plugin-react-refresh"
@@ -504,7 +504,7 @@
       "source_file": "package.json",
       "source_location": "L31",
       "_origin": "ast",
-      "id": "package_devdependencies_globals",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies_globals",
       "community": 2,
       "community_name": "Tooling de desarrollo",
       "norm_label": "globals"
@@ -526,7 +526,7 @@
       "source_file": "package.json",
       "source_location": "L32",
       "_origin": "ast",
-      "id": "package_devdependencies_typescript",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies_typescript",
       "community": 2,
       "community_name": "Tooling de desarrollo",
       "norm_label": "typescript"
@@ -548,7 +548,7 @@
       "source_file": "package.json",
       "source_location": "L33",
       "_origin": "ast",
-      "id": "package_devdependencies_typescript_eslint",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies_typescript_eslint",
       "community": 2,
       "community_name": "Tooling de desarrollo",
       "norm_label": "typescript-eslint"
@@ -570,7 +570,7 @@
       "source_file": "package.json",
       "source_location": "L34",
       "_origin": "ast",
-      "id": "package_devdependencies_vite",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies_vite",
       "community": 2,
       "community_name": "Tooling de desarrollo",
       "norm_label": "vite"
@@ -857,8 +857,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_recipecard",
-      "community": 5,
-      "community_name": "Catalogo y busqueda",
+      "community": 8,
+      "community_name": "Scripts de npm",
       "norm_label": "recipecard.tsx"
     },
     {
@@ -868,8 +868,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "src_components_recipecard_recipecardprops",
-      "community": 5,
-      "community_name": "Catalogo y busqueda",
+      "community": 8,
+      "community_name": "Scripts de npm",
       "norm_label": "recipecardprops"
     },
     {
@@ -879,8 +879,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "src_components_recipecard_tiltfor",
-      "community": 5,
-      "community_name": "Catalogo y busqueda",
+      "community": 8,
+      "community_name": "Scripts de npm",
       "norm_label": "tiltfor()"
     },
     {
@@ -890,8 +890,8 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "src_components_recipecard_recipecard",
-      "community": 5,
-      "community_name": "Catalogo y busqueda",
+      "community": 8,
+      "community_name": "Scripts de npm",
       "norm_label": "recipecard()"
     },
     {
@@ -956,8 +956,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "src_components_recipedetail_recipedetailprops",
-      "community": 5,
-      "community_name": "Catalogo y busqueda",
+      "community": 8,
+      "community_name": "Scripts de npm",
       "norm_label": "recipedetailprops"
     },
     {
@@ -978,8 +978,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_recipegrid",
-      "community": 5,
-      "community_name": "Catalogo y busqueda",
+      "community": 8,
+      "community_name": "Scripts de npm",
       "norm_label": "recipegrid.tsx"
     },
     {
@@ -989,8 +989,8 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "src_components_recipegrid_recipegridprops",
-      "community": 5,
-      "community_name": "Catalogo y busqueda",
+      "community": 8,
+      "community_name": "Scripts de npm",
       "norm_label": "recipegridprops"
     },
     {
@@ -1000,8 +1000,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "src_components_recipegrid_skeleton_tilts",
-      "community": 5,
-      "community_name": "Catalogo y busqueda",
+      "community": 8,
+      "community_name": "Scripts de npm",
       "norm_label": "skeleton_tilts"
     },
     {
@@ -1011,8 +1011,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "src_components_recipegrid_recipegrid",
-      "community": 5,
-      "community_name": "Catalogo y busqueda",
+      "community": 8,
+      "community_name": "Scripts de npm",
       "norm_label": "recipegrid()"
     },
     {
@@ -1088,8 +1088,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_starrating",
-      "community": 5,
-      "community_name": "Catalogo y busqueda",
+      "community": 8,
+      "community_name": "Scripts de npm",
       "norm_label": "starrating.tsx"
     },
     {
@@ -1099,8 +1099,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "src_components_starrating_starratingprops",
-      "community": 5,
-      "community_name": "Catalogo y busqueda",
+      "community": 8,
+      "community_name": "Scripts de npm",
       "norm_label": "starratingprops"
     },
     {
@@ -1110,8 +1110,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "src_components_starrating_starrating",
-      "community": 5,
-      "community_name": "Catalogo y busqueda",
+      "community": 8,
+      "community_name": "Scripts de npm",
       "norm_label": "starrating()"
     },
     {
@@ -1429,8 +1429,8 @@
       "source_location": "L49",
       "_origin": "ast",
       "id": "src_lib_inventario_recetaconfaltantes",
-      "community": 5,
-      "community_name": "Catalogo y busqueda",
+      "community": 8,
+      "community_name": "Scripts de npm",
       "norm_label": "recetaconfaltantes"
     },
     {
@@ -1715,8 +1715,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "src_types_recipe",
-      "community": 5,
-      "community_name": "Catalogo y busqueda",
+      "community": 8,
+      "community_name": "Scripts de npm",
       "norm_label": "recipe"
     },
     {
@@ -1736,9 +1736,9 @@
       "source_file": "supabase/migrations/20260805_endurecer_rls.sql",
       "source_location": null,
       "_origin": "ast",
-      "id": "supabase_migrations_20260805_endurecer_rls",
-      "community": 12,
-      "community_name": "Migracion de RLS",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_supabase_migrations_20260805_endurecer_rls_sql",
+      "community": 17,
+      "community_name": "20260808_proteger_default_jpg.sql",
       "norm_label": "20260805_endurecer_rls.sql"
     },
     {
@@ -1747,9 +1747,9 @@
       "source_file": "supabase/migrations/20260808_fotos_en_raiz_visibles.sql",
       "source_location": null,
       "_origin": "ast",
-      "id": "supabase_migrations_20260808_fotos_en_raiz_visibles",
-      "community": 16,
-      "community_name": "20260808_fotos_en_raiz_visibles.sql",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_supabase_migrations_20260808_fotos_en_raiz_visibles_sql",
+      "community": 18,
+      "community_name": "20260808_revocar_execute_funciones.sql",
       "norm_label": "20260808_fotos_en_raiz_visibles.sql"
     },
     {
@@ -1758,9 +1758,9 @@
       "source_file": "supabase/migrations/20260808_proteger_default_jpg.sql",
       "source_location": null,
       "_origin": "ast",
-      "id": "supabase_migrations_20260808_proteger_default_jpg",
-      "community": 17,
-      "community_name": "20260808_proteger_default_jpg.sql",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_supabase_migrations_20260808_proteger_default_jpg_sql",
+      "community": 19,
+      "community_name": "20260823_estructurar_ingredientes.sql",
       "norm_label": "20260808_proteger_default_jpg.sql"
     },
     {
@@ -1769,8 +1769,8 @@
       "source_file": "supabase/migrations/20260808_revocar_execute_funciones.sql",
       "source_location": null,
       "_origin": "ast",
-      "id": "supabase_migrations_20260808_revocar_execute_funciones",
-      "community": 18,
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_supabase_migrations_20260808_revocar_execute_funciones_sql",
+      "community": 21,
       "community_name": "20260808_revocar_execute_funciones.sql",
       "norm_label": "20260808_revocar_execute_funciones.sql"
     },
@@ -1780,9 +1780,9 @@
       "source_file": "supabase/migrations/20260823_despensa.sql",
       "source_location": null,
       "_origin": "ast",
-      "id": "supabase_migrations_20260823_despensa",
-      "community": 8,
-      "community_name": "Scripts de npm",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_supabase_migrations_20260823_despensa_sql",
+      "community": 16,
+      "community_name": "20260808_fotos_en_raiz_visibles.sql",
       "norm_label": "20260823_despensa.sql"
     },
     {
@@ -1791,9 +1791,9 @@
       "source_file": "supabase/migrations/20260823_despensa.sql",
       "source_location": "L21",
       "_origin": "ast",
-      "id": "supabase_migrations_20260823_despensa_public_despensa",
-      "community": 8,
-      "community_name": "Scripts de npm",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_supabase_migrations_20260823_despensa_public_despensa",
+      "community": 16,
+      "community_name": "20260808_fotos_en_raiz_visibles.sql",
       "norm_label": "public.despensa"
     },
     {
@@ -1802,8 +1802,8 @@
       "source_file": "supabase/migrations/20260823_estructurar_ingredientes.sql",
       "source_location": null,
       "_origin": "ast",
-      "id": "supabase_migrations_20260823_estructurar_ingredientes",
-      "community": 19,
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_supabase_migrations_20260823_estructurar_ingredientes_sql",
+      "community": 22,
       "community_name": "20260823_estructurar_ingredientes.sql",
       "norm_label": "20260823_estructurar_ingredientes.sql"
     },
@@ -1813,7 +1813,7 @@
       "source_file": "tsconfig.app.json",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "tsconfig_app",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_app_json",
       "community": 3,
       "community_name": "Config TypeScript de la app",
       "norm_label": "tsconfig.app.json"
@@ -1824,7 +1824,7 @@
       "source_file": "tsconfig.app.json",
       "source_location": "L2",
       "_origin": "ast",
-      "id": "tsconfig_app_compileroptions",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_app_compileroptions",
       "community": 3,
       "community_name": "Config TypeScript de la app",
       "norm_label": "compileroptions"
@@ -1835,7 +1835,7 @@
       "source_file": "tsconfig.app.json",
       "source_location": "L3",
       "_origin": "ast",
-      "id": "tsconfig_app_compileroptions_tsbuildinfofile",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_app_compileroptions_tsbuildinfofile",
       "community": 3,
       "community_name": "Config TypeScript de la app",
       "norm_label": "tsbuildinfofile"
@@ -1846,7 +1846,7 @@
       "source_file": "tsconfig.app.json",
       "source_location": "L4",
       "_origin": "ast",
-      "id": "tsconfig_app_compileroptions_target",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_app_compileroptions_target",
       "community": 3,
       "community_name": "Config TypeScript de la app",
       "norm_label": "target"
@@ -1857,7 +1857,7 @@
       "source_file": "tsconfig.app.json",
       "source_location": "L5",
       "_origin": "ast",
-      "id": "tsconfig_app_compileroptions_lib",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_app_compileroptions_lib",
       "community": 3,
       "community_name": "Config TypeScript de la app",
       "norm_label": "lib"
@@ -1890,7 +1890,7 @@
       "source_file": "tsconfig.app.json",
       "source_location": "L6",
       "_origin": "ast",
-      "id": "tsconfig_app_compileroptions_module",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_app_compileroptions_module",
       "community": 3,
       "community_name": "Config TypeScript de la app",
       "norm_label": "module"
@@ -1901,7 +1901,7 @@
       "source_file": "tsconfig.app.json",
       "source_location": "L7",
       "_origin": "ast",
-      "id": "tsconfig_app_compileroptions_types",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_app_compileroptions_types",
       "community": 3,
       "community_name": "Config TypeScript de la app",
       "norm_label": "types"
@@ -1923,7 +1923,7 @@
       "source_file": "tsconfig.app.json",
       "source_location": "L8",
       "_origin": "ast",
-      "id": "tsconfig_app_compileroptions_skiplibcheck",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_app_compileroptions_skiplibcheck",
       "community": 3,
       "community_name": "Config TypeScript de la app",
       "norm_label": "skiplibcheck"
@@ -1934,7 +1934,7 @@
       "source_file": "tsconfig.app.json",
       "source_location": "L11",
       "_origin": "ast",
-      "id": "tsconfig_app_compileroptions_moduleresolution",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_app_compileroptions_moduleresolution",
       "community": 3,
       "community_name": "Config TypeScript de la app",
       "norm_label": "moduleresolution"
@@ -1945,7 +1945,7 @@
       "source_file": "tsconfig.app.json",
       "source_location": "L12",
       "_origin": "ast",
-      "id": "tsconfig_app_compileroptions_allowimportingtsextensions",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_app_compileroptions_allowimportingtsextensions",
       "community": 3,
       "community_name": "Config TypeScript de la app",
       "norm_label": "allowimportingtsextensions"
@@ -1956,7 +1956,7 @@
       "source_file": "tsconfig.app.json",
       "source_location": "L13",
       "_origin": "ast",
-      "id": "tsconfig_app_compileroptions_verbatimmodulesyntax",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_app_compileroptions_verbatimmodulesyntax",
       "community": 3,
       "community_name": "Config TypeScript de la app",
       "norm_label": "verbatimmodulesyntax"
@@ -1967,7 +1967,7 @@
       "source_file": "tsconfig.app.json",
       "source_location": "L14",
       "_origin": "ast",
-      "id": "tsconfig_app_compileroptions_moduledetection",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_app_compileroptions_moduledetection",
       "community": 3,
       "community_name": "Config TypeScript de la app",
       "norm_label": "moduledetection"
@@ -1978,7 +1978,7 @@
       "source_file": "tsconfig.app.json",
       "source_location": "L15",
       "_origin": "ast",
-      "id": "tsconfig_app_compileroptions_noemit",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_app_compileroptions_noemit",
       "community": 3,
       "community_name": "Config TypeScript de la app",
       "norm_label": "noemit"
@@ -1989,7 +1989,7 @@
       "source_file": "tsconfig.app.json",
       "source_location": "L16",
       "_origin": "ast",
-      "id": "tsconfig_app_compileroptions_jsx",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_app_compileroptions_jsx",
       "community": 3,
       "community_name": "Config TypeScript de la app",
       "norm_label": "jsx"
@@ -2000,7 +2000,7 @@
       "source_file": "tsconfig.app.json",
       "source_location": "L19",
       "_origin": "ast",
-      "id": "tsconfig_app_compileroptions_nounusedlocals",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_app_compileroptions_nounusedlocals",
       "community": 3,
       "community_name": "Config TypeScript de la app",
       "norm_label": "nounusedlocals"
@@ -2011,7 +2011,7 @@
       "source_file": "tsconfig.app.json",
       "source_location": "L20",
       "_origin": "ast",
-      "id": "tsconfig_app_compileroptions_nounusedparameters",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_app_compileroptions_nounusedparameters",
       "community": 3,
       "community_name": "Config TypeScript de la app",
       "norm_label": "nounusedparameters"
@@ -2022,7 +2022,7 @@
       "source_file": "tsconfig.app.json",
       "source_location": "L21",
       "_origin": "ast",
-      "id": "tsconfig_app_compileroptions_erasablesyntaxonly",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_app_compileroptions_erasablesyntaxonly",
       "community": 3,
       "community_name": "Config TypeScript de la app",
       "norm_label": "erasablesyntaxonly"
@@ -2033,7 +2033,7 @@
       "source_file": "tsconfig.app.json",
       "source_location": "L22",
       "_origin": "ast",
-      "id": "tsconfig_app_compileroptions_nofallthroughcasesinswitch",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_app_compileroptions_nofallthroughcasesinswitch",
       "community": 3,
       "community_name": "Config TypeScript de la app",
       "norm_label": "nofallthroughcasesinswitch"
@@ -2044,7 +2044,7 @@
       "source_file": "tsconfig.app.json",
       "source_location": "L24",
       "_origin": "ast",
-      "id": "tsconfig_app_include",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_app_include",
       "community": 3,
       "community_name": "Config TypeScript de la app",
       "norm_label": "include"
@@ -2066,9 +2066,9 @@
       "source_file": "tsconfig.json",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "tsconfig",
-      "community": 9,
-      "community_name": "Raiz de TypeScript",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_json",
+      "community": 15,
+      "community_name": "Q: Por que Supabase JS client with no backend layer aparece semanticamente similar a n8n webhook recipe ingestion?",
       "norm_label": "tsconfig.json"
     },
     {
@@ -2077,9 +2077,9 @@
       "source_file": "tsconfig.json",
       "source_location": "L2",
       "_origin": "ast",
-      "id": "tsconfig_files",
-      "community": 9,
-      "community_name": "Raiz de TypeScript",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_files",
+      "community": 15,
+      "community_name": "Q: Por que Supabase JS client with no backend layer aparece semanticamente similar a n8n webhook recipe ingestion?",
       "norm_label": "files"
     },
     {
@@ -2088,9 +2088,9 @@
       "source_file": "tsconfig.json",
       "source_location": "L3",
       "_origin": "ast",
-      "id": "tsconfig_references",
-      "community": 9,
-      "community_name": "Raiz de TypeScript",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_references",
+      "community": 15,
+      "community_name": "Q: Por que Supabase JS client with no backend layer aparece semanticamente similar a n8n webhook recipe ingestion?",
       "norm_label": "references"
     },
     {
@@ -2099,7 +2099,7 @@
       "source_file": "tsconfig.node.json",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "tsconfig_node",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_node_json",
       "community": 4,
       "community_name": "Config TypeScript de build",
       "norm_label": "tsconfig.node.json"
@@ -2110,7 +2110,7 @@
       "source_file": "tsconfig.node.json",
       "source_location": "L2",
       "_origin": "ast",
-      "id": "tsconfig_node_compileroptions",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_node_compileroptions",
       "community": 4,
       "community_name": "Config TypeScript de build",
       "norm_label": "compileroptions"
@@ -2121,7 +2121,7 @@
       "source_file": "tsconfig.node.json",
       "source_location": "L3",
       "_origin": "ast",
-      "id": "tsconfig_node_compileroptions_tsbuildinfofile",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_node_compileroptions_tsbuildinfofile",
       "community": 4,
       "community_name": "Config TypeScript de build",
       "norm_label": "tsbuildinfofile"
@@ -2132,7 +2132,7 @@
       "source_file": "tsconfig.node.json",
       "source_location": "L4",
       "_origin": "ast",
-      "id": "tsconfig_node_compileroptions_target",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_node_compileroptions_target",
       "community": 4,
       "community_name": "Config TypeScript de build",
       "norm_label": "target"
@@ -2143,7 +2143,7 @@
       "source_file": "tsconfig.node.json",
       "source_location": "L5",
       "_origin": "ast",
-      "id": "tsconfig_node_compileroptions_lib",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_node_compileroptions_lib",
       "community": 4,
       "community_name": "Config TypeScript de build",
       "norm_label": "lib"
@@ -2165,7 +2165,7 @@
       "source_file": "tsconfig.node.json",
       "source_location": "L6",
       "_origin": "ast",
-      "id": "tsconfig_node_compileroptions_module",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_node_compileroptions_module",
       "community": 4,
       "community_name": "Config TypeScript de build",
       "norm_label": "module"
@@ -2176,7 +2176,7 @@
       "source_file": "tsconfig.node.json",
       "source_location": "L7",
       "_origin": "ast",
-      "id": "tsconfig_node_compileroptions_types",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_node_compileroptions_types",
       "community": 4,
       "community_name": "Config TypeScript de build",
       "norm_label": "types"
@@ -2198,7 +2198,7 @@
       "source_file": "tsconfig.node.json",
       "source_location": "L8",
       "_origin": "ast",
-      "id": "tsconfig_node_compileroptions_skiplibcheck",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_node_compileroptions_skiplibcheck",
       "community": 4,
       "community_name": "Config TypeScript de build",
       "norm_label": "skiplibcheck"
@@ -2209,7 +2209,7 @@
       "source_file": "tsconfig.node.json",
       "source_location": "L11",
       "_origin": "ast",
-      "id": "tsconfig_node_compileroptions_moduleresolution",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_node_compileroptions_moduleresolution",
       "community": 4,
       "community_name": "Config TypeScript de build",
       "norm_label": "moduleresolution"
@@ -2220,7 +2220,7 @@
       "source_file": "tsconfig.node.json",
       "source_location": "L12",
       "_origin": "ast",
-      "id": "tsconfig_node_compileroptions_allowimportingtsextensions",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_node_compileroptions_allowimportingtsextensions",
       "community": 4,
       "community_name": "Config TypeScript de build",
       "norm_label": "allowimportingtsextensions"
@@ -2231,7 +2231,7 @@
       "source_file": "tsconfig.node.json",
       "source_location": "L13",
       "_origin": "ast",
-      "id": "tsconfig_node_compileroptions_verbatimmodulesyntax",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_node_compileroptions_verbatimmodulesyntax",
       "community": 4,
       "community_name": "Config TypeScript de build",
       "norm_label": "verbatimmodulesyntax"
@@ -2242,7 +2242,7 @@
       "source_file": "tsconfig.node.json",
       "source_location": "L14",
       "_origin": "ast",
-      "id": "tsconfig_node_compileroptions_moduledetection",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_node_compileroptions_moduledetection",
       "community": 4,
       "community_name": "Config TypeScript de build",
       "norm_label": "moduledetection"
@@ -2253,7 +2253,7 @@
       "source_file": "tsconfig.node.json",
       "source_location": "L15",
       "_origin": "ast",
-      "id": "tsconfig_node_compileroptions_noemit",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_node_compileroptions_noemit",
       "community": 4,
       "community_name": "Config TypeScript de build",
       "norm_label": "noemit"
@@ -2264,7 +2264,7 @@
       "source_file": "tsconfig.node.json",
       "source_location": "L18",
       "_origin": "ast",
-      "id": "tsconfig_node_compileroptions_nounusedlocals",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_node_compileroptions_nounusedlocals",
       "community": 4,
       "community_name": "Config TypeScript de build",
       "norm_label": "nounusedlocals"
@@ -2275,7 +2275,7 @@
       "source_file": "tsconfig.node.json",
       "source_location": "L19",
       "_origin": "ast",
-      "id": "tsconfig_node_compileroptions_nounusedparameters",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_node_compileroptions_nounusedparameters",
       "community": 4,
       "community_name": "Config TypeScript de build",
       "norm_label": "nounusedparameters"
@@ -2286,7 +2286,7 @@
       "source_file": "tsconfig.node.json",
       "source_location": "L20",
       "_origin": "ast",
-      "id": "tsconfig_node_compileroptions_erasablesyntaxonly",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_node_compileroptions_erasablesyntaxonly",
       "community": 4,
       "community_name": "Config TypeScript de build",
       "norm_label": "erasablesyntaxonly"
@@ -2297,7 +2297,7 @@
       "source_file": "tsconfig.node.json",
       "source_location": "L21",
       "_origin": "ast",
-      "id": "tsconfig_node_compileroptions_nofallthroughcasesinswitch",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_node_compileroptions_nofallthroughcasesinswitch",
       "community": 4,
       "community_name": "Config TypeScript de build",
       "norm_label": "nofallthroughcasesinswitch"
@@ -2308,7 +2308,7 @@
       "source_file": "tsconfig.node.json",
       "source_location": "L23",
       "_origin": "ast",
-      "id": "tsconfig_node_include",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_node_include",
       "community": 4,
       "community_name": "Config TypeScript de build",
       "norm_label": "include"
@@ -2416,7 +2416,7 @@
       "label": "Pendiente",
       "file_type": "document",
       "source_file": "CLAUDE.md",
-      "source_location": "L123",
+      "source_location": "L128",
       "_origin": "ast",
       "id": "claude_pendiente",
       "community": 14,
@@ -2427,7 +2427,7 @@
       "label": "Las rutas van por el hash",
       "file_type": "document",
       "source_file": "CLAUDE.md",
-      "source_location": "L141",
+      "source_location": "L146",
       "_origin": "ast",
       "id": "claude_las_rutas_van_por_el_hash",
       "community": 14,
@@ -2438,7 +2438,7 @@
       "label": "Siguiente paso acordado: la lista de la compra",
       "file_type": "document",
       "source_file": "CLAUDE.md",
-      "source_location": "L169",
+      "source_location": "L174",
       "_origin": "ast",
       "id": "claude_siguiente_paso_acordado_la_lista_de_la_compra",
       "community": 14,
@@ -2449,7 +2449,7 @@
       "label": "Hacia d\u00f3nde puede crecer",
       "file_type": "document",
       "source_file": "CLAUDE.md",
-      "source_location": "L191",
+      "source_location": "L196",
       "_origin": "ast",
       "id": "claude_hacia_d\u00f3nde_puede_crecer",
       "community": 14,
@@ -2460,7 +2460,7 @@
       "label": "graphify",
       "file_type": "document",
       "source_file": "CLAUDE.md",
-      "source_location": "L198",
+      "source_location": "L203",
       "_origin": "ast",
       "id": "claude_graphify",
       "community": 14,
@@ -2473,9 +2473,9 @@
       "source_file": "docs/ideas.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "docs_ideas",
-      "community": 14,
-      "community_name": "Mi Recetario \u2014 contexto del proyecto",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_docs_ideas_md",
+      "community": 9,
+      "community_name": "Raiz de TypeScript",
       "norm_label": "ideas.md"
     },
     {
@@ -2484,9 +2484,9 @@
       "source_file": "docs/ideas.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "docs_ideas_ideas_para_el_recetario",
-      "community": 14,
-      "community_name": "Mi Recetario \u2014 contexto del proyecto",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_docs_ideas_ideas_para_el_recetario",
+      "community": 9,
+      "community_name": "Raiz de TypeScript",
       "norm_label": "ideas para el recetario"
     },
     {
@@ -2495,9 +2495,9 @@
       "source_file": "docs/ideas.md",
       "source_location": "L17",
       "_origin": "ast",
-      "id": "docs_ideas_el_punto_de_partida_datos_que_ya_se_pagan_y_se_tiran",
-      "community": 14,
-      "community_name": "Mi Recetario \u2014 contexto del proyecto",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_docs_ideas_el_punto_de_partida_datos_que_ya_se_pagan_y_se_tiran",
+      "community": 9,
+      "community_name": "Raiz de TypeScript",
       "norm_label": "el punto de partida: datos que ya se pagan y se tiran"
     },
     {
@@ -2506,9 +2506,9 @@
       "source_file": "docs/ideas.md",
       "source_location": "L45",
       "_origin": "ast",
-      "id": "docs_ideas_cocinar_de_verdad",
-      "community": 14,
-      "community_name": "Mi Recetario \u2014 contexto del proyecto",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_docs_ideas_cocinar_de_verdad",
+      "community": 9,
+      "community_name": "Raiz de TypeScript",
       "norm_label": "cocinar de verdad"
     },
     {
@@ -2517,9 +2517,9 @@
       "source_file": "docs/ideas.md",
       "source_location": "L62",
       "_origin": "ast",
-      "id": "docs_ideas_la_despensa_y_su_secci\u00f3n_propia_hechas",
-      "community": 14,
-      "community_name": "Mi Recetario \u2014 contexto del proyecto",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_docs_ideas_la_despensa_y_su_secci\u00f3n_propia_hechas",
+      "community": 9,
+      "community_name": "Raiz de TypeScript",
       "norm_label": "la despensa y su seccion propia \u2014 hechas"
     },
     {
@@ -2528,9 +2528,9 @@
       "source_file": "docs/ideas.md",
       "source_location": "L93",
       "_origin": "ast",
-      "id": "docs_ideas_decidido_la_despensa_no_guarda_cantidades",
-      "community": 14,
-      "community_name": "Mi Recetario \u2014 contexto del proyecto",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_docs_ideas_decidido_la_despensa_no_guarda_cantidades",
+      "community": 9,
+      "community_name": "Raiz de TypeScript",
       "norm_label": "decidido: la despensa no guarda cantidades"
     },
     {
@@ -2539,9 +2539,9 @@
       "source_file": "docs/ideas.md",
       "source_location": "L119",
       "_origin": "ast",
-      "id": "docs_ideas_men\u00fa_semanal_y_lista_de_la_compra",
-      "community": 14,
-      "community_name": "Mi Recetario \u2014 contexto del proyecto",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_docs_ideas_men\u00fa_semanal_y_lista_de_la_compra",
+      "community": 9,
+      "community_name": "Raiz de TypeScript",
       "norm_label": "menu semanal y lista de la compra"
     },
     {
@@ -2550,9 +2550,9 @@
       "source_file": "docs/ideas.md",
       "source_location": "L138",
       "_origin": "ast",
-      "id": "docs_ideas_encontrar_recetas",
-      "community": 14,
-      "community_name": "Mi Recetario \u2014 contexto del proyecto",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_docs_ideas_encontrar_recetas",
+      "community": 9,
+      "community_name": "Raiz de TypeScript",
       "norm_label": "encontrar recetas"
     },
     {
@@ -2561,9 +2561,9 @@
       "source_file": "docs/ideas.md",
       "source_location": "L157",
       "_origin": "ast",
-      "id": "docs_ideas_dar_de_alta_con_menos_fricci\u00f3n",
-      "community": 14,
-      "community_name": "Mi Recetario \u2014 contexto del proyecto",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_docs_ideas_dar_de_alta_con_menos_fricci\u00f3n",
+      "community": 9,
+      "community_name": "Raiz de TypeScript",
       "norm_label": "dar de alta con menos friccion"
     },
     {
@@ -2572,9 +2572,9 @@
       "source_file": "docs/ideas.md",
       "source_location": "L173",
       "_origin": "ast",
-      "id": "docs_ideas_los_afans",
-      "community": 14,
-      "community_name": "Mi Recetario \u2014 contexto del proyecto",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_docs_ideas_los_afans",
+      "community": 9,
+      "community_name": "Raiz de TypeScript",
       "norm_label": "los afans"
     },
     {
@@ -2583,9 +2583,9 @@
       "source_file": "docs/ideas.md",
       "source_location": "L184",
       "_origin": "ast",
-      "id": "docs_ideas_automatismos_con_n8n",
-      "community": 14,
-      "community_name": "Mi Recetario \u2014 contexto del proyecto",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_docs_ideas_automatismos_con_n8n",
+      "community": 9,
+      "community_name": "Raiz de TypeScript",
       "norm_label": "automatismos con n8n"
     },
     {
@@ -2594,9 +2594,9 @@
       "source_file": "docs/ideas.md",
       "source_location": "L195",
       "_origin": "ast",
-      "id": "docs_ideas_orden_sugerido",
-      "community": 14,
-      "community_name": "Mi Recetario \u2014 contexto del proyecto",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_docs_ideas_orden_sugerido",
+      "community": 9,
+      "community_name": "Raiz de TypeScript",
       "norm_label": "orden sugerido"
     },
     {
@@ -2605,9 +2605,9 @@
       "source_file": "docs/ideas.md",
       "source_location": "L211",
       "_origin": "ast",
-      "id": "docs_ideas_dos_avisos_de_realidad",
-      "community": 14,
-      "community_name": "Mi Recetario \u2014 contexto del proyecto",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_docs_ideas_dos_avisos_de_realidad",
+      "community": 9,
+      "community_name": "Raiz de TypeScript",
       "norm_label": "dos avisos de realidad"
     },
     {
@@ -2616,9 +2616,9 @@
       "source_file": "graphify-out/memory/query_20260726_092833_por_que_supabase_js_client_with_no_backend_layer_a.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "graphify_out_memory_query_20260726_092833_por_que_supabase_js_client_with_no_backend_layer_a",
-      "community": 15,
-      "community_name": "Q: Por que Supabase JS client with no backend layer aparece semanticamente similar a n8n webhook recipe ingestion?",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_graphify_out_memory_query_20260726_092833_por_que_supabase_js_client_with_no_backend_layer_a_md",
+      "community": 12,
+      "community_name": "Migracion de RLS",
       "norm_label": "query_20260726_092833_por_que_supabase_js_client_with_no_backend_layer_a.md"
     },
     {
@@ -2627,9 +2627,9 @@
       "source_file": "graphify-out/memory/query_20260726_092833_por_que_supabase_js_client_with_no_backend_layer_a.md",
       "source_location": "L10",
       "_origin": "ast",
-      "id": "graphify_out_memory_query_20260726_092833_por_que_supabase_js_client_with_no_backend_layer_a_q_por_que_supabase_js_client_with_no_backend_layer_aparece_semanticamente_similar_a_n8n_webhook_recipe_ingestion",
-      "community": 15,
-      "community_name": "Q: Por que Supabase JS client with no backend layer aparece semanticamente similar a n8n webhook recipe ingestion?",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_graphify_out_memory_query_20260726_092833_por_que_supabase_js_client_with_no_backend_layer_a_q_por_que_supabase_js_client_with_no_backend_layer_aparece_semanticamente_similar_a_n8n_webhook_recipe_ingestion",
+      "community": 12,
+      "community_name": "Migracion de RLS",
       "norm_label": "q: por que supabase js client with no backend layer aparece semanticamente similar a n8n webhook recipe ingestion?"
     },
     {
@@ -2638,9 +2638,9 @@
       "source_file": "graphify-out/memory/query_20260726_092833_por_que_supabase_js_client_with_no_backend_layer_a.md",
       "source_location": "L12",
       "_origin": "ast",
-      "id": "graphify_out_memory_query_20260726_092833_por_que_supabase_js_client_with_no_backend_layer_a_answer",
-      "community": 15,
-      "community_name": "Q: Por que Supabase JS client with no backend layer aparece semanticamente similar a n8n webhook recipe ingestion?",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_graphify_out_memory_query_20260726_092833_por_que_supabase_js_client_with_no_backend_layer_a_answer",
+      "community": 12,
+      "community_name": "Migracion de RLS",
       "norm_label": "answer"
     },
     {
@@ -2649,9 +2649,9 @@
       "source_file": "graphify-out/memory/query_20260726_092833_por_que_supabase_js_client_with_no_backend_layer_a.md",
       "source_location": "L24",
       "_origin": "ast",
-      "id": "graphify_out_memory_query_20260726_092833_por_que_supabase_js_client_with_no_backend_layer_a_outcome",
-      "community": 15,
-      "community_name": "Q: Por que Supabase JS client with no backend layer aparece semanticamente similar a n8n webhook recipe ingestion?",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_graphify_out_memory_query_20260726_092833_por_que_supabase_js_client_with_no_backend_layer_a_outcome",
+      "community": 12,
+      "community_name": "Migracion de RLS",
       "norm_label": "outcome"
     },
     {
@@ -2660,9 +2660,9 @@
       "source_file": "graphify-out/memory/query_20260726_092833_por_que_supabase_js_client_with_no_backend_layer_a.md",
       "source_location": "L28",
       "_origin": "ast",
-      "id": "graphify_out_memory_query_20260726_092833_por_que_supabase_js_client_with_no_backend_layer_a_source_nodes",
-      "community": 15,
-      "community_name": "Q: Por que Supabase JS client with no backend layer aparece semanticamente similar a n8n webhook recipe ingestion?",
+      "id": "c_users_pcvip_documents_proyectos_antigravity_recetario_graphify_out_memory_query_20260726_092833_por_que_supabase_js_client_with_no_backend_layer_a_source_nodes",
+      "community": 12,
+      "community_name": "Migracion de RLS",
       "norm_label": "source nodes"
     },
     {
@@ -3129,8 +3129,8 @@
       "source_location": "L12",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "package",
-      "target": "package_dependencies",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_json",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_dependencies",
       "confidence_score": 1.0
     },
     {
@@ -3140,8 +3140,8 @@
       "source_location": "L22",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "package",
-      "target": "package_devdependencies",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_json",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies",
       "confidence_score": 1.0
     },
     {
@@ -3151,8 +3151,8 @@
       "source_location": "L2",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "package",
-      "target": "package_name",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_json",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_name",
       "confidence_score": 1.0
     },
     {
@@ -3162,8 +3162,8 @@
       "source_location": "L3",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "package",
-      "target": "package_private",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_json",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_private",
       "confidence_score": 1.0
     },
     {
@@ -3173,8 +3173,8 @@
       "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "package",
-      "target": "package_scripts",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_json",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_scripts",
       "confidence_score": 1.0
     },
     {
@@ -3184,8 +3184,8 @@
       "source_location": "L5",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "package",
-      "target": "package_type",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_json",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_type",
       "confidence_score": 1.0
     },
     {
@@ -3195,8 +3195,8 @@
       "source_location": "L4",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "package",
-      "target": "package_version",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_json",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_version",
       "confidence_score": 1.0
     },
     {
@@ -3206,8 +3206,8 @@
       "source_location": "L8",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "package_scripts",
-      "target": "package_scripts_build",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_scripts",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_scripts_build",
       "confidence_score": 1.0
     },
     {
@@ -3217,8 +3217,8 @@
       "source_location": "L7",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "package_scripts",
-      "target": "package_scripts_dev",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_scripts",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_scripts_dev",
       "confidence_score": 1.0
     },
     {
@@ -3228,8 +3228,8 @@
       "source_location": "L9",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "package_scripts",
-      "target": "package_scripts_lint",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_scripts",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_scripts_lint",
       "confidence_score": 1.0
     },
     {
@@ -3239,8 +3239,8 @@
       "source_location": "L10",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "package_scripts",
-      "target": "package_scripts_preview",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_scripts",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_scripts_preview",
       "confidence_score": 1.0
     },
     {
@@ -3250,8 +3250,8 @@
       "source_location": "L15",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "package_dependencies",
-      "target": "package_dependencies_clsx",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_dependencies",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_dependencies_clsx",
       "confidence_score": 1.0
     },
     {
@@ -3261,8 +3261,8 @@
       "source_location": "L16",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "package_dependencies",
-      "target": "package_dependencies_lucide_react",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_dependencies",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_dependencies_lucide_react",
       "confidence_score": 1.0
     },
     {
@@ -3272,8 +3272,8 @@
       "source_location": "L17",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "package_dependencies",
-      "target": "package_dependencies_react",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_dependencies",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_dependencies_react",
       "confidence_score": 1.0
     },
     {
@@ -3283,8 +3283,8 @@
       "source_location": "L18",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "package_dependencies",
-      "target": "package_dependencies_react_dom",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_dependencies",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_dependencies_react_dom",
       "confidence_score": 1.0
     },
     {
@@ -3294,8 +3294,8 @@
       "source_location": "L13",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "package_dependencies",
-      "target": "package_dependencies_supabase_supabase_js",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_dependencies",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_dependencies_supabase_supabase_js",
       "confidence_score": 1.0
     },
     {
@@ -3305,8 +3305,8 @@
       "source_location": "L19",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "package_dependencies",
-      "target": "package_dependencies_tailwind_merge",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_dependencies",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_dependencies_tailwind_merge",
       "confidence_score": 1.0
     },
     {
@@ -3316,8 +3316,8 @@
       "source_location": "L20",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "package_dependencies",
-      "target": "package_dependencies_tailwindcss",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_dependencies",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_dependencies_tailwindcss",
       "confidence_score": 1.0
     },
     {
@@ -3327,8 +3327,8 @@
       "source_location": "L14",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "package_dependencies",
-      "target": "package_dependencies_tailwindcss_vite",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_dependencies",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_dependencies_tailwindcss_vite",
       "confidence_score": 1.0
     },
     {
@@ -3339,7 +3339,7 @@
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
-      "source": "package_dependencies_supabase_supabase_js",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_dependencies_supabase_supabase_js",
       "target": "supabase_supabase_js",
       "confidence_score": 1.0
     },
@@ -3351,7 +3351,7 @@
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
-      "source": "package_dependencies_tailwindcss_vite",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_dependencies_tailwindcss_vite",
       "target": "tailwindcss_vite",
       "confidence_score": 1.0
     },
@@ -3363,7 +3363,7 @@
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
-      "source": "package_dependencies_clsx",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_dependencies_clsx",
       "target": "clsx",
       "confidence_score": 1.0
     },
@@ -3375,7 +3375,7 @@
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
-      "source": "package_dependencies_lucide_react",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_dependencies_lucide_react",
       "target": "lucide_react",
       "confidence_score": 1.0
     },
@@ -3387,7 +3387,7 @@
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
-      "source": "package_dependencies_react",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_dependencies_react",
       "target": "react",
       "confidence_score": 1.0
     },
@@ -3399,7 +3399,7 @@
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
-      "source": "package_dependencies_react_dom",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_dependencies_react_dom",
       "target": "react_dom",
       "confidence_score": 1.0
     },
@@ -3411,7 +3411,7 @@
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
-      "source": "package_dependencies_tailwind_merge",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_dependencies_tailwind_merge",
       "target": "tailwind_merge",
       "confidence_score": 1.0
     },
@@ -3423,7 +3423,7 @@
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
-      "source": "package_dependencies_tailwindcss",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_dependencies_tailwindcss",
       "target": "tailwindcss",
       "confidence_score": 1.0
     },
@@ -3434,8 +3434,8 @@
       "source_location": "L28",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_eslint",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies_eslint",
       "confidence_score": 1.0
     },
     {
@@ -3445,8 +3445,8 @@
       "source_location": "L23",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_eslint_js",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies_eslint_js",
       "confidence_score": 1.0
     },
     {
@@ -3456,8 +3456,8 @@
       "source_location": "L29",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_eslint_plugin_react_hooks",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies_eslint_plugin_react_hooks",
       "confidence_score": 1.0
     },
     {
@@ -3467,8 +3467,8 @@
       "source_location": "L30",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_eslint_plugin_react_refresh",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies_eslint_plugin_react_refresh",
       "confidence_score": 1.0
     },
     {
@@ -3478,8 +3478,8 @@
       "source_location": "L31",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_globals",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies_globals",
       "confidence_score": 1.0
     },
     {
@@ -3489,8 +3489,8 @@
       "source_location": "L24",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_types_node",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies_types_node",
       "confidence_score": 1.0
     },
     {
@@ -3500,8 +3500,8 @@
       "source_location": "L25",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_types_react",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies_types_react",
       "confidence_score": 1.0
     },
     {
@@ -3511,8 +3511,8 @@
       "source_location": "L26",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_types_react_dom",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies_types_react_dom",
       "confidence_score": 1.0
     },
     {
@@ -3522,8 +3522,8 @@
       "source_location": "L32",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_typescript",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies_typescript",
       "confidence_score": 1.0
     },
     {
@@ -3533,8 +3533,8 @@
       "source_location": "L33",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_typescript_eslint",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies_typescript_eslint",
       "confidence_score": 1.0
     },
     {
@@ -3544,8 +3544,8 @@
       "source_location": "L34",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_vite",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies_vite",
       "confidence_score": 1.0
     },
     {
@@ -3555,8 +3555,8 @@
       "source_location": "L27",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_vitejs_plugin_react",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies_vitejs_plugin_react",
       "confidence_score": 1.0
     },
     {
@@ -3567,7 +3567,7 @@
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
-      "source": "package_devdependencies_eslint_js",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies_eslint_js",
       "target": "eslint_js",
       "confidence_score": 1.0
     },
@@ -3579,7 +3579,7 @@
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
-      "source": "package_devdependencies_types_node",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies_types_node",
       "target": "types_node",
       "confidence_score": 1.0
     },
@@ -3591,7 +3591,7 @@
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
-      "source": "package_devdependencies_types_react",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies_types_react",
       "target": "types_react",
       "confidence_score": 1.0
     },
@@ -3603,7 +3603,7 @@
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
-      "source": "package_devdependencies_types_react_dom",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies_types_react_dom",
       "target": "types_react_dom",
       "confidence_score": 1.0
     },
@@ -3615,7 +3615,7 @@
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
-      "source": "package_devdependencies_vitejs_plugin_react",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies_vitejs_plugin_react",
       "target": "vitejs_plugin_react",
       "confidence_score": 1.0
     },
@@ -3627,7 +3627,7 @@
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
-      "source": "package_devdependencies_eslint",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies_eslint",
       "target": "eslint",
       "confidence_score": 1.0
     },
@@ -3639,7 +3639,7 @@
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
-      "source": "package_devdependencies_eslint_plugin_react_hooks",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies_eslint_plugin_react_hooks",
       "target": "eslint_plugin_react_hooks",
       "confidence_score": 1.0
     },
@@ -3651,7 +3651,7 @@
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
-      "source": "package_devdependencies_eslint_plugin_react_refresh",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies_eslint_plugin_react_refresh",
       "target": "eslint_plugin_react_refresh",
       "confidence_score": 1.0
     },
@@ -3663,7 +3663,7 @@
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
-      "source": "package_devdependencies_globals",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies_globals",
       "target": "globals",
       "confidence_score": 1.0
     },
@@ -3675,7 +3675,7 @@
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
-      "source": "package_devdependencies_typescript",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies_typescript",
       "target": "typescript",
       "confidence_score": 1.0
     },
@@ -3687,7 +3687,7 @@
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
-      "source": "package_devdependencies_typescript_eslint",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies_typescript_eslint",
       "target": "typescript_eslint",
       "confidence_score": 1.0
     },
@@ -3699,7 +3699,7 @@
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
-      "source": "package_devdependencies_vite",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_package_devdependencies_vite",
       "target": "vite",
       "confidence_score": 1.0
     },
@@ -7103,8 +7103,8 @@
       "source_location": "L21",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "supabase_migrations_20260823_despensa",
-      "target": "supabase_migrations_20260823_despensa_public_despensa",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_supabase_migrations_20260823_despensa_sql",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_supabase_migrations_20260823_despensa_public_despensa",
       "confidence_score": 1.0
     },
     {
@@ -7114,8 +7114,8 @@
       "source_location": "L2",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "tsconfig_app",
-      "target": "tsconfig_app_compileroptions",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_app_json",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_app_compileroptions",
       "confidence_score": 1.0
     },
     {
@@ -7125,8 +7125,8 @@
       "source_location": "L24",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "tsconfig_app",
-      "target": "tsconfig_app_include",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_app_json",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_app_include",
       "confidence_score": 1.0
     },
     {
@@ -7136,8 +7136,8 @@
       "source_location": "L12",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "tsconfig_app_compileroptions",
-      "target": "tsconfig_app_compileroptions_allowimportingtsextensions",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_app_compileroptions",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_app_compileroptions_allowimportingtsextensions",
       "confidence_score": 1.0
     },
     {
@@ -7147,8 +7147,8 @@
       "source_location": "L21",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "tsconfig_app_compileroptions",
-      "target": "tsconfig_app_compileroptions_erasablesyntaxonly",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_app_compileroptions",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_app_compileroptions_erasablesyntaxonly",
       "confidence_score": 1.0
     },
     {
@@ -7158,8 +7158,8 @@
       "source_location": "L16",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "tsconfig_app_compileroptions",
-      "target": "tsconfig_app_compileroptions_jsx",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_app_compileroptions",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_app_compileroptions_jsx",
       "confidence_score": 1.0
     },
     {
@@ -7169,8 +7169,8 @@
       "source_location": "L5",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "tsconfig_app_compileroptions",
-      "target": "tsconfig_app_compileroptions_lib",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_app_compileroptions",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_app_compileroptions_lib",
       "confidence_score": 1.0
     },
     {
@@ -7180,8 +7180,8 @@
       "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "tsconfig_app_compileroptions",
-      "target": "tsconfig_app_compileroptions_module",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_app_compileroptions",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_app_compileroptions_module",
       "confidence_score": 1.0
     },
     {
@@ -7191,8 +7191,8 @@
       "source_location": "L14",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "tsconfig_app_compileroptions",
-      "target": "tsconfig_app_compileroptions_moduledetection",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_app_compileroptions",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_app_compileroptions_moduledetection",
       "confidence_score": 1.0
     },
     {
@@ -7202,8 +7202,8 @@
       "source_location": "L11",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "tsconfig_app_compileroptions",
-      "target": "tsconfig_app_compileroptions_moduleresolution",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_app_compileroptions",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_app_compileroptions_moduleresolution",
       "confidence_score": 1.0
     },
     {
@@ -7213,8 +7213,8 @@
       "source_location": "L15",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "tsconfig_app_compileroptions",
-      "target": "tsconfig_app_compileroptions_noemit",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_app_compileroptions",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_app_compileroptions_noemit",
       "confidence_score": 1.0
     },
     {
@@ -7224,8 +7224,8 @@
       "source_location": "L22",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "tsconfig_app_compileroptions",
-      "target": "tsconfig_app_compileroptions_nofallthroughcasesinswitch",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_app_compileroptions",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_app_compileroptions_nofallthroughcasesinswitch",
       "confidence_score": 1.0
     },
     {
@@ -7235,8 +7235,8 @@
       "source_location": "L19",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "tsconfig_app_compileroptions",
-      "target": "tsconfig_app_compileroptions_nounusedlocals",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_app_compileroptions",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_app_compileroptions_nounusedlocals",
       "confidence_score": 1.0
     },
     {
@@ -7246,8 +7246,8 @@
       "source_location": "L20",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "tsconfig_app_compileroptions",
-      "target": "tsconfig_app_compileroptions_nounusedparameters",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_app_compileroptions",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_app_compileroptions_nounusedparameters",
       "confidence_score": 1.0
     },
     {
@@ -7257,8 +7257,8 @@
       "source_location": "L8",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "tsconfig_app_compileroptions",
-      "target": "tsconfig_app_compileroptions_skiplibcheck",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_app_compileroptions",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_app_compileroptions_skiplibcheck",
       "confidence_score": 1.0
     },
     {
@@ -7268,8 +7268,8 @@
       "source_location": "L4",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "tsconfig_app_compileroptions",
-      "target": "tsconfig_app_compileroptions_target",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_app_compileroptions",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_app_compileroptions_target",
       "confidence_score": 1.0
     },
     {
@@ -7279,8 +7279,8 @@
       "source_location": "L3",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "tsconfig_app_compileroptions",
-      "target": "tsconfig_app_compileroptions_tsbuildinfofile",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_app_compileroptions",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_app_compileroptions_tsbuildinfofile",
       "confidence_score": 1.0
     },
     {
@@ -7290,8 +7290,8 @@
       "source_location": "L7",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "tsconfig_app_compileroptions",
-      "target": "tsconfig_app_compileroptions_types",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_app_compileroptions",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_app_compileroptions_types",
       "confidence_score": 1.0
     },
     {
@@ -7301,8 +7301,8 @@
       "source_location": "L13",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "tsconfig_app_compileroptions",
-      "target": "tsconfig_app_compileroptions_verbatimmodulesyntax",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_app_compileroptions",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_app_compileroptions_verbatimmodulesyntax",
       "confidence_score": 1.0
     },
     {
@@ -7313,7 +7313,7 @@
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
-      "source": "tsconfig_app_compileroptions_lib",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_app_compileroptions_lib",
       "target": "ref_dom",
       "confidence_score": 1.0
     },
@@ -7325,7 +7325,7 @@
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
-      "source": "tsconfig_app_compileroptions_lib",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_app_compileroptions_lib",
       "target": "tsconfig_app_json_ref_es2023",
       "confidence_score": 1.0
     },
@@ -7337,7 +7337,7 @@
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
-      "source": "tsconfig_app_compileroptions_types",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_app_compileroptions_types",
       "target": "ref_vite_client",
       "confidence_score": 1.0
     },
@@ -7349,7 +7349,7 @@
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
-      "source": "tsconfig_app_include",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_app_include",
       "target": "ref_src",
       "confidence_score": 1.0
     },
@@ -7360,8 +7360,8 @@
       "source_location": "L2",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "tsconfig",
-      "target": "tsconfig_files",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_json",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_files",
       "confidence_score": 1.0
     },
     {
@@ -7371,8 +7371,8 @@
       "source_location": "L3",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "tsconfig",
-      "target": "tsconfig_references",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_json",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_references",
       "confidence_score": 1.0
     },
     {
@@ -7382,8 +7382,8 @@
       "source_location": "L2",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "tsconfig_node",
-      "target": "tsconfig_node_compileroptions",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_node_json",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_node_compileroptions",
       "confidence_score": 1.0
     },
     {
@@ -7393,8 +7393,8 @@
       "source_location": "L23",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "tsconfig_node",
-      "target": "tsconfig_node_include",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_node_json",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_node_include",
       "confidence_score": 1.0
     },
     {
@@ -7404,8 +7404,8 @@
       "source_location": "L12",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "tsconfig_node_compileroptions",
-      "target": "tsconfig_node_compileroptions_allowimportingtsextensions",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_node_compileroptions",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_node_compileroptions_allowimportingtsextensions",
       "confidence_score": 1.0
     },
     {
@@ -7415,8 +7415,8 @@
       "source_location": "L20",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "tsconfig_node_compileroptions",
-      "target": "tsconfig_node_compileroptions_erasablesyntaxonly",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_node_compileroptions",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_node_compileroptions_erasablesyntaxonly",
       "confidence_score": 1.0
     },
     {
@@ -7426,8 +7426,8 @@
       "source_location": "L5",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "tsconfig_node_compileroptions",
-      "target": "tsconfig_node_compileroptions_lib",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_node_compileroptions",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_node_compileroptions_lib",
       "confidence_score": 1.0
     },
     {
@@ -7437,8 +7437,8 @@
       "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "tsconfig_node_compileroptions",
-      "target": "tsconfig_node_compileroptions_module",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_node_compileroptions",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_node_compileroptions_module",
       "confidence_score": 1.0
     },
     {
@@ -7448,8 +7448,8 @@
       "source_location": "L14",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "tsconfig_node_compileroptions",
-      "target": "tsconfig_node_compileroptions_moduledetection",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_node_compileroptions",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_node_compileroptions_moduledetection",
       "confidence_score": 1.0
     },
     {
@@ -7459,8 +7459,8 @@
       "source_location": "L11",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "tsconfig_node_compileroptions",
-      "target": "tsconfig_node_compileroptions_moduleresolution",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_node_compileroptions",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_node_compileroptions_moduleresolution",
       "confidence_score": 1.0
     },
     {
@@ -7470,8 +7470,8 @@
       "source_location": "L15",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "tsconfig_node_compileroptions",
-      "target": "tsconfig_node_compileroptions_noemit",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_node_compileroptions",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_node_compileroptions_noemit",
       "confidence_score": 1.0
     },
     {
@@ -7481,8 +7481,8 @@
       "source_location": "L21",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "tsconfig_node_compileroptions",
-      "target": "tsconfig_node_compileroptions_nofallthroughcasesinswitch",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_node_compileroptions",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_node_compileroptions_nofallthroughcasesinswitch",
       "confidence_score": 1.0
     },
     {
@@ -7492,8 +7492,8 @@
       "source_location": "L18",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "tsconfig_node_compileroptions",
-      "target": "tsconfig_node_compileroptions_nounusedlocals",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_node_compileroptions",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_node_compileroptions_nounusedlocals",
       "confidence_score": 1.0
     },
     {
@@ -7503,8 +7503,8 @@
       "source_location": "L19",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "tsconfig_node_compileroptions",
-      "target": "tsconfig_node_compileroptions_nounusedparameters",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_node_compileroptions",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_node_compileroptions_nounusedparameters",
       "confidence_score": 1.0
     },
     {
@@ -7514,8 +7514,8 @@
       "source_location": "L8",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "tsconfig_node_compileroptions",
-      "target": "tsconfig_node_compileroptions_skiplibcheck",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_node_compileroptions",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_node_compileroptions_skiplibcheck",
       "confidence_score": 1.0
     },
     {
@@ -7525,8 +7525,8 @@
       "source_location": "L4",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "tsconfig_node_compileroptions",
-      "target": "tsconfig_node_compileroptions_target",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_node_compileroptions",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_node_compileroptions_target",
       "confidence_score": 1.0
     },
     {
@@ -7536,8 +7536,8 @@
       "source_location": "L3",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "tsconfig_node_compileroptions",
-      "target": "tsconfig_node_compileroptions_tsbuildinfofile",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_node_compileroptions",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_node_compileroptions_tsbuildinfofile",
       "confidence_score": 1.0
     },
     {
@@ -7547,8 +7547,8 @@
       "source_location": "L7",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "tsconfig_node_compileroptions",
-      "target": "tsconfig_node_compileroptions_types",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_node_compileroptions",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_node_compileroptions_types",
       "confidence_score": 1.0
     },
     {
@@ -7558,8 +7558,8 @@
       "source_location": "L13",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "tsconfig_node_compileroptions",
-      "target": "tsconfig_node_compileroptions_verbatimmodulesyntax",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_node_compileroptions",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_node_compileroptions_verbatimmodulesyntax",
       "confidence_score": 1.0
     },
     {
@@ -7570,7 +7570,7 @@
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
-      "source": "tsconfig_node_compileroptions_lib",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_node_compileroptions_lib",
       "target": "tsconfig_node_json_ref_es2023",
       "confidence_score": 1.0
     },
@@ -7582,7 +7582,7 @@
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
-      "source": "tsconfig_node_compileroptions_types",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_node_compileroptions_types",
       "target": "ref_node",
       "confidence_score": 1.0
     },
@@ -7594,7 +7594,7 @@
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
-      "source": "tsconfig_node_include",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_tsconfig_node_include",
       "target": "ref_vite_config_ts",
       "confidence_score": 1.0
     },
@@ -7607,17 +7607,6 @@
       "_origin": "ast",
       "source": "claude",
       "target": "claude_mi_recetario_contexto_del_proyecto",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "CLAUDE.md",
-      "source_location": "L189",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "claude",
-      "target": "docs_ideas",
       "confidence_score": 1.0
     },
     {
@@ -7646,7 +7635,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "CLAUDE.md",
-      "source_location": "L198",
+      "source_location": "L203",
       "weight": 1.0,
       "_origin": "ast",
       "source": "claude_mi_recetario_contexto_del_proyecto",
@@ -7657,7 +7646,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "CLAUDE.md",
-      "source_location": "L191",
+      "source_location": "L196",
       "weight": 1.0,
       "_origin": "ast",
       "source": "claude_mi_recetario_contexto_del_proyecto",
@@ -7668,7 +7657,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "CLAUDE.md",
-      "source_location": "L169",
+      "source_location": "L174",
       "weight": 1.0,
       "_origin": "ast",
       "source": "claude_mi_recetario_contexto_del_proyecto",
@@ -7701,7 +7690,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "CLAUDE.md",
-      "source_location": "L141",
+      "source_location": "L146",
       "weight": 1.0,
       "_origin": "ast",
       "source": "claude_estado_actual_23_ago_2026",
@@ -7723,7 +7712,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "CLAUDE.md",
-      "source_location": "L123",
+      "source_location": "L128",
       "weight": 1.0,
       "_origin": "ast",
       "source": "claude_estado_actual_23_ago_2026",
@@ -7737,8 +7726,8 @@
       "source_location": "L1",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "docs_ideas",
-      "target": "docs_ideas_ideas_para_el_recetario",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_docs_ideas_md",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_docs_ideas_ideas_para_el_recetario",
       "confidence_score": 1.0
     },
     {
@@ -7748,8 +7737,8 @@
       "source_location": "L184",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "docs_ideas_ideas_para_el_recetario",
-      "target": "docs_ideas_automatismos_con_n8n",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_docs_ideas_ideas_para_el_recetario",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_docs_ideas_automatismos_con_n8n",
       "confidence_score": 1.0
     },
     {
@@ -7759,8 +7748,8 @@
       "source_location": "L45",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "docs_ideas_ideas_para_el_recetario",
-      "target": "docs_ideas_cocinar_de_verdad",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_docs_ideas_ideas_para_el_recetario",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_docs_ideas_cocinar_de_verdad",
       "confidence_score": 1.0
     },
     {
@@ -7770,8 +7759,8 @@
       "source_location": "L157",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "docs_ideas_ideas_para_el_recetario",
-      "target": "docs_ideas_dar_de_alta_con_menos_fricci\u00f3n",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_docs_ideas_ideas_para_el_recetario",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_docs_ideas_dar_de_alta_con_menos_fricci\u00f3n",
       "confidence_score": 1.0
     },
     {
@@ -7781,8 +7770,8 @@
       "source_location": "L211",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "docs_ideas_ideas_para_el_recetario",
-      "target": "docs_ideas_dos_avisos_de_realidad",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_docs_ideas_ideas_para_el_recetario",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_docs_ideas_dos_avisos_de_realidad",
       "confidence_score": 1.0
     },
     {
@@ -7792,8 +7781,8 @@
       "source_location": "L17",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "docs_ideas_ideas_para_el_recetario",
-      "target": "docs_ideas_el_punto_de_partida_datos_que_ya_se_pagan_y_se_tiran",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_docs_ideas_ideas_para_el_recetario",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_docs_ideas_el_punto_de_partida_datos_que_ya_se_pagan_y_se_tiran",
       "confidence_score": 1.0
     },
     {
@@ -7803,8 +7792,8 @@
       "source_location": "L138",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "docs_ideas_ideas_para_el_recetario",
-      "target": "docs_ideas_encontrar_recetas",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_docs_ideas_ideas_para_el_recetario",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_docs_ideas_encontrar_recetas",
       "confidence_score": 1.0
     },
     {
@@ -7814,8 +7803,8 @@
       "source_location": "L62",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "docs_ideas_ideas_para_el_recetario",
-      "target": "docs_ideas_la_despensa_y_su_secci\u00f3n_propia_hechas",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_docs_ideas_ideas_para_el_recetario",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_docs_ideas_la_despensa_y_su_secci\u00f3n_propia_hechas",
       "confidence_score": 1.0
     },
     {
@@ -7825,8 +7814,8 @@
       "source_location": "L173",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "docs_ideas_ideas_para_el_recetario",
-      "target": "docs_ideas_los_afans",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_docs_ideas_ideas_para_el_recetario",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_docs_ideas_los_afans",
       "confidence_score": 1.0
     },
     {
@@ -7836,8 +7825,8 @@
       "source_location": "L119",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "docs_ideas_ideas_para_el_recetario",
-      "target": "docs_ideas_men\u00fa_semanal_y_lista_de_la_compra",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_docs_ideas_ideas_para_el_recetario",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_docs_ideas_men\u00fa_semanal_y_lista_de_la_compra",
       "confidence_score": 1.0
     },
     {
@@ -7847,8 +7836,8 @@
       "source_location": "L195",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "docs_ideas_ideas_para_el_recetario",
-      "target": "docs_ideas_orden_sugerido",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_docs_ideas_ideas_para_el_recetario",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_docs_ideas_orden_sugerido",
       "confidence_score": 1.0
     },
     {
@@ -7858,8 +7847,8 @@
       "source_location": "L93",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "docs_ideas_la_despensa_y_su_secci\u00f3n_propia_hechas",
-      "target": "docs_ideas_decidido_la_despensa_no_guarda_cantidades",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_docs_ideas_la_despensa_y_su_secci\u00f3n_propia_hechas",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_docs_ideas_decidido_la_despensa_no_guarda_cantidades",
       "confidence_score": 1.0
     },
     {
@@ -7869,8 +7858,8 @@
       "source_location": "L10",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "graphify_out_memory_query_20260726_092833_por_que_supabase_js_client_with_no_backend_layer_a",
-      "target": "graphify_out_memory_query_20260726_092833_por_que_supabase_js_client_with_no_backend_layer_a_q_por_que_supabase_js_client_with_no_backend_layer_aparece_semanticamente_similar_a_n8n_webhook_recipe_ingestion",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_graphify_out_memory_query_20260726_092833_por_que_supabase_js_client_with_no_backend_layer_a_md",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_graphify_out_memory_query_20260726_092833_por_que_supabase_js_client_with_no_backend_layer_a_q_por_que_supabase_js_client_with_no_backend_layer_aparece_semanticamente_similar_a_n8n_webhook_recipe_ingestion",
       "confidence_score": 1.0
     },
     {
@@ -7880,8 +7869,8 @@
       "source_location": "L12",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "graphify_out_memory_query_20260726_092833_por_que_supabase_js_client_with_no_backend_layer_a_q_por_que_supabase_js_client_with_no_backend_layer_aparece_semanticamente_similar_a_n8n_webhook_recipe_ingestion",
-      "target": "graphify_out_memory_query_20260726_092833_por_que_supabase_js_client_with_no_backend_layer_a_answer",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_graphify_out_memory_query_20260726_092833_por_que_supabase_js_client_with_no_backend_layer_a_q_por_que_supabase_js_client_with_no_backend_layer_aparece_semanticamente_similar_a_n8n_webhook_recipe_ingestion",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_graphify_out_memory_query_20260726_092833_por_que_supabase_js_client_with_no_backend_layer_a_answer",
       "confidence_score": 1.0
     },
     {
@@ -7891,8 +7880,8 @@
       "source_location": "L24",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "graphify_out_memory_query_20260726_092833_por_que_supabase_js_client_with_no_backend_layer_a_q_por_que_supabase_js_client_with_no_backend_layer_aparece_semanticamente_similar_a_n8n_webhook_recipe_ingestion",
-      "target": "graphify_out_memory_query_20260726_092833_por_que_supabase_js_client_with_no_backend_layer_a_outcome",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_graphify_out_memory_query_20260726_092833_por_que_supabase_js_client_with_no_backend_layer_a_q_por_que_supabase_js_client_with_no_backend_layer_aparece_semanticamente_similar_a_n8n_webhook_recipe_ingestion",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_graphify_out_memory_query_20260726_092833_por_que_supabase_js_client_with_no_backend_layer_a_outcome",
       "confidence_score": 1.0
     },
     {
@@ -7902,8 +7891,8 @@
       "source_location": "L28",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "graphify_out_memory_query_20260726_092833_por_que_supabase_js_client_with_no_backend_layer_a_q_por_que_supabase_js_client_with_no_backend_layer_aparece_semanticamente_similar_a_n8n_webhook_recipe_ingestion",
-      "target": "graphify_out_memory_query_20260726_092833_por_que_supabase_js_client_with_no_backend_layer_a_source_nodes",
+      "source": "c_users_pcvip_documents_proyectos_antigravity_recetario_graphify_out_memory_query_20260726_092833_por_que_supabase_js_client_with_no_backend_layer_a_q_por_que_supabase_js_client_with_no_backend_layer_aparece_semanticamente_similar_a_n8n_webhook_recipe_ingestion",
+      "target": "c_users_pcvip_documents_proyectos_antigravity_recetario_graphify_out_memory_query_20260726_092833_por_que_supabase_js_client_with_no_backend_layer_a_source_nodes",
       "confidence_score": 1.0
     },
     {
@@ -8496,5 +8485,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "c67f12ecbb5d3bfd4d11247058acac2b7b78abd3"
+  "built_at_commit": "f4917c65d656f0eea7691fea506c3192cd071a3c"
 }

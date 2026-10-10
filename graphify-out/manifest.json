@@ -200,8 +200,8 @@
     "semantic_hash": ""
   },
   "CLAUDE.md": {
-    "mtime": 1788203679.244171,
-    "ast_hash": "fdf60fbcdbfad36eb42f1baeb2118919",
+    "mtime": 1788205703.1189685,
+    "ast_hash": "35145ac9cd67178214e5ec5f707f8c8e",
     "semantic_hash": ""
   },
   "src/hooks/useDespensa.ts": {
