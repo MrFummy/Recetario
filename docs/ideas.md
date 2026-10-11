@@ -58,7 +58,7 @@ Ver la sección de la despensa más abajo.
 
 > **11 oct 2026 — implementado** (migración `20261011_para_hacer_y_realizaciones.sql`,
 > hooks `useParaHacer`/`useRealizaciones`/`usePerfil`, componente
-> `MuroRealizaciones`). Pendiente: probarlo con sesión real en producción.
+> `MuroRealizaciones`). Probado en producción el 11 oct.
 > *Diseño original, 10 oct 2026:* Conecta tres piezas
 > sueltas de esta lista: "marcar lo he cocinado" (arriba), y "comentarios por
 > receta" / "notas por usuario" (en *Los afans*, más abajo). Las ocho
@@ -257,7 +257,7 @@ Sois cuatro, así que lo social tiene sentido a escala pequeña:
 `dificultad`.~~ **Ambos hechos el 10 de octubre de 2026.**
 
 1. ~~**Para hacer, realizaciones y el muro de notas.**~~ **Implementado el 11
-   de octubre de 2026** (falta verificarlo con sesión real).
+   de octubre de 2026** (probado en producción).
 2. **Modo cocina.** Solo frontend, y lo que más se agradece con la sartén puesta.
 3. **Búsqueda semántica.** La más vistosa, pero mejor con las anteriores ya
    asentadas.

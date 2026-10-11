@@ -221,7 +221,8 @@ sigue siendo `SECURITY DEFINER`) y es `numeric(2,1)` (antes `smallint`, que trun
 compra, y `useParaHacer` se monta una vez en `App`, como la despensa. Marcar
 "ya hecha" quita la receta de `para_hacer` desde el cliente. Las notas del
 muro solo las ven usuarios con sesión; las firma `perfiles.nombre`. Las RLS se
-verificaron simulando roles; **el frontend no se ha probado con sesión real**.
+verificaron simulando roles y el frontend se probó con sesión real en producción
+ese mismo día.
 
 ## Tiempo, porciones y dificultad
 

@@ -1,9 +1,10 @@
 import { useMemo } from 'react';
-import { ShoppingCart } from 'lucide-react';
+import { ShoppingCart, X } from 'lucide-react';
 import type { Recipe } from '../types';
 import type { Despensa } from '../hooks/useDespensa';
 import type { ParaHacer } from '../hooks/useParaHacer';
 import { listaDeLaCompra } from '../lib/listaCompra';
+import { aHash, CATALOGO } from '../lib/rutas';
 
 interface Props {
   recipes: Recipe[];
@@ -12,12 +13,13 @@ interface Props {
 }
 
 /**
- * Elige recetas de la semana y ve la lista de la compra: sus ingredientes,
- * agregados, menos lo que ya dice la despensa que tienes.
+ * La lista de la compra de las recetas que el usuario tiene "para hacer":
+ * sus ingredientes, agregados, menos lo que ya dice la despensa que tienes.
  *
- * Las recetas elegidas son las "para hacer" del usuario, guardadas en Supabase:
- * se ven igual desde cualquier dispositivo, y marcar una como "ya hecha" en su
- * ficha la saca de aquí.
+ * Las recetas se marcan desde su ficha, no aquí: esta pantalla solo las
+ * muestra (con enlace y una forma rápida de quitarlas), para que haya un único
+ * sitio donde elegir. Se guardan en Supabase, así que se ven igual desde
+ * cualquier dispositivo, y marcar una como "ya hecha" la saca de aquí.
  *
  * Marcar un ingrediente de la lista como comprado lo añade a la despensa
  * —"tachar en el súper será añadir a la despensa"— así que no hay un estado
@@ -27,9 +29,11 @@ interface Props {
 export function SeccionListaCompra({ recipes, despensa, paraHacer }: Props) {
   const seleccionadas = paraHacer.ids;
 
-  const recetasOrdenadas = useMemo(
-    () => [...recipes].sort((a, b) => a.titulo.localeCompare(b.titulo, 'es')),
-    [recipes]
+  const recetasPorHacer = useMemo(
+    () => recipes
+      .filter((r) => seleccionadas.has(r.id))
+      .sort((a, b) => a.titulo.localeCompare(b.titulo, 'es')),
+    [recipes, seleccionadas]
   );
 
   const lista = useMemo(
@@ -48,38 +52,47 @@ export function SeccionListaCompra({ recipes, despensa, paraHacer }: Props) {
           Lista de la <span className="hl-mark">compra</span>
         </h2>
         <p className="text-base text-ink-soft leading-relaxed">
-          Elige las recetas que vas a hacer (o márcalas "para hacer" desde su ficha). Se descuenta lo que ya tienes en la
-          despensa, y marcar algo aquí lo añade a ella.
+          Marca "para hacer" en la ficha de las recetas que vas a cocinar. Se descuenta lo que
+          ya tienes en la despensa, y marcar algo aquí lo añade a ella.
         </p>
       </header>
 
-      {/* ── Elegir recetas ───────────────────────────────── */}
+      {/* ── Recetas por hacer ────────────────────────────── */}
       <section>
         <h3 className="font-mono text-[11px] uppercase tracking-wider text-accent mb-3">
           Recetas por hacer
         </h3>
-        <ul className="list-none p-0 m-0 border-t border-dashed border-ink/20 max-h-80 overflow-y-auto">
-          {recetasOrdenadas.map((receta) => {
-            const marcada = seleccionadas.has(receta.id);
-            return (
+        {recetasPorHacer.length === 0 ? (
+          <p className="font-mono text-[12.5px] text-ink-soft leading-relaxed border-2 border-dashed border-ink/20 px-4 py-5">
+            Aún no has marcado ninguna. Abre una receta del{' '}
+            <a href={aHash(CATALOGO)} className="underline decoration-dotted hover:text-accent">catálogo</a>{' '}
+            y pulsa «para hacer».
+          </p>
+        ) : (
+          <ul className="list-none p-0 m-0 border-t border-dashed border-ink/20">
+            {recetasPorHacer.map((receta) => (
               <li
                 key={receta.id}
-                className="grid grid-cols-[20px_1fr] gap-2.5 py-2 items-baseline border-b border-dashed border-ink/15 cursor-pointer select-none"
-                onClick={() => void paraHacer.alternar(receta.id)}
+                className="flex items-center justify-between gap-3 py-2 border-b border-dashed border-ink/15"
               >
-                <span
-                  className={`relative w-4 h-4 border-[1.6px] border-ink rounded-[3px] self-center transition-colors ${marcada ? 'bg-ink' : 'bg-white'}`}
-                  aria-hidden
+                <a
+                  href={aHash({ vista: 'receta', id: receta.id })}
+                  className="text-ink text-[14.5px] hover:text-accent"
                 >
-                  {marcada && (
-                    <span className="absolute -top-1 left-px font-script text-[22px] leading-none text-hot">✓</span>
-                  )}
-                </span>
-                <span className="text-ink text-[14.5px]">{receta.titulo}</span>
+                  {receta.titulo}
+                </a>
+                <button
+                  onClick={() => void paraHacer.quitar(receta.id)}
+                  title="Quitar de por hacer"
+                  aria-label={`Quitar ${receta.titulo} de por hacer`}
+                  className="text-ink-soft hover:text-hot transition-colors"
+                >
+                  <X size={15} />
+                </button>
               </li>
-            );
-          })}
-        </ul>
+            ))}
+          </ul>
+        )}
       </section>
 
       {/* ── La lista ──────────────────────────────────────── */}
@@ -90,7 +103,7 @@ export function SeccionListaCompra({ recipes, despensa, paraHacer }: Props) {
 
         {seleccionadas.size === 0 ? (
           <p className="font-mono text-[12.5px] text-ink-soft leading-relaxed border-2 border-dashed border-ink/20 px-4 py-5">
-            Elige arriba las recetas que vas a hacer esta semana.
+            Aquí saldrá lo que te falte comprar.
           </p>
         ) : lista.length === 0 ? (
           <p className="flex items-center gap-2 font-mono text-[12.5px] text-accent leading-relaxed border-2 border-dashed border-ink/20 px-4 py-5">
