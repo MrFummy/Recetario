@@ -1,15 +1,16 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import type { User } from '@supabase/supabase-js';
 import { X, ExternalLink, Edit2, Save, Trash2, Loader2, AlertTriangle, Clock, Users, Gauge } from 'lucide-react';
 import type { Recipe } from '../types';
 import { StarRating } from './StarRating';
 import { IngredientsList, StepsList } from './RecipeContent';
 import type { Despensa } from '../hooks/useDespensa';
+import type { ParaHacer } from '../hooks/useParaHacer';
+import { MuroRealizaciones } from './MuroRealizaciones';
 import { ShareByEmail } from './ShareByEmail';
 import { RecipePolaroid } from './RecipePolaroid';
 import { hasNotas, renderNotas } from '../lib/recipeContent';
 import { errorMessage } from '../lib/errors';
-import { supabase } from '../lib/supabase';
 import placeholderImg from '../assets/placeholder.jpg';
 
 interface RecipeDetailProps {
@@ -18,16 +19,18 @@ interface RecipeDetailProps {
   isAdmin?: boolean;
   user?: User | null;
   despensa: Despensa;
+  paraHacer: ParaHacer;
   onUpdateNotes?: (notas: string) => Promise<void>;
   onUpdatePhoto?: (file: File) => Promise<void>;
   onRemovePhoto?: () => Promise<void>;
-  onUpdateRating?: (rating: number) => Promise<void>;
+  /** Las realizaciones cambian la media vía trigger: hay que volver a leerla. */
+  onRatingChanged: () => void;
   onUpdateDate?: (date: string) => Promise<void>;
   onDelete?: (recipe: Recipe) => Promise<void>;
   onShareByEmail?: (recipe: Recipe, email: string) => Promise<void>;
 }
 
-export function RecipeDetail({ recipe, onClose, isAdmin, user, despensa, onUpdateNotes, onUpdatePhoto, onRemovePhoto, onUpdateRating, onUpdateDate, onDelete, onShareByEmail }: RecipeDetailProps) {
+export function RecipeDetail({ recipe, onClose, isAdmin, user, despensa, paraHacer, onUpdateNotes, onUpdatePhoto, onRemovePhoto, onRatingChanged, onUpdateDate, onDelete, onShareByEmail }: RecipeDetailProps) {
   const isAfan = !!user;
   const initialNotes = renderNotas(recipe.notas);
 
@@ -42,24 +45,10 @@ export function RecipeDetail({ recipe, onClose, isAdmin, user, despensa, onUpdat
   const [isSaving, setIsSaving] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
   const [actionError, setActionError] = useState<string | null>(null);
-  const [personalRating, setPersonalRating] = useState<number | null>(null);
 
   const imageUrl = quitarFoto ? placeholderImg : (previewUrl || recipe.foto_url || placeholderImg);
   const tieneFoto = !!recipe.foto_url || !!previewUrl;
   const showNotas = hasNotas(recipe.notas) || isEditing;
-
-  useEffect(() => {
-    if (!user) return;
-    // maybeSingle: la mayoría de recetas no tienen voto de este usuario y
-    // `single()` devolvía un 406 por cada una.
-    supabase
-      .from('valoraciones')
-      .select('puntuacion')
-      .eq('receta_id', recipe.id)
-      .eq('user_id', user.id)
-      .maybeSingle()
-      .then(({ data }) => { if (data) setPersonalRating(data.puntuacion); });
-  }, [user, recipe.id]);
 
   const handleSave = async () => {
     setIsSaving(true);
@@ -78,22 +67,6 @@ export function RecipeDetail({ recipe, onClose, isAdmin, user, despensa, onUpdat
       setActionError(errorMessage(err, 'No se pudieron guardar los cambios.'));
     } finally {
       setIsSaving(false);
-    }
-  };
-
-  /** `rating` a 0 retira el voto (pulsar la estrella ya marcada, o "quitar mi voto"). */
-  const handleRate = async (rating: number) => {
-    if (!onUpdateRating) return;
-    const previous = personalRating;
-    setPersonalRating(rating === 0 ? null : rating); // optimista: se revierte si falla
-    setActionError(null);
-    try {
-      await onUpdateRating(rating);
-    } catch (err) {
-      setPersonalRating(previous);
-      setActionError(errorMessage(err, rating === 0
-        ? 'No se pudo quitar tu voto.'
-        : 'No se pudo guardar tu voto.'));
     }
   };
 
@@ -220,28 +193,10 @@ export function RecipeDetail({ recipe, onClose, isAdmin, user, despensa, onUpdat
                 </div>
               )}
               <div className="flex items-center gap-3 mb-1">
-                <StarRating
-                  rating={personalRating || recipe.rating || 0}
-                  votoPropio={personalRating}
-                  onRate={handleRate}
-                  readonly={!isAfan}
-                  size={20}
-                />
+                <StarRating rating={recipe.rating || 0} size={20} />
                 <span className="font-mono text-[11px] text-ink-soft">
-                  {personalRating
-                    ? `tu voto: ${personalRating} · media: ${recipe.rating || 'sin valorar'}`
-                    : isAfan
-                      ? `media: ${recipe.rating || 'sin valorar'}`
-                      : `media: ${recipe.rating || 'sin valorar'} · iniciá sesión para votar`}
+                  media: {recipe.rating || 'sin valorar'}
                 </span>
-                {personalRating && (
-                  <button
-                    onClick={() => handleRate(0)}
-                    className="font-mono text-[11px] text-ink-soft underline decoration-dotted underline-offset-2 hover:text-hot transition-colors"
-                  >
-                    quitar mi voto
-                  </button>
-                )}
               </div>
             </div>
           </div>
@@ -293,6 +248,14 @@ export function RecipeDetail({ recipe, onClose, isAdmin, user, despensa, onUpdat
               )}
             </section>
           </div>
+
+          <MuroRealizaciones
+            recetaId={recipe.id}
+            user={user}
+            isAdmin={!!isAdmin}
+            paraHacer={paraHacer}
+            onCambio={onRatingChanged}
+          />
         </div>
       </div>
     </div>

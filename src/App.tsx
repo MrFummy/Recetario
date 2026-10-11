@@ -12,6 +12,7 @@ import { SeccionDespensa } from './components/DespensaSection';
 import { SeccionListaCompra } from './components/ListaCompraSection';
 import { useRecipes } from './hooks/useRecipes';
 import { useDespensa } from './hooks/useDespensa';
+import { useParaHacer } from './hooks/useParaHacer';
 import { useIngredientSearch } from './hooks/useIngredientSearch';
 import { useRuta, irA, reemplazarPor, volverAtras } from './hooks/useRuta';
 import { aHash, CATALOGO } from './lib/rutas';
@@ -41,13 +42,15 @@ function App() {
 
   const {
     recipes, loading, error, refetch,
-    updateRecipeNotes, updateRecipePhoto, removeRecipePhoto, updateRecipeRating, updateRecipeDate,
+    updateRecipeNotes, updateRecipePhoto, removeRecipePhoto, refrescarRating, updateRecipeDate,
     deleteRecipe, shareRecipeByEmail,
   } = useRecipes(user);
 
   // Una sola despensa para toda la app: la sección y las listas de ingredientes
   // de cada receta son la misma cosa vista desde dos sitios.
   const despensa = useDespensa(user);
+  // Igual que la despensa: la ficha y la lista de la compra comparten la misma.
+  const paraHacer = useParaHacer(user);
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
@@ -201,7 +204,7 @@ function App() {
         ) : enDespensa ? (
           <SeccionDespensa recipes={recipes} despensa={despensa} user={user} />
         ) : enListaCompra ? (
-          <SeccionListaCompra recipes={recipes} despensa={despensa} />
+          <SeccionListaCompra recipes={recipes} despensa={despensa} paraHacer={paraHacer} />
         ) : (
           <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
             {/* ── Hero ───────────────────────────────────── */}
@@ -251,11 +254,12 @@ function App() {
           isAdmin={isAdmin}
           user={user}
           despensa={despensa}
+          paraHacer={paraHacer}
           onUpdateNotes={(notas) => updateRecipeNotes(recetaAbierta.id, notas)}
           onUpdateDate={(fecha) => updateRecipeDate(recetaAbierta.id, fecha)}
           onUpdatePhoto={(file) => updateRecipePhoto(recetaAbierta.id, file, recetaAbierta.foto_url)}
           onRemovePhoto={() => removeRecipePhoto(recetaAbierta.id, recetaAbierta.foto_url)}
-          onUpdateRating={(rating) => updateRecipeRating(recetaAbierta.id, rating)}
+          onRatingChanged={() => void refrescarRating(recetaAbierta.id)}
           onDelete={async (recipe) => {
             await deleteRecipe(recipe);
             // Pisamos la entrada del historial: el atrás no debe devolver a una

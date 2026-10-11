@@ -15,8 +15,8 @@
     "semantic_hash": ""
   },
   "src/App.tsx": {
-    "mtime": 1791624787.61434,
-    "ast_hash": "75b51f4b4a7481f60fe3939ea8343ef4",
+    "mtime": 1791716538.1773596,
+    "ast_hash": "6c1464ce6ed95193a5eb732914460161",
     "semantic_hash": ""
   },
   "src/components/AddRecipeForm.tsx": {
@@ -45,8 +45,8 @@
     "semantic_hash": "0bb06f88e50e3e4dc7078caacc89753d"
   },
   "src/components/RecipeDetail.tsx": {
-    "mtime": 1791625441.0253983,
-    "ast_hash": "3d07bc28783b49090405e76dc0352c2e",
+    "mtime": 1791716538.1763544,
+    "ast_hash": "47c17c5080366efd7f10b807fdf69133",
     "semantic_hash": ""
   },
   "src/components/RecipeGrid.tsx": {
@@ -70,8 +70,8 @@
     "semantic_hash": "e3aff6228c8d6b0457bd817adae8e008"
   },
   "src/hooks/useRecipes.ts": {
-    "mtime": 1786177104.22128,
-    "ast_hash": "13809aaf51bddc63b6673d00f6767bb2",
+    "mtime": 1791716538.1773596,
+    "ast_hash": "a352a9436cb350fd89076ca27d1771aa",
     "semantic_hash": ""
   },
   "src/lib/ingredientParser.ts": {
@@ -200,8 +200,8 @@
     "semantic_hash": ""
   },
   "CLAUDE.md": {
-    "mtime": 1791625787.044977,
-    "ast_hash": "6f50e5b68d588774cb29dd2d0b738bc8",
+    "mtime": 1791716598.1700687,
+    "ast_hash": "f694ea0a4a8670a96261a2766f82fa61",
     "semantic_hash": ""
   },
   "src/hooks/useDespensa.ts": {
@@ -220,8 +220,8 @@
     "semantic_hash": ""
   },
   "docs/ideas.md": {
-    "mtime": 1791626983.747071,
-    "ast_hash": "4b04e791ea7fa034373a74bb8e40b358",
+    "mtime": 1791716598.1700687,
+    "ast_hash": "1d2c4e627358a75a3440b8bf5e3a7b54",
     "semantic_hash": ""
   },
   "src/components/Avisos.tsx": {
@@ -265,8 +265,8 @@
     "semantic_hash": ""
   },
   "src/components/ListaCompraSection.tsx": {
-    "mtime": 1791624884.4009962,
-    "ast_hash": "b9d4d7c0d6e654172d52c632c7befb68",
+    "mtime": 1791716538.177864,
+    "ast_hash": "22a9dc13f0db2a0f8421cf130d573b36",
     "semantic_hash": ""
   },
   "src/lib/listaCompra.ts": {
@@ -282,6 +282,36 @@
   "scripts/deploy.ps1": {
     "mtime": 1791626071.3720927,
     "ast_hash": "ebe6e19fedc8eb059352ebce4d3707ba",
+    "semantic_hash": ""
+  },
+  "src/components/MuroRealizaciones.tsx": {
+    "mtime": 1791716521.303443,
+    "ast_hash": "505e88eb08a30f45c86e0f1215188042",
+    "semantic_hash": ""
+  },
+  "src/components/RealizacionForm.tsx": {
+    "mtime": 1791716521.2793233,
+    "ast_hash": "97acab70724762b3626a43fd49ee87f0",
+    "semantic_hash": ""
+  },
+  "src/hooks/useParaHacer.ts": {
+    "mtime": 1791716498.6428423,
+    "ast_hash": "48be3b61423b440fff290c0a1086a6e9",
+    "semantic_hash": ""
+  },
+  "src/hooks/usePerfil.ts": {
+    "mtime": 1791716578.4934888,
+    "ast_hash": "9a9781d28bd77de971c85b7863bd2ebb",
+    "semantic_hash": ""
+  },
+  "src/hooks/useRealizaciones.ts": {
+    "mtime": 1791716578.4939935,
+    "ast_hash": "7d4c2fd8475597940ee56f40a5133619",
+    "semantic_hash": ""
+  },
+  "supabase/migrations/20261011_para_hacer_y_realizaciones.sql": {
+    "mtime": 1791716035.1453512,
+    "ast_hash": "a9478ef9d61197e63f121b5d4a2f1ba2",
     "semantic_hash": ""
   }
 }

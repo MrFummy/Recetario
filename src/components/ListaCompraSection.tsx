@@ -1,49 +1,31 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import { ShoppingCart } from 'lucide-react';
 import type { Recipe } from '../types';
 import type { Despensa } from '../hooks/useDespensa';
+import type { ParaHacer } from '../hooks/useParaHacer';
 import { listaDeLaCompra } from '../lib/listaCompra';
-
-const CLAVE_LOCALSTORAGE = 'lista-compra:recetas';
 
 interface Props {
   recipes: Recipe[];
   despensa: Despensa;
-}
-
-function leerSeleccionGuardada(): Set<string> {
-  try {
-    const guardado = localStorage.getItem(CLAVE_LOCALSTORAGE);
-    const ids = guardado ? JSON.parse(guardado) : [];
-    return Array.isArray(ids) ? new Set(ids.filter((id) => typeof id === 'string')) : new Set();
-  } catch {
-    return new Set();
-  }
+  paraHacer: ParaHacer;
 }
 
 /**
  * Elige recetas de la semana y ve la lista de la compra: sus ingredientes,
  * agregados, menos lo que ya dice la despensa que tienes.
  *
- * La selección se recuerda en este navegador (no en Supabase: es de la
- * semana, no de la cuenta) para no perderla si recargas a medio planificar.
+ * Las recetas elegidas son las "para hacer" del usuario, guardadas en Supabase:
+ * se ven igual desde cualquier dispositivo, y marcar una como "ya hecha" en su
+ * ficha la saca de aquí.
  *
  * Marcar un ingrediente de la lista como comprado lo añade a la despensa
  * —"tachar en el súper será añadir a la despensa"— así que no hay un estado
  * de "comprado" aparte: la fila desaparece sola porque `despensa.tengo` ya
  * dice que sí.
  */
-export function SeccionListaCompra({ recipes, despensa }: Props) {
-  const [seleccionadas, setSeleccionadas] = useState<Set<string>>(leerSeleccionGuardada);
-
-  useEffect(() => {
-    try {
-      localStorage.setItem(CLAVE_LOCALSTORAGE, JSON.stringify([...seleccionadas]));
-    } catch {
-      // Sin acceso a localStorage (privado, cuota llena...) se sigue
-      // funcionando, solo que sin recordar la selección entre visitas.
-    }
-  }, [seleccionadas]);
+export function SeccionListaCompra({ recipes, despensa, paraHacer }: Props) {
+  const seleccionadas = paraHacer.ids;
 
   const recetasOrdenadas = useMemo(
     () => [...recipes].sort((a, b) => a.titulo.localeCompare(b.titulo, 'es')),
@@ -55,30 +37,18 @@ export function SeccionListaCompra({ recipes, despensa }: Props) {
     [recipes, seleccionadas, despensa.tengo]
   );
 
-  const alternarReceta = (id: string) => {
-    setSeleccionadas((actual) => {
-      const siguiente = new Set(actual);
-      if (siguiente.has(id)) {
-        siguiente.delete(id);
-      } else {
-        siguiente.add(id);
-      }
-      return siguiente;
-    });
-  };
-
   return (
     <div className="animate-in fade-in slide-in-from-bottom-4 duration-500 max-w-3xl mx-auto">
       <header className="mb-8">
         <div className="inline-flex items-center gap-2 font-mono text-[11px] tracking-[0.18em] uppercase text-accent mb-3">
           <span className="w-2 h-2 rounded-full bg-hot dot-blink" />
-          {seleccionadas.size} {seleccionadas.size === 1 ? 'receta' : 'recetas'} esta semana
+          {seleccionadas.size} {seleccionadas.size === 1 ? 'receta' : 'recetas'} por hacer
         </div>
         <h2 className="font-display font-black text-4xl sm:text-6xl leading-[0.98] tracking-tight text-ink mb-3">
           Lista de la <span className="hl-mark">compra</span>
         </h2>
         <p className="text-base text-ink-soft leading-relaxed">
-          Elige las recetas que vas a hacer. Se descuenta lo que ya tienes en la
+          Elige las recetas que vas a hacer (o márcalas "para hacer" desde su ficha). Se descuenta lo que ya tienes en la
           despensa, y marcar algo aquí lo añade a ella.
         </p>
       </header>
@@ -86,7 +56,7 @@ export function SeccionListaCompra({ recipes, despensa }: Props) {
       {/* ── Elegir recetas ───────────────────────────────── */}
       <section>
         <h3 className="font-mono text-[11px] uppercase tracking-wider text-accent mb-3">
-          Recetas de la semana
+          Recetas por hacer
         </h3>
         <ul className="list-none p-0 m-0 border-t border-dashed border-ink/20 max-h-80 overflow-y-auto">
           {recetasOrdenadas.map((receta) => {
@@ -95,7 +65,7 @@ export function SeccionListaCompra({ recipes, despensa }: Props) {
               <li
                 key={receta.id}
                 className="grid grid-cols-[20px_1fr] gap-2.5 py-2 items-baseline border-b border-dashed border-ink/15 cursor-pointer select-none"
-                onClick={() => alternarReceta(receta.id)}
+                onClick={() => void paraHacer.alternar(receta.id)}
               >
                 <span
                   className={`relative w-4 h-4 border-[1.6px] border-ink rounded-[3px] self-center transition-colors ${marcada ? 'bg-ink' : 'bg-white'}`}
@@ -148,8 +118,8 @@ export function SeccionListaCompra({ recipes, despensa }: Props) {
           </ul>
         )}
 
-        {despensa.error && (
-          <p className="mt-3 font-mono text-[11px] text-hot leading-snug">{despensa.error}</p>
+        {(despensa.error || paraHacer.error) && (
+          <p className="mt-3 font-mono text-[11px] text-hot leading-snug">{despensa.error ?? paraHacer.error}</p>
         )}
       </section>
     </div>

@@ -66,36 +66,14 @@ export function useRecipes(user?: User | null) {
   };
 
   /**
-   * Guarda el voto del usuario. `rating` a 0 significa retirarlo.
-   *
-   * Retirar borra la fila en lugar de guardar un cero: la media la calcula un
-   * trigger con `avg(puntuacion)`, así que un cero contaría como voto y hundiría
-   * la media en vez de desaparecer de ella.
+   * Vuelve a leer la media de una receta. La recalcula un trigger de Supabase
+   * cada vez que se añade, edita o borra una realización; queda a null si ya no
+   * hay ninguna con puntuación.
    */
-  const updateRecipeRating = async (id: string, rating: number) => {
-    if (!user) {
-      throw new Error('Debes iniciar sesión para votar.');
-    }
-
-    if (rating === 0) {
-      const { error } = await supabase
-        .from('valoraciones')
-        .delete()
-        .eq('receta_id', id)
-        .eq('user_id', user.id);
-      if (error) throw error;
-    } else {
-      const { error } = await supabase
-        .from('valoraciones')
-        .upsert({ receta_id: id, user_id: user.id, puntuacion: rating }, { onConflict: 'receta_id,user_id' });
-      if (error) throw error;
-    }
-
-    // Recargar la media recalculada por el trigger. Queda a null si esa era la
-    // última valoración de la receta.
+  const refrescarRating = async (id: string) => {
     const { data } = await supabase.from('recetas').select('rating').eq('id', id).single();
     if (data) {
-       setRecipes(prev => prev.map(r => r.id === id ? { ...r, rating: data.rating } : r));
+      setRecipes(prev => prev.map(r => r.id === id ? { ...r, rating: data.rating } : r));
     }
   };
 
@@ -210,7 +188,7 @@ export function useRecipes(user?: User | null) {
     error,
     refetch,
     updateRecipeNotes,
-    updateRecipeRating,
+    refrescarRating,
     updateRecipePhoto,
     removeRecipePhoto,
     updateRecipeDate,

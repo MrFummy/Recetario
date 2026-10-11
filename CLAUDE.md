@@ -209,6 +209,20 @@ de él. Las cantidades importan en la lista de la compra, donde la pregunta es
 puntual y no hay estado que envejezca. El razonamiento completo está en
 [docs/ideas.md](docs/ideas.md); conviene releerlo antes de volver a proponerlo.
 
+## Para hacer, realizaciones y muro de notas
+
+**Hecho el 11 de octubre de 2026** ([la migración](supabase/migrations/20261011_para_hacer_y_realizaciones.sql);
+decisiones en [docs/ideas.md](docs/ideas.md)). `valoraciones` ya no es "un voto
+por usuario": cada fila es una vez que se cocinó la receta (`fecha`, `notas`,
+`puntuacion` opcional), sin `UNIQUE (receta_id, user_id)`. El voto rápido de
+estrellas desapareció; `recetas.rating` sigue siendo la media por trigger (que
+sigue siendo `SECURITY DEFINER`) y es `smallint`, así que se redondea a entero.
+`para_hacer` sustituye a la selección en `localStorage` de la lista de la
+compra, y `useParaHacer` se monta una vez en `App`, como la despensa. Marcar
+"ya hecha" quita la receta de `para_hacer` desde el cliente. Las notas del
+muro solo las ven usuarios con sesión; las firma `perfiles.nombre`. Las RLS se
+verificaron simulando roles; **el frontend no se ha probado con sesión real**.
+
 ## Tiempo, porciones y dificultad
 
 **Hecho el 10 de octubre de 2026.** Vertex ya los extraía de cada receta,
