@@ -216,7 +216,7 @@ decisiones en [docs/ideas.md](docs/ideas.md)). `valoraciones` ya no es "un voto
 por usuario": cada fila es una vez que se cocinó la receta (`fecha`, `notas`,
 `puntuacion` opcional), sin `UNIQUE (receta_id, user_id)`. El voto rápido de
 estrellas desapareció; `recetas.rating` sigue siendo la media por trigger (que
-sigue siendo `SECURITY DEFINER`) y es `smallint`, así que se redondea a entero.
+sigue siendo `SECURITY DEFINER`) y es `numeric(2,1)` (antes `smallint`, que truncaba la media al entero).
 `para_hacer` sustituye a la selección en `localStorage` de la lista de la
 compra, y `useParaHacer` se monta una vez en `App`, como la despensa. Marcar
 "ya hecha" quita la receta de `para_hacer` desde el cliente. Las notas del
