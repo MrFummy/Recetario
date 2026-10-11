@@ -57,46 +57,8 @@ export function SeccionListaCompra({ recipes, despensa, paraHacer }: Props) {
         </p>
       </header>
 
-      {/* ── Recetas por hacer ────────────────────────────── */}
-      <section>
-        <h3 className="font-mono text-[11px] uppercase tracking-wider text-accent mb-3">
-          Recetas por hacer
-        </h3>
-        {recetasPorHacer.length === 0 ? (
-          <p className="font-mono text-[12.5px] text-ink-soft leading-relaxed border-2 border-dashed border-ink/20 px-4 py-5">
-            Aún no has marcado ninguna. Abre una receta del{' '}
-            <a href={aHash(CATALOGO)} className="underline decoration-dotted hover:text-accent">catálogo</a>{' '}
-            y pulsa «para hacer».
-          </p>
-        ) : (
-          <ul className="list-none p-0 m-0 border-t border-dashed border-ink/20">
-            {recetasPorHacer.map((receta) => (
-              <li
-                key={receta.id}
-                className="flex items-center justify-between gap-3 py-2 border-b border-dashed border-ink/15"
-              >
-                <a
-                  href={aHash({ vista: 'receta', id: receta.id })}
-                  className="text-ink text-[14.5px] hover:text-accent"
-                >
-                  {receta.titulo}
-                </a>
-                <button
-                  onClick={() => void paraHacer.quitar(receta.id)}
-                  title="Quitar de por hacer"
-                  aria-label={`Quitar ${receta.titulo} de por hacer`}
-                  className="text-ink-soft hover:text-hot transition-colors"
-                >
-                  <X size={15} />
-                </button>
-              </li>
-            ))}
-          </ul>
-        )}
-      </section>
-
       {/* ── La lista ──────────────────────────────────────── */}
-      <section className="mt-12">
+      <section>
         <h3 className="font-mono text-[11px] uppercase tracking-wider text-accent mb-3">
           Lo que hace falta comprar
         </h3>
@@ -133,6 +95,44 @@ export function SeccionListaCompra({ recipes, despensa, paraHacer }: Props) {
 
         {(despensa.error || paraHacer.error) && (
           <p className="mt-3 font-mono text-[11px] text-hot leading-snug">{despensa.error ?? paraHacer.error}</p>
+        )}
+      </section>
+
+      {/* ── Recetas por hacer ────────────────────────────── */}
+      <section className="mt-12">
+        <h3 className="font-mono text-[11px] uppercase tracking-wider text-accent mb-3">
+          Recetas por hacer
+        </h3>
+        {recetasPorHacer.length === 0 ? (
+          <p className="font-mono text-[12.5px] text-ink-soft leading-relaxed border-2 border-dashed border-ink/20 px-4 py-5">
+            Aún no has marcado ninguna. Abre una receta del{' '}
+            <a href={aHash(CATALOGO)} className="underline decoration-dotted hover:text-accent">catálogo</a>{' '}
+            y pulsa «para hacer».
+          </p>
+        ) : (
+          <ul className="list-none p-0 m-0 border-t border-dashed border-ink/20">
+            {recetasPorHacer.map((receta) => (
+              <li
+                key={receta.id}
+                className="flex items-center justify-between gap-3 py-2 border-b border-dashed border-ink/15"
+              >
+                <a
+                  href={aHash({ vista: 'receta', id: receta.id })}
+                  className="text-ink text-[14.5px] hover:text-accent"
+                >
+                  {receta.titulo}
+                </a>
+                <button
+                  onClick={() => void paraHacer.quitar(receta.id)}
+                  title="Quitar de por hacer"
+                  aria-label={`Quitar ${receta.titulo} de por hacer`}
+                  className="text-ink-soft hover:text-hot transition-colors"
+                >
+                  <X size={15} />
+                </button>
+              </li>
+            ))}
+          </ul>
         )}
       </section>
     </div>
