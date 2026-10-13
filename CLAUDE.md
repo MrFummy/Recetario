@@ -11,8 +11,8 @@ despliegue está en el [README](README.md).
 
 ## Empieza por el grafo
 
-`graphify-out/` contiene un grafo de conocimiento del proyecto: 249 nodos y 360
-aristas sobre 44 ficheros, en 20 comunidades. Combina extracción estructural del
+`graphify-out/` contiene un grafo de conocimiento del proyecto: 370 nodos y 712
+aristas sobre 69 ficheros, en 29 comunidades. Combina extracción estructural del
 código (AST) con una capa semántica que recoge lo que el código no dice por sí
 solo: la arquitectura, los servicios externos y el modelo de autorización.
 

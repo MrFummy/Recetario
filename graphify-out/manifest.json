@@ -1,317 +1,440 @@
 {
   ".claude/launch.json": {
     "mtime": 1785938515.105317,
+    "seen": 1791901115.197362,
     "ast_hash": "acf7bb39a4e2edc71202148d5b08be1a",
     "semantic_hash": "acf7bb39a4e2edc71202148d5b08be1a"
   },
   "eslint.config.js": {
     "mtime": 1779042821.3644986,
+    "seen": 1791901115.1973639,
     "ast_hash": "0355276bc79439afe3c53e3a2470ca1e",
     "semantic_hash": "0355276bc79439afe3c53e3a2470ca1e"
   },
   "package.json": {
     "mtime": 1791626075.6579063,
+    "seen": 1791901115.197365,
     "ast_hash": "866817c937a32bb7ef0cfda814fef9cd",
     "semantic_hash": ""
   },
   "src/App.tsx": {
-    "mtime": 1791716538.1773596,
-    "ast_hash": "6c1464ce6ed95193a5eb732914460161",
+    "mtime": 1791900851.4893126,
+    "seen": 1791901115.197367,
+    "ast_hash": "8522f8d40e8f871c507e9490aeeb6ea0",
     "semantic_hash": ""
   },
   "src/components/AddRecipeForm.tsx": {
     "mtime": 1785935983.9667213,
+    "seen": 1791901115.197367,
     "ast_hash": "d743d6ce6561ce1fc1871be3757fc072",
     "semantic_hash": "d743d6ce6561ce1fc1871be3757fc072"
   },
   "src/components/FilterBar.tsx": {
-    "mtime": 1779908153.9375813,
+    "mtime": 1779908153.9375815,
+    "seen": 1791901115.19737,
     "ast_hash": "98c29b8f45bfb80b9252e8aee1931148",
     "semantic_hash": "98c29b8f45bfb80b9252e8aee1931148"
   },
   "src/components/IngredientSearch.tsx": {
     "mtime": 1779911228.9054372,
+    "seen": 1791901115.1973708,
     "ast_hash": "2fd854f5a2311e93ef370deca3f4d2b7",
     "semantic_hash": "2fd854f5a2311e93ef370deca3f4d2b7"
   },
   "src/components/LoginModal.tsx": {
     "mtime": 1785936028.557867,
+    "seen": 1791901115.197372,
     "ast_hash": "69888ba051186953413ac7f40527fc44",
     "semantic_hash": "69888ba051186953413ac7f40527fc44"
   },
   "src/components/RecipeCard.tsx": {
     "mtime": 1780004246.7513092,
+    "seen": 1791901115.1973739,
     "ast_hash": "0bb06f88e50e3e4dc7078caacc89753d",
     "semantic_hash": "0bb06f88e50e3e4dc7078caacc89753d"
   },
   "src/components/RecipeDetail.tsx": {
-    "mtime": 1791716538.1763544,
-    "ast_hash": "47c17c5080366efd7f10b807fdf69133",
+    "mtime": 1791892902.657957,
+    "seen": 1791901115.197375,
+    "ast_hash": "b1d147eb0a4461cd2ff9d5e034e1471d",
     "semantic_hash": ""
   },
   "src/components/RecipeGrid.tsx": {
-    "mtime": 1779908153.9533832,
+    "mtime": 1779908153.9533834,
+    "seen": 1791901115.197376,
     "ast_hash": "d62f11318072a269ccee83eeb913afea",
     "semantic_hash": "d62f11318072a269ccee83eeb913afea"
   },
   "src/components/StarRating.tsx": {
     "mtime": 1786177059.0446866,
+    "seen": 1791901115.1973782,
     "ast_hash": "2ae48bdb0bdd3aa900995b766940fdc7",
     "semantic_hash": ""
   },
   "src/components/UploadProgress.tsx": {
-    "mtime": 1785935955.5962086,
+    "mtime": 1785935955.5962083,
+    "seen": 1791901115.1973782,
     "ast_hash": "811e0c8497d2324b9155e516cbaff845",
     "semantic_hash": "811e0c8497d2324b9155e516cbaff845"
   },
   "src/hooks/useIngredientSearch.ts": {
     "mtime": 1779043034.4678593,
+    "seen": 1791901115.19738,
     "ast_hash": "e3aff6228c8d6b0457bd817adae8e008",
     "semantic_hash": "e3aff6228c8d6b0457bd817adae8e008"
   },
   "src/hooks/useRecipes.ts": {
     "mtime": 1791716538.1773596,
+    "seen": 1791901115.197382,
     "ast_hash": "a352a9436cb350fd89076ca27d1771aa",
     "semantic_hash": ""
   },
   "src/lib/ingredientParser.ts": {
-    "mtime": 1787508192.4710593,
+    "mtime": 1787508192.4710596,
+    "seen": 1791901115.1973839,
     "ast_hash": "d1a8241eba21e3c95037f9052d17a28c",
     "semantic_hash": ""
   },
   "src/lib/supabase.ts": {
-    "mtime": 1785937749.052987,
+    "mtime": 1785937749.0529873,
+    "seen": 1791901115.197387,
     "ast_hash": "29fc12f2758e674989cd0b0bc3f8e050",
     "semantic_hash": "29fc12f2758e674989cd0b0bc3f8e050"
   },
   "src/main.tsx": {
     "mtime": 1779042821.5566196,
+    "seen": 1791901115.197388,
     "ast_hash": "787e5a07efeb2bf6209d5937195f2f68",
     "semantic_hash": "787e5a07efeb2bf6209d5937195f2f68"
   },
   "src/types.ts": {
     "mtime": 1791625423.4209604,
+    "seen": 1791901115.197388,
     "ast_hash": "9b42818bb11efb7752feef044edcbeea",
     "semantic_hash": ""
   },
   "tsconfig.app.json": {
     "mtime": 1779042821.3993108,
+    "seen": 1791901115.1973948,
     "ast_hash": "136630b5accce1ca50663df229534a26",
     "semantic_hash": "136630b5accce1ca50663df229534a26"
   },
   "tsconfig.json": {
     "mtime": 1779042821.4048464,
+    "seen": 1791901115.197396,
     "ast_hash": "a3d39fa780ebff65444de257f291ce6c",
     "semantic_hash": "a3d39fa780ebff65444de257f291ce6c"
   },
   "tsconfig.node.json": {
-    "mtime": 1779042821.41056,
+    "mtime": 1779042821.4105597,
+    "seen": 1791901115.197397,
     "ast_hash": "70bdd0a673bcfc0e828080b306e7c680",
     "semantic_hash": "70bdd0a673bcfc0e828080b306e7c680"
   },
   "vite.config.ts": {
     "mtime": 1779042859.0288253,
+    "seen": 1791901115.197397,
     "ast_hash": "d281d66c4390899f561fa3db9b8e9eac",
     "semantic_hash": "d281d66c4390899f561fa3db9b8e9eac"
   },
   "AGENTS.md": {
-    "mtime": 1779041721.1177704,
+    "mtime": 1779041721.1177707,
+    "seen": 1791901115.197398,
     "ast_hash": "4ff9eeca4ab53927478aaa5c2f62c99d",
     "semantic_hash": "4ff9eeca4ab53927478aaa5c2f62c99d"
   },
   "README.md": {
     "mtime": 1791626083.4626637,
+    "seen": 1791901115.1973991,
     "ast_hash": "e991db0afe5ba39b7c547d6e39867bc9",
     "semantic_hash": ""
   },
   "index.html": {
-    "mtime": 1779908153.9185586,
+    "mtime": 1779908153.9185588,
+    "seen": 1791901115.197401,
     "ast_hash": "33a9f890e342be167ef1cde99a6193d6",
     "semantic_hash": "33a9f890e342be167ef1cde99a6193d6"
   },
   "public/favicon.svg": {
-    "mtime": 1779531867.8329737,
+    "mtime": 1779531867.832974,
+    "seen": 1791901115.197401,
     "ast_hash": "b8b0b9b7904e7250c0894e3f551e15ff",
     "semantic_hash": "b8b0b9b7904e7250c0894e3f551e15ff"
   },
   "public/icons.svg": {
-    "mtime": 1779042821.4924965,
+    "mtime": 1779042821.4924963,
+    "seen": 1791901115.197402,
     "ast_hash": "3b4fcfcf393eca4d264dca4a4663bc37",
     "semantic_hash": "3b4fcfcf393eca4d264dca4a4663bc37"
   },
   "src/assets/placeholder.jpg": {
     "mtime": 1779042808.4434783,
+    "seen": 1791901115.197402,
     "ast_hash": "09658bb3d076bb07cf3f3974569994c0",
     "semantic_hash": "09658bb3d076bb07cf3f3974569994c0"
   },
   "src/lib/n8n.ts": {
     "mtime": 1785938126.7456553,
+    "seen": 1791901115.197386,
     "ast_hash": "bee10be80c6660f10c8938caa43c26d7",
     "semantic_hash": "bee10be80c6660f10c8938caa43c26d7"
   },
   "graphify-out/memory/query_20260726_092833_por_que_supabase_js_client_with_no_backend_layer_a.md": {
     "mtime": 1785058113.2331338,
+    "seen": 1791901115.1974,
     "ast_hash": "67048acd1ea427249775edcd9f11dd5e",
     "semantic_hash": ""
   },
   "src/components/RecipeContent.tsx": {
-    "mtime": 1788203458.7838595,
+    "mtime": 1788203458.7838597,
+    "seen": 1791901115.197375,
     "ast_hash": "4d9d4f8aca25fa9c1a2189bacff7bf79",
     "semantic_hash": ""
   },
   "src/components/ShareByEmail.tsx": {
     "mtime": 1785936109.7676122,
+    "seen": 1791901115.197377,
     "ast_hash": "ccb61af31b3e54d9b8109915d49dad32",
     "semantic_hash": "ccb61af31b3e54d9b8109915d49dad32"
   },
   "src/lib/errors.ts": {
-    "mtime": 1785938396.4291525,
+    "mtime": 1785938396.4291527,
+    "seen": 1791901115.1973839,
     "ast_hash": "f7b8ac7964a42ec3ddb1c8103cbdb636",
     "semantic_hash": "f7b8ac7964a42ec3ddb1c8103cbdb636"
   },
   "src/lib/recipeContent.ts": {
     "mtime": 1791624718.4472063,
+    "seen": 1791901115.197386,
     "ast_hash": "53d886de0cd3e15156e2f2c46f0c0a13",
     "semantic_hash": ""
   },
   "supabase/migrations/20260805_endurecer_rls.sql": {
-    "mtime": 1786177562.2465656,
+    "mtime": 1786177562.2465653,
+    "seen": 1791901115.19739,
     "ast_hash": "477d94e4eccc5b72d71a35635c55157c",
     "semantic_hash": ""
   },
   "src/components/RecipePolaroid.tsx": {
     "mtime": 1786177251.4256144,
+    "seen": 1791901115.197376,
     "ast_hash": "6fbd7d7970a727d7fe8962bbaf4d0d42",
     "semantic_hash": ""
   },
   "supabase/migrations/20260808_fotos_en_raiz_visibles.sql": {
     "mtime": 1786176223.5385222,
+    "seen": 1791901115.19739,
     "ast_hash": "4e0afa42977dfa2679ed740d891b3d6e",
     "semantic_hash": ""
   },
   "supabase/migrations/20260808_proteger_default_jpg.sql": {
     "mtime": 1786176425.0032747,
+    "seen": 1791901115.197391,
     "ast_hash": "03c5f944af12896fd0f608b743a1ecb9",
     "semantic_hash": ""
   },
   "supabase/migrations/20260808_revocar_execute_funciones.sql": {
     "mtime": 1786177571.7600577,
+    "seen": 1791901115.197391,
     "ast_hash": "14004b900c1465b4862f510f72ceb028",
     "semantic_hash": ""
   },
   "CLAUDE.md": {
-    "mtime": 1791716598.1700687,
-    "ast_hash": "f694ea0a4a8670a96261a2766f82fa61",
+    "mtime": 1791901099.506993,
+    "seen": 1791901115.197398,
+    "ast_hash": "5c742f9c1ab3c84f75404a27a8a5722c",
     "semantic_hash": ""
   },
   "src/hooks/useDespensa.ts": {
     "mtime": 1788203381.1460626,
+    "seen": 1791901115.197379,
     "ast_hash": "46a0665791159c123d19418669ab59eb",
     "semantic_hash": ""
   },
   "supabase/migrations/20260823_despensa.sql": {
     "mtime": 1787508373.8682468,
+    "seen": 1791901115.197392,
     "ast_hash": "fd9c5f3802f8480e9db4bcb0e1161ad1",
     "semantic_hash": ""
   },
   "supabase/migrations/20260823_estructurar_ingredientes.sql": {
-    "mtime": 1787508354.55661,
+    "mtime": 1787508354.5566099,
+    "seen": 1791901115.197392,
     "ast_hash": "a8656291a4656804daac8ccdb6d9e253",
     "semantic_hash": ""
   },
   "docs/ideas.md": {
-    "mtime": 1791716598.1700687,
-    "ast_hash": "1d2c4e627358a75a3440b8bf5e3a7b54",
+    "mtime": 1791901026.6572134,
+    "seen": 1791901115.1973991,
+    "ast_hash": "9172b9c619280e53674fa9350565d85f",
     "semantic_hash": ""
   },
   "src/components/Avisos.tsx": {
     "mtime": 1788202925.5089176,
+    "seen": 1791901115.1973681,
     "ast_hash": "bb3cfd85a3815e351c51327a0bada026",
     "semantic_hash": ""
   },
   "src/hooks/useRuta.ts": {
-    "mtime": 1788202816.8588269,
+    "mtime": 1788202816.8588266,
+    "seen": 1791901115.197382,
     "ast_hash": "da3680be32aff103f9da849bba6a45e0",
     "semantic_hash": ""
   },
   "src/lib/rutas.ts": {
     "mtime": 1791624729.6562157,
+    "seen": 1791901115.197387,
     "ast_hash": "8a6f9e38f05a1988a924d111a19cb12b",
     "semantic_hash": ""
   },
   "src/components/AnadirIngrediente.tsx": {
-    "mtime": 1788203404.1982007,
+    "mtime": 1788203404.1982005,
+    "seen": 1791901115.1973681,
     "ast_hash": "a9a52f1a739e1e5f5fab92faca02996e",
     "semantic_hash": ""
   },
   "src/components/DespensaSection.tsx": {
     "mtime": 1788203439.3719628,
+    "seen": 1791901115.19737,
     "ast_hash": "9643980fd8bb8d83884c6889b47b8a3f",
     "semantic_hash": ""
   },
   "src/lib/inventario.ts": {
     "mtime": 1788203357.0612469,
+    "seen": 1791901115.197385,
     "ast_hash": "f998560446564903b01f1e44ff5172a1",
     "semantic_hash": ""
   },
   "supabase/migrations/20261010_partir_base_combinados.sql": {
     "mtime": 1791623487.3092647,
+    "seen": 1791901115.197393,
     "ast_hash": "af41e7dca8e49e60244d209c733e4bb8",
     "semantic_hash": ""
   },
   "docs/seguimiento.md": {
     "mtime": 1791626998.9020948,
+    "seen": 1791901115.1974,
     "ast_hash": "48c8631ff8f53f45b1a24c8c2848ae75",
     "semantic_hash": ""
   },
   "src/components/ListaCompraSection.tsx": {
-    "mtime": 1791716538.177864,
-    "ast_hash": "22a9dc13f0db2a0f8421cf130d573b36",
+    "mtime": 1791720443.4592679,
+    "seen": 1791901115.197372,
+    "ast_hash": "322e7cf9b979d94720fc5388294c646e",
     "semantic_hash": ""
   },
   "src/lib/listaCompra.ts": {
     "mtime": 1791624740.985927,
+    "seen": 1791901115.197385,
     "ast_hash": "6240f5cc7b54eccb2619fe267725da94",
     "semantic_hash": ""
   },
   "supabase/migrations/20261010_anade_tiempo_porciones_dificultad.sql": {
-    "mtime": 1791625712.9028094,
+    "mtime": 1791625712.9028091,
+    "seen": 1791901115.197393,
     "ast_hash": "180c615c12ba3f25ca527d2d5ffc4bfd",
     "semantic_hash": ""
   },
   "scripts/deploy.ps1": {
     "mtime": 1791626071.3720927,
+    "seen": 1791901115.197366,
     "ast_hash": "ebe6e19fedc8eb059352ebce4d3707ba",
     "semantic_hash": ""
   },
   "src/components/MuroRealizaciones.tsx": {
     "mtime": 1791716521.303443,
+    "seen": 1791901115.197373,
     "ast_hash": "505e88eb08a30f45c86e0f1215188042",
     "semantic_hash": ""
   },
   "src/components/RealizacionForm.tsx": {
-    "mtime": 1791716521.2793233,
+    "mtime": 1791716521.2793236,
+    "seen": 1791901115.1973739,
     "ast_hash": "97acab70724762b3626a43fd49ee87f0",
     "semantic_hash": ""
   },
   "src/hooks/useParaHacer.ts": {
     "mtime": 1791716498.6428423,
+    "seen": 1791901115.19738,
     "ast_hash": "48be3b61423b440fff290c0a1086a6e9",
     "semantic_hash": ""
   },
   "src/hooks/usePerfil.ts": {
-    "mtime": 1791716578.4934888,
+    "mtime": 1791716578.4934886,
+    "seen": 1791901115.197381,
     "ast_hash": "9a9781d28bd77de971c85b7863bd2ebb",
     "semantic_hash": ""
   },
   "src/hooks/useRealizaciones.ts": {
     "mtime": 1791716578.4939935,
+    "seen": 1791901115.197381,
     "ast_hash": "7d4c2fd8475597940ee56f40a5133619",
     "semantic_hash": ""
   },
   "supabase/migrations/20261011_para_hacer_y_realizaciones.sql": {
-    "mtime": 1791716035.1453512,
+    "mtime": 1791716035.145351,
+    "seen": 1791901115.197394,
     "ast_hash": "a9478ef9d61197e63f121b5d4a2f1ba2",
+    "semantic_hash": ""
+  },
+  "src/components/BusquedaSemantica.tsx": {
+    "mtime": 1791900851.4554045,
+    "seen": 1791901115.197369,
+    "ast_hash": "12c2645df77d0bdb99a7567a6574ec42",
+    "semantic_hash": ""
+  },
+  "src/components/ModoCocina.tsx": {
+    "mtime": 1791892910.0004086,
+    "seen": 1791901115.197373,
+    "ast_hash": "36220bce9cba44ac6566b6df2c3d0bd1",
+    "semantic_hash": ""
+  },
+  "src/components/ReindexarBusqueda.tsx": {
+    "mtime": 1791900620.3285196,
+    "seen": 1791901115.197377,
+    "ast_hash": "890e665d5d61930ee301bc36c74da76a",
+    "semantic_hash": ""
+  },
+  "src/hooks/useBusquedaSemantica.ts": {
+    "mtime": 1791900851.4529524,
+    "seen": 1791901115.197379,
+    "ast_hash": "1e28d7df8b6d6edbf5441fc3d57ec163",
+    "semantic_hash": ""
+  },
+  "src/hooks/useWakeLock.ts": {
+    "mtime": 1791892898.1773822,
+    "seen": 1791901115.197383,
+    "ast_hash": "f1d283f873b073b583ab0177d04d7ccc",
+    "semantic_hash": ""
+  },
+  "src/lib/busquedaSemantica.ts": {
+    "mtime": 1791900851.450415,
+    "seen": 1791901115.197383,
+    "ast_hash": "e06936d3cd96709e8ee4f33b5f19ea02",
+    "semantic_hash": ""
+  },
+  "supabase/functions/buscar-recetas/index.ts": {
+    "mtime": 1791900952.841433,
+    "seen": 1791901115.1973891,
+    "ast_hash": "d488322fce3bd51f5c9ca94bb969ee5c",
+    "semantic_hash": ""
+  },
+  "supabase/functions/indexar-recetas/index.ts": {
+    "mtime": 1791900959.8735685,
+    "seen": 1791901115.1973891,
+    "ast_hash": "a5c6258839130746132edf5fecffc09b",
+    "semantic_hash": ""
+  },
+  "supabase/migrations/20261011_rating_con_decimales.sql": {
+    "mtime": 1791720081.762765,
+    "seen": 1791901115.197394,
+    "ast_hash": "a663e9d2f92802377c434a757f165a4b",
+    "semantic_hash": ""
+  },
+  "supabase/migrations/20261013_busqueda_semantica.sql": {
+    "mtime": 1791899826.972602,
+    "seen": 1791901115.1973948,
+    "ast_hash": "9bc65c1d38da654ea8393b964e3541c5",
     "semantic_hash": ""
   }
 }
