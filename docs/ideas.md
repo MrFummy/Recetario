@@ -191,7 +191,8 @@ de la llamada a Vertex como siguiente paso, no como necesidad de partida.
 
 ## Encontrar recetas
 
-**Búsqueda semántica.** Hoy se busca por subcadena de ingrediente con lógica Y
+~~**Búsqueda semántica.**~~ **Hecha el 13 de octubre de 2026**; ver *Búsqueda
+semántica* en [CLAUDE.md](../CLAUDE.md). Planteamiento original: hoy se busca por subcadena de ingrediente con lógica Y
 estricta. Con `pgvector` —Supabase lo soporta de serie— y embeddings generados
 por Vertex al dar de alta, se podría preguntar *"algo ligero de pescado para
 verano"*. Es el mayor salto cualitativo de la lista, y con 58 recetas indexar
@@ -217,7 +218,8 @@ la receta. Mismo pipeline, sin fabricar un PDF a mano.
 entre sola. Ya existe un flujo *Bot recetas* activo: quizá esté medio hecho.
 
 **Detección de duplicados** al dar de alta, comparando título e ingredientes.
-Sale casi gratis si antes se hace lo de los embeddings.
+Sale casi gratis ahora que los embeddings existen (13 de octubre de 2026): basta
+comparar el vector de la receta nueva con los de `recetas_embeddings`.
 
 **Rellenar las 11 recetas sin foto**, que hoy muestran el placeholder. Un flujo
 podría generar o buscar una imagen y quitar esa sensación de catálogo a medias.
@@ -259,8 +261,7 @@ Sois cuatro, así que lo social tiene sentido a escala pequeña:
 1. ~~**Para hacer, realizaciones y el muro de notas.**~~ **Implementado el 11
    de octubre de 2026** (probado en producción).
 2. ~~**Modo cocina.**~~ **Hecho el 13 de octubre de 2026**, sin temporizadores.
-3. **Búsqueda semántica.** La más vistosa, pero mejor con las anteriores ya
-   asentadas.
+3. ~~**Búsqueda semántica.**~~ **Hecha el 13 de octubre de 2026.**
 
 ---
 

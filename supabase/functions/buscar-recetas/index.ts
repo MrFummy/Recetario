@@ -13,7 +13,7 @@
 // (que va en el frontend) también lo está, así que además se pide un usuario
 // real con `auth.getUser`.
 
-import { createClient } from 'npm:@supabase/supabase-js@2';
+import { createClient, type SupabaseClient } from 'npm:@supabase/supabase-js@2';
 
 const MODELO = 'gemini-embedding-001';
 const DIMENSIONES = 768;
@@ -52,6 +52,36 @@ async function embeber(texto: string): Promise<number[]> {
   return (await r.json()).embedding.values;
 }
 
+/**
+ * Las altas pasan por n8n, que responde al navegador antes de guardar la
+ * receta, así que no hay un momento en el frontend para indexarla. En su lugar,
+ * si hay más recetas que vectores se pide a `indexar-recetas` que complete los
+ * que faltan. Es una comparación de dos contadores, sin leer ninguna receta.
+ *
+ * Si falla no se aborta la búsqueda: se busca sobre lo ya indexado. Las
+ * ediciones de una receta existente no se detectan aquí (haría falta leer y
+ * hashear todas en cada búsqueda); para eso está el botón de reindexar.
+ */
+async function indexarPendientes(supabase: SupabaseClient) {
+  try {
+    const [recetas, vectores] = await Promise.all([
+      supabase.from('recetas').select('id', { count: 'exact', head: true }),
+      supabase.from('recetas_embeddings').select('receta_id', { count: 'exact', head: true }),
+    ]);
+    if (recetas.count === vectores.count) return;
+    await fetch(`${Deno.env.get('SUPABASE_URL')}/functions/v1/indexar-recetas`, {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')}`,
+        'Content-Type': 'application/json',
+      },
+      body: '{}',
+    });
+  } catch (e) {
+    console.error('No se pudo indexar lo pendiente', e);
+  }
+}
+
 Deno.serve(async (req) => {
   if (req.method === 'OPTIONS') return new Response('ok', { headers: cors });
   if (req.method !== 'POST') return json({ error: 'Método no permitido' }, 405);
@@ -70,6 +100,7 @@ Deno.serve(async (req) => {
   }
 
   try {
+    await indexarPendientes(supabase);
     const vector = await embeber(consulta);
     const { data, error } = await supabase.rpc('buscar_recetas_semantico', {
       consulta: JSON.stringify(vector),

@@ -81,7 +81,8 @@ la compra. Las cabeceras de sección siguen siendo cadenas (`"— Para la salsa 
 para no romper el PDF, Notion ni Sheets; en la web se detectan y se pintan como
 sección, sin casilla.
 
-Lo produce el prompt del nodo `Vertex AI`, y `Limpia respuesta` añade el `id` y
+Lo produce el prompt del nodo `Vertex AI` (que pese al nombre llama a la API de
+Google AI Studio, no a Vertex; ver *Búsqueda semántica*), y `Limpia respuesta` añade el `id` y
 normaliza. Las 56 recetas anteriores se migraron a mano, elemento a elemento —ver
 [la migración](supabase/migrations/20260823_estructurar_ingredientes.sql)—, con
 `respaldo_ingredientes` guardando los originales por si hay que revertir.
@@ -267,13 +268,66 @@ uso para el que se hizo: la pantalla encendida y el manejo con el pulgar están
 sin comprobar. Sin hacer: temporizadores a partir de los tiempos que mencionan
 los pasos.
 
+## Búsqueda semántica
+
+**Hecha el 13 de octubre de 2026.** Una caja encima del buscador de ingredientes
+([BusquedaSemantica.tsx](src/components/BusquedaSemantica.tsx)) que acepta una
+frase libre —*"algo ligero de pescado para verano"*— y enseña las 12 recetas más
+parecidas, de más a menos. Solo con sesión iniciada.
+
+Funciona con embeddings: cada receta se convierte en un vector de 768 números
+(`gemini-embedding-001`) y la consulta en otro; las recetas cuyo vector queda más
+cerca son el resultado. Dos Edge Functions de Supabase, no n8n:
+
+- [buscar-recetas](supabase/functions/buscar-recetas/index.ts) embebe la consulta
+  y llama a la función SQL `buscar_recetas_semantico`.
+- [indexar-recetas](supabase/functions/indexar-recetas/index.ts) calcula los
+  vectores. Guarda el hash del texto embebido y salta lo que no ha cambiado.
+
+Los vectores viven en `recetas_embeddings`, **tabla aparte** de `recetas`: el
+frontend lee `recetas` con `select('*')`, y una columna de 768 floats viajaría a
+todos los navegadores en cada carga. Tiene RLS activa y **ninguna policy**, a
+propósito: solo la toca `service_role` ([la migración](supabase/migrations/20261013_busqueda_semantica.sql)).
+El aviso `rls_enabled_no_policy` del linter sobre ella es esperado, como en `admins`.
+
+Cosas que no son obvias:
+
+- **El nodo "Vertex AI" de n8n no es Vertex.** Llama a
+  `generativelanguage.googleapis.com` (Google AI Studio) con una API key. Por eso
+  las funciones usan una `GEMINI_API_KEY` en los secretos de Supabase y no hace
+  falta cuenta de servicio de Google Cloud.
+- **`verify_jwt` no basta para exigir sesión**: acepta también la clave anónima,
+  que es pública y va en el bundle. Las dos funciones llaman a `auth.getUser`;
+  `indexar-recetas` además comprueba la tabla `admins`.
+- **Las similitudes salen muy apretadas** (~0,82 incluso entre recetas lejanas),
+  así que no hay umbral: se devuelven siempre las 12 mejores y se confía en el
+  orden. Un umbral fijo cortaría resultados buenos o dejaría pasar malos.
+- **Indexación de altas nuevas:** el alta pasa por n8n, que responde "Workflow was
+  started" antes de guardar la receta, así que el navegador no tiene un momento en
+  que indexarla. En su lugar `buscar-recetas` compara el número de recetas con el de
+  vectores antes de cada búsqueda y, si faltan, llama a `indexar-recetas` con la
+  `service_role` (que nunca sale del servidor). Una receta nueva se indexa en la
+  primera búsqueda posterior. Verificado el 13 de octubre borrando el vector de
+  una receta: reapareció en la búsqueda siguiente.
+- **Las ediciones no se reindexan solas.** Detectarlas exigiría leer y hashear las
+  61 recetas en cada búsqueda. Tras editar una (las notas cuentan en el texto
+  indexado), el admin pulsa *reindexar búsqueda* al final del catálogo
+  ([ReindexarBusqueda.tsx](src/components/ReindexarBusqueda.tsx)); es idempotente.
+- Si se cambia el modelo o las 768 dimensiones, hay que reindexar todo (borrar
+  `recetas_embeddings` y volver a pulsar el botón).
+- Con una búsqueda por frase activa, los filtros de categoría e ingredientes se
+  ignoran; la X de la caja devuelve el catálogo normal.
+- Sin índice vectorial: con 61 recetas un recorrido completo es instantáneo y un
+  HNSW perdería precisión. Se añadiría si el catálogo llegara a miles.
+
 ## Hacia dónde puede crecer
 
 [docs/ideas.md](docs/ideas.md) recoge una lluvia de ideas de posibles
-funcionalidades, con lo hecho y lo decidido anotado encima. Lo siguiente en el
-orden sugerido es la búsqueda semántica; lo más barato que queda son los
-temporizadores del modo cocina, a partir de los tiempos que ya mencionan los
-pasos.
+funcionalidades, con lo hecho y lo decidido anotado encima. Lo más barato que
+queda son los temporizadores del modo cocina, a partir de los tiempos que ya
+mencionan los pasos; el resto está sin desarrollar (favoritos, menú semanal,
+alta desde Telegram, detección de duplicados, que sale casi gratis con los
+embeddings que ya existen).
 
 ## graphify
 

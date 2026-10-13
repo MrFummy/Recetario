@@ -1,9 +1,12 @@
 // Indexa las recetas para la búsqueda semántica: construye un texto de cada una,
 // lo embebe con Gemini y guarda el vector en `recetas_embeddings`.
 //
-// Solo para admin. Es idempotente: guarda el hash del texto embebido y salta las
-// recetas cuyo texto no ha cambiado, así que volver a lanzarlo cuesta solo lo
-// que se haya editado.
+// Solo para admin, o para `buscar-recetas`, que lo llama con la service_role
+// cuando detecta recetas sin vector (las altas nuevas).
+//
+// Es idempotente: guarda el hash del texto embebido y salta las recetas cuyo
+// texto no ha cambiado, así que volver a lanzarlo cuesta solo lo que se haya
+// editado.
 //
 // Cuerpo opcional: { "receta_id": "<uuid>" } para indexar una sola (p. ej. la
 // que acaba de darse de alta); sin él, recorre todas.
@@ -104,13 +107,18 @@ Deno.serve(async (req) => {
   );
 
   const token = (req.headers.get('Authorization') ?? '').replace(/^Bearer\s+/i, '');
-  const { data: { user } } = await supabase.auth.getUser(token);
-  if (!user) return json({ error: 'Hace falta iniciar sesión.' }, 401);
+  // Llamada interna de `buscar-recetas`: la service_role nunca sale del servidor.
+  const esInterna = token !== '' && token === Deno.env.get('SUPABASE_SERVICE_ROLE_KEY');
 
-  // Misma regla que `es_admin()`, pero aquí se evalúa con service_role, que se
-  // salta la RLS de `admins` (esa tabla no tiene policies).
-  const { data: admin } = await supabase.from('admins').select('user_id').eq('user_id', user.id).maybeSingle();
-  if (!admin) return json({ error: 'Solo el admin puede reindexar.' }, 403);
+  if (!esInterna) {
+    const { data: { user } } = await supabase.auth.getUser(token);
+    if (!user) return json({ error: 'Hace falta iniciar sesión.' }, 401);
+
+    // Misma regla que `es_admin()`, pero aquí se evalúa con service_role, que se
+    // salta la RLS de `admins` (esa tabla no tiene policies).
+    const { data: admin } = await supabase.from('admins').select('user_id').eq('user_id', user.id).maybeSingle();
+    if (!admin) return json({ error: 'Solo el admin puede reindexar.' }, 403);
+  }
 
   const recetaId = ((await req.json().catch(() => ({}))).receta_id ?? '').toString();
 
