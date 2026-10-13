@@ -313,6 +313,13 @@ Cosas que no son obvias:
   61 recetas en cada búsqueda. Tras editar una (las notas cuentan en el texto
   indexado), el admin pulsa *reindexar búsqueda* al final del catálogo
   ([ReindexarBusqueda.tsx](src/components/ReindexarBusqueda.tsx)); es idempotente.
+- **Límite de 20 búsquedas por hora y usuario**, porque el registro está abierto y
+  cada búsqueda gasta cuota de Gemini (clave que puede compartirse con n8n).
+  Lo aplica `registrar_busqueda` ([la migración](supabase/migrations/20261013_limite_busquedas.sql))
+  antes de indexar o llamar a Gemini, y responde 429 con un mensaje que la caja
+  de búsqueda enseña tal cual. Los contadores viven en `busquedas_uso`, sin
+  policies. Para cambiar el tope, las constantes están al principio de
+  `buscar-recetas`. No sustituye a un presupuesto con alertas en Google Cloud.
 - Si se cambia el modelo o las 768 dimensiones, hay que reindexar todo (borrar
   `recetas_embeddings` y volver a pulsar el botón).
 - Con una búsqueda por frase activa, los filtros de categoría e ingredientes se

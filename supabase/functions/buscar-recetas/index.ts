@@ -11,12 +11,17 @@
 // Exige sesión: cada búsqueda consume cuota de Gemini y esta URL es pública.
 // `verify_jwt` solo comprueba que el token esté bien firmado, y la clave anónima
 // (que va en el frontend) también lo está, así que además se pide un usuario
-// real con `auth.getUser`.
+// real con `auth.getUser`, y se limita a 20 por hora y usuario.
 
 import { createClient, type SupabaseClient } from 'npm:@supabase/supabase-js@2';
 
 const MODELO = 'gemini-embedding-001';
 const DIMENSIONES = 768;
+
+// Búsquedas por usuario y ventana. Cada una cuesta una llamada a Gemini y el
+// registro está abierto; ver `registrar_busqueda` en la migración del límite.
+const LIMITE_BUSQUEDAS = 20;
+const VENTANA = '1 hour';
 
 const cors = {
   'Access-Control-Allow-Origin': '*',
@@ -100,6 +105,19 @@ Deno.serve(async (req) => {
   }
 
   try {
+    // Antes de gastar nada: ni indexar pendientes ni llamar a Gemini.
+    const { data: permitida, error: errLimite } = await supabase.rpc('registrar_busqueda', {
+      p_user: user.id,
+      p_limite: LIMITE_BUSQUEDAS,
+      p_ventana: VENTANA,
+    });
+    if (errLimite) throw errLimite;
+    if (!permitida) {
+      return json({
+        error: `Has hecho ${LIMITE_BUSQUEDAS} búsquedas en la última hora. Inténtalo más tarde.`,
+      }, 429);
+    }
+
     await indexarPendientes(supabase);
     const vector = await embeber(consulta);
     const { data, error } = await supabase.rpc('buscar_recetas_semantico', {

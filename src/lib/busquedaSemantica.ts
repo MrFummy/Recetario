@@ -1,3 +1,4 @@
+import { FunctionsHttpError } from '@supabase/supabase-js';
 import { supabase } from './supabase';
 
 export interface ResultadoIndexacion {
@@ -34,6 +35,11 @@ export async function buscarSemantico(consulta: string): Promise<string[]> {
     { body: { consulta } },
   );
   if (error || !data) {
+    // Con un 429 el mensaje del servidor dice cuántas llevas y qué hacer.
+    if (error instanceof FunctionsHttpError && error.context.status === 429) {
+      const { error: mensaje } = await error.context.json().catch(() => ({ error: '' }));
+      if (mensaje) throw new Error(mensaje);
+    }
     throw new Error('No se pudo hacer la búsqueda. Inténtalo de nuevo en un momento.');
   }
   return data.resultados.map((r) => r.receta_id);
