@@ -3,6 +3,9 @@ import { X, ChevronLeft, ChevronRight, ListChecks } from 'lucide-react';
 import type { Recipe } from '../types';
 import { normalizeIngredients, normalizeSteps } from '../lib/recipeContent';
 import { useWakeLock } from '../hooks/useWakeLock';
+import { useTemporizadores } from '../hooks/useTemporizadores';
+import { PasoConTiempos } from './PasoConTiempos';
+import { TemporizadoresBarra } from './TemporizadoresBarra';
 
 interface ModoCocinaProps {
   recipe: Recipe;
@@ -21,6 +24,7 @@ export function ModoCocina({ recipe, onClose }: ModoCocinaProps) {
   const [verIngredientes, setVerIngredientes] = useState(false);
 
   useWakeLock(true);
+  const { temporizadores, iniciar, ajustar, parar } = useTemporizadores();
 
   const ultimo = Math.max(pasos.length - 1, 0);
   const anterior = () => setIndice((i) => Math.max(i - 1, 0));
@@ -57,6 +61,8 @@ export function ModoCocina({ recipe, onClose }: ModoCocinaProps) {
         </div>
       </div>
 
+      <TemporizadoresBarra temporizadores={temporizadores} ajustar={ajustar} parar={parar} />
+
       <div className="h-1 bg-paper/15 shrink-0">
         <div
           className="h-full bg-yellow transition-all duration-300"
@@ -85,7 +91,9 @@ export function ModoCocina({ recipe, onClose }: ModoCocinaProps) {
             <div className="font-mono text-sm tracking-widest uppercase text-yellow mb-4">
               paso {indice + 1} de {pasos.length}
             </div>
-            <p className="text-3xl sm:text-5xl leading-snug font-medium">{pasos[indice]}</p>
+            <p className="text-3xl sm:text-5xl leading-snug font-medium">
+              <PasoConTiempos texto={pasos[indice]} onIniciar={(s, e) => iniciar(s, `paso ${indice + 1} · ${e}`)} />
+            </p>
           </div>
         )}
       </div>

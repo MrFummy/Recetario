@@ -265,8 +265,39 @@ Dos detalles que no se ven en el código a primera vista:
 Verificado en el navegador de escritorio con datos reales (pasos, ingredientes,
 Esc, sin errores en consola). **No se ha probado en un móvil real**, que es el
 uso para el que se hizo: la pantalla encendida y el manejo con el pulgar están
-sin comprobar. Sin hacer: temporizadores a partir de los tiempos que mencionan
-los pasos.
+sin comprobar.
+
+### Temporizadores
+
+**Hechos el 13 de octubre de 2026.** Los tiempos que aparecen en el texto de un
+paso ("durante 30 minutos", "5-7 minutos", "1 hora y media") se pintan como un
+botón amarillo que arranca una cuenta atrás, visible bajo la cabecera del modo
+cocina. Puede haber varios a la vez, con ±1 minuto y cancelar. Al terminar suena
+un pitido (WebAudio, sin ficheros) y vibra, y se repite cada 2,5 s hasta que se
+para.
+
+- [tiempos.ts](src/lib/tiempos.ts) es una función pura sobre texto, sin React ni
+  recetas: `detectarTiempos`. Se verificó contra los 590 pasos reales: 73 tiempos
+  en 72 pasos. **De un rango se toma el valor menor** ("5-7 minutos" → 5), porque
+  quien cocina prefiere vigilar antes que pasarse. Ignora lo que pasa de 6 h
+  (marinados de noche).
+- [useTemporizadores.ts](src/hooks/useTemporizadores.ts) guarda la **hora de fin**
+  y no un contador que decrece: los navegadores frenan los `setInterval` de las
+  pestañas ocultas y un contador se desviaría. Aun así, **con la pestaña oculta la
+  alarma no suena de forma fiable**; por eso importa que el *Wake Lock* mantenga
+  la pantalla encendida.
+- El `AudioContext` se crea y se despierta en el clic del botón, no cuando suena
+  la alarma: los navegadores solo permiten audio tras un gesto del usuario.
+- **Salir del modo cocina cancela los temporizadores.** Viven en su estado; no hay
+  nada en `localStorage` ni en el servidor.
+- Falsos positivos que se dejan a propósito: un paso como *"esperar a que alcance
+  70 °C al menos 15 segundos"* es una condición del alimento y no algo que
+  cronometrar, pero igualmente ofrece el botón. Ofrecer de más sale más barato que
+  perderse el del horno. No se detecta "unos minutos" ni "los que indique el
+  envase": no hay número que cronometrar.
+- Probado en el navegador de escritorio (alarma, repetición, ±1 min, cancelar,
+  persistencia al cambiar de paso). **Sin probar en móvil**, y en iOS el sonido es
+  lo más delicado.
 
 ## Búsqueda semántica
 
@@ -339,10 +370,10 @@ Cosas que no son obvias:
 
 [docs/ideas.md](docs/ideas.md) recoge una lluvia de ideas de posibles
 funcionalidades, con lo hecho y lo decidido anotado encima. Lo más barato que
-queda son los temporizadores del modo cocina, a partir de los tiempos que ya
-mencionan los pasos; el resto está sin desarrollar (favoritos, menú semanal,
-alta desde Telegram, detección de duplicados, que sale casi gratis con los
-embeddings que ya existen).
+queda son la detección de duplicados al dar de alta; el resto está sin
+desarrollar (favoritos, menú semanal,
+alta desde Telegram; los duplicados salen casi gratis con los embeddings que ya
+existen).
 
 ## graphify
 
