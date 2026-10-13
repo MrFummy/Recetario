@@ -39,11 +39,11 @@ alguna vez se decide abordarlo:
 
 ## Cocinar de verdad
 
-**Modo cocina.** Pasos a tamaño grande y pantalla que no se apaga (Wake Lock
-API), para usarlo con las manos pringadas. Los pasos ya mencionan tiempos
-("cocínalo 5 minutos"): se pueden detectar y ofrecer un temporizador pulsable.
-Es 100 % frontend, sin backend ni n8n, y probablemente lo que más se nota en el
-uso diario.
+~~**Modo cocina.** Pasos a tamaño grande y pantalla que no se apaga (Wake Lock
+API), para usarlo con las manos pringadas.~~ **Hecho el 13 de octubre de
+2026**; ver *Modo cocina* en [CLAUDE.md](../CLAUDE.md). Queda sin hacer la
+mitad que lo hace más vistoso: los pasos ya mencionan tiempos ("cocínalo 5
+minutos"), que se podrían detectar y ofrecer como temporizador pulsable.
 
 ~~**Marcar "lo he cocinado"**, con fecha.~~ Desarrollada en
 *Para hacer, realizaciones y el muro de notas*, más abajo.
@@ -258,7 +258,7 @@ Sois cuatro, así que lo social tiene sentido a escala pequeña:
 
 1. ~~**Para hacer, realizaciones y el muro de notas.**~~ **Implementado el 11
    de octubre de 2026** (probado en producción).
-2. **Modo cocina.** Solo frontend, y lo que más se agradece con la sartén puesta.
+2. ~~**Modo cocina.**~~ **Hecho el 13 de octubre de 2026**, sin temporizadores.
 3. **Búsqueda semántica.** La más vistosa, pero mejor con las anteriores ya
    asentadas.
 

@@ -239,12 +239,41 @@ exige volver a pasarlas por Vertex —no solo regenerar el PDF desde Supabase,
 que es lo que hace el flujo *Regenerar PDFs antiguos*—, y es trabajo aparte,
 no decidido todavía.
 
+## Modo cocina
+
+**Hecho el 13 de octubre de 2026.** Botón *Cocinar* en la barra de la ficha
+([RecipeDetail.tsx](src/components/RecipeDetail.tsx)) que abre
+[ModoCocina.tsx](src/components/ModoCocina.tsx): pantalla completa oscura, un
+paso a la vez en letra grande, Anterior/Siguiente, flechas del teclado y un
+conmutador con los ingredientes. Es solo lectura —marcar la despensa se sigue
+haciendo en la ficha— y no toca Supabase ni n8n.
+
+La pantalla no se apaga gracias a [useWakeLock.ts](src/hooks/useWakeLock.ts), que
+vuelve a pedir el bloqueo al regresar a la pestaña (el navegador lo suelta solo
+al ocultarla) y no hace nada si la API no existe.
+
+Dos detalles que no se ven en el código a primera vista:
+
+- **No es una ruta**: es estado local de la ficha. Un enlace `#/receta/<id>`
+  abre la ficha, no el modo cocina, y el atrás del navegador sale de la ficha
+  entera. Si algún día hace falta compartirlo, habría que añadir una `Ruta`.
+- **Esc se captura en fase de captura** y para la propagación: el modo cocina se
+  pinta dentro del fondo de la ficha, y sin esto un clic o una tecla cerraría
+  también la ficha de debajo.
+
+Verificado en el navegador de escritorio con datos reales (pasos, ingredientes,
+Esc, sin errores en consola). **No se ha probado en un móvil real**, que es el
+uso para el que se hizo: la pantalla encendida y el manejo con el pulgar están
+sin comprobar. Sin hacer: temporizadores a partir de los tiempos que mencionan
+los pasos.
+
 ## Hacia dónde puede crecer
 
 [docs/ideas.md](docs/ideas.md) recoge una lluvia de ideas de posibles
-funcionalidades, con lo hecho y lo decidido anotado encima. Sigue en pie que
-Vertex extrae `tiempo`, `porciones` y `dificultad` de cada receta y se descartan
-al guardar: es lo más barato que queda por rescatar.
+funcionalidades, con lo hecho y lo decidido anotado encima. Lo siguiente en el
+orden sugerido es la búsqueda semántica; lo más barato que queda son los
+temporizadores del modo cocina, a partir de los tiempos que ya mencionan los
+pasos.
 
 ## graphify
 
