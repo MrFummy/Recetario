@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import type { User } from '@supabase/supabase-js';
-import { X, ExternalLink, Edit2, Save, Trash2, Loader2, AlertTriangle, Clock, Users, Gauge } from 'lucide-react';
+import { X, ExternalLink, Edit2, Save, Trash2, Loader2, AlertTriangle, Clock, Users, Gauge, CookingPot } from 'lucide-react';
 import type { Recipe } from '../types';
 import { StarRating } from './StarRating';
 import { IngredientsList, StepsList } from './RecipeContent';
@@ -8,6 +8,7 @@ import type { Despensa } from '../hooks/useDespensa';
 import type { ParaHacer } from '../hooks/useParaHacer';
 import { MuroRealizaciones } from './MuroRealizaciones';
 import { ShareByEmail } from './ShareByEmail';
+import { ModoCocina } from './ModoCocina';
 import { RecipePolaroid } from './RecipePolaroid';
 import { hasNotas, renderNotas } from '../lib/recipeContent';
 import { errorMessage } from '../lib/errors';
@@ -35,6 +36,7 @@ export function RecipeDetail({ recipe, onClose, isAdmin, user, despensa, paraHac
   const initialNotes = renderNotas(recipe.notas);
 
   const [isEditing, setIsEditing] = useState(false);
+  const [cocinando, setCocinando] = useState(false);
   const [editedNotes, setEditedNotes] = useState(initialNotes);
   const [editedFecha, setEditedFecha] = useState(
     recipe.fecha_clase ? recipe.fecha_clase.split('T')[0] : ''
@@ -119,6 +121,12 @@ export function RecipeDetail({ recipe, onClose, isAdmin, user, despensa, paraHac
               <button onClick={handleSave} disabled={isSaving}
                 className="flex items-center gap-1.5 bg-yellow text-ink px-3 py-1.5 text-[13px] font-semibold border-[1.5px] border-ink shadow-brut hover:translate-x-[-1px] hover:translate-y-[-1px] hover:shadow-brut-lg transition-all disabled:opacity-60">
                 <Save size={14} /> {isSaving ? 'guardando…' : 'guardar'}
+              </button>
+            )}
+            {!isEditing && (
+              <button onClick={() => setCocinando(true)}
+                className="flex items-center gap-1.5 bg-yellow text-ink px-3 py-1.5 text-[13px] font-semibold border-[1.5px] border-ink hover:shadow-brut hover:translate-x-[-1px] hover:translate-y-[-1px] transition-all">
+                <CookingPot size={14} /> Cocinar
               </button>
             )}
             {recipe.pdf_url && (isAfan || isAdmin) && !isEditing && (
@@ -258,6 +266,7 @@ export function RecipeDetail({ recipe, onClose, isAdmin, user, despensa, paraHac
           />
         </div>
       </div>
+      {cocinando && <ModoCocina recipe={recipe} onClose={() => setCocinando(false)} />}
     </div>
   );
 }
