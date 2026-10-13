@@ -92,6 +92,37 @@ limpiar, y en `assets/` se van acumulando los ficheros con hash de cada
 build anterior (en agosto de 2026 había 26 sueltos desde mayo). `/MIR` deja
 siempre la carpeta igual que `dist/`, ni un fichero de más.
 
+**Opción D — automatizado desde un Mac**
+
+Con el recurso montado en Finder (*Ir → Conectar con el servidor →
+`smb://10.99.1.70/web`*), que aparece en `/Volumes/web`:
+
+```bash
+npm run deploy:mac
+```
+
+Hace lo mismo que la opción C con [scripts/deploy.sh](scripts/deploy.sh): compila,
+comprueba el `.env` embebido y espeja `dist/` contra `/Volumes/web/recetario` con
+`rsync --delete`. Para ver antes qué copiaría y qué borraría, sin tocar nada:
+
+```bash
+npm run deploy:mac -- --dry-run
+```
+
+`NAS_PATH=/otra/ruta npm run deploy:mac` cambia el destino si lo montas en otro
+sitio.
+
+### URL de producción
+
+La web se sirve en **<https://recetario.orballo.link/>**, con HTTPS. No es un
+detalle menor: el modo cocina usa la *Wake Lock API*, que solo existe en
+contextos seguros (HTTPS o `localhost`). Por la IP de la LAN en HTTP plano la
+pantalla se apagaría igual, sin ningún aviso.
+
+El build usa rutas absolutas (`/assets/...`), así que el sitio tiene que colgar
+de la **raíz** de su host o puerto. Servirlo desde una subcarpeta
+(`http://10.99.1.70/recetario/`) carga en blanco con dos 404.
+
 ### 3. Rutas: por qué no hace falta tocar Nginx
 
 La app enruta **por el hash** (`#/`, `#/nueva`, `#/receta/<id>`), y esa parte de
