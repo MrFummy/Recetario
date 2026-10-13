@@ -7,6 +7,8 @@ import { RecipeGrid } from './components/RecipeGrid';
 import { RecipeDetail } from './components/RecipeDetail';
 import { AddRecipeForm } from './components/AddRecipeForm';
 import { LoginModal } from './components/LoginModal';
+import { ReindexarBusqueda } from './components/ReindexarBusqueda';
+import { BusquedaSemantica } from './components/BusquedaSemantica';
 import { RecetaNoEncontrada, SoloAdmin } from './components/Avisos';
 import { SeccionDespensa } from './components/DespensaSection';
 import { SeccionListaCompra } from './components/ListaCompraSection';
@@ -14,6 +16,7 @@ import { useRecipes } from './hooks/useRecipes';
 import { useDespensa } from './hooks/useDespensa';
 import { useParaHacer } from './hooks/useParaHacer';
 import { useIngredientSearch } from './hooks/useIngredientSearch';
+import { useBusquedaSemantica } from './hooks/useBusquedaSemantica';
 import { useRuta, irA, reemplazarPor, volverAtras } from './hooks/useRuta';
 import { aHash, CATALOGO } from './lib/rutas';
 import { supabase } from './lib/supabase';
@@ -78,6 +81,7 @@ function App() {
   );
   const { searchQuery, setSearchQuery, filteredRecipes, matchCount } =
     useIngredientSearch(categoryFilteredRecipes);
+  const semantica = useBusquedaSemantica(recipes);
 
   // La ficha abierta sale de la URL y no de un estado aparte: así un enlace a
   // #/receta/… la abre igual que un clic, y las ediciones se reflejan solas
@@ -225,6 +229,8 @@ function App() {
               </p>
             </div>
 
+            <BusquedaSemantica busqueda={semantica} user={user} />
+
             <IngredientSearch
               searchQuery={searchQuery}
               setSearchQuery={setSearchQuery}
@@ -238,10 +244,12 @@ function App() {
             />
 
             <RecipeGrid
-              recipes={filteredRecipes}
+              recipes={semantica.resultado ?? filteredRecipes}
               onRecipeClick={(recipe) => irA({ vista: 'receta', id: recipe.id })}
               loading={loading}
             />
+
+            {isAdmin && <ReindexarBusqueda />}
           </div>
         )}
       </main>
