@@ -263,9 +263,9 @@ Dos detalles que no se ven en el código a primera vista:
   también la ficha de debajo.
 
 Verificado en el navegador de escritorio con datos reales (pasos, ingredientes,
-Esc, sin errores en consola). **No se ha probado en un móvil real**, que es el
-uso para el que se hizo: la pantalla encendida y el manejo con el pulgar están
-sin comprobar.
+Esc, sin errores en consola). En un móvil real solo se ha confirmado el **sonido
+de los temporizadores** (13 de octubre de 2026); la pantalla encendida y el manejo
+con el pulgar, que es el uso para el que se hizo, siguen sin confirmar.
 
 ### Temporizadores
 
@@ -296,8 +296,10 @@ para.
   perderse el del horno. No se detecta "unos minutos" ni "los que indique el
   envase": no hay número que cronometrar.
 - Probado en el navegador de escritorio (alarma, repetición, ±1 min, cancelar,
-  persistencia al cambiar de paso). **Sin probar en móvil**, y en iOS el sonido es
-  lo más delicado.
+  persistencia al cambiar de paso). **En un móvil real el sonido funciona**
+  (confirmado el 13 de octubre de 2026). Sin confirmar en móvil: la vibración (en
+  Safari de iPhone no existe `navigator.vibrate`) y que la pantalla siga encendida
+  mientras corre un temporizador.
 
 ## Búsqueda semántica
 
