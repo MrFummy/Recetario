@@ -4,12 +4,13 @@ import { buscarSemantico } from '../lib/busquedaSemantica';
 import { errorMessage } from '../lib/errors';
 
 /**
- * Búsqueda por significado ("algo ligero de pescado"). `resultado` es `null`
- * mientras no haya búsqueda activa: el catálogo se muestra entonces como
- * siempre, y cuando hay resultado sustituye a los filtros de la portada.
+ * Búsqueda por significado ("algo ligero de pescado"). El texto lo escribe el
+ * usuario en la barra única de la portada (la misma del filtro por ingredientes)
+ * y llega aquí al pulsar Enter o el botón. `resultado` es `null` mientras no haya
+ * búsqueda activa: el catálogo se muestra entonces como siempre, y cuando hay
+ * resultado sustituye a los filtros de la portada.
  */
 export function useBusquedaSemantica(recipes: Recipe[]) {
-  const [consulta, setConsulta] = useState('');
   const [ids, setIds] = useState<string[] | null>(null);
   const [cargando, setCargando] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -17,7 +18,7 @@ export function useBusquedaSemantica(recipes: Recipe[]) {
   // llega tarde y no debe pisar el estado actual.
   const ultima = useRef(0);
 
-  const buscar = async () => {
+  const buscar = async (consulta: string) => {
     const texto = consulta.trim();
     if (texto.length < 2) return;
     const esta = ++ultima.current;
@@ -35,7 +36,6 @@ export function useBusquedaSemantica(recipes: Recipe[]) {
 
   const limpiar = () => {
     ultima.current++;
-    setConsulta('');
     setIds(null);
     setError(null);
     setCargando(false);
@@ -48,7 +48,7 @@ export function useBusquedaSemantica(recipes: Recipe[]) {
     ? ids.flatMap((id) => porId.get(id) ?? [])
     : null;
 
-  return { consulta, setConsulta, buscar, limpiar, cargando, error, resultado };
+  return { buscar, limpiar, cargando, error, resultado };
 }
 
 export type BusquedaSemantica = ReturnType<typeof useBusquedaSemantica>;

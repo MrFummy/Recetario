@@ -8,7 +8,6 @@ import { RecipeDetail } from './components/RecipeDetail';
 import { AddRecipeForm } from './components/AddRecipeForm';
 import { LoginModal } from './components/LoginModal';
 import { ReindexarBusqueda } from './components/ReindexarBusqueda';
-import { BusquedaSemantica } from './components/BusquedaSemantica';
 import { RecetaNoEncontrada, SoloAdmin } from './components/Avisos';
 import { SeccionDespensa } from './components/DespensaSection';
 import { SeccionListaCompra } from './components/ListaCompraSection';
@@ -229,12 +228,12 @@ function App() {
               </p>
             </div>
 
-            <BusquedaSemantica busqueda={semantica} user={user} />
-
             <IngredientSearch
               searchQuery={searchQuery}
               setSearchQuery={setSearchQuery}
               matchCount={matchCount}
+              semantica={semantica}
+              user={user}
             />
 
             <FilterBar

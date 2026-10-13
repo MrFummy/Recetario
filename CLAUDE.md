@@ -270,10 +270,18 @@ los pasos.
 
 ## Búsqueda semántica
 
-**Hecha el 13 de octubre de 2026.** Una caja encima del buscador de ingredientes
-([BusquedaSemantica.tsx](src/components/BusquedaSemantica.tsx)) que acepta una
-frase libre —*"algo ligero de pescado para verano"*— y enseña las 12 recetas más
-parecidas, de más a menos. Solo con sesión iniciada.
+**Hecha el 13 de octubre de 2026.** Acepta una frase libre —*"algo ligero de
+pescado para verano"*— y enseña las 12 recetas más parecidas, de más a menos. Solo
+con sesión iniciada.
+
+**Es la misma barra que el filtro por ingredientes**
+([IngredientSearch.tsx](src/components/IngredientSearch.tsx)), no una caja aparte:
+mientras escribes filtra por ingredientes en vivo, como siempre; con Enter o el
+botón ✨ manda esa misma frase a la búsqueda por significado
+([useBusquedaSemantica.ts](src/hooks/useBusquedaSemantica.ts)). Volver a escribir
+la cancela y devuelve el filtro. Antes eran dos barras apiladas, y se unificó por
+estética. El botón queda deshabilitado sin sesión, con el motivo en la línea de
+ayuda de debajo.
 
 Funciona con embeddings: cada receta se convierte en un vector de 768 números
 (`gemini-embedding-001`) y la consulta en otro; las recetas cuyo vector queda más
@@ -316,14 +324,14 @@ Cosas que no son obvias:
 - **Límite de 20 búsquedas por hora y usuario**, porque el registro está abierto y
   cada búsqueda gasta cuota de Gemini (clave que puede compartirse con n8n).
   Lo aplica `registrar_busqueda` ([la migración](supabase/migrations/20261013_limite_busquedas.sql))
-  antes de indexar o llamar a Gemini, y responde 429 con un mensaje que la caja
+  antes de indexar o llamar a Gemini, y responde 429 con un mensaje que la barra
   de búsqueda enseña tal cual. Los contadores viven en `busquedas_uso`, sin
   policies. Para cambiar el tope, las constantes están al principio de
   `buscar-recetas`. No sustituye a un presupuesto con alertas en Google Cloud.
 - Si se cambia el modelo o las 768 dimensiones, hay que reindexar todo (borrar
   `recetas_embeddings` y volver a pulsar el botón).
 - Con una búsqueda por frase activa, los filtros de categoría e ingredientes se
-  ignoran; la X de la caja devuelve el catálogo normal.
+  ignoran; escribir de nuevo o la X de la barra devuelven el catálogo normal.
 - Sin índice vectorial: con 61 recetas un recorrido completo es instantáneo y un
   HNSW perdería precisión. Se añadiría si el catálogo llegara a miles.
 
