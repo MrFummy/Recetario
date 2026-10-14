@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+  <!-- Avatar del bot de Telegram. Mismo icono que la cabecera de la web (gorro de
+       cocinero, cuadrado oscuro girado con sombra amarilla). Telegram lo recorta en
+       círculo, por eso el logo queda dentro de un margen de seguridad.
+       Colores de ink, paper y yellow en src/index.css. Para regenerar el PNG:
+         qlmanage -t -s 640 -o /ruta/salida docs/avatar-bot/avatar-bot-telegram.svg -->
+  <rect width="640" height="640" fill="#f6f1e4"/>
+  <g transform="rotate(-4 320 320)">
+    <rect x="152" y="152" width="360" height="360" rx="64" fill="#ffd45a"/>
+    <rect x="120" y="120" width="360" height="360" rx="64" fill="#1f2536"/>
+    <g transform="translate(180 180) scale(10)" fill="none" stroke="#f6f1e4" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M17 21a1 1 0 0 0 1-1v-5.35c0-.457.316-.844.727-1.041a4 4 0 0 0-2.134-7.589c-.26 0-.52.041-.767.116L16 6a5 5 0 0 0-10 0l.174.826c-.247-.075-.508-.116-.767-.116a4 4 0 0 0-2.134 7.588c.411.198.727.585.727 1.041V20a1 1 0 0 0 1 1Z"/>
+      <path d="M6 17h12"/>
+    </g>
+  </g>
+</svg>
