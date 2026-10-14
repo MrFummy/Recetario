@@ -13,9 +13,10 @@ Nombre de la sección: **pendiente** (ideas: *El Laboratorio*, *En el horno*,
 
 Mirado en n8n el 14 de octubre:
 
-- **«Bot recetas»** (activo) ya tiene un disparador de DMs de Instagram
-  (`instagramTrigger`, nodo de la comunidad) y **nada más**: 0 ejecuciones, es
-  decir, nunca ha recibido un mensaje. Es el punto de partida del experimento.
+- **«Bot recetas»** tiene un disparador de DMs de Instagram (`instagramTrigger`,
+  nodo de la comunidad) y **nada más**. Estaba activo con 0 ejecuciones; **desactivado
+  el 14 de octubre** al aparcar la entrada por Instagram (ver más abajo). Aceptaba
+  eventos sin verificar la firma.
 - **«Recetas con Frontend»**, el flujo de alta, recibe un **fichero** (`receta_pdf`
   o `receta_jpg`) por webhook, se lo pasa a Gemini (`gemini-2.5-flash` por la API
   de AI Studio, con el fichero en `inlineData`) y de ahí cuelga todo: foto,
@@ -32,10 +33,11 @@ Mirado en n8n el 14 de octubre:
 
 1. **Tabla propia `candidatas`**, no filas de `recetas` con una marca. `recetas`
    es de lectura pública y alimenta el PDF, Notion, los embeddings y el contador.
-2. **Dos puertas de entrada, un solo flujo**: Telegram e Instagram producen lo
-   mismo `{fuente_tipo, url, texto, medio}`, y desde ahí todo es común.
-3. **Telegram primero**, con YouTube. Instagram entra cuando el experimento diga
-   por qué vía.
+2. **Un solo flujo con adaptadores de entrada**: cada puerta produce
+   `{fuente_tipo, url, texto, medio}` y desde ahí todo es común. Así, si más
+   adelante se retoma Instagram, es un adaptador más.
+3. **Telegram primero**, con YouTube y enlaces de reels (solo el pie). **La entrada
+   por DM de Instagram queda aparcada** (14 oct): ver «Instagram, aparcada».
 4. **Estados**: `por_probar` → `probada` → se incorpora o se borra. Descartar =
    borrar. *(Por confirmar: si se quieren guardar las descartadas para no volver
    a añadirlas.)*
@@ -54,8 +56,8 @@ Decide qué camino usa la entrada de reels. Dos mitades independientes:
   candidata de vídeo como «revisa las cantidades» y diseñar la edición con eso en
   mente.
 
-**0b. Qué llega por Instagram** (requiere la cuenta profesional y la app de Meta,
-que son del usuario):
+**0b. Qué llega por Instagram** — *aparcada, ver «Instagram, aparcada»*
+(requiere la cuenta profesional y la app de Meta, que son del usuario):
 - Compartir un reel al DM de la cuenta y mirar la ejecución de «Bot recetas».
 - Preguntas: ¿trae la URL del vídeo (¿accesible desde n8n?, ¿cuánto dura?)? ¿trae
   el pie del post? ¿solo el enlace?
@@ -116,7 +118,33 @@ Reel de `chef.clems` («Duck Breast and Peach Gastrique»), solo con el enlace.
   pasos exigen el archivo del vídeo (vías 1–3 de la fase 0b). Merece la pena dejar
   que la candidata nazca así y se complete después. Cuando el pie no trae receta
   (muchos reels la ponen solo en el vídeo), saldrá casi vacía.
-- Falta 0b (qué trae el DM de Instagram) y el reel como archivo.
+- Falta el reel como archivo de vídeo. 0b se aparcó (ver abajo).
+
+### Instagram, aparcada (14 oct 2026)
+
+Se intentó la vía del DM compartido a una cuenta profesional, pero **nunca llegó un
+mensaje real a n8n**; solo los de prueba. Lo aprendido, por si se retoma:
+
+- **Lo que sí funciona**: el webhook de n8n responde al handshake de Meta (la URL
+  correcta es `…/webhook/<webhookId>/instagram`, no la que muestra el nodo por
+  defecto) y el botón *Probar* de Meta llega.
+- **Lo que bloquea los mensajes reales**, por orden en que se fueron descubriendo:
+  1. La cuenta **receptora** necesita también el rol de *probador de Instagram*
+     (sin él, «Rol de desarrollador insuficiente» al generar el token); y la emisora.
+  2. La receptora debe tener activado *Permitir acceso a los mensajes* (ajustes de
+     Instagram → Herramientas conectadas).
+  3. Hay que **agregarla en «Generar tokens de acceso»** y dejar activada su
+     *suscripción al webhook*. *Probar* funciona aunque esto esté apagado.
+  4. **La app debe estar publicada (modo En vivo)** para recibir webhooks reales;
+     el panel lo avisa en el paso 3. Eso exige una **URL de política de privacidad**
+     y una categoría, y puede que más trámite. Es donde se paró.
+- **Sigue sin saberse** qué trae el mensaje de un reel compartido (¿URL del vídeo?,
+  ¿pie?). Era el objetivo del experimento.
+- Si se retoma: poner el secreto de la app en la credencial `instagramWebhookApi` y
+  desactivar `skipSignatureVerification` en el disparador antes de usarlo, y servir
+  una página de privacidad (se hizo una en `public/privacidad.html` y se revirtió).
+- **Camino sin Instagram**: Telegram + YouTube + enlaces de reels que solo leen el
+  pie. Para los pasos de un reel concreto, mandar el vídeo como archivo por Telegram.
 
 ## Fase 1 — base de datos (migración)
 
@@ -191,11 +219,13 @@ añadir una **segunda entrada**:
 - Los nodos `Verificar sesion (…)` no llevan credencial de Supabase (ver CLAUDE.md).
 - Receta nueva ⇒ indexar embeddings (ya lo hace `buscar-recetas` en la primera búsqueda).
 
-## Fase 5 — entrada de reels
+## Fase 5 — entrada de reels (aparcada)
 
-Según el resultado de la fase 0b. Se añade como segundo adaptador de entrada al
-flujo de la fase 2, sin cambiar el resto. Verificar la firma `X-Hub-Signature-256`
-de cada petición y aceptar solo el usuario de Instagram del admin.
+Sin la vía de Instagram, los reels entran por Telegram: el enlace da una candidata
+parcial (pie del post) y, si hace falta, el vídeo se manda como archivo. Si se
+retoma el DM de Instagram, sería un segundo adaptador de entrada del flujo de la
+fase 2. Verificar la firma `X-Hub-Signature-256` de cada petición y aceptar solo el
+usuario de Instagram del admin.
 
 ## Después, si apetece
 
@@ -208,5 +238,5 @@ compra.
 - Nombre de la sección.
 - ¿Guardar las descartadas?
 - Crear el bot de Telegram (BotFather) y obtener el `chat_id` propio.
-- La cuenta profesional de Instagram y la app de Meta (fase 0b).
-- ¿n8n está autoalojado y permite ejecutar `yt-dlp`? (solo si se llega a la vía 2).
+- Retomar o no Instagram (publicar la app de Meta, política de privacidad).
+- n8n es Cloud: `yt-dlp` desde n8n probablemente no es posible.
