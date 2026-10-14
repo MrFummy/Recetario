@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import type { User } from '@supabase/supabase-js';
-import { ChefHat, PlusCircle, LogIn, LogOut, ShoppingBasket, ShoppingCart } from 'lucide-react';
+import { ChefHat, LogIn, LogOut } from 'lucide-react';
 import { FilterBar } from './components/FilterBar';
 import { IngredientSearch } from './components/IngredientSearch';
 import { RecipeGrid } from './components/RecipeGrid';
@@ -11,6 +11,8 @@ import { ReindexarBusqueda } from './components/ReindexarBusqueda';
 import { RecetaNoEncontrada, SoloAdmin } from './components/Avisos';
 import { SeccionDespensa } from './components/DespensaSection';
 import { SeccionListaCompra } from './components/ListaCompraSection';
+import { SeccionLaboratorio } from './components/LaboratorioSection';
+import { NavPrincipal } from './components/NavPrincipal';
 import { useRecipes } from './hooks/useRecipes';
 import { useDespensa } from './hooks/useDespensa';
 import { useParaHacer } from './hooks/useParaHacer';
@@ -94,8 +96,9 @@ function App() {
   const enNueva = ruta.vista === 'nueva';
   const enDespensa = ruta.vista === 'despensa';
   const enListaCompra = ruta.vista === 'lista-compra';
+  const enLaboratorio = ruta.vista === 'laboratorio';
   // El catálogo queda detrás de la ficha abierta, como hasta ahora.
-  const enCatalogo = !enNueva && !enDespensa && !enListaCompra;
+  const enCatalogo = !enNueva && !enDespensa && !enListaCompra && !enLaboratorio;
 
   return (
     <div className="min-h-screen pb-20">
@@ -114,54 +117,15 @@ function App() {
           </a>
 
           <div className="flex items-center gap-3">
-            <nav className="flex items-center gap-1">
-              <a
-                href={aHash(CATALOGO)}
-                className={`px-4 py-2 text-sm font-semibold rounded-md transition-colors ${enCatalogo
-                  ? 'bg-ink text-paper'
-                  : 'text-ink hover:bg-ink/5'
-                  }`}
-              >
-                Catálogo
-              </a>
-              <a
-                href={aHash({ vista: 'despensa' })}
-                className={`px-4 py-2 text-sm font-semibold rounded-md transition-colors flex items-center gap-1.5 ${enDespensa
-                  ? 'bg-ink text-paper'
-                  : 'text-ink hover:bg-ink/5'
-                  }`}
-              >
-                <ShoppingBasket size={16} />
-                <span className="hidden sm:inline">Despensa</span>
-                {despensa.total > 0 && (
-                  <span className="font-mono text-[10px] px-1.5 py-0.5 rounded-sm bg-yellow text-ink">
-                    {despensa.total}
-                  </span>
-                )}
-              </a>
-              <a
-                href={aHash({ vista: 'lista-compra' })}
-                className={`px-4 py-2 text-sm font-semibold rounded-md transition-colors flex items-center gap-1.5 ${enListaCompra
-                  ? 'bg-ink text-paper'
-                  : 'text-ink hover:bg-ink/5'
-                  }`}
-              >
-                <ShoppingCart size={16} />
-                <span className="hidden sm:inline">Compra</span>
-              </a>
-              {isAdmin && (
-                <a
-                  href={aHash({ vista: 'nueva' })}
-                  className={`px-4 py-2 text-sm font-bold rounded-md transition-transform flex items-center gap-1.5 ${enNueva
-                    ? 'bg-yellow text-ink -rotate-1 shadow-brut'
-                    : 'text-ink hover:bg-ink/5'
-                    }`}
-                >
-                  <PlusCircle size={16} />
-                  <span className="hidden sm:inline">Nueva</span>
-                </a>
-              )}
-            </nav>
+            <NavPrincipal
+              enCatalogo={enCatalogo}
+              enDespensa={enDespensa}
+              enListaCompra={enListaCompra}
+              enLaboratorio={enLaboratorio}
+              enNueva={enNueva}
+              totalDespensa={despensa.total}
+              isAdmin={isAdmin}
+            />
 
             {user ? (
               <div className="flex items-center gap-2">
@@ -211,6 +175,10 @@ function App() {
           <SeccionDespensa recipes={recipes} despensa={despensa} user={user} />
         ) : enListaCompra ? (
           <SeccionListaCompra recipes={recipes} despensa={despensa} paraHacer={paraHacer} />
+        ) : enLaboratorio ? (
+          <SoloAdmin sesionCargada={sesionCargada} isAdmin={isAdmin} accion="entrar en El Laboratorio">
+            <SeccionLaboratorio />
+          </SoloAdmin>
         ) : (
           <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
             {/* ── Hero ───────────────────────────────────── */}

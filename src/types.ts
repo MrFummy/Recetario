@@ -41,3 +41,29 @@ export type Category =
   | 'Arroces'
   | 'Pastas'
   | 'Postres';
+
+export type FuenteTipo = 'youtube' | 'instagram' | 'web' | 'texto';
+export type EstadoCandidata = 'por_probar' | 'probada';
+
+/**
+ * Una receta que se quiere probar antes de decidir si entra al recetario (tabla
+ * `candidatas`, «El Laboratorio»). Mismo formato JSONB que `Recipe`.
+ */
+export interface Candidata {
+  id: string;
+  created_at: string;
+  titulo: string;
+  categoria: string | null;
+  ingredientes: Json;
+  pasos: Json;
+  notas: Json | null;
+  tiempo: string | null;
+  porciones: string | null;
+  dificultad: string | null;
+  fuente_url: string | null;
+  fuente_tipo: FuenteTipo;
+  estado: EstadoCandidata;
+  foto_url: string | null;
+  /** Salió de un vídeo, donde las cantidades son menos fiables. */
+  de_video: boolean;
+}

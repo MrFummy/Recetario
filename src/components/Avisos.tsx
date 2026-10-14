@@ -11,10 +11,12 @@ import { aHash, CATALOGO } from '../lib/rutas';
  * durante el instante que tarda `getSession`.
  */
 export function SoloAdmin({
-  sesionCargada, isAdmin, children,
+  sesionCargada, isAdmin, accion = 'añadir recetas', children,
 }: {
   sesionCargada: boolean;
   isAdmin: boolean;
+  /** Lo que se intenta hacer, para el mensaje de «acceso denegado». */
+  accion?: string;
   children: ReactNode;
 }) {
   if (!sesionCargada) {
@@ -30,7 +32,7 @@ export function SoloAdmin({
     return (
       <div className="text-center py-20 animate-in fade-in zoom-in-95 duration-300">
         <h2 className="text-2xl font-bold text-ink mb-2">Acceso denegado</h2>
-        <p className="text-ink-soft">No tienes permisos para añadir recetas.</p>
+        <p className="text-ink-soft">No tienes permisos para {accion}.</p>
         <a
           href={aHash(CATALOGO)}
           className="inline-block mt-6 px-6 py-2 bg-ink text-paper rounded-md hover:bg-ink-soft transition-colors"

@@ -242,6 +242,31 @@ datos, `refrescarRating` relee también `sin_hacer`. La carga inicial marcó las
 recetas sin foto. Ese mismo día se vaciaron las 3 valoraciones antiguas para
 empezar de cero con las realizaciones.
 
+## El Laboratorio (recetas candidatas)
+
+**Hecho el 14 de octubre de 2026**; el plan y lo aprendido están en
+[docs/candidatas.md](docs/candidatas.md). Recetas que se quieren *probar* antes de decidir
+si entran al recetario. Entran por un bot de Telegram (flujo de n8n «El Laboratorio -
+entrada por Telegram»: YouTube, reel de Instagram —solo el pie—, web o texto pegado, todo
+convertido con Gemini) y se guardan en la tabla `candidatas`, **aparte de `recetas`**: esta
+es de lectura pública y alimenta PDF, Notion y embeddings. Solo el admin las lee y escribe
+(RLS con `es_admin()`); n8n escribe con `service_role`.
+
+La web las enseña en `#/laboratorio` ([LaboratorioSection.tsx](src/components/LaboratorioSection.tsx)),
+solo con sesión de admin. `useCandidatas` vive dentro de la sección, no en `App`: nadie más
+usa esos datos. Se pueden ver, corregir (título, categoría, notas), marcar como probadas y
+borrar —borrar también quita la foto de `fotos-candidatas`—. **Falta pasarlas al
+recetario** (Fase 4): el flujo de alta de n8n espera un fichero, no datos ya estructurados,
+y necesita una segunda entrada.
+
+- **Descartar es borrar**: no se guardan descartadas.
+- Una candidata puede nacer **parcial**: un reel solo da el pie del post, sin pasos.
+- `de_video` marca las que salieron de un vídeo, donde las cantidades son menos fiables.
+- `crypto.randomUUID` **no existe** en el nodo Code de n8n Cloud: el id se genera con un
+  uuid v4 propio, o la inserción falla con `invalid input syntax for type uuid`.
+- La entrada por DM de Instagram quedó **aparcada** (la app de Meta tiene que estar en
+  vivo para recibir webhooks reales); detalles en el plan.
+
 ## Tiempo, porciones y dificultad
 
 **Hecho el 10 de octubre de 2026.** Vertex ya los extraía de cada receta,

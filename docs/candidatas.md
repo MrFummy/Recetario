@@ -219,7 +219,7 @@ candidatas → responder por Telegram`
 - Webs: leer primero los datos `schema.org/Recipe` del HTML; si no están, el texto
   limpio. Es secundario porque el grueso será vídeo.
 
-## Fase 3 — sección web
+## Fase 3 — sección web — HECHA (versión sencilla, 14 oct 2026)
 
 - Ruta `#/<nombre>` en `rutas.ts` (**las dos funciones**, como dice CLAUDE.md), enlace
   en la cabecera solo para el admin, componente propio y un hook `useCandidatas`
