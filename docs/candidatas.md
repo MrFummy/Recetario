@@ -95,7 +95,28 @@ hay que convertirlo a `watch?v=<id>`).
   candidatas debe copiar el prompt **ya corregido**.
 - **n8n es Cloud** (`n8n.emtel.cloud`): no es autoalojado, así que `yt-dlp` desde
   el propio n8n probablemente no es una opción para los reels.
-- Falta el reel (0a) y todo 0b.
+### Resultado de 0a con un reel público (14 oct 2026)
+
+Reel de `chef.clems` («Duck Breast and Peach Gastrique»), solo con el enlace.
+
+- **Enlace directo a Gemini: no sirve.** `fileData.fileUri` con la URL del reel
+  devuelve `400 Unsupported MIME type: text/html`. Gemini solo entiende vídeo por
+  URL en YouTube.
+- **La página pública sí da el pie del post y la portada, sin sesión.** Un `curl`
+  normal recibe `og:title`, `og:description` (el pie, hasta ~430 caracteres en este
+  caso) y `og:image` (miniatura de 640 px en `cdninstagram.com`). **No** hay
+  `og:video`, `video_versions`, `.mp4` ni JSON-LD: la URL del vídeo no sale de aquí.
+- **Pasar solo el pie a Gemini** (1 034 tokens de entrada, 11 s) da título,
+  categoría e ingredientes con cantidades —las del pie—, pero **`pasos: []`**,
+  `tiempo` y `porciones` vacíos: la preparación va en el vídeo. Además deja los
+  nombres en inglés (`Duck breast`, `Peaches`); el `base` sí lo traduce. El prompt
+  de candidatas debe pedir expresamente **español**.
+- **Consecuencia para el diseño**: un enlace de Instagram da una candidata *parcial*
+  (título + ingredientes + foto + enlace) de forma fiable y barata, sin vídeo. Los
+  pasos exigen el archivo del vídeo (vías 1–3 de la fase 0b). Merece la pena dejar
+  que la candidata nazca así y se complete después. Cuando el pie no trae receta
+  (muchos reels la ponen solo en el vídeo), saldrá casi vacía.
+- Falta 0b (qué trae el DM de Instagram) y el reel como archivo.
 
 ## Fase 1 — base de datos (migración)
 
