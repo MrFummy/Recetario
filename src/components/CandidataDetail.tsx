@@ -170,7 +170,7 @@ export function CandidataDetail({ candidata, onClose, onActualizar, onBorrar }: 
               {ingredientes.map((i, idx) => i.esGrupo ? (
                 <li key={i.id ?? `g-${idx}`} className="pt-4 pb-1 font-mono text-[11px] uppercase tracking-wider text-accent">{i.name}</li>
               ) : (
-                <li key={i.id ?? idx} className="grid grid-cols-[140px_1fr] gap-3 py-1.5 text-[14.5px] leading-snug border-b border-dashed border-ink/15 last:border-0">
+                <li key={i.id ?? idx} className="grid grid-cols-[150px_1fr] sm:grid-cols-[220px_1fr] gap-3 py-1.5 text-[14.5px] leading-snug border-b border-dashed border-ink/15 last:border-0">
                   <span className="font-mono text-ink-soft">{i.qty || '—'}</span>
                   <span>{i.name}</span>
                 </li>
