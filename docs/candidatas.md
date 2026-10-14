@@ -225,8 +225,12 @@ del flujo de El Laboratorio; el prompt del alta normal no se toca (ahí los PDFs
 solo si la fuente lo dice expresamente** (si no da cantidad: `cantidad` vacía, `valor` y
 `unidad` a null), y **`dificultad` solo si consta** (si no, vacía). Motivo: el modelo ponía
 `C/S` en el rigatoni y en la nata de un vídeo que no daba cantidad, y suponía «Media» en un
-reel cuyo pie no la decía. **Sin verificar todavía**: hay que reenviar una fuente ya probada
-(borrando antes su candidata, o saltará «Ya la tenías») y comparar.
+reel cuyo pie no la decía. **Verificado reenviando el Short del rigatoni**: `dificultad` queda vacía y los ingredientes
+sin cantidad en el vídeo (rigatoni, nata, agua, butifarra) salen con `cantidad` vacía y
+`unidad` null en vez de `C/S`; «un poquito» de chile ya no lleva «al gusto». Siguen con `C/S`
+los condimentos (aceite, sal, pimienta, parmesano), que no se puede comprobar sin ver el
+vídeo si lo dice expresamente. El modelo no es determinista aun a temperatura 0,1: salió
+con 15 ingredientes frente a 16 la vez anterior (omitió «agua de cocción de la pasta»).
 
 ## Fase 3 — sección web — HECHA (versión sencilla, 14 oct 2026)
 
