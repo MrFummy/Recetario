@@ -71,10 +71,21 @@ export function useRecipes(user?: User | null) {
    * hay ninguna con puntuación.
    */
   const refrescarRating = async (id: string) => {
-    const { data } = await supabase.from('recetas').select('rating').eq('id', id).single();
+    // `sin_hacer` va en la misma lectura: otro trigger la apaga al insertar una
+    // realización, y sin releerla la etiqueta seguiría pintada.
+    const { data } = await supabase.from('recetas').select('rating, sin_hacer').eq('id', id).single();
     if (data) {
-      setRecipes(prev => prev.map(r => r.id === id ? { ...r, rating: data.rating } : r));
+      setRecipes(prev => prev.map(r => r.id === id ? { ...r, rating: data.rating, sin_hacer: data.sin_hacer } : r));
     }
+  };
+
+  const updateSinHacer = async (id: string, sinHacer: boolean) => {
+    const { error } = await supabase
+      .from('recetas')
+      .update({ sin_hacer: sinHacer })
+      .eq('id', id);
+    if (error) throw error;
+    setRecipes(prev => prev.map(r => r.id === id ? { ...r, sin_hacer: sinHacer } : r));
   };
 
   /**
@@ -189,6 +200,7 @@ export function useRecipes(user?: User | null) {
     refetch,
     updateRecipeNotes,
     refrescarRating,
+    updateSinHacer,
     updateRecipePhoto,
     removeRecipePhoto,
     updateRecipeDate,

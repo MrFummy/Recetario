@@ -15,6 +15,8 @@ export interface Recipe {
   pasos: Json; // JSONB
   notas: Json; // JSONB
   rating?: number;
+  /** Marca manual del admin; la quita un trigger al registrar una realización. */
+  sin_hacer?: boolean;
   /**
    * Vertex ya las extrae al dar de alta, pero hasta el 10 de octubre de 2026
    * se descartaban: `null` en recetas anteriores a esa fecha.

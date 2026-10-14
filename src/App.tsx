@@ -30,6 +30,7 @@ const CATEGORIES: Category[] = [
 function App() {
   const ruta = useRuta();
   const [activeCategory, setActiveCategory] = useState<Category>('Todas');
+  const [soloSinHacer, setSoloSinHacer] = useState(false);
 
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [authError, setAuthError] = useState<string | null>(null);
@@ -44,7 +45,7 @@ function App() {
 
   const {
     recipes, loading, error, refetch,
-    updateRecipeNotes, updateRecipePhoto, removeRecipePhoto, refrescarRating, updateRecipeDate,
+    updateRecipeNotes, updateRecipePhoto, removeRecipePhoto, refrescarRating, updateSinHacer, updateRecipeDate,
     deleteRecipe, shareRecipeByEmail,
   } = useRecipes(user);
 
@@ -76,8 +77,10 @@ function App() {
   };
 
   const categoryFilteredRecipes = recipes.filter(
-    (r) => activeCategory === 'Todas' || r.categoria === activeCategory
+    (r) => (activeCategory === 'Todas' || r.categoria === activeCategory)
+      && (!soloSinHacer || r.sin_hacer)
   );
+  const totalSinHacer = recipes.filter((r) => r.sin_hacer).length;
   const { searchQuery, setSearchQuery, filteredRecipes, matchCount } =
     useIngredientSearch(categoryFilteredRecipes);
   const semantica = useBusquedaSemantica(recipes);
@@ -240,6 +243,9 @@ function App() {
               categories={CATEGORIES}
               activeCategory={activeCategory}
               onSelectCategory={setActiveCategory}
+              soloSinHacer={soloSinHacer}
+              onToggleSinHacer={() => setSoloSinHacer((v) => !v)}
+              totalSinHacer={totalSinHacer}
             />
 
             <RecipeGrid
@@ -266,6 +272,7 @@ function App() {
           onUpdateDate={(fecha) => updateRecipeDate(recetaAbierta.id, fecha)}
           onUpdatePhoto={(file) => updateRecipePhoto(recetaAbierta.id, file, recetaAbierta.foto_url)}
           onRemovePhoto={() => removeRecipePhoto(recetaAbierta.id, recetaAbierta.foto_url)}
+          onToggleSinHacer={() => updateSinHacer(recetaAbierta.id, !recetaAbierta.sin_hacer)}
           onRatingChanged={() => void refrescarRating(recetaAbierta.id)}
           onDelete={async (recipe) => {
             await deleteRecipe(recipe);

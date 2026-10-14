@@ -42,6 +42,12 @@ export function RecipeCard({ recipe, onClick }: RecipeCardProps) {
         <span className="absolute top-3 right-3 z-[1] bg-white/95 border border-ink px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider text-ink">
           {recipe.categoria}
         </span>
+        {/* Sin hacer */}
+        {recipe.sin_hacer && (
+          <span className="absolute top-3 left-3 z-[1] -rotate-3 bg-yellow border border-ink px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider text-ink shadow-sm">
+            sin hacer
+          </span>
+        )}
         {/* Foto */}
         <div className="w-full aspect-[4/3] overflow-hidden bg-ink/10">
           <img

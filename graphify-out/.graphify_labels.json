@@ -3,7 +3,7 @@
   "1": "compilerOptions",
   "2": "devDependencies",
   "3": "compilerOptions",
-  "4": "useBusquedaSemantica.ts",
+  "4": "ModoCocina.tsx",
   "5": "Recipe",
   "6": "package.json",
   "7": "indexar-recetas/index.ts",
@@ -23,9 +23,14 @@
   "21": "20260808_revocar_execute_funciones.sql",
   "22": "20260823_estructurar_ingredientes.sql",
   "23": "20261010_partir_base_combinados.sql",
-  "24": "deploy.ps1",
+  "24": "recipeContent.ts",
   "25": "public.recetas",
   "26": "20261011_para_hacer_y_realizaciones.sql",
   "27": "20261011_rating_con_decimales.sql",
-  "28": "public.recetas"
+  "28": "public.recetas",
+  "29": "public.busquedas_uso",
+  "30": "20261014_sin_hacer.sql",
+  "31": "deploy.sh script",
+  "32": "deploy.ps1",
+  "33": "public.recetas"
 }

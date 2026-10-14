@@ -4,9 +4,12 @@ interface FilterBarProps {
   categories: Category[];
   activeCategory: Category;
   onSelectCategory: (category: Category) => void;
+  soloSinHacer: boolean;
+  onToggleSinHacer: () => void;
+  totalSinHacer: number;
 }
 
-export function FilterBar({ categories, activeCategory, onSelectCategory }: FilterBarProps) {
+export function FilterBar({ categories, activeCategory, onSelectCategory, soloSinHacer, onToggleSinHacer, totalSinHacer }: FilterBarProps) {
   return (
     <div className="flex items-center gap-2 mb-8 overflow-x-auto no-scrollbar py-1">
       <span className="font-script text-xl text-ink shrink-0 mr-1">filtrar:</span>
@@ -28,6 +31,21 @@ export function FilterBar({ categories, activeCategory, onSelectCategory }: Filt
           </button>
         );
       })}
+      {totalSinHacer > 0 && (
+        <button
+          onClick={onToggleSinHacer}
+          aria-pressed={soloSinHacer}
+          className={`
+            whitespace-nowrap px-3.5 py-1.5 rounded-full text-[13px] font-semibold transition-all duration-200 border-[1.5px] ml-2
+            ${soloSinHacer
+              ? 'bg-yellow text-ink border-ink rotate-[1.5deg] shadow-brut'
+              : 'bg-transparent text-ink border-dashed border-ink hover:bg-yellow/40'
+            }
+          `}
+        >
+          Sin hacer <span className="font-mono text-[11px] opacity-70">{totalSinHacer}</span>
+        </button>
+      )}
     </div>
   );
 }

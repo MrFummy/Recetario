@@ -4,6 +4,19 @@
   "graph": {},
   "nodes": [
     {
+      "id": "src_components_filterbar_filterbarprops",
+      "label": "FilterBarProps",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "filterbarprops",
+      "source_file": "src/components/FilterBar.tsx",
+      "source_location": "L3"
+    },
+    {
       "id": "src_components_ingredientsearch_ingredientsearchprops",
       "label": "IngredientSearchProps",
       "_callable": true,
@@ -14,7 +27,33 @@
       "file_type": "code",
       "norm_label": "ingredientsearchprops",
       "source_file": "src/components/IngredientSearch.tsx",
-      "source_location": "L3"
+      "source_location": "L5"
+    },
+    {
+      "id": "src_hooks_usebusquedasemantica_busquedasemantica",
+      "label": "BusquedaSemantica",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "busquedasemantica",
+      "source_file": "src/hooks/useBusquedaSemantica.ts",
+      "source_location": "L54"
+    },
+    {
+      "id": "src_lib_listacompra_itemlistacompra",
+      "label": "ItemListaCompra",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "itemlistacompra",
+      "source_file": "src/lib/listaCompra.ts",
+      "source_location": "L4"
     },
     {
       "id": "src_lib_rutas_ruta",
@@ -30,43 +69,121 @@
       "source_location": "L14"
     },
     {
-      "id": "src_components_busquedasemantica_busquedasemanticaprops",
-      "label": "BusquedaSemanticaProps",
+      "id": "src_types_category",
+      "label": "Category",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 4,
-      "community_name": "useBusquedaSemantica.ts",
+      "community": 20,
+      "community_name": "App.tsx",
       "file_type": "code",
-      "norm_label": "busquedasemanticaprops",
-      "source_file": "src/components/BusquedaSemantica.tsx",
-      "source_location": "L5"
+      "norm_label": "category",
+      "source_file": "src/types.ts",
+      "source_location": "L34"
     },
     {
-      "id": "src_hooks_usebusquedasemantica_busquedasemantica",
-      "label": "BusquedaSemantica",
+      "id": "src_components_recipecontent_ingredientslistprops",
+      "label": "IngredientsListProps",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 4,
-      "community_name": "useBusquedaSemantica.ts",
+      "community": 24,
+      "community_name": "recipeContent.ts",
       "file_type": "code",
-      "norm_label": "busquedasemantica",
-      "source_file": "src/hooks/useBusquedaSemantica.ts",
-      "source_location": "L54"
+      "norm_label": "ingredientslistprops",
+      "source_file": "src/components/RecipeContent.tsx",
+      "source_location": "L8"
     },
     {
-      "id": "src_lib_busquedasemantica_resultadoindexacion",
-      "label": "ResultadoIndexacion",
+      "id": "src_lib_recipecontent_ingredient",
+      "label": "Ingredient",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 4,
-      "community_name": "useBusquedaSemantica.ts",
+      "community": 24,
+      "community_name": "recipeContent.ts",
       "file_type": "code",
-      "norm_label": "resultadoindexacion",
-      "source_file": "src/lib/busquedaSemantica.ts",
+      "norm_label": "ingredient",
+      "source_file": "src/lib/recipeContent.ts",
       "source_location": "L3"
+    },
+    {
+      "id": "src_types_json",
+      "label": "Json",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 24,
+      "community_name": "recipeContent.ts",
+      "file_type": "code",
+      "norm_label": "json",
+      "source_file": "src/types.ts",
+      "source_location": "L2"
+    },
+    {
+      "id": "src_components_modococina_modococinaprops",
+      "label": "ModoCocinaProps",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "ModoCocina.tsx",
+      "file_type": "code",
+      "norm_label": "modococinaprops",
+      "source_file": "src/components/ModoCocina.tsx",
+      "source_location": "L10"
+    },
+    {
+      "id": "src_components_pasocontiempos_pasocontiemposprops",
+      "label": "PasoConTiemposProps",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "ModoCocina.tsx",
+      "file_type": "code",
+      "norm_label": "pasocontiemposprops",
+      "source_file": "src/components/PasoConTiempos.tsx",
+      "source_location": "L4"
+    },
+    {
+      "id": "src_hooks_usetemporizadores_temporizador",
+      "label": "Temporizador",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "ModoCocina.tsx",
+      "file_type": "code",
+      "norm_label": "temporizador",
+      "source_file": "src/hooks/useTemporizadores.ts",
+      "source_location": "L3"
+    },
+    {
+      "id": "src_hooks_usetemporizadores_temporizadores",
+      "label": "Temporizadores",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "ModoCocina.tsx",
+      "file_type": "code",
+      "norm_label": "temporizadores",
+      "source_file": "src/hooks/useTemporizadores.ts",
+      "source_location": "L97"
+    },
+    {
+      "id": "src_lib_tiempos_fragmento",
+      "label": "Fragmento",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "ModoCocina.tsx",
+      "file_type": "code",
+      "norm_label": "fragmento",
+      "source_file": "src/lib/tiempos.ts",
+      "source_location": "L9"
     },
     {
       "id": "src_components_anadiringrediente_props",
@@ -95,19 +212,6 @@
       "source_location": "L12"
     },
     {
-      "id": "src_components_filterbar_filterbarprops",
-      "label": "FilterBarProps",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "Recipe",
-      "file_type": "code",
-      "norm_label": "filterbarprops",
-      "source_file": "src/components/FilterBar.tsx",
-      "source_location": "L3"
-    },
-    {
       "id": "src_components_listacomprasection_props",
       "label": "Props",
       "_callable": true,
@@ -119,19 +223,6 @@
       "norm_label": "props",
       "source_file": "src/components/ListaCompraSection.tsx",
       "source_location": "L9"
-    },
-    {
-      "id": "src_components_modococina_modococinaprops",
-      "label": "ModoCocinaProps",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "Recipe",
-      "file_type": "code",
-      "norm_label": "modococinaprops",
-      "source_file": "src/components/ModoCocina.tsx",
-      "source_location": "L7"
     },
     {
       "id": "src_components_murorealizaciones_props",
@@ -158,19 +249,6 @@
       "norm_label": "recipecardprops",
       "source_file": "src/components/RecipeCard.tsx",
       "source_location": "L5"
-    },
-    {
-      "id": "src_components_recipecontent_ingredientslistprops",
-      "label": "IngredientsListProps",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "Recipe",
-      "file_type": "code",
-      "norm_label": "ingredientslistprops",
-      "source_file": "src/components/RecipeContent.tsx",
-      "source_location": "L8"
     },
     {
       "id": "src_components_recipedetail_recipedetailprops",
@@ -249,58 +327,6 @@
       "norm_label": "recetaconfaltantes",
       "source_file": "src/lib/inventario.ts",
       "source_location": "L49"
-    },
-    {
-      "id": "src_lib_listacompra_itemlistacompra",
-      "label": "ItemListaCompra",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "Recipe",
-      "file_type": "code",
-      "norm_label": "itemlistacompra",
-      "source_file": "src/lib/listaCompra.ts",
-      "source_location": "L4"
-    },
-    {
-      "id": "src_lib_recipecontent_ingredient",
-      "label": "Ingredient",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "Recipe",
-      "file_type": "code",
-      "norm_label": "ingredient",
-      "source_file": "src/lib/recipeContent.ts",
-      "source_location": "L3"
-    },
-    {
-      "id": "src_types_category",
-      "label": "Category",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "Recipe",
-      "file_type": "code",
-      "norm_label": "category",
-      "source_file": "src/types.ts",
-      "source_location": "L32"
-    },
-    {
-      "id": "src_types_json",
-      "label": "Json",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "Recipe",
-      "file_type": "code",
-      "norm_label": "json",
-      "source_file": "src/types.ts",
-      "source_location": "L2"
     },
     {
       "id": "src_types_recipe",
@@ -459,6 +485,19 @@
       "source_location": "L7"
     },
     {
+      "id": "src_lib_busquedasemantica_resultadoindexacion",
+      "label": "ResultadoIndexacion",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "errorMessage",
+      "file_type": "code",
+      "norm_label": "resultadoindexacion",
+      "source_file": "src/lib/busquedaSemantica.ts",
+      "source_location": "L4"
+    },
+    {
       "id": "supabase_functions_buscar_recetas_index_embeber",
       "label": "embeber()",
       "_callable": true,
@@ -468,7 +507,7 @@
       "file_type": "code",
       "norm_label": "embeber()",
       "source_file": "supabase/functions/buscar-recetas/index.ts",
-      "source_location": "L33"
+      "source_location": "L38"
     },
     {
       "id": "supabase_functions_buscar_recetas_index_indexarpendientes",
@@ -480,7 +519,7 @@
       "file_type": "code",
       "norm_label": "indexarpendientes()",
       "source_file": "supabase/functions/buscar-recetas/index.ts",
-      "source_location": "L65"
+      "source_location": "L70"
     },
     {
       "id": "supabase_functions_buscar_recetas_index_json",
@@ -492,7 +531,7 @@
       "file_type": "code",
       "norm_label": "json()",
       "source_file": "supabase/functions/buscar-recetas/index.ts",
-      "source_location": "L26"
+      "source_location": "L31"
     },
     {
       "id": "src_app_app",
@@ -504,7 +543,7 @@
       "file_type": "code",
       "norm_label": "app()",
       "source_file": "src/App.tsx",
-      "source_location": "L31"
+      "source_location": "L30"
     },
     {
       "id": "src_components_avisos_recetanoencontrada",
@@ -531,16 +570,16 @@
       "source_location": "L13"
     },
     {
-      "id": "src_components_despensasection_secciondespensa",
-      "label": "SeccionDespensa()",
+      "id": "src_components_filterbar_filterbar",
+      "label": "FilterBar()",
       "_callable": true,
       "_origin": "ast",
       "community": 20,
       "community_name": "App.tsx",
       "file_type": "code",
-      "norm_label": "secciondespensa()",
-      "source_file": "src/components/DespensaSection.tsx",
-      "source_location": "L26"
+      "norm_label": "filterbar()",
+      "source_file": "src/components/FilterBar.tsx",
+      "source_location": "L12"
     },
     {
       "id": "src_components_ingredientsearch_ingredientsearch",
@@ -552,7 +591,7 @@
       "file_type": "code",
       "norm_label": "ingredientsearch()",
       "source_file": "src/components/IngredientSearch.tsx",
-      "source_location": "L9"
+      "source_location": "L19"
     },
     {
       "id": "src_components_listacomprasection_seccionlistacompra",
@@ -565,6 +604,42 @@
       "norm_label": "seccionlistacompra()",
       "source_file": "src/components/ListaCompraSection.tsx",
       "source_location": "L29"
+    },
+    {
+      "id": "src_hooks_usebusquedasemantica_usebusquedasemantica",
+      "label": "useBusquedaSemantica()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "usebusquedasemantica()",
+      "source_file": "src/hooks/useBusquedaSemantica.ts",
+      "source_location": "L13"
+    },
+    {
+      "id": "src_hooks_useparahacer_useparahacer",
+      "label": "useParaHacer()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "useparahacer()",
+      "source_file": "src/hooks/useParaHacer.ts",
+      "source_location": "L26"
+    },
+    {
+      "id": "src_hooks_useparahacer_useparahacer_cargar",
+      "label": "cargar()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "cargar()",
+      "source_file": "src/hooks/useParaHacer.ts",
+      "source_location": "L36"
     },
     {
       "id": "src_hooks_useruta_ira",
@@ -627,40 +702,28 @@
       "source_location": "L32"
     },
     {
-      "id": "src_lib_inventario_basesdereceta",
-      "label": "basesDeReceta()",
+      "id": "src_lib_busquedasemantica_buscarsemantico",
+      "label": "buscarSemantico()",
       "_callable": true,
       "_origin": "ast",
       "community": 20,
       "community_name": "App.tsx",
       "file_type": "code",
-      "norm_label": "basesdereceta()",
-      "source_file": "src/lib/inventario.ts",
-      "source_location": "L42"
+      "norm_label": "buscarsemantico()",
+      "source_file": "src/lib/busquedaSemantica.ts",
+      "source_location": "L32"
     },
     {
-      "id": "src_lib_inventario_ingredientesdelcatalogo",
-      "label": "ingredientesDelCatalogo()",
+      "id": "src_lib_listacompra_listadelacompra",
+      "label": "listaDeLaCompra()",
       "_callable": true,
       "_origin": "ast",
       "community": 20,
       "community_name": "App.tsx",
       "file_type": "code",
-      "norm_label": "ingredientesdelcatalogo()",
-      "source_file": "src/lib/inventario.ts",
-      "source_location": "L24"
-    },
-    {
-      "id": "src_lib_inventario_ordenarporloquefalta",
-      "label": "ordenarPorLoQueFalta()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 20,
-      "community_name": "App.tsx",
-      "file_type": "code",
-      "norm_label": "ordenarporloquefalta()",
-      "source_file": "src/lib/inventario.ts",
-      "source_location": "L66"
+      "norm_label": "listadelacompra()",
+      "source_file": "src/lib/listaCompra.ts",
+      "source_location": "L21"
     },
     {
       "id": "src_lib_rutas_ahash",
@@ -687,64 +750,268 @@
       "source_location": "L29"
     },
     {
-      "id": "src_components_busquedasemantica_busquedasemantica",
-      "label": "BusquedaSemantica()",
+      "id": "src_components_recipecontent_ingredientslist",
+      "label": "IngredientsList()",
       "_callable": true,
       "_origin": "ast",
-      "community": 4,
-      "community_name": "useBusquedaSemantica.ts",
+      "community": 24,
+      "community_name": "recipeContent.ts",
       "file_type": "code",
-      "norm_label": "busquedasemantica()",
-      "source_file": "src/components/BusquedaSemantica.tsx",
-      "source_location": "L11"
+      "norm_label": "ingredientslist()",
+      "source_file": "src/components/RecipeContent.tsx",
+      "source_location": "L25"
     },
     {
-      "id": "src_components_reindexarbusqueda_reindexarbusqueda",
-      "label": "ReindexarBusqueda()",
+      "id": "src_components_recipecontent_stepslist",
+      "label": "StepsList()",
       "_callable": true,
       "_origin": "ast",
-      "community": 4,
-      "community_name": "useBusquedaSemantica.ts",
+      "community": 24,
+      "community_name": "recipeContent.ts",
       "file_type": "code",
-      "norm_label": "reindexarbusqueda()",
-      "source_file": "src/components/ReindexarBusqueda.tsx",
-      "source_location": "L7"
+      "norm_label": "stepslist()",
+      "source_file": "src/components/RecipeContent.tsx",
+      "source_location": "L128"
     },
     {
-      "id": "src_hooks_usebusquedasemantica_usebusquedasemantica",
-      "label": "useBusquedaSemantica()",
+      "id": "src_components_recipedetail_recipedetail",
+      "label": "RecipeDetail()",
       "_callable": true,
       "_origin": "ast",
-      "community": 4,
-      "community_name": "useBusquedaSemantica.ts",
+      "community": 24,
+      "community_name": "recipeContent.ts",
       "file_type": "code",
-      "norm_label": "usebusquedasemantica()",
-      "source_file": "src/hooks/useBusquedaSemantica.ts",
-      "source_location": "L11"
+      "norm_label": "recipedetail()",
+      "source_file": "src/components/RecipeDetail.tsx",
+      "source_location": "L36"
     },
     {
-      "id": "src_lib_busquedasemantica_buscarsemantico",
-      "label": "buscarSemantico()",
+      "id": "src_lib_recipecontent_asnumero",
+      "label": "asNumero()",
       "_callable": true,
       "_origin": "ast",
-      "community": 4,
-      "community_name": "useBusquedaSemantica.ts",
+      "community": 24,
+      "community_name": "recipeContent.ts",
       "file_type": "code",
-      "norm_label": "buscarsemantico()",
-      "source_file": "src/lib/busquedaSemantica.ts",
-      "source_location": "L31"
+      "norm_label": "asnumero()",
+      "source_file": "src/lib/recipeContent.ts",
+      "source_location": "L45"
     },
     {
-      "id": "src_lib_busquedasemantica_reindexarbusqueda",
-      "label": "reindexarBusqueda()",
+      "id": "src_lib_recipecontent_astext",
+      "label": "asText()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 24,
+      "community_name": "recipeContent.ts",
+      "file_type": "code",
+      "norm_label": "astext()",
+      "source_file": "src/lib/recipeContent.ts",
+      "source_location": "L33"
+    },
+    {
+      "id": "src_lib_recipecontent_escabeceradegrupo",
+      "label": "esCabeceraDeGrupo()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 24,
+      "community_name": "recipeContent.ts",
+      "file_type": "code",
+      "norm_label": "escabeceradegrupo()",
+      "source_file": "src/lib/recipeContent.ts",
+      "source_location": "L27"
+    },
+    {
+      "id": "src_lib_recipecontent_hasnotas",
+      "label": "hasNotas()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 24,
+      "community_name": "recipeContent.ts",
+      "file_type": "code",
+      "norm_label": "hasnotas()",
+      "source_file": "src/lib/recipeContent.ts",
+      "source_location": "L114"
+    },
+    {
+      "id": "src_lib_recipecontent_isrecord",
+      "label": "isRecord()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 24,
+      "community_name": "recipeContent.ts",
+      "file_type": "code",
+      "norm_label": "isrecord()",
+      "source_file": "src/lib/recipeContent.ts",
+      "source_location": "L40"
+    },
+    {
+      "id": "src_lib_recipecontent_normalizeingredients",
+      "label": "normalizeIngredients()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 24,
+      "community_name": "recipeContent.ts",
+      "file_type": "code",
+      "norm_label": "normalizeingredients()",
+      "source_file": "src/lib/recipeContent.ts",
+      "source_location": "L62"
+    },
+    {
+      "id": "src_lib_recipecontent_normalizesteps",
+      "label": "normalizeSteps()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 24,
+      "community_name": "recipeContent.ts",
+      "file_type": "code",
+      "norm_label": "normalizesteps()",
+      "source_file": "src/lib/recipeContent.ts",
+      "source_location": "L97"
+    },
+    {
+      "id": "src_lib_recipecontent_rendernotas",
+      "label": "renderNotas()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 24,
+      "community_name": "recipeContent.ts",
+      "file_type": "code",
+      "norm_label": "rendernotas()",
+      "source_file": "src/lib/recipeContent.ts",
+      "source_location": "L129"
+    },
+    {
+      "id": "src_components_modococina_modococina",
+      "label": "ModoCocina()",
       "_callable": true,
       "_origin": "ast",
       "community": 4,
-      "community_name": "useBusquedaSemantica.ts",
+      "community_name": "ModoCocina.tsx",
       "file_type": "code",
-      "norm_label": "reindexarbusqueda()",
-      "source_file": "src/lib/busquedaSemantica.ts",
-      "source_location": "L14"
+      "norm_label": "modococina()",
+      "source_file": "src/components/ModoCocina.tsx",
+      "source_location": "L20"
+    },
+    {
+      "id": "src_components_pasocontiempos_pasocontiempos",
+      "label": "PasoConTiempos()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "ModoCocina.tsx",
+      "file_type": "code",
+      "norm_label": "pasocontiempos()",
+      "source_file": "src/components/PasoConTiempos.tsx",
+      "source_location": "L10"
+    },
+    {
+      "id": "src_components_temporizadoresbarra_temporizadoresbarra",
+      "label": "TemporizadoresBarra()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "ModoCocina.tsx",
+      "file_type": "code",
+      "norm_label": "temporizadoresbarra()",
+      "source_file": "src/components/TemporizadoresBarra.tsx",
+      "source_location": "L6"
+    },
+    {
+      "id": "src_hooks_usetemporizadores_pitar",
+      "label": "pitar()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "ModoCocina.tsx",
+      "file_type": "code",
+      "norm_label": "pitar()",
+      "source_file": "src/hooks/useTemporizadores.ts",
+      "source_location": "L13"
+    },
+    {
+      "id": "src_hooks_usetemporizadores_usetemporizadores",
+      "label": "useTemporizadores()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "ModoCocina.tsx",
+      "file_type": "code",
+      "norm_label": "usetemporizadores()",
+      "source_file": "src/hooks/useTemporizadores.ts",
+      "source_location": "L36"
+    },
+    {
+      "id": "src_hooks_usewakelock_usewakelock",
+      "label": "useWakeLock()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "ModoCocina.tsx",
+      "file_type": "code",
+      "norm_label": "usewakelock()",
+      "source_file": "src/hooks/useWakeLock.ts",
+      "source_location": "L10"
+    },
+    {
+      "id": "src_lib_tiempos_anumero",
+      "label": "aNumero()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "ModoCocina.tsx",
+      "file_type": "code",
+      "norm_label": "anumero()",
+      "source_file": "src/lib/tiempos.ts",
+      "source_location": "L49"
+    },
+    {
+      "id": "src_lib_tiempos_detectartiempos",
+      "label": "detectarTiempos()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "ModoCocina.tsx",
+      "file_type": "code",
+      "norm_label": "detectartiempos()",
+      "source_file": "src/lib/tiempos.ts",
+      "source_location": "L62"
+    },
+    {
+      "id": "src_lib_tiempos_formatearduracion",
+      "label": "formatearDuracion()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "ModoCocina.tsx",
+      "file_type": "code",
+      "norm_label": "formatearduracion()",
+      "source_file": "src/lib/tiempos.ts",
+      "source_location": "L89"
+    },
+    {
+      "id": "src_lib_tiempos_formatearreloj",
+      "label": "formatearReloj()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "ModoCocina.tsx",
+      "file_type": "code",
+      "norm_label": "formatearreloj()",
+      "source_file": "src/lib/tiempos.ts",
+      "source_location": "L99"
+    },
+    {
+      "id": "src_lib_tiempos_segundosde",
+      "label": "segundosDe()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "ModoCocina.tsx",
+      "file_type": "code",
+      "norm_label": "segundosde()",
+      "source_file": "src/lib/tiempos.ts",
+      "source_location": "L51"
     },
     {
       "id": "src_components_anadiringrediente_anadiringrediente",
@@ -759,28 +1026,16 @@
       "source_location": "L23"
     },
     {
-      "id": "src_components_filterbar_filterbar",
-      "label": "FilterBar()",
+      "id": "src_components_despensasection_secciondespensa",
+      "label": "SeccionDespensa()",
       "_callable": true,
       "_origin": "ast",
       "community": 5,
       "community_name": "Recipe",
       "file_type": "code",
-      "norm_label": "filterbar()",
-      "source_file": "src/components/FilterBar.tsx",
-      "source_location": "L9"
-    },
-    {
-      "id": "src_components_modococina_modococina",
-      "label": "ModoCocina()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "Recipe",
-      "file_type": "code",
-      "norm_label": "modococina()",
-      "source_file": "src/components/ModoCocina.tsx",
-      "source_location": "L17"
+      "norm_label": "secciondespensa()",
+      "source_file": "src/components/DespensaSection.tsx",
+      "source_location": "L26"
     },
     {
       "id": "src_components_recipecard_recipecard",
@@ -807,30 +1062,6 @@
       "source_location": "L11"
     },
     {
-      "id": "src_components_recipecontent_ingredientslist",
-      "label": "IngredientsList()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "Recipe",
-      "file_type": "code",
-      "norm_label": "ingredientslist()",
-      "source_file": "src/components/RecipeContent.tsx",
-      "source_location": "L25"
-    },
-    {
-      "id": "src_components_recipecontent_stepslist",
-      "label": "StepsList()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "Recipe",
-      "file_type": "code",
-      "norm_label": "stepslist()",
-      "source_file": "src/components/RecipeContent.tsx",
-      "source_location": "L128"
-    },
-    {
       "id": "src_components_recipegrid_recipegrid",
       "label": "RecipeGrid()",
       "_callable": true,
@@ -853,18 +1084,6 @@
       "norm_label": "useingredientsearch()",
       "source_file": "src/hooks/useIngredientSearch.ts",
       "source_location": "L5"
-    },
-    {
-      "id": "src_hooks_usewakelock_usewakelock",
-      "label": "useWakeLock()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "Recipe",
-      "file_type": "code",
-      "norm_label": "usewakelock()",
-      "source_file": "src/hooks/useWakeLock.ts",
-      "source_location": "L10"
     },
     {
       "id": "src_lib_ingredientparser_extractingredientstext",
@@ -903,6 +1122,18 @@
       "source_location": "L30"
     },
     {
+      "id": "src_lib_inventario_basesdereceta",
+      "label": "basesDeReceta()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "Recipe",
+      "file_type": "code",
+      "norm_label": "basesdereceta()",
+      "source_file": "src/lib/inventario.ts",
+      "source_location": "L42"
+    },
+    {
       "id": "src_lib_inventario_buscaringredientes",
       "label": "buscarIngredientes()",
       "_callable": true,
@@ -915,88 +1146,28 @@
       "source_location": "L88"
     },
     {
-      "id": "src_lib_listacompra_listadelacompra",
-      "label": "listaDeLaCompra()",
+      "id": "src_lib_inventario_ingredientesdelcatalogo",
+      "label": "ingredientesDelCatalogo()",
       "_callable": true,
       "_origin": "ast",
       "community": 5,
       "community_name": "Recipe",
       "file_type": "code",
-      "norm_label": "listadelacompra()",
-      "source_file": "src/lib/listaCompra.ts",
-      "source_location": "L21"
+      "norm_label": "ingredientesdelcatalogo()",
+      "source_file": "src/lib/inventario.ts",
+      "source_location": "L24"
     },
     {
-      "id": "src_lib_recipecontent_asnumero",
-      "label": "asNumero()",
+      "id": "src_lib_inventario_ordenarporloquefalta",
+      "label": "ordenarPorLoQueFalta()",
       "_callable": true,
       "_origin": "ast",
       "community": 5,
       "community_name": "Recipe",
       "file_type": "code",
-      "norm_label": "asnumero()",
-      "source_file": "src/lib/recipeContent.ts",
-      "source_location": "L45"
-    },
-    {
-      "id": "src_lib_recipecontent_astext",
-      "label": "asText()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "Recipe",
-      "file_type": "code",
-      "norm_label": "astext()",
-      "source_file": "src/lib/recipeContent.ts",
-      "source_location": "L33"
-    },
-    {
-      "id": "src_lib_recipecontent_escabeceradegrupo",
-      "label": "esCabeceraDeGrupo()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "Recipe",
-      "file_type": "code",
-      "norm_label": "escabeceradegrupo()",
-      "source_file": "src/lib/recipeContent.ts",
-      "source_location": "L27"
-    },
-    {
-      "id": "src_lib_recipecontent_isrecord",
-      "label": "isRecord()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "Recipe",
-      "file_type": "code",
-      "norm_label": "isrecord()",
-      "source_file": "src/lib/recipeContent.ts",
-      "source_location": "L40"
-    },
-    {
-      "id": "src_lib_recipecontent_normalizeingredients",
-      "label": "normalizeIngredients()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "Recipe",
-      "file_type": "code",
-      "norm_label": "normalizeingredients()",
-      "source_file": "src/lib/recipeContent.ts",
-      "source_location": "L62"
-    },
-    {
-      "id": "src_lib_recipecontent_normalizesteps",
-      "label": "normalizeSteps()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "Recipe",
-      "file_type": "code",
-      "norm_label": "normalizesteps()",
-      "source_file": "src/lib/recipeContent.ts",
-      "source_location": "L97"
+      "norm_label": "ordenarporloquefalta()",
+      "source_file": "src/lib/inventario.ts",
+      "source_location": "L66"
     },
     {
       "id": "supabase_functions_indexar_recetas_index_embeberlote",
@@ -1119,18 +1290,6 @@
       "source_location": "L21"
     },
     {
-      "id": "src_components_recipedetail_recipedetail",
-      "label": "RecipeDetail()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 8,
-      "community_name": "errorMessage",
-      "file_type": "code",
-      "norm_label": "recipedetail()",
-      "source_file": "src/components/RecipeDetail.tsx",
-      "source_location": "L34"
-    },
-    {
       "id": "src_components_recipepolaroid_recipepolaroid",
       "label": "RecipePolaroid()",
       "_callable": true,
@@ -1141,6 +1300,18 @@
       "norm_label": "recipepolaroid()",
       "source_file": "src/components/RecipePolaroid.tsx",
       "source_location": "L22"
+    },
+    {
+      "id": "src_components_reindexarbusqueda_reindexarbusqueda",
+      "label": "ReindexarBusqueda()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "errorMessage",
+      "file_type": "code",
+      "norm_label": "reindexarbusqueda()",
+      "source_file": "src/components/ReindexarBusqueda.tsx",
+      "source_location": "L7"
     },
     {
       "id": "src_components_sharebyemail_sharebyemail",
@@ -1215,30 +1386,6 @@
       "source_location": "L48"
     },
     {
-      "id": "src_hooks_useparahacer_useparahacer",
-      "label": "useParaHacer()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 8,
-      "community_name": "errorMessage",
-      "file_type": "code",
-      "norm_label": "useparahacer()",
-      "source_file": "src/hooks/useParaHacer.ts",
-      "source_location": "L26"
-    },
-    {
-      "id": "src_hooks_useparahacer_useparahacer_cargar",
-      "label": "cargar()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 8,
-      "community_name": "errorMessage",
-      "file_type": "code",
-      "norm_label": "cargar()",
-      "source_file": "src/hooks/useParaHacer.ts",
-      "source_location": "L36"
-    },
-    {
       "id": "src_hooks_useperfil_useperfil",
       "label": "usePerfil()",
       "_callable": true,
@@ -1311,6 +1458,18 @@
       "source_location": "L26"
     },
     {
+      "id": "src_lib_busquedasemantica_reindexarbusqueda",
+      "label": "reindexarBusqueda()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "errorMessage",
+      "file_type": "code",
+      "norm_label": "reindexarbusqueda()",
+      "source_file": "src/lib/busquedaSemantica.ts",
+      "source_location": "L15"
+    },
+    {
       "id": "src_lib_errors_errormessage",
       "label": "errorMessage()",
       "_callable": true,
@@ -1345,30 +1504,6 @@
       "norm_label": "posttowebhook()",
       "source_file": "src/lib/n8n.ts",
       "source_location": "L28"
-    },
-    {
-      "id": "src_lib_recipecontent_hasnotas",
-      "label": "hasNotas()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 8,
-      "community_name": "errorMessage",
-      "file_type": "code",
-      "norm_label": "hasnotas()",
-      "source_file": "src/lib/recipeContent.ts",
-      "source_location": "L114"
-    },
-    {
-      "id": "src_lib_recipecontent_rendernotas",
-      "label": "renderNotas()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 8,
-      "community_name": "errorMessage",
-      "file_type": "code",
-      "norm_label": "rendernotas()",
-      "source_file": "src/lib/recipeContent.ts",
-      "source_location": "L129"
     },
     {
       "id": "tsconfig_app",
@@ -1790,7 +1925,7 @@
       "node_kind": "heading",
       "norm_label": "busqueda semantica",
       "source_file": "CLAUDE.md",
-      "source_location": "L271"
+      "source_location": "L320"
     },
     {
       "id": "claude_camino_feliz_verificado_el_8_ago_2026",
@@ -1838,7 +1973,7 @@
       "node_kind": "heading",
       "norm_label": "graphify",
       "source_file": "CLAUDE.md",
-      "source_location": "L332"
+      "source_location": "L396"
     },
     {
       "id": "claude_hacia_d\u00f3nde_puede_crecer",
@@ -1850,7 +1985,7 @@
       "node_kind": "heading",
       "norm_label": "hacia donde puede crecer",
       "source_file": "CLAUDE.md",
-      "source_location": "L323"
+      "source_location": "L387"
     },
     {
       "id": "claude_la_despensa",
@@ -1922,7 +2057,7 @@
       "node_kind": "heading",
       "norm_label": "modo cocina",
       "source_file": "CLAUDE.md",
-      "source_location": "L243"
+      "source_location": "L259"
     },
     {
       "id": "claude_para_hacer_realizaciones_y_muro_de_notas",
@@ -1949,6 +2084,30 @@
       "source_location": "L129"
     },
     {
+      "id": "claude_recetas_sin_hacer",
+      "label": "Recetas \u00absin hacer\u00bb",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "Ideas para el Recetario",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "recetas \u00absin hacer\u00bb",
+      "source_file": "CLAUDE.md",
+      "source_location": "L228"
+    },
+    {
+      "id": "claude_temporizadores",
+      "label": "Temporizadores",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "Ideas para el Recetario",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "temporizadores",
+      "source_file": "CLAUDE.md",
+      "source_location": "L286"
+    },
+    {
       "id": "claude_tiempo_porciones_y_dificultad",
       "label": "Tiempo, porciones y dificultad",
       "_origin": "ast",
@@ -1958,7 +2117,7 @@
       "node_kind": "heading",
       "norm_label": "tiempo, porciones y dificultad",
       "source_file": "CLAUDE.md",
-      "source_location": "L228"
+      "source_location": "L244"
     },
     {
       "id": "docs_ideas",
@@ -1982,7 +2141,7 @@
       "node_kind": "heading",
       "norm_label": "automatismos con n8n",
       "source_file": "docs/ideas.md",
-      "source_location": "L241"
+      "source_location": "L240"
     },
     {
       "id": "docs_ideas_cocinar_de_verdad",
@@ -2006,7 +2165,7 @@
       "node_kind": "heading",
       "norm_label": "dar de alta con menos friccion",
       "source_file": "docs/ideas.md",
-      "source_location": "L212"
+      "source_location": "L211"
     },
     {
       "id": "docs_ideas_decidido_la_despensa_no_guarda_cantidades",
@@ -2018,7 +2177,7 @@
       "node_kind": "heading",
       "norm_label": "decidido: la despensa no guarda cantidades",
       "source_file": "docs/ideas.md",
-      "source_location": "L148"
+      "source_location": "L147"
     },
     {
       "id": "docs_ideas_dos_avisos_de_realidad",
@@ -2030,7 +2189,7 @@
       "node_kind": "heading",
       "norm_label": "dos avisos de realidad",
       "source_file": "docs/ideas.md",
-      "source_location": "L268"
+      "source_location": "L267"
     },
     {
       "id": "docs_ideas_el_punto_de_partida_datos_que_ya_se_pagan_y_se_tiran_hecho",
@@ -2054,7 +2213,7 @@
       "node_kind": "heading",
       "norm_label": "encontrar recetas",
       "source_file": "docs/ideas.md",
-      "source_location": "L192"
+      "source_location": "L191"
     },
     {
       "id": "docs_ideas_ideas_para_el_recetario",
@@ -2078,7 +2237,7 @@
       "node_kind": "heading",
       "norm_label": "la despensa y su seccion propia \u2014 hechas",
       "source_file": "docs/ideas.md",
-      "source_location": "L116"
+      "source_location": "L115"
     },
     {
       "id": "docs_ideas_los_afans",
@@ -2090,7 +2249,7 @@
       "node_kind": "heading",
       "norm_label": "los afans",
       "source_file": "docs/ideas.md",
-      "source_location": "L229"
+      "source_location": "L228"
     },
     {
       "id": "docs_ideas_men\u00fa_semanal_y_lista_de_la_compra_hecha",
@@ -2102,7 +2261,7 @@
       "node_kind": "heading",
       "norm_label": "menu semanal y lista de la compra \u2014 hecha",
       "source_file": "docs/ideas.md",
-      "source_location": "L174"
+      "source_location": "L173"
     },
     {
       "id": "docs_ideas_orden_sugerido",
@@ -2114,7 +2273,7 @@
       "node_kind": "heading",
       "norm_label": "orden sugerido",
       "source_file": "docs/ideas.md",
-      "source_location": "L252"
+      "source_location": "L251"
     },
     {
       "id": "docs_ideas_para_hacer_realizaciones_y_el_muro_de_notas",
@@ -2126,7 +2285,7 @@
       "node_kind": "heading",
       "norm_label": "para hacer, realizaciones y el muro de notas",
       "source_file": "docs/ideas.md",
-      "source_location": "L57"
+      "source_location": "L56"
     },
     {
       "id": "docs_seguimiento",
@@ -2232,7 +2391,7 @@
       "file_type": "code",
       "norm_label": "cors",
       "source_file": "supabase/functions/buscar-recetas/index.ts",
-      "source_location": "L21"
+      "source_location": "L26"
     },
     {
       "id": "supabase_migrations_20260823_despensa",
@@ -2331,7 +2490,7 @@
       "file_type": "code",
       "norm_label": "devdependencies",
       "source_file": "package.json",
-      "source_location": "L23"
+      "source_location": "L24"
     },
     {
       "id": "package_devdependencies_eslint",
@@ -2342,7 +2501,7 @@
       "file_type": "code",
       "norm_label": "eslint",
       "source_file": "package.json",
-      "source_location": "L29"
+      "source_location": "L30"
     },
     {
       "id": "package_devdependencies_eslint_js",
@@ -2353,7 +2512,7 @@
       "file_type": "code",
       "norm_label": "@eslint/js",
       "source_file": "package.json",
-      "source_location": "L24"
+      "source_location": "L25"
     },
     {
       "id": "package_devdependencies_eslint_plugin_react_hooks",
@@ -2364,7 +2523,7 @@
       "file_type": "code",
       "norm_label": "eslint-plugin-react-hooks",
       "source_file": "package.json",
-      "source_location": "L30"
+      "source_location": "L31"
     },
     {
       "id": "package_devdependencies_eslint_plugin_react_refresh",
@@ -2375,7 +2534,7 @@
       "file_type": "code",
       "norm_label": "eslint-plugin-react-refresh",
       "source_file": "package.json",
-      "source_location": "L31"
+      "source_location": "L32"
     },
     {
       "id": "package_devdependencies_globals",
@@ -2386,7 +2545,7 @@
       "file_type": "code",
       "norm_label": "globals",
       "source_file": "package.json",
-      "source_location": "L32"
+      "source_location": "L33"
     },
     {
       "id": "package_devdependencies_types_node",
@@ -2397,7 +2556,7 @@
       "file_type": "code",
       "norm_label": "@types/node",
       "source_file": "package.json",
-      "source_location": "L25"
+      "source_location": "L26"
     },
     {
       "id": "package_devdependencies_types_react",
@@ -2408,7 +2567,7 @@
       "file_type": "code",
       "norm_label": "@types/react",
       "source_file": "package.json",
-      "source_location": "L26"
+      "source_location": "L27"
     },
     {
       "id": "package_devdependencies_types_react_dom",
@@ -2419,7 +2578,7 @@
       "file_type": "code",
       "norm_label": "@types/react-dom",
       "source_file": "package.json",
-      "source_location": "L27"
+      "source_location": "L28"
     },
     {
       "id": "package_devdependencies_typescript",
@@ -2430,7 +2589,7 @@
       "file_type": "code",
       "norm_label": "typescript",
       "source_file": "package.json",
-      "source_location": "L33"
+      "source_location": "L34"
     },
     {
       "id": "package_devdependencies_typescript_eslint",
@@ -2441,7 +2600,7 @@
       "file_type": "code",
       "norm_label": "typescript-eslint",
       "source_file": "package.json",
-      "source_location": "L34"
+      "source_location": "L35"
     },
     {
       "id": "package_devdependencies_vite",
@@ -2452,7 +2611,7 @@
       "file_type": "code",
       "norm_label": "vite",
       "source_file": "package.json",
-      "source_location": "L35"
+      "source_location": "L36"
     },
     {
       "id": "package_devdependencies_vitejs_plugin_react",
@@ -2463,7 +2622,7 @@
       "file_type": "code",
       "norm_label": "@vitejs/plugin-react",
       "source_file": "package.json",
-      "source_location": "L28"
+      "source_location": "L29"
     },
     {
       "id": "src_app",
@@ -2485,7 +2644,7 @@
       "file_type": "code",
       "norm_label": "categories",
       "source_file": "src/App.tsx",
-      "source_location": "L26"
+      "source_location": "L25"
     },
     {
       "id": "src_components_avisos",
@@ -2499,14 +2658,14 @@
       "source_location": "L1"
     },
     {
-      "id": "src_components_despensasection",
-      "label": "DespensaSection.tsx",
+      "id": "src_components_filterbar",
+      "label": "FilterBar.tsx",
       "_origin": "ast",
       "community": 20,
       "community_name": "App.tsx",
       "file_type": "code",
-      "norm_label": "despensasection.tsx",
-      "source_file": "src/components/DespensaSection.tsx",
+      "norm_label": "filterbar.tsx",
+      "source_file": "src/components/FilterBar.tsx",
       "source_location": "L1"
     },
     {
@@ -2532,6 +2691,17 @@
       "source_location": "L1"
     },
     {
+      "id": "src_hooks_usebusquedasemantica",
+      "label": "useBusquedaSemantica.ts",
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "usebusquedasemantica.ts",
+      "source_file": "src/hooks/useBusquedaSemantica.ts",
+      "source_location": "L1"
+    },
+    {
       "id": "src_hooks_useruta",
       "label": "useRuta.ts",
       "_origin": "ast",
@@ -2540,6 +2710,17 @@
       "file_type": "code",
       "norm_label": "useruta.ts",
       "source_file": "src/hooks/useRuta.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_lib_listacompra",
+      "label": "listaCompra.ts",
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "listacompra.ts",
+      "source_file": "src/lib/listaCompra.ts",
       "source_location": "L1"
     },
     {
@@ -2576,6 +2757,17 @@
       "source_location": "L1"
     },
     {
+      "id": "src_types",
+      "label": "types.ts",
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "types.ts",
+      "source_file": "src/types.ts",
+      "source_location": "L1"
+    },
+    {
       "id": "supabase_migrations_20260808_revocar_execute_funciones",
       "label": "20260808_revocar_execute_funciones.sql",
       "_origin": "ast",
@@ -2609,14 +2801,25 @@
       "source_location": null
     },
     {
-      "id": "scripts_deploy",
-      "label": "deploy.ps1",
+      "id": "src_components_recipecontent",
+      "label": "RecipeContent.tsx",
       "_origin": "ast",
       "community": 24,
-      "community_name": "deploy.ps1",
+      "community_name": "recipeContent.ts",
       "file_type": "code",
-      "norm_label": "deploy.ps1",
-      "source_file": "scripts/deploy.ps1",
+      "norm_label": "recipecontent.tsx",
+      "source_file": "src/components/RecipeContent.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_lib_recipecontent",
+      "label": "recipeContent.ts",
+      "_origin": "ast",
+      "community": 24,
+      "community_name": "recipeContent.ts",
+      "file_type": "code",
+      "norm_label": "recipecontent.ts",
+      "source_file": "src/lib/recipeContent.ts",
       "source_location": "L1"
     },
     {
@@ -2726,6 +2929,61 @@
       "community_name": "public.recetas",
       "file_type": "code",
       "norm_label": "public.recetas",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "supabase_migrations_20261013_limite_busquedas",
+      "label": "20261013_limite_busquedas.sql",
+      "_origin": "ast",
+      "community": 29,
+      "community_name": "public.busquedas_uso",
+      "file_type": "code",
+      "norm_label": "20261013_limite_busquedas.sql",
+      "source_file": "supabase/migrations/20261013_limite_busquedas.sql",
+      "source_location": null
+    },
+    {
+      "id": "supabase_migrations_20261013_limite_busquedas_busquedas_uso_user_fecha",
+      "label": "busquedas_uso_user_fecha",
+      "_origin": "ast",
+      "community": 29,
+      "community_name": "public.busquedas_uso",
+      "file_type": "code",
+      "norm_label": "busquedas_uso_user_fecha",
+      "source_file": "supabase/migrations/20261013_limite_busquedas.sql",
+      "source_location": "L23"
+    },
+    {
+      "id": "supabase_migrations_20261013_limite_busquedas_public_busquedas_uso",
+      "label": "public.busquedas_uso",
+      "_origin": "ast",
+      "community": 29,
+      "community_name": "public.busquedas_uso",
+      "file_type": "code",
+      "norm_label": "public.busquedas_uso",
+      "source_file": "supabase/migrations/20261013_limite_busquedas.sql",
+      "source_location": "L17"
+    },
+    {
+      "id": "supabase_migrations_20261013_limite_busquedas_public_registrar_busqueda",
+      "label": "public.registrar_busqueda()",
+      "_origin": "ast",
+      "community": 29,
+      "community_name": "public.busquedas_uso",
+      "file_type": "code",
+      "norm_label": "public.registrar_busqueda()",
+      "source_file": "supabase/migrations/20261013_limite_busquedas.sql",
+      "source_location": "L27"
+    },
+    {
+      "id": "supabase_migrations_20261013_limite_busquedas_sql_auth_users",
+      "label": "auth.users",
+      "_origin": "ast",
+      "community": 29,
+      "community_name": "public.busquedas_uso",
+      "file_type": "code",
+      "norm_label": "auth.users",
       "source_file": "",
       "source_location": ""
     },
@@ -2928,48 +3186,221 @@
       "source_location": "L23"
     },
     {
-      "id": "src_components_busquedasemantica",
-      "label": "BusquedaSemantica.tsx",
+      "id": "public_quitar_sin_hacer",
+      "label": "public.quitar_sin_hacer",
       "_origin": "ast",
-      "community": 4,
-      "community_name": "useBusquedaSemantica.ts",
+      "community": 30,
+      "community_name": "20261014_sin_hacer.sql",
       "file_type": "code",
-      "norm_label": "busquedasemantica.tsx",
-      "source_file": "src/components/BusquedaSemantica.tsx",
+      "norm_label": "public.quitar_sin_hacer",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "supabase_migrations_20261014_sin_hacer",
+      "label": "20261014_sin_hacer.sql",
+      "_origin": "ast",
+      "community": 30,
+      "community_name": "20261014_sin_hacer.sql",
+      "file_type": "code",
+      "norm_label": "20261014_sin_hacer.sql",
+      "source_file": "supabase/migrations/20261014_sin_hacer.sql",
+      "source_location": null
+    },
+    {
+      "id": "supabase_migrations_20261014_sin_hacer_public_quitar_sin_hacer",
+      "label": "public.quitar_sin_hacer()",
+      "_origin": "ast",
+      "community": 30,
+      "community_name": "20261014_sin_hacer.sql",
+      "file_type": "code",
+      "norm_label": "public.quitar_sin_hacer()",
+      "source_file": "supabase/migrations/20261014_sin_hacer.sql",
+      "source_location": "L25"
+    },
+    {
+      "id": "supabase_migrations_20261014_sin_hacer_trg_quitar_sin_hacer",
+      "label": "trg_quitar_sin_hacer",
+      "_origin": "ast",
+      "community": 30,
+      "community_name": "20261014_sin_hacer.sql",
+      "file_type": "code",
+      "norm_label": "trg_quitar_sin_hacer",
+      "source_file": "supabase/migrations/20261014_sin_hacer.sql",
+      "source_location": "L45"
+    },
+    {
+      "id": "scripts_deploy_sh__entry",
+      "label": "deploy.sh script",
+      "_origin": "ast",
+      "community": 31,
+      "community_name": "deploy.sh script",
+      "file_type": "code",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_entrypoint"
+      },
+      "norm_label": "deploy.sh script",
+      "source_file": "scripts/deploy.sh",
       "source_location": "L1"
     },
     {
-      "id": "src_components_reindexarbusqueda",
-      "label": "ReindexarBusqueda.tsx",
+      "id": "scripts_deploy_sh_scripts_deploy",
+      "label": "deploy.sh",
       "_origin": "ast",
-      "community": 4,
-      "community_name": "useBusquedaSemantica.ts",
+      "community": 31,
+      "community_name": "deploy.sh script",
       "file_type": "code",
-      "norm_label": "reindexarbusqueda.tsx",
-      "source_file": "src/components/ReindexarBusqueda.tsx",
+      "metadata": {
+        "language": "bash",
+        "kind": "file"
+      },
+      "norm_label": "deploy.sh",
+      "source_file": "scripts/deploy.sh",
       "source_location": "L1"
     },
     {
-      "id": "src_hooks_usebusquedasemantica",
-      "label": "useBusquedaSemantica.ts",
+      "id": "scripts_deploy_ps1_scripts_deploy",
+      "label": "deploy.ps1",
       "_origin": "ast",
-      "community": 4,
-      "community_name": "useBusquedaSemantica.ts",
+      "community": 32,
+      "community_name": "deploy.ps1",
       "file_type": "code",
-      "norm_label": "usebusquedasemantica.ts",
-      "source_file": "src/hooks/useBusquedaSemantica.ts",
+      "norm_label": "deploy.ps1",
+      "source_file": "scripts/deploy.ps1",
       "source_location": "L1"
     },
     {
-      "id": "src_lib_busquedasemantica",
-      "label": "busquedaSemantica.ts",
+      "id": "supabase_migrations_20261014_sin_hacer_sql_public_recetas",
+      "label": "public.recetas",
+      "_origin": "ast",
+      "community": 33,
+      "community_name": "public.recetas",
+      "file_type": "code",
+      "norm_label": "public.recetas",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "src_components_modococina",
+      "label": "ModoCocina.tsx",
       "_origin": "ast",
       "community": 4,
-      "community_name": "useBusquedaSemantica.ts",
+      "community_name": "ModoCocina.tsx",
       "file_type": "code",
-      "norm_label": "busquedasemantica.ts",
-      "source_file": "src/lib/busquedaSemantica.ts",
+      "norm_label": "modococina.tsx",
+      "source_file": "src/components/ModoCocina.tsx",
       "source_location": "L1"
+    },
+    {
+      "id": "src_components_pasocontiempos",
+      "label": "PasoConTiempos.tsx",
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "ModoCocina.tsx",
+      "file_type": "code",
+      "norm_label": "pasocontiempos.tsx",
+      "source_file": "src/components/PasoConTiempos.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_components_temporizadoresbarra",
+      "label": "TemporizadoresBarra.tsx",
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "ModoCocina.tsx",
+      "file_type": "code",
+      "norm_label": "temporizadoresbarra.tsx",
+      "source_file": "src/components/TemporizadoresBarra.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_hooks_usetemporizadores",
+      "label": "useTemporizadores.ts",
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "ModoCocina.tsx",
+      "file_type": "code",
+      "norm_label": "usetemporizadores.ts",
+      "source_file": "src/hooks/useTemporizadores.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_hooks_usewakelock",
+      "label": "useWakeLock.ts",
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "ModoCocina.tsx",
+      "file_type": "code",
+      "norm_label": "usewakelock.ts",
+      "source_file": "src/hooks/useWakeLock.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_lib_tiempos",
+      "label": "tiempos.ts",
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "ModoCocina.tsx",
+      "file_type": "code",
+      "norm_label": "tiempos.ts",
+      "source_file": "src/lib/tiempos.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_lib_tiempos_num",
+      "label": "NUM",
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "ModoCocina.tsx",
+      "file_type": "code",
+      "norm_label": "num",
+      "source_file": "src/lib/tiempos.ts",
+      "source_location": "L16"
+    },
+    {
+      "id": "src_lib_tiempos_numeros_en_letras",
+      "label": "NUMEROS_EN_LETRAS",
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "ModoCocina.tsx",
+      "file_type": "code",
+      "norm_label": "numeros_en_letras",
+      "source_file": "src/lib/tiempos.ts",
+      "source_location": "L19"
+    },
+    {
+      "id": "src_lib_tiempos_palabras",
+      "label": "PALABRAS",
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "ModoCocina.tsx",
+      "file_type": "code",
+      "norm_label": "palabras",
+      "source_file": "src/lib/tiempos.ts",
+      "source_location": "L23"
+    },
+    {
+      "id": "src_lib_tiempos_patron",
+      "label": "PATRON",
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "ModoCocina.tsx",
+      "file_type": "code",
+      "norm_label": "patron",
+      "source_file": "src/lib/tiempos.ts",
+      "source_location": "L29"
+    },
+    {
+      "id": "src_lib_tiempos_unidad",
+      "label": "UNIDAD",
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "ModoCocina.tsx",
+      "file_type": "code",
+      "norm_label": "unidad",
+      "source_file": "src/lib/tiempos.ts",
+      "source_location": "L17"
     },
     {
       "id": "src_components_anadiringrediente",
@@ -2983,25 +3414,14 @@
       "source_location": "L1"
     },
     {
-      "id": "src_components_filterbar",
-      "label": "FilterBar.tsx",
+      "id": "src_components_despensasection",
+      "label": "DespensaSection.tsx",
       "_origin": "ast",
       "community": 5,
       "community_name": "Recipe",
       "file_type": "code",
-      "norm_label": "filterbar.tsx",
-      "source_file": "src/components/FilterBar.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_modococina",
-      "label": "ModoCocina.tsx",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "Recipe",
-      "file_type": "code",
-      "norm_label": "modococina.tsx",
-      "source_file": "src/components/ModoCocina.tsx",
+      "norm_label": "despensasection.tsx",
+      "source_file": "src/components/DespensaSection.tsx",
       "source_location": "L1"
     },
     {
@@ -3013,17 +3433,6 @@
       "file_type": "code",
       "norm_label": "recipecard.tsx",
       "source_file": "src/components/RecipeCard.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_recipecontent",
-      "label": "RecipeContent.tsx",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "Recipe",
-      "file_type": "code",
-      "norm_label": "recipecontent.tsx",
-      "source_file": "src/components/RecipeContent.tsx",
       "source_location": "L1"
     },
     {
@@ -3060,17 +3469,6 @@
       "source_location": "L1"
     },
     {
-      "id": "src_hooks_usewakelock",
-      "label": "useWakeLock.ts",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "Recipe",
-      "file_type": "code",
-      "norm_label": "usewakelock.ts",
-      "source_file": "src/hooks/useWakeLock.ts",
-      "source_location": "L1"
-    },
-    {
       "id": "src_lib_ingredientparser",
       "label": "ingredientParser.ts",
       "_origin": "ast",
@@ -3090,39 +3488,6 @@
       "file_type": "code",
       "norm_label": "inventario.ts",
       "source_file": "src/lib/inventario.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_lib_listacompra",
-      "label": "listaCompra.ts",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "Recipe",
-      "file_type": "code",
-      "norm_label": "listacompra.ts",
-      "source_file": "src/lib/listaCompra.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_lib_recipecontent",
-      "label": "recipeContent.ts",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "Recipe",
-      "file_type": "code",
-      "norm_label": "recipecontent.ts",
-      "source_file": "src/lib/recipeContent.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_types",
-      "label": "types.ts",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "Recipe",
-      "file_type": "code",
-      "norm_label": "types.ts",
-      "source_file": "src/types.ts",
       "source_location": "L1"
     },
     {
@@ -3156,7 +3521,7 @@
       "file_type": "code",
       "norm_label": "dependencies",
       "source_file": "package.json",
-      "source_location": "L13"
+      "source_location": "L14"
     },
     {
       "id": "package_dependencies_clsx",
@@ -3167,7 +3532,7 @@
       "file_type": "code",
       "norm_label": "clsx",
       "source_file": "package.json",
-      "source_location": "L16"
+      "source_location": "L17"
     },
     {
       "id": "package_dependencies_lucide_react",
@@ -3178,7 +3543,7 @@
       "file_type": "code",
       "norm_label": "lucide-react",
       "source_file": "package.json",
-      "source_location": "L17"
+      "source_location": "L18"
     },
     {
       "id": "package_dependencies_react",
@@ -3189,7 +3554,7 @@
       "file_type": "code",
       "norm_label": "react",
       "source_file": "package.json",
-      "source_location": "L18"
+      "source_location": "L19"
     },
     {
       "id": "package_dependencies_react_dom",
@@ -3200,7 +3565,7 @@
       "file_type": "code",
       "norm_label": "react-dom",
       "source_file": "package.json",
-      "source_location": "L19"
+      "source_location": "L20"
     },
     {
       "id": "package_dependencies_supabase_supabase_js",
@@ -3211,7 +3576,7 @@
       "file_type": "code",
       "norm_label": "@supabase/supabase-js",
       "source_file": "package.json",
-      "source_location": "L14"
+      "source_location": "L15"
     },
     {
       "id": "package_dependencies_tailwind_merge",
@@ -3222,7 +3587,7 @@
       "file_type": "code",
       "norm_label": "tailwind-merge",
       "source_file": "package.json",
-      "source_location": "L20"
+      "source_location": "L21"
     },
     {
       "id": "package_dependencies_tailwindcss",
@@ -3233,7 +3598,7 @@
       "file_type": "code",
       "norm_label": "tailwindcss",
       "source_file": "package.json",
-      "source_location": "L21"
+      "source_location": "L22"
     },
     {
       "id": "package_dependencies_tailwindcss_vite",
@@ -3244,7 +3609,7 @@
       "file_type": "code",
       "norm_label": "@tailwindcss/vite",
       "source_file": "package.json",
-      "source_location": "L15"
+      "source_location": "L16"
     },
     {
       "id": "package_name",
@@ -3300,6 +3665,17 @@
       "norm_label": "deploy",
       "source_file": "package.json",
       "source_location": "L11"
+    },
+    {
+      "id": "package_scripts_deploy_mac",
+      "label": "deploy:mac",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "deploy:mac",
+      "source_file": "package.json",
+      "source_location": "L12"
     },
     {
       "id": "package_scripts_dev",
@@ -3376,7 +3752,7 @@
       "file_type": "concept",
       "norm_label": "clsx",
       "source_file": "package.json",
-      "source_location": "L16"
+      "source_location": "L17"
     },
     {
       "id": "ref_eslint",
@@ -3387,7 +3763,7 @@
       "file_type": "concept",
       "norm_label": "eslint",
       "source_file": "package.json",
-      "source_location": "L29"
+      "source_location": "L30"
     },
     {
       "id": "ref_eslint_js",
@@ -3398,7 +3774,7 @@
       "file_type": "concept",
       "norm_label": "@eslint/js",
       "source_file": "package.json",
-      "source_location": "L24"
+      "source_location": "L25"
     },
     {
       "id": "ref_eslint_plugin_react_hooks",
@@ -3409,7 +3785,7 @@
       "file_type": "concept",
       "norm_label": "eslint-plugin-react-hooks",
       "source_file": "package.json",
-      "source_location": "L30"
+      "source_location": "L31"
     },
     {
       "id": "ref_eslint_plugin_react_refresh",
@@ -3420,7 +3796,7 @@
       "file_type": "concept",
       "norm_label": "eslint-plugin-react-refresh",
       "source_file": "package.json",
-      "source_location": "L31"
+      "source_location": "L32"
     },
     {
       "id": "ref_globals",
@@ -3431,7 +3807,7 @@
       "file_type": "concept",
       "norm_label": "globals",
       "source_file": "package.json",
-      "source_location": "L32"
+      "source_location": "L33"
     },
     {
       "id": "ref_react_dom",
@@ -3442,7 +3818,7 @@
       "file_type": "concept",
       "norm_label": "react-dom",
       "source_file": "package.json",
-      "source_location": "L19"
+      "source_location": "L20"
     },
     {
       "id": "ref_tailwind_merge",
@@ -3453,7 +3829,7 @@
       "file_type": "concept",
       "norm_label": "tailwind-merge",
       "source_file": "package.json",
-      "source_location": "L20"
+      "source_location": "L21"
     },
     {
       "id": "ref_tailwindcss",
@@ -3464,7 +3840,7 @@
       "file_type": "concept",
       "norm_label": "tailwindcss",
       "source_file": "package.json",
-      "source_location": "L21"
+      "source_location": "L22"
     },
     {
       "id": "ref_tailwindcss_vite",
@@ -3475,7 +3851,7 @@
       "file_type": "concept",
       "norm_label": "@tailwindcss/vite",
       "source_file": "package.json",
-      "source_location": "L15"
+      "source_location": "L16"
     },
     {
       "id": "ref_types_node",
@@ -3486,7 +3862,7 @@
       "file_type": "concept",
       "norm_label": "@types/node",
       "source_file": "package.json",
-      "source_location": "L25"
+      "source_location": "L26"
     },
     {
       "id": "ref_types_react",
@@ -3497,7 +3873,7 @@
       "file_type": "concept",
       "norm_label": "@types/react",
       "source_file": "package.json",
-      "source_location": "L26"
+      "source_location": "L27"
     },
     {
       "id": "ref_types_react_dom",
@@ -3508,7 +3884,7 @@
       "file_type": "concept",
       "norm_label": "@types/react-dom",
       "source_file": "package.json",
-      "source_location": "L27"
+      "source_location": "L28"
     },
     {
       "id": "ref_typescript",
@@ -3519,7 +3895,7 @@
       "file_type": "concept",
       "norm_label": "typescript",
       "source_file": "package.json",
-      "source_location": "L33"
+      "source_location": "L34"
     },
     {
       "id": "ref_typescript_eslint",
@@ -3530,7 +3906,7 @@
       "file_type": "concept",
       "norm_label": "typescript-eslint",
       "source_file": "package.json",
-      "source_location": "L34"
+      "source_location": "L35"
     },
     {
       "id": "ref_vite",
@@ -3541,7 +3917,7 @@
       "file_type": "concept",
       "norm_label": "vite",
       "source_file": "package.json",
-      "source_location": "L35"
+      "source_location": "L36"
     },
     {
       "id": "ref_vitejs_plugin_react",
@@ -3552,7 +3928,7 @@
       "file_type": "concept",
       "norm_label": "@vitejs/plugin-react",
       "source_file": "package.json",
-      "source_location": "L28"
+      "source_location": "L29"
     },
     {
       "id": "supabase_functions_indexar_recetas_index",
@@ -3654,6 +4030,17 @@
       "source_location": "L1"
     },
     {
+      "id": "src_components_reindexarbusqueda",
+      "label": "ReindexarBusqueda.tsx",
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "errorMessage",
+      "file_type": "code",
+      "norm_label": "reindexarbusqueda.tsx",
+      "source_file": "src/components/ReindexarBusqueda.tsx",
+      "source_location": "L1"
+    },
+    {
       "id": "src_components_sharebyemail",
       "label": "ShareByEmail.tsx",
       "_origin": "ast",
@@ -3742,6 +4129,17 @@
       "source_location": "L1"
     },
     {
+      "id": "src_lib_busquedasemantica",
+      "label": "busquedaSemantica.ts",
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "errorMessage",
+      "file_type": "code",
+      "norm_label": "busquedasemantica.ts",
+      "source_file": "src/lib/busquedaSemantica.ts",
+      "source_location": "L1"
+    },
+    {
       "id": "src_lib_errors",
       "label": "errors.ts",
       "_origin": "ast",
@@ -3827,7 +4225,7 @@
       "file_type": "concept",
       "norm_label": "lucide-react",
       "source_file": "package.json",
-      "source_location": "L17"
+      "source_location": "L18"
     },
     {
       "id": "ref_react",
@@ -3838,7 +4236,7 @@
       "file_type": "concept",
       "norm_label": "react",
       "source_file": "package.json",
-      "source_location": "L18"
+      "source_location": "L19"
     },
     {
       "id": "ref_supabase_supabase_js",
@@ -3849,7 +4247,7 @@
       "file_type": "concept",
       "norm_label": "@supabase/supabase-js",
       "source_file": "package.json",
-      "source_location": "L14"
+      "source_location": "L15"
     },
     {
       "id": "supabase_migrations_20261010_anade_tiempo_porciones_dificultad",
@@ -4317,7 +4715,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/App.tsx",
-      "source_location": "L103",
+      "source_location": "L105",
       "weight": 1.0
     },
     {
@@ -4329,7 +4727,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/App.tsx",
-      "source_location": "L275",
+      "source_location": "L281",
       "weight": 1.0
     },
     {
@@ -4341,7 +4739,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/App.tsx",
-      "source_location": "L32",
+      "source_location": "L31",
       "weight": 1.0
     },
     {
@@ -4413,7 +4811,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/App.tsx",
-      "source_location": "L83",
+      "source_location": "L85",
       "weight": 1.0
     },
     {
@@ -4425,7 +4823,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/App.tsx",
-      "source_location": "L84",
+      "source_location": "L86",
       "weight": 1.0
     },
     {
@@ -4581,7 +4979,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/ModoCocina.tsx",
-      "source_location": "L18",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -4593,7 +4991,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/ModoCocina.tsx",
-      "source_location": "L19",
+      "source_location": "L22",
       "weight": 1.0
     },
     {
@@ -4605,7 +5003,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/ModoCocina.tsx",
-      "source_location": "L23",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_modococina_modococina",
+      "target": "src_hooks_usetemporizadores_usetemporizadores",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/components/ModoCocina.tsx",
+      "source_location": "L27",
       "weight": 1.0
     },
     {
@@ -4654,6 +5064,30 @@
       "context": "call",
       "source_file": "src/components/MuroRealizaciones.tsx",
       "source_location": "L54",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_pasocontiempos_pasocontiempos",
+      "target": "src_lib_tiempos_detectartiempos",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/components/PasoConTiempos.tsx",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_pasocontiempos_pasocontiempos",
+      "target": "src_lib_tiempos_formatearduracion",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/components/PasoConTiempos.tsx",
+      "source_location": "L20",
       "weight": 1.0
     },
     {
@@ -4725,7 +5159,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/RecipeDetail.tsx",
-      "source_location": "L36",
+      "source_location": "L38",
       "weight": 1.0
     },
     {
@@ -4737,7 +5171,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/RecipeDetail.tsx",
-      "source_location": "L53",
+      "source_location": "L55",
       "weight": 1.0
     },
     {
@@ -4749,7 +5183,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/RecipeDetail.tsx",
-      "source_location": "L69",
+      "source_location": "L71",
       "weight": 1.0
     },
     {
@@ -4789,6 +5223,18 @@
       "weight": 1.0
     },
     {
+      "source": "src_components_temporizadoresbarra_temporizadoresbarra",
+      "target": "src_lib_tiempos_formatearreloj",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/components/TemporizadoresBarra.tsx",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
       "source": "src_hooks_usebusquedasemantica_usebusquedasemantica",
       "target": "src_lib_busquedasemantica_buscarsemantico",
       "relation": "calls",
@@ -4797,7 +5243,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/hooks/useBusquedaSemantica.ts",
-      "source_location": "L27",
+      "source_location": "L28",
       "weight": 1.0
     },
     {
@@ -4809,7 +5255,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/hooks/useBusquedaSemantica.ts",
-      "source_location": "L30",
+      "source_location": "L31",
       "weight": 1.0
     },
     {
@@ -4917,7 +5363,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/hooks/useRecipes.ts",
-      "source_location": "L124",
+      "source_location": "L135",
       "weight": 1.0
     },
     {
@@ -4929,7 +5375,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/hooks/useRecipes.ts",
-      "source_location": "L151",
+      "source_location": "L162",
       "weight": 1.0
     },
     {
@@ -5014,6 +5460,18 @@
       "context": "call",
       "source_file": "src/hooks/useRuta.ts",
       "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "src_hooks_usetemporizadores_usetemporizadores",
+      "target": "src_hooks_usetemporizadores_pitar",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/hooks/useTemporizadores.ts",
+      "source_location": "L60",
       "weight": 1.0
     },
     {
@@ -5173,6 +5631,30 @@
       "weight": 1.0
     },
     {
+      "source": "src_lib_tiempos_detectartiempos",
+      "target": "src_lib_tiempos_anumero",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/lib/tiempos.ts",
+      "source_location": "L68",
+      "weight": 1.0
+    },
+    {
+      "source": "src_lib_tiempos_detectartiempos",
+      "target": "src_lib_tiempos_segundosde",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/lib/tiempos.ts",
+      "source_location": "L68",
+      "weight": 1.0
+    },
+    {
       "source": "supabase_functions_buscar_recetas_index_embeber",
       "target": "supabase_functions_buscar_recetas_index_json",
       "relation": "calls",
@@ -5181,7 +5663,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "supabase/functions/buscar-recetas/index.ts",
-      "source_location": "L52",
+      "source_location": "L57",
       "weight": 1.0
     },
     {
@@ -5293,18 +5775,6 @@
       "weight": 1.0
     },
     {
-      "source": "src_components_busquedasemantica_busquedasemanticaprops",
-      "target": "src_hooks_usebusquedasemantica_busquedasemantica",
-      "relation": "references",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "field",
-      "source_file": "src/components/BusquedaSemantica.tsx",
-      "source_location": "L6",
-      "weight": 1.0
-    },
-    {
       "source": "src_components_despensasection_props",
       "target": "src_types_recipe",
       "relation": "references",
@@ -5338,6 +5808,18 @@
       "context": "field",
       "source_file": "src/components/FilterBar.tsx",
       "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_ingredientsearch_ingredientsearchprops",
+      "target": "src_hooks_usebusquedasemantica_busquedasemantica",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "field",
+      "source_file": "src/components/IngredientSearch.tsx",
+      "source_location": "L9",
       "weight": 1.0
     },
     {
@@ -5385,7 +5867,7 @@
       "confidence_score": 1.0,
       "context": "field",
       "source_file": "src/components/ModoCocina.tsx",
-      "source_location": "L8",
+      "source_location": "L11",
       "weight": 1.0
     },
     {
@@ -5517,7 +5999,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L14",
+      "source_location": "L15",
       "weight": 1.0
     },
     {
@@ -5529,7 +6011,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L15",
+      "source_location": "L16",
       "weight": 1.0
     },
     {
@@ -5541,7 +6023,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L16",
+      "source_location": "L17",
       "weight": 1.0
     },
     {
@@ -5553,7 +6035,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L17",
+      "source_location": "L18",
       "weight": 1.0
     },
     {
@@ -5565,7 +6047,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L18",
+      "source_location": "L19",
       "weight": 1.0
     },
     {
@@ -5577,7 +6059,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L19",
+      "source_location": "L20",
       "weight": 1.0
     },
     {
@@ -5589,7 +6071,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L20",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -5601,7 +6083,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L21",
+      "source_location": "L22",
       "weight": 1.0
     },
     {
@@ -5613,7 +6095,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L24",
+      "source_location": "L25",
       "weight": 1.0
     },
     {
@@ -5625,7 +6107,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L25",
+      "source_location": "L26",
       "weight": 1.0
     },
     {
@@ -5637,7 +6119,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L26",
+      "source_location": "L27",
       "weight": 1.0
     },
     {
@@ -5649,7 +6131,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L27",
+      "source_location": "L28",
       "weight": 1.0
     },
     {
@@ -5661,7 +6143,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L28",
+      "source_location": "L29",
       "weight": 1.0
     },
     {
@@ -5673,7 +6155,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L29",
+      "source_location": "L30",
       "weight": 1.0
     },
     {
@@ -5685,7 +6167,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L30",
+      "source_location": "L31",
       "weight": 1.0
     },
     {
@@ -5697,7 +6179,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L31",
+      "source_location": "L32",
       "weight": 1.0
     },
     {
@@ -5709,7 +6191,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L32",
+      "source_location": "L33",
       "weight": 1.0
     },
     {
@@ -5721,7 +6203,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L33",
+      "source_location": "L34",
       "weight": 1.0
     },
     {
@@ -5733,7 +6215,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L34",
+      "source_location": "L35",
       "weight": 1.0
     },
     {
@@ -5745,7 +6227,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L35",
+      "source_location": "L36",
       "weight": 1.0
     },
     {
@@ -5762,7 +6244,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_components_busquedasemantica_busquedasemantica",
+      "target": "src_components_avisos_recetanoencontrada",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -5774,18 +6256,6 @@
     },
     {
       "source": "src_app",
-      "target": "src_components_avisos_recetanoencontrada",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/App.tsx",
-      "source_location": "L12",
-      "weight": 1.0
-    },
-    {
-      "source": "src_app",
       "target": "src_components_avisos_soloadmin",
       "relation": "imports",
       "_origin": "ast",
@@ -5793,7 +6263,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/App.tsx",
-      "source_location": "L12",
+      "source_location": "L11",
       "weight": 1.0
     },
     {
@@ -5805,7 +6275,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/App.tsx",
-      "source_location": "L13",
+      "source_location": "L12",
       "weight": 1.0
     },
     {
@@ -5817,7 +6287,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/App.tsx",
-      "source_location": "L14",
+      "source_location": "L13",
       "weight": 1.0
     },
     {
@@ -5829,7 +6299,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/App.tsx",
-      "source_location": "L15",
+      "source_location": "L14",
       "weight": 1.0
     },
     {
@@ -5841,7 +6311,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/App.tsx",
-      "source_location": "L16",
+      "source_location": "L15",
       "weight": 1.0
     },
     {
@@ -5853,7 +6323,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/App.tsx",
-      "source_location": "L17",
+      "source_location": "L16",
       "weight": 1.0
     },
     {
@@ -5865,7 +6335,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/App.tsx",
-      "source_location": "L18",
+      "source_location": "L17",
       "weight": 1.0
     },
     {
@@ -5877,7 +6347,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/App.tsx",
-      "source_location": "L19",
+      "source_location": "L18",
       "weight": 1.0
     },
     {
@@ -5889,7 +6359,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/App.tsx",
-      "source_location": "L20",
+      "source_location": "L19",
       "weight": 1.0
     },
     {
@@ -5901,7 +6371,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/App.tsx",
-      "source_location": "L20",
+      "source_location": "L19",
       "weight": 1.0
     },
     {
@@ -5913,7 +6383,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/App.tsx",
-      "source_location": "L20",
+      "source_location": "L19",
       "weight": 1.0
     },
     {
@@ -5925,7 +6395,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/App.tsx",
-      "source_location": "L20",
+      "source_location": "L19",
       "weight": 1.0
     },
     {
@@ -5937,7 +6407,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/App.tsx",
-      "source_location": "L21",
+      "source_location": "L20",
       "weight": 1.0
     },
     {
@@ -5949,7 +6419,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/App.tsx",
-      "source_location": "L21",
+      "source_location": "L20",
       "weight": 1.0
     },
     {
@@ -5961,7 +6431,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/App.tsx",
-      "source_location": "L22",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -5973,7 +6443,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/App.tsx",
-      "source_location": "L23",
+      "source_location": "L22",
       "weight": 1.0
     },
     {
@@ -5985,7 +6455,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/App.tsx",
-      "source_location": "L24",
+      "source_location": "L23",
       "weight": 1.0
     },
     {
@@ -6193,18 +6663,6 @@
       "weight": 1.0
     },
     {
-      "source": "src_components_busquedasemantica",
-      "target": "src_hooks_usebusquedasemantica_busquedasemantica",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/components/BusquedaSemantica.tsx",
-      "source_location": "L3",
-      "weight": 1.0
-    },
-    {
       "source": "src_components_despensasection",
       "target": "src_types_recipe",
       "relation": "imports",
@@ -6286,6 +6744,18 @@
       "context": "import",
       "source_file": "src/components/FilterBar.tsx",
       "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_ingredientsearch",
+      "target": "src_hooks_usebusquedasemantica_busquedasemantica",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/IngredientSearch.tsx",
+      "source_location": "L3",
       "weight": 1.0
     },
     {
@@ -6433,6 +6903,42 @@
       "weight": 1.0
     },
     {
+      "source": "src_components_modococina",
+      "target": "src_hooks_usetemporizadores_usetemporizadores",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/ModoCocina.tsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_modococina",
+      "target": "src_components_pasocontiempos_pasocontiempos",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/ModoCocina.tsx",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_modococina",
+      "target": "src_components_temporizadoresbarra_temporizadoresbarra",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/ModoCocina.tsx",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
       "source": "src_components_murorealizaciones",
       "target": "src_components_starrating_starrating",
       "relation": "imports",
@@ -6526,6 +7032,30 @@
       "context": "import",
       "source_file": "src/components/MuroRealizaciones.tsx",
       "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_pasocontiempos",
+      "target": "src_lib_tiempos_detectartiempos",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/PasoConTiempos.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_pasocontiempos",
+      "target": "src_lib_tiempos_formatearduracion",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/PasoConTiempos.tsx",
+      "source_location": "L2",
       "weight": 1.0
     },
     {
@@ -6865,6 +7395,30 @@
       "weight": 1.0
     },
     {
+      "source": "src_components_temporizadoresbarra",
+      "target": "src_hooks_usetemporizadores_temporizadores",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/TemporizadoresBarra.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_temporizadoresbarra",
+      "target": "src_lib_tiempos_formatearreloj",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/TemporizadoresBarra.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
       "source": "src_hooks_usebusquedasemantica",
       "target": "src_types_recipe",
       "relation": "imports",
@@ -7149,7 +7703,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/lib/busquedaSemantica.ts",
-      "source_location": "L1",
+      "source_location": "L2",
       "weight": 1.0
     },
     {
@@ -7382,7 +7936,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_components_busquedasemantica",
+      "target": "src_components_avisos",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -7394,7 +7948,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_components_avisos",
+      "target": "src_components_despensasection",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -7406,7 +7960,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_components_despensasection",
+      "target": "src_components_listacomprasection",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -7418,7 +7972,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_components_listacomprasection",
+      "target": "src_hooks_userecipes",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -7430,7 +7984,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_hooks_userecipes",
+      "target": "src_hooks_usedespensa",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -7442,7 +7996,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_hooks_usedespensa",
+      "target": "src_hooks_useparahacer",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -7454,7 +8008,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_hooks_useparahacer",
+      "target": "src_hooks_useingredientsearch",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -7466,7 +8020,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_hooks_useingredientsearch",
+      "target": "src_hooks_usebusquedasemantica",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -7478,7 +8032,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_hooks_usebusquedasemantica",
+      "target": "src_hooks_useruta",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -7503,7 +8057,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_hooks_useruta",
+      "target": "src_lib_rutas",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -7515,7 +8069,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_lib_rutas",
+      "target": "src_lib_supabase",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -7527,7 +8081,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_lib_supabase",
+      "target": "src_lib_errors",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -7539,18 +8093,6 @@
     },
     {
       "source": "src_app",
-      "target": "src_lib_errors",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/App.tsx",
-      "source_location": "L23",
-      "weight": 1.0
-    },
-    {
-      "source": "src_app",
       "target": "src_types",
       "relation": "imports_from",
       "_origin": "ast",
@@ -7558,7 +8100,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/App.tsx",
-      "source_location": "L24",
+      "source_location": "L23",
       "type_only": true,
       "weight": 1.0
     },
@@ -7807,44 +8349,6 @@
       "weight": 1.0
     },
     {
-      "source": "src_components_busquedasemantica",
-      "target": "ref_lucide_react",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/components/BusquedaSemantica.tsx",
-      "source_location": "L1",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_busquedasemantica",
-      "target": "ref_supabase_supabase_js",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/components/BusquedaSemantica.tsx",
-      "source_location": "L2",
-      "type_only": true,
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_busquedasemantica",
-      "target": "src_hooks_usebusquedasemantica",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/components/BusquedaSemantica.tsx",
-      "source_location": "L3",
-      "type_only": true,
-      "weight": 1.0
-    },
-    {
       "source": "src_components_despensasection",
       "target": "ref_react",
       "relation": "imports_from",
@@ -7966,6 +8470,32 @@
       "context": "import",
       "source_file": "src/components/IngredientSearch.tsx",
       "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_ingredientsearch",
+      "target": "ref_supabase_supabase_js",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/IngredientSearch.tsx",
+      "source_location": "L2",
+      "type_only": true,
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_ingredientsearch",
+      "target": "src_hooks_usebusquedasemantica",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/IngredientSearch.tsx",
+      "source_location": "L3",
+      "type_only": true,
       "weight": 1.0
     },
     {
@@ -8165,6 +8695,42 @@
       "weight": 1.0
     },
     {
+      "source": "src_components_modococina",
+      "target": "src_hooks_usetemporizadores",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/ModoCocina.tsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_modococina",
+      "target": "src_components_pasocontiempos",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/ModoCocina.tsx",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_modococina",
+      "target": "src_components_temporizadoresbarra",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/ModoCocina.tsx",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
       "source": "src_components_murorealizaciones",
       "target": "ref_react",
       "relation": "imports_from",
@@ -8272,6 +8838,30 @@
       "context": "import",
       "source_file": "src/components/MuroRealizaciones.tsx",
       "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_pasocontiempos",
+      "target": "ref_lucide_react",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/PasoConTiempos.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_pasocontiempos",
+      "target": "src_lib_tiempos",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/PasoConTiempos.tsx",
+      "source_location": "L2",
       "weight": 1.0
     },
     {
@@ -8753,6 +9343,43 @@
       "weight": 1.0
     },
     {
+      "source": "src_components_temporizadoresbarra",
+      "target": "ref_lucide_react",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/TemporizadoresBarra.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_temporizadoresbarra",
+      "target": "src_hooks_usetemporizadores",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/TemporizadoresBarra.tsx",
+      "source_location": "L2",
+      "type_only": true,
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_temporizadoresbarra",
+      "target": "src_lib_tiempos",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/TemporizadoresBarra.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
       "source": "src_components_uploadprogress",
       "target": "ref_lucide_react",
       "relation": "imports_from",
@@ -9133,6 +9760,18 @@
       "weight": 1.0
     },
     {
+      "source": "src_hooks_usetemporizadores",
+      "target": "ref_react",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/hooks/useTemporizadores.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
       "source": "src_hooks_usewakelock",
       "target": "ref_react",
       "relation": "imports_from",
@@ -9146,7 +9785,7 @@
     },
     {
       "source": "src_lib_busquedasemantica",
-      "target": "src_lib_supabase",
+      "target": "ref_supabase_supabase_js",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -9154,6 +9793,18 @@
       "context": "import",
       "source_file": "src/lib/busquedaSemantica.ts",
       "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_lib_busquedasemantica",
+      "target": "src_lib_supabase",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/lib/busquedaSemantica.ts",
+      "source_location": "L2",
       "weight": 1.0
     },
     {
@@ -9441,7 +10092,7 @@
     },
     {
       "source": "claude_mi_recetario_contexto_del_proyecto",
-      "target": "claude_tiempo_porciones_y_dificultad",
+      "target": "claude_recetas_sin_hacer",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -9452,13 +10103,24 @@
     },
     {
       "source": "claude_mi_recetario_contexto_del_proyecto",
+      "target": "claude_tiempo_porciones_y_dificultad",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": "L244",
+      "weight": 1.0
+    },
+    {
+      "source": "claude_mi_recetario_contexto_del_proyecto",
       "target": "claude_modo_cocina",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CLAUDE.md",
-      "source_location": "L243",
+      "source_location": "L259",
       "weight": 1.0
     },
     {
@@ -9469,29 +10131,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CLAUDE.md",
-      "source_location": "L271",
-      "weight": 1.0
-    },
-    {
-      "source": "claude_mi_recetario_contexto_del_proyecto",
-      "target": "claude_hacia_d\u00f3nde_puede_crecer",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "CLAUDE.md",
-      "source_location": "L323",
-      "weight": 1.0
-    },
-    {
-      "source": "claude_mi_recetario_contexto_del_proyecto",
-      "target": "claude_graphify",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "CLAUDE.md",
-      "source_location": "L332",
+      "source_location": "L320",
       "weight": 1.0
     },
     {
@@ -9503,6 +10143,39 @@
       "confidence_score": 1.0,
       "source_file": "CLAUDE.md",
       "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "claude_mi_recetario_contexto_del_proyecto",
+      "target": "claude_hacia_d\u00f3nde_puede_crecer",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": "L387",
+      "weight": 1.0
+    },
+    {
+      "source": "claude_mi_recetario_contexto_del_proyecto",
+      "target": "claude_graphify",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": "L396",
+      "weight": 1.0
+    },
+    {
+      "source": "claude_modo_cocina",
+      "target": "claude_temporizadores",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": "L286",
       "weight": 1.0
     },
     {
@@ -9524,7 +10197,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/ideas.md",
-      "source_location": "L116",
+      "source_location": "L115",
       "weight": 1.0
     },
     {
@@ -9546,7 +10219,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/ideas.md",
-      "source_location": "L174",
+      "source_location": "L173",
       "weight": 1.0
     },
     {
@@ -9557,7 +10230,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/ideas.md",
-      "source_location": "L192",
+      "source_location": "L191",
       "weight": 1.0
     },
     {
@@ -9568,7 +10241,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/ideas.md",
-      "source_location": "L212",
+      "source_location": "L211",
       "weight": 1.0
     },
     {
@@ -9579,7 +10252,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/ideas.md",
-      "source_location": "L229",
+      "source_location": "L228",
       "weight": 1.0
     },
     {
@@ -9590,7 +10263,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/ideas.md",
-      "source_location": "L241",
+      "source_location": "L240",
       "weight": 1.0
     },
     {
@@ -9601,7 +10274,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/ideas.md",
-      "source_location": "L252",
+      "source_location": "L251",
       "weight": 1.0
     },
     {
@@ -9612,7 +10285,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/ideas.md",
-      "source_location": "L268",
+      "source_location": "L267",
       "weight": 1.0
     },
     {
@@ -9634,7 +10307,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/ideas.md",
-      "source_location": "L57",
+      "source_location": "L56",
       "weight": 1.0
     },
     {
@@ -9645,7 +10318,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/ideas.md",
-      "source_location": "L148",
+      "source_location": "L147",
       "weight": 1.0
     },
     {
@@ -9766,7 +10439,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L13",
+      "source_location": "L14",
       "weight": 1.0
     },
     {
@@ -9788,7 +10461,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L23",
+      "source_location": "L24",
       "weight": 1.0
     },
     {
@@ -9843,7 +10516,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L14",
+      "source_location": "L15",
       "weight": 1.0
     },
     {
@@ -9854,7 +10527,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L15",
+      "source_location": "L16",
       "weight": 1.0
     },
     {
@@ -9865,7 +10538,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L16",
+      "source_location": "L17",
       "weight": 1.0
     },
     {
@@ -9876,7 +10549,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L17",
+      "source_location": "L18",
       "weight": 1.0
     },
     {
@@ -9887,7 +10560,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L18",
+      "source_location": "L19",
       "weight": 1.0
     },
     {
@@ -9898,7 +10571,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L19",
+      "source_location": "L20",
       "weight": 1.0
     },
     {
@@ -9909,7 +10582,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L20",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -9920,7 +10593,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L21",
+      "source_location": "L22",
       "weight": 1.0
     },
     {
@@ -9931,7 +10604,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L24",
+      "source_location": "L25",
       "weight": 1.0
     },
     {
@@ -9942,7 +10615,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L25",
+      "source_location": "L26",
       "weight": 1.0
     },
     {
@@ -9953,7 +10626,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L26",
+      "source_location": "L27",
       "weight": 1.0
     },
     {
@@ -9964,7 +10637,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L27",
+      "source_location": "L28",
       "weight": 1.0
     },
     {
@@ -9975,7 +10648,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L28",
+      "source_location": "L29",
       "weight": 1.0
     },
     {
@@ -9986,7 +10659,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L29",
+      "source_location": "L30",
       "weight": 1.0
     },
     {
@@ -9997,7 +10670,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L30",
+      "source_location": "L31",
       "weight": 1.0
     },
     {
@@ -10008,7 +10681,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L31",
+      "source_location": "L32",
       "weight": 1.0
     },
     {
@@ -10019,7 +10692,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L32",
+      "source_location": "L33",
       "weight": 1.0
     },
     {
@@ -10030,7 +10703,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L33",
+      "source_location": "L34",
       "weight": 1.0
     },
     {
@@ -10041,7 +10714,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L34",
+      "source_location": "L35",
       "weight": 1.0
     },
     {
@@ -10052,7 +10725,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L35",
+      "source_location": "L36",
       "weight": 1.0
     },
     {
@@ -10075,6 +10748,17 @@
       "confidence_score": 1.0,
       "source_file": "package.json",
       "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "package_scripts",
+      "target": "package_scripts_deploy_mac",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "package.json",
+      "source_location": "L12",
       "weight": 1.0
     },
     {
@@ -10111,6 +10795,17 @@
       "weight": 1.0
     },
     {
+      "source": "scripts_deploy_sh_scripts_deploy",
+      "target": "scripts_deploy_sh__entry",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/deploy.sh",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
       "source": "src_app",
       "target": "src_app_categories",
       "relation": "contains",
@@ -10118,7 +10813,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/App.tsx",
-      "source_location": "L26",
+      "source_location": "L25",
       "weight": 1.0
     },
     {
@@ -10129,7 +10824,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/App.tsx",
-      "source_location": "L31",
+      "source_location": "L30",
       "weight": 1.0
     },
     {
@@ -10199,28 +10894,6 @@
       "weight": 1.0
     },
     {
-      "source": "src_components_busquedasemantica",
-      "target": "src_components_busquedasemantica_busquedasemantica",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/components/BusquedaSemantica.tsx",
-      "source_location": "L11",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_busquedasemantica",
-      "target": "src_components_busquedasemantica_busquedasemanticaprops",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/components/BusquedaSemantica.tsx",
-      "source_location": "L5",
-      "weight": 1.0
-    },
-    {
       "source": "src_components_despensasection",
       "target": "src_components_despensasection_props",
       "relation": "contains",
@@ -10244,34 +10917,23 @@
     },
     {
       "source": "src_components_filterbar",
-      "target": "src_components_filterbar_filterbarprops",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/components/FilterBar.tsx",
-      "source_location": "L3",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_filterbar",
       "target": "src_components_filterbar_filterbar",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/FilterBar.tsx",
-      "source_location": "L9",
+      "source_location": "L12",
       "weight": 1.0
     },
     {
-      "source": "src_components_ingredientsearch",
-      "target": "src_components_ingredientsearch_ingredientsearchprops",
+      "source": "src_components_filterbar",
+      "target": "src_components_filterbar_filterbarprops",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "src/components/IngredientSearch.tsx",
+      "source_file": "src/components/FilterBar.tsx",
       "source_location": "L3",
       "weight": 1.0
     },
@@ -10283,7 +10945,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/IngredientSearch.tsx",
-      "source_location": "L9",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_ingredientsearch",
+      "target": "src_components_ingredientsearch_ingredientsearchprops",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/IngredientSearch.tsx",
+      "source_location": "L5",
       "weight": 1.0
     },
     {
@@ -10332,24 +11005,24 @@
     },
     {
       "source": "src_components_modococina",
-      "target": "src_components_modococina_modococina",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/components/ModoCocina.tsx",
-      "source_location": "L17",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_modococina",
       "target": "src_components_modococina_modococinaprops",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/ModoCocina.tsx",
-      "source_location": "L7",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_modococina",
+      "target": "src_components_modococina_modococina",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/ModoCocina.tsx",
+      "source_location": "L20",
       "weight": 1.0
     },
     {
@@ -10394,6 +11067,28 @@
       "confidence_score": 1.0,
       "source_file": "src/components/MuroRealizaciones.tsx",
       "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_pasocontiempos",
+      "target": "src_components_pasocontiempos_pasocontiempos",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/PasoConTiempos.tsx",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_pasocontiempos",
+      "target": "src_components_pasocontiempos_pasocontiemposprops",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/PasoConTiempos.tsx",
+      "source_location": "L4",
       "weight": 1.0
     },
     {
@@ -10503,7 +11198,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/RecipeDetail.tsx",
-      "source_location": "L34",
+      "source_location": "L36",
       "weight": 1.0
     },
     {
@@ -10617,6 +11312,17 @@
       "weight": 1.0
     },
     {
+      "source": "src_components_temporizadoresbarra",
+      "target": "src_components_temporizadoresbarra_temporizadoresbarra",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/TemporizadoresBarra.tsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
       "source": "src_components_uploadprogress",
       "target": "src_components_uploadprogress_uploadprogress",
       "relation": "contains",
@@ -10657,7 +11363,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/hooks/useBusquedaSemantica.ts",
-      "source_location": "L11",
+      "source_location": "L13",
       "weight": 1.0
     },
     {
@@ -10837,6 +11543,50 @@
       "weight": 1.0
     },
     {
+      "source": "src_hooks_usetemporizadores",
+      "target": "src_hooks_usetemporizadores_pitar",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/hooks/useTemporizadores.ts",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "src_hooks_usetemporizadores",
+      "target": "src_hooks_usetemporizadores_temporizador",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/hooks/useTemporizadores.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_hooks_usetemporizadores",
+      "target": "src_hooks_usetemporizadores_usetemporizadores",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/hooks/useTemporizadores.ts",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "src_hooks_usetemporizadores",
+      "target": "src_hooks_usetemporizadores_temporizadores",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/hooks/useTemporizadores.ts",
+      "source_location": "L97",
+      "weight": 1.0
+    },
+    {
       "source": "src_hooks_usewakelock",
       "target": "src_hooks_usewakelock_usewakelock",
       "relation": "contains",
@@ -10855,18 +11605,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/lib/busquedaSemantica.ts",
-      "source_location": "L14",
-      "weight": 1.0
-    },
-    {
-      "source": "src_lib_busquedasemantica",
-      "target": "src_lib_busquedasemantica_resultadoindexacion",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/lib/busquedaSemantica.ts",
-      "source_location": "L3",
+      "source_location": "L15",
       "weight": 1.0
     },
     {
@@ -10877,7 +11616,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/lib/busquedaSemantica.ts",
-      "source_location": "L31",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "src_lib_busquedasemantica",
+      "target": "src_lib_busquedasemantica_resultadoindexacion",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/lib/busquedaSemantica.ts",
+      "source_location": "L4",
       "weight": 1.0
     },
     {
@@ -11222,6 +11972,127 @@
       "weight": 1.0
     },
     {
+      "source": "src_lib_tiempos",
+      "target": "src_lib_tiempos_num",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/lib/tiempos.ts",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "src_lib_tiempos",
+      "target": "src_lib_tiempos_unidad",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/lib/tiempos.ts",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "src_lib_tiempos",
+      "target": "src_lib_tiempos_numeros_en_letras",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/lib/tiempos.ts",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "src_lib_tiempos",
+      "target": "src_lib_tiempos_palabras",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/lib/tiempos.ts",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "src_lib_tiempos",
+      "target": "src_lib_tiempos_patron",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/lib/tiempos.ts",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "src_lib_tiempos",
+      "target": "src_lib_tiempos_anumero",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/lib/tiempos.ts",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "src_lib_tiempos",
+      "target": "src_lib_tiempos_segundosde",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/lib/tiempos.ts",
+      "source_location": "L51",
+      "weight": 1.0
+    },
+    {
+      "source": "src_lib_tiempos",
+      "target": "src_lib_tiempos_detectartiempos",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/lib/tiempos.ts",
+      "source_location": "L62",
+      "weight": 1.0
+    },
+    {
+      "source": "src_lib_tiempos",
+      "target": "src_lib_tiempos_formatearduracion",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/lib/tiempos.ts",
+      "source_location": "L89",
+      "weight": 1.0
+    },
+    {
+      "source": "src_lib_tiempos",
+      "target": "src_lib_tiempos_fragmento",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/lib/tiempos.ts",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "src_lib_tiempos",
+      "target": "src_lib_tiempos_formatearreloj",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/lib/tiempos.ts",
+      "source_location": "L99",
+      "weight": 1.0
+    },
+    {
       "source": "src_types",
       "target": "src_types_recipe",
       "relation": "contains",
@@ -11251,7 +12122,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/types.ts",
-      "source_location": "L32",
+      "source_location": "L34",
       "weight": 1.0
     },
     {
@@ -11262,7 +12133,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "supabase/functions/buscar-recetas/index.ts",
-      "source_location": "L21",
+      "source_location": "L26",
       "weight": 1.0
     },
     {
@@ -11273,7 +12144,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "supabase/functions/buscar-recetas/index.ts",
-      "source_location": "L26",
+      "source_location": "L31",
       "weight": 1.0
     },
     {
@@ -11284,7 +12155,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "supabase/functions/buscar-recetas/index.ts",
-      "source_location": "L33",
+      "source_location": "L38",
       "weight": 1.0
     },
     {
@@ -11295,7 +12166,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "supabase/functions/buscar-recetas/index.ts",
-      "source_location": "L65",
+      "source_location": "L70",
       "weight": 1.0
     },
     {
@@ -11472,6 +12343,61 @@
       "confidence_score": 1.0,
       "source_file": "supabase/migrations/20261013_busqueda_semantica.sql",
       "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "supabase_migrations_20261013_limite_busquedas",
+      "target": "supabase_migrations_20261013_limite_busquedas_public_busquedas_uso",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "supabase/migrations/20261013_limite_busquedas.sql",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "supabase_migrations_20261013_limite_busquedas",
+      "target": "supabase_migrations_20261013_limite_busquedas_busquedas_uso_user_fecha",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "supabase/migrations/20261013_limite_busquedas.sql",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "supabase_migrations_20261013_limite_busquedas",
+      "target": "supabase_migrations_20261013_limite_busquedas_public_registrar_busqueda",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "supabase/migrations/20261013_limite_busquedas.sql",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "supabase_migrations_20261014_sin_hacer",
+      "target": "supabase_migrations_20261014_sin_hacer_public_quitar_sin_hacer",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "supabase/migrations/20261014_sin_hacer.sql",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "supabase_migrations_20261014_sin_hacer",
+      "target": "supabase_migrations_20261014_sin_hacer_trg_quitar_sin_hacer",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "supabase/migrations/20261014_sin_hacer.sql",
+      "source_location": "L45",
       "weight": 1.0
     },
     {
@@ -11893,6 +12819,17 @@
       "weight": 1.0
     },
     {
+      "source": "supabase_migrations_20261013_limite_busquedas_busquedas_uso_user_fecha",
+      "target": "supabase_migrations_20261013_limite_busquedas_public_busquedas_uso",
+      "relation": "indexes",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "supabase/migrations/20261013_limite_busquedas.sql",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
       "source": "supabase_migrations_20260805_endurecer_rls_public_es_admin",
       "target": "supabase_migrations_20260805_endurecer_rls_public_admins",
       "relation": "reads_from",
@@ -11923,6 +12860,17 @@
       "confidence_score": 1.0,
       "source_file": "supabase/migrations/20261013_busqueda_semantica.sql",
       "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "supabase_migrations_20261013_limite_busquedas_public_registrar_busqueda",
+      "target": "supabase_migrations_20261013_limite_busquedas_public_busquedas_uso",
+      "relation": "reads_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "supabase/migrations/20261013_limite_busquedas.sql",
+      "source_location": "L47",
       "weight": 1.0
     },
     {
@@ -12033,6 +12981,28 @@
       "confidence_score": 1.0,
       "source_file": "supabase/migrations/20261013_busqueda_semantica.sql",
       "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "supabase_migrations_20261013_limite_busquedas_public_busquedas_uso",
+      "target": "supabase_migrations_20261013_limite_busquedas_sql_auth_users",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "supabase/migrations/20261013_limite_busquedas.sql",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "supabase_migrations_20261014_sin_hacer_trg_quitar_sin_hacer",
+      "target": "public_quitar_sin_hacer",
+      "relation": "triggers",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "supabase/migrations/20261014_sin_hacer.sql",
+      "source_location": "L45",
       "weight": 1.0
     },
     {
@@ -12649,5 +13619,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "20f4e631521d9806dd9ff75e1abb19b560df814b"
+  "built_at_commit": "b609bfde0f1f5311bbe7a136348f262e11667bd2"
 }

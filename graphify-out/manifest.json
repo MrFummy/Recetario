@@ -12,15 +12,15 @@
     "semantic_hash": "0355276bc79439afe3c53e3a2470ca1e"
   },
   "package.json": {
-    "mtime": 1791626075.6579063,
-    "seen": 1791901115.197365,
-    "ast_hash": "866817c937a32bb7ef0cfda814fef9cd",
+    "mtime": 1791902166.1003768,
+    "seen": 1791974866.928241,
+    "ast_hash": "98044239863715f10c87bd0e8930e05e",
     "semantic_hash": ""
   },
   "src/App.tsx": {
-    "mtime": 1791900851.4893126,
-    "seen": 1791901115.197367,
-    "ast_hash": "8522f8d40e8f871c507e9490aeeb6ea0",
+    "mtime": 1791974844.1176972,
+    "seen": 1791974866.9282439,
+    "ast_hash": "a4cf746e5df5181760a24328ea26c07b",
     "semantic_hash": ""
   },
   "src/components/AddRecipeForm.tsx": {
@@ -30,16 +30,16 @@
     "semantic_hash": "d743d6ce6561ce1fc1871be3757fc072"
   },
   "src/components/FilterBar.tsx": {
-    "mtime": 1779908153.9375815,
-    "seen": 1791901115.19737,
-    "ast_hash": "98c29b8f45bfb80b9252e8aee1931148",
-    "semantic_hash": "98c29b8f45bfb80b9252e8aee1931148"
+    "mtime": 1791974844.116433,
+    "seen": 1791974866.9282482,
+    "ast_hash": "d52f2bdbe1cb1af512e57b1f94e7ab76",
+    "semantic_hash": ""
   },
   "src/components/IngredientSearch.tsx": {
-    "mtime": 1779911228.9054372,
-    "seen": 1791901115.1973708,
-    "ast_hash": "2fd854f5a2311e93ef370deca3f4d2b7",
-    "semantic_hash": "2fd854f5a2311e93ef370deca3f4d2b7"
+    "mtime": 1791902585.620166,
+    "seen": 1791974866.9282491,
+    "ast_hash": "5cdf7fbf3614164d49ff243e2901851a",
+    "semantic_hash": ""
   },
   "src/components/LoginModal.tsx": {
     "mtime": 1785936028.557867,
@@ -48,15 +48,15 @@
     "semantic_hash": "69888ba051186953413ac7f40527fc44"
   },
   "src/components/RecipeCard.tsx": {
-    "mtime": 1780004246.7513092,
-    "seen": 1791901115.1973739,
-    "ast_hash": "0bb06f88e50e3e4dc7078caacc89753d",
-    "semantic_hash": "0bb06f88e50e3e4dc7078caacc89753d"
+    "mtime": 1791974844.1162758,
+    "seen": 1791974866.928253,
+    "ast_hash": "6f2db9b7d474f93c8d5138e5b56f8a00",
+    "semantic_hash": ""
   },
   "src/components/RecipeDetail.tsx": {
-    "mtime": 1791892902.657957,
-    "seen": 1791901115.197375,
-    "ast_hash": "b1d147eb0a4461cd2ff9d5e034e1471d",
+    "mtime": 1791974844.1191046,
+    "seen": 1791974866.928255,
+    "ast_hash": "99a8f4a2b3df75b9a6ef33e569fcfcb1",
     "semantic_hash": ""
   },
   "src/components/RecipeGrid.tsx": {
@@ -84,9 +84,9 @@
     "semantic_hash": "e3aff6228c8d6b0457bd817adae8e008"
   },
   "src/hooks/useRecipes.ts": {
-    "mtime": 1791716538.1773596,
-    "seen": 1791901115.197382,
-    "ast_hash": "a352a9436cb350fd89076ca27d1771aa",
+    "mtime": 1791974844.1160452,
+    "seen": 1791974866.928263,
+    "ast_hash": "d2c71140bb2fe1297146b4192da3efa0",
     "semantic_hash": ""
   },
   "src/lib/ingredientParser.ts": {
@@ -108,9 +108,9 @@
     "semantic_hash": "787e5a07efeb2bf6209d5937195f2f68"
   },
   "src/types.ts": {
-    "mtime": 1791625423.4209604,
-    "seen": 1791901115.197388,
-    "ast_hash": "9b42818bb11efb7752feef044edcbeea",
+    "mtime": 1791974844.1156116,
+    "seen": 1791974866.9282718,
+    "ast_hash": "9ca357dd06f0e646489592f8abb09714",
     "semantic_hash": ""
   },
   "tsconfig.app.json": {
@@ -144,22 +144,22 @@
     "semantic_hash": "4ff9eeca4ab53927478aaa5c2f62c99d"
   },
   "README.md": {
-    "mtime": 1791626083.4626637,
-    "seen": 1791901115.1973991,
-    "ast_hash": "e991db0afe5ba39b7c547d6e39867bc9",
+    "mtime": 1791902176.684,
+    "seen": 1791974866.928285,
+    "ast_hash": "78bfcb7415ab7840739f11a88774fbad",
     "semantic_hash": ""
   },
   "index.html": {
-    "mtime": 1779908153.9185588,
-    "seen": 1791901115.197401,
-    "ast_hash": "33a9f890e342be167ef1cde99a6193d6",
-    "semantic_hash": "33a9f890e342be167ef1cde99a6193d6"
+    "mtime": 1791903209.6709247,
+    "seen": 1791974866.928287,
+    "ast_hash": "0d43b43d24befc27d080a23b8b0e4224",
+    "semantic_hash": ""
   },
   "public/favicon.svg": {
-    "mtime": 1779531867.832974,
-    "seen": 1791901115.197401,
-    "ast_hash": "b8b0b9b7904e7250c0894e3f551e15ff",
-    "semantic_hash": "b8b0b9b7904e7250c0894e3f551e15ff"
+    "mtime": 1791902852.6683311,
+    "seen": 1791974866.928289,
+    "ast_hash": "fc6b21c99e9a1dc6c4d81d02f7e469ed",
+    "semantic_hash": ""
   },
   "public/icons.svg": {
     "mtime": 1779042821.4924963,
@@ -240,9 +240,9 @@
     "semantic_hash": ""
   },
   "CLAUDE.md": {
-    "mtime": 1791901099.506993,
-    "seen": 1791901115.197398,
-    "ast_hash": "5c742f9c1ab3c84f75404a27a8a5722c",
+    "mtime": 1791974865.6939285,
+    "seen": 1791974866.928284,
+    "ast_hash": "a4df4fff7c09542a966a4b3fca55a71b",
     "semantic_hash": ""
   },
   "src/hooks/useDespensa.ts": {
@@ -264,9 +264,9 @@
     "semantic_hash": ""
   },
   "docs/ideas.md": {
-    "mtime": 1791901026.6572134,
-    "seen": 1791901115.1973991,
-    "ast_hash": "9172b9c619280e53674fa9350565d85f",
+    "mtime": 1791903579.8505433,
+    "seen": 1791974866.928285,
+    "ast_hash": "382d2fc4fe42b21b9bb6b345e0c5112e",
     "semantic_hash": ""
   },
   "src/components/Avisos.tsx": {
@@ -377,16 +377,10 @@
     "ast_hash": "a9478ef9d61197e63f121b5d4a2f1ba2",
     "semantic_hash": ""
   },
-  "src/components/BusquedaSemantica.tsx": {
-    "mtime": 1791900851.4554045,
-    "seen": 1791901115.197369,
-    "ast_hash": "12c2645df77d0bdb99a7567a6574ec42",
-    "semantic_hash": ""
-  },
   "src/components/ModoCocina.tsx": {
-    "mtime": 1791892910.0004086,
-    "seen": 1791901115.197373,
-    "ast_hash": "36220bce9cba44ac6566b6df2c3d0bd1",
+    "mtime": 1791903503.297626,
+    "seen": 1791974866.9282508,
+    "ast_hash": "17ea4dd693a4a58219e7923c0d55e15e",
     "semantic_hash": ""
   },
   "src/components/ReindexarBusqueda.tsx": {
@@ -396,9 +390,9 @@
     "semantic_hash": ""
   },
   "src/hooks/useBusquedaSemantica.ts": {
-    "mtime": 1791900851.4529524,
-    "seen": 1791901115.197379,
-    "ast_hash": "1e28d7df8b6d6edbf5441fc3d57ec163",
+    "mtime": 1791902585.615295,
+    "seen": 1791974866.92826,
+    "ast_hash": "82f8154e4802899f2ea8f2cbd36d1942",
     "semantic_hash": ""
   },
   "src/hooks/useWakeLock.ts": {
@@ -408,15 +402,15 @@
     "semantic_hash": ""
   },
   "src/lib/busquedaSemantica.ts": {
-    "mtime": 1791900851.450415,
-    "seen": 1791901115.197383,
-    "ast_hash": "e06936d3cd96709e8ee4f33b5f19ea02",
+    "mtime": 1791901340.8623714,
+    "seen": 1791974866.9282649,
+    "ast_hash": "2a4cc1964a81c6c0e421e9f31de8b403",
     "semantic_hash": ""
   },
   "supabase/functions/buscar-recetas/index.ts": {
-    "mtime": 1791900952.841433,
-    "seen": 1791901115.1973891,
-    "ast_hash": "d488322fce3bd51f5c9ca94bb969ee5c",
+    "mtime": 1791901340.8621595,
+    "seen": 1791974866.9282718,
+    "ast_hash": "68f8f2d9952455dfc257c55ed57865a9",
     "semantic_hash": ""
   },
   "supabase/functions/indexar-recetas/index.ts": {
@@ -435,6 +429,66 @@
     "mtime": 1791899826.972602,
     "seen": 1791901115.1973948,
     "ast_hash": "9bc65c1d38da654ea8393b964e3541c5",
+    "semantic_hash": ""
+  },
+  "scripts/deploy.sh": {
+    "mtime": 1791902166.077276,
+    "seen": 1791974866.9282439,
+    "ast_hash": "759fafc82b41a3ca228b4ebf2a269a59",
+    "semantic_hash": ""
+  },
+  "src/components/PasoConTiempos.tsx": {
+    "mtime": 1791903503.27667,
+    "seen": 1791974866.928252,
+    "ast_hash": "9f1fb1cedbaabebd616ca134775bb6d2",
+    "semantic_hash": ""
+  },
+  "src/components/TemporizadoresBarra.tsx": {
+    "mtime": 1791903503.2790647,
+    "seen": 1791974866.928258,
+    "ast_hash": "6337f90e672f067814211a06150b7e2b",
+    "semantic_hash": ""
+  },
+  "src/hooks/useTemporizadores.ts": {
+    "mtime": 1791903503.274612,
+    "seen": 1791974866.928264,
+    "ast_hash": "842b81dd74e927536798d9a8f59e4672",
+    "semantic_hash": ""
+  },
+  "src/lib/tiempos.ts": {
+    "mtime": 1791903481.5925767,
+    "seen": 1791974866.928271,
+    "ast_hash": "9431dab2abc4f92c877b26ec39dd6fd2",
+    "semantic_hash": ""
+  },
+  "supabase/migrations/20261013_limite_busquedas.sql": {
+    "mtime": 1791901314.712731,
+    "seen": 1791974866.92828,
+    "ast_hash": "e7e2a2c0bb37b0df16e0ce3e4c5f7901",
+    "semantic_hash": ""
+  },
+  "supabase/migrations/20261014_sin_hacer.sql": {
+    "mtime": 1791974787.4635744,
+    "seen": 1791974866.928281,
+    "ast_hash": "3912a90e95ee61297023b2893f58b001",
+    "semantic_hash": ""
+  },
+  "public/apple-touch-icon.png": {
+    "mtime": 1791902962.6994078,
+    "seen": 1791974866.928288,
+    "ast_hash": "bded0b136fcf3b6ea0b47308a383e826",
+    "semantic_hash": ""
+  },
+  "public/favicon-32.png": {
+    "mtime": 1791903204.0381875,
+    "seen": 1791974866.928288,
+    "ast_hash": "c022169015318ad31195754d8e383f61",
+    "semantic_hash": ""
+  },
+  "scripts/icono-ios.svg": {
+    "mtime": 1791902942.652112,
+    "seen": 1791974866.9282901,
+    "ast_hash": "dc32046041880789b49b707d476c23b2",
     "semantic_hash": ""
   }
 }

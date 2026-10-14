@@ -225,6 +225,22 @@ muro solo las ven usuarios con sesión; las firma `perfiles.nombre`. Las RLS se
 verificaron simulando roles y el frontend se probó con sesión real en producción
 ese mismo día.
 
+## Recetas «sin hacer»
+
+**Hecho el 14 de octubre de 2026** ([la migración](supabase/migrations/20261014_sin_hacer.sql)).
+`recetas.sin_hacer` es una marca **manual**, a propósito y no derivada de que no
+haya realizaciones: una receta sin ninguna puede estar hecha pero sin registrar.
+Se pinta como etiqueta amarilla arriba a la izquierda de `RecipeCard`, hay un
+filtro en `FilterBar` y el admin la alterna con el icono de etiqueta de la ficha.
+
+Un trigger `SECURITY DEFINER` (`quitar_sin_hacer`) la apaga al insertar una
+realización y **nunca la vuelve a poner**; borrar la realización no la devuelve.
+Tiene que ser `DEFINER` por lo mismo que la media: el `UPDATE` de `recetas` es del
+admin, y con `INVOKER` afectaría a 0 filas sin error. Como la apaga la base de
+datos, `refrescarRating` relee también `sin_hacer`. La carga inicial marcó las 12
+recetas sin foto. Ese mismo día se vaciaron las 3 valoraciones antiguas para
+empezar de cero con las realizaciones.
+
 ## Tiempo, porciones y dificultad
 
 **Hecho el 10 de octubre de 2026.** Vertex ya los extraía de cada receta,

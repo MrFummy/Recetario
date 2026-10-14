@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import type { User } from '@supabase/supabase-js';
-import { X, ExternalLink, Edit2, Save, Trash2, Loader2, AlertTriangle, Clock, Users, Gauge, CookingPot } from 'lucide-react';
+import { X, ExternalLink, Edit2, Save, Trash2, Loader2, AlertTriangle, Clock, Users, Gauge, CookingPot, Tag } from 'lucide-react';
 import type { Recipe } from '../types';
 import { StarRating } from './StarRating';
 import { IngredientsList, StepsList } from './RecipeContent';
@@ -27,11 +27,13 @@ interface RecipeDetailProps {
   /** Las realizaciones cambian la media vía trigger: hay que volver a leerla. */
   onRatingChanged: () => void;
   onUpdateDate?: (date: string) => Promise<void>;
+  /** Alterna la marca "sin hacer" (solo admin). */
+  onToggleSinHacer?: () => Promise<void>;
   onDelete?: (recipe: Recipe) => Promise<void>;
   onShareByEmail?: (recipe: Recipe, email: string) => Promise<void>;
 }
 
-export function RecipeDetail({ recipe, onClose, isAdmin, user, despensa, paraHacer, onUpdateNotes, onUpdatePhoto, onRemovePhoto, onRatingChanged, onUpdateDate, onDelete, onShareByEmail }: RecipeDetailProps) {
+export function RecipeDetail({ recipe, onClose, isAdmin, user, despensa, paraHacer, onUpdateNotes, onUpdatePhoto, onRemovePhoto, onRatingChanged, onUpdateDate, onToggleSinHacer, onDelete, onShareByEmail }: RecipeDetailProps) {
   const isAfan = !!user;
   const initialNotes = renderNotas(recipe.notas);
 
@@ -107,6 +109,17 @@ export function RecipeDetail({ recipe, onClose, isAdmin, user, despensa, paraHac
           <div className="flex items-center gap-1.5">
             {isAdmin && !isEditing && (
               <>
+                {onToggleSinHacer && (
+                  <button
+                    onClick={() => onToggleSinHacer().catch((err) => setActionError(errorMessage(err, 'No se pudo cambiar la marca.')))}
+                    title={recipe.sin_hacer ? 'Quitar la marca "sin hacer"' : 'Marcar como sin hacer'}
+                    aria-pressed={!!recipe.sin_hacer}
+                    className={`p-1.5 rounded-md transition-colors ${recipe.sin_hacer
+                      ? 'bg-yellow text-ink'
+                      : 'text-ink-soft hover:text-accent hover:bg-accent-soft'}`}>
+                    <Tag size={18} />
+                  </button>
+                )}
                 <button onClick={handleDelete} title="Eliminar" disabled={isDeleting}
                   className="p-1.5 rounded-md text-ink-soft hover:text-hot hover:bg-hot-soft transition-colors disabled:opacity-50">
                   {isDeleting ? <Loader2 className="animate-spin" size={18} /> : <Trash2 size={18} />}
