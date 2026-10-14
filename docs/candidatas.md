@@ -172,7 +172,33 @@ descartar = borrar la fila** (no se guardan descartadas).
 - Copiar la foto al bucket en lugar de enlazarla: las miniaturas de Instagram
   caducan.
 
-## Fase 2 — flujo de entrada en n8n (Telegram + YouTube)
+## Fase 2 — flujo de entrada en n8n (Telegram + YouTube) — HECHA y probada con YouTube (14 oct 2026)
+
+**Estado (14 oct 2026).** Flujo `El Laboratorio - entrada por Telegram` en n8n
+(id `J6Rodh1wb7CraxSo`, carpeta *Mis Automatizaciones*), 20 nodos. Lista blanca: solo
+el `chat_id` del admin, escrito en el nodo `Entrada`. Probado de punta a punta **solo con
+YouTube**: el Short «Rigatoni al Vodka» → fila en `candidatas` (16 ingredientes, 17 pasos,
+`de_video`, miniatura copiada al bucket). **Sin probar todavía**: reel de Instagram,
+web, texto pegado, duplicados, tope diario y los mensajes de error.
+
+Lo que salió mal por el camino, por si vuelve a pasar:
+- **`crypto.randomUUID` no existe en el Code de n8n Cloud.** El id de la candidata
+  necesita un uuid válido: se genera con un v4 propio. Un fallback del estilo
+  `Date.now().toString(36)` rompe la inserción (`invalid input syntax for type uuid`).
+- Un error de nombre de variable (`parts` por `partes`) tumbó el nodo `Preparar Gemini`.
+  Un flujo con disparador de Telegram no se puede ejecutar a distancia: cada prueba es
+  mandar un mensaje real.
+- Una inserción fallida **deja la foto huérfana** en `fotos-candidatas` (ya hay una:
+  `mv84xgjm-4m431byy.jpg`). Borrar con SQL no limpia el fichero físico; hacerlo por la
+  API de Storage desde la sección o un flujo.
+
+Calidad con las reglas nuevas del prompt, mismo Short que la prueba sin ellas: ya no
+duplica «chalotas o media cebolla» (17 → 16 ingredientes), conserva las cantidades como
+se dicen («un par», «un poquito», «una cucharada») en vez de redondearlas, y deja
+`tiempo` y `porciones` vacíos en lugar de estimarlos. **Aún pone `C/S` en `Rigatoni` y
+`Nata para montar`** cuando el vídeo no da cantidad (la regla pide dejarla vacía): los
+ejemplos del prompt arrastran ese sesgo.
+
 
 Flujo nuevo, **sin tocar «Recetas con Frontend»**:
 
