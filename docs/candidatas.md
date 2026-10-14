@@ -146,7 +146,14 @@ mensaje real a n8n**; solo los de prueba. Lo aprendido, por si se retoma:
 - **Camino sin Instagram**: Telegram + YouTube + enlaces de reels que solo leen el
   pie. Para los pasos de un reel concreto, mandar el vídeo como archivo por Telegram.
 
-## Fase 1 — base de datos (migración)
+## Fase 1 — base de datos (migración) — HECHA el 14 oct 2026
+
+Aplicada en producción: [la migración](../supabase/migrations/20261014_laboratorio_candidatas.sql).
+Verificada simulando roles (en una transacción revertida): el admin inserta y lee;
+`fuente_url` duplicada y `estado` inválido se rechazan; un usuario normal ve 0 filas y no
+puede insertar ni borrar; `anon` ve 0. **Decisión: nombre de la sección «El Laboratorio»;
+descartar = borrar la fila** (no se guardan descartadas).
+
 
 `candidatas` (RLS solo admin, vía `es_admin()`; n8n escribe con `service_role`):
 
@@ -235,8 +242,6 @@ compra.
 
 ## Abierto
 
-- Nombre de la sección.
-- ¿Guardar las descartadas?
 - Crear el bot de Telegram (BotFather) y obtener el `chat_id` propio.
 - Retomar o no Instagram (publicar la app de Meta, política de privacidad).
 - n8n es Cloud: `yt-dlp` desde n8n probablemente no es posible.
