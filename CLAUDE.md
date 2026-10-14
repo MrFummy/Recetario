@@ -255,13 +255,22 @@ es de lectura pública y alimenta PDF, Notion y embeddings. Solo el admin las le
 La web las enseña en `#/laboratorio` ([LaboratorioSection.tsx](src/components/LaboratorioSection.tsx)),
 solo con sesión de admin. `useCandidatas` vive dentro de la sección, no en `App`: nadie más
 usa esos datos. Se pueden ver, corregir (título, categoría, notas), marcar como probadas y
-borrar —borrar también quita la foto de `fotos-candidatas`—. **Falta pasarlas al
-recetario** (Fase 4): el flujo de alta de n8n espera un fichero, no datos ya estructurados,
-y necesita una segunda entrada.
+borrar —borrar también quita la foto de `fotos-candidatas`— y **pasarlas al recetario**
+(`PromoverModal`, `lib/promover.ts`): pide categoría, fecha y la foto *de tu plato*, manda
+la candidata al webhook de alta y **espera a que la receta aparezca en `recetas`** antes de
+borrarla (el alta responde «Workflow was started» al instante; si no aparece en 2,5 min,
+la candidata se queda). En n8n es un desvío de dos nodos tras `Solo admin (nueva)` en
+«Recetas con Frontend»: `¿Viene de una candidata?` y `Receta de candidata`, que imita la
+respuesta de Gemini y reconecta en `Limpia respuesta`, así que PDF, Notion, Sheets y
+Supabase son los de siempre. Probado el 14 de octubre.
 
 - **Descartar es borrar**: no se guardan descartadas.
 - Una candidata puede nacer **parcial**: un reel solo da el pie del post, sin pasos.
 - `de_video` marca las que salieron de un vídeo, donde las cantidades son menos fiables.
+- **Borrar un objeto de Storage exige también una policy de SELECT**, no solo la de
+  DELETE: sin ella `remove()` responde sin error y no borra nada. Pasó con
+  `fotos-candidatas`; no se puede arreglar con SQL (Storage prohíbe el borrado directo en
+  `storage.objects`): hay que usar su API.
 - `crypto.randomUUID` **no existe** en el nodo Code de n8n Cloud: el id se genera con un
   uuid v4 propio, o la inserción falla con `invalid input syntax for type uuid`.
 - La entrada por DM de Instagram quedó **aparcada** (la app de Meta tiene que estar en

@@ -233,7 +233,7 @@ candidatas → responder por Telegram`
 - Enlace a la fuente original; para YouTube, cuando se pueda, el minuto de cada paso.
 - Ficheros por debajo de 300 líneas.
 
-## Fase 4 — incorporar al recetario — IMPLEMENTADA, sin probar de punta a punta (14 oct 2026)
+## Fase 4 — incorporar al recetario — HECHA y probada de punta a punta (14 oct 2026)
 
 El alta de n8n espera un fichero y llamar a Gemini; aquí los datos ya están. Hay que
 añadir una **segunda entrada**:
@@ -264,6 +264,14 @@ El frontend (`PromoverModal`, `lib/promover.ts`) manda `candidata` (JSON), `fech
 `foto_plato` por multipart al mismo webhook y **espera a que la receta aparezca en `recetas`**
 (el alta responde «Workflow was started» al instante) antes de borrar la candidata. Si no
 aparece en 2,5 min, la candidata se queda. Se pide la foto propia: la de ejemplo se descarta.
+
+**Probada con el «Elote de Feria» (web):** ejecución `105574` por el desvío nuevo →
+receta con PDF, Notion, `tiempo`/`porciones`/`dificultad` guardados (lo que no funcionaba
+hasta el arreglo del 14 oct), candidata desaparecida del Laboratorio. Sin foto propia, el
+alta usó `_default.jpg`, como siempre. Al borrar la candidata **la foto no se borró**: faltaba
+una policy de **SELECT** en el bucket `fotos-candidatas` (Storage necesita ver el objeto para
+borrarlo; sin ella `remove()` responde sin error y no hace nada). Corregido en
+`20261014_laboratorio_select_fotos.sql` y limpias las dos fotos sueltas.
 
 ## Fase 5 — entrada de reels (aparcada)
 
