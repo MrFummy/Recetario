@@ -219,6 +219,15 @@ candidatas → responder por Telegram`
 - Webs: leer primero los datos `schema.org/Recipe` del HTML; si no están, el texto
   limpio. Es secundario porque el grueso será vídeo.
 
+**Ajuste del prompt (14 oct 2026, versión `622e1f3a`).** Solo en el nodo `Preparar Gemini`
+del flujo de El Laboratorio; el prompt del alta normal no se toca (ahí los PDFs sí traen
+«C/S» de verdad). Dos reglas nuevas para fuentes de terceros: **«C/S» y la unidad «al gusto»
+solo si la fuente lo dice expresamente** (si no da cantidad: `cantidad` vacía, `valor` y
+`unidad` a null), y **`dificultad` solo si consta** (si no, vacía). Motivo: el modelo ponía
+`C/S` en el rigatoni y en la nata de un vídeo que no daba cantidad, y suponía «Media» en un
+reel cuyo pie no la decía. **Sin verificar todavía**: hay que reenviar una fuente ya probada
+(borrando antes su candidata, o saltará «Ya la tenías») y comparar.
+
 ## Fase 3 — sección web — HECHA (versión sencilla, 14 oct 2026)
 
 - Ruta `#/<nombre>` en `rutas.ts` (**las dos funciones**, como dice CLAUDE.md), enlace
