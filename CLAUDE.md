@@ -139,9 +139,10 @@ estar.
   Eran 7 valores distintos (no 7 recetas: una variante nueva, `sal y
   pimienta` sin "negra", apareció al consultar con SQL en vez de contar a
   ojo) en 19 filas de `recetas.ingredientes`, no 18. Cada fila combinada pasó
-  a una fila por condimento. **Sigue pendiente ajustar el prompt de Vertex**:
-  sin eso, una receta nueva puede volver a generar un `base` combinado y esta
-  migración habría que repetirla. El PDF, Notion y Sheets sí notan el cambio:
+  a una fila por condimento. **El prompt de Vertex se corrigió el 14 de
+  octubre** (la regla ya estaba escrita desde el 10, pero en una clave que n8n
+  ignoraba; ver *Trampa de n8n* más abajo), así que una receta nueva ya no debería
+  generar un `base` combinado. El PDF, Notion y Sheets sí notan el cambio:
   donde antes salía una línea "Sal y pimienta negra" ahora salen dos, "Sal" y
   "Pimienta negra" — correcto, pero distinto a como estaba.
 
@@ -249,6 +250,19 @@ y la tabla no tenía columnas para ellos: se calculaban, se pagaban y se
 descartaban. Ahora `recetas` tiene `tiempo`/`porciones`/`dificultad` (`text`,
 `nullable`) y se ven como badges en
 [RecipeDetail.tsx](src/components/RecipeDetail.tsx).
+
+**Trampa de n8n (descubierta el 14 de octubre de 2026).** Ese cambio del nodo
+`Guardar en Supabase` **no llegó a ejecutarse hasta el 14**: se había escrito en
+`parameters.parameters.jsonBody`, una clave anidada que n8n ignora, y además el
+borrador del 10 de octubre nunca se publicó (la versión activa seguía siendo la del
+31 de agosto). Lo mismo le pasó a la regla de condimentos del nodo `Vertex AI`.
+Prueba: las 4 recetas dadas de alta el 13 de octubre tienen los tres campos a
+`null`. Se movió todo al `jsonBody` de nivel superior y se publicó el 14.
+**Al editar nodos de n8n por MCP, comprobar después que `parameters` no tiene una
+clave `parameters` anidada y que `activeVersionId` es la versión editada**; un
+`updateNodeParameters` sin `replace: true` o con la ruta equivocada falla en
+silencio. Las recetas dadas de alta entre el 10 y el 14 de octubre quedan sin
+`tiempo`/`porciones`/`dificultad`, igual que las anteriores.
 
 **Sin backfill, a propósito**: las recetas anteriores a esa fecha quedan con
 los tres campos en `null` y simplemente no muestran los badges. Rellenarlas
