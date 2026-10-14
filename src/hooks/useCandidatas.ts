@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { supabase } from '../lib/supabase';
 import { errorMessage } from '../lib/errors';
+import { enviarAlta, esperarReceta, type OpcionesPromocion } from '../lib/promover';
 import type { Candidata, EstadoCandidata, Json } from '../types';
 
 /** Lo que se puede cambiar a mano desde la web; el resto lo escribe el flujo de n8n. */
@@ -17,6 +18,12 @@ export interface Candidatas {
   error: string | null;
   actualizar: (id: string, cambios: CambiosCandidata) => Promise<void>;
   borrar: (candidata: Candidata) => Promise<void>;
+  /**
+   * Pasa la candidata al recetario y, solo cuando la receta ya existe, la borra de
+   * aquí. Devuelve el id de la receta, o `null` si no apareció a tiempo: en ese caso
+   * la candidata se queda donde está.
+   */
+  promover: (candidata: Candidata, opciones: OpcionesPromocion) => Promise<string | null>;
 }
 
 /**
@@ -72,5 +79,14 @@ export function useCandidatas(): Candidatas {
     }
   }, []);
 
-  return { candidatas, loading, error, actualizar, borrar };
+  const promover = useCallback(async (candidata: Candidata, opciones: OpcionesPromocion) => {
+    // Un minuto de margen: el reloj de este navegador y el de Supabase no coinciden.
+    const desde = new Date(Date.now() - 60_000).toISOString();
+    await enviarAlta(candidata, opciones);
+    const recetaId = await esperarReceta(candidata.titulo, desde);
+    if (recetaId) await borrar(candidata);
+    return recetaId;
+  }, [borrar]);
+
+  return { candidatas, loading, error, actualizar, borrar, promover };
 }

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { X, ExternalLink, Edit2, Save, Trash2, Loader2, AlertTriangle, Check, Undo2, Clock, Users, Gauge } from 'lucide-react';
+import { X, ExternalLink, Edit2, Save, Trash2, Loader2, AlertTriangle, Check, Undo2, Clock, Users, Gauge, BookPlus } from 'lucide-react';
 import type { Candidata } from '../types';
 import type { CambiosCandidata } from '../hooks/useCandidatas';
 import { StepsList } from './RecipeContent';
@@ -14,10 +14,11 @@ interface Props {
   onClose: () => void;
   onActualizar: (cambios: CambiosCandidata) => Promise<void>;
   onBorrar: () => Promise<void>;
+  onPromover: () => void;
 }
 
 /** Ficha de una candidata: se lee, se corrige lo básico, se marca como probada o se borra. */
-export function CandidataDetail({ candidata, onClose, onActualizar, onBorrar }: Props) {
+export function CandidataDetail({ candidata, onClose, onActualizar, onBorrar, onPromover }: Props) {
   const ingredientes = normalizeIngredients(candidata.ingredientes);
   const sinPasos = !candidata.pasos || (Array.isArray(candidata.pasos) && candidata.pasos.length === 0);
   const probada = candidata.estado === 'probada';
@@ -154,8 +155,14 @@ export function CandidataDetail({ candidata, onClose, onActualizar, onBorrar }: 
               </div>
 
               {!editando && (
+                <button onClick={onPromover} disabled={ocupada}
+                  className="mt-5 mr-3 inline-flex items-center gap-1.5 px-3 py-1.5 text-[13px] font-semibold border-[1.5px] border-ink bg-ink text-paper disabled:opacity-60">
+                  <BookPlus size={14} /> Pasar al recetario
+                </button>
+              )}
+              {!editando && (
                 <button onClick={alternarEstado} disabled={ocupada}
-                  className={`mt-5 flex items-center gap-1.5 px-3 py-1.5 text-[13px] font-semibold border-[1.5px] border-ink transition-all disabled:opacity-60 ${probada ? 'bg-paper text-ink' : 'bg-yellow text-ink shadow-brut'}`}>
+                  className={`mt-5 inline-flex items-center gap-1.5 px-3 py-1.5 text-[13px] font-semibold border-[1.5px] border-ink transition-all disabled:opacity-60 ${probada ? 'bg-paper text-ink' : 'bg-yellow text-ink shadow-brut'}`}>
                   {probada ? <><Undo2 size={14} /> Volver a «por probar»</> : <><Check size={14} /> Marcar como probada</>}
                 </button>
               )}

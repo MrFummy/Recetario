@@ -233,7 +233,7 @@ candidatas → responder por Telegram`
 - Enlace a la fuente original; para YouTube, cuando se pueda, el minuto de cada paso.
 - Ficheros por debajo de 300 líneas.
 
-## Fase 4 — incorporar al recetario
+## Fase 4 — incorporar al recetario — IMPLEMENTADA, sin probar de punta a punta (14 oct 2026)
 
 El alta de n8n espera un fichero y llamar a Gemini; aquí los datos ya están. Hay que
 añadir una **segunda entrada**:
@@ -251,6 +251,19 @@ añadir una **segunda entrada**:
   antes del `Respond to Webhook`).
 - Los nodos `Verificar sesion (…)` no llevan credencial de Supabase (ver CLAUDE.md).
 - Receta nueva ⇒ indexar embeddings (ya lo hace `buscar-recetas` en la primera búsqueda).
+
+**Cómo quedó (14 oct 2026).** Sin tocar el alta existente: en «Recetas con Frontend», justo
+tras `Solo admin (nueva)`, un nodo `¿Viene de una candidata?` mira si el webhook trae el
+campo `candidata`. Si sí, `Receta de candidata` imita la respuesta de Gemini y reconecta en
+`Limpia respuesta` (que ya normaliza ids, notas y fecha); si no, sigue por `Detecta formato`
+como siempre. Solo dependían del arranque `Limpia respuesta` y `Recupera foto`, y solo del
+nodo `Webhook`, que se ejecuta igual por los dos caminos. Versión publicada `031c0280`;
+**punto de retorno `f7b88b79`**.
+
+El frontend (`PromoverModal`, `lib/promover.ts`) manda `candidata` (JSON), `fecha_clase` y
+`foto_plato` por multipart al mismo webhook y **espera a que la receta aparezca en `recetas`**
+(el alta responde «Workflow was started» al instante) antes de borrar la candidata. Si no
+aparece en 2,5 min, la candidata se queda. Se pide la foto propia: la de ejemplo se descarta.
 
 ## Fase 5 — entrada de reels (aparcada)
 

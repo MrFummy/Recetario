@@ -177,7 +177,7 @@ function App() {
           <SeccionListaCompra recipes={recipes} despensa={despensa} paraHacer={paraHacer} />
         ) : enLaboratorio ? (
           <SoloAdmin sesionCargada={sesionCargada} isAdmin={isAdmin} accion="entrar en El Laboratorio">
-            <SeccionLaboratorio />
+            <SeccionLaboratorio onRecetaCreada={() => void refetch()} />
           </SoloAdmin>
         ) : (
           <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">

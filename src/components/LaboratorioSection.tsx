@@ -1,10 +1,11 @@
 import { useMemo, useState } from 'react';
 import { AlertTriangle, Loader2 } from 'lucide-react';
-import type { EstadoCandidata } from '../types';
+import type { Candidata, EstadoCandidata } from '../types';
 import { useCandidatas } from '../hooks/useCandidatas';
 import { CATEGORIAS } from '../lib/categorias';
 import { CandidataCard } from './CandidataCard';
 import { CandidataDetail } from './CandidataDetail';
+import { PromoverModal } from './PromoverModal';
 
 type FiltroEstado = 'todas' | EstadoCandidata;
 
@@ -20,11 +21,14 @@ const FILTROS: { valor: FiltroEstado; etiqueta: string }[] = [
  * guarda en `candidatas`); aquí se ven, se corrigen, se marcan como probadas o se
  * borran. Pasarlas al recetario queda para una segunda fase.
  */
-export function SeccionLaboratorio() {
-  const { candidatas, loading, error, actualizar, borrar } = useCandidatas();
+export function SeccionLaboratorio({ onRecetaCreada }: { onRecetaCreada: () => void }) {
+  const { candidatas, loading, error, actualizar, borrar, promover } = useCandidatas();
   const [estado, setEstado] = useState<FiltroEstado>('todas');
   const [categoria, setCategoria] = useState('');
   const [abiertaId, setAbiertaId] = useState<string | null>(null);
+  // Guardamos la candidata entera y no su id: al crearse la receta desaparece de la
+  // lista, y el aviso de «ya está en el recetario» tiene que seguir en pantalla.
+  const [promoviendo, setPromoviendo] = useState<Candidata | null>(null);
 
   const visibles = useMemo(
     () => candidatas.filter((c) =>
@@ -96,6 +100,19 @@ export function SeccionLaboratorio() {
           onClose={() => setAbiertaId(null)}
           onActualizar={(cambios) => actualizar(abierta.id, cambios)}
           onBorrar={() => borrar(abierta)}
+          onPromover={() => setPromoviendo(abierta)}
+        />
+      )}
+
+      {promoviendo && (
+        <PromoverModal
+          candidata={promoviendo}
+          onCerrar={() => setPromoviendo(null)}
+          onPromover={async (opciones) => {
+            const id = await promover(promoviendo, opciones);
+            if (id) onRecetaCreada();
+            return id;
+          }}
         />
       )}
     </div>
