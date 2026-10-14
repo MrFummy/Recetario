@@ -42,11 +42,13 @@ export function RecipeCard({ recipe, onClick }: RecipeCardProps) {
         <span className="absolute top-3 right-3 z-[1] bg-white/95 border border-ink px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider text-ink">
           {recipe.categoria}
         </span>
-        {/* Sin hacer */}
+        {/* Sin hacer: cinta en diagonal, recortada por el marco de la esquina */}
         {recipe.sin_hacer && (
-          <span className="absolute top-3 left-3 z-[1] -rotate-3 bg-yellow border border-ink px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider text-ink shadow-sm">
-            sin hacer
-          </span>
+          <div className="absolute top-0 left-0 z-[1] h-20 w-20 overflow-hidden pointer-events-none">
+            <span className="absolute top-[19px] -left-[24px] w-[104px] -rotate-45 bg-yellow border-y border-ink py-0.5 text-center font-mono text-[9px] uppercase tracking-wider text-ink shadow-sm">
+              sin hacer
+            </span>
+          </div>
         )}
         {/* Foto */}
         <div className="w-full aspect-[4/3] overflow-hidden bg-ink/10">
