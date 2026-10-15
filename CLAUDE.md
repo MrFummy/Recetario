@@ -247,7 +247,7 @@ empezar de cero con las realizaciones.
 **Hecho el 14 de octubre de 2026**; el plan y lo aprendido están en
 [docs/candidatas.md](docs/candidatas.md). Recetas que se quieren *probar* antes de decidir
 si entran al recetario. Entran por un bot de Telegram (flujo de n8n «El Laboratorio -
-entrada por Telegram»: YouTube, reel de Instagram —solo el pie—, web o texto pegado, todo
+entrada por Telegram»: YouTube, reel de Instagram —vídeo vía Apify, o solo el pie si falla—, web o texto pegado, todo
 convertido con Gemini) y se guardan en la tabla `candidatas`, **aparte de `recetas`**: esta
 es de lectura pública y alimenta PDF, Notion y embeddings. Solo el admin las lee y escribe
 (RLS con `es_admin()`); n8n escribe con `service_role`.
@@ -265,7 +265,11 @@ respuesta de Gemini y reconecta en `Limpia respuesta`, así que PDF, Notion, She
 Supabase son los de siempre. Probado el 14 de octubre.
 
 - **Descartar es borrar**: no se guardan descartadas.
-- Una candidata puede nacer **parcial**: un reel solo da el pie del post, sin pasos.
+- **Los reels se descargan con Apify** (15 oct 2026; actor `snapinsta~instagram-downloader-api`,
+  credencial `Apify` de tipo Header Auth, plan gratuito): el flujo pide el MP4, lo descarga y se lo
+  pasa a Gemini como `inlineData` junto con el pie. **Tope de 14 MB** (~20 MB de petición en base64);
+  si Apify falla, la descarga falla o el vídeo es mayor, cae al camino de **solo el pie** y la
+  candidata nace **parcial**, sin pasos. Detalles y trampas en [docs/candidatas.md](docs/candidatas.md).
 - `de_video` marca las que salieron de un vídeo, donde las cantidades son menos fiables.
 - **Borrar un objeto de Storage exige también una policy de SELECT**, no solo la de
   DELETE: sin ella `remove()` responde sin error y no borra nada. Pasó con

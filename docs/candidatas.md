@@ -146,6 +146,30 @@ mensaje real a n8n**; solo los de prueba. Lo aprendido, por si se retoma:
 - **Camino sin Instagram**: Telegram + YouTube + enlaces de reels que solo leen el
   pie. Para los pasos de un reel concreto, mandar el vídeo como archivo por Telegram.
 
+### Reels con Apify — HECHO y probado el 15 oct 2026
+
+Vía elegida para los pasos de un reel: un actor de Apify descarga el vídeo (n8n Cloud no puede
+ejecutar `yt-dlp`). Actor `snapinsta~instagram-downloader-api`: entrada `{url}`, salida
+`media[].url` (MP4 temporal), `fileType`, `thumbnail`. Plan gratuito de Apify (5 $/mes); la página
+del actor da 1,20 $ por 1.000 descargas en ese plan (otro listado decía 0,48 $: confirmar).
+
+En el flujo `El Laboratorio - entrada por Telegram`, tras `Leer página`:
+`Es reel de Instagram → Apify reel → Descargar vídeo → Preparar vídeo → Preparar Gemini →
+Añadir vídeo → Gemini`. `Preparar vídeo` pasa el MP4 a base64; `Añadir vídeo` lo inserta en la
+petición y marca `de_video`. **`Limpia` lee ahora `de_video` y `error` de `Añadir vídeo`**, no de
+`Preparar Gemini`. Se hizo así para no tocar el prompt largo de `Preparar Gemini`.
+
+- **Tope de 14 MB** de vídeo (`inlineData`, ~20 MB de petición, base64 pesa un tercio más). El
+  primer intento con 12 MB descartó un reel de 13,3 MB y salió sin pasos. Por encima del tope cae
+  al camino de solo el pie. La solución completa sería subir el archivo con la Files API de Gemini.
+- `Apify reel` y `Descargar vídeo` llevan `onError: continueRegularOutput` y `alwaysOutputData`:
+  si fallan, el flujo sigue con el pie. **Al añadir nodos por MCP, `onError`/`alwaysOutputData`
+  puestos en `addNode` se ignoran**: hay que aplicarlos con `setNodeSettings` y comprobarlos.
+- Un reel sin pie ya no da error si hay vídeo: `Preparar vídeo` inyecta un pie vacío.
+- Probado con un reel de 13,3 MB: 20 ingredientes, 10 pasos, `de_video` verdadero. El título cambió
+  respecto a la versión solo con pie (el vídeo decía otra cosa): el pie del post no es fiable.
+- Solo reels públicos. Los enlaces de Apify caducan: descargar en el acto.
+
 ## Fase 1 — base de datos (migración) — HECHA el 14 oct 2026
 
 Aplicada en producción: [la migración](../supabase/migrations/20261014_laboratorio_candidatas.sql).
