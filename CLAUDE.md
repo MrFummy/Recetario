@@ -11,10 +11,21 @@ despliegue está en el [README](README.md).
 
 ## Empieza por el grafo
 
-`graphify-out/` contiene un grafo de conocimiento del proyecto: 249 nodos y 360
-aristas sobre 44 ficheros, en 20 comunidades. Combina extracción estructural del
+`graphify-out/` contiene un grafo de conocimiento del proyecto: 280 nodos y 462
+aristas sobre 50 ficheros, en 21 comunidades. Combina extracción estructural del
 código (AST) con una capa semántica que recoge lo que el código no dice por sí
 solo: la arquitectura, los servicios externos y el modelo de autorización.
+
+**La capa semántica lleva congelada en 37 nodos desde antes del 13 de agosto**,
+mientras la de AST ha pasado de 190 a 243. Todo lo que ha entrado después —la
+despensa, el router, `inventario.ts`— está en el grafo como estructura pero sin
+una sola descripción. `graphify update .` mantiene eso así: resella el AST y no
+toca la capa semántica, que exige la pasada completa y sí gasta API. Para las
+partes nuevas, entonces, el grafo localiza pero no explica: lee el código.
+
+Y ojo con las cifras de arriba, que ya se han quedado obsoletas dos veces: el
+grafo está sellado en `c67f12e` (`built_at_commit` en `graph.json`), un par de
+commits por detrás. Si no cuadran, manda el fichero, no esta nota.
 
 Para orientarte antes de tocar nada:
 
@@ -65,6 +76,16 @@ Dos trampas que ya han mordido y conviene no repetir:
 - `_default.jpg` **no es la foto de ninguna receta**: es la plantilla que n8n
   copia cuando un alta llega sin foto. Una auditoría de huérfanos lo señala por
   error. Está protegido en la policy de borrado y también en el código.
+- **Auditar huérfanos del bucket tiene dos trampas**, y las dos han mordido ya.
+  La primera: comparar con `LIKE '%' || o.name` contra `recetas.foto_url` da
+  falsos positivos, porque un fichero llamado `.jpg` casa con *cualquier* URL
+  terminada en `.jpg` y aparece como si estuviera en uso — así se escondió uno
+  durante meses. Compara la ruta completa y excluye `_default.jpg` a mano.
+  La segunda: **borrarlos con `delete from storage.objects` no borra el fichero
+  físico**, solo la fila; el fichero se queda ocupando espacio y ya no lo
+  encuentra ninguna auditoría, que es peor que no tocarlo. Hay que ir por la
+  Storage API: el panel, `supabase storage rm`, o `remove()` con sesión de admin,
+  que es quien tiene la policy de borrado.
 
 ### Los ingredientes son objetos, no cadenas
 
@@ -121,9 +142,16 @@ cascada: los seis pasos comprobados de punta a punta contra producción, con
 sesión de admin.
 
 **31 ago 2026**: la despensa persiste entre visitas y entre recetas, comprobado
-con sesión iniciada. El bucket quedó sin huérfanas —`Raxo_de_la_abuela.jpg` y
-`Wok_de_verduras_al_curry.jpeg` borradas— y `_default.jpg` sigue donde tiene que
-estar.
+con sesión iniciada. Se borraron dos huérfanas del bucket —`Raxo_de_la_abuela.jpg`
+y `Wok_de_verduras_al_curry.jpeg`— y `_default.jpg` sigue donde tiene que estar,
+que era el riesgo real de esa limpieza.
+
+**10 sep 2026**: el bucket queda limpio del todo. Faltaba una tercera huérfana,
+la más pesada —un objeto llamado literalmente `.jpg`, de 1.429 kB, del 24 de
+mayo, con pinta de subida con el nombre vacío—, que se escapó de la limpieza
+anterior por la primera de las dos trampas de arriba. Borrada desde el panel y
+verificado después: 48 objetos, 54 MB, y el único fichero sin referencia en
+`recetas.foto_url` es `_default.jpg`, como debe ser.
 
 ### Pendiente
 
