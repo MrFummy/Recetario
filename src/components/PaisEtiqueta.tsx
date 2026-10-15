@@ -15,10 +15,12 @@ export function PaisEtiqueta({ codigo }: { codigo?: string | null }) {
 interface PaisSelectProps {
   valor: string;
   onChange: (codigo: string) => void;
+  /** Texto de la opción vacía (la cadena vacía). Por defecto, «Sin país». */
+  textoVacio?: string;
 }
 
-/** Selector de país para el modo edición; la cadena vacía es «sin país». */
-export function PaisSelect({ valor, onChange }: PaisSelectProps) {
+/** Selector de país; la cadena vacía es «sin país». */
+export function PaisSelect({ valor, onChange, textoVacio = 'Sin país' }: PaisSelectProps) {
   return (
     <label className="flex items-center gap-2 mb-4 font-mono text-[11px] text-ink-soft">
       <Globe2 size={14} />
@@ -28,7 +30,7 @@ export function PaisSelect({ valor, onChange }: PaisSelectProps) {
         onChange={(e) => onChange(e.target.value)}
         className="border border-ink/30 bg-paper text-ink px-2 py-1 text-[12px] focus:outline-none focus:border-ink"
       >
-        <option value="">Sin país</option>
+        <option value="">{textoVacio}</option>
         {PAISES.map((p) => (
           <option key={p.codigo} value={p.codigo}>
             {banderaPais(p.codigo)} {p.nombre}

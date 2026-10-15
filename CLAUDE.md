@@ -282,13 +282,16 @@ Supabase son los de siempre. Probado el 14 de octubre.
 
 ## Mi pasaporte
 
-**Fases 1 y 2 hechas el 15 de octubre de 2026**; plan y detalles en [docs/pasaporte.md](docs/pasaporte.md).
+**Fases 1, 2 y 3 hechas el 15 de octubre de 2026** (la 3, administración, sin probar con sesión de
+admin); plan y detalles en [docs/pasaporte.md](docs/pasaporte.md).
 Las recetas del catálogo vistas por países visitados: `#/pasaporte` (mapamundi SVG propio y
 sellos) y `#/pasaporte/<ISO>` (página de país). Pública para todos; escribe solo el admin.
 `recetas.pais` es el código ISO alfa-2, **sin clave foránea** a `paises` (etiquetar una receta no
 exige dar de alta el país). Tablas `paises` y `fotos_pais`, bucket público `fotos-paises`
 ([la migración](supabase/migrations/20261015_pasaporte.sql)). El país se asigna en la ficha, en
-modo edición. **Falta** (fase 3): alta de países, contexto y subida de fotos desde la web.
+modo edición. El admin da de alta países, escribe el contexto, sube fotos (comprimidas en el
+navegador con `lib/imagen.ts`) y elige la portada desde la propia web. **Quitar un país deja sus
+recetas sin país**, no las borra.
 
 - El mapa (`src/assets/mapamundi.json`) se **carga con `import()` dinámico**: no importarlo
   estáticamente o entra en el bundle principal (727 KB). Se regenera con

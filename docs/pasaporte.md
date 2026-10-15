@@ -1,7 +1,8 @@
 # Mi pasaporte — plan
 
-**Estado (15 oct 2026): fases 1 y 2 hechas.** La fase 2 (mapa, sellos y página de país) está
-al final de este bloque.
+**Estado (15 oct 2026): fases 1, 2 y 3 hechas.** La fase 2 (mapa, sellos y página de país) y la
+fase 3 (administración) están al final de este bloque. **La fase 3 no se ha podido probar de punta
+a punta con sesión de admin** (ver su apartado).
 
 **Fase 1 — datos y etiquetado.**
 Aplicada en producción: [la migración](../supabase/migrations/20261015_pasaporte.sql)
@@ -47,8 +48,30 @@ receta etiquetada aunque no estén dados de alta ([pasaporte.ts](../src/lib/pasa
 - Verificado en el navegador con datos reales: mapa, clic en Japón, página con sus 2 recetas,
   país sin datos (`#/pasaporte/FR`) y móvil. **Sin probar**: pasar el ratón (el panel no lo
   dispara) y el zoom con arrastre.
-- Pendiente de la fase 3: dar de alta países, escribir el contexto y subir fotos. De momento la
-  página muestra portada, contexto y galería **si existen**, pero no hay forma de crearlos desde la web.
+- Al hacer la fase 3 apareció un fallo de esta: Natural Earth trae **Ashmore y Cartier con el código
+  `AU`**, igual que Australia, y React protestaba por las claves repetidas. El generador ahora funde
+  los trazos que comparten código (el mapa queda en 234 países).
+
+**Fase 3 — administración (15 oct 2026).** Solo el admin la ve; la autorización real son las RLS.
+- **Alta**: «Añadir país» en `#/pasaporte` ([AltaPais.tsx](../src/components/AltaPais.tsx)): país y,
+  si se quiere, cuándo; lleva a la página del país. Un país con recetas etiquetadas ya sale en el
+  mapa sin darlo de alta, y «Gestionar país» lo crea al guardar (`upsert`).
+- **Página de país**: panel plegable «Gestionar país» ([PaisEditor.tsx](../src/components/PaisEditor.tsx))
+  con fecha, contexto, «Añadir fotos» (varias a la vez) y «Quitar país». Cada foto de la galería lleva
+  un botón de **portada** y otro de borrar.
+- **Fotos**: se comprimen en el navegador antes de subir ([imagen.ts](../src/lib/imagen.ts): lado mayor
+  1600 px, JPEG 0,82, orientación EXIF aplicada; una foto de 1,6 MB bajó a 311 KB). **Antes decía aquí
+  que se reutilizaba la compresión de las recetas: no existe, las fotos de recetas se suben tal cual.**
+  Se guardan en `fotos-paises/<ISO>/<id>.jpg`. Un HEIC solo se lee en Safari; en otros navegadores da
+  un mensaje que pide JPG o PNG.
+- **Quitar país** borra el país y su galería (filas en cascada y ficheros por carpeta, con la API de
+  Storage). **Las recetas no se borran: pierden el país** (`recetas.pais` a `null`), o el país seguiría
+  saliendo en el mapa. Pide confirmación con el número de recetas afectadas.
+- **Borrar una foto** que era la portada deja la portada vacía en lugar de apuntar a un fichero borrado.
+- **Probado**: la compresión en el navegador, las políticas del bucket simulando roles (el admin sube
+  y lista; un usuario sin ser admin y `anon` no insertan ni ven nada) y que un visitante no ve ningún
+  control de admin. **Sin probar**: subir una foto real, guardar el contexto y quitar un país con
+  sesión de admin, porque no se puede iniciar sesión desde aquí. Probarlo antes de desplegar.
 
 ## Decisiones tomadas
 

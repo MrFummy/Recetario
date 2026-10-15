@@ -8,6 +8,7 @@ import { aHash, type Ruta } from '../lib/rutas';
 import { irA } from '../hooks/useRuta';
 import { MapaMundi } from './MapaMundi';
 import { PaisPagina } from './PaisPagina';
+import { AltaPais } from './AltaPais';
 
 type Modo = 'mapa' | 'sellos';
 
@@ -17,6 +18,9 @@ interface PasaporteSectionProps {
   ruta: Extract<Ruta, { vista: 'pasaporte' | 'pais' }>;
   recipes: Recipe[];
   loadingRecetas: boolean;
+  isAdmin: boolean;
+  /** Quitar un país cambia las etiquetas de las recetas: el catálogo debe recargarse. */
+  onRecetasCambiadas: () => void;
 }
 
 /**
@@ -24,8 +28,9 @@ interface PasaporteSectionProps {
  * estado. El mapa y los sellos llevan a la página de cada país (`#/pasaporte/JP`).
  * La lectura es pública. Ver docs/pasaporte.md.
  */
-export function SeccionPasaporte({ ruta, recipes, loadingRecetas }: PasaporteSectionProps) {
-  const { paises, fotos, loading, error } = usePaises();
+export function SeccionPasaporte({ ruta, recipes, loadingRecetas, isAdmin, onRecetasCambiadas }: PasaporteSectionProps) {
+  const api = usePaises();
+  const { paises, fotos, loading, error } = api;
   // Mapa en escritorio, sellos en móvil: el mapa se maneja mal con el dedo.
   const [modo, setModo] = useState<Modo>(() => (window.matchMedia('(min-width: 768px)').matches ? 'mapa' : 'sellos'));
 
@@ -40,6 +45,9 @@ export function SeccionPasaporte({ ruta, recipes, loadingRecetas }: PasaporteSec
         fotos={fotos.filter((f) => f.pais === ruta.codigo)}
         recetas={recipes.filter((r) => r.pais === ruta.codigo)}
         cargando={loading || loadingRecetas}
+        isAdmin={isAdmin}
+        api={api}
+        onRecetasCambiadas={onRecetasCambiadas}
       />
     );
   }
@@ -61,6 +69,8 @@ export function SeccionPasaporte({ ruta, recipes, loadingRecetas }: PasaporteSec
           <AlertTriangle size={16} className="shrink-0 mt-0.5" /> {error}
         </div>
       )}
+
+      {isAdmin && <AltaPais api={api} />}
 
       <div className="flex justify-center gap-2 mb-6">
         {([['mapa', 'Mapa', <MapIcon key="m" size={14} />], ['sellos', 'Sellos', <LayoutGrid key="s" size={14} />]] as const).map(([valor, etiqueta, icono]) => (

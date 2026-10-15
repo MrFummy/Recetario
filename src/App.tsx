@@ -179,7 +179,7 @@ function App() {
         ) : enListaCompra ? (
           <SeccionListaCompra recipes={recipes} despensa={despensa} paraHacer={paraHacer} />
         ) : (ruta.vista === 'pasaporte' || ruta.vista === 'pais') ? (
-          <SeccionPasaporte ruta={ruta} recipes={recipes} loadingRecetas={loading} />
+          <SeccionPasaporte ruta={ruta} recipes={recipes} loadingRecetas={loading} isAdmin={isAdmin} onRecetasCambiadas={() => void refetch()} />
         ) : enLaboratorio ? (
           <SoloAdmin sesionCargada={sesionCargada} isAdmin={isAdmin} accion="entrar en El Laboratorio">
             <SeccionLaboratorio onRecetaCreada={() => void refetch()} />

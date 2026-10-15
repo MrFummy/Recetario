@@ -26,5 +26,9 @@ for (const f of features) {
   if (!codigo || !d) { sinCodigo.push(f.properties?.name); continue; }
   paises.push([codigo, d]);
 }
-writeFileSync(salida, JSON.stringify({ ancho: ANCHO, alto: ALTO, paises }));
+// Hay territorios que comparten código con su país (Ashmore y Cartier es «AU»): se funden
+// en un solo trazo, o React protesta por las claves repetidas.
+const unicos = new Map();
+for (const [codigo, d] of paises) unicos.set(codigo, (unicos.get(codigo) ?? '') + d);
+writeFileSync(salida, JSON.stringify({ ancho: ANCHO, alto: ALTO, paises: [...unicos.entries()] }));
 console.log(res, paises.length, 'países;', 'sin código:', sinCodigo.join(', '));

@@ -1,9 +1,12 @@
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, ImageIcon, Star, Trash2 } from 'lucide-react';
 import type { FotoPais, Pais, Recipe } from '../types';
+import type { Paises } from '../hooks/usePaises';
 import { aHash } from '../lib/rutas';
 import { banderaPais, nombrePais } from '../lib/paises';
+import { errorMessage } from '../lib/errors';
 import { irA } from '../hooks/useRuta';
 import { RecipeGrid } from './RecipeGrid';
+import { PaisEditor } from './PaisEditor';
 
 interface PaisPaginaProps {
   codigo: string;
@@ -12,14 +15,21 @@ interface PaisPaginaProps {
   fotos: FotoPais[];
   recetas: Recipe[];
   cargando: boolean;
+  isAdmin: boolean;
+  api: Paises;
+  onRecetasCambiadas: () => void;
 }
 
 const GIROS = ['-rotate-2', 'rotate-1', '-rotate-1', 'rotate-2'];
 
 /** La página de un país: su portada, el contexto, la galería y sus recetas. */
-export function PaisPagina({ codigo, pais, fotos, recetas, cargando }: PaisPaginaProps) {
+export function PaisPagina({ codigo, pais, fotos, recetas, cargando, isAdmin, api, onRecetasCambiadas }: PaisPaginaProps) {
   const nombre = pais?.nombre ?? nombrePais(codigo);
-  const vacio = !cargando && !pais && recetas.length === 0;
+  const vacio = !cargando && !pais && recetas.length === 0 && !isAdmin;
+
+  const accion = (tarea: () => Promise<void>) => {
+    tarea().catch((err) => window.alert(errorMessage(err, 'No se pudo completar la acción.')));
+  };
 
   return (
     <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
@@ -45,15 +55,38 @@ export function PaisPagina({ codigo, pais, fotos, recetas, cargando }: PaisPagin
         </div>
       </header>
 
+      {isAdmin && (
+        // `key` reinicia el formulario al cambiar de país o al llegar la fila tras darla de alta.
+        <PaisEditor key={`${codigo}-${pais ? 'alta' : 'sin-alta'}`} codigo={codigo} nombre={nombre} pais={pais}
+          recetas={recetas.length} api={api} onRecetasCambiadas={onRecetasCambiadas} />
+      )}
+
       {fotos.length > 0 && (
         <section className="mb-14">
           <div className="flex flex-wrap gap-6 justify-center">
-            {fotos.map((f, i) => (
-              <figure key={f.id} className={`bg-white p-2 pb-8 shadow-md w-56 ${GIROS[i % GIROS.length]}`}>
-                <img src={f.url} alt={f.pie ?? `Foto de ${nombre}`} loading="lazy" className="w-full aspect-square object-cover" />
-                {f.pie && <figcaption className="font-script text-xl text-center text-ink mt-1 leading-tight">{f.pie}</figcaption>}
-              </figure>
-            ))}
+            {fotos.map((f, i) => {
+              const esPortada = pais?.portada_url === f.url;
+              return (
+                <figure key={f.id} className={`relative bg-white p-2 pb-8 shadow-md w-56 ${GIROS[i % GIROS.length]}`}>
+                  <img src={f.url} alt={f.pie ?? `Foto de ${nombre}`} loading="lazy" className="w-full aspect-square object-cover" />
+                  {f.pie && <figcaption className="font-script text-xl text-center text-ink mt-1 leading-tight">{f.pie}</figcaption>}
+                  {isAdmin && (
+                    <div className="absolute top-3.5 right-3.5 flex gap-1">
+                      <button title={esPortada ? 'Quitar de portada' : 'Usar como portada'} aria-pressed={esPortada}
+                        onClick={() => accion(() => api.guardar(codigo, { portada_url: esPortada ? null : f.url }))}
+                        className={`w-7 h-7 grid place-items-center border-[1.5px] border-ink ${esPortada ? 'bg-yellow' : 'bg-paper hover:bg-yellow'}`}>
+                        {esPortada ? <Star size={14} fill="currentColor" /> : <ImageIcon size={14} />}
+                      </button>
+                      <button title="Borrar foto"
+                        onClick={() => { if (window.confirm('¿Borrar esta foto?')) accion(() => api.borrarFoto(f)); }}
+                        className="w-7 h-7 grid place-items-center bg-paper border-[1.5px] border-ink text-hot hover:bg-hot-soft">
+                        <Trash2 size={14} />
+                      </button>
+                    </div>
+                  )}
+                </figure>
+              );
+            })}
           </div>
         </section>
       )}
