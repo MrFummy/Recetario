@@ -12,6 +12,7 @@ import { RecetaNoEncontrada, SoloAdmin } from './components/Avisos';
 import { SeccionDespensa } from './components/DespensaSection';
 import { SeccionListaCompra } from './components/ListaCompraSection';
 import { SeccionLaboratorio } from './components/LaboratorioSection';
+import { SeccionPasaporte } from './components/PasaporteSection';
 import { NavPrincipal } from './components/NavPrincipal';
 import { useRecipes } from './hooks/useRecipes';
 import { useDespensa } from './hooks/useDespensa';
@@ -97,8 +98,9 @@ function App() {
   const enDespensa = ruta.vista === 'despensa';
   const enListaCompra = ruta.vista === 'lista-compra';
   const enLaboratorio = ruta.vista === 'laboratorio';
+  const enPasaporte = ruta.vista === 'pasaporte' || ruta.vista === 'pais';
   // El catálogo queda detrás de la ficha abierta, como hasta ahora.
-  const enCatalogo = !enNueva && !enDespensa && !enListaCompra && !enLaboratorio;
+  const enCatalogo = !enNueva && !enDespensa && !enListaCompra && !enLaboratorio && !enPasaporte;
 
   return (
     <div className="min-h-screen pb-20">
@@ -122,6 +124,7 @@ function App() {
               enDespensa={enDespensa}
               enListaCompra={enListaCompra}
               enLaboratorio={enLaboratorio}
+              enPasaporte={enPasaporte}
               enNueva={enNueva}
               totalDespensa={despensa.total}
               isAdmin={isAdmin}
@@ -175,6 +178,8 @@ function App() {
           <SeccionDespensa recipes={recipes} despensa={despensa} user={user} />
         ) : enListaCompra ? (
           <SeccionListaCompra recipes={recipes} despensa={despensa} paraHacer={paraHacer} />
+        ) : (ruta.vista === 'pasaporte' || ruta.vista === 'pais') ? (
+          <SeccionPasaporte ruta={ruta} recipes={recipes} loadingRecetas={loading} />
         ) : enLaboratorio ? (
           <SoloAdmin sesionCargada={sesionCargada} isAdmin={isAdmin} accion="entrar en El Laboratorio">
             <SeccionLaboratorio onRecetaCreada={() => void refetch()} />

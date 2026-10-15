@@ -44,6 +44,24 @@ export type Category =
   | 'Pastas'
   | 'Postres';
 
+/** Un país visitado de «Mi pasaporte» (tabla `paises`). */
+export interface Pais {
+  codigo: string;
+  nombre: string;
+  fecha_viaje: string | null;
+  contexto: string | null;
+  portada_url: string | null;
+}
+
+/** Una foto de la galería de un país (tabla `fotos_pais`). */
+export interface FotoPais {
+  id: string;
+  pais: string;
+  url: string;
+  pie: string | null;
+  orden: number;
+}
+
 export type FuenteTipo = 'youtube' | 'instagram' | 'web' | 'texto';
 export type EstadoCandidata = 'por_probar' | 'probada';
 

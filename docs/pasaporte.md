@@ -1,6 +1,9 @@
 # Mi pasaporte — plan
 
-**Estado (15 oct 2026): fase 1 hecha, falta el etiquetado de las recetas existentes.**
+**Estado (15 oct 2026): fases 1 y 2 hechas.** La fase 2 (mapa, sellos y página de país) está
+al final de este bloque.
+
+**Fase 1 — datos y etiquetado.**
 Aplicada en producción: [la migración](../supabase/migrations/20261015_pasaporte.sql)
 (`recetas.pais`, `paises`, `fotos_pais`, bucket `fotos-paises`). RLS verificadas simulando
 roles en una transacción revertida: el admin inserta, etiqueta una receta y el borrado de un
@@ -24,6 +27,28 @@ texto de contexto y las recetas de allí. Metáfora: un pasaporte, con un sello 
 
 Nombre de trabajo: **Mi pasaporte** (ruta `#/pasaporte`). Alternativas descartadas por ahora:
 *El Mundo*, *Cuaderno de viaje*, *Sellos*.
+
+**Fase 2 — mapa y página de país (15 oct 2026).** Rutas `#/pasaporte` y `#/pasaporte/<ISO>`
+(las dos funciones de `rutas.ts`), enlace «Pasaporte» en la cabecera para todos y
+`SeccionPasaporte` con vista de **mapa** y de **sellos** (tarjetas con bandera y nº de recetas).
+Cada país tiene su página (`PaisPagina`): portada, fecha, contexto, galería y sus recetas con
+`RecipeGrid`. Los países visitados son los de la tabla `paises` **más** los que tienen alguna
+receta etiquetada aunque no estén dados de alta ([pasaporte.ts](../src/lib/pasaporte.ts)).
+- **El mapa** es un SVG propio ([MapaMundi.tsx](../src/components/MapaMundi.tsx)), sin
+  librería: contornos de Natural Earth 1:50m generados con
+  [scripts/generar-mapamundi.mjs](../scripts/generar-mapamundi.mjs) a `src/assets/mapamundi.json`
+  (727 KB, **79 KB comprimido**, 235 países). Se carga con `import()` dinámico: no pesa en la app
+  hasta que se abre el pasaporte. Sin la Antártida. Faltan 13 territorios diminutos (Gibraltar,
+  Reunión…): se alcanzan desde los sellos. Zoom con botones y arrastre, sin rueda.
+- **Zona de clic ampliada**: los visitados llevan un trazo transparente de 10 px; sin eso, Japón
+  o Italia eran casi imposibles de acertar a escala de mundo.
+- En escritorio arranca en mapa y en móvil en sellos (decidido al montar, no se adapta si se
+  redimensiona). Las banderas son emoji.
+- Verificado en el navegador con datos reales: mapa, clic en Japón, página con sus 2 recetas,
+  país sin datos (`#/pasaporte/FR`) y móvil. **Sin probar**: pasar el ratón (el panel no lo
+  dispara) y el zoom con arrastre.
+- Pendiente de la fase 3: dar de alta países, escribir el contexto y subir fotos. De momento la
+  página muestra portada, contexto y galería **si existen**, pero no hay forma de crearlos desde la web.
 
 ## Decisiones tomadas
 

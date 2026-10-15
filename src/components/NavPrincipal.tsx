@@ -1,4 +1,4 @@
-import { PlusCircle, ShoppingBasket, ShoppingCart, FlaskConical } from 'lucide-react';
+import { PlusCircle, ShoppingBasket, ShoppingCart, FlaskConical, Globe2 } from 'lucide-react';
 import { aHash, CATALOGO } from '../lib/rutas';
 
 interface NavPrincipalProps {
@@ -6,6 +6,7 @@ interface NavPrincipalProps {
   enDespensa: boolean;
   enListaCompra: boolean;
   enLaboratorio: boolean;
+  enPasaporte: boolean;
   enNueva: boolean;
   /** Cuántas cosas hay en la despensa, para el contador junto al enlace. */
   totalDespensa: number;
@@ -17,13 +18,13 @@ interface NavPrincipalProps {
  * autoriza de verdad son las RLS de Supabase y la validación de n8n, no esto.
  */
 export function NavPrincipal({
-  enCatalogo, enDespensa, enListaCompra, enLaboratorio, enNueva, totalDespensa, isAdmin,
+  enCatalogo, enDespensa, enListaCompra, enLaboratorio, enPasaporte, enNueva, totalDespensa, isAdmin,
 }: NavPrincipalProps) {
   return (
   <nav className="flex items-center gap-1">
     <a
       href={aHash(CATALOGO)}
-      className={`px-4 py-2 text-sm font-semibold rounded-md transition-colors ${enCatalogo
+      className={`px-2.5 sm:px-4 py-2 text-sm font-semibold rounded-md transition-colors ${enCatalogo
         ? 'bg-ink text-paper'
         : 'text-ink hover:bg-ink/5'
         }`}
@@ -32,7 +33,7 @@ export function NavPrincipal({
     </a>
     <a
       href={aHash({ vista: 'despensa' })}
-      className={`px-4 py-2 text-sm font-semibold rounded-md transition-colors flex items-center gap-1.5 ${enDespensa
+      className={`px-2.5 sm:px-4 py-2 text-sm font-semibold rounded-md transition-colors flex items-center gap-1.5 ${enDespensa
         ? 'bg-ink text-paper'
         : 'text-ink hover:bg-ink/5'
         }`}
@@ -47,7 +48,7 @@ export function NavPrincipal({
     </a>
     <a
       href={aHash({ vista: 'lista-compra' })}
-      className={`px-4 py-2 text-sm font-semibold rounded-md transition-colors flex items-center gap-1.5 ${enListaCompra
+      className={`px-2.5 sm:px-4 py-2 text-sm font-semibold rounded-md transition-colors flex items-center gap-1.5 ${enListaCompra
         ? 'bg-ink text-paper'
         : 'text-ink hover:bg-ink/5'
         }`}
@@ -55,10 +56,20 @@ export function NavPrincipal({
       <ShoppingCart size={16} />
       <span className="hidden sm:inline">Compra</span>
     </a>
+    <a
+      href={aHash({ vista: 'pasaporte' })}
+      className={`px-2.5 sm:px-4 py-2 text-sm font-semibold rounded-md transition-colors flex items-center gap-1.5 ${enPasaporte
+        ? 'bg-ink text-paper'
+        : 'text-ink hover:bg-ink/5'
+        }`}
+    >
+      <Globe2 size={16} />
+      <span className="hidden sm:inline">Pasaporte</span>
+    </a>
     {isAdmin && (
       <a
         href={aHash({ vista: 'laboratorio' })}
-        className={`px-4 py-2 text-sm font-semibold rounded-md transition-colors flex items-center gap-1.5 ${enLaboratorio
+        className={`px-2.5 sm:px-4 py-2 text-sm font-semibold rounded-md transition-colors flex items-center gap-1.5 ${enLaboratorio
           ? 'bg-ink text-paper'
           : 'text-ink hover:bg-ink/5'
           }`}
@@ -70,7 +81,7 @@ export function NavPrincipal({
     {isAdmin && (
       <a
         href={aHash({ vista: 'nueva' })}
-        className={`px-4 py-2 text-sm font-bold rounded-md transition-transform flex items-center gap-1.5 ${enNueva
+        className={`px-2.5 sm:px-4 py-2 text-sm font-bold rounded-md transition-transform flex items-center gap-1.5 ${enNueva
           ? 'bg-yellow text-ink -rotate-1 shadow-brut'
           : 'text-ink hover:bg-ink/5'
           }`}

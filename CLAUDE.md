@@ -280,6 +280,23 @@ Supabase son los de siempre. Probado el 14 de octubre.
 - La entrada por DM de Instagram quedó **aparcada** (la app de Meta tiene que estar en
   vivo para recibir webhooks reales); detalles en el plan.
 
+## Mi pasaporte
+
+**Fases 1 y 2 hechas el 15 de octubre de 2026**; plan y detalles en [docs/pasaporte.md](docs/pasaporte.md).
+Las recetas del catálogo vistas por países visitados: `#/pasaporte` (mapamundi SVG propio y
+sellos) y `#/pasaporte/<ISO>` (página de país). Pública para todos; escribe solo el admin.
+`recetas.pais` es el código ISO alfa-2, **sin clave foránea** a `paises` (etiquetar una receta no
+exige dar de alta el país). Tablas `paises` y `fotos_pais`, bucket público `fotos-paises`
+([la migración](supabase/migrations/20261015_pasaporte.sql)). El país se asigna en la ficha, en
+modo edición. **Falta** (fase 3): alta de países, contexto y subida de fotos desde la web.
+
+- El mapa (`src/assets/mapamundi.json`) se **carga con `import()` dinámico**: no importarlo
+  estáticamente o entra en el bundle principal (727 KB). Se regenera con
+  `scripts/generar-mapamundi.mjs`, cuyas dependencias no están en el proyecto.
+- Al borrar fotos de `fotos-paises` hay que usar la API de Storage, igual que en
+  `fotos-candidatas` (el SQL directo no borra el objeto).
+- El alta de recetas pasa por n8n, que no escribe `pais`: se etiqueta después desde la ficha.
+
 ## Tiempo, porciones y dificultad
 
 **Hecho el 10 de octubre de 2026.** Vertex ya los extraía de cada receta,

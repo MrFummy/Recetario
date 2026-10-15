@@ -17,6 +17,9 @@ export type Ruta =
   | { vista: 'despensa' }
   | { vista: 'lista-compra' }
   | { vista: 'laboratorio' }
+  | { vista: 'pasaporte' }
+  /** Un país de «Mi pasaporte», por su código ISO alfa-2 en mayúsculas. */
+  | { vista: 'pais'; codigo: string }
   | { vista: 'receta'; id: string };
 
 export const CATALOGO: Ruta = { vista: 'catalogo' };
@@ -34,6 +37,12 @@ export function parsearRuta(hash: string): Ruta {
   if (partes[0] === 'despensa') return { vista: 'despensa' };
   if (partes[0] === 'lista-compra') return { vista: 'lista-compra' };
   if (partes[0] === 'laboratorio') return { vista: 'laboratorio' };
+  if (partes[0] === 'pasaporte') {
+    // Un código mal escrito cae en el mapa, no en una página de país vacía.
+    return partes[1] && /^[A-Za-z]{2}$/.test(partes[1])
+      ? { vista: 'pais', codigo: partes[1].toUpperCase() }
+      : { vista: 'pasaporte' };
+  }
   if (partes[0] === 'receta' && partes[1]) {
     return { vista: 'receta', id: decodeURIComponent(partes[1]) };
   }
@@ -51,6 +60,10 @@ export function aHash(ruta: Ruta): string {
       return '#/lista-compra';
     case 'laboratorio':
       return '#/laboratorio';
+    case 'pasaporte':
+      return '#/pasaporte';
+    case 'pais':
+      return `#/pasaporte/${ruta.codigo}`;
     case 'receta':
       return `#/receta/${encodeURIComponent(ruta.id)}`;
     case 'catalogo':
