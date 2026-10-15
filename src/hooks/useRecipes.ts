@@ -65,6 +65,16 @@ export function useRecipes(user?: User | null) {
     setRecipes(prev => prev.map(r => r.id === id ? { ...r, fecha_clase: fecha } : r));
   };
 
+  /** Asigna (o quita, con `null`) el país de «Mi pasaporte». Solo el admin. */
+  const updateRecipePais = async (id: string, pais: string | null) => {
+    const { error } = await supabase
+      .from('recetas')
+      .update({ pais })
+      .eq('id', id);
+    if (error) throw error;
+    setRecipes(prev => prev.map(r => r.id === id ? { ...r, pais } : r));
+  };
+
   /**
    * Vuelve a leer la media de una receta. La recalcula un trigger de Supabase
    * cada vez que se añade, edita o borra una realización; queda a null si ya no
@@ -201,6 +211,7 @@ export function useRecipes(user?: User | null) {
     updateRecipeNotes,
     refrescarRating,
     updateSinHacer,
+    updateRecipePais,
     updateRecipePhoto,
     removeRecipePhoto,
     updateRecipeDate,

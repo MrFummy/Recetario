@@ -47,7 +47,7 @@ function App() {
 
   const {
     recipes, loading, error, refetch,
-    updateRecipeNotes, updateRecipePhoto, removeRecipePhoto, refrescarRating, updateSinHacer, updateRecipeDate,
+    updateRecipeNotes, updateRecipePhoto, removeRecipePhoto, refrescarRating, updateSinHacer, updateRecipeDate, updateRecipePais,
     deleteRecipe, shareRecipeByEmail,
   } = useRecipes(user);
 
@@ -238,6 +238,7 @@ function App() {
           paraHacer={paraHacer}
           onUpdateNotes={(notas) => updateRecipeNotes(recetaAbierta.id, notas)}
           onUpdateDate={(fecha) => updateRecipeDate(recetaAbierta.id, fecha)}
+          onUpdatePais={(pais) => updateRecipePais(recetaAbierta.id, pais)}
           onUpdatePhoto={(file) => updateRecipePhoto(recetaAbierta.id, file, recetaAbierta.foto_url)}
           onRemovePhoto={() => removeRecipePhoto(recetaAbierta.id, recetaAbierta.foto_url)}
           onToggleSinHacer={() => updateSinHacer(recetaAbierta.id, !recetaAbierta.sin_hacer)}

@@ -10,6 +10,7 @@ import { MuroRealizaciones } from './MuroRealizaciones';
 import { ShareByEmail } from './ShareByEmail';
 import { ModoCocina } from './ModoCocina';
 import { RecipePolaroid } from './RecipePolaroid';
+import { PaisEtiqueta, PaisSelect } from './PaisEtiqueta';
 import { hasNotas, renderNotas } from '../lib/recipeContent';
 import { errorMessage } from '../lib/errors';
 import placeholderImg from '../assets/placeholder.jpg';
@@ -27,13 +28,15 @@ interface RecipeDetailProps {
   /** Las realizaciones cambian la media vía trigger: hay que volver a leerla. */
   onRatingChanged: () => void;
   onUpdateDate?: (date: string) => Promise<void>;
+  /** Asigna o quita (`null`) el país de «Mi pasaporte» (solo admin). */
+  onUpdatePais?: (pais: string | null) => Promise<void>;
   /** Alterna la marca "sin hacer" (solo admin). */
   onToggleSinHacer?: () => Promise<void>;
   onDelete?: (recipe: Recipe) => Promise<void>;
   onShareByEmail?: (recipe: Recipe, email: string) => Promise<void>;
 }
 
-export function RecipeDetail({ recipe, onClose, isAdmin, user, despensa, paraHacer, onUpdateNotes, onUpdatePhoto, onRemovePhoto, onRatingChanged, onUpdateDate, onToggleSinHacer, onDelete, onShareByEmail }: RecipeDetailProps) {
+export function RecipeDetail({ recipe, onClose, isAdmin, user, despensa, paraHacer, onUpdateNotes, onUpdatePhoto, onRemovePhoto, onRatingChanged, onUpdateDate, onUpdatePais, onToggleSinHacer, onDelete, onShareByEmail }: RecipeDetailProps) {
   const isAfan = !!user;
   const initialNotes = renderNotas(recipe.notas);
 
@@ -43,6 +46,7 @@ export function RecipeDetail({ recipe, onClose, isAdmin, user, despensa, paraHac
   const [editedFecha, setEditedFecha] = useState(
     recipe.fecha_clase ? recipe.fecha_clase.split('T')[0] : ''
   );
+  const [editedPais, setEditedPais] = useState(recipe.pais ?? '');
   const [newPhoto, setNewPhoto] = useState<File | null>(null);
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
   const [quitarFoto, setQuitarFoto] = useState(false);
@@ -62,6 +66,7 @@ export function RecipeDetail({ recipe, onClose, isAdmin, user, despensa, paraHac
       if (onRemovePhoto && quitarFoto) await onRemovePhoto();
       else if (onUpdatePhoto && newPhoto) await onUpdatePhoto(newPhoto);
       if (onUpdateDate && editedFecha !== (recipe.fecha_clase?.split('T')[0] || '')) await onUpdateDate(editedFecha);
+      if (onUpdatePais && editedPais !== (recipe.pais ?? '')) await onUpdatePais(editedPais || null);
       setIsEditing(false);
       setNewPhoto(null);
       setPreviewUrl(null);
@@ -191,6 +196,7 @@ export function RecipeDetail({ recipe, onClose, isAdmin, user, despensa, paraHac
               <div className="inline-flex items-center gap-1.5 font-mono text-[11px] tracking-widest uppercase text-accent bg-accent-soft px-2.5 py-1 mb-4">
                 <span className="opacity-60">#</span>{recipe.categoria}
               </div>
+              {isEditing ? (onUpdatePais && <PaisSelect valor={editedPais} onChange={setEditedPais} />) : <PaisEtiqueta codigo={recipe.pais} />}
               <h2 className="font-display font-black text-4xl sm:text-5xl leading-[0.98] tracking-tight text-ink mb-4">
                 {recipe.titulo}
               </h2>

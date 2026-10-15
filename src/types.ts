@@ -17,6 +17,8 @@ export interface Recipe {
   rating?: number;
   /** Marca manual del admin; la quita un trigger al registrar una realización. */
   sin_hacer?: boolean;
+  /** Código ISO alfa-2 del país de «Mi pasaporte» (`PT`); `null` si no tiene. */
+  pais?: string | null;
   /**
    * Vertex ya las extrae al dar de alta, pero hasta el 10 de octubre de 2026
    * se descartaban: `null` en recetas anteriores a esa fecha.
