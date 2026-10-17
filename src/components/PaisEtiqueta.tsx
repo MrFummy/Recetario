@@ -1,12 +1,13 @@
 import { Globe2 } from 'lucide-react';
-import { PAISES, banderaPais, nombrePais } from '../lib/paises';
+import { PAISES, nombrePais } from '../lib/paises';
+import { Bandera } from './Bandera';
 
 /** El país de una receta, como etiqueta con bandera. No pinta nada sin país. */
 export function PaisEtiqueta({ codigo }: { codigo?: string | null }) {
   if (!codigo) return null;
   return (
     <span className="inline-flex items-center gap-1.5 font-mono text-[11px] tracking-widest uppercase text-ink bg-yellow/60 px-2.5 py-1 mb-4 ml-2 align-top">
-      <span aria-hidden="true">{banderaPais(codigo)}</span>
+      <Bandera codigo={codigo} alto={12} />
       {nombrePais(codigo)}
     </span>
   );
@@ -33,7 +34,7 @@ export function PaisSelect({ valor, onChange, textoVacio = 'Sin país' }: PaisSe
         <option value="">{textoVacio}</option>
         {PAISES.map((p) => (
           <option key={p.codigo} value={p.codigo}>
-            {banderaPais(p.codigo)} {p.nombre}
+            {p.nombre}
           </option>
         ))}
       </select>

@@ -51,3 +51,8 @@ export interface OpcionPais {
 export const PAISES: OpcionPais[] = CODIGOS
   .map((codigo) => ({ codigo, nombre: nombrePais(codigo) }))
   .sort((a, b) => a.nombre.localeCompare(b.nombre, 'es'));
+
+/** La imagen de la bandera (PNG de 320 px de ancho), para sitios donde no basta el emoji. */
+export function urlBandera(codigo: string): string {
+  return `https://flagcdn.com/w320/${codigo.toLowerCase()}.png`;
+}

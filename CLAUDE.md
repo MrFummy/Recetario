@@ -296,6 +296,10 @@ recetas sin país**, no las borra.
 - El mapa (`src/assets/mapamundi.json`) se **carga con `import()` dinámico**: no importarlo
   estáticamente o entra en el bundle principal (727 KB). Se regenera con
   `scripts/generar-mapamundi.mjs`, cuyas dependencias no están en el proyecto.
+- **Cabecera de país (17 oct 2026)**: ya no hay galería debajo; la cabecera enseña como máximo
+  3 fotos (`FOTOS_CABECERA`, portada primero) y la gestión de todas vive en `PaisEditor`. Las
+  banderas son imágenes de flagcdn.com ([Bandera.tsx](src/components/Bandera.tsx)), no emoji:
+  **Windows no dibuja los emoji de bandera** (salen como dos letras). Cae al emoji si la imagen falla.
 - Al borrar fotos de `fotos-paises` hay que usar la API de Storage, igual que en
   `fotos-candidatas` (el SQL directo no borra el objeto).
 - El alta de recetas pasa por n8n, que no escribe `pais`: se etiqueta después desde la ficha.

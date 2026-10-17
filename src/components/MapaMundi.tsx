@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Loader2, Minus, Plus, RotateCcw } from 'lucide-react';
 import type { PaisVisitado } from '../lib/pasaporte';
-import { banderaPais } from '../lib/paises';
+import { Bandera } from './Bandera';
 
 interface DatosMapa {
   ancho: number;
@@ -133,7 +133,7 @@ export function MapaMundi({ visitados, onSelect }: MapaMundiProps) {
 
       {actual && (
         <div className="absolute left-3 bottom-3 bg-paper border-[1.5px] border-ink px-3 py-1.5 font-mono text-[12px] shadow-brut pointer-events-none">
-          <span aria-hidden="true">{banderaPais(actual.codigo)}</span> {actual.nombre}
+          <Bandera codigo={actual.codigo} alto={14} className="mr-1.5 -mt-0.5" />{actual.nombre}
           <span className="text-ink-soft"> · {actual.recetas} {actual.recetas === 1 ? 'receta' : 'recetas'}</span>
         </div>
       )}

@@ -3,7 +3,7 @@ import { AlertTriangle, LayoutGrid, Map as MapIcon } from 'lucide-react';
 import type { Recipe } from '../types';
 import { usePaises } from '../hooks/usePaises';
 import { paisesVisitados } from '../lib/pasaporte';
-import { banderaPais } from '../lib/paises';
+import { Bandera } from './Bandera';
 import { aHash, type Ruta } from '../lib/rutas';
 import { irA } from '../hooks/useRuta';
 import { MapaMundi } from './MapaMundi';
@@ -94,7 +94,7 @@ export function SeccionPasaporte({ ruta, recipes, loadingRecetas, isAdmin, onRec
           {visitados.map((v, i) => (
             <a key={v.codigo} href={aHash({ vista: 'pais', codigo: v.codigo })}
               className={`block bg-paper-2 border-2 border-dashed border-ink/60 p-4 text-center transition-transform hover:rotate-0 hover:scale-[1.03] hover:border-accent ${SELLO_GIROS[i % SELLO_GIROS.length]}`}>
-              <div className="text-5xl leading-none mb-2" aria-hidden="true">{banderaPais(v.codigo)}</div>
+              <div className="mb-3"><Bandera codigo={v.codigo} alto={44} /></div>
               <div className="font-display font-bold text-lg leading-tight text-ink">{v.nombre}</div>
               {v.fecha && <div className="font-script text-xl text-accent leading-none mt-1">{v.fecha}</div>}
               <div className="font-mono text-[11px] text-ink-soft mt-2">

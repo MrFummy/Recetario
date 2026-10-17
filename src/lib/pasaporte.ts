@@ -30,3 +30,6 @@ export function paisesVisitados(paises: Pais[], recetas: Recipe[]): PaisVisitado
 
   return [...mapa.values()].sort((a, b) => a.nombre.localeCompare(b.nombre, 'es'));
 }
+
+/** Cuántas fotos ambientan la cabecera de un país; el resto de la galería solo se gestiona. */
+export const FOTOS_CABECERA = 3;

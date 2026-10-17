@@ -18,9 +18,9 @@
     "semantic_hash": ""
   },
   "src/App.tsx": {
-    "mtime": 1791974844.1176972,
-    "seen": 1791974866.9282439,
-    "ast_hash": "a4cf746e5df5181760a24328ea26c07b",
+    "mtime": 1792076916.109488,
+    "seen": 1792249003.664289,
+    "ast_hash": "c64938c4103d7bf745af77d9dcdb7049",
     "semantic_hash": ""
   },
   "src/components/AddRecipeForm.tsx": {
@@ -48,15 +48,15 @@
     "semantic_hash": "69888ba051186953413ac7f40527fc44"
   },
   "src/components/RecipeCard.tsx": {
-    "mtime": 1791974844.1162758,
-    "seen": 1791974866.928253,
-    "ast_hash": "6f2db9b7d474f93c8d5138e5b56f8a00",
+    "mtime": 1791975450.090656,
+    "seen": 1792249003.664305,
+    "ast_hash": "5fffea5832bb75d582e3dee79aa7209b",
     "semantic_hash": ""
   },
   "src/components/RecipeDetail.tsx": {
-    "mtime": 1791974844.1191046,
-    "seen": 1791974866.928255,
-    "ast_hash": "99a8f4a2b3df75b9a6ef33e569fcfcb1",
+    "mtime": 1792076916.1111422,
+    "seen": 1792249003.664306,
+    "ast_hash": "cc30312dd68df51808cb26808cff0f5b",
     "semantic_hash": ""
   },
   "src/components/RecipeGrid.tsx": {
@@ -84,9 +84,9 @@
     "semantic_hash": "e3aff6228c8d6b0457bd817adae8e008"
   },
   "src/hooks/useRecipes.ts": {
-    "mtime": 1791974844.1160452,
-    "seen": 1791974866.928263,
-    "ast_hash": "d2c71140bb2fe1297146b4192da3efa0",
+    "mtime": 1792076916.111329,
+    "seen": 1792249003.664316,
+    "ast_hash": "bf152eb8d21ed7aedd3de8fdadfa29ee",
     "semantic_hash": ""
   },
   "src/lib/ingredientParser.ts": {
@@ -108,9 +108,9 @@
     "semantic_hash": "787e5a07efeb2bf6209d5937195f2f68"
   },
   "src/types.ts": {
-    "mtime": 1791974844.1156116,
-    "seen": 1791974866.9282718,
-    "ast_hash": "9ca357dd06f0e646489592f8abb09714",
+    "mtime": 1792076916.1117024,
+    "seen": 1792249003.664327,
+    "ast_hash": "57d486ec78426e8b9a02f5366807c1b1",
     "semantic_hash": ""
   },
   "tsconfig.app.json": {
@@ -240,9 +240,9 @@
     "semantic_hash": ""
   },
   "CLAUDE.md": {
-    "mtime": 1791974865.6939285,
-    "seen": 1791974866.928284,
-    "ast_hash": "a4df4fff7c09542a966a4b3fca55a71b",
+    "mtime": 1792076916.1089745,
+    "seen": 1792249003.664341,
+    "ast_hash": "62621a2d6702e34595c8382e41c13cee",
     "semantic_hash": ""
   },
   "src/hooks/useDespensa.ts": {
@@ -270,9 +270,9 @@
     "semantic_hash": ""
   },
   "src/components/Avisos.tsx": {
-    "mtime": 1788202925.5089176,
-    "seen": 1791901115.1973681,
-    "ast_hash": "bb3cfd85a3815e351c51327a0bada026",
+    "mtime": 1791988562.2569735,
+    "seen": 1792249003.664293,
+    "ast_hash": "58a274b9d801af70bc55161837a4dcf3",
     "semantic_hash": ""
   },
   "src/hooks/useRuta.ts": {
@@ -282,9 +282,9 @@
     "semantic_hash": ""
   },
   "src/lib/rutas.ts": {
-    "mtime": 1791624729.6562157,
-    "seen": 1791901115.197387,
-    "ast_hash": "8a6f9e38f05a1988a924d111a19cb12b",
+    "mtime": 1792076916.1116178,
+    "seen": 1792249003.6643252,
+    "ast_hash": "c6d5688904dcf6f6f76e1bc3cf75743c",
     "semantic_hash": ""
   },
   "src/components/AnadirIngrediente.tsx": {
@@ -489,6 +489,180 @@
     "mtime": 1791902942.652112,
     "seen": 1791974866.9282901,
     "ast_hash": "dc32046041880789b49b707d476c23b2",
+    "semantic_hash": ""
+  },
+  "scripts/generar-mapamundi.mjs": {
+    "mtime": 1792076916.1093016,
+    "seen": 1792249003.664288,
+    "ast_hash": "4f3c001b9e570c94a5995ad6cdbebfff",
+    "semantic_hash": ""
+  },
+  "src/assets/mapamundi.json": {
+    "mtime": 1792076916.1103911,
+    "seen": 1792249003.66429,
+    "ast_hash": "bd36acdbefbdf37a0d6250239c815bf2",
+    "semantic_hash": ""
+  },
+  "src/components/AltaPais.tsx": {
+    "mtime": 1792076916.1104932,
+    "seen": 1792249003.6642911,
+    "ast_hash": "0bb21d6e6a9b9765b5be6f8ee87656ba",
+    "semantic_hash": ""
+  },
+  "src/components/Bandera.tsx": {
+    "mtime": 1792248998.3950825,
+    "seen": 1792249003.664293,
+    "ast_hash": "0d87b3ef31cceb21b629563e23ec2c31",
+    "semantic_hash": ""
+  },
+  "src/components/CandidataCard.tsx": {
+    "mtime": 1791988571.1235583,
+    "seen": 1792249003.664295,
+    "ast_hash": "09f44808e32a570112faa1f509c24382",
+    "semantic_hash": ""
+  },
+  "src/components/CandidataDetail.tsx": {
+    "mtime": 1791989425.1837454,
+    "seen": 1792249003.664295,
+    "ast_hash": "a77cfac747d2eadda82719a41c8e018d",
+    "semantic_hash": ""
+  },
+  "src/components/LaboratorioSection.tsx": {
+    "mtime": 1791989425.1840372,
+    "seen": 1792249003.6642969,
+    "ast_hash": "371ae67553b9294e31afd7f193aba118",
+    "semantic_hash": ""
+  },
+  "src/components/MapaMundi.tsx": {
+    "mtime": 1792248968.3692546,
+    "seen": 1792249003.664299,
+    "ast_hash": "2f27c158d7fd3d9253a79b97eb05d0fb",
+    "semantic_hash": ""
+  },
+  "src/components/NavPrincipal.tsx": {
+    "mtime": 1792076916.1106868,
+    "seen": 1792249003.6643012,
+    "ast_hash": "5b86dce19262141e98d8da8bd57b7c5f",
+    "semantic_hash": ""
+  },
+  "src/components/PaisEditor.tsx": {
+    "mtime": 1792248987.5304372,
+    "seen": 1792249003.6643012,
+    "ast_hash": "66cd55a51a84503261783e45c353f221",
+    "semantic_hash": ""
+  },
+  "src/components/PaisEtiqueta.tsx": {
+    "mtime": 1792248968.3696182,
+    "seen": 1792249003.664302,
+    "ast_hash": "baecb2aba4d020023fea5ac75c8a48e2",
+    "semantic_hash": ""
+  },
+  "src/components/PaisPagina.tsx": {
+    "mtime": 1792248998.3953693,
+    "seen": 1792249003.664302,
+    "ast_hash": "5ab0e53ca00abba818a98bbc76f255a3",
+    "semantic_hash": ""
+  },
+  "src/components/PasaporteSection.tsx": {
+    "mtime": 1792248968.369051,
+    "seen": 1792249003.664303,
+    "ast_hash": "406033652c4be1f460b4f8084e1d3901",
+    "semantic_hash": ""
+  },
+  "src/components/PromoverModal.tsx": {
+    "mtime": 1791989425.1449203,
+    "seen": 1792249003.664304,
+    "ast_hash": "83c6c814cf5a4a693e43ae30cefb4964",
+    "semantic_hash": ""
+  },
+  "src/hooks/useCandidatas.ts": {
+    "mtime": 1791989399.5634723,
+    "seen": 1792249003.6643121,
+    "ast_hash": "5096be8ec80e4aa12ab243295d5a5ac8",
+    "semantic_hash": ""
+  },
+  "src/hooks/usePaises.ts": {
+    "mtime": 1792076916.1112273,
+    "seen": 1792249003.664313,
+    "ast_hash": "3ebfc6073380341457c134bd8181b7e3",
+    "semantic_hash": ""
+  },
+  "src/lib/categorias.ts": {
+    "mtime": 1791988510.4587197,
+    "seen": 1792249003.6643178,
+    "ast_hash": "662b360b0536795c26731e09fe812d01",
+    "semantic_hash": ""
+  },
+  "src/lib/fuentes.ts": {
+    "mtime": 1791988571.1234012,
+    "seen": 1792249003.664319,
+    "ast_hash": "9e2a4bb09e5f8706912cf8eaed8769a3",
+    "semantic_hash": ""
+  },
+  "src/lib/imagen.ts": {
+    "mtime": 1792076916.1114004,
+    "seen": 1792249003.66432,
+    "ast_hash": "271d020ec64d49c1566b577f177806fc",
+    "semantic_hash": ""
+  },
+  "src/lib/paises.ts": {
+    "mtime": 1792248998.395142,
+    "seen": 1792249003.664323,
+    "ast_hash": "40c700d074c2089cd2383a948416d999",
+    "semantic_hash": ""
+  },
+  "src/lib/pasaporte.ts": {
+    "mtime": 1792248998.3951864,
+    "seen": 1792249003.664323,
+    "ast_hash": "400925cebfa8703845898b78e29d29f0",
+    "semantic_hash": ""
+  },
+  "src/lib/promover.ts": {
+    "mtime": 1791989399.5461485,
+    "seen": 1792249003.664324,
+    "ast_hash": "25b13d443f38025378d1cf4eef862807",
+    "semantic_hash": ""
+  },
+  "supabase/migrations/20261014_laboratorio_candidatas.sql": {
+    "mtime": 1791982244.992815,
+    "seen": 1792249003.664336,
+    "ast_hash": "cbf013f9ee7193f4b5ede5950fac9232",
+    "semantic_hash": ""
+  },
+  "supabase/migrations/20261014_laboratorio_select_fotos.sql": {
+    "mtime": 1791989726.362086,
+    "seen": 1792249003.664337,
+    "ast_hash": "b3d2c7f334731a62be66fd70e53ceb2a",
+    "semantic_hash": ""
+  },
+  "supabase/migrations/20261015_pasaporte.sql": {
+    "mtime": 1792076916.111808,
+    "seen": 1792249003.6643379,
+    "ast_hash": "4c8444572e8a07dd29513f58379e306f",
+    "semantic_hash": ""
+  },
+  "docs/candidatas.md": {
+    "mtime": 1792073554.3976495,
+    "seen": 1792249003.664342,
+    "ast_hash": "6fdf901e433d9e9a511b8cbf48701fe6",
+    "semantic_hash": ""
+  },
+  "docs/pasaporte.md": {
+    "mtime": 1792076916.1091974,
+    "seen": 1792249003.664343,
+    "ast_hash": "026bb040515c17159d9fd760f64976c9",
+    "semantic_hash": ""
+  },
+  "docs/avatar-bot/avatar-bot-telegram.png": {
+    "mtime": 1791990651.9188418,
+    "seen": 1792249003.664345,
+    "ast_hash": "8651f6987a4f8d87cac9d66e8c994b9a",
+    "semantic_hash": ""
+  },
+  "docs/avatar-bot/avatar-bot-telegram.svg": {
+    "mtime": 1791990651.8003736,
+    "seen": 1792249003.6643462,
+    "ast_hash": "1a960047fc5ba308a5294b0e96ccf8fc",
     "semantic_hash": ""
   }
 }

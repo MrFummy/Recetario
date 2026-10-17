@@ -3,7 +3,7 @@
   "1": "compilerOptions",
   "2": "devDependencies",
   "3": "compilerOptions",
-  "4": "ModoCocina.tsx",
+  "4": "tiempos.ts",
   "5": "Recipe",
   "6": "package.json",
   "7": "indexar-recetas/index.ts",
@@ -23,7 +23,7 @@
   "21": "20260808_revocar_execute_funciones.sql",
   "22": "20260823_estructurar_ingredientes.sql",
   "23": "20261010_partir_base_combinados.sql",
-  "24": "recipeContent.ts",
+  "24": "types.ts",
   "25": "public.recetas",
   "26": "20261011_para_hacer_y_realizaciones.sql",
   "27": "20261011_rating_con_decimales.sql",
@@ -32,5 +32,11 @@
   "30": "20261014_sin_hacer.sql",
   "31": "deploy.sh script",
   "32": "deploy.ps1",
-  "33": "public.recetas"
+  "33": "public.recetas",
+  "34": "PaisPagina.tsx",
+  "35": "Mi Recetario — contexto del proyecto",
+  "36": "generar-mapamundi.mjs",
+  "37": "20261015_pasaporte.sql",
+  "38": "20261014_laboratorio_candidatas.sql",
+  "39": "20261014_laboratorio_select_fotos.sql"
 }

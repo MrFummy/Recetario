@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
-import { ImagePlus, Loader2, Save, Settings2, Trash2 } from 'lucide-react';
-import type { Pais } from '../types';
+import { ImagePlus, Loader2, Save, Settings2, Star, Trash2 } from 'lucide-react';
+import type { FotoPais, Pais } from '../types';
 import type { Paises } from '../hooks/usePaises';
 import { errorMessage } from '../lib/errors';
 import { irA } from '../hooks/useRuta';
@@ -10,6 +10,9 @@ interface PaisEditorProps {
   nombre: string;
   pais: Pais | null;
   recetas: number;
+  fotos: FotoPais[];
+  /** Cuántas salen en la cabecera. */
+  visibles: number;
   api: Paises;
   /** Borrar un país quita su etiqueta a las recetas: el catálogo tiene que recargarse. */
   onRecetasCambiadas: () => void;
@@ -20,7 +23,7 @@ interface PaisEditorProps {
  * fotos y borrado. Va plegado para que la página pública no lo muestre en grande.
  * Las escrituras las autoriza la RLS (`es_admin()`), no este componente.
  */
-export function PaisEditor({ codigo, nombre, pais, recetas, api, onRecetasCambiadas }: PaisEditorProps) {
+export function PaisEditor({ codigo, nombre, pais, recetas, fotos, visibles, api, onRecetasCambiadas }: PaisEditorProps) {
   const [fecha, setFecha] = useState(pais?.fecha_viaje ?? '');
   const [contexto, setContexto] = useState(pais?.contexto ?? '');
   const [ocupado, setOcupado] = useState<'guardar' | 'fotos' | 'borrar' | null>(null);
@@ -98,6 +101,35 @@ export function PaisEditor({ codigo, nombre, pais, recetas, api, onRecetasCambia
             {ocupado === 'borrar' ? <Loader2 className="animate-spin" size={14} /> : <Trash2 size={14} />} Quitar país
           </button>
         </div>
+
+        {fotos.length > 0 && (
+          <div>
+            <p className="font-mono text-[11px] text-ink-soft mb-2">
+              Fotos de la cabecera: salen {visibles} como máximo, la portada (★) primero.
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {fotos.map((f) => {
+                const esPortada = pais?.portada_url === f.url;
+                return (
+                  <div key={f.id} className="relative w-24 h-24 border-[1.5px] border-ink">
+                    <img src={f.url} alt={f.pie ?? `Foto de ${nombre}`} loading="lazy" className="w-full h-full object-cover" />
+                    <button title={esPortada ? 'Quitar de portada' : 'Usar como portada'} aria-pressed={esPortada}
+                      disabled={ocupado !== null}
+                      onClick={() => void ejecutar('guardar', () => api.guardar(codigo, { portada_url: esPortada ? null : f.url }))}
+                      className={`absolute top-1 left-1 w-6 h-6 grid place-items-center border-[1.5px] border-ink ${esPortada ? 'bg-yellow' : 'bg-paper hover:bg-yellow'}`}>
+                      <Star size={12} fill={esPortada ? 'currentColor' : 'none'} />
+                    </button>
+                    <button title="Borrar foto" disabled={ocupado !== null}
+                      onClick={() => { if (window.confirm('¿Borrar esta foto?')) void ejecutar('guardar', () => api.borrarFoto(f)); }}
+                      className="absolute top-1 right-1 w-6 h-6 grid place-items-center bg-paper border-[1.5px] border-ink text-hot hover:bg-hot-soft">
+                      <Trash2 size={12} />
+                    </button>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        )}
 
         {aviso && (
           <p role="status" className={`font-mono text-[12px] ${aviso.tipo === 'ok' ? 'text-accent' : 'text-hot'}`}>{aviso.texto}</p>
