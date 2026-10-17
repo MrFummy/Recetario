@@ -305,6 +305,8 @@ recetas sin país**, no las borra.
   lee los píxeles con un canvas, lo que exige el CORS abierto de flagcdn. Si falla, la página
   queda sin acento. `paises.lema` ([la migración](supabase/migrations/20261017_lema_pais.sql))
   es una frase opcional bajo el nombre, editable en «Gestionar país».
+- **Siguiente en el Pasaporte**: sello de pasaporte, plato estrella y datos de ficha, en ese orden;
+  detalle en [docs/pasaporte.md](docs/pasaporte.md).
 - Al borrar fotos de `fotos-paises` hay que usar la API de Storage, igual que en
   `fotos-candidatas` (el SQL directo no borra el objeto).
 - El alta de recetas pasa por n8n, que no escribe `pais`: se etiqueta después desde la ficha.

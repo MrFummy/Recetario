@@ -165,4 +165,14 @@ receta etiquetada aunque no estén dados de alta ([pasaporte.ts](../src/lib/pasa
 - **Banderas como imagen** (flagcdn.com, `Bandera.tsx`): Windows no dibuja los emoji de bandera.
 - **Acento por país**: color dominante de la bandera leído con canvas (`colorBandera.ts`).
 - **Lema** opcional por país (`paises.lema`).
-- Ideas sin hacer: datos de ficha (capital, idioma, moneda), sello grande de pasaporte, plato estrella.
+
+### Pendiente para la siguiente sesión, por orden de preferencia
+
+1. **Sello grande de pasaporte**: sello SVG decorativo en una esquina de la cabecera, girado y con
+   borde irregular, con el nombre del país, `fecha_viaje` y el color de acento. No necesita datos nuevos.
+2. **Plato estrella**: una receta del país destacada en grande antes de la cuadrícula. Hay que decidir
+   cuál sale: la mejor valorada, la última cocinada o una elegida a mano; esto último pide un campo
+   nuevo, p. ej. `paises.plato_estrella` (con su migración).
+3. **Datos de ficha** (capital, idioma, moneda): franja con iconos bajo el título. `Intl` da idioma y
+   moneda pero no capitales, así que haría falta una tabla propia pequeña (o restcountries.com).
+   Lo que más trabajo da y menos aporta.
