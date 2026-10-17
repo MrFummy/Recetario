@@ -20,7 +20,7 @@ no tienen país.
 En la web (solo esa parte de la fase 1): selector de país en la ficha en modo edición y etiqueta
 con bandera ([PaisEtiqueta.tsx](../src/components/PaisEtiqueta.tsx)); lista de 244 países con
 nombres de `Intl.DisplayNames` en [paises.ts](../src/lib/paises.ts). **Sin probar en el
-navegador con sesión de admin.** Las banderas son emoji: no se ven en Windows con Chrome.
+navegador con sesión de admin.** *(Corregido el 17 oct: las banderas ya son imágenes de flagcdn, ver abajo.)*
 
 Una sección donde las recetas del catálogo se presentan por **países en los que he estado**:
 un mapamundi con los países visitados iluminados, y una página por país con mis fotos, un
@@ -32,7 +32,7 @@ Nombre de trabajo: **Mi pasaporte** (ruta `#/pasaporte`). Alternativas descartad
 **Fase 2 — mapa y página de país (15 oct 2026).** Rutas `#/pasaporte` y `#/pasaporte/<ISO>`
 (las dos funciones de `rutas.ts`), enlace «Pasaporte» en la cabecera para todos y
 `SeccionPasaporte` con vista de **mapa** y de **sellos** (tarjetas con bandera y nº de recetas).
-Cada país tiene su página (`PaisPagina`): portada, fecha, contexto, galería y sus recetas con
+Cada país tiene su página (`PaisPagina`): cabecera (hasta 3 fotos, bandera, lema, fecha, contexto) y sus recetas con
 `RecipeGrid`. Los países visitados son los de la tabla `paises` **más** los que tienen alguna
 receta etiquetada aunque no estén dados de alta ([pasaporte.ts](../src/lib/pasaporte.ts)).
 - **El mapa** es un SVG propio ([MapaMundi.tsx](../src/components/MapaMundi.tsx)), sin
@@ -44,7 +44,7 @@ receta etiquetada aunque no estén dados de alta ([pasaporte.ts](../src/lib/pasa
 - **Zona de clic ampliada**: los visitados llevan un trazo transparente de 10 px; sin eso, Japón
   o Italia eran casi imposibles de acertar a escala de mundo.
 - En escritorio arranca en mapa y en móvil en sellos (decidido al montar, no se adapta si se
-  redimensiona). Las banderas son emoji.
+  redimensiona). Las banderas eran emoji; desde el 17 oct son imágenes.
 - Verificado en el navegador con datos reales: mapa, clic en Japón, página con sus 2 recetas,
   país sin datos (`#/pasaporte/FR`) y móvil. **Sin probar**: pasar el ratón (el panel no lo
   dispara) y el zoom con arrastre.
@@ -157,3 +157,12 @@ receta etiquetada aunque no estén dados de alta ([pasaporte.ts](../src/lib/pasa
 - ¿Una receta puede pertenecer a más de un país (platos fronterizos)? Por ahora no: uno.
 - ¿Qué países hay ya y cuántas recetas tendría cada uno? Sirve para probar el diseño con datos
   reales.
+
+## Cambios del 17 de octubre de 2026
+
+- **Sin galería**: la cabecera enseña como máximo 3 fotos (`FOTOS_CABECERA`, portada primero);
+  gestionar el resto, elegir portada y borrar se hace en «Gestionar país».
+- **Banderas como imagen** (flagcdn.com, `Bandera.tsx`): Windows no dibuja los emoji de bandera.
+- **Acento por país**: color dominante de la bandera leído con canvas (`colorBandera.ts`).
+- **Lema** opcional por país (`paises.lema`).
+- Ideas sin hacer: datos de ficha (capital, idioma, moneda), sello grande de pasaporte, plato estrella.
