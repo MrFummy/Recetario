@@ -50,6 +50,8 @@ export interface Pais {
   nombre: string;
   fecha_viaje: string | null;
   contexto: string | null;
+  /** Frase corta bajo el nombre del país en su cabecera. */
+  lema: string | null;
   portada_url: string | null;
 }
 

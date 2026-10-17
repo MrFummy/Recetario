@@ -300,6 +300,11 @@ recetas sin país**, no las borra.
   3 fotos (`FOTOS_CABECERA`, portada primero) y la gestión de todas vive en `PaisEditor`. Las
   banderas son imágenes de flagcdn.com ([Bandera.tsx](src/components/Bandera.tsx)), no emoji:
   **Windows no dibuja los emoji de bandera** (salen como dos letras). Cae al emoji si la imagen falla.
+- **Acento y lema (17 oct 2026)**: cada país toma su color del dominante de la bandera
+  ([colorBandera.ts](src/lib/colorBandera.ts), [useAcentoPais.ts](src/hooks/useAcentoPais.ts)):
+  lee los píxeles con un canvas, lo que exige el CORS abierto de flagcdn. Si falla, la página
+  queda sin acento. `paises.lema` ([la migración](supabase/migrations/20261017_lema_pais.sql))
+  es una frase opcional bajo el nombre, editable en «Gestionar país».
 - Al borrar fotos de `fotos-paises` hay que usar la API de Storage, igual que en
   `fotos-candidatas` (el SQL directo no borra el objeto).
 - El alta de recetas pasa por n8n, que no escribe `pais`: se etiqueta después desde la ficha.

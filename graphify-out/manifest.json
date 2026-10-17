@@ -108,9 +108,9 @@
     "semantic_hash": "787e5a07efeb2bf6209d5937195f2f68"
   },
   "src/types.ts": {
-    "mtime": 1792076916.1117024,
-    "seen": 1792249003.664327,
-    "ast_hash": "57d486ec78426e8b9a02f5366807c1b1",
+    "mtime": 1792249371.6591496,
+    "seen": 1792249388.519089,
+    "ast_hash": "dfb8fbb26f447fa99d721cf382dc72a6",
     "semantic_hash": ""
   },
   "tsconfig.app.json": {
@@ -240,9 +240,9 @@
     "semantic_hash": ""
   },
   "CLAUDE.md": {
-    "mtime": 1792076916.1089745,
-    "seen": 1792249003.664341,
-    "ast_hash": "62621a2d6702e34595c8382e41c13cee",
+    "mtime": 1792249387.4900172,
+    "seen": 1792249388.519103,
+    "ast_hash": "0d493afda33573c1663347523559e64d",
     "semantic_hash": ""
   },
   "src/hooks/useDespensa.ts": {
@@ -510,8 +510,8 @@
     "semantic_hash": ""
   },
   "src/components/Bandera.tsx": {
-    "mtime": 1792248998.3950825,
-    "seen": 1792249003.664293,
+    "mtime": 1792249179.3698297,
+    "seen": 1792249388.519053,
     "ast_hash": "0d87b3ef31cceb21b629563e23ec2c31",
     "semantic_hash": ""
   },
@@ -534,8 +534,8 @@
     "semantic_hash": ""
   },
   "src/components/MapaMundi.tsx": {
-    "mtime": 1792248968.3692546,
-    "seen": 1792249003.664299,
+    "mtime": 1792249179.3699694,
+    "seen": 1792249388.519058,
     "ast_hash": "2f27c158d7fd3d9253a79b97eb05d0fb",
     "semantic_hash": ""
   },
@@ -546,26 +546,26 @@
     "semantic_hash": ""
   },
   "src/components/PaisEditor.tsx": {
-    "mtime": 1792248987.5304372,
-    "seen": 1792249003.6643012,
-    "ast_hash": "66cd55a51a84503261783e45c353f221",
+    "mtime": 1792249371.6597552,
+    "seen": 1792249388.519061,
+    "ast_hash": "53c33c32b44e39af3bbd3c9b7436b792",
     "semantic_hash": ""
   },
   "src/components/PaisEtiqueta.tsx": {
-    "mtime": 1792248968.3696182,
-    "seen": 1792249003.664302,
+    "mtime": 1792249179.3702464,
+    "seen": 1792249388.519061,
     "ast_hash": "baecb2aba4d020023fea5ac75c8a48e2",
     "semantic_hash": ""
   },
   "src/components/PaisPagina.tsx": {
-    "mtime": 1792248998.3953693,
-    "seen": 1792249003.664302,
-    "ast_hash": "5ab0e53ca00abba818a98bbc76f255a3",
+    "mtime": 1792249371.66057,
+    "seen": 1792249388.519062,
+    "ast_hash": "290da6f12ff76b0cafa062797318483c",
     "semantic_hash": ""
   },
   "src/components/PasaporteSection.tsx": {
-    "mtime": 1792248968.369051,
-    "seen": 1792249003.664303,
+    "mtime": 1792249179.3705466,
+    "seen": 1792249388.519062,
     "ast_hash": "406033652c4be1f460b4f8084e1d3901",
     "semantic_hash": ""
   },
@@ -582,9 +582,9 @@
     "semantic_hash": ""
   },
   "src/hooks/usePaises.ts": {
-    "mtime": 1792076916.1112273,
-    "seen": 1792249003.664313,
-    "ast_hash": "3ebfc6073380341457c134bd8181b7e3",
+    "mtime": 1792249371.6593058,
+    "seen": 1792249388.519074,
+    "ast_hash": "1615878869307f949c973dda743c31ff",
     "semantic_hash": ""
   },
   "src/lib/categorias.ts": {
@@ -606,14 +606,14 @@
     "semantic_hash": ""
   },
   "src/lib/paises.ts": {
-    "mtime": 1792248998.395142,
-    "seen": 1792249003.664323,
+    "mtime": 1792249179.3706653,
+    "seen": 1792249388.519084,
     "ast_hash": "40c700d074c2089cd2383a948416d999",
     "semantic_hash": ""
   },
   "src/lib/pasaporte.ts": {
-    "mtime": 1792248998.3951864,
-    "seen": 1792249003.664323,
+    "mtime": 1792249179.3707774,
+    "seen": 1792249388.5190852,
     "ast_hash": "400925cebfa8703845898b78e29d29f0",
     "semantic_hash": ""
   },
@@ -663,6 +663,30 @@
     "mtime": 1791990651.8003736,
     "seen": 1792249003.6643462,
     "ast_hash": "1a960047fc5ba308a5294b0e96ccf8fc",
+    "semantic_hash": ""
+  },
+  "src/hooks/useAcentoPais.ts": {
+    "mtime": 1792249371.6426432,
+    "seen": 1792249388.5190709,
+    "ast_hash": "84ea90699a0688e14f66e802526762ec",
+    "semantic_hash": ""
+  },
+  "src/lib/colorBandera.ts": {
+    "mtime": 1792249371.6407273,
+    "seen": 1792249388.519079,
+    "ast_hash": "bed9c72b8711a819bd4d59ab49431af2",
+    "semantic_hash": ""
+  },
+  "supabase/migrations/20261017_lema_pais.sql": {
+    "mtime": 1792249343.5419936,
+    "seen": 1792249388.5191,
+    "ast_hash": "1d1f950054c0d0586d5f93294dd92e37",
+    "semantic_hash": ""
+  },
+  "public/icon-256.png": {
+    "mtime": 1792249179.3450274,
+    "seen": 1792249388.519111,
+    "ast_hash": "6201e3ab1e19a6186b70c86067c4e407",
     "semantic_hash": ""
   }
 }

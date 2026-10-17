@@ -25,6 +25,7 @@ interface PaisEditorProps {
  */
 export function PaisEditor({ codigo, nombre, pais, recetas, fotos, visibles, api, onRecetasCambiadas }: PaisEditorProps) {
   const [fecha, setFecha] = useState(pais?.fecha_viaje ?? '');
+  const [lema, setLema] = useState(pais?.lema ?? '');
   const [contexto, setContexto] = useState(pais?.contexto ?? '');
   const [ocupado, setOcupado] = useState<'guardar' | 'fotos' | 'borrar' | null>(null);
   const [aviso, setAviso] = useState<{ tipo: 'ok' | 'error'; texto: string } | null>(null);
@@ -44,7 +45,7 @@ export function PaisEditor({ codigo, nombre, pais, recetas, fotos, visibles, api
   };
 
   const guardar = () => ejecutar('guardar', async () => {
-    await api.guardar(codigo, { fecha_viaje: fecha.trim() || null, contexto: contexto.trim() || null });
+    await api.guardar(codigo, { fecha_viaje: fecha.trim() || null, lema: lema.trim() || null, contexto: contexto.trim() || null });
     return 'Guardado.';
   });
 
@@ -80,6 +81,11 @@ export function PaisEditor({ codigo, nombre, pais, recetas, fotos, visibles, api
         <label className="block font-mono text-[11px] text-ink-soft">
           Cuándo estuve
           <input value={fecha} onChange={(e) => setFecha(e.target.value)} placeholder="abril de 2024" className={`${campo} mt-1`} />
+        </label>
+        <label className="block font-mono text-[11px] text-ink-soft">
+          Lema: una frase corta bajo el nombre
+          <input value={lema} onChange={(e) => setLema(e.target.value)} maxLength={80}
+            placeholder="Donde el arroz es religión" className={`${campo} mt-1`} />
         </label>
         <label className="block font-mono text-[11px] text-ink-soft">
           Contexto: la temática del país, en tus palabras

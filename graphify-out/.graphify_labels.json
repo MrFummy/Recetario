@@ -13,7 +13,7 @@
   "11": "icons.svg",
   "12": "Q: Por que Supabase JS client with no backend layer aparece semanticamente similar a n8n webhook recipe ingestion?",
   "13": "public.recetas_embeddings",
-  "14": "Ideas para el Recetario",
+  "14": "Recetas candidatas — plan",
   "15": "buscar-recetas/index.ts",
   "16": "public.despensa",
   "17": "tsconfig.json",
@@ -38,5 +38,12 @@
   "36": "generar-mapamundi.mjs",
   "37": "20261015_pasaporte.sql",
   "38": "20261014_laboratorio_candidatas.sql",
-  "39": "20261014_laboratorio_select_fotos.sql"
+  "39": "20261014_laboratorio_select_fotos.sql",
+  "40": "Ideas para el Recetario",
+  "41": "Mi pasaporte — plan",
+  "42": "Estado actual (23 ago 2026)",
+  "43": "Seguimiento del proyecto",
+  "44": "CLAUDE.md",
+  "45": "public.paises",
+  "46": "20261017_lema_pais.sql"
 }
