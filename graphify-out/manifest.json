@@ -240,9 +240,9 @@
     "semantic_hash": ""
   },
   "CLAUDE.md": {
-    "mtime": 1792249387.4900172,
-    "seen": 1792249388.519103,
-    "ast_hash": "0d493afda33573c1663347523559e64d",
+    "mtime": 1792249761.6156566,
+    "seen": 1792576338.281686,
+    "ast_hash": "2fb4d220e9ee0a8ca5bca79e231d7e10",
     "semantic_hash": ""
   },
   "src/hooks/useDespensa.ts": {
@@ -558,9 +558,9 @@
     "semantic_hash": ""
   },
   "src/components/PaisPagina.tsx": {
-    "mtime": 1792249371.66057,
-    "seen": 1792249388.519062,
-    "ast_hash": "290da6f12ff76b0cafa062797318483c",
+    "mtime": 1792576321.2062492,
+    "seen": 1792576338.281646,
+    "ast_hash": "65d2c8a263bfe6794cfc95fa373cef98",
     "semantic_hash": ""
   },
   "src/components/PasaporteSection.tsx": {
@@ -648,9 +648,9 @@
     "semantic_hash": ""
   },
   "docs/pasaporte.md": {
-    "mtime": 1792076916.1091974,
-    "seen": 1792249003.664343,
-    "ast_hash": "026bb040515c17159d9fd760f64976c9",
+    "mtime": 1792576337.0622222,
+    "seen": 1792576338.2816892,
+    "ast_hash": "c3c7d5bb4fcd9b6904c058da303f9518",
     "semantic_hash": ""
   },
   "docs/avatar-bot/avatar-bot-telegram.png": {
@@ -687,6 +687,12 @@
     "mtime": 1792249179.3450274,
     "seen": 1792249388.519111,
     "ast_hash": "6201e3ab1e19a6186b70c86067c4e407",
+    "semantic_hash": ""
+  },
+  "src/components/SelloPasaporte.tsx": {
+    "mtime": 1792576288.201865,
+    "seen": 1792576338.281652,
+    "ast_hash": "a15a1632b5bfc5b2d3355dea5072910e",
     "semantic_hash": ""
   }
 }

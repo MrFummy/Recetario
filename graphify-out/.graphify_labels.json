@@ -23,7 +23,7 @@
   "21": "20260808_revocar_execute_funciones.sql",
   "22": "20260823_estructurar_ingredientes.sql",
   "23": "20261010_partir_base_combinados.sql",
-  "24": "types.ts",
+  "24": "RecipeDetail.tsx",
   "25": "public.recetas",
   "26": "20261011_para_hacer_y_realizaciones.sql",
   "27": "20261011_rating_con_decimales.sql",
@@ -33,7 +33,7 @@
   "31": "deploy.sh script",
   "32": "deploy.ps1",
   "33": "public.recetas",
-  "34": "PaisPagina.tsx",
+  "34": "types.ts",
   "35": "Mi Recetario — contexto del proyecto",
   "36": "generar-mapamundi.mjs",
   "37": "20261015_pasaporte.sql",
@@ -45,5 +45,10 @@
   "43": "Seguimiento del proyecto",
   "44": "CLAUDE.md",
   "45": "public.paises",
-  "46": "20261017_lema_pais.sql"
+  "46": "20261017_lema_pais.sql",
+  "47": "LaboratorioSection.tsx",
+  "48": "dependencies",
+  "49": "scripts",
+  "50": "Fase 0 — experimento (media tarde, antes de construir nada)",
+  "51": "vite.config.ts"
 }

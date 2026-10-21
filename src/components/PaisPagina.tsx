@@ -9,6 +9,7 @@ import { Bandera } from './Bandera';
 import { irA } from '../hooks/useRuta';
 import { RecipeGrid } from './RecipeGrid';
 import { PaisEditor } from './PaisEditor';
+import { SelloPasaporte } from './SelloPasaporte';
 
 interface PaisPaginaProps {
   codigo: string;
@@ -71,6 +72,10 @@ export function PaisPagina({ codigo, pais, fotos, recetas, cargando, isAdmin, ap
             </div>
           )}
         </div>
+        {pais && (
+          <SelloPasaporte nombre={nombre} fecha={pais.fecha_viaje} color={acento?.oscuro}
+            className="absolute bottom-2 right-3 w-24 sm:w-36 -rotate-12 z-10" />
+        )}
       </header>
 
       {isAdmin && (
