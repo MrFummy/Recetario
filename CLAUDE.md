@@ -282,8 +282,9 @@ Supabase son los de siempre. Probado el 14 de octubre.
 
 ## Mi pasaporte
 
-**Fases 1, 2 y 3 hechas el 15 de octubre de 2026** (la 3, administración, sin probar con sesión de
-admin); plan y detalles en [docs/pasaporte.md](docs/pasaporte.md).
+**Fases 1, 2 y 3 hechas el 15 de octubre de 2026** (la 3, administración, verificada con sesión de
+admin en producción el 21 de octubre, salvo subir una foto real, guardar el contexto y quitar un país
+con recetas); plan y detalles en [docs/pasaporte.md](docs/pasaporte.md).
 Las recetas del catálogo vistas por países visitados: `#/pasaporte` (mapamundi SVG propio y
 sellos) y `#/pasaporte/<ISO>` (página de país). Pública para todos; escribe solo el admin.
 `recetas.pais` es el código ISO alfa-2, **sin clave foránea** a `paises` (etiquetar una receta no
@@ -305,8 +306,11 @@ recetas sin país**, no las borra.
   lee los píxeles con un canvas, lo que exige el CORS abierto de flagcdn. Si falla, la página
   queda sin acento. `paises.lema` ([la migración](supabase/migrations/20261017_lema_pais.sql))
   es una frase opcional bajo el nombre, editable en «Gestionar país».
-- **Siguiente en el Pasaporte**: sello de pasaporte, plato estrella y datos de ficha, en ese orden;
-  detalle en [docs/pasaporte.md](docs/pasaporte.md).
+- **Sello, plato estrella y datos de ficha (21 oct 2026)**: el sello de entrada
+  ([SelloPasaporte.tsx](src/components/SelloPasaporte.tsx)), el plato estrella (elegido a mano en
+  `paises.plato_estrella`; sin elección, la mejor valorada) y capital, idioma y moneda escritos a mano
+  (`paises.capital/idioma/moneda`). Detalle en [docs/pasaporte.md](docs/pasaporte.md); no queda nada
+  pendiente de esa lista.
 - Al borrar fotos de `fotos-paises` hay que usar la API de Storage, igual que en
   `fotos-candidatas` (el SQL directo no borra el objeto).
 - El alta de recetas pasa por n8n, que no escribe `pais`: se etiqueta después desde la ficha.

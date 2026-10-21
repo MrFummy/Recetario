@@ -178,16 +178,16 @@ receta etiquetada aunque no estén dados de alta ([pasaporte.ts](../src/lib/pasa
   la cuadrícula. Lo elige el admin en «Gestionar país» (`paises.plato_estrella`, FK a `recetas` con
   `on delete set null`, [la migración](../supabase/migrations/20261021_plato_estrella.sql)); sin elección
   sale la mejor valorada y, en empate o sin notas, la de `fecha_clase` más reciente
-  (`platoEstrella` en `lib/pasaporte.ts`). Verificado el respaldo en Italia; **el selector del admin
-  no se ha probado con sesión de admin**.
+  (`platoEstrella` en `lib/pasaporte.ts`). Verificado el respaldo en Italia; **selector verificado con sesión de admin
+  en producción (21 oct)**: Japón quedó con Okonomiyaki.
 
 - **Datos de ficha** ([FichaPais.tsx](../src/components/FichaPais.tsx)): capital, idioma y moneda bajo
   el título, con icono. **Escritos a mano**, columnas `capital`/`idioma`/`moneda` de `paises`
   ([la migración](../supabase/migrations/20261021_datos_ficha_pais.sql)) y tres campos en «Gestionar
   país»; cada uno es opcional y la franja no sale si no hay ninguno. A mano porque `Intl` no da
   capitales y son pocos países: sin API externa ni huecos de cobertura. La migración rellenó Japón e
-  Italia; Egipto queda por rellenar. **Sin probar el guardado desde el editor con sesión de admin.**
+  Italia; Egipto queda por rellenar. Guardado verificado con sesión de admin en producción (21 oct); la fecha del sello también.
 
 ### Pendiente para la siguiente sesión, por orden de preferencia
 
-Nada pendiente de la lista original; lo que queda son verificaciones con sesión de admin.
+Nada pendiente de la lista original.
