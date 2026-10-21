@@ -123,6 +123,50 @@ El build usa rutas absolutas (`/assets/...`), así que el sitio tiene que colgar
 de la **raíz** de su host o puerto. Servirlo desde una subcarpeta
 (`http://10.99.1.70/recetario/`) carga en blanco con dos 404.
 
+### Compresión gzip (configuración del NAS, no del repo)
+
+**Esto no lo crea el despliegue**: Web Station no comprime nada por defecto, y sin
+ello el JavaScript (578 KB) viaja entero por la subida del NAS y tarda unos 2 s.
+Con gzip baja a ~160 KB y a ~0,7 s. Si se reinstala el NAS o se recrea el portal,
+hay que repetirlo.
+
+El portal de recetario es un bloque `server` generado por Web Station
+(`/usr/local/etc/nginx/sites-available/*.w3conf`, el de
+`server_name recetario.orballo.link`) que incluye
+`/usr/local/etc/nginx/conf.d/<uuid-del-portal>/user.conf`. Ese fichero **sobrevive
+a que Web Station regenere el resto**, así que es el sitio correcto. Por SSH, como
+`root`, con el `<uuid>` de la carpeta que nombra ese bloque (para recetario, el
+`fe681dc0-001c-40b5-831b-b931bc9be4a2`):
+
+```bash
+cat > /usr/local/etc/nginx/conf.d/<uuid>/user.conf <<'EOF'
+gzip on;
+gzip_comp_level 6;
+gzip_min_length 1024;
+gzip_vary on;
+gzip_types text/css application/javascript text/javascript application/json image/svg+xml;
+EOF
+nginx -t 2>&1 | grep -v "low address bits"   # debe decir «syntax is ok»
+nginx -s reload                                # solo si el anterior salió bien
+```
+
+Dos trampas que ya costaron un rato:
+
+- **No usar `conf.d/http.*.conf`** para esto: se carga a nivel `http` y choca con un
+  `gzip_min_length` que DSM ya define (`directive is duplicate`). Peor, **si
+  `nginx -t` falla, `nginx -s reload` no se aplica pero nginx sigue con la
+  configuración vieja**, y parece que «no hace nada». Comprobar siempre `-t`
+  antes de recargar.
+- Cada portal tiene su propia carpeta de `user.conf`: la de `musas.orballo.link` es
+  otra (`f1c46dbd-…`). No mezclarlas.
+
+Para comprobar que sigue activo (debe salir `content-encoding: gzip`), con el
+nombre real del bundle de `dist/assets/` (`curl` no expande comodines en una URL):
+
+```bash
+curl -sI -H 'Accept-Encoding: gzip' https://recetario.orballo.link/assets/<bundle>.js | grep -i content-encoding
+```
+
 ### 3. Rutas: por qué no hace falta tocar Nginx
 
 La app enruta **por el hash** (`#/`, `#/nueva`, `#/receta/<id>`), y esa parte de
