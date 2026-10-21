@@ -175,11 +175,15 @@ receta etiquetada aunque no estén dados de alta ([pasaporte.ts](../src/lib/pasa
   Verificado en escritorio y móvil; **la rama con fecha aún no se ha visto**, porque ni Japón ni Italia
   la tienen.
 
+- **Plato estrella** ([PlatoEstrella.tsx](../src/components/PlatoEstrella.tsx)): tarjeta grande antes de
+  la cuadrícula. Lo elige el admin en «Gestionar país» (`paises.plato_estrella`, FK a `recetas` con
+  `on delete set null`, [la migración](../supabase/migrations/20261021_plato_estrella.sql)); sin elección
+  sale la mejor valorada y, en empate o sin notas, la de `fecha_clase` más reciente
+  (`platoEstrella` en `lib/pasaporte.ts`). Verificado el respaldo en Italia; **el selector del admin
+  no se ha probado con sesión de admin**.
+
 ### Pendiente para la siguiente sesión, por orden de preferencia
 
-1. **Plato estrella**: una receta del país destacada en grande antes de la cuadrícula. Hay que decidir
-   cuál sale: la mejor valorada, la última cocinada o una elegida a mano; esto último pide un campo
-   nuevo, p. ej. `paises.plato_estrella` (con su migración).
-2. **Datos de ficha** (capital, idioma, moneda): franja con iconos bajo el título. `Intl` da idioma y
+1. **Datos de ficha** (capital, idioma, moneda): franja con iconos bajo el título. `Intl` da idioma y
    moneda pero no capitales, así que haría falta una tabla propia pequeña (o restcountries.com).
    Lo que más trabajo da y menos aporta.

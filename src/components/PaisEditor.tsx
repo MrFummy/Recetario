@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 import { ImagePlus, Loader2, Save, Settings2, Star, Trash2 } from 'lucide-react';
-import type { FotoPais, Pais } from '../types';
+import type { FotoPais, Pais, Recipe } from '../types';
 import type { Paises } from '../hooks/usePaises';
 import { errorMessage } from '../lib/errors';
 import { irA } from '../hooks/useRuta';
@@ -9,7 +9,7 @@ interface PaisEditorProps {
   codigo: string;
   nombre: string;
   pais: Pais | null;
-  recetas: number;
+  recetas: Recipe[];
   fotos: FotoPais[];
   /** Cuántas salen en la cabecera. */
   visibles: number;
@@ -23,9 +23,10 @@ interface PaisEditorProps {
  * fotos y borrado. Va plegado para que la página pública no lo muestre en grande.
  * Las escrituras las autoriza la RLS (`es_admin()`), no este componente.
  */
-export function PaisEditor({ codigo, nombre, pais, recetas, fotos, visibles, api, onRecetasCambiadas }: PaisEditorProps) {
+export function PaisEditor({ codigo, nombre, pais, recetas: listaRecetas, fotos, visibles, api, onRecetasCambiadas }: PaisEditorProps) {
   const [fecha, setFecha] = useState(pais?.fecha_viaje ?? '');
   const [lema, setLema] = useState(pais?.lema ?? '');
+  const [estrella, setEstrella] = useState(pais?.plato_estrella ?? '');
   const [contexto, setContexto] = useState(pais?.contexto ?? '');
   const [ocupado, setOcupado] = useState<'guardar' | 'fotos' | 'borrar' | null>(null);
   const [aviso, setAviso] = useState<{ tipo: 'ok' | 'error'; texto: string } | null>(null);
@@ -45,7 +46,7 @@ export function PaisEditor({ codigo, nombre, pais, recetas, fotos, visibles, api
   };
 
   const guardar = () => ejecutar('guardar', async () => {
-    await api.guardar(codigo, { fecha_viaje: fecha.trim() || null, lema: lema.trim() || null, contexto: contexto.trim() || null });
+    await api.guardar(codigo, { fecha_viaje: fecha.trim() || null, lema: lema.trim() || null, plato_estrella: estrella || null, contexto: contexto.trim() || null });
     return 'Guardado.';
   });
 
@@ -59,6 +60,7 @@ export function PaisEditor({ codigo, nombre, pais, recetas, fotos, visibles, api
   };
 
   const borrar = () => {
+    const recetas = listaRecetas.length;
     const pregunta = recetas > 0
       ? `Se quitará ${nombre} del pasaporte con sus fotos. Sus ${recetas} ${recetas === 1 ? 'receta' : 'recetas'} no se borran: se quedan sin país. ¿Seguro?`
       : `Se quitará ${nombre} del pasaporte con sus fotos. ¿Seguro?`;
@@ -87,6 +89,15 @@ export function PaisEditor({ codigo, nombre, pais, recetas, fotos, visibles, api
           <input value={lema} onChange={(e) => setLema(e.target.value)} maxLength={80}
             placeholder="Donde el arroz es religión" className={`${campo} mt-1`} />
         </label>
+        {listaRecetas.length > 0 && (
+          <label className="block font-mono text-[11px] text-ink-soft">
+            Plato estrella (sin elegir, sale la mejor valorada)
+            <select value={estrella} onChange={(e) => setEstrella(e.target.value)} className={`${campo} mt-1`}>
+              <option value="">Automático</option>
+              {listaRecetas.map((r) => <option key={r.id} value={r.id}>{r.titulo}</option>)}
+            </select>
+          </label>
+        )}
         <label className="block font-mono text-[11px] text-ink-soft">
           Contexto: la temática del país, en tus palabras
           <textarea value={contexto} onChange={(e) => setContexto(e.target.value)} rows={5} className={`${campo} mt-1 resize-y`} />

@@ -53,6 +53,8 @@ export interface Pais {
   /** Frase corta bajo el nombre del país en su cabecera. */
   lema: string | null;
   portada_url: string | null;
+  /** Receta elegida a mano como plato estrella; `null` usa la mejor valorada. */
+  plato_estrella: string | null;
 }
 
 /** Una foto de la galería de un país (tabla `fotos_pais`). */

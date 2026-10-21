@@ -3,12 +3,13 @@ import type { FotoPais, Pais, Recipe } from '../types';
 import type { Paises } from '../hooks/usePaises';
 import { aHash } from '../lib/rutas';
 import { nombrePais, urlBandera } from '../lib/paises';
-import { FOTOS_CABECERA } from '../lib/pasaporte';
+import { FOTOS_CABECERA, platoEstrella } from '../lib/pasaporte';
 import { useAcentoPais } from '../hooks/useAcentoPais';
 import { Bandera } from './Bandera';
 import { irA } from '../hooks/useRuta';
 import { RecipeGrid } from './RecipeGrid';
 import { PaisEditor } from './PaisEditor';
+import { PlatoEstrella } from './PlatoEstrella';
 import { SelloPasaporte } from './SelloPasaporte';
 
 interface PaisPaginaProps {
@@ -29,6 +30,7 @@ const GIROS = ['-rotate-3', 'rotate-2', '-rotate-1'];
 export function PaisPagina({ codigo, pais, fotos, recetas, cargando, isAdmin, api, onRecetasCambiadas }: PaisPaginaProps) {
   const nombre = pais?.nombre ?? nombrePais(codigo);
   const acento = useAcentoPais(codigo);
+  const estrella = platoEstrella(recetas, pais?.plato_estrella);
   const vacio = !cargando && !pais && recetas.length === 0 && !isAdmin;
 
   // La portada va primero; las demás, por orden de subida.
@@ -81,7 +83,12 @@ export function PaisPagina({ codigo, pais, fotos, recetas, cargando, isAdmin, ap
       {isAdmin && (
         // `key` reinicia el formulario al cambiar de país o al llegar la fila tras darla de alta.
         <PaisEditor key={`${codigo}-${pais ? 'alta' : 'sin-alta'}`} codigo={codigo} nombre={nombre} pais={pais}
-          recetas={recetas.length} fotos={fotos} visibles={FOTOS_CABECERA} api={api} onRecetasCambiadas={onRecetasCambiadas} />
+          recetas={recetas} fotos={fotos} visibles={FOTOS_CABECERA} api={api} onRecetasCambiadas={onRecetasCambiadas} />
+      )}
+
+      {estrella && (
+        <PlatoEstrella receta={estrella.receta} acento={acento}
+          onClick={() => irA({ vista: 'receta', id: estrella.receta.id })} />
       )}
 
       {vacio ? (

@@ -33,3 +33,22 @@ export function paisesVisitados(paises: Pais[], recetas: Recipe[]): PaisVisitado
 
 /** Cuántas fotos ambientan la cabecera de un país; el resto de la galería solo se gestiona. */
 export const FOTOS_CABECERA = 3;
+
+/** El plato estrella de un país y si lo eligió el admin o salió del respaldo. */
+export interface PlatoEstrella {
+  receta: Recipe;
+  elegido: boolean;
+}
+
+/**
+ * La elegida a mano si sigue entre las recetas del país; si no, la mejor valorada y, en
+ * empate o sin valoraciones, la de fecha más reciente. `null` si el país no tiene recetas.
+ */
+export function platoEstrella(recetas: Recipe[], elegidaId: string | null | undefined): PlatoEstrella | null {
+  const elegida = elegidaId ? recetas.find((r) => r.id === elegidaId) : undefined;
+  if (elegida) return { receta: elegida, elegido: true };
+
+  const mejor = [...recetas].sort((a, b) =>
+    (b.rating ?? 0) - (a.rating ?? 0) || b.fecha_clase.localeCompare(a.fecha_clase))[0];
+  return mejor ? { receta: mejor, elegido: false } : null;
+}
