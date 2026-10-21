@@ -3,6 +3,7 @@ import type { User } from '@supabase/supabase-js';
 import { supabase } from '../lib/supabase';
 import { N8N_WEBHOOKS, postToWebhook } from '../lib/n8n';
 import { errorMessage, idUnico } from '../lib/errors';
+import { comprimirFotoReceta } from '../lib/imagen';
 import type { Json, Recipe } from '../types';
 
 export function useRecipes(user?: User | null) {
@@ -141,12 +142,12 @@ export function useRecipes(user?: User | null) {
 
   const updateRecipePhoto = async (id: string, newPhoto: File, oldPhotoUrl?: string) => {
     // 1. Upload new photo
-    const fileExt = newPhoto.name.split('.').pop();
-    const filePath = `fotos/${idUnico()}.${fileExt}`;
+    const foto = await comprimirFotoReceta(newPhoto);
+    const filePath = `fotos/${idUnico()}.${foto.name.split('.').pop()}`;
 
     const { error: uploadError } = await supabase.storage
       .from('fotos-recetas')
-      .upload(filePath, newPhoto);
+      .upload(filePath, foto, { contentType: foto.type });
     if (uploadError) throw uploadError;
 
     const { data: { publicUrl } } = supabase.storage

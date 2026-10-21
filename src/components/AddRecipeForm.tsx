@@ -5,6 +5,7 @@ import { UploadProgress } from './UploadProgress';
 import type { UploadStatus } from './UploadProgress';
 import { N8N_WEBHOOKS, postToWebhook } from '../lib/n8n';
 import { errorMessage } from '../lib/errors';
+import { comprimirFotoReceta } from '../lib/imagen';
 
 interface AddRecipeFormProps {
   /** Se dispara cuando n8n acepta la receta, para recargar el catálogo. */
@@ -29,17 +30,18 @@ export function AddRecipeForm({ onSuccess }: AddRecipeFormProps) {
     setStatus('uploading');
     setErrorMsg('');
 
-    const formData = new FormData();
-    formData.append('nombre', nombre);
-    formData.append('fecha_clase', fechaClase);
-    // Mantenemos el nombre de campo 'receta_pdf' para no romper el webhook si espera este nombre,
-    // aunque ahora puede ser un PDF o una imagen.
-    formData.append('receta_pdf', recetaFile);
-    if (fotoFile) {
-      formData.append('foto_plato', fotoFile);
-    }
-
     try {
+      const formData = new FormData();
+      formData.append('nombre', nombre);
+      formData.append('fecha_clase', fechaClase);
+      // Mantenemos el nombre de campo 'receta_pdf' para no romper el webhook si espera este nombre,
+      // aunque ahora puede ser un PDF o una imagen.
+      formData.append('receta_pdf', recetaFile);
+      if (fotoFile) {
+        // Una foto de móvil pesa varios MB y se sirve entera desde el bucket en cada tarjeta.
+        formData.append('foto_plato', await comprimirFotoReceta(fotoFile));
+      }
+
       // El estado 'done' se marca cuando n8n responde de verdad, no tras un
       // temporizador: antes se mostraba éxito aunque el flujo hubiese fallado.
       await postToWebhook(N8N_WEBHOOKS.nuevaReceta, formData, 'nueva receta');

@@ -40,3 +40,20 @@ export async function comprimirImagen(file: File, maxLado = 1600, calidad = 0.82
     );
   });
 }
+
+/** Tamaño de las fotos de receta: la ficha las pinta a ~900 px, así que 1400 cubre pantallas retina. */
+const LADO_FOTO_RECETA = 1400;
+const CALIDAD_FOTO_RECETA = 0.8;
+
+/**
+ * Prepara la foto de un plato antes de mandarla: JPEG de lado mayor 1400 px, que pasa de
+ * varios MB a ~200 KB. Devuelve un `File` con el mismo nombre y extensión `.jpg`, porque
+ * n8n lo lee como adjunto del formulario. Si ya es pequeña se manda tal cual: recomprimir
+ * un JPEG ya optimizado solo lo empeora.
+ */
+export async function comprimirFotoReceta(file: File): Promise<File> {
+  const blob = await comprimirImagen(file, LADO_FOTO_RECETA, CALIDAD_FOTO_RECETA);
+  if (blob.size >= file.size) return file;
+  const base = file.name.replace(/\.[^.]+$/, '') || 'foto';
+  return new File([blob], `${base}.jpg`, { type: 'image/jpeg' });
+}
