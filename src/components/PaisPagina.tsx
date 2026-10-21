@@ -9,6 +9,7 @@ import { Bandera } from './Bandera';
 import { irA } from '../hooks/useRuta';
 import { RecipeGrid } from './RecipeGrid';
 import { PaisEditor } from './PaisEditor';
+import { FichaPais } from './FichaPais';
 import { PlatoEstrella } from './PlatoEstrella';
 import { SelloPasaporte } from './SelloPasaporte';
 
@@ -57,6 +58,7 @@ export function PaisPagina({ codigo, pais, fotos, recetas, cargando, isAdmin, ap
               style={acento ? { color: acento.oscuro } : undefined}>{nombre}</h2>
             {pais?.lema && <p className="font-script text-3xl text-ink-soft leading-tight mb-2">{pais.lema}</p>}
             {pais?.fecha_viaje && <p className="font-script text-3xl text-accent leading-none mb-4">{pais.fecha_viaje}</p>}
+            <FichaPais pais={pais} />
             {pais?.contexto && (
               <p className="text-ink text-lg leading-relaxed max-w-2xl whitespace-pre-line">{pais.contexto}</p>
             )}

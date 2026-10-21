@@ -14,9 +14,21 @@ function tamanoArco(texto: string): number {
   return Math.max(9, Math.min(17, 190 / Math.max(texto.length, 1)));
 }
 
-/** Tamaño de letra del centro, para fechas cortas o largas. */
-function tamanoFecha(texto: string): number {
-  return Math.max(10, Math.min(22, 130 / Math.max(texto.length, 1)));
+/** Parte una fecha larga en dos líneas por el espacio más cercano al centro. */
+function lineasFecha(texto: string): string[] {
+  if (texto.length <= 9 || !texto.includes(' ')) return [texto];
+  const medio = texto.length / 2;
+  let corte = -1;
+  for (let i = 0; i < texto.length; i++) {
+    if (texto[i] === ' ' && (corte < 0 || Math.abs(i - medio) < Math.abs(corte - medio))) corte = i;
+  }
+  return [texto.slice(0, corte), texto.slice(corte + 1)];
+}
+
+/** Tamaño de letra del centro según la línea más larga. */
+function tamanoFecha(lineas: string[]): number {
+  const mayor = Math.max(...lineas.map((l) => l.length));
+  return Math.max(10, Math.min(22, 120 / Math.max(mayor, 1)));
 }
 
 /**
@@ -30,6 +42,8 @@ export function SelloPasaporte({ nombre, fecha, color, className = '' }: SelloPa
   const arriba = `${id}-arriba`;
   const abajo = `${id}-abajo`;
   const filtro = `${id}-tinta`;
+  const lineas = fecha ? lineasFecha(fecha) : [];
+  const tamano = tamanoFecha(lineas);
 
   return (
     <svg viewBox="0 0 200 200" role="img" aria-label={`Sello de ${nombre}${fecha ? `, ${fecha}` : ''}`}
@@ -58,8 +72,12 @@ export function SelloPasaporte({ nombre, fecha, color, className = '' }: SelloPa
           <textPath href={`#${abajo}`} startOffset="50%">★ RECETARIO ★</textPath>
         </text>
         {fecha ? (
-          <text x="100" y="106" textAnchor="middle" stroke="none" fontFamily="var(--font-mono, monospace)"
-            fontWeight="700" fontSize={tamanoFecha(fecha)}>{fecha}</text>
+          <text x="100" textAnchor="middle" stroke="none" fontFamily="var(--font-mono, monospace)"
+            fontWeight="700" fontSize={tamano}>
+            {lineas.map((linea, i) => (
+              <tspan key={linea} x="100" y={100 + tamano * 0.35 + (i - (lineas.length - 1) / 2) * tamano * 1.15}>{linea}</tspan>
+            ))}
+          </text>
         ) : (
           <text x="100" y="116" textAnchor="middle" stroke="none" fontSize="40">★</text>
         )}

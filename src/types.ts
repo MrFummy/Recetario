@@ -55,6 +55,10 @@ export interface Pais {
   portada_url: string | null;
   /** Receta elegida a mano como plato estrella; `null` usa la mejor valorada. */
   plato_estrella: string | null;
+  /** Datos de ficha, escritos a mano; cada uno es opcional. */
+  capital: string | null;
+  idioma: string | null;
+  moneda: string | null;
 }
 
 /** Una foto de la galería de un país (tabla `fotos_pais`). */

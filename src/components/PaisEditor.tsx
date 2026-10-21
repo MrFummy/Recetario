@@ -27,6 +27,7 @@ export function PaisEditor({ codigo, nombre, pais, recetas: listaRecetas, fotos,
   const [fecha, setFecha] = useState(pais?.fecha_viaje ?? '');
   const [lema, setLema] = useState(pais?.lema ?? '');
   const [estrella, setEstrella] = useState(pais?.plato_estrella ?? '');
+  const [ficha, setFicha] = useState({ capital: pais?.capital ?? '', idioma: pais?.idioma ?? '', moneda: pais?.moneda ?? '' });
   const [contexto, setContexto] = useState(pais?.contexto ?? '');
   const [ocupado, setOcupado] = useState<'guardar' | 'fotos' | 'borrar' | null>(null);
   const [aviso, setAviso] = useState<{ tipo: 'ok' | 'error'; texto: string } | null>(null);
@@ -46,7 +47,8 @@ export function PaisEditor({ codigo, nombre, pais, recetas: listaRecetas, fotos,
   };
 
   const guardar = () => ejecutar('guardar', async () => {
-    await api.guardar(codigo, { fecha_viaje: fecha.trim() || null, lema: lema.trim() || null, plato_estrella: estrella || null, contexto: contexto.trim() || null });
+    await api.guardar(codigo, { fecha_viaje: fecha.trim() || null, lema: lema.trim() || null, plato_estrella: estrella || null,
+      capital: ficha.capital.trim() || null, idioma: ficha.idioma.trim() || null, moneda: ficha.moneda.trim() || null, contexto: contexto.trim() || null });
     return 'Guardado.';
   });
 
@@ -89,6 +91,15 @@ export function PaisEditor({ codigo, nombre, pais, recetas: listaRecetas, fotos,
           <input value={lema} onChange={(e) => setLema(e.target.value)} maxLength={80}
             placeholder="Donde el arroz es religión" className={`${campo} mt-1`} />
         </label>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+          {([['capital', 'Capital', 'Tokio'], ['idioma', 'Idioma', 'Japonés'], ['moneda', 'Moneda', 'Yen (JPY)']] as const).map(([clave, etiqueta, ejemplo]) => (
+            <label key={clave} className="block font-mono text-[11px] text-ink-soft">
+              {etiqueta}
+              <input value={ficha[clave]} onChange={(e) => setFicha({ ...ficha, [clave]: e.target.value })} maxLength={60}
+                placeholder={ejemplo} className={`${campo} mt-1`} />
+            </label>
+          ))}
+        </div>
         {listaRecetas.length > 0 && (
           <label className="block font-mono text-[11px] text-ink-soft">
             Plato estrella (sin elegir, sale la mejor valorada)

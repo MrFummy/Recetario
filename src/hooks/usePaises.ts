@@ -8,7 +8,7 @@ import type { FotoPais, Pais } from '../types';
 const BUCKET = 'fotos-paises';
 
 /** Lo que el admin puede escribir de un país a mano. */
-export type CambiosPais = Partial<Pick<Pais, 'fecha_viaje' | 'contexto' | 'lema' | 'portada_url' | 'plato_estrella'>>;
+export type CambiosPais = Partial<Pick<Pais, 'fecha_viaje' | 'contexto' | 'lema' | 'portada_url' | 'plato_estrella' | 'capital' | 'idioma' | 'moneda'>>;
 
 export interface Paises {
   paises: Pais[];

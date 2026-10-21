@@ -172,8 +172,7 @@ receta etiquetada aunque no estén dados de alta ([pasaporte.ts](../src/lib/pasa
   nombre en el arco superior, «RECETARIO» abajo y `fecha_viaje` en el centro (una estrella si no hay).
   Va en la esquina inferior derecha de la cabecera, solo si el país está dado de alta, con el color de
   acento. El borde irregular y las faltas de tinta salen de un filtro SVG (`feTurbulence`), sin assets.
-  Verificado en escritorio y móvil; **la rama con fecha aún no se ha visto**, porque ni Japón ni Italia
-  la tienen.
+  Verificado en escritorio y móvil, también con fecha (Egipto): una fecha larga se parte en dos líneas.
 
 - **Plato estrella** ([PlatoEstrella.tsx](../src/components/PlatoEstrella.tsx)): tarjeta grande antes de
   la cuadrícula. Lo elige el admin en «Gestionar país» (`paises.plato_estrella`, FK a `recetas` con
@@ -182,8 +181,13 @@ receta etiquetada aunque no estén dados de alta ([pasaporte.ts](../src/lib/pasa
   (`platoEstrella` en `lib/pasaporte.ts`). Verificado el respaldo en Italia; **el selector del admin
   no se ha probado con sesión de admin**.
 
+- **Datos de ficha** ([FichaPais.tsx](../src/components/FichaPais.tsx)): capital, idioma y moneda bajo
+  el título, con icono. **Escritos a mano**, columnas `capital`/`idioma`/`moneda` de `paises`
+  ([la migración](../supabase/migrations/20261021_datos_ficha_pais.sql)) y tres campos en «Gestionar
+  país»; cada uno es opcional y la franja no sale si no hay ninguno. A mano porque `Intl` no da
+  capitales y son pocos países: sin API externa ni huecos de cobertura. La migración rellenó Japón e
+  Italia; Egipto queda por rellenar. **Sin probar el guardado desde el editor con sesión de admin.**
+
 ### Pendiente para la siguiente sesión, por orden de preferencia
 
-1. **Datos de ficha** (capital, idioma, moneda): franja con iconos bajo el título. `Intl` da idioma y
-   moneda pero no capitales, así que haría falta una tabla propia pequeña (o restcountries.com).
-   Lo que más trabajo da y menos aporta.
+Nada pendiente de la lista original; lo que queda son verificaciones con sesión de admin.
