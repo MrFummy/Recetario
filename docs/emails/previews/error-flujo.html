@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="color-scheme" content="light only" />
+<title>El Recetario de Markis</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fraunces:opsz,wght@9..144,600;9..144,900&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" />
+<style>
+  body,table,td,a{-webkit-text-size-adjust:100%;}
+  body{margin:0;padding:0;width:100%!important;}
+  .f-serif{font-family:'Fraunces',Georgia,serif;}
+  .f-script{font-family:'Caveat','Segoe Script','Bradley Hand',cursive;}
+  .f-sans{font-family:'Schibsted Grotesk',-apple-system,'Helvetica Neue',Arial,sans-serif;}
+  .f-mono{font-family:'JetBrains Mono','SFMono-Regular',Consolas,monospace;}
+  a{color:#2a5fb8;}
+  @media only screen and (max-width:620px){.container{width:100%!important;}.px{padding-left:24px!important;padding-right:24px!important;}}
+</style>
+</head>
+<body style="margin:0;padding:0;background-color:#ece5d3;">
+<div style="display:none;max-height:0;overflow:hidden;font-size:1px;color:#ece5d3;">Ha fallado el flujo de alta de recetas.</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#ece5d3;"><tr><td align="center" style="padding:28px 16px 40px;">
+<table role="presentation" class="container" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background-color:#fbf7eb;border:1px solid #ded6c2;">
+<tr><td class="px" style="padding:26px 36px 20px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+<td width="60" valign="middle"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td class="f-serif" style="background-color:#1f2536;width:42px;height:42px;border-radius:8px;text-align:center;vertical-align:middle;box-shadow:3px 3px 0 #ffd45a;"><span style="color:#fbf7eb;font-size:26px;font-weight:900;line-height:42px;display:inline-block;">M</span></td></tr></table></td>
+<td valign="middle" style="padding-left:14px;"><span class="f-script" style="font-size:27px;color:#1f2536;line-height:1;">El Recetario de <span style="color:#2a5fb8;font-weight:700;">Markis</span></span></td>
+<td class="f-mono" align="right" valign="middle" style="font-size:11px;color:#5a6275;letter-spacing:0.04em;">aviso · error</td>
+</tr></table></td></tr>
+<tr><td class="px" style="padding:0 36px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="border-top:2px dashed #cfc6b0;font-size:0;line-height:0;">&nbsp;</td></tr></table></td></tr>
+<tr><td class="px f-sans" style="padding:28px 36px 6px;color:#1f2536;">
+<p class="f-serif" style="margin:0 0 12px;font-size:25px;font-weight:600;">Algo se ha quemado en la cocina</p>
+<p style="margin:0;font-size:16px;line-height:1.6;color:#5a6275;">Una ejecución de <strong style="color:#1f2536;">Recetas con Frontend</strong> ha fallado. Puede que la receta haya quedado a medias (PDF, Notion o Sheets sin Supabase, o al revés).</p>
+</td></tr>
+<tr><td class="px" style="padding:22px 36px 6px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#f6d8d3;border-left:6px solid #d63c2e;"><tr><td style="padding:16px 20px;">
+<p class="f-mono" style="margin:0 0 6px;font-size:11px;letter-spacing:0.04em;color:#d63c2e;text-transform:lowercase;">nodo que falló</p>
+<p class="f-sans" style="margin:0 0 14px;font-size:17px;font-weight:700;color:#1f2536;">Guardar en Supabase</p>
+<p class="f-mono" style="margin:0 0 6px;font-size:11px;letter-spacing:0.04em;color:#d63c2e;text-transform:lowercase;">mensaje</p>
+<p class="f-mono" style="margin:0;font-size:13px;line-height:1.6;color:#1f2536;word-break:break-word;">Bad request - please check your parameters: invalid input syntax for type date</p>
+</td></tr></table></td></tr>
+<tr><td class="px" style="padding:14px 36px 0;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+<td style="padding:0 8px 8px 0;"><span class="f-mono" style="display:inline-block;background-color:#fff3a8;color:#1f2536;font-size:12px;padding:5px 10px;border:1px solid #e6d98a;">ejecución: #48213</span></td><td style="padding:0 8px 8px 0;"><span class="f-mono" style="display:inline-block;background-color:#fff3a8;color:#1f2536;font-size:12px;padding:5px 10px;border:1px solid #e6d98a;">modo: webhook</span></td>
+</tr></table></td></tr>
+<tr><td class="px" style="padding:14px 36px 8px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#ffd45a;"><tr><td style="padding:18px 24px;">
+<p class="f-script" style="margin:0 0 6px;font-size:23px;line-height:1;color:#1f2536;">~ Qué hacer ~</p>
+<p class="f-sans" style="margin:0;font-size:15px;line-height:1.55;color:#2a2f1c;">Abre la ejecución en n8n para ver los datos del nodo que falló. <a href="#" style="color:#1f2536;font-weight:700;">Ver ejecución</a>. Antes de reintentar, comprueba que no haya quedado una receta duplicada en Notion o Sheets.</p>
+</td></tr></table></td></tr>
+
+<tr><td class="px" style="padding:24px 36px 0;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="border-top:2px dashed #cfc6b0;font-size:0;line-height:0;">&nbsp;</td></tr></table></td></tr>
+<tr><td class="px f-mono" align="center" style="padding:16px 36px 30px;font-size:11px;line-height:1.7;color:#9a9279;">Este aviso se envía solo cuando el flujo falla.<br />enviado desde <span style="color:#2a5fb8;font-weight:600;">n8n · el recetario de markis</span></td></tr>
+</table></td></tr></table>
+</body>
+</html>

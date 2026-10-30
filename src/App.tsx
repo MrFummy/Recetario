@@ -8,7 +8,7 @@ import { RecipeDetail } from './components/RecipeDetail';
 import { AddRecipeForm } from './components/AddRecipeForm';
 import { LoginModal } from './components/LoginModal';
 import { ReindexarBusqueda } from './components/ReindexarBusqueda';
-import { RecetaNoEncontrada, SoloAdmin } from './components/Avisos';
+import { RecetaNoEncontrada, SoloAdmin, SoloLogueados } from './components/Avisos';
 import { SeccionDespensa } from './components/DespensaSection';
 import { SeccionListaCompra } from './components/ListaCompraSection';
 import { SeccionLaboratorio } from './components/LaboratorioSection';
@@ -128,6 +128,7 @@ function App() {
               enNueva={enNueva}
               totalDespensa={despensa.total}
               isAdmin={isAdmin}
+              logueado={!!user}
             />
 
             {user ? (
@@ -175,11 +176,17 @@ function App() {
             <AddRecipeForm onSuccess={() => void refetch()} />
           </SoloAdmin>
         ) : enDespensa ? (
-          <SeccionDespensa recipes={recipes} despensa={despensa} user={user} />
+          <SoloLogueados sesionCargada={sesionCargada} logueado={!!user} seccion="tu despensa" onLogin={() => setShowLoginModal(true)}>
+            <SeccionDespensa recipes={recipes} despensa={despensa} user={user} />
+          </SoloLogueados>
         ) : enListaCompra ? (
-          <SeccionListaCompra recipes={recipes} despensa={despensa} paraHacer={paraHacer} />
+          <SoloLogueados sesionCargada={sesionCargada} logueado={!!user} seccion="la lista de la compra" onLogin={() => setShowLoginModal(true)}>
+            <SeccionListaCompra recipes={recipes} despensa={despensa} paraHacer={paraHacer} />
+          </SoloLogueados>
         ) : (ruta.vista === 'pasaporte' || ruta.vista === 'pais') ? (
-          <SeccionPasaporte ruta={ruta} recipes={recipes} loadingRecetas={loading} isAdmin={isAdmin} onRecetasCambiadas={() => void refetch()} />
+          <SoloLogueados sesionCargada={sesionCargada} logueado={!!user} seccion="el pasaporte" onLogin={() => setShowLoginModal(true)}>
+            <SeccionPasaporte ruta={ruta} recipes={recipes} loadingRecetas={loading} isAdmin={isAdmin} onRecetasCambiadas={() => void refetch()} />
+          </SoloLogueados>
         ) : enLaboratorio ? (
           <SoloAdmin sesionCargada={sesionCargada} isAdmin={isAdmin} accion="entrar en El Laboratorio">
             <SeccionLaboratorio onRecetaCreada={() => void refetch()} />

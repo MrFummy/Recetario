@@ -85,12 +85,14 @@ export function IngredientsList({ data, user, despensa }: IngredientsListProps) 
           {marcados.length > 0
             ? `tienes ${marcados.length} de ${marcables.length} · `
             : 'marca lo que ya tengas en casa · '}
-          <a
-            href={aHash({ vista: 'despensa' })}
-            className="underline decoration-dotted underline-offset-2 hover:text-accent transition-colors"
-          >
-            tu despensa
-          </a>
+          {user && (
+            <a
+              href={aHash({ vista: 'despensa' })}
+              className="underline decoration-dotted underline-offset-2 hover:text-accent transition-colors"
+            >
+              tu despensa
+            </a>
+          )}
         </span>
         {user && marcados.length > 0 && (
           <button

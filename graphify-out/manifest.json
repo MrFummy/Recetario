@@ -18,16 +18,16 @@
     "semantic_hash": ""
   },
   "src/App.tsx": {
-    "mtime": 1792076916.109488,
-    "seen": 1792249003.664289,
-    "ast_hash": "c64938c4103d7bf745af77d9dcdb7049",
+    "mtime": 1793375763.7821884,
+    "seen": 1793389390.108709,
+    "ast_hash": "b98778d51d3b7825498e9feb0e201ef8",
     "semantic_hash": ""
   },
   "src/components/AddRecipeForm.tsx": {
-    "mtime": 1785935983.9667213,
-    "seen": 1791901115.197367,
-    "ast_hash": "d743d6ce6561ce1fc1871be3757fc072",
-    "semantic_hash": "d743d6ce6561ce1fc1871be3757fc072"
+    "mtime": 1792593452.5958219,
+    "seen": 1793389390.108711,
+    "ast_hash": "cadb25bc0c80c87449e5a39eff690524",
+    "semantic_hash": ""
   },
   "src/components/FilterBar.tsx": {
     "mtime": 1791974844.116433,
@@ -84,9 +84,9 @@
     "semantic_hash": "e3aff6228c8d6b0457bd817adae8e008"
   },
   "src/hooks/useRecipes.ts": {
-    "mtime": 1792076916.111329,
-    "seen": 1792249003.664316,
-    "ast_hash": "bf152eb8d21ed7aedd3de8fdadfa29ee",
+    "mtime": 1792593452.5961654,
+    "seen": 1793389390.10874,
+    "ast_hash": "dad30a2f1f03e25b840515ac96a08ebc",
     "semantic_hash": ""
   },
   "src/lib/ingredientParser.ts": {
@@ -108,9 +108,9 @@
     "semantic_hash": "787e5a07efeb2bf6209d5937195f2f68"
   },
   "src/types.ts": {
-    "mtime": 1792249371.6591496,
-    "seen": 1792249388.519089,
-    "ast_hash": "dfb8fbb26f447fa99d721cf382dc72a6",
+    "mtime": 1792577315.939131,
+    "seen": 1793389390.108753,
+    "ast_hash": "65f7a64e5ec2d5365bb3706f5419a1e7",
     "semantic_hash": ""
   },
   "tsconfig.app.json": {
@@ -144,9 +144,9 @@
     "semantic_hash": "4ff9eeca4ab53927478aaa5c2f62c99d"
   },
   "README.md": {
-    "mtime": 1791902176.684,
-    "seen": 1791974866.928285,
-    "ast_hash": "78bfcb7415ab7840739f11a88774fbad",
+    "mtime": 1792593319.7340164,
+    "seen": 1793389390.108771,
+    "ast_hash": "e59b47818ee516c8e1b1184b545dff1c",
     "semantic_hash": ""
   },
   "index.html": {
@@ -168,10 +168,10 @@
     "semantic_hash": "3b4fcfcf393eca4d264dca4a4663bc37"
   },
   "src/assets/placeholder.jpg": {
-    "mtime": 1779042808.4434783,
-    "seen": 1791901115.197402,
-    "ast_hash": "09658bb3d076bb07cf3f3974569994c0",
-    "semantic_hash": "09658bb3d076bb07cf3f3974569994c0"
+    "mtime": 1792586045.353065,
+    "seen": 1793389390.1087842,
+    "ast_hash": "8ee9d6328b75153278ffdca721246157",
+    "semantic_hash": ""
   },
   "src/lib/n8n.ts": {
     "mtime": 1785938126.7456553,
@@ -186,9 +186,9 @@
     "semantic_hash": ""
   },
   "src/components/RecipeContent.tsx": {
-    "mtime": 1788203458.7838597,
-    "seen": 1791901115.197375,
-    "ast_hash": "4d9d4f8aca25fa9c1a2189bacff7bf79",
+    "mtime": 1793375746.5481021,
+    "seen": 1793389390.1087282,
+    "ast_hash": "a1e869aef3841327ba58ebd07613ff65",
     "semantic_hash": ""
   },
   "src/components/ShareByEmail.tsx": {
@@ -240,9 +240,9 @@
     "semantic_hash": ""
   },
   "CLAUDE.md": {
-    "mtime": 1792249761.6156566,
-    "seen": 1792576338.281686,
-    "ast_hash": "2fb4d220e9ee0a8ca5bca79e231d7e10",
+    "mtime": 1793389388.1965468,
+    "seen": 1793389390.1087701,
+    "ast_hash": "307d034cbd853bf534065609d9defb9a",
     "semantic_hash": ""
   },
   "src/hooks/useDespensa.ts": {
@@ -270,9 +270,9 @@
     "semantic_hash": ""
   },
   "src/components/Avisos.tsx": {
-    "mtime": 1791988562.2569735,
-    "seen": 1792249003.664293,
-    "ast_hash": "58a274b9d801af70bc55161837a4dcf3",
+    "mtime": 1793375746.547381,
+    "seen": 1793389390.108713,
+    "ast_hash": "38044acafc7af2b6e0c77ad99ea993a8",
     "semantic_hash": ""
   },
   "src/hooks/useRuta.ts": {
@@ -540,15 +540,15 @@
     "semantic_hash": ""
   },
   "src/components/NavPrincipal.tsx": {
-    "mtime": 1792076916.1106868,
-    "seen": 1792249003.6643012,
-    "ast_hash": "5b86dce19262141e98d8da8bd57b7c5f",
+    "mtime": 1793375746.547844,
+    "seen": 1793389390.108722,
+    "ast_hash": "82e035a0326e89e76daaf44cba6ee66a",
     "semantic_hash": ""
   },
   "src/components/PaisEditor.tsx": {
-    "mtime": 1792249371.6597552,
-    "seen": 1792249388.519061,
-    "ast_hash": "53c33c32b44e39af3bbd3c9b7436b792",
+    "mtime": 1792577315.958686,
+    "seen": 1793389390.108723,
+    "ast_hash": "5d53c18d0afd88e12560e694a0a34ede",
     "semantic_hash": ""
   },
   "src/components/PaisEtiqueta.tsx": {
@@ -558,9 +558,9 @@
     "semantic_hash": ""
   },
   "src/components/PaisPagina.tsx": {
-    "mtime": 1792576321.2062492,
-    "seen": 1792576338.281646,
-    "ast_hash": "65d2c8a263bfe6794cfc95fa373cef98",
+    "mtime": 1792577315.9583015,
+    "seen": 1793389390.1087239,
+    "ast_hash": "a01ddf69d1bdac1e66a25fafbc28d751",
     "semantic_hash": ""
   },
   "src/components/PasaporteSection.tsx": {
@@ -582,9 +582,9 @@
     "semantic_hash": ""
   },
   "src/hooks/usePaises.ts": {
-    "mtime": 1792249371.6593058,
-    "seen": 1792249388.519074,
-    "ast_hash": "1615878869307f949c973dda743c31ff",
+    "mtime": 1792577315.9393988,
+    "seen": 1793389390.108737,
+    "ast_hash": "fe366b0b0ac1e74f4f89b4eb57f66dce",
     "semantic_hash": ""
   },
   "src/lib/categorias.ts": {
@@ -600,9 +600,9 @@
     "semantic_hash": ""
   },
   "src/lib/imagen.ts": {
-    "mtime": 1792076916.1114004,
-    "seen": 1792249003.66432,
-    "ast_hash": "271d020ec64d49c1566b577f177806fc",
+    "mtime": 1792593452.5665927,
+    "seen": 1793389390.1087449,
+    "ast_hash": "52e911771c9e19a698018520778cae9d",
     "semantic_hash": ""
   },
   "src/lib/paises.ts": {
@@ -612,9 +612,9 @@
     "semantic_hash": ""
   },
   "src/lib/pasaporte.ts": {
-    "mtime": 1792249179.3707774,
-    "seen": 1792249388.5190852,
-    "ast_hash": "400925cebfa8703845898b78e29d29f0",
+    "mtime": 1792576466.598226,
+    "seen": 1793389390.1087492,
+    "ast_hash": "9b5dbc896c5d8fcb6a9912c851181f23",
     "semantic_hash": ""
   },
   "src/lib/promover.ts": {
@@ -648,9 +648,9 @@
     "semantic_hash": ""
   },
   "docs/pasaporte.md": {
-    "mtime": 1792576337.0622222,
-    "seen": 1792576338.2816892,
-    "ast_hash": "c3c7d5bb4fcd9b6904c058da303f9518",
+    "mtime": 1792577729.6488729,
+    "seen": 1793389390.1087759,
+    "ast_hash": "19b5387431ab7e712a83c90527663f24",
     "semantic_hash": ""
   },
   "docs/avatar-bot/avatar-bot-telegram.png": {
@@ -690,9 +690,81 @@
     "semantic_hash": ""
   },
   "src/components/SelloPasaporte.tsx": {
-    "mtime": 1792576288.201865,
-    "seen": 1792576338.281652,
-    "ast_hash": "a15a1632b5bfc5b2d3355dea5072910e",
+    "mtime": 1792577375.315022,
+    "seen": 1793389390.1087308,
+    "ast_hash": "12195bfcab3fd52c4a82306e11e6e827",
+    "semantic_hash": ""
+  },
+  "src/components/FichaPais.tsx": {
+    "mtime": 1792577315.9433775,
+    "seen": 1793389390.108716,
+    "ast_hash": "40710c0e288d2720df31c070fbb12221",
+    "semantic_hash": ""
+  },
+  "src/components/PlatoEstrella.tsx": {
+    "mtime": 1792576466.6022801,
+    "seen": 1793389390.108726,
+    "ast_hash": "cc77270d8a2635943b1bf771939f7877",
+    "semantic_hash": ""
+  },
+  "supabase/migrations/20261021_datos_ficha_pais.sql": {
+    "mtime": 1792577315.9073834,
+    "seen": 1793389390.1087658,
+    "ast_hash": "0328f983803e4a9dd728b7d33c227058",
+    "semantic_hash": ""
+  },
+  "supabase/migrations/20261021_plato_estrella.sql": {
+    "mtime": 1792576449.3642802,
+    "seen": 1793389390.1087658,
+    "ast_hash": "282deea52647249d4664b7e7dd8e7387",
+    "semantic_hash": ""
+  },
+  "supabase/migrations/20261030_pasaporte_solo_logueados.sql": {
+    "mtime": 1793375763.7958086,
+    "seen": 1793389390.108767,
+    "ast_hash": "22903ff9250ce56654c0c2b86818da63",
+    "semantic_hash": ""
+  },
+  "docs/emails/enviar-receta.html": {
+    "mtime": 1792759446.9897392,
+    "seen": 1793389390.108772,
+    "ast_hash": "331010087d0efabcfcde003fb91c34cd",
+    "semantic_hash": ""
+  },
+  "docs/emails/error-flujo.html": {
+    "mtime": 1792757841.0558012,
+    "seen": 1793389390.1087732,
+    "ast_hash": "404422e7002d5496dc94d19814b732ac",
+    "semantic_hash": ""
+  },
+  "docs/emails/previews/enviar-receta.html": {
+    "mtime": 1792759447.0206673,
+    "seen": 1793389390.1087732,
+    "ast_hash": "fba37573d2c8a6b325219dc925752330",
+    "semantic_hash": ""
+  },
+  "docs/emails/previews/error-flujo.html": {
+    "mtime": 1792759117.9896586,
+    "seen": 1793389390.108774,
+    "ast_hash": "f4bf50650d8447781a6a87ffeb325afa",
+    "semantic_hash": ""
+  },
+  "docs/emails/previews/receta-anadida.html": {
+    "mtime": 1792759117.9894814,
+    "seen": 1793389390.108774,
+    "ast_hash": "c76c04c590123165fee983d2a91f72f3",
+    "semantic_hash": ""
+  },
+  "docs/emails/receta-anadida.html": {
+    "mtime": 1792757841.0561788,
+    "seen": 1793389390.108775,
+    "ast_hash": "15ce9b4095c6b51495a6a3a5122b7380",
+    "semantic_hash": ""
+  },
+  "docs/porciones-propuesta.md": {
+    "mtime": 1792760074.8627605,
+    "seen": 1793389390.1087759,
+    "ast_hash": "0affe527cae125c5269c07083828cf82",
     "semantic_hash": ""
   }
 }

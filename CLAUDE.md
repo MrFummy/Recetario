@@ -174,6 +174,30 @@ Dos detalles que parecen menores y no lo son:
   receta se usa `reemplazarPor`, que pisa la entrada del historial para que el
   atrás no devuelva a una ficha que ya no existe.
 
+## Mirón y registrado
+
+**Hecho el 30 de octubre de 2026.** El catálogo y el modo cocina son públicos; el
+resto es de quien tiene sesión. Despensa, Compra y Pasaporte se ocultan en la nav
+([NavPrincipal.tsx](src/components/NavPrincipal.tsx)) y sus rutas pasan por
+`SoloLogueados` ([Avisos.tsx](src/components/Avisos.tsx)), que enseña «esto es
+para quien se registra» con botón al login. Como `SoloAdmin`, solo decide qué se
+pinta.
+
+**En el servidor, solo el Pasaporte necesitaba cambio**
+([la migración](supabase/migrations/20261030_pasaporte_solo_logueados.sql)): la
+lectura de `paises` y `fotos_pais` pasó de `anon` a `authenticated`. Despensa y
+para hacer ya eran `authenticated`. **El bucket `fotos-paises` sigue público a
+propósito**: se protegen las filas, no las imágenes; pasar a URLs firmadas
+complicaba la carga por poco.
+
+- **El registro está abierto**, así que esto es un incentivo para crear cuenta,
+  no un filtro de acceso.
+- **El modo cocina queda público a propósito**: es solo lectura, no toca datos, y
+  es el mejor gancho para el visitante. Restringirlo es cambiar la condición del
+  botón en `RecipeDetail` a `isAfan || isAdmin`.
+- Un enlace `#/pasaporte` o `#/despensa` abierto sin sesión enseña el aviso, no un 404.
+- Verificado como visitante en producción; con sesión, sin probar.
+
 ## La lista de la compra
 
 **Hecha el 10 de octubre de 2026** — tercer y último punto del plan del 23 de

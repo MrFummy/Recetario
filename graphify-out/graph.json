@@ -17,6 +17,19 @@
       "source_location": "L3"
     },
     {
+      "id": "src_components_ingredientsearch_ingredientsearchprops",
+      "label": "IngredientSearchProps",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "ingredientsearchprops",
+      "source_file": "src/components/IngredientSearch.tsx",
+      "source_location": "L5"
+    },
+    {
       "id": "src_components_navprincipal_navprincipalprops",
       "label": "NavPrincipalProps",
       "_callable": true,
@@ -56,6 +69,19 @@
       "source_location": "L17"
     },
     {
+      "id": "src_hooks_usebusquedasemantica_busquedasemantica",
+      "label": "BusquedaSemantica",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "busquedasemantica",
+      "source_file": "src/hooks/useBusquedaSemantica.ts",
+      "source_location": "L54"
+    },
+    {
       "id": "src_lib_rutas_ruta",
       "label": "Ruta",
       "_callable": true,
@@ -82,108 +108,43 @@
       "source_location": "L36"
     },
     {
-      "id": "src_components_modococina_modococinaprops",
-      "label": "ModoCocinaProps",
+      "id": "src_components_addrecipeform_addrecipeformprops",
+      "label": "AddRecipeFormProps",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 24,
-      "community_name": "RecipeDetail.tsx",
+      "community_name": "AddRecipeForm.tsx",
       "file_type": "code",
-      "norm_label": "modococinaprops",
-      "source_file": "src/components/ModoCocina.tsx",
+      "norm_label": "addrecipeformprops",
+      "source_file": "src/components/AddRecipeForm.tsx",
       "source_location": "L10"
     },
     {
-      "id": "src_components_recipecontent_ingredientslistprops",
-      "label": "IngredientsListProps",
+      "id": "src_components_uploadprogress_uploadprogressprops",
+      "label": "UploadProgressProps",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 24,
-      "community_name": "RecipeDetail.tsx",
+      "community_name": "AddRecipeForm.tsx",
       "file_type": "code",
-      "norm_label": "ingredientslistprops",
-      "source_file": "src/components/RecipeContent.tsx",
-      "source_location": "L8"
+      "norm_label": "uploadprogressprops",
+      "source_file": "src/components/UploadProgress.tsx",
+      "source_location": "L5"
     },
     {
-      "id": "src_components_recipepolaroid_recipepolaroidprops",
-      "label": "RecipePolaroidProps",
+      "id": "src_components_uploadprogress_uploadstatus",
+      "label": "UploadStatus",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 24,
-      "community_name": "RecipeDetail.tsx",
+      "community_name": "AddRecipeForm.tsx",
       "file_type": "code",
-      "norm_label": "recipepolaroidprops",
-      "source_file": "src/components/RecipePolaroid.tsx",
-      "source_location": "L4"
-    },
-    {
-      "id": "src_hooks_usetemporizadores_temporizador",
-      "label": "Temporizador",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 24,
-      "community_name": "RecipeDetail.tsx",
-      "file_type": "code",
-      "norm_label": "temporizador",
-      "source_file": "src/hooks/useTemporizadores.ts",
+      "norm_label": "uploadstatus",
+      "source_file": "src/components/UploadProgress.tsx",
       "source_location": "L3"
-    },
-    {
-      "id": "src_hooks_usetemporizadores_temporizadores",
-      "label": "Temporizadores",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 24,
-      "community_name": "RecipeDetail.tsx",
-      "file_type": "code",
-      "norm_label": "temporizadores",
-      "source_file": "src/hooks/useTemporizadores.ts",
-      "source_location": "L97"
-    },
-    {
-      "id": "src_lib_recipecontent_ingredient",
-      "label": "Ingredient",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 24,
-      "community_name": "RecipeDetail.tsx",
-      "file_type": "code",
-      "norm_label": "ingredient",
-      "source_file": "src/lib/recipeContent.ts",
-      "source_location": "L3"
-    },
-    {
-      "id": "src_types_fuentetipo",
-      "label": "FuenteTipo",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 24,
-      "community_name": "RecipeDetail.tsx",
-      "file_type": "code",
-      "norm_label": "fuentetipo",
-      "source_file": "src/types.ts",
-      "source_location": "L67"
-    },
-    {
-      "id": "src_types_json",
-      "label": "Json",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 24,
-      "community_name": "RecipeDetail.tsx",
-      "file_type": "code",
-      "norm_label": "json",
-      "source_file": "src/types.ts",
-      "source_location": "L2"
     },
     {
       "id": "src_components_bandera_banderaprops",
@@ -261,20 +222,46 @@
       "file_type": "code",
       "norm_label": "paispaginaprops",
       "source_file": "src/components/PaisPagina.tsx",
-      "source_location": "L14"
+      "source_location": "L16"
     },
     {
-      "id": "src_components_sellopasaporte_sellopasaporteprops",
-      "label": "SelloPasaporteProps",
+      "id": "src_components_platoestrella_platoestrellaprops",
+      "label": "PlatoEstrellaProps",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 34,
       "community_name": "types.ts",
       "file_type": "code",
-      "norm_label": "sellopasaporteprops",
-      "source_file": "src/components/SelloPasaporte.tsx",
-      "source_location": "L3"
+      "norm_label": "platoestrellaprops",
+      "source_file": "src/components/PlatoEstrella.tsx",
+      "source_location": "L7"
+    },
+    {
+      "id": "src_components_recipecard_recipecardprops",
+      "label": "RecipeCardProps",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 34,
+      "community_name": "types.ts",
+      "file_type": "code",
+      "norm_label": "recipecardprops",
+      "source_file": "src/components/RecipeCard.tsx",
+      "source_location": "L5"
+    },
+    {
+      "id": "src_components_recipegrid_recipegridprops",
+      "label": "RecipeGridProps",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 34,
+      "community_name": "types.ts",
+      "file_type": "code",
+      "norm_label": "recipegridprops",
+      "source_file": "src/components/RecipeGrid.tsx",
+      "source_location": "L4"
     },
     {
       "id": "src_hooks_usepaises_cambiospais",
@@ -342,6 +329,19 @@
       "source_location": "L5"
     },
     {
+      "id": "src_lib_pasaporte_platoestrella",
+      "label": "platoEstrella",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 34,
+      "community_name": "types.ts",
+      "file_type": "code",
+      "norm_label": "platoestrella",
+      "source_file": "src/lib/pasaporte.ts",
+      "source_location": "L47"
+    },
+    {
       "id": "src_types_fotopais",
       "label": "FotoPais",
       "_callable": true,
@@ -352,7 +352,7 @@
       "file_type": "code",
       "norm_label": "fotopais",
       "source_file": "src/types.ts",
-      "source_location": "L59"
+      "source_location": "L65"
     },
     {
       "id": "src_types_pais",
@@ -368,17 +368,69 @@
       "source_location": "L48"
     },
     {
+      "id": "src_types_recipe",
+      "label": "Recipe",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 34,
+      "community_name": "types.ts",
+      "file_type": "code",
+      "norm_label": "recipe",
+      "source_file": "src/types.ts",
+      "source_location": "L10"
+    },
+    {
+      "id": "src_components_modococina_modococinaprops",
+      "label": "ModoCocinaProps",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "ModoCocina.tsx",
+      "file_type": "code",
+      "norm_label": "modococinaprops",
+      "source_file": "src/components/ModoCocina.tsx",
+      "source_location": "L10"
+    },
+    {
       "id": "src_components_pasocontiempos_pasocontiemposprops",
       "label": "PasoConTiemposProps",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 4,
-      "community_name": "tiempos.ts",
+      "community_name": "ModoCocina.tsx",
       "file_type": "code",
       "norm_label": "pasocontiemposprops",
       "source_file": "src/components/PasoConTiempos.tsx",
       "source_location": "L4"
+    },
+    {
+      "id": "src_hooks_usetemporizadores_temporizador",
+      "label": "Temporizador",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "ModoCocina.tsx",
+      "file_type": "code",
+      "norm_label": "temporizador",
+      "source_file": "src/hooks/useTemporizadores.ts",
+      "source_location": "L3"
+    },
+    {
+      "id": "src_hooks_usetemporizadores_temporizadores",
+      "label": "Temporizadores",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "ModoCocina.tsx",
+      "file_type": "code",
+      "norm_label": "temporizadores",
+      "source_file": "src/hooks/useTemporizadores.ts",
+      "source_location": "L97"
     },
     {
       "id": "src_lib_tiempos_fragmento",
@@ -387,11 +439,24 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 4,
-      "community_name": "tiempos.ts",
+      "community_name": "ModoCocina.tsx",
       "file_type": "code",
       "norm_label": "fragmento",
       "source_file": "src/lib/tiempos.ts",
       "source_location": "L9"
+    },
+    {
+      "id": "src_components_sellopasaporte_sellopasaporteprops",
+      "label": "SelloPasaporteProps",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 45,
+      "community_name": "SelloPasaporte.tsx",
+      "file_type": "code",
+      "norm_label": "sellopasaporteprops",
+      "source_file": "src/components/SelloPasaporte.tsx",
+      "source_location": "L3"
     },
     {
       "id": "src_components_candidatacard_props",
@@ -400,7 +465,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 47,
-      "community_name": "LaboratorioSection.tsx",
+      "community_name": "CandidataDetail.tsx",
       "file_type": "code",
       "norm_label": "props",
       "source_file": "src/components/CandidataCard.tsx",
@@ -413,7 +478,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 47,
-      "community_name": "LaboratorioSection.tsx",
+      "community_name": "CandidataDetail.tsx",
       "file_type": "code",
       "norm_label": "props",
       "source_file": "src/components/CandidataDetail.tsx",
@@ -426,7 +491,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 47,
-      "community_name": "LaboratorioSection.tsx",
+      "community_name": "CandidataDetail.tsx",
       "file_type": "code",
       "norm_label": "filtroestado",
       "source_file": "src/components/LaboratorioSection.tsx",
@@ -439,7 +504,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 47,
-      "community_name": "LaboratorioSection.tsx",
+      "community_name": "CandidataDetail.tsx",
       "file_type": "code",
       "norm_label": "fase",
       "source_file": "src/components/PromoverModal.tsx",
@@ -452,11 +517,24 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 47,
-      "community_name": "LaboratorioSection.tsx",
+      "community_name": "CandidataDetail.tsx",
       "file_type": "code",
       "norm_label": "props",
       "source_file": "src/components/PromoverModal.tsx",
       "source_location": "L9"
+    },
+    {
+      "id": "src_components_recipecontent_ingredientslistprops",
+      "label": "IngredientsListProps",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 47,
+      "community_name": "CandidataDetail.tsx",
+      "file_type": "code",
+      "norm_label": "ingredientslistprops",
+      "source_file": "src/components/RecipeContent.tsx",
+      "source_location": "L8"
     },
     {
       "id": "src_hooks_usecandidatas_cambioscandidata",
@@ -465,7 +543,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 47,
-      "community_name": "LaboratorioSection.tsx",
+      "community_name": "CandidataDetail.tsx",
       "file_type": "code",
       "norm_label": "cambioscandidata",
       "source_file": "src/hooks/useCandidatas.ts",
@@ -478,11 +556,24 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 47,
-      "community_name": "LaboratorioSection.tsx",
+      "community_name": "CandidataDetail.tsx",
       "file_type": "code",
       "norm_label": "candidatas",
       "source_file": "src/hooks/useCandidatas.ts",
       "source_location": "L15"
+    },
+    {
+      "id": "src_lib_listacompra_itemlistacompra",
+      "label": "ItemListaCompra",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 47,
+      "community_name": "CandidataDetail.tsx",
+      "file_type": "code",
+      "norm_label": "itemlistacompra",
+      "source_file": "src/lib/listaCompra.ts",
+      "source_location": "L4"
     },
     {
       "id": "src_lib_promover_opcionespromocion",
@@ -491,11 +582,24 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 47,
-      "community_name": "LaboratorioSection.tsx",
+      "community_name": "CandidataDetail.tsx",
       "file_type": "code",
       "norm_label": "opcionespromocion",
       "source_file": "src/lib/promover.ts",
       "source_location": "L6"
+    },
+    {
+      "id": "src_lib_recipecontent_ingredient",
+      "label": "Ingredient",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 47,
+      "community_name": "CandidataDetail.tsx",
+      "file_type": "code",
+      "norm_label": "ingredient",
+      "source_file": "src/lib/recipeContent.ts",
+      "source_location": "L3"
     },
     {
       "id": "src_types_candidata",
@@ -504,11 +608,11 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 47,
-      "community_name": "LaboratorioSection.tsx",
+      "community_name": "CandidataDetail.tsx",
       "file_type": "code",
       "norm_label": "candidata",
       "source_file": "src/types.ts",
-      "source_location": "L74"
+      "source_location": "L80"
     },
     {
       "id": "src_types_estadocandidata",
@@ -517,11 +621,37 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 47,
-      "community_name": "LaboratorioSection.tsx",
+      "community_name": "CandidataDetail.tsx",
       "file_type": "code",
       "norm_label": "estadocandidata",
       "source_file": "src/types.ts",
-      "source_location": "L68"
+      "source_location": "L74"
+    },
+    {
+      "id": "src_types_fuentetipo",
+      "label": "FuenteTipo",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 47,
+      "community_name": "CandidataDetail.tsx",
+      "file_type": "code",
+      "norm_label": "fuentetipo",
+      "source_file": "src/types.ts",
+      "source_location": "L73"
+    },
+    {
+      "id": "src_types_json",
+      "label": "Json",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 47,
+      "community_name": "CandidataDetail.tsx",
+      "file_type": "code",
+      "norm_label": "json",
+      "source_file": "src/types.ts",
+      "source_location": "L2"
     },
     {
       "id": "src_components_anadiringrediente_props",
@@ -530,7 +660,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 5,
-      "community_name": "Recipe",
+      "community_name": "DespensaSection.tsx",
       "file_type": "code",
       "norm_label": "props",
       "source_file": "src/components/AnadirIngrediente.tsx",
@@ -543,7 +673,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 5,
-      "community_name": "Recipe",
+      "community_name": "DespensaSection.tsx",
       "file_type": "code",
       "norm_label": "props",
       "source_file": "src/components/DespensaSection.tsx",
@@ -556,7 +686,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 5,
-      "community_name": "Recipe",
+      "community_name": "DespensaSection.tsx",
       "file_type": "code",
       "norm_label": "props",
       "source_file": "src/components/ListaCompraSection.tsx",
@@ -569,24 +699,11 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 5,
-      "community_name": "Recipe",
+      "community_name": "DespensaSection.tsx",
       "file_type": "code",
       "norm_label": "props",
       "source_file": "src/components/MuroRealizaciones.tsx",
       "source_location": "L11"
-    },
-    {
-      "id": "src_components_recipecard_recipecardprops",
-      "label": "RecipeCardProps",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "Recipe",
-      "file_type": "code",
-      "norm_label": "recipecardprops",
-      "source_file": "src/components/RecipeCard.tsx",
-      "source_location": "L5"
     },
     {
       "id": "src_components_recipedetail_recipedetailprops",
@@ -595,24 +712,11 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 5,
-      "community_name": "Recipe",
+      "community_name": "DespensaSection.tsx",
       "file_type": "code",
       "norm_label": "recipedetailprops",
       "source_file": "src/components/RecipeDetail.tsx",
       "source_location": "L18"
-    },
-    {
-      "id": "src_components_recipegrid_recipegridprops",
-      "label": "RecipeGridProps",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "Recipe",
-      "file_type": "code",
-      "norm_label": "recipegridprops",
-      "source_file": "src/components/RecipeGrid.tsx",
-      "source_location": "L4"
     },
     {
       "id": "src_hooks_usedespensa_despensa",
@@ -621,7 +725,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 5,
-      "community_name": "Recipe",
+      "community_name": "DespensaSection.tsx",
       "file_type": "code",
       "norm_label": "despensa",
       "source_file": "src/hooks/useDespensa.ts",
@@ -634,7 +738,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 5,
-      "community_name": "Recipe",
+      "community_name": "DespensaSection.tsx",
       "file_type": "code",
       "norm_label": "parahacer",
       "source_file": "src/hooks/useParaHacer.ts",
@@ -647,7 +751,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 5,
-      "community_name": "Recipe",
+      "community_name": "DespensaSection.tsx",
       "file_type": "code",
       "norm_label": "ingredientedelcatalogo",
       "source_file": "src/lib/inventario.ts",
@@ -660,37 +764,11 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 5,
-      "community_name": "Recipe",
+      "community_name": "DespensaSection.tsx",
       "file_type": "code",
       "norm_label": "recetaconfaltantes",
       "source_file": "src/lib/inventario.ts",
       "source_location": "L49"
-    },
-    {
-      "id": "src_lib_listacompra_itemlistacompra",
-      "label": "ItemListaCompra",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "Recipe",
-      "file_type": "code",
-      "norm_label": "itemlistacompra",
-      "source_file": "src/lib/listaCompra.ts",
-      "source_location": "L4"
-    },
-    {
-      "id": "src_types_recipe",
-      "label": "Recipe",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "Recipe",
-      "file_type": "code",
-      "norm_label": "recipe",
-      "source_file": "src/types.ts",
-      "source_location": "L10"
     },
     {
       "id": "supabase_functions_indexar_recetas_index_receta",
@@ -704,32 +782,6 @@
       "norm_label": "receta",
       "source_file": "supabase/functions/indexar-recetas/index.ts",
       "source_location": "L53"
-    },
-    {
-      "id": "src_components_addrecipeform_addrecipeformprops",
-      "label": "AddRecipeFormProps",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 8,
-      "community_name": "errorMessage",
-      "file_type": "code",
-      "norm_label": "addrecipeformprops",
-      "source_file": "src/components/AddRecipeForm.tsx",
-      "source_location": "L9"
-    },
-    {
-      "id": "src_components_ingredientsearch_ingredientsearchprops",
-      "label": "IngredientSearchProps",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 8,
-      "community_name": "errorMessage",
-      "file_type": "code",
-      "norm_label": "ingredientsearchprops",
-      "source_file": "src/components/IngredientSearch.tsx",
-      "source_location": "L5"
     },
     {
       "id": "src_components_loginmodal_loginmodalprops",
@@ -758,6 +810,19 @@
       "source_location": "L7"
     },
     {
+      "id": "src_components_recipepolaroid_recipepolaroidprops",
+      "label": "RecipePolaroidProps",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "errorMessage",
+      "file_type": "code",
+      "norm_label": "recipepolaroidprops",
+      "source_file": "src/components/RecipePolaroid.tsx",
+      "source_location": "L4"
+    },
+    {
       "id": "src_components_sharebyemail_sharebyemailprops",
       "label": "ShareByEmailProps",
       "_callable": true,
@@ -782,45 +847,6 @@
       "norm_label": "starratingprops",
       "source_file": "src/components/StarRating.tsx",
       "source_location": "L3"
-    },
-    {
-      "id": "src_components_uploadprogress_uploadprogressprops",
-      "label": "UploadProgressProps",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 8,
-      "community_name": "errorMessage",
-      "file_type": "code",
-      "norm_label": "uploadprogressprops",
-      "source_file": "src/components/UploadProgress.tsx",
-      "source_location": "L5"
-    },
-    {
-      "id": "src_components_uploadprogress_uploadstatus",
-      "label": "UploadStatus",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 8,
-      "community_name": "errorMessage",
-      "file_type": "code",
-      "norm_label": "uploadstatus",
-      "source_file": "src/components/UploadProgress.tsx",
-      "source_location": "L3"
-    },
-    {
-      "id": "src_hooks_usebusquedasemantica_busquedasemantica",
-      "label": "BusquedaSemantica",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 8,
-      "community_name": "errorMessage",
-      "file_type": "code",
-      "norm_label": "busquedasemantica",
-      "source_file": "src/hooks/useBusquedaSemantica.ts",
-      "source_location": "L54"
     },
     {
       "id": "src_hooks_userealizaciones_datosrealizacion",
@@ -931,7 +957,7 @@
       "file_type": "code",
       "norm_label": "recetanoencontrada()",
       "source_file": "src/components/Avisos.tsx",
-      "source_location": "L50"
+      "source_location": "L101"
     },
     {
       "id": "src_components_avisos_soloadmin",
@@ -946,6 +972,18 @@
       "source_location": "L13"
     },
     {
+      "id": "src_components_avisos_solologueados",
+      "label": "SoloLogueados()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "solologueados()",
+      "source_file": "src/components/Avisos.tsx",
+      "source_location": "L55"
+    },
+    {
       "id": "src_components_filterbar_filterbar",
       "label": "FilterBar()",
       "_callable": true,
@@ -956,6 +994,18 @@
       "norm_label": "filterbar()",
       "source_file": "src/components/FilterBar.tsx",
       "source_location": "L12"
+    },
+    {
+      "id": "src_components_ingredientsearch_ingredientsearch",
+      "label": "IngredientSearch()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "ingredientsearch()",
+      "source_file": "src/components/IngredientSearch.tsx",
+      "source_location": "L19"
     },
     {
       "id": "src_components_listacomprasection_seccionlistacompra",
@@ -979,7 +1029,7 @@
       "file_type": "code",
       "norm_label": "navprincipal()",
       "source_file": "src/components/NavPrincipal.tsx",
-      "source_location": "L20"
+      "source_location": "L22"
     },
     {
       "id": "src_components_paispagina_paispagina",
@@ -991,7 +1041,7 @@
       "file_type": "code",
       "norm_label": "paispagina()",
       "source_file": "src/components/PaisPagina.tsx",
-      "source_location": "L29"
+      "source_location": "L31"
     },
     {
       "id": "src_components_pasaportesection_seccionpasaporte",
@@ -1004,6 +1054,30 @@
       "norm_label": "seccionpasaporte()",
       "source_file": "src/components/PasaporteSection.tsx",
       "source_location": "L31"
+    },
+    {
+      "id": "src_hooks_usepaises_usepaises",
+      "label": "usePaises()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "usepaises()",
+      "source_file": "src/hooks/usePaises.ts",
+      "source_location": "L40"
+    },
+    {
+      "id": "src_hooks_usepaises_usepaises_load",
+      "label": "load()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "load()",
+      "source_file": "src/hooks/usePaises.ts",
+      "source_location": "L50"
     },
     {
       "id": "src_hooks_useruta_ira",
@@ -1066,18 +1140,6 @@
       "source_location": "L32"
     },
     {
-      "id": "src_lib_pasaporte_paisesvisitados",
-      "label": "paisesVisitados()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 20,
-      "community_name": "App.tsx",
-      "file_type": "code",
-      "norm_label": "paisesvisitados()",
-      "source_file": "src/lib/pasaporte.ts",
-      "source_location": "L18"
-    },
-    {
       "id": "src_lib_rutas_ahash",
       "label": "aHash()",
       "_callable": true,
@@ -1102,244 +1164,52 @@
       "source_location": "L33"
     },
     {
-      "id": "src_components_candidatacard_candidatacard",
-      "label": "CandidataCard()",
+      "id": "src_components_addrecipeform_addrecipeform",
+      "label": "AddRecipeForm()",
       "_callable": true,
       "_origin": "ast",
       "community": 24,
-      "community_name": "RecipeDetail.tsx",
+      "community_name": "AddRecipeForm.tsx",
       "file_type": "code",
-      "norm_label": "candidatacard()",
-      "source_file": "src/components/CandidataCard.tsx",
-      "source_location": "L13"
+      "norm_label": "addrecipeform()",
+      "source_file": "src/components/AddRecipeForm.tsx",
+      "source_location": "L15"
     },
     {
-      "id": "src_components_candidatadetail_candidatadetail",
-      "label": "CandidataDetail()",
+      "id": "src_components_uploadprogress_uploadprogress",
+      "label": "UploadProgress()",
       "_callable": true,
       "_origin": "ast",
       "community": 24,
-      "community_name": "RecipeDetail.tsx",
+      "community_name": "AddRecipeForm.tsx",
       "file_type": "code",
-      "norm_label": "candidatadetail()",
-      "source_file": "src/components/CandidataDetail.tsx",
-      "source_location": "L21"
-    },
-    {
-      "id": "src_components_modococina_modococina",
-      "label": "ModoCocina()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 24,
-      "community_name": "RecipeDetail.tsx",
-      "file_type": "code",
-      "norm_label": "modococina()",
-      "source_file": "src/components/ModoCocina.tsx",
-      "source_location": "L20"
-    },
-    {
-      "id": "src_components_recipecontent_ingredientslist",
-      "label": "IngredientsList()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 24,
-      "community_name": "RecipeDetail.tsx",
-      "file_type": "code",
-      "norm_label": "ingredientslist()",
-      "source_file": "src/components/RecipeContent.tsx",
-      "source_location": "L25"
-    },
-    {
-      "id": "src_components_recipecontent_stepslist",
-      "label": "StepsList()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 24,
-      "community_name": "RecipeDetail.tsx",
-      "file_type": "code",
-      "norm_label": "stepslist()",
-      "source_file": "src/components/RecipeContent.tsx",
-      "source_location": "L128"
-    },
-    {
-      "id": "src_components_recipedetail_recipedetail",
-      "label": "RecipeDetail()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 24,
-      "community_name": "RecipeDetail.tsx",
-      "file_type": "code",
-      "norm_label": "recipedetail()",
-      "source_file": "src/components/RecipeDetail.tsx",
-      "source_location": "L39"
-    },
-    {
-      "id": "src_components_recipepolaroid_recipepolaroid",
-      "label": "RecipePolaroid()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 24,
-      "community_name": "RecipeDetail.tsx",
-      "file_type": "code",
-      "norm_label": "recipepolaroid()",
-      "source_file": "src/components/RecipePolaroid.tsx",
-      "source_location": "L22"
-    },
-    {
-      "id": "src_components_temporizadoresbarra_temporizadoresbarra",
-      "label": "TemporizadoresBarra()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 24,
-      "community_name": "RecipeDetail.tsx",
-      "file_type": "code",
-      "norm_label": "temporizadoresbarra()",
-      "source_file": "src/components/TemporizadoresBarra.tsx",
-      "source_location": "L6"
-    },
-    {
-      "id": "src_hooks_usetemporizadores_pitar",
-      "label": "pitar()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 24,
-      "community_name": "RecipeDetail.tsx",
-      "file_type": "code",
-      "norm_label": "pitar()",
-      "source_file": "src/hooks/useTemporizadores.ts",
-      "source_location": "L13"
-    },
-    {
-      "id": "src_hooks_usetemporizadores_usetemporizadores",
-      "label": "useTemporizadores()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 24,
-      "community_name": "RecipeDetail.tsx",
-      "file_type": "code",
-      "norm_label": "usetemporizadores()",
-      "source_file": "src/hooks/useTemporizadores.ts",
-      "source_location": "L36"
-    },
-    {
-      "id": "src_hooks_usewakelock_usewakelock",
-      "label": "useWakeLock()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 24,
-      "community_name": "RecipeDetail.tsx",
-      "file_type": "code",
-      "norm_label": "usewakelock()",
-      "source_file": "src/hooks/useWakeLock.ts",
+      "norm_label": "uploadprogress()",
+      "source_file": "src/components/UploadProgress.tsx",
       "source_location": "L10"
     },
     {
-      "id": "src_lib_recipecontent_asnumero",
-      "label": "asNumero()",
+      "id": "src_lib_imagen_comprimirfotoreceta",
+      "label": "comprimirFotoReceta()",
       "_callable": true,
       "_origin": "ast",
       "community": 24,
-      "community_name": "RecipeDetail.tsx",
+      "community_name": "AddRecipeForm.tsx",
       "file_type": "code",
-      "norm_label": "asnumero()",
-      "source_file": "src/lib/recipeContent.ts",
-      "source_location": "L45"
+      "norm_label": "comprimirfotoreceta()",
+      "source_file": "src/lib/imagen.ts",
+      "source_location": "L54"
     },
     {
-      "id": "src_lib_recipecontent_astext",
-      "label": "asText()",
+      "id": "src_lib_imagen_comprimirimagen",
+      "label": "comprimirImagen()",
       "_callable": true,
       "_origin": "ast",
       "community": 24,
-      "community_name": "RecipeDetail.tsx",
+      "community_name": "AddRecipeForm.tsx",
       "file_type": "code",
-      "norm_label": "astext()",
-      "source_file": "src/lib/recipeContent.ts",
-      "source_location": "L33"
-    },
-    {
-      "id": "src_lib_recipecontent_escabeceradegrupo",
-      "label": "esCabeceraDeGrupo()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 24,
-      "community_name": "RecipeDetail.tsx",
-      "file_type": "code",
-      "norm_label": "escabeceradegrupo()",
-      "source_file": "src/lib/recipeContent.ts",
-      "source_location": "L27"
-    },
-    {
-      "id": "src_lib_recipecontent_hasnotas",
-      "label": "hasNotas()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 24,
-      "community_name": "RecipeDetail.tsx",
-      "file_type": "code",
-      "norm_label": "hasnotas()",
-      "source_file": "src/lib/recipeContent.ts",
-      "source_location": "L114"
-    },
-    {
-      "id": "src_lib_recipecontent_isrecord",
-      "label": "isRecord()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 24,
-      "community_name": "RecipeDetail.tsx",
-      "file_type": "code",
-      "norm_label": "isrecord()",
-      "source_file": "src/lib/recipeContent.ts",
-      "source_location": "L40"
-    },
-    {
-      "id": "src_lib_recipecontent_normalizeingredients",
-      "label": "normalizeIngredients()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 24,
-      "community_name": "RecipeDetail.tsx",
-      "file_type": "code",
-      "norm_label": "normalizeingredients()",
-      "source_file": "src/lib/recipeContent.ts",
-      "source_location": "L62"
-    },
-    {
-      "id": "src_lib_recipecontent_normalizesteps",
-      "label": "normalizeSteps()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 24,
-      "community_name": "RecipeDetail.tsx",
-      "file_type": "code",
-      "norm_label": "normalizesteps()",
-      "source_file": "src/lib/recipeContent.ts",
-      "source_location": "L97"
-    },
-    {
-      "id": "src_lib_recipecontent_rendernotas",
-      "label": "renderNotas()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 24,
-      "community_name": "RecipeDetail.tsx",
-      "file_type": "code",
-      "norm_label": "rendernotas()",
-      "source_file": "src/lib/recipeContent.ts",
-      "source_location": "L129"
-    },
-    {
-      "id": "src_lib_tiempos_formatearreloj",
-      "label": "formatearReloj()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 24,
-      "community_name": "RecipeDetail.tsx",
-      "file_type": "code",
-      "norm_label": "formatearreloj()",
-      "source_file": "src/lib/tiempos.ts",
-      "source_location": "L99"
+      "norm_label": "comprimirimagen()",
+      "source_file": "src/lib/imagen.ts",
+      "source_location": "L10"
     },
     {
       "id": "src_components_bandera_bandera",
@@ -1352,6 +1222,18 @@
       "norm_label": "bandera()",
       "source_file": "src/components/Bandera.tsx",
       "source_location": "L16"
+    },
+    {
+      "id": "src_components_fichapais_fichapais",
+      "label": "FichaPais()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 34,
+      "community_name": "types.ts",
+      "file_type": "code",
+      "norm_label": "fichapais()",
+      "source_file": "src/components/FichaPais.tsx",
+      "source_location": "L11"
     },
     {
       "id": "src_components_mapamundi_mapamundi",
@@ -1402,40 +1284,52 @@
       "source_location": "L24"
     },
     {
-      "id": "src_components_sellopasaporte_sellopasaporte",
-      "label": "SelloPasaporte()",
+      "id": "src_components_platoestrella_platoestrella",
+      "label": "PlatoEstrella()",
       "_callable": true,
       "_origin": "ast",
       "community": 34,
       "community_name": "types.ts",
       "file_type": "code",
-      "norm_label": "sellopasaporte()",
-      "source_file": "src/components/SelloPasaporte.tsx",
-      "source_location": "L27"
+      "norm_label": "platoestrella()",
+      "source_file": "src/components/PlatoEstrella.tsx",
+      "source_location": "L14"
     },
     {
-      "id": "src_components_sellopasaporte_tamanoarco",
-      "label": "tamanoArco()",
+      "id": "src_components_recipecard_recipecard",
+      "label": "RecipeCard()",
       "_callable": true,
       "_origin": "ast",
       "community": 34,
       "community_name": "types.ts",
       "file_type": "code",
-      "norm_label": "tamanoarco()",
-      "source_file": "src/components/SelloPasaporte.tsx",
-      "source_location": "L13"
-    },
-    {
-      "id": "src_components_sellopasaporte_tamanofecha",
-      "label": "tamanoFecha()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 34,
-      "community_name": "types.ts",
-      "file_type": "code",
-      "norm_label": "tamanofecha()",
-      "source_file": "src/components/SelloPasaporte.tsx",
+      "norm_label": "recipecard()",
+      "source_file": "src/components/RecipeCard.tsx",
       "source_location": "L18"
+    },
+    {
+      "id": "src_components_recipecard_tiltfor",
+      "label": "tiltFor()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 34,
+      "community_name": "types.ts",
+      "file_type": "code",
+      "norm_label": "tiltfor()",
+      "source_file": "src/components/RecipeCard.tsx",
+      "source_location": "L11"
+    },
+    {
+      "id": "src_components_recipegrid_recipegrid",
+      "label": "RecipeGrid()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 34,
+      "community_name": "types.ts",
+      "file_type": "code",
+      "norm_label": "recipegrid()",
+      "source_file": "src/components/RecipeGrid.tsx",
+      "source_location": "L12"
     },
     {
       "id": "src_hooks_useacentopais_useacentopais",
@@ -1462,30 +1356,6 @@
       "source_location": "L31"
     },
     {
-      "id": "src_hooks_usepaises_usepaises",
-      "label": "usePaises()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 34,
-      "community_name": "types.ts",
-      "file_type": "code",
-      "norm_label": "usepaises()",
-      "source_file": "src/hooks/usePaises.ts",
-      "source_location": "L40"
-    },
-    {
-      "id": "src_hooks_usepaises_usepaises_load",
-      "label": "load()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 34,
-      "community_name": "types.ts",
-      "file_type": "code",
-      "norm_label": "load()",
-      "source_file": "src/hooks/usePaises.ts",
-      "source_location": "L50"
-    },
-    {
       "id": "src_lib_colorbandera_acentodepixeles",
       "label": "acentoDePixeles()",
       "_callable": true,
@@ -1508,18 +1378,6 @@
       "norm_label": "ahsl()",
       "source_file": "src/lib/colorBandera.ts",
       "source_location": "L16"
-    },
-    {
-      "id": "src_lib_imagen_comprimirimagen",
-      "label": "comprimirImagen()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 34,
-      "community_name": "types.ts",
-      "file_type": "code",
-      "norm_label": "comprimirimagen()",
-      "source_file": "src/lib/imagen.ts",
-      "source_location": "L10"
     },
     {
       "id": "src_lib_paises_banderapais",
@@ -1558,15 +1416,87 @@
       "source_location": "L56"
     },
     {
+      "id": "src_lib_pasaporte_paisesvisitados",
+      "label": "paisesVisitados()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 34,
+      "community_name": "types.ts",
+      "file_type": "code",
+      "norm_label": "paisesvisitados()",
+      "source_file": "src/lib/pasaporte.ts",
+      "source_location": "L18"
+    },
+    {
+      "id": "src_components_modococina_modococina",
+      "label": "ModoCocina()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "ModoCocina.tsx",
+      "file_type": "code",
+      "norm_label": "modococina()",
+      "source_file": "src/components/ModoCocina.tsx",
+      "source_location": "L20"
+    },
+    {
       "id": "src_components_pasocontiempos_pasocontiempos",
       "label": "PasoConTiempos()",
       "_callable": true,
       "_origin": "ast",
       "community": 4,
-      "community_name": "tiempos.ts",
+      "community_name": "ModoCocina.tsx",
       "file_type": "code",
       "norm_label": "pasocontiempos()",
       "source_file": "src/components/PasoConTiempos.tsx",
+      "source_location": "L10"
+    },
+    {
+      "id": "src_components_temporizadoresbarra_temporizadoresbarra",
+      "label": "TemporizadoresBarra()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "ModoCocina.tsx",
+      "file_type": "code",
+      "norm_label": "temporizadoresbarra()",
+      "source_file": "src/components/TemporizadoresBarra.tsx",
+      "source_location": "L6"
+    },
+    {
+      "id": "src_hooks_usetemporizadores_pitar",
+      "label": "pitar()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "ModoCocina.tsx",
+      "file_type": "code",
+      "norm_label": "pitar()",
+      "source_file": "src/hooks/useTemporizadores.ts",
+      "source_location": "L13"
+    },
+    {
+      "id": "src_hooks_usetemporizadores_usetemporizadores",
+      "label": "useTemporizadores()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "ModoCocina.tsx",
+      "file_type": "code",
+      "norm_label": "usetemporizadores()",
+      "source_file": "src/hooks/useTemporizadores.ts",
+      "source_location": "L36"
+    },
+    {
+      "id": "src_hooks_usewakelock_usewakelock",
+      "label": "useWakeLock()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "ModoCocina.tsx",
+      "file_type": "code",
+      "norm_label": "usewakelock()",
+      "source_file": "src/hooks/useWakeLock.ts",
       "source_location": "L10"
     },
     {
@@ -1575,7 +1505,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 4,
-      "community_name": "tiempos.ts",
+      "community_name": "ModoCocina.tsx",
       "file_type": "code",
       "norm_label": "anumero()",
       "source_file": "src/lib/tiempos.ts",
@@ -1587,7 +1517,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 4,
-      "community_name": "tiempos.ts",
+      "community_name": "ModoCocina.tsx",
       "file_type": "code",
       "norm_label": "detectartiempos()",
       "source_file": "src/lib/tiempos.ts",
@@ -1599,11 +1529,23 @@
       "_callable": true,
       "_origin": "ast",
       "community": 4,
-      "community_name": "tiempos.ts",
+      "community_name": "ModoCocina.tsx",
       "file_type": "code",
       "norm_label": "formatearduracion()",
       "source_file": "src/lib/tiempos.ts",
       "source_location": "L89"
+    },
+    {
+      "id": "src_lib_tiempos_formatearreloj",
+      "label": "formatearReloj()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "ModoCocina.tsx",
+      "file_type": "code",
+      "norm_label": "formatearreloj()",
+      "source_file": "src/lib/tiempos.ts",
+      "source_location": "L99"
     },
     {
       "id": "src_lib_tiempos_segundosde",
@@ -1611,11 +1553,71 @@
       "_callable": true,
       "_origin": "ast",
       "community": 4,
-      "community_name": "tiempos.ts",
+      "community_name": "ModoCocina.tsx",
       "file_type": "code",
       "norm_label": "segundosde()",
       "source_file": "src/lib/tiempos.ts",
       "source_location": "L51"
+    },
+    {
+      "id": "src_components_sellopasaporte_lineasfecha",
+      "label": "lineasFecha()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 45,
+      "community_name": "SelloPasaporte.tsx",
+      "file_type": "code",
+      "norm_label": "lineasfecha()",
+      "source_file": "src/components/SelloPasaporte.tsx",
+      "source_location": "L18"
+    },
+    {
+      "id": "src_components_sellopasaporte_sellopasaporte",
+      "label": "SelloPasaporte()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 45,
+      "community_name": "SelloPasaporte.tsx",
+      "file_type": "code",
+      "norm_label": "sellopasaporte()",
+      "source_file": "src/components/SelloPasaporte.tsx",
+      "source_location": "L39"
+    },
+    {
+      "id": "src_components_sellopasaporte_tamanoarco",
+      "label": "tamanoArco()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 45,
+      "community_name": "SelloPasaporte.tsx",
+      "file_type": "code",
+      "norm_label": "tamanoarco()",
+      "source_file": "src/components/SelloPasaporte.tsx",
+      "source_location": "L13"
+    },
+    {
+      "id": "src_components_sellopasaporte_tamanofecha",
+      "label": "tamanoFecha()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 45,
+      "community_name": "SelloPasaporte.tsx",
+      "file_type": "code",
+      "norm_label": "tamanofecha()",
+      "source_file": "src/components/SelloPasaporte.tsx",
+      "source_location": "L29"
+    },
+    {
+      "id": "src_components_candidatacard_candidatacard",
+      "label": "CandidataCard()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 47,
+      "community_name": "CandidataDetail.tsx",
+      "file_type": "code",
+      "norm_label": "candidatacard()",
+      "source_file": "src/components/CandidataCard.tsx",
+      "source_location": "L13"
     },
     {
       "id": "src_components_laboratoriosection_seccionlaboratorio",
@@ -1623,11 +1625,59 @@
       "_callable": true,
       "_origin": "ast",
       "community": 47,
-      "community_name": "LaboratorioSection.tsx",
+      "community_name": "CandidataDetail.tsx",
       "file_type": "code",
       "norm_label": "seccionlaboratorio()",
       "source_file": "src/components/LaboratorioSection.tsx",
       "source_location": "L24"
+    },
+    {
+      "id": "src_components_promovermodal_promovermodal",
+      "label": "PromoverModal()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 47,
+      "community_name": "CandidataDetail.tsx",
+      "file_type": "code",
+      "norm_label": "promovermodal()",
+      "source_file": "src/components/PromoverModal.tsx",
+      "source_location": "L25"
+    },
+    {
+      "id": "src_components_promovermodal_promovermodal_enviar",
+      "label": "enviar()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 47,
+      "community_name": "CandidataDetail.tsx",
+      "file_type": "code",
+      "norm_label": "enviar()",
+      "source_file": "src/components/PromoverModal.tsx",
+      "source_location": "L33"
+    },
+    {
+      "id": "src_components_recipecontent_ingredientslist",
+      "label": "IngredientsList()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 47,
+      "community_name": "CandidataDetail.tsx",
+      "file_type": "code",
+      "norm_label": "ingredientslist()",
+      "source_file": "src/components/RecipeContent.tsx",
+      "source_location": "L25"
+    },
+    {
+      "id": "src_components_recipecontent_stepslist",
+      "label": "StepsList()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 47,
+      "community_name": "CandidataDetail.tsx",
+      "file_type": "code",
+      "norm_label": "stepslist()",
+      "source_file": "src/components/RecipeContent.tsx",
+      "source_location": "L130"
     },
     {
       "id": "src_hooks_usecandidatas_usecandidatas",
@@ -1635,7 +1685,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 47,
-      "community_name": "LaboratorioSection.tsx",
+      "community_name": "CandidataDetail.tsx",
       "file_type": "code",
       "norm_label": "usecandidatas()",
       "source_file": "src/hooks/useCandidatas.ts",
@@ -1647,11 +1697,35 @@
       "_callable": true,
       "_origin": "ast",
       "community": 47,
-      "community_name": "LaboratorioSection.tsx",
+      "community_name": "CandidataDetail.tsx",
       "file_type": "code",
       "norm_label": "cargar()",
       "source_file": "src/hooks/useCandidatas.ts",
       "source_location": "L46"
+    },
+    {
+      "id": "src_lib_listacompra_listadelacompra",
+      "label": "listaDeLaCompra()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 47,
+      "community_name": "CandidataDetail.tsx",
+      "file_type": "code",
+      "norm_label": "listadelacompra()",
+      "source_file": "src/lib/listaCompra.ts",
+      "source_location": "L21"
+    },
+    {
+      "id": "src_lib_n8n_posttowebhook",
+      "label": "postToWebhook()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 47,
+      "community_name": "CandidataDetail.tsx",
+      "file_type": "code",
+      "norm_label": "posttowebhook()",
+      "source_file": "src/lib/n8n.ts",
+      "source_location": "L28"
     },
     {
       "id": "src_lib_promover_enviaralta",
@@ -1659,7 +1733,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 47,
-      "community_name": "LaboratorioSection.tsx",
+      "community_name": "CandidataDetail.tsx",
       "file_type": "code",
       "norm_label": "enviaralta()",
       "source_file": "src/lib/promover.ts",
@@ -1671,11 +1745,83 @@
       "_callable": true,
       "_origin": "ast",
       "community": 47,
-      "community_name": "LaboratorioSection.tsx",
+      "community_name": "CandidataDetail.tsx",
       "file_type": "code",
       "norm_label": "esperarreceta()",
       "source_file": "src/lib/promover.ts",
       "source_location": "L48"
+    },
+    {
+      "id": "src_lib_recipecontent_asnumero",
+      "label": "asNumero()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 47,
+      "community_name": "CandidataDetail.tsx",
+      "file_type": "code",
+      "norm_label": "asnumero()",
+      "source_file": "src/lib/recipeContent.ts",
+      "source_location": "L45"
+    },
+    {
+      "id": "src_lib_recipecontent_astext",
+      "label": "asText()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 47,
+      "community_name": "CandidataDetail.tsx",
+      "file_type": "code",
+      "norm_label": "astext()",
+      "source_file": "src/lib/recipeContent.ts",
+      "source_location": "L33"
+    },
+    {
+      "id": "src_lib_recipecontent_escabeceradegrupo",
+      "label": "esCabeceraDeGrupo()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 47,
+      "community_name": "CandidataDetail.tsx",
+      "file_type": "code",
+      "norm_label": "escabeceradegrupo()",
+      "source_file": "src/lib/recipeContent.ts",
+      "source_location": "L27"
+    },
+    {
+      "id": "src_lib_recipecontent_isrecord",
+      "label": "isRecord()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 47,
+      "community_name": "CandidataDetail.tsx",
+      "file_type": "code",
+      "norm_label": "isrecord()",
+      "source_file": "src/lib/recipeContent.ts",
+      "source_location": "L40"
+    },
+    {
+      "id": "src_lib_recipecontent_normalizeingredients",
+      "label": "normalizeIngredients()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 47,
+      "community_name": "CandidataDetail.tsx",
+      "file_type": "code",
+      "norm_label": "normalizeingredients()",
+      "source_file": "src/lib/recipeContent.ts",
+      "source_location": "L62"
+    },
+    {
+      "id": "src_lib_recipecontent_normalizesteps",
+      "label": "normalizeSteps()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 47,
+      "community_name": "CandidataDetail.tsx",
+      "file_type": "code",
+      "norm_label": "normalizesteps()",
+      "source_file": "src/lib/recipeContent.ts",
+      "source_location": "L97"
     },
     {
       "id": "src_components_anadiringrediente_anadiringrediente",
@@ -1683,7 +1829,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 5,
-      "community_name": "Recipe",
+      "community_name": "DespensaSection.tsx",
       "file_type": "code",
       "norm_label": "anadiringrediente()",
       "source_file": "src/components/AnadirIngrediente.tsx",
@@ -1695,47 +1841,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 5,
-      "community_name": "Recipe",
+      "community_name": "DespensaSection.tsx",
       "file_type": "code",
       "norm_label": "secciondespensa()",
       "source_file": "src/components/DespensaSection.tsx",
       "source_location": "L26"
-    },
-    {
-      "id": "src_components_recipecard_recipecard",
-      "label": "RecipeCard()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "Recipe",
-      "file_type": "code",
-      "norm_label": "recipecard()",
-      "source_file": "src/components/RecipeCard.tsx",
-      "source_location": "L18"
-    },
-    {
-      "id": "src_components_recipecard_tiltfor",
-      "label": "tiltFor()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "Recipe",
-      "file_type": "code",
-      "norm_label": "tiltfor()",
-      "source_file": "src/components/RecipeCard.tsx",
-      "source_location": "L11"
-    },
-    {
-      "id": "src_components_recipegrid_recipegrid",
-      "label": "RecipeGrid()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "Recipe",
-      "file_type": "code",
-      "norm_label": "recipegrid()",
-      "source_file": "src/components/RecipeGrid.tsx",
-      "source_location": "L12"
     },
     {
       "id": "src_hooks_useingredientsearch_useingredientsearch",
@@ -1743,7 +1853,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 5,
-      "community_name": "Recipe",
+      "community_name": "DespensaSection.tsx",
       "file_type": "code",
       "norm_label": "useingredientsearch()",
       "source_file": "src/hooks/useIngredientSearch.ts",
@@ -1755,7 +1865,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 5,
-      "community_name": "Recipe",
+      "community_name": "DespensaSection.tsx",
       "file_type": "code",
       "norm_label": "extractingredientstext()",
       "source_file": "src/lib/ingredientParser.ts",
@@ -1767,7 +1877,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 5,
-      "community_name": "Recipe",
+      "community_name": "DespensaSection.tsx",
       "file_type": "code",
       "norm_label": "normalizestring()",
       "source_file": "src/lib/ingredientParser.ts",
@@ -1779,7 +1889,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 5,
-      "community_name": "Recipe",
+      "community_name": "DespensaSection.tsx",
       "file_type": "code",
       "norm_label": "recipematchesingredients()",
       "source_file": "src/lib/ingredientParser.ts",
@@ -1791,7 +1901,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 5,
-      "community_name": "Recipe",
+      "community_name": "DespensaSection.tsx",
       "file_type": "code",
       "norm_label": "basesdereceta()",
       "source_file": "src/lib/inventario.ts",
@@ -1803,7 +1913,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 5,
-      "community_name": "Recipe",
+      "community_name": "DespensaSection.tsx",
       "file_type": "code",
       "norm_label": "buscaringredientes()",
       "source_file": "src/lib/inventario.ts",
@@ -1815,7 +1925,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 5,
-      "community_name": "Recipe",
+      "community_name": "DespensaSection.tsx",
       "file_type": "code",
       "norm_label": "ingredientesdelcatalogo()",
       "source_file": "src/lib/inventario.ts",
@@ -1827,23 +1937,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 5,
-      "community_name": "Recipe",
+      "community_name": "DespensaSection.tsx",
       "file_type": "code",
       "norm_label": "ordenarporloquefalta()",
       "source_file": "src/lib/inventario.ts",
       "source_location": "L66"
-    },
-    {
-      "id": "src_lib_listacompra_listadelacompra",
-      "label": "listaDeLaCompra()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "Recipe",
-      "file_type": "code",
-      "norm_label": "listadelacompra()",
-      "source_file": "src/lib/listaCompra.ts",
-      "source_location": "L21"
     },
     {
       "id": "supabase_functions_indexar_recetas_index_embeberlote",
@@ -1906,16 +2004,16 @@
       "source_location": "L36"
     },
     {
-      "id": "src_components_addrecipeform_addrecipeform",
-      "label": "AddRecipeForm()",
+      "id": "src_components_candidatadetail_candidatadetail",
+      "label": "CandidataDetail()",
       "_callable": true,
       "_origin": "ast",
       "community": 8,
       "community_name": "errorMessage",
       "file_type": "code",
-      "norm_label": "addrecipeform()",
-      "source_file": "src/components/AddRecipeForm.tsx",
-      "source_location": "L14"
+      "norm_label": "candidatadetail()",
+      "source_file": "src/components/CandidataDetail.tsx",
+      "source_location": "L21"
     },
     {
       "id": "src_components_candidatadetail_candidatadetail_ejecutar",
@@ -1928,18 +2026,6 @@
       "norm_label": "ejecutar()",
       "source_file": "src/components/CandidataDetail.tsx",
       "source_location": "L33"
-    },
-    {
-      "id": "src_components_ingredientsearch_ingredientsearch",
-      "label": "IngredientSearch()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 8,
-      "community_name": "errorMessage",
-      "file_type": "code",
-      "norm_label": "ingredientsearch()",
-      "source_file": "src/components/IngredientSearch.tsx",
-      "source_location": "L19"
     },
     {
       "id": "src_components_loginmodal_loginmodal",
@@ -1978,30 +2064,6 @@
       "source_location": "L33"
     },
     {
-      "id": "src_components_promovermodal_promovermodal",
-      "label": "PromoverModal()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 8,
-      "community_name": "errorMessage",
-      "file_type": "code",
-      "norm_label": "promovermodal()",
-      "source_file": "src/components/PromoverModal.tsx",
-      "source_location": "L25"
-    },
-    {
-      "id": "src_components_promovermodal_promovermodal_enviar",
-      "label": "enviar()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 8,
-      "community_name": "errorMessage",
-      "file_type": "code",
-      "norm_label": "enviar()",
-      "source_file": "src/components/PromoverModal.tsx",
-      "source_location": "L33"
-    },
-    {
       "id": "src_components_realizacionform_realizacionform",
       "label": "RealizacionForm()",
       "_callable": true,
@@ -2012,6 +2074,30 @@
       "norm_label": "realizacionform()",
       "source_file": "src/components/RealizacionForm.tsx",
       "source_location": "L21"
+    },
+    {
+      "id": "src_components_recipedetail_recipedetail",
+      "label": "RecipeDetail()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "errorMessage",
+      "file_type": "code",
+      "norm_label": "recipedetail()",
+      "source_file": "src/components/RecipeDetail.tsx",
+      "source_location": "L39"
+    },
+    {
+      "id": "src_components_recipepolaroid_recipepolaroid",
+      "label": "RecipePolaroid()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "errorMessage",
+      "file_type": "code",
+      "norm_label": "recipepolaroid()",
+      "source_file": "src/components/RecipePolaroid.tsx",
+      "source_location": "L22"
     },
     {
       "id": "src_components_reindexarbusqueda_reindexarbusqueda",
@@ -2048,18 +2134,6 @@
       "norm_label": "starrating()",
       "source_file": "src/components/StarRating.tsx",
       "source_location": "L16"
-    },
-    {
-      "id": "src_components_uploadprogress_uploadprogress",
-      "label": "UploadProgress()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 8,
-      "community_name": "errorMessage",
-      "file_type": "code",
-      "norm_label": "uploadprogress()",
-      "source_file": "src/components/UploadProgress.tsx",
-      "source_location": "L10"
     },
     {
       "id": "src_hooks_usebusquedasemantica_usebusquedasemantica",
@@ -2191,7 +2265,7 @@
       "file_type": "code",
       "norm_label": "userecipes()",
       "source_file": "src/hooks/useRecipes.ts",
-      "source_location": "L8"
+      "source_location": "L9"
     },
     {
       "id": "src_hooks_userecipes_userecipes_load",
@@ -2203,7 +2277,7 @@
       "file_type": "code",
       "norm_label": "load()",
       "source_file": "src/hooks/useRecipes.ts",
-      "source_location": "L26"
+      "source_location": "L27"
     },
     {
       "id": "src_lib_busquedasemantica_buscarsemantico",
@@ -2254,16 +2328,28 @@
       "source_location": "L8"
     },
     {
-      "id": "src_lib_n8n_posttowebhook",
-      "label": "postToWebhook()",
+      "id": "src_lib_recipecontent_hasnotas",
+      "label": "hasNotas()",
       "_callable": true,
       "_origin": "ast",
       "community": 8,
       "community_name": "errorMessage",
       "file_type": "code",
-      "norm_label": "posttowebhook()",
-      "source_file": "src/lib/n8n.ts",
-      "source_location": "L28"
+      "norm_label": "hasnotas()",
+      "source_file": "src/lib/recipeContent.ts",
+      "source_location": "L114"
+    },
+    {
+      "id": "src_lib_recipecontent_rendernotas",
+      "label": "renderNotas()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "errorMessage",
+      "file_type": "code",
+      "norm_label": "rendernotas()",
+      "source_file": "src/lib/recipeContent.ts",
+      "source_location": "L129"
     },
     {
       "id": "tsconfig_app",
@@ -3092,6 +3178,28 @@
       "source_location": "L1"
     },
     {
+      "id": "src_components_ingredientsearch",
+      "label": "IngredientSearch.tsx",
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "ingredientsearch.tsx",
+      "source_file": "src/components/IngredientSearch.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_components_listacomprasection",
+      "label": "ListaCompraSection.tsx",
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "listacomprasection.tsx",
+      "source_file": "src/components/ListaCompraSection.tsx",
+      "source_location": "L1"
+    },
+    {
       "id": "src_components_navprincipal",
       "label": "NavPrincipal.tsx",
       "_origin": "ast",
@@ -3169,6 +3277,17 @@
       "source_location": "L1"
     },
     {
+      "id": "ref_lucide_react",
+      "label": "lucide-react",
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "App.tsx",
+      "file_type": "concept",
+      "norm_label": "lucide-react",
+      "source_file": "package.json",
+      "source_location": "L18"
+    },
+    {
       "id": "supabase_migrations_20260808_revocar_execute_funciones",
       "label": "20260808_revocar_execute_funciones.sql",
       "_origin": "ast",
@@ -3202,135 +3321,36 @@
       "source_location": null
     },
     {
-      "id": "src_components_candidatacard",
-      "label": "CandidataCard.tsx",
+      "id": "src_components_addrecipeform",
+      "label": "AddRecipeForm.tsx",
       "_origin": "ast",
       "community": 24,
-      "community_name": "RecipeDetail.tsx",
+      "community_name": "AddRecipeForm.tsx",
       "file_type": "code",
-      "norm_label": "candidatacard.tsx",
-      "source_file": "src/components/CandidataCard.tsx",
+      "norm_label": "addrecipeform.tsx",
+      "source_file": "src/components/AddRecipeForm.tsx",
       "source_location": "L1"
     },
     {
-      "id": "src_components_candidatadetail",
-      "label": "CandidataDetail.tsx",
+      "id": "src_components_uploadprogress",
+      "label": "UploadProgress.tsx",
       "_origin": "ast",
       "community": 24,
-      "community_name": "RecipeDetail.tsx",
+      "community_name": "AddRecipeForm.tsx",
       "file_type": "code",
-      "norm_label": "candidatadetail.tsx",
-      "source_file": "src/components/CandidataDetail.tsx",
+      "norm_label": "uploadprogress.tsx",
+      "source_file": "src/components/UploadProgress.tsx",
       "source_location": "L1"
     },
     {
-      "id": "src_components_modococina",
-      "label": "ModoCocina.tsx",
+      "id": "src_lib_imagen",
+      "label": "imagen.ts",
       "_origin": "ast",
       "community": 24,
-      "community_name": "RecipeDetail.tsx",
+      "community_name": "AddRecipeForm.tsx",
       "file_type": "code",
-      "norm_label": "modococina.tsx",
-      "source_file": "src/components/ModoCocina.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_recipecontent",
-      "label": "RecipeContent.tsx",
-      "_origin": "ast",
-      "community": 24,
-      "community_name": "RecipeDetail.tsx",
-      "file_type": "code",
-      "norm_label": "recipecontent.tsx",
-      "source_file": "src/components/RecipeContent.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_recipedetail",
-      "label": "RecipeDetail.tsx",
-      "_origin": "ast",
-      "community": 24,
-      "community_name": "RecipeDetail.tsx",
-      "file_type": "code",
-      "norm_label": "recipedetail.tsx",
-      "source_file": "src/components/RecipeDetail.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_recipepolaroid",
-      "label": "RecipePolaroid.tsx",
-      "_origin": "ast",
-      "community": 24,
-      "community_name": "RecipeDetail.tsx",
-      "file_type": "code",
-      "norm_label": "recipepolaroid.tsx",
-      "source_file": "src/components/RecipePolaroid.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_temporizadoresbarra",
-      "label": "TemporizadoresBarra.tsx",
-      "_origin": "ast",
-      "community": 24,
-      "community_name": "RecipeDetail.tsx",
-      "file_type": "code",
-      "norm_label": "temporizadoresbarra.tsx",
-      "source_file": "src/components/TemporizadoresBarra.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_hooks_usetemporizadores",
-      "label": "useTemporizadores.ts",
-      "_origin": "ast",
-      "community": 24,
-      "community_name": "RecipeDetail.tsx",
-      "file_type": "code",
-      "norm_label": "usetemporizadores.ts",
-      "source_file": "src/hooks/useTemporizadores.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_hooks_usewakelock",
-      "label": "useWakeLock.ts",
-      "_origin": "ast",
-      "community": 24,
-      "community_name": "RecipeDetail.tsx",
-      "file_type": "code",
-      "norm_label": "usewakelock.ts",
-      "source_file": "src/hooks/useWakeLock.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_lib_fuentes",
-      "label": "fuentes.ts",
-      "_origin": "ast",
-      "community": 24,
-      "community_name": "RecipeDetail.tsx",
-      "file_type": "code",
-      "norm_label": "fuentes.ts",
-      "source_file": "src/lib/fuentes.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_lib_fuentes_etiqueta_fuente",
-      "label": "ETIQUETA_FUENTE",
-      "_origin": "ast",
-      "community": 24,
-      "community_name": "RecipeDetail.tsx",
-      "file_type": "code",
-      "norm_label": "etiqueta_fuente",
-      "source_file": "src/lib/fuentes.ts",
-      "source_location": "L4"
-    },
-    {
-      "id": "src_lib_recipecontent",
-      "label": "recipeContent.ts",
-      "_origin": "ast",
-      "community": 24,
-      "community_name": "RecipeDetail.tsx",
-      "file_type": "code",
-      "norm_label": "recipecontent.ts",
-      "source_file": "src/lib/recipeContent.ts",
+      "norm_label": "imagen.ts",
+      "source_file": "src/lib/imagen.ts",
       "source_location": "L1"
     },
     {
@@ -3804,6 +3824,28 @@
       "source_location": "L1"
     },
     {
+      "id": "src_components_fichapais",
+      "label": "FichaPais.tsx",
+      "_origin": "ast",
+      "community": 34,
+      "community_name": "types.ts",
+      "file_type": "code",
+      "norm_label": "fichapais.tsx",
+      "source_file": "src/components/FichaPais.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_components_fichapais_datos",
+      "label": "DATOS",
+      "_origin": "ast",
+      "community": 34,
+      "community_name": "types.ts",
+      "file_type": "code",
+      "norm_label": "datos",
+      "source_file": "src/components/FichaPais.tsx",
+      "source_location": "L4"
+    },
+    {
       "id": "src_components_mapamundi",
       "label": "MapaMundi.tsx",
       "_origin": "ast",
@@ -3856,18 +3898,51 @@
       "file_type": "code",
       "norm_label": "giros",
       "source_file": "src/components/PaisPagina.tsx",
-      "source_location": "L26"
+      "source_location": "L28"
     },
     {
-      "id": "src_components_sellopasaporte",
-      "label": "SelloPasaporte.tsx",
+      "id": "src_components_platoestrella",
+      "label": "PlatoEstrella.tsx",
       "_origin": "ast",
       "community": 34,
       "community_name": "types.ts",
       "file_type": "code",
-      "norm_label": "sellopasaporte.tsx",
-      "source_file": "src/components/SelloPasaporte.tsx",
+      "norm_label": "platoestrella.tsx",
+      "source_file": "src/components/PlatoEstrella.tsx",
       "source_location": "L1"
+    },
+    {
+      "id": "src_components_recipecard",
+      "label": "RecipeCard.tsx",
+      "_origin": "ast",
+      "community": 34,
+      "community_name": "types.ts",
+      "file_type": "code",
+      "norm_label": "recipecard.tsx",
+      "source_file": "src/components/RecipeCard.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_components_recipegrid",
+      "label": "RecipeGrid.tsx",
+      "_origin": "ast",
+      "community": 34,
+      "community_name": "types.ts",
+      "file_type": "code",
+      "norm_label": "recipegrid.tsx",
+      "source_file": "src/components/RecipeGrid.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_components_recipegrid_skeleton_tilts",
+      "label": "SKELETON_TILTS",
+      "_origin": "ast",
+      "community": 34,
+      "community_name": "types.ts",
+      "file_type": "code",
+      "norm_label": "skeleton_tilts",
+      "source_file": "src/components/RecipeGrid.tsx",
+      "source_location": "L10"
     },
     {
       "id": "src_hooks_useacentopais",
@@ -3911,17 +3986,6 @@
       "file_type": "code",
       "norm_label": "colorbandera.ts",
       "source_file": "src/lib/colorBandera.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_lib_imagen",
-      "label": "imagen.ts",
-      "_origin": "ast",
-      "community": 34,
-      "community_name": "types.ts",
-      "file_type": "code",
-      "norm_label": "imagen.ts",
-      "source_file": "src/lib/imagen.ts",
       "source_location": "L1"
     },
     {
@@ -4011,7 +4075,19 @@
       "node_kind": "heading",
       "norm_label": "busqueda semantica",
       "source_file": "CLAUDE.md",
-      "source_location": "L403"
+      "source_location": "L431"
+    },
+    {
+      "id": "claude_camino_feliz_verificado_el_8_ago_2026",
+      "label": "Camino feliz, verificado el 8 ago 2026",
+      "_origin": "ast",
+      "community": 35,
+      "community_name": "Mi Recetario \u2014 contexto del proyecto",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "camino feliz, verificado el 8 ago 2026",
+      "source_file": "CLAUDE.md",
+      "source_location": "L118"
     },
     {
       "id": "claude_el_laboratorio_recetas_candidatas",
@@ -4023,7 +4099,7 @@
       "node_kind": "heading",
       "norm_label": "el laboratorio (recetas candidatas)",
       "source_file": "CLAUDE.md",
-      "source_location": "L245"
+      "source_location": "L269"
     },
     {
       "id": "claude_empieza_por_el_grafo",
@@ -4038,6 +4114,18 @@
       "source_location": "L12"
     },
     {
+      "id": "claude_estado_actual_23_ago_2026",
+      "label": "Estado actual (23 ago 2026)",
+      "_origin": "ast",
+      "community": 35,
+      "community_name": "Mi Recetario \u2014 contexto del proyecto",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "estado actual (23 ago 2026)",
+      "source_file": "CLAUDE.md",
+      "source_location": "L36"
+    },
+    {
       "id": "claude_graphify",
       "label": "graphify",
       "_origin": "ast",
@@ -4047,7 +4135,7 @@
       "node_kind": "heading",
       "norm_label": "graphify",
       "source_file": "CLAUDE.md",
-      "source_location": "L479"
+      "source_location": "L507"
     },
     {
       "id": "claude_hacia_d\u00f3nde_puede_crecer",
@@ -4059,7 +4147,19 @@
       "node_kind": "heading",
       "norm_label": "hacia donde puede crecer",
       "source_file": "CLAUDE.md",
-      "source_location": "L470"
+      "source_location": "L498"
+    },
+    {
+      "id": "claude_la_despensa",
+      "label": "La despensa",
+      "_origin": "ast",
+      "community": 35,
+      "community_name": "Mi Recetario \u2014 contexto del proyecto",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "la despensa",
+      "source_file": "CLAUDE.md",
+      "source_location": "L93"
     },
     {
       "id": "claude_la_lista_de_la_compra",
@@ -4071,7 +4171,31 @@
       "node_kind": "heading",
       "norm_label": "la lista de la compra",
       "source_file": "CLAUDE.md",
-      "source_location": "L177"
+      "source_location": "L201"
+    },
+    {
+      "id": "claude_las_rutas_van_por_el_hash",
+      "label": "Las rutas van por el hash",
+      "_origin": "ast",
+      "community": 35,
+      "community_name": "Mi Recetario \u2014 contexto del proyecto",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "las rutas van por el hash",
+      "source_file": "CLAUDE.md",
+      "source_location": "L149"
+    },
+    {
+      "id": "claude_los_ingredientes_son_objetos_no_cadenas",
+      "label": "Los ingredientes son objetos, no cadenas",
+      "_origin": "ast",
+      "community": 35,
+      "community_name": "Mi Recetario \u2014 contexto del proyecto",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "los ingredientes son objetos, no cadenas",
+      "source_file": "CLAUDE.md",
+      "source_location": "L69"
     },
     {
       "id": "claude_mi_pasaporte",
@@ -4083,7 +4207,7 @@
       "node_kind": "heading",
       "norm_label": "mi pasaporte",
       "source_file": "CLAUDE.md",
-      "source_location": "L283"
+      "source_location": "L307"
     },
     {
       "id": "claude_mi_recetario_contexto_del_proyecto",
@@ -4098,6 +4222,18 @@
       "source_location": "L1"
     },
     {
+      "id": "claude_mir\u00f3n_y_registrado",
+      "label": "Mir\u00f3n y registrado",
+      "_origin": "ast",
+      "community": 35,
+      "community_name": "Mi Recetario \u2014 contexto del proyecto",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "miron y registrado",
+      "source_file": "CLAUDE.md",
+      "source_location": "L177"
+    },
+    {
       "id": "claude_modo_cocina",
       "label": "Modo cocina",
       "_origin": "ast",
@@ -4107,7 +4243,7 @@
       "node_kind": "heading",
       "norm_label": "modo cocina",
       "source_file": "CLAUDE.md",
-      "source_location": "L342"
+      "source_location": "L370"
     },
     {
       "id": "claude_para_hacer_realizaciones_y_muro_de_notas",
@@ -4119,7 +4255,19 @@
       "node_kind": "heading",
       "norm_label": "para hacer, realizaciones y muro de notas",
       "source_file": "CLAUDE.md",
-      "source_location": "L214"
+      "source_location": "L238"
+    },
+    {
+      "id": "claude_pendiente",
+      "label": "Pendiente",
+      "_origin": "ast",
+      "community": 35,
+      "community_name": "Mi Recetario \u2014 contexto del proyecto",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "pendiente",
+      "source_file": "CLAUDE.md",
+      "source_location": "L129"
     },
     {
       "id": "claude_recetas_sin_hacer",
@@ -4131,7 +4279,7 @@
       "node_kind": "heading",
       "norm_label": "recetas \u00absin hacer\u00bb",
       "source_file": "CLAUDE.md",
-      "source_location": "L229"
+      "source_location": "L253"
     },
     {
       "id": "claude_temporizadores",
@@ -4143,7 +4291,7 @@
       "node_kind": "heading",
       "norm_label": "temporizadores",
       "source_file": "CLAUDE.md",
-      "source_location": "L369"
+      "source_location": "L397"
     },
     {
       "id": "claude_tiempo_porciones_y_dificultad",
@@ -4155,7 +4303,7 @@
       "node_kind": "heading",
       "norm_label": "tiempo, porciones y dificultad",
       "source_file": "CLAUDE.md",
-      "source_location": "L314"
+      "source_location": "L342"
     },
     {
       "id": "scripts_generar_mapamundi",
@@ -4367,14 +4515,58 @@
       "source_location": null
     },
     {
+      "id": "src_components_modococina",
+      "label": "ModoCocina.tsx",
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "ModoCocina.tsx",
+      "file_type": "code",
+      "norm_label": "modococina.tsx",
+      "source_file": "src/components/ModoCocina.tsx",
+      "source_location": "L1"
+    },
+    {
       "id": "src_components_pasocontiempos",
       "label": "PasoConTiempos.tsx",
       "_origin": "ast",
       "community": 4,
-      "community_name": "tiempos.ts",
+      "community_name": "ModoCocina.tsx",
       "file_type": "code",
       "norm_label": "pasocontiempos.tsx",
       "source_file": "src/components/PasoConTiempos.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_components_temporizadoresbarra",
+      "label": "TemporizadoresBarra.tsx",
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "ModoCocina.tsx",
+      "file_type": "code",
+      "norm_label": "temporizadoresbarra.tsx",
+      "source_file": "src/components/TemporizadoresBarra.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_hooks_usetemporizadores",
+      "label": "useTemporizadores.ts",
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "ModoCocina.tsx",
+      "file_type": "code",
+      "norm_label": "usetemporizadores.ts",
+      "source_file": "src/hooks/useTemporizadores.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_hooks_usewakelock",
+      "label": "useWakeLock.ts",
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "ModoCocina.tsx",
+      "file_type": "code",
+      "norm_label": "usewakelock.ts",
+      "source_file": "src/hooks/useWakeLock.ts",
       "source_location": "L1"
     },
     {
@@ -4382,7 +4574,7 @@
       "label": "tiempos.ts",
       "_origin": "ast",
       "community": 4,
-      "community_name": "tiempos.ts",
+      "community_name": "ModoCocina.tsx",
       "file_type": "code",
       "norm_label": "tiempos.ts",
       "source_file": "src/lib/tiempos.ts",
@@ -4393,7 +4585,7 @@
       "label": "NUM",
       "_origin": "ast",
       "community": 4,
-      "community_name": "tiempos.ts",
+      "community_name": "ModoCocina.tsx",
       "file_type": "code",
       "norm_label": "num",
       "source_file": "src/lib/tiempos.ts",
@@ -4404,7 +4596,7 @@
       "label": "NUMEROS_EN_LETRAS",
       "_origin": "ast",
       "community": 4,
-      "community_name": "tiempos.ts",
+      "community_name": "ModoCocina.tsx",
       "file_type": "code",
       "norm_label": "numeros_en_letras",
       "source_file": "src/lib/tiempos.ts",
@@ -4415,7 +4607,7 @@
       "label": "PALABRAS",
       "_origin": "ast",
       "community": 4,
-      "community_name": "tiempos.ts",
+      "community_name": "ModoCocina.tsx",
       "file_type": "code",
       "norm_label": "palabras",
       "source_file": "src/lib/tiempos.ts",
@@ -4426,7 +4618,7 @@
       "label": "PATRON",
       "_origin": "ast",
       "community": 4,
-      "community_name": "tiempos.ts",
+      "community_name": "ModoCocina.tsx",
       "file_type": "code",
       "norm_label": "patron",
       "source_file": "src/lib/tiempos.ts",
@@ -4437,7 +4629,7 @@
       "label": "UNIDAD",
       "_origin": "ast",
       "community": 4,
-      "community_name": "tiempos.ts",
+      "community_name": "ModoCocina.tsx",
       "file_type": "code",
       "norm_label": "unidad",
       "source_file": "src/lib/tiempos.ts",
@@ -4717,7 +4909,7 @@
       "node_kind": "heading",
       "norm_label": "pendiente para la siguiente sesion, por orden de preferencia",
       "source_file": "docs/pasaporte.md",
-      "source_location": "L178"
+      "source_location": "L191"
     },
     {
       "id": "docs_pasaporte_preguntas_abiertas",
@@ -4732,76 +4924,112 @@
       "source_location": "L154"
     },
     {
-      "id": "claude_camino_feliz_verificado_el_8_ago_2026",
-      "label": "Camino feliz, verificado el 8 ago 2026",
+      "id": "docs_porciones_propuesta",
+      "label": "porciones-propuesta.md",
       "_origin": "ast",
       "community": 42,
-      "community_name": "Estado actual (23 ago 2026)",
+      "community_name": "Propuesta de `porciones` (pendiente de revisar)",
       "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "camino feliz, verificado el 8 ago 2026",
-      "source_file": "CLAUDE.md",
-      "source_location": "L118"
+      "node_kind": "page",
+      "norm_label": "porciones-propuesta.md",
+      "source_file": "docs/porciones-propuesta.md",
+      "source_location": "L1"
     },
     {
-      "id": "claude_estado_actual_23_ago_2026",
-      "label": "Estado actual (23 ago 2026)",
+      "id": "docs_porciones_propuesta_aperitivos",
+      "label": "Aperitivos",
       "_origin": "ast",
       "community": 42,
-      "community_name": "Estado actual (23 ago 2026)",
+      "community_name": "Propuesta de `porciones` (pendiente de revisar)",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "estado actual (23 ago 2026)",
-      "source_file": "CLAUDE.md",
+      "norm_label": "aperitivos",
+      "source_file": "docs/porciones-propuesta.md",
+      "source_location": "L14"
+    },
+    {
+      "id": "docs_porciones_propuesta_arroces_y_pastas",
+      "label": "Arroces y pastas",
+      "_origin": "ast",
+      "community": 42,
+      "community_name": "Propuesta de `porciones` (pendiente de revisar)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "arroces y pastas",
+      "source_file": "docs/porciones-propuesta.md",
+      "source_location": "L26"
+    },
+    {
+      "id": "docs_porciones_propuesta_carnes",
+      "label": "Carnes",
+      "_origin": "ast",
+      "community": 42,
+      "community_name": "Propuesta de `porciones` (pendiente de revisar)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "carnes",
+      "source_file": "docs/porciones-propuesta.md",
       "source_location": "L36"
     },
     {
-      "id": "claude_la_despensa",
-      "label": "La despensa",
+      "id": "docs_porciones_propuesta_hallazgos_que_afectan_al_dise\u00f1o",
+      "label": "Hallazgos que afectan al dise\u00f1o",
       "_origin": "ast",
       "community": 42,
-      "community_name": "Estado actual (23 ago 2026)",
+      "community_name": "Propuesta de `porciones` (pendiente de revisar)",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "la despensa",
-      "source_file": "CLAUDE.md",
-      "source_location": "L93"
+      "norm_label": "hallazgos que afectan al diseno",
+      "source_file": "docs/porciones-propuesta.md",
+      "source_location": "L107"
     },
     {
-      "id": "claude_las_rutas_van_por_el_hash",
-      "label": "Las rutas van por el hash",
+      "id": "docs_porciones_propuesta_pescados_y_mariscos_ensaladas",
+      "label": "Pescados y mariscos / Ensaladas",
       "_origin": "ast",
       "community": 42,
-      "community_name": "Estado actual (23 ago 2026)",
+      "community_name": "Propuesta de `porciones` (pendiente de revisar)",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "las rutas van por el hash",
-      "source_file": "CLAUDE.md",
-      "source_location": "L149"
+      "norm_label": "pescados y mariscos / ensaladas",
+      "source_file": "docs/porciones-propuesta.md",
+      "source_location": "L53"
     },
     {
-      "id": "claude_los_ingredientes_son_objetos_no_cadenas",
-      "label": "Los ingredientes son objetos, no cadenas",
+      "id": "docs_porciones_propuesta_postres",
+      "label": "Postres",
       "_origin": "ast",
       "community": 42,
-      "community_name": "Estado actual (23 ago 2026)",
+      "community_name": "Propuesta de `porciones` (pendiente de revisar)",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "los ingredientes son objetos, no cadenas",
-      "source_file": "CLAUDE.md",
-      "source_location": "L69"
+      "norm_label": "postres",
+      "source_file": "docs/porciones-propuesta.md",
+      "source_location": "L77"
     },
     {
-      "id": "claude_pendiente",
-      "label": "Pendiente",
+      "id": "docs_porciones_propuesta_propuesta_de_porciones_pendiente_de_revisar",
+      "label": "Propuesta de `porciones` (pendiente de revisar)",
       "_origin": "ast",
       "community": 42,
-      "community_name": "Estado actual (23 ago 2026)",
+      "community_name": "Propuesta de `porciones` (pendiente de revisar)",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "pendiente",
-      "source_file": "CLAUDE.md",
-      "source_location": "L129"
+      "norm_label": "propuesta de `porciones` (pendiente de revisar)",
+      "source_file": "docs/porciones-propuesta.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "docs_porciones_propuesta_sopas_y_cremas",
+      "label": "Sopas y cremas",
+      "_origin": "ast",
+      "community": 42,
+      "community_name": "Propuesta de `porciones` (pendiente de revisar)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "sopas y cremas",
+      "source_file": "docs/porciones-propuesta.md",
+      "source_location": "L67"
     },
     {
       "id": "docs_seguimiento_c\u00f3mo_mantener_esto",
@@ -4936,15 +5164,15 @@
       "source_location": "L1"
     },
     {
-      "id": "public_paises",
-      "label": "public.paises",
+      "id": "src_components_sellopasaporte",
+      "label": "SelloPasaporte.tsx",
       "_origin": "ast",
       "community": 45,
-      "community_name": "public.paises",
+      "community_name": "SelloPasaporte.tsx",
       "file_type": "code",
-      "norm_label": "public.paises",
-      "source_file": "",
-      "source_location": ""
+      "norm_label": "sellopasaporte.tsx",
+      "source_file": "src/components/SelloPasaporte.tsx",
+      "source_location": "L1"
     },
     {
       "id": "supabase_migrations_20261017_lema_pais",
@@ -4958,11 +5186,33 @@
       "source_location": null
     },
     {
+      "id": "src_components_candidatacard",
+      "label": "CandidataCard.tsx",
+      "_origin": "ast",
+      "community": 47,
+      "community_name": "CandidataDetail.tsx",
+      "file_type": "code",
+      "norm_label": "candidatacard.tsx",
+      "source_file": "src/components/CandidataCard.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_components_candidatadetail",
+      "label": "CandidataDetail.tsx",
+      "_origin": "ast",
+      "community": 47,
+      "community_name": "CandidataDetail.tsx",
+      "file_type": "code",
+      "norm_label": "candidatadetail.tsx",
+      "source_file": "src/components/CandidataDetail.tsx",
+      "source_location": "L1"
+    },
+    {
       "id": "src_components_laboratoriosection",
       "label": "LaboratorioSection.tsx",
       "_origin": "ast",
       "community": 47,
-      "community_name": "LaboratorioSection.tsx",
+      "community_name": "CandidataDetail.tsx",
       "file_type": "code",
       "norm_label": "laboratoriosection.tsx",
       "source_file": "src/components/LaboratorioSection.tsx",
@@ -4973,7 +5223,7 @@
       "label": "FILTROS",
       "_origin": "ast",
       "community": 47,
-      "community_name": "LaboratorioSection.tsx",
+      "community_name": "CandidataDetail.tsx",
       "file_type": "code",
       "norm_label": "filtros",
       "source_file": "src/components/LaboratorioSection.tsx",
@@ -4984,10 +5234,21 @@
       "label": "PromoverModal.tsx",
       "_origin": "ast",
       "community": 47,
-      "community_name": "LaboratorioSection.tsx",
+      "community_name": "CandidataDetail.tsx",
       "file_type": "code",
       "norm_label": "promovermodal.tsx",
       "source_file": "src/components/PromoverModal.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_components_recipecontent",
+      "label": "RecipeContent.tsx",
+      "_origin": "ast",
+      "community": 47,
+      "community_name": "CandidataDetail.tsx",
+      "file_type": "code",
+      "norm_label": "recipecontent.tsx",
+      "source_file": "src/components/RecipeContent.tsx",
       "source_location": "L1"
     },
     {
@@ -4995,7 +5256,7 @@
       "label": "useCandidatas.ts",
       "_origin": "ast",
       "community": 47,
-      "community_name": "LaboratorioSection.tsx",
+      "community_name": "CandidataDetail.tsx",
       "file_type": "code",
       "norm_label": "usecandidatas.ts",
       "source_file": "src/hooks/useCandidatas.ts",
@@ -5006,7 +5267,7 @@
       "label": "categorias.ts",
       "_origin": "ast",
       "community": 47,
-      "community_name": "LaboratorioSection.tsx",
+      "community_name": "CandidataDetail.tsx",
       "file_type": "code",
       "norm_label": "categorias.ts",
       "source_file": "src/lib/categorias.ts",
@@ -5017,11 +5278,110 @@
       "label": "CATEGORIAS",
       "_origin": "ast",
       "community": 47,
-      "community_name": "LaboratorioSection.tsx",
+      "community_name": "CandidataDetail.tsx",
       "file_type": "code",
       "norm_label": "categorias",
       "source_file": "src/lib/categorias.ts",
       "source_location": "L4"
+    },
+    {
+      "id": "src_lib_fuentes",
+      "label": "fuentes.ts",
+      "_origin": "ast",
+      "community": 47,
+      "community_name": "CandidataDetail.tsx",
+      "file_type": "code",
+      "norm_label": "fuentes.ts",
+      "source_file": "src/lib/fuentes.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_lib_fuentes_etiqueta_fuente",
+      "label": "ETIQUETA_FUENTE",
+      "_origin": "ast",
+      "community": 47,
+      "community_name": "CandidataDetail.tsx",
+      "file_type": "code",
+      "norm_label": "etiqueta_fuente",
+      "source_file": "src/lib/fuentes.ts",
+      "source_location": "L4"
+    },
+    {
+      "id": "src_lib_listacompra",
+      "label": "listaCompra.ts",
+      "_origin": "ast",
+      "community": 47,
+      "community_name": "CandidataDetail.tsx",
+      "file_type": "code",
+      "norm_label": "listacompra.ts",
+      "source_file": "src/lib/listaCompra.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_lib_n8n",
+      "label": "n8n.ts",
+      "_origin": "ast",
+      "community": 47,
+      "community_name": "CandidataDetail.tsx",
+      "file_type": "code",
+      "norm_label": "n8n.ts",
+      "source_file": "src/lib/n8n.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_lib_n8n_base",
+      "label": "base",
+      "_origin": "ast",
+      "community": 47,
+      "community_name": "CandidataDetail.tsx",
+      "file_type": "code",
+      "norm_label": "base",
+      "source_file": "src/lib/n8n.ts",
+      "source_location": "L9"
+    },
+    {
+      "id": "src_lib_n8n_n8n_webhooks",
+      "label": "N8N_WEBHOOKS",
+      "_origin": "ast",
+      "community": 47,
+      "community_name": "CandidataDetail.tsx",
+      "file_type": "code",
+      "norm_label": "n8n_webhooks",
+      "source_file": "src/lib/n8n.ts",
+      "source_location": "L11"
+    },
+    {
+      "id": "src_lib_promover",
+      "label": "promover.ts",
+      "_origin": "ast",
+      "community": 47,
+      "community_name": "CandidataDetail.tsx",
+      "file_type": "code",
+      "norm_label": "promover.ts",
+      "source_file": "src/lib/promover.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_lib_recipecontent",
+      "label": "recipeContent.ts",
+      "_origin": "ast",
+      "community": 47,
+      "community_name": "CandidataDetail.tsx",
+      "file_type": "code",
+      "norm_label": "recipecontent.ts",
+      "source_file": "src/lib/recipeContent.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_lib_supabase_supabase_anon_key",
+      "label": "SUPABASE_ANON_KEY",
+      "_origin": "ast",
+      "community": 47,
+      "community_name": "CandidataDetail.tsx",
+      "file_type": "code",
+      "norm_label": "supabase_anon_key",
+      "source_file": "src/lib/supabase.ts",
+      "source_location": "L17"
     },
     {
       "id": "package_dependencies",
@@ -5204,7 +5564,7 @@
       "label": "AnadirIngrediente.tsx",
       "_origin": "ast",
       "community": 5,
-      "community_name": "Recipe",
+      "community_name": "DespensaSection.tsx",
       "file_type": "code",
       "norm_label": "anadiringrediente.tsx",
       "source_file": "src/components/AnadirIngrediente.tsx",
@@ -5215,62 +5575,18 @@
       "label": "DespensaSection.tsx",
       "_origin": "ast",
       "community": 5,
-      "community_name": "Recipe",
+      "community_name": "DespensaSection.tsx",
       "file_type": "code",
       "norm_label": "despensasection.tsx",
       "source_file": "src/components/DespensaSection.tsx",
       "source_location": "L1"
     },
     {
-      "id": "src_components_listacomprasection",
-      "label": "ListaCompraSection.tsx",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "Recipe",
-      "file_type": "code",
-      "norm_label": "listacomprasection.tsx",
-      "source_file": "src/components/ListaCompraSection.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_recipecard",
-      "label": "RecipeCard.tsx",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "Recipe",
-      "file_type": "code",
-      "norm_label": "recipecard.tsx",
-      "source_file": "src/components/RecipeCard.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_recipegrid",
-      "label": "RecipeGrid.tsx",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "Recipe",
-      "file_type": "code",
-      "norm_label": "recipegrid.tsx",
-      "source_file": "src/components/RecipeGrid.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_recipegrid_skeleton_tilts",
-      "label": "SKELETON_TILTS",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "Recipe",
-      "file_type": "code",
-      "norm_label": "skeleton_tilts",
-      "source_file": "src/components/RecipeGrid.tsx",
-      "source_location": "L10"
-    },
-    {
       "id": "src_hooks_useingredientsearch",
       "label": "useIngredientSearch.ts",
       "_origin": "ast",
       "community": 5,
-      "community_name": "Recipe",
+      "community_name": "DespensaSection.tsx",
       "file_type": "code",
       "norm_label": "useingredientsearch.ts",
       "source_file": "src/hooks/useIngredientSearch.ts",
@@ -5281,7 +5597,7 @@
       "label": "ingredientParser.ts",
       "_origin": "ast",
       "community": 5,
-      "community_name": "Recipe",
+      "community_name": "DespensaSection.tsx",
       "file_type": "code",
       "norm_label": "ingredientparser.ts",
       "source_file": "src/lib/ingredientParser.ts",
@@ -5292,21 +5608,10 @@
       "label": "inventario.ts",
       "_origin": "ast",
       "community": 5,
-      "community_name": "Recipe",
+      "community_name": "DespensaSection.tsx",
       "file_type": "code",
       "norm_label": "inventario.ts",
       "source_file": "src/lib/inventario.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_lib_listacompra",
-      "label": "listaCompra.ts",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "Recipe",
-      "file_type": "code",
-      "norm_label": "listacompra.ts",
-      "source_file": "src/lib/listaCompra.ts",
       "source_location": "L1"
     },
     {
@@ -5412,6 +5717,72 @@
       "norm_label": "@vitejs/plugin-react",
       "source_file": "package.json",
       "source_location": "L29"
+    },
+    {
+      "id": "supabase_migrations_20261017_lema_pais_sql_public_paises",
+      "label": "public.paises",
+      "_origin": "ast",
+      "community": 52,
+      "community_name": "public.paises",
+      "file_type": "code",
+      "norm_label": "public.paises",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "supabase_migrations_20261021_datos_ficha_pais",
+      "label": "20261021_datos_ficha_pais.sql",
+      "_origin": "ast",
+      "community": 53,
+      "community_name": "20261021_datos_ficha_pais.sql",
+      "file_type": "code",
+      "norm_label": "20261021_datos_ficha_pais.sql",
+      "source_file": "supabase/migrations/20261021_datos_ficha_pais.sql",
+      "source_location": null
+    },
+    {
+      "id": "supabase_migrations_20261021_datos_ficha_pais_sql_public_paises",
+      "label": "public.paises",
+      "_origin": "ast",
+      "community": 54,
+      "community_name": "public.paises",
+      "file_type": "code",
+      "norm_label": "public.paises",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "supabase_migrations_20261021_plato_estrella",
+      "label": "20261021_plato_estrella.sql",
+      "_origin": "ast",
+      "community": 55,
+      "community_name": "20261021_plato_estrella.sql",
+      "file_type": "code",
+      "norm_label": "20261021_plato_estrella.sql",
+      "source_file": "supabase/migrations/20261021_plato_estrella.sql",
+      "source_location": null
+    },
+    {
+      "id": "supabase_migrations_20261021_plato_estrella_sql_public_paises",
+      "label": "public.paises",
+      "_origin": "ast",
+      "community": 56,
+      "community_name": "public.paises",
+      "file_type": "code",
+      "norm_label": "public.paises",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "supabase_migrations_20261030_pasaporte_solo_logueados",
+      "label": "20261030_pasaporte_solo_logueados.sql",
+      "_origin": "ast",
+      "community": 57,
+      "community_name": "20261030_pasaporte_solo_logueados.sql",
+      "file_type": "code",
+      "norm_label": "20261030_pasaporte_solo_logueados.sql",
+      "source_file": "supabase/migrations/20261030_pasaporte_solo_logueados.sql",
+      "source_location": null
     },
     {
       "id": "eslint_config",
@@ -5656,28 +6027,6 @@
       "source_location": "L23"
     },
     {
-      "id": "src_components_addrecipeform",
-      "label": "AddRecipeForm.tsx",
-      "_origin": "ast",
-      "community": 8,
-      "community_name": "errorMessage",
-      "file_type": "code",
-      "norm_label": "addrecipeform.tsx",
-      "source_file": "src/components/AddRecipeForm.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_ingredientsearch",
-      "label": "IngredientSearch.tsx",
-      "_origin": "ast",
-      "community": 8,
-      "community_name": "errorMessage",
-      "file_type": "code",
-      "norm_label": "ingredientsearch.tsx",
-      "source_file": "src/components/IngredientSearch.tsx",
-      "source_location": "L1"
-    },
-    {
       "id": "src_components_loginmodal",
       "label": "LoginModal.tsx",
       "_origin": "ast",
@@ -5722,6 +6071,28 @@
       "source_location": "L1"
     },
     {
+      "id": "src_components_recipedetail",
+      "label": "RecipeDetail.tsx",
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "errorMessage",
+      "file_type": "code",
+      "norm_label": "recipedetail.tsx",
+      "source_file": "src/components/RecipeDetail.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_components_recipepolaroid",
+      "label": "RecipePolaroid.tsx",
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "errorMessage",
+      "file_type": "code",
+      "norm_label": "recipepolaroid.tsx",
+      "source_file": "src/components/RecipePolaroid.tsx",
+      "source_location": "L1"
+    },
+    {
       "id": "src_components_reindexarbusqueda",
       "label": "ReindexarBusqueda.tsx",
       "_origin": "ast",
@@ -5752,17 +6123,6 @@
       "file_type": "code",
       "norm_label": "starrating.tsx",
       "source_file": "src/components/StarRating.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_uploadprogress",
-      "label": "UploadProgress.tsx",
-      "_origin": "ast",
-      "community": 8,
-      "community_name": "errorMessage",
-      "file_type": "code",
-      "norm_label": "uploadprogress.tsx",
-      "source_file": "src/components/UploadProgress.tsx",
       "source_location": "L1"
     },
     {
@@ -5854,50 +6214,6 @@
       "source_location": "L1"
     },
     {
-      "id": "src_lib_n8n",
-      "label": "n8n.ts",
-      "_origin": "ast",
-      "community": 8,
-      "community_name": "errorMessage",
-      "file_type": "code",
-      "norm_label": "n8n.ts",
-      "source_file": "src/lib/n8n.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_lib_n8n_base",
-      "label": "base",
-      "_origin": "ast",
-      "community": 8,
-      "community_name": "errorMessage",
-      "file_type": "code",
-      "norm_label": "base",
-      "source_file": "src/lib/n8n.ts",
-      "source_location": "L9"
-    },
-    {
-      "id": "src_lib_n8n_n8n_webhooks",
-      "label": "N8N_WEBHOOKS",
-      "_origin": "ast",
-      "community": 8,
-      "community_name": "errorMessage",
-      "file_type": "code",
-      "norm_label": "n8n_webhooks",
-      "source_file": "src/lib/n8n.ts",
-      "source_location": "L11"
-    },
-    {
-      "id": "src_lib_promover",
-      "label": "promover.ts",
-      "_origin": "ast",
-      "community": 8,
-      "community_name": "errorMessage",
-      "file_type": "code",
-      "norm_label": "promover.ts",
-      "source_file": "src/lib/promover.ts",
-      "source_location": "L1"
-    },
-    {
       "id": "src_lib_supabase",
       "label": "supabase.ts",
       "_origin": "ast",
@@ -5918,28 +6234,6 @@
       "norm_label": "supabase",
       "source_file": "src/lib/supabase.ts",
       "source_location": "L10"
-    },
-    {
-      "id": "src_lib_supabase_supabase_anon_key",
-      "label": "SUPABASE_ANON_KEY",
-      "_origin": "ast",
-      "community": 8,
-      "community_name": "errorMessage",
-      "file_type": "code",
-      "norm_label": "supabase_anon_key",
-      "source_file": "src/lib/supabase.ts",
-      "source_location": "L17"
-    },
-    {
-      "id": "ref_lucide_react",
-      "label": "lucide-react",
-      "_origin": "ast",
-      "community": 8,
-      "community_name": "errorMessage",
-      "file_type": "concept",
-      "norm_label": "lucide-react",
-      "source_file": "package.json",
-      "source_location": "L18"
     },
     {
       "id": "ref_react",
@@ -6441,7 +6735,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/App.tsx",
-      "source_location": "L255",
+      "source_location": "L262",
       "weight": 1.0
     },
     {
@@ -6542,6 +6836,18 @@
     },
     {
       "source": "src_components_addrecipeform_addrecipeform",
+      "target": "src_lib_imagen_comprimirfotoreceta",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/components/AddRecipeForm.tsx",
+      "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_addrecipeform_addrecipeform",
       "target": "src_lib_n8n_posttowebhook",
       "relation": "calls",
       "_origin": "ast",
@@ -6549,7 +6855,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/AddRecipeForm.tsx",
-      "source_location": "L45",
+      "source_location": "L47",
       "weight": 1.0
     },
     {
@@ -6561,7 +6867,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/AddRecipeForm.tsx",
-      "source_location": "L57",
+      "source_location": "L59",
       "weight": 1.0
     },
     {
@@ -6621,7 +6927,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/Avisos.tsx",
-      "source_location": "L60",
+      "source_location": "L111",
       "weight": 1.0
     },
     {
@@ -6634,6 +6940,18 @@
       "context": "call",
       "source_file": "src/components/Avisos.tsx",
       "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_avisos_solologueados",
+      "target": "src_lib_rutas_ahash",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/components/Avisos.tsx",
+      "source_location": "L87",
       "weight": 1.0
     },
     {
@@ -6933,7 +7251,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/NavPrincipal.tsx",
-      "source_location": "L26",
+      "source_location": "L28",
       "weight": 1.0
     },
     {
@@ -6945,7 +7263,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/PaisEditor.tsx",
-      "source_location": "L41",
+      "source_location": "L43",
       "weight": 1.0
     },
     {
@@ -6957,7 +7275,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/PaisEditor.tsx",
-      "source_location": "L69",
+      "source_location": "L73",
       "weight": 1.0
     },
     {
@@ -6981,7 +7299,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/PaisPagina.tsx",
-      "source_location": "L30",
+      "source_location": "L32",
       "weight": 1.0
     },
     {
@@ -6993,7 +7311,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/PaisPagina.tsx",
-      "source_location": "L31",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_paispagina_paispagina",
+      "target": "src_lib_pasaporte_platoestrella",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/components/PaisPagina.tsx",
+      "source_location": "L34",
       "weight": 1.0
     },
     {
@@ -7005,7 +7335,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/PaisPagina.tsx",
-      "source_location": "L40",
+      "source_location": "L43",
       "weight": 1.0
     },
     {
@@ -7017,7 +7347,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/PaisPagina.tsx",
-      "source_location": "L48",
+      "source_location": "L51",
       "weight": 1.0
     },
     {
@@ -7029,7 +7359,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/PaisPagina.tsx",
-      "source_location": "L98",
+      "source_location": "L93",
       "weight": 1.0
     },
     {
@@ -7185,7 +7515,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/RecipeContent.tsx",
-      "source_location": "L89",
+      "source_location": "L90",
       "weight": 1.0
     },
     {
@@ -7197,7 +7527,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/RecipeContent.tsx",
-      "source_location": "L129",
+      "source_location": "L131",
       "weight": 1.0
     },
     {
@@ -7262,14 +7592,14 @@
     },
     {
       "source": "src_components_sellopasaporte_sellopasaporte",
-      "target": "src_components_sellopasaporte_tamanoarco",
+      "target": "src_components_sellopasaporte_lineasfecha",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/SelloPasaporte.tsx",
-      "source_location": "L53",
+      "source_location": "L45",
       "weight": 1.0
     },
     {
@@ -7281,7 +7611,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/SelloPasaporte.tsx",
-      "source_location": "L62",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_sellopasaporte_sellopasaporte",
+      "target": "src_components_sellopasaporte_tamanoarco",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/components/SelloPasaporte.tsx",
+      "source_location": "L67",
       "weight": 1.0
     },
     {
@@ -7574,7 +7916,7 @@
     },
     {
       "source": "src_hooks_userecipes_userecipes",
-      "target": "src_lib_errors_idunico",
+      "target": "src_lib_imagen_comprimirfotoreceta",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -7586,6 +7928,18 @@
     },
     {
       "source": "src_hooks_userecipes_userecipes",
+      "target": "src_lib_errors_idunico",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/hooks/useRecipes.ts",
+      "source_location": "L146",
+      "weight": 1.0
+    },
+    {
+      "source": "src_hooks_userecipes_userecipes",
       "target": "src_lib_n8n_posttowebhook",
       "relation": "calls",
       "_origin": "ast",
@@ -7593,7 +7947,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/hooks/useRecipes.ts",
-      "source_location": "L172",
+      "source_location": "L173",
       "weight": 1.0
     },
     {
@@ -7605,7 +7959,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/hooks/useRecipes.ts",
-      "source_location": "L38",
+      "source_location": "L39",
       "weight": 1.0
     },
     {
@@ -7617,7 +7971,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/hooks/useRecipes.ts",
-      "source_location": "L38",
+      "source_location": "L39",
       "weight": 1.0
     },
     {
@@ -7702,6 +8056,18 @@
       "context": "call",
       "source_file": "src/lib/colorBandera.ts",
       "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "src_lib_imagen_comprimirfotoreceta",
+      "target": "src_lib_imagen_comprimirimagen",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/lib/imagen.ts",
+      "source_location": "L55",
       "weight": 1.0
     },
     {
@@ -8061,7 +8427,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/hooks/useRecipes.ts",
-      "source_location": "L26",
+      "source_location": "L27",
       "weight": 1.0
     },
     {
@@ -8258,6 +8624,18 @@
     },
     {
       "source": "src_components_paiseditor_paiseditorprops",
+      "target": "src_types_recipe",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "field",
+      "source_file": "src/components/PaisEditor.tsx",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_paiseditor_paiseditorprops",
       "target": "src_types_fotopais",
       "relation": "references",
       "_origin": "ast",
@@ -8289,7 +8667,7 @@
       "confidence_score": 1.0,
       "context": "field",
       "source_file": "src/components/PaisPagina.tsx",
-      "source_location": "L17",
+      "source_location": "L19",
       "weight": 1.0
     },
     {
@@ -8301,7 +8679,7 @@
       "confidence_score": 1.0,
       "context": "field",
       "source_file": "src/components/PaisPagina.tsx",
-      "source_location": "L18",
+      "source_location": "L20",
       "weight": 1.0
     },
     {
@@ -8313,7 +8691,7 @@
       "confidence_score": 1.0,
       "context": "field",
       "source_file": "src/components/PaisPagina.tsx",
-      "source_location": "L19",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -8325,7 +8703,7 @@
       "confidence_score": 1.0,
       "context": "field",
       "source_file": "src/components/PaisPagina.tsx",
-      "source_location": "L22",
+      "source_location": "L24",
       "weight": 1.0
     },
     {
@@ -8338,6 +8716,30 @@
       "context": "field",
       "source_file": "src/components/PasaporteSection.tsx",
       "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_platoestrella_platoestrellaprops",
+      "target": "src_types_recipe",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "field",
+      "source_file": "src/components/PlatoEstrella.tsx",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_platoestrella_platoestrellaprops",
+      "target": "src_lib_colorbandera_acentopais",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "field",
+      "source_file": "src/components/PlatoEstrella.tsx",
+      "source_location": "L9",
       "weight": 1.0
     },
     {
@@ -8518,6 +8920,18 @@
       "context": "field",
       "source_file": "src/lib/inventario.ts",
       "source_location": "L50",
+      "weight": 1.0
+    },
+    {
+      "source": "src_lib_pasaporte_platoestrella",
+      "target": "src_types_recipe",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "field",
+      "source_file": "src/lib/pasaporte.ts",
+      "source_location": "L39",
       "weight": 1.0
     },
     {
@@ -8799,6 +9213,18 @@
     {
       "source": "src_app",
       "target": "src_components_avisos_soloadmin",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/App.tsx",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app",
+      "target": "src_components_avisos_solologueados",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -9166,6 +9592,18 @@
       "context": "import",
       "source_file": "src/components/AddRecipeForm.tsx",
       "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_addrecipeform",
+      "target": "src_lib_imagen_comprimirfotoreceta",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/AddRecipeForm.tsx",
+      "source_location": "L8",
       "weight": 1.0
     },
     {
@@ -9538,6 +9976,18 @@
       "context": "import",
       "source_file": "src/components/DespensaSection.tsx",
       "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_fichapais",
+      "target": "src_types_pais",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/FichaPais.tsx",
+      "source_location": "L2",
       "weight": 1.0
     },
     {
@@ -9998,6 +10448,18 @@
     },
     {
       "source": "src_components_paiseditor",
+      "target": "src_types_recipe",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/PaisEditor.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_paiseditor",
       "target": "src_hooks_usepaises_paises",
       "relation": "imports",
       "_origin": "ast",
@@ -10094,7 +10556,7 @@
     },
     {
       "source": "src_components_paispagina",
-      "target": "src_components_sellopasaporte_sellopasaporte",
+      "target": "src_components_fichapais_fichapais",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -10102,6 +10564,30 @@
       "context": "import",
       "source_file": "src/components/PaisPagina.tsx",
       "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_paispagina",
+      "target": "src_components_platoestrella_platoestrella",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/PaisPagina.tsx",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_paispagina",
+      "target": "src_components_sellopasaporte_sellopasaporte",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/PaisPagina.tsx",
+      "source_location": "L14",
       "weight": 1.0
     },
     {
@@ -10191,6 +10677,18 @@
     {
       "source": "src_components_paispagina",
       "target": "src_lib_pasaporte_fotos_cabecera",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/PaisPagina.tsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_paispagina",
+      "target": "src_lib_pasaporte_platoestrella",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -10378,6 +10876,42 @@
       "context": "import",
       "source_file": "src/components/PasoConTiempos.tsx",
       "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_platoestrella",
+      "target": "src_types_recipe",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/PlatoEstrella.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_platoestrella",
+      "target": "src_lib_colorbandera_acentopais",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/PlatoEstrella.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_platoestrella",
+      "target": "src_components_starrating_starrating",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/PlatoEstrella.tsx",
+      "source_location": "L4",
       "weight": 1.0
     },
     {
@@ -11246,7 +11780,7 @@
     },
     {
       "source": "src_hooks_userecipes",
-      "target": "src_types_json",
+      "target": "src_lib_imagen_comprimirfotoreceta",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -11258,6 +11792,18 @@
     },
     {
       "source": "src_hooks_userecipes",
+      "target": "src_types_json",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/hooks/useRecipes.ts",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "src_hooks_userecipes",
       "target": "src_types_recipe",
       "relation": "imports",
       "_origin": "ast",
@@ -11265,7 +11811,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/hooks/useRecipes.ts",
-      "source_location": "L6",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -12017,6 +12563,18 @@
       "weight": 1.0
     },
     {
+      "source": "src_components_addrecipeform",
+      "target": "src_lib_imagen",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/AddRecipeForm.tsx",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
       "source": "src_components_altapais",
       "target": "ref_react",
       "relation": "imports_from",
@@ -12467,6 +13025,31 @@
       "context": "import",
       "source_file": "src/components/DespensaSection.tsx",
       "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_fichapais",
+      "target": "ref_lucide_react",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/FichaPais.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_fichapais",
+      "target": "src_types",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/FichaPais.tsx",
+      "source_location": "L2",
+      "type_only": true,
       "weight": 1.0
     },
     {
@@ -13180,7 +13763,7 @@
     },
     {
       "source": "src_components_paispagina",
-      "target": "src_components_sellopasaporte",
+      "target": "src_components_fichapais",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -13188,6 +13771,30 @@
       "context": "import",
       "source_file": "src/components/PaisPagina.tsx",
       "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_paispagina",
+      "target": "src_components_platoestrella",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/PaisPagina.tsx",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_paispagina",
+      "target": "src_components_sellopasaporte",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/PaisPagina.tsx",
+      "source_location": "L14",
       "weight": 1.0
     },
     {
@@ -13443,6 +14050,56 @@
       "context": "import",
       "source_file": "src/components/PasoConTiempos.tsx",
       "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_platoestrella",
+      "target": "ref_lucide_react",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/PlatoEstrella.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_platoestrella",
+      "target": "src_types",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/PlatoEstrella.tsx",
+      "source_location": "L2",
+      "type_only": true,
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_platoestrella",
+      "target": "src_lib_colorbandera",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/PlatoEstrella.tsx",
+      "source_location": "L3",
+      "type_only": true,
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_platoestrella",
+      "target": "src_components_starrating",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/PlatoEstrella.tsx",
+      "source_location": "L4",
       "weight": 1.0
     },
     {
@@ -14585,7 +15242,7 @@
     },
     {
       "source": "src_hooks_userecipes",
-      "target": "src_types",
+      "target": "src_lib_imagen",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -14593,6 +15250,18 @@
       "context": "import",
       "source_file": "src/hooks/useRecipes.ts",
       "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "src_hooks_userecipes",
+      "target": "src_types",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/hooks/useRecipes.ts",
+      "source_location": "L7",
       "type_only": true,
       "weight": 1.0
     },
@@ -15019,7 +15688,7 @@
     },
     {
       "source": "claude_mi_recetario_contexto_del_proyecto",
-      "target": "claude_la_lista_de_la_compra",
+      "target": "claude_mir\u00f3n_y_registrado",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -15030,13 +15699,24 @@
     },
     {
       "source": "claude_mi_recetario_contexto_del_proyecto",
+      "target": "claude_la_lista_de_la_compra",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": "L201",
+      "weight": 1.0
+    },
+    {
+      "source": "claude_mi_recetario_contexto_del_proyecto",
       "target": "claude_para_hacer_realizaciones_y_muro_de_notas",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CLAUDE.md",
-      "source_location": "L214",
+      "source_location": "L238",
       "weight": 1.0
     },
     {
@@ -15047,7 +15727,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CLAUDE.md",
-      "source_location": "L229",
+      "source_location": "L253",
       "weight": 1.0
     },
     {
@@ -15058,7 +15738,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CLAUDE.md",
-      "source_location": "L245",
+      "source_location": "L269",
       "weight": 1.0
     },
     {
@@ -15069,23 +15749,12 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CLAUDE.md",
-      "source_location": "L283",
+      "source_location": "L307",
       "weight": 1.0
     },
     {
       "source": "claude_mi_recetario_contexto_del_proyecto",
       "target": "claude_tiempo_porciones_y_dificultad",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "CLAUDE.md",
-      "source_location": "L314",
-      "weight": 1.0
-    },
-    {
-      "source": "claude_mi_recetario_contexto_del_proyecto",
-      "target": "claude_modo_cocina",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -15107,13 +15776,24 @@
     },
     {
       "source": "claude_mi_recetario_contexto_del_proyecto",
+      "target": "claude_modo_cocina",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": "L370",
+      "weight": 1.0
+    },
+    {
+      "source": "claude_mi_recetario_contexto_del_proyecto",
       "target": "claude_b\u00fasqueda_sem\u00e1ntica",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CLAUDE.md",
-      "source_location": "L403",
+      "source_location": "L431",
       "weight": 1.0
     },
     {
@@ -15124,7 +15804,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CLAUDE.md",
-      "source_location": "L470",
+      "source_location": "L498",
       "weight": 1.0
     },
     {
@@ -15135,7 +15815,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CLAUDE.md",
-      "source_location": "L479",
+      "source_location": "L507",
       "weight": 1.0
     },
     {
@@ -15146,7 +15826,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CLAUDE.md",
-      "source_location": "L369",
+      "source_location": "L397",
       "weight": 1.0
     },
     {
@@ -15476,7 +16156,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/pasaporte.md",
-      "source_location": "L178",
+      "source_location": "L191",
       "weight": 1.0
     },
     {
@@ -15576,6 +16256,94 @@
       "confidence_score": 1.0,
       "source_file": "docs/pasaporte.md",
       "source_location": "L87",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_porciones_propuesta",
+      "target": "docs_porciones_propuesta_propuesta_de_porciones_pendiente_de_revisar",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/porciones-propuesta.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_porciones_propuesta_propuesta_de_porciones_pendiente_de_revisar",
+      "target": "docs_porciones_propuesta_hallazgos_que_afectan_al_dise\u00f1o",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/porciones-propuesta.md",
+      "source_location": "L107",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_porciones_propuesta_propuesta_de_porciones_pendiente_de_revisar",
+      "target": "docs_porciones_propuesta_aperitivos",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/porciones-propuesta.md",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_porciones_propuesta_propuesta_de_porciones_pendiente_de_revisar",
+      "target": "docs_porciones_propuesta_arroces_y_pastas",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/porciones-propuesta.md",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_porciones_propuesta_propuesta_de_porciones_pendiente_de_revisar",
+      "target": "docs_porciones_propuesta_carnes",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/porciones-propuesta.md",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_porciones_propuesta_propuesta_de_porciones_pendiente_de_revisar",
+      "target": "docs_porciones_propuesta_pescados_y_mariscos_ensaladas",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/porciones-propuesta.md",
+      "source_location": "L53",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_porciones_propuesta_propuesta_de_porciones_pendiente_de_revisar",
+      "target": "docs_porciones_propuesta_sopas_y_cremas",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/porciones-propuesta.md",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_porciones_propuesta_propuesta_de_porciones_pendiente_de_revisar",
+      "target": "docs_porciones_propuesta_postres",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/porciones-propuesta.md",
+      "source_location": "L77",
       "weight": 1.0
     },
     {
@@ -16185,24 +16953,24 @@
     },
     {
       "source": "src_components_addrecipeform",
-      "target": "src_components_addrecipeform_addrecipeform",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/components/AddRecipeForm.tsx",
-      "source_location": "L14",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_addrecipeform",
       "target": "src_components_addrecipeform_addrecipeformprops",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/AddRecipeForm.tsx",
-      "source_location": "L9",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_addrecipeform",
+      "target": "src_components_addrecipeform_addrecipeform",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/AddRecipeForm.tsx",
+      "source_location": "L15",
       "weight": 1.0
     },
     {
@@ -16240,6 +17008,17 @@
     },
     {
       "source": "src_components_avisos",
+      "target": "src_components_avisos_recetanoencontrada",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/Avisos.tsx",
+      "source_location": "L101",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_avisos",
       "target": "src_components_avisos_soloadmin",
       "relation": "contains",
       "_origin": "ast",
@@ -16251,13 +17030,13 @@
     },
     {
       "source": "src_components_avisos",
-      "target": "src_components_avisos_recetanoencontrada",
+      "target": "src_components_avisos_solologueados",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/Avisos.tsx",
-      "source_location": "L50",
+      "source_location": "L55",
       "weight": 1.0
     },
     {
@@ -16346,6 +17125,28 @@
       "confidence_score": 1.0,
       "source_file": "src/components/DespensaSection.tsx",
       "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_fichapais",
+      "target": "src_components_fichapais_fichapais",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/FichaPais.tsx",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_fichapais",
+      "target": "src_components_fichapais_datos",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/FichaPais.tsx",
+      "source_location": "L4",
       "weight": 1.0
     },
     {
@@ -16576,7 +17377,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/NavPrincipal.tsx",
-      "source_location": "L20",
+      "source_location": "L22",
       "weight": 1.0
     },
     {
@@ -16653,7 +17454,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/PaisPagina.tsx",
-      "source_location": "L14",
+      "source_location": "L16",
       "weight": 1.0
     },
     {
@@ -16664,7 +17465,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/PaisPagina.tsx",
-      "source_location": "L26",
+      "source_location": "L28",
       "weight": 1.0
     },
     {
@@ -16675,7 +17476,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/PaisPagina.tsx",
-      "source_location": "L29",
+      "source_location": "L31",
       "weight": 1.0
     },
     {
@@ -16742,6 +17543,28 @@
       "confidence_score": 1.0,
       "source_file": "src/components/PasoConTiempos.tsx",
       "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_platoestrella",
+      "target": "src_components_platoestrella_platoestrella",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/PlatoEstrella.tsx",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_platoestrella",
+      "target": "src_components_platoestrella_platoestrellaprops",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/PlatoEstrella.tsx",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -16840,7 +17663,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/RecipeContent.tsx",
-      "source_location": "L128",
+      "source_location": "L130",
       "weight": 1.0
     },
     {
@@ -16966,7 +17789,7 @@
     },
     {
       "source": "src_components_sellopasaporte",
-      "target": "src_components_sellopasaporte_tamanofecha",
+      "target": "src_components_sellopasaporte_lineasfecha",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -16977,13 +17800,13 @@
     },
     {
       "source": "src_components_sellopasaporte",
-      "target": "src_components_sellopasaporte_sellopasaporte",
+      "target": "src_components_sellopasaporte_tamanofecha",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/SelloPasaporte.tsx",
-      "source_location": "L27",
+      "source_location": "L29",
       "weight": 1.0
     },
     {
@@ -16995,6 +17818,17 @@
       "confidence_score": 1.0,
       "source_file": "src/components/SelloPasaporte.tsx",
       "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_sellopasaporte",
+      "target": "src_components_sellopasaporte_sellopasaporte",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/SelloPasaporte.tsx",
+      "source_location": "L39",
       "weight": 1.0
     },
     {
@@ -17324,7 +18158,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/hooks/useRecipes.ts",
-      "source_location": "L8",
+      "source_location": "L9",
       "weight": 1.0
     },
     {
@@ -17545,6 +18379,17 @@
       "confidence_score": 1.0,
       "source_file": "src/lib/imagen.ts",
       "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "src_lib_imagen",
+      "target": "src_lib_imagen_comprimirfotoreceta",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/lib/imagen.ts",
+      "source_location": "L54",
       "weight": 1.0
     },
     {
@@ -17798,6 +18643,17 @@
       "confidence_score": 1.0,
       "source_file": "src/lib/pasaporte.ts",
       "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "src_lib_pasaporte",
+      "target": "src_lib_pasaporte_platoestrella",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/lib/pasaporte.ts",
+      "source_location": "L47",
       "weight": 1.0
     },
     {
@@ -18182,7 +19038,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/types.ts",
-      "source_location": "L59",
+      "source_location": "L65",
       "weight": 1.0
     },
     {
@@ -18193,7 +19049,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/types.ts",
-      "source_location": "L67",
+      "source_location": "L73",
       "weight": 1.0
     },
     {
@@ -18204,7 +19060,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/types.ts",
-      "source_location": "L68",
+      "source_location": "L74",
       "weight": 1.0
     },
     {
@@ -18215,7 +19071,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/types.ts",
-      "source_location": "L74",
+      "source_location": "L80",
       "weight": 1.0
     },
     {
@@ -19051,7 +19907,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CLAUDE.md",
-      "source_location": "L212",
+      "source_location": "L236",
       "weight": 1.0
     },
     {
@@ -19062,7 +19918,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CLAUDE.md",
-      "source_location": "L248",
+      "source_location": "L272",
       "weight": 1.0
     },
     {
@@ -19073,7 +19929,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CLAUDE.md",
-      "source_location": "L286",
+      "source_location": "L311",
       "weight": 1.0
     },
     {
@@ -19822,5 +20678,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "33f2e4f39a78c1738f6eeab80a3abffbfce54f95"
+  "built_at_commit": "a3aea42438206c799ef3a5ba016b19e7eeb45d71"
 }

@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { Loader2 } from 'lucide-react';
+import { Loader2, LogIn } from 'lucide-react';
 import { aHash, CATALOGO } from '../lib/rutas';
 
 /**
@@ -44,6 +44,57 @@ export function SoloAdmin({
   }
 
   return <div className="animate-in fade-in zoom-in-95 duration-300 pt-4">{children}</div>;
+}
+
+/**
+ * Puerta de las secciones que son solo para quien se ha registrado (despensa,
+ * lista de la compra, pasaporte). Como `SoloAdmin`, solo decide qué se pinta:
+ * los datos los protegen las RLS. Espera a `getSession` para no enseñar «entra»
+ * a quien ya tiene sesión y recarga en una de estas rutas.
+ */
+export function SoloLogueados({
+  sesionCargada, logueado, seccion, onLogin, children,
+}: {
+  sesionCargada: boolean;
+  logueado: boolean;
+  /** Nombre de la sección, para el mensaje. */
+  seccion: string;
+  onLogin: () => void;
+  children: ReactNode;
+}) {
+  if (!sesionCargada) {
+    return (
+      <div className="flex items-center justify-center gap-3 py-24 text-ink-soft font-mono text-sm">
+        <Loader2 size={18} className="animate-spin" />
+        Comprobando la sesión…
+      </div>
+    );
+  }
+
+  if (!logueado) {
+    return (
+      <div className="text-center py-20 animate-in fade-in zoom-in-95 duration-300">
+        <h2 className="text-2xl font-bold text-ink mb-2">Esto es para quien se registra</h2>
+        <p className="text-ink-soft">Inicia sesión o crea una cuenta para entrar en {seccion}.</p>
+        <div className="flex items-center justify-center gap-3 mt-6">
+          <button
+            onClick={onLogin}
+            className="inline-flex items-center gap-2 px-6 py-2 bg-ink text-paper rounded-md hover:bg-ink-soft transition-colors"
+          >
+            <LogIn size={16} /> Entrar / Registrarse
+          </button>
+          <a
+            href={aHash(CATALOGO)}
+            className="px-6 py-2 border border-ink/30 text-ink rounded-md hover:bg-ink/5 transition-colors"
+          >
+            Volver al catálogo
+          </a>
+        </div>
+      </div>
+    );
+  }
+
+  return <div className="animate-in fade-in zoom-in-95 duration-300">{children}</div>;
 }
 
 /** Alguien ha abierto el enlace de una receta borrada, o con el id mal copiado. */
