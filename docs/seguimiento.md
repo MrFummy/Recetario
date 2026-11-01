@@ -6,8 +6,8 @@ duplica [CLAUDE.md](../CLAUDE.md) (el "qué es verdad hoy") ni
 ha movido y qué está abierto ahora mismo". Se actualiza en cada sesión de
 trabajo, no solo al cerrar algo.
 
-Grafo de referencia: `graphify-out/` (280 nodos, 461 aristas, 23 comunidades
-tras `graphify update .` del 10 oct 2026). Antes de tocar un área, conviene
+Grafo de referencia: `graphify-out/` (579 nodos, 1200 aristas, 52 comunidades
+tras `graphify update .` del 1 nov 2026). Antes de tocar un área, conviene
 `graphify query "<pregunta>"` en vez de grep a ciegas.
 
 ---
@@ -23,6 +23,8 @@ tras `graphify update .` del 10 oct 2026). Antes de tocar un área, conviene
 | Despensa | `DespensaSection.tsx`, `useDespensa`, `inventario.ts`, tabla `despensa` | — (cruza Interfaz y Arquitectura) |
 | Lista de la compra | `ListaCompraSection.tsx`, `listaCompra.ts` | — (cruza Interfaz y Detalle/JSONB) |
 | Enrutado | `rutas.ts`, `useRuta.ts` | — (cruza Interfaz) |
+| El Laboratorio, Pasaporte, para hacer | `LaboratorioSection.tsx`, `PasaporteSection.tsx`, `useParaHacer` | Cruza Interfaz y Arquitectura |
+| Búsqueda semántica | `supabase/functions/`, `IngredientSearch.tsx` | Arquitectura, servicios y seguridad |
 | Migraciones RLS | `supabase/migrations/*.sql` | Migración de RLS |
 | Tooling | `vite.config.ts`, `tsconfig*.json`, `eslint.config.js` | Config TypeScript / Vite / ESLint / npm |
 
@@ -32,45 +34,68 @@ borrado exigen además que el email sea el del admin). No hay backend propio.
 
 ---
 
-## Estado por área (10 oct 2026)
+## Estado por área (1 nov 2026)
 
 | Área | Estado | Última verificación | Ver |
 |---|---|---|---|
-| Autorización (RLS + n8n) | Endurecida, sin huecos conocidos | 8 ago 2026 (camino feliz) | [CLAUDE.md § Estado actual](../CLAUDE.md) |
-| Ingredientes estructurados | Hecho, 56 recetas migradas | 23 ago 2026 | [migración](../supabase/migrations/20260823_estructurar_ingredientes.sql) |
-| Despensa (tabla + checks) | Hecho | 23 ago 2026 | `DespensaSection.tsx` |
-| Router por hash | Hecho | 31 ago 2026 | `rutas.ts`, `useRuta.ts` |
-| Sección despensa (`#/despensa`) | Hecho, verificado con sesión real | 31 ago 2026 | `DespensaSection.tsx` |
-| Bucket Storage | Sin huérfanas, `_default.jpg` protegido | 31 ago 2026 | — |
+| Autorización (RLS + n8n) | Endurecida, sin huecos conocidos | 11 oct 2026 (RLS simuladas por rol) | [CLAUDE.md § Estado actual](../CLAUDE.md) |
+| Ingredientes estructurados | Hecho, recetas migradas | 23 ago 2026 | [migración](../supabase/migrations/20260823_estructurar_ingredientes.sql) |
+| Despensa y router | Hecho | 31 ago 2026 | `DespensaSection.tsx`, `rutas.ts` |
+| `base` combinados | Partidos; prompt de Vertex corregido el 14 oct | 14 oct 2026 | [CLAUDE.md § Pendiente](../CLAUDE.md) |
+| Lista de la compra | Hecho, cálculo en el cliente | 10 oct 2026 | `ListaCompraSection.tsx` |
+| `tiempo`/`porciones`/`dificultad` | Hecho, sin backfill de antiguas | 14 oct 2026 | [CLAUDE.md § Tiempo, porciones y dificultad](../CLAUDE.md) |
+| Para hacer, realizaciones y muro | Hecho | 11 oct 2026, en producción | [migración](../supabase/migrations/20261011_para_hacer_y_realizaciones.sql) |
+| Modo cocina y temporizadores | Hecho; sonido probado en móvil | 13 oct 2026 | `ModoCocina.tsx`, `tiempos.ts` |
+| Búsqueda semántica | Hecha, con tope de 20 por hora | 13 oct 2026 | `buscar-recetas`, `indexar-recetas` |
+| Recetas «sin hacer» | Hecho | 14 oct 2026 | [migración](../supabase/migrations/20261014_sin_hacer.sql) |
+| El Laboratorio (candidatas) | Hecho, reels por Apify; Instagram aparcada | 15 oct 2026 | [candidatas.md](candidatas.md) |
+| Mi Pasaporte | Fases 1-3 hechas; admin verificada con sesión | 21 oct 2026 | [pasaporte.md](pasaporte.md) |
+| Mirón y registrado | Hecho; probado solo como visitante | 30 oct 2026 | [CLAUDE.md § Mirón y registrado](../CLAUDE.md) |
+| Despliegue | `npm run deploy:mac` al NAS, con gzip en el portal | 1 nov 2026 | [README](../README.md) |
 | Leaked password protection | No aplicable (requiere plan Pro) | 2026 | aviso permanente del linter |
-| `base` combinados (sal y pimienta, etc.) | Partidos (19 filas) y prompt de Vertex ajustado | 10 oct 2026 | [migración](../supabase/migrations/20261010_partir_base_combinados.sql) |
-| `tiempo`/`porciones`/`dificultad` | Hecho, sin backfill de recetas antiguas | 10 oct 2026 | [CLAUDE.md § Tiempo, porciones y dificultad](../CLAUDE.md) |
-| Lista de la compra (`#/lista-compra`) | Hecho, cálculo en el cliente | 10 oct 2026 | [CLAUDE.md § La lista de la compra](../CLAUDE.md) |
 
 ---
 
-## Pendientes priorizados
+## Pendientes
 
-Orden acordado en [ideas.md](ideas.md#orden-sugerido), con el bloqueo de cada
-uno:
+Del plan original del 10 de octubre ya no queda nada: lista de la compra, campos
+de receta, para hacer, modo cocina y búsqueda semántica están hechos (ver el
+registro de abajo).
 
-1. ~~**Partir los `base` combinados**~~ **Hecho el 10 de octubre de 2026**
-   (eran 7 bases, 19 apariciones — no 18), incluido el ajuste del prompt de
-   Vertex para que no los vuelva a generar.
-2. ~~**Lista de la compra**~~ **Hecha el 10 de octubre de 2026** — cálculo
-   100% en el cliente, sin webhook ni Vertex (ver CLAUDE.md § La lista de la
-   compra).
-3. ~~**Rescatar `tiempo`/`porciones`/`dificultad`**~~ **Hecho el 10 de octubre
-   de 2026**, sin backfill: las recetas anteriores quedan con esos campos en
-   `null` y sin badge. El backfill (reprocesar PDFs antiguos por Vertex)
-   queda como idea suelta en ideas.md, sin decidir.
-4. **Para hacer, realizaciones y el muro de notas** — **siguiente a
-   atacar**, acordado el 10 de octubre de 2026. Diseño cerrado en
-   [ideas.md § Para hacer, realizaciones y el muro de notas](ideas.md);
-   toca llevarlo a un plan de implementación en la próxima sesión.
-5. **Modo cocina** — 100% frontend, sin dependencias pendientes.
-6. **Búsqueda semántica (pgvector)** — mejor después de que las anteriores
-   estén asentadas.
+### Propuesto, a la espera de decisión
+1. **Porciones de cada receta** — [porciones-propuesta.md](porciones-propuesta.md),
+   del 23 oct: es el paso 1 del plan de menús. Estimación para el catálogo con
+   columna de fiabilidad; **no se ha escrito nada en la base de datos** hasta que
+   se revise y se apruebe.
+2. **Detección de duplicados al dar de alta**, comparando el vector de la receta
+   nueva con `recetas_embeddings`. Es lo más barato que queda.
+
+### Sin verificar
+- En un móvil real: la vibración de los temporizadores, que la pantalla siga
+  encendida con uno en marcha y el manejo con el pulgar del modo cocina.
+- Con sesión de admin: subir una foto real al Pasaporte, guardar el contexto de
+  un país y quitar un país con recetas.
+- Mirón y registrado, con sesión iniciada (solo se probó como visitante).
+
+### Abierto en El Laboratorio
+- Crear el bot de Telegram (BotFather) y obtener el `chat_id` propio.
+- Retomar o no la entrada por Instagram (publicar la app de Meta, política de
+  privacidad).
+
+### Ideas sin desarrollar ([ideas.md](ideas.md))
+Favoritos, sugerencia semanal por correo, copia de seguridad a Drive, auditoría
+de huérfanos del bucket, alta desde una URL o Telegram, rellenar las recetas sin
+foto, enlace a la web en el correo de compartir, filtrar por tiempo y
+ordenar por dificultad, y backfill de `tiempo`/`porciones`/`dificultad` de las
+antiguas.
+
+### Deuda conocida
+- Receta *Carbonara Udon* (31 oct): `base` incoherentes (`yema de huevo` en vez de
+  `huevo`, `queso parmesano`), `tiempo` y `dificultad` guardados como `""` y
+  cantidades con aclaraciones entre paréntesis. Se decidió dejarla así; el prompt
+  de `Vertex AI` seguirá generando lo mismo en altas nuevas.
+- El catálogo se carga entero en el cliente y se filtra en memoria; pedirá
+  paginación o búsqueda en servidor cuando crezca.
 
 ---
 
@@ -91,6 +116,16 @@ formato absoluto.
 | 10 oct 2026 | Lista de la compra (`#/lista-compra`) | `fc5a374` | `listaCompra.ts`, `ListaCompraSection.tsx`; `recipeContent.ts` ya expone `valor`/`unidad`. Verificado en el navegador: suma por `base`+`unidad`, descuenta despensa, persiste selección en localStorage |
 | 10 oct 2026 | `tiempo`/`porciones`/`dificultad`: columnas + webhook + badges en RecipeDetail | — | Sin backfill de recetas antiguas, a propósito. Columnas y `Guardar en Supabase` aplicados directamente en producción (Supabase MCP, n8n MCP) |
 | 10 oct 2026 | Diseño cerrado de "para hacer, realizaciones y muro de notas" (8 decisiones) | — | Solo documentación, sin código. **Prioridad para la próxima sesión**: llevarlo a un plan de implementación |
+| 10 oct 2026 | Lista de la compra, campos de receta, despliegue al NAS | `fc5a374`, `300960b`, `201cbb6` | Ver filas anteriores |
+| 11 oct 2026 | Para hacer, realizaciones y muro de notas | `37b6cfd`, `d9f602d`, `bca061e`, `62ee2ee` | `recetas.rating` pasa a `numeric(2,1)`; el trigger de la media sigue `SECURITY DEFINER` |
+| 13 oct 2026 | Modo cocina con temporizadores, búsqueda semántica (tope de 20 por hora), barra unificada, iconos | `d81d85c`, `629ce39`, `6d266eb`, `a417e0a`, `00669ef` | Edge Functions `buscar-recetas` e `indexar-recetas` |
+| 14 oct 2026 | Marca «sin hacer»; El Laboratorio (candidatas, Telegram, promover al recetario); trampa de n8n con `parameters` anidados | `fb65113`, `0046e53`, `ade589d` | Prompt de Vertex corregido; Instagram aparcada |
+| 15 oct 2026 | Mi Pasaporte, fases 1-3; reels por Apify | `bcee786`, `1f80309`, `4550f21` | `recetas.pais` sin clave foránea |
+| 17 oct 2026 | Pasaporte: acento desde la bandera, lema y cabecera con pocas fotos | `e247b64`, `cf9e9d6` | |
+| 21 oct 2026 | Pasaporte: sello, plato estrella y datos de ficha; gzip del NAS; fotos comprimidas antes de subir | `14a3811`, `f4ad992`, `171df86`, `9eaefb2`, `a3aea42` | Pasaporte verificado con sesión de admin |
+| 23 oct 2026 | Propuesta de porciones (sin escribir en BD) | — | [porciones-propuesta.md](porciones-propuesta.md) |
+| 30 oct 2026 | Mirón y registrado: despensa, compra y pasaporte solo con sesión | `e0bcca5` | Lectura de `paises` y `fotos_pais` pasa a `authenticated` |
+| 1 nov 2026 | Cantidades largas de ingredientes ya no se salen de su columna; push y despliegue; panel de seguimiento actualizado | `401633c` | Detectado con la receta Carbonara Udon |
 
 ---
 
