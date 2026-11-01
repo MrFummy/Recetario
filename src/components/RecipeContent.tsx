@@ -52,7 +52,7 @@ export function IngredientsList({ data, user, despensa }: IngredientsListProps) 
           return (
             <li
               key={item.id ?? idx}
-              className={`grid grid-cols-[20px_auto_1fr] gap-2.5 py-2 text-[14.5px] leading-snug items-baseline border-b border-dashed border-ink/15 last:border-0 cursor-pointer select-none ${done ? 'opacity-40' : ''}`}
+              className={`grid grid-cols-[20px_fit-content(45%)_minmax(0,1fr)] gap-2.5 py-2 text-[14.5px] leading-snug items-baseline border-b border-dashed border-ink/15 last:border-0 cursor-pointer select-none ${done ? 'opacity-40' : ''}`}
               onClick={() => clave && void alternar(clave)}
             >
               <span
@@ -63,7 +63,7 @@ export function IngredientsList({ data, user, despensa }: IngredientsListProps) 
                   <span className="absolute -top-1 left-px font-script text-[22px] leading-none text-hot">✓</span>
                 )}
               </span>
-              <span className={`font-mono text-[12.5px] font-medium text-accent whitespace-nowrap ${done ? 'line-through decoration-hot decoration-[1.5px]' : ''}`}>
+              <span className={`font-mono text-[12.5px] font-medium text-accent break-words ${done ? 'line-through decoration-hot decoration-[1.5px]' : ''}`}>
                 {item.qty || '—'}
               </span>
               <span className={`text-ink ${done ? 'line-through decoration-hot decoration-[1.5px]' : ''}`}>
