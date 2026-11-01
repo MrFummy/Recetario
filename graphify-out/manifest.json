@@ -186,9 +186,9 @@
     "semantic_hash": ""
   },
   "src/components/RecipeContent.tsx": {
-    "mtime": 1793375746.5481021,
-    "seen": 1793389390.1087282,
-    "ast_hash": "a1e869aef3841327ba58ebd07613ff65",
+    "mtime": 1793554499.4266434,
+    "seen": 1793554986.221968,
+    "ast_hash": "de6c42829cffb342cb18dcb159427e38",
     "semantic_hash": ""
   },
   "src/components/ShareByEmail.tsx": {
@@ -312,9 +312,9 @@
     "semantic_hash": ""
   },
   "docs/seguimiento.md": {
-    "mtime": 1791626998.9020948,
-    "seen": 1791901115.1974,
-    "ast_hash": "48c8631ff8f53f45b1a24c8c2848ae75",
+    "mtime": 1793554985.015751,
+    "seen": 1793554986.222014,
+    "ast_hash": "4e1ef0d7bedd992b89c3c29fa0752ce9",
     "semantic_hash": ""
   },
   "src/components/ListaCompraSection.tsx": {
