@@ -1,8 +1,8 @@
 # Menús
 
 Diseño del 7 de noviembre de 2026. Es el paso 2 del plan que empezó con
-`porciones_num` (ver [CLAUDE.md](../CLAUDE.md)). **Fase 1 hecha el 7 de noviembre
-de 2026** (tablas y RLS en producción, [la migración](../supabase/migrations/20261107_menus.sql));
+`porciones_num` (ver [CLAUDE.md](../CLAUDE.md)). **Fase 1 y la entrega A de la fase 2 hechas el 7 de
+noviembre de 2026** (tablas y RLS en producción, [la migración](../supabase/migrations/20261107_menus.sql));
 el resto es el acuerdo de qué se construye y por qué.
 
 Un menú no es semanal: es una selección de recetas para **una ocasión** (una cena,
@@ -95,7 +95,10 @@ el factor antes de sumar. Reglas:
 1. ~~**Base de datos**: migración con las dos tablas y sus RLS, verificadas
    simulando roles (otro usuario no ve ni toca el menú ajeno).~~ **Hecha el 7 nov**: 8 policies; el usuario ajeno no ve, edita, borra ni cuelga recetas en un menú que no es suyo, el dueño no puede regalarlo cambiando `user_id`, y los `check` de pase, comensales y raciones saltan.
 2. **Lista y editor**: rutas, crear menú, comensales, añadir y quitar recetas por
-   pase, orden.
+   pase, orden. **Entrega A hecha el 7 nov** (`#/menus`, `#/menu/<id>`, cambiar de
+   pase, aviso de recetas sin `porciones_num`; probada con sesión real en dev: crear,
+   añadir, cambiar pase, quitar, borrar con cascada). **Falta la entrega B**: subir y
+   bajar dentro de un pase y `raciones` por receta.
 3. **Lista de la compra escalada**: factor por receta, líneas «por persona»,
    `raciones` por receta, avisos.
 4. **Notas, fecha e impresión.**

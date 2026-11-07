@@ -1,4 +1,4 @@
-import { PlusCircle, ShoppingBasket, ShoppingCart, FlaskConical, Globe2 } from 'lucide-react';
+import { PlusCircle, ShoppingBasket, ShoppingCart, FlaskConical, Globe2, UtensilsCrossed } from 'lucide-react';
 import { aHash, CATALOGO } from '../lib/rutas';
 
 interface NavPrincipalProps {
@@ -7,11 +7,12 @@ interface NavPrincipalProps {
   enListaCompra: boolean;
   enLaboratorio: boolean;
   enPasaporte: boolean;
+  enMenus: boolean;
   enNueva: boolean;
   /** Cuántas cosas hay en la despensa, para el contador junto al enlace. */
   totalDespensa: number;
   isAdmin: boolean;
-  /** Despensa, compra y pasaporte solo se enseñan a quien tiene sesión. */
+  /** Despensa, compra, menús y pasaporte solo se enseñan a quien tiene sesión. */
   logueado: boolean;
 }
 
@@ -20,7 +21,7 @@ interface NavPrincipalProps {
  * autoriza de verdad son las RLS de Supabase y la validación de n8n, no esto.
  */
 export function NavPrincipal({
-  enCatalogo, enDespensa, enListaCompra, enLaboratorio, enPasaporte, enNueva, totalDespensa, isAdmin, logueado,
+  enCatalogo, enDespensa, enListaCompra, enLaboratorio, enPasaporte, enMenus, enNueva, totalDespensa, isAdmin, logueado,
 }: NavPrincipalProps) {
   return (
   <nav className="flex items-center gap-1">
@@ -59,6 +60,16 @@ export function NavPrincipal({
     >
       <ShoppingCart size={16} />
       <span className="hidden sm:inline">Compra</span>
+    </a>
+    <a
+      href={aHash({ vista: 'menus' })}
+      className={`px-2.5 sm:px-4 py-2 text-sm font-semibold rounded-md transition-colors flex items-center gap-1.5 ${enMenus
+        ? 'bg-ink text-paper'
+        : 'text-ink hover:bg-ink/5'
+        }`}
+    >
+      <UtensilsCrossed size={16} />
+      <span className="hidden sm:inline">Menús</span>
     </a>
     <a
       href={aHash({ vista: 'pasaporte' })}

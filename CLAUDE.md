@@ -388,7 +388,9 @@ contaría dos veces.
 
 ## Menús
 
-**Fase 1 hecha el 7 de noviembre de 2026**: solo base de datos, **sin frontend todavía**.
+**Fase 1 y entrega A de la fase 2 hechas el 7 de noviembre de 2026**: base de datos y un
+frontend mínimo en `#/menus` y `#/menu/<id>` ([MenusSection.tsx](src/components/MenusSection.tsx)),
+solo con sesión. **Aún no escala ni genera lista de la compra** (fases 3 y 4).
 Un menú es una selección de recetas para una ocasión (no una semana), con comensales y
 organizada por pases; del menú saldrá la lista de la compra escalada. Diseño y fases en
 [docs/menus.md](docs/menus.md); tablas `menus` y `menu_recetas`
@@ -400,6 +402,9 @@ organizada por pases; del menú saldrá la lista de la compra escalada. Diseño 
   `with check` además de `using`, o se podría regalar un menú cambiando `user_id`.
 - `menu_recetas.raciones` a `null` significa «las del menú» (comensales). Existe para
   pedir 12 brochetas aunque la receta sea «por brocheta».
+- `useMenus` (lista) y `useMenu` (uno) viven dentro de la sección, no en `App`; el editor
+  se monta con `key={id}` y por eso `useMenu` no reinicia su estado al cambiar de id.
+  Una receta entra en el pase que le toca por su categoría ([menus.ts](src/lib/menus.ts)).
 - Verificado simulando roles (otro usuario, dueño y anónimo) en una transacción que se
   revierte; el linter no añade avisos.
 

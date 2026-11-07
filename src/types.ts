@@ -25,6 +25,8 @@ export interface Recipe {
    */
   tiempo?: string | null;
   porciones?: string | null;
+  /** Raciones de plato como número, para escalar menús; `null` si no se ha estimado. */
+  porciones_num?: number | null;
   dificultad?: string | null;
   fecha_clase: string;
   foto_url: string;
@@ -94,4 +96,29 @@ export interface Candidata {
   foto_url: string | null;
   /** Salió de un vídeo, donde las cantidades son menos fiables. */
   de_video: boolean;
+}
+
+/** Los pases de un menú, en el orden en que se sirven. */
+export type Pase = 'aperitivo' | 'entrante' | 'principal' | 'postre' | 'otro';
+
+/** Un menú: recetas para una ocasión, con comensales (tabla `menus`). */
+export interface Menu {
+  id: string;
+  user_id: string;
+  nombre: string;
+  ocasion: string | null;
+  fecha: string | null;
+  comensales: number;
+  notas: string | null;
+  created_at: string;
+}
+
+/** Una receta dentro de un menú (tabla `menu_recetas`). */
+export interface MenuReceta {
+  menu_id: string;
+  receta_id: string;
+  pase: Pase;
+  orden: number;
+  /** `null` significa «las del menú», es decir, los comensales. */
+  raciones: number | null;
 }

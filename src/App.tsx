@@ -13,6 +13,7 @@ import { SeccionDespensa } from './components/DespensaSection';
 import { SeccionListaCompra } from './components/ListaCompraSection';
 import { SeccionLaboratorio } from './components/LaboratorioSection';
 import { SeccionPasaporte } from './components/PasaporteSection';
+import { SeccionMenus } from './components/MenusSection';
 import { NavPrincipal } from './components/NavPrincipal';
 import { useRecipes } from './hooks/useRecipes';
 import { useDespensa } from './hooks/useDespensa';
@@ -99,8 +100,9 @@ function App() {
   const enListaCompra = ruta.vista === 'lista-compra';
   const enLaboratorio = ruta.vista === 'laboratorio';
   const enPasaporte = ruta.vista === 'pasaporte' || ruta.vista === 'pais';
+  const enMenus = ruta.vista === 'menus' || ruta.vista === 'menu';
   // El catálogo queda detrás de la ficha abierta, como hasta ahora.
-  const enCatalogo = !enNueva && !enDespensa && !enListaCompra && !enLaboratorio && !enPasaporte;
+  const enCatalogo = !enNueva && !enDespensa && !enListaCompra && !enLaboratorio && !enPasaporte && !enMenus;
 
   return (
     <div className="min-h-screen pb-20">
@@ -125,6 +127,7 @@ function App() {
               enListaCompra={enListaCompra}
               enLaboratorio={enLaboratorio}
               enPasaporte={enPasaporte}
+              enMenus={enMenus}
               enNueva={enNueva}
               totalDespensa={despensa.total}
               isAdmin={isAdmin}
@@ -182,6 +185,10 @@ function App() {
         ) : enListaCompra ? (
           <SoloLogueados sesionCargada={sesionCargada} logueado={!!user} seccion="la lista de la compra" onLogin={() => setShowLoginModal(true)}>
             <SeccionListaCompra recipes={recipes} despensa={despensa} paraHacer={paraHacer} />
+          </SoloLogueados>
+        ) : (ruta.vista === 'menus' || ruta.vista === 'menu') ? (
+          <SoloLogueados sesionCargada={sesionCargada} logueado={!!user} seccion="tus menús" onLogin={() => setShowLoginModal(true)}>
+            <SeccionMenus ruta={ruta} recipes={recipes} user={user} />
           </SoloLogueados>
         ) : (ruta.vista === 'pasaporte' || ruta.vista === 'pais') ? (
           <SoloLogueados sesionCargada={sesionCargada} logueado={!!user} seccion="el pasaporte" onLogin={() => setShowLoginModal(true)}>

@@ -66,7 +66,7 @@ registro de abajo).
 1. ~~**Porciones de cada receta**~~ **Hecho el 7 nov 2026**: columna
    `porciones_num` con 74 recetas (raciones de plato, no piezas); ver
    [CLAUDE.md](../CLAUDE.md). **Siguiente: el menú semanal** (paso 2 del plan de
-   menús), que escalará por comensales. Diseño cerrado en [menus.md](menus.md); **fase 1 (base de datos) hecha el 7 nov**, falta el frontend (fases 2-4).
+   menús), que escalará por comensales. Diseño cerrado en [menus.md](menus.md); **fase 1 (base de datos) y entrega A del frontend hechas el 7 nov**; faltan la entrega B (orden y `raciones`) y las fases 3-4 (compra escalada, notas e impresión).
 2. **Detección de duplicados al dar de alta**, comparando el vector de la receta
    nueva con `recetas_embeddings`. Es lo más barato que queda.
 
@@ -128,6 +128,7 @@ formato absoluto.
 | 1 nov 2026 | Cantidades largas de ingredientes ya no se salen de su columna; push y despliegue; panel de seguimiento actualizado | `401633c` | Detectado con la receta Carbonara Udon |
 | 7 nov 2026 | Columna `porciones_num` (raciones de plato) con 74 recetas | — | Migración `20261107_porciones_num.sql`; 2 recetas sin ingredientes quedan a `null` |
 | 7 nov 2026 | Menús, fase 1: tablas `menus` y `menu_recetas` con RLS, y diseño en `docs/menus.md` | — | Migración `20261107_menus.sql`; RLS verificadas simulando roles |
+| 7 nov 2026 | Menús, fase 2 (entrega A): `#/menus` y `#/menu/<id>`, hooks `useMenus`/`useMenu`, editor por pases | — | Probado con sesión real en dev: crear, añadir, cambiar pase, quitar y borrar (en cascada) |
 
 ---
 
