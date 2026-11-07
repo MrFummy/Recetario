@@ -109,13 +109,14 @@ function App() {
       {/* ═════ Header ═════════════════════════════════════ */}
       <header className="bg-paper/85 backdrop-blur-md sticky top-0 z-30 border-b border-dashed border-ink/25">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
-          <a href={aHash(CATALOGO)} className="flex items-center gap-3 group">
+          <a href={aHash(CATALOGO)} aria-label="El Recetario de Markis, ir al catálogo" className="flex items-center gap-3 group shrink-0">
             <div className="w-10 h-10 bg-ink text-paper rounded-lg flex items-center justify-center
                             -rotate-3 group-hover:rotate-6 transition-transform duration-300
                             shadow-[3px_3px_0_var(--color-yellow)]">
               <ChefHat size={22} strokeWidth={2.2} />
             </div>
-            <h1 className="font-script text-2xl sm:text-3xl leading-none">
+            {/* Por debajo de `sm` el título ocupa tres líneas y la cabecera desbordaba: queda el icono. */}
+            <h1 className="hidden sm:block font-script text-2xl sm:text-3xl leading-none">
               El Recetario de <span className="text-accent font-bold">Markis</span>
             </h1>
           </a>
@@ -136,7 +137,7 @@ function App() {
 
             {user ? (
               <div className="flex items-center gap-2">
-                <span className="hidden sm:inline-block px-2 py-1 bg-accent-soft text-accent text-[10px] font-mono uppercase tracking-wider rounded-sm">
+                <span className="hidden xl:inline-block px-2 py-1 bg-accent-soft text-accent text-[10px] font-mono uppercase tracking-wider rounded-sm">
                   {isAdmin ? 'admin' : 'afan'}
                 </span>
                 <button

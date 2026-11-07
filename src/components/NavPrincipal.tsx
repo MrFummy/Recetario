@@ -1,4 +1,4 @@
-import { PlusCircle, ShoppingBasket, ShoppingCart, FlaskConical, Globe2, UtensilsCrossed } from 'lucide-react';
+import { BookOpen, PlusCircle, ShoppingBasket, ShoppingCart, FlaskConical, Globe2, UtensilsCrossed } from 'lucide-react';
 import { aHash, CATALOGO } from '../lib/rutas';
 
 interface NavPrincipalProps {
@@ -27,24 +27,29 @@ export function NavPrincipal({
   <nav className="flex items-center gap-1">
     <a
       href={aHash(CATALOGO)}
-      className={`px-2.5 sm:px-4 py-2 text-sm font-semibold rounded-md transition-colors ${enCatalogo
+      className={`px-2 lg:px-3 xl:px-4 py-2 text-sm font-semibold rounded-md transition-colors flex items-center ${enCatalogo
         ? 'bg-ink text-paper'
         : 'text-ink hover:bg-ink/5'
         }`}
+      aria-label="Catálogo"
+      title="Catálogo"
     >
-      Catálogo
+      <BookOpen size={16} className="lg:hidden" />
+      <span className="hidden lg:inline">Catálogo</span>
     </a>
     {logueado && (
       <>
     <a
       href={aHash({ vista: 'despensa' })}
-      className={`px-2.5 sm:px-4 py-2 text-sm font-semibold rounded-md transition-colors flex items-center gap-1.5 ${enDespensa
+      aria-label="Despensa"
+      title="Despensa"
+      className={`px-2 lg:px-3 xl:px-4 py-2 text-sm font-semibold rounded-md transition-colors flex items-center gap-1.5 ${enDespensa
         ? 'bg-ink text-paper'
         : 'text-ink hover:bg-ink/5'
         }`}
     >
       <ShoppingBasket size={16} />
-      <span className="hidden sm:inline">Despensa</span>
+      <span className="hidden lg:inline">Despensa</span>
       {totalDespensa > 0 && (
         <span className="font-mono text-[10px] px-1.5 py-0.5 rounded-sm bg-yellow text-ink">
           {totalDespensa}
@@ -53,58 +58,68 @@ export function NavPrincipal({
     </a>
     <a
       href={aHash({ vista: 'lista-compra' })}
-      className={`px-2.5 sm:px-4 py-2 text-sm font-semibold rounded-md transition-colors flex items-center gap-1.5 ${enListaCompra
+      aria-label="Compra"
+      title="Compra"
+      className={`px-2 lg:px-3 xl:px-4 py-2 text-sm font-semibold rounded-md transition-colors flex items-center gap-1.5 ${enListaCompra
         ? 'bg-ink text-paper'
         : 'text-ink hover:bg-ink/5'
         }`}
     >
       <ShoppingCart size={16} />
-      <span className="hidden sm:inline">Compra</span>
+      <span className="hidden lg:inline">Compra</span>
     </a>
     <a
       href={aHash({ vista: 'menus' })}
-      className={`px-2.5 sm:px-4 py-2 text-sm font-semibold rounded-md transition-colors flex items-center gap-1.5 ${enMenus
+      aria-label="Menús"
+      title="Menús"
+      className={`px-2 lg:px-3 xl:px-4 py-2 text-sm font-semibold rounded-md transition-colors flex items-center gap-1.5 ${enMenus
         ? 'bg-ink text-paper'
         : 'text-ink hover:bg-ink/5'
         }`}
     >
       <UtensilsCrossed size={16} />
-      <span className="hidden sm:inline">Menús</span>
+      <span className="hidden lg:inline">Menús</span>
     </a>
     <a
       href={aHash({ vista: 'pasaporte' })}
-      className={`px-2.5 sm:px-4 py-2 text-sm font-semibold rounded-md transition-colors flex items-center gap-1.5 ${enPasaporte
+      aria-label="Pasaporte"
+      title="Pasaporte"
+      className={`px-2 lg:px-3 xl:px-4 py-2 text-sm font-semibold rounded-md transition-colors flex items-center gap-1.5 ${enPasaporte
         ? 'bg-ink text-paper'
         : 'text-ink hover:bg-ink/5'
         }`}
     >
       <Globe2 size={16} />
-      <span className="hidden sm:inline">Pasaporte</span>
+      <span className="hidden lg:inline">Pasaporte</span>
     </a>
       </>
     )}
     {isAdmin && (
       <a
         href={aHash({ vista: 'laboratorio' })}
-        className={`px-2.5 sm:px-4 py-2 text-sm font-semibold rounded-md transition-colors flex items-center gap-1.5 ${enLaboratorio
+      aria-label="Laboratorio"
+      title="Laboratorio"
+        className={`px-2 lg:px-3 xl:px-4 py-2 text-sm font-semibold rounded-md transition-colors flex items-center gap-1.5 ${enLaboratorio
           ? 'bg-ink text-paper'
           : 'text-ink hover:bg-ink/5'
           }`}
       >
         <FlaskConical size={16} />
-        <span className="hidden sm:inline">Laboratorio</span>
+        <span className="hidden xl:inline">Laboratorio</span>
       </a>
     )}
     {isAdmin && (
       <a
         href={aHash({ vista: 'nueva' })}
-        className={`px-2.5 sm:px-4 py-2 text-sm font-bold rounded-md transition-transform flex items-center gap-1.5 ${enNueva
+      aria-label="Nueva receta"
+      title="Nueva receta"
+        className={`px-2 lg:px-3 xl:px-4 py-2 text-sm font-bold rounded-md transition-transform flex items-center gap-1.5 ${enNueva
           ? 'bg-yellow text-ink -rotate-1 shadow-brut'
           : 'text-ink hover:bg-ink/5'
           }`}
       >
         <PlusCircle size={16} />
-        <span className="hidden sm:inline">Nueva</span>
+        <span className="hidden xl:inline">Nueva</span>
       </a>
     )}
   </nav>

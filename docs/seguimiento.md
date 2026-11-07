@@ -66,7 +66,7 @@ registro de abajo).
 1. ~~**Porciones de cada receta**~~ **Hecho el 7 nov 2026**: columna
    `porciones_num` con 74 recetas (raciones de plato, no piezas); ver
    [CLAUDE.md](../CLAUDE.md). **Siguiente: el menú semanal** (paso 2 del plan de
-   menús), que escalará por comensales. Diseño cerrado en [menus.md](menus.md); **fase 1 (base de datos) y entrega A del frontend hechas el 7 nov**; faltan la entrega B (orden y `raciones`) y las fases 3-4 (compra escalada, notas e impresión).
+   menús), que escalará por comensales. Diseño cerrado en [menus.md](menus.md); **fases 1 y 2 hechas el 7 nov** (base de datos y editor con orden y `raciones`); faltan la fase 3 (compra escalada) y la 4 (impresión; notas y fecha ya están).
 2. **Detección de duplicados al dar de alta**, comparando el vector de la receta
    nueva con `recetas_embeddings`. Es lo más barato que queda.
 
@@ -90,6 +90,7 @@ ordenar por dificultad, y backfill de `tiempo`/`porciones`/`dificultad` de las
 antiguas.
 
 ### Deuda conocida
+- ~~**La cabecera desborda en móvil**~~ **Arreglada el 7 nov.** Medido el desborde a 375 px (408 px de ancho para un afan, 488 para el admin) y a 640 px (hasta 587 px de más para el admin): ya pasaba antes de «Menús». Ahora el título solo sale desde `sm`; las etiquetas del menú desde `lg` (Laboratorio y Nueva, solo admin, desde `xl`, igual que la insignia «admin»); por debajo son iconos con `aria-label` y `title`. Sin desborde en 375, 640, 768, 1024, 1100 y 1280 px, como admin y como afan.
 - Receta *Carbonara Udon* (31 oct): `base` incoherentes (`yema de huevo` en vez de
   `huevo`, `queso parmesano`), `tiempo` y `dificultad` guardados como `""` y
   cantidades con aclaraciones entre paréntesis. Se decidió dejarla así; el prompt
@@ -129,6 +130,7 @@ formato absoluto.
 | 7 nov 2026 | Columna `porciones_num` (raciones de plato) con 74 recetas | — | Migración `20261107_porciones_num.sql`; 2 recetas sin ingredientes quedan a `null` |
 | 7 nov 2026 | Menús, fase 1: tablas `menus` y `menu_recetas` con RLS, y diseño en `docs/menus.md` | — | Migración `20261107_menus.sql`; RLS verificadas simulando roles |
 | 7 nov 2026 | Menús, fase 2 (entrega A): `#/menus` y `#/menu/<id>`, hooks `useMenus`/`useMenu`, editor por pases | — | Probado con sesión real en dev: crear, añadir, cambiar pase, quitar y borrar (en cascada) |
+| 7 nov 2026 | Menús, fase 2 (entrega B): subir/bajar dentro de un pase y `raciones` por receta | — | Reordenar con un `upsert` atómico. Arreglado de paso: la cabecera desbordaba en móvil y tablet (ver deuda conocida) |
 
 ---
 
