@@ -62,11 +62,11 @@ Del plan original del 10 de octubre ya no queda nada: lista de la compra, campos
 de receta, para hacer, modo cocina y búsqueda semántica están hechos (ver el
 registro de abajo).
 
-### Propuesto, a la espera de decisión
-1. **Porciones de cada receta** — [porciones-propuesta.md](porciones-propuesta.md),
-   del 23 oct: es el paso 1 del plan de menús. Estimación para el catálogo con
-   columna de fiabilidad; **no se ha escrito nada en la base de datos** hasta que
-   se revise y se apruebe.
+### Propuesto
+1. ~~**Porciones de cada receta**~~ **Hecho el 7 nov 2026**: columna
+   `porciones_num` con 74 recetas (raciones de plato, no piezas); ver
+   [CLAUDE.md](../CLAUDE.md). **Siguiente: el menú semanal** (paso 2 del plan de
+   menús), que escalará por comensales. Diseño cerrado en [menus.md](menus.md); **fase 1 (base de datos) hecha el 7 nov**, falta el frontend (fases 2-4).
 2. **Detección de duplicados al dar de alta**, comparando el vector de la receta
    nueva con `recetas_embeddings`. Es lo más barato que queda.
 
@@ -126,6 +126,8 @@ formato absoluto.
 | 23 oct 2026 | Propuesta de porciones (sin escribir en BD) | — | [porciones-propuesta.md](porciones-propuesta.md) |
 | 30 oct 2026 | Mirón y registrado: despensa, compra y pasaporte solo con sesión | `e0bcca5` | Lectura de `paises` y `fotos_pais` pasa a `authenticated` |
 | 1 nov 2026 | Cantidades largas de ingredientes ya no se salen de su columna; push y despliegue; panel de seguimiento actualizado | `401633c` | Detectado con la receta Carbonara Udon |
+| 7 nov 2026 | Columna `porciones_num` (raciones de plato) con 74 recetas | — | Migración `20261107_porciones_num.sql`; 2 recetas sin ingredientes quedan a `null` |
+| 7 nov 2026 | Menús, fase 1: tablas `menus` y `menu_recetas` con RLS, y diseño en `docs/menus.md` | — | Migración `20261107_menus.sql`; RLS verificadas simulando roles |
 
 ---
 

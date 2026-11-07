@@ -367,6 +367,42 @@ exige volver a pasarlas por Vertex —no solo regenerar el PDF desde Supabase,
 que es lo que hace el flujo *Regenerar PDFs antiguos*—, y es trabajo aparte,
 no decidido todavía.
 
+### `porciones_num`: raciones como número
+
+**Hecho el 7 de noviembre de 2026** ([la migración](supabase/migrations/20261107_porciones_num.sql)).
+`recetas.porciones_num` (`smallint`, nullable) es lo que escalará el plan de menús y la
+lista de la compra por comensales. **Es aparte de `porciones`**, el texto libre que se
+ve en la ficha («2 personas», «1 brocheta»), que no se toca ni se sustituye.
+
+**Mide raciones de plato, no piezas**: unas galletas que salen 30 son ~8, no 30; si
+no, un menú para 4 pediría 4/30 de tanda. Los valores son estimaciones mías revisadas
+con el admin (la tabla y su fiabilidad A/M/B están en
+[docs/porciones-propuesta.md](docs/porciones-propuesta.md)): 74 recetas con valor.
+**Quedan en `null` las alitas buffalo y el solomillo de cerdo con castañas**, que no
+tienen ingredientes en la BD. El alta de n8n no la rellena: **una receta nueva nace
+con `porciones_num` a `null`** hasta que alguien la ponga. Antes de escalar, hay que
+tratar aparte las 6 recetas que ya llevan alguna cantidad «por persona» (risotto,
+tallarines con pesto, wok de tallarines, pescado al papillote, peras y sabayon) y la
+Brochetas Caprese, cuyos ingredientes ya van «por brocheta»: multiplicarlas sin más
+contaría dos veces.
+
+## Menús
+
+**Fase 1 hecha el 7 de noviembre de 2026**: solo base de datos, **sin frontend todavía**.
+Un menú es una selección de recetas para una ocasión (no una semana), con comensales y
+organizada por pases; del menú saldrá la lista de la compra escalada. Diseño y fases en
+[docs/menus.md](docs/menus.md); tablas `menus` y `menu_recetas`
+([la migración](supabase/migrations/20261107_menus.sql)).
+
+- **Privados**: solo el autor los ve y toca. `menu_recetas` no lleva `user_id`: se
+  autoriza por el dueño de su menú con un `exists`, **también al insertar y actualizar**;
+  sin eso se podría colgar una receta de un menú ajeno. El `UPDATE` de `menus` lleva
+  `with check` además de `using`, o se podría regalar un menú cambiando `user_id`.
+- `menu_recetas.raciones` a `null` significa «las del menú» (comensales). Existe para
+  pedir 12 brochetas aunque la receta sea «por brocheta».
+- Verificado simulando roles (otro usuario, dueño y anónimo) en una transacción que se
+  revierte; el linter no añade avisos.
+
 ## Modo cocina
 
 **Hecho el 13 de octubre de 2026.** Botón *Cocinar* en la barra de la ficha
