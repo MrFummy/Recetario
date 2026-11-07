@@ -1,10 +1,11 @@
 import { useMemo } from 'react';
-import { AlertTriangle, ArrowLeft, X } from 'lucide-react';
-import type { Recipe, Pase } from '../types';
+import { AlertTriangle, ArrowLeft } from 'lucide-react';
+import type { Recipe } from '../types';
 import { useMenu } from '../hooks/useMenu';
 import { PASES, paseSegunCategoria } from '../lib/menus';
 import { aHash } from '../lib/rutas';
 import { MenuCabecera } from './MenuCabecera';
+import { MenuFila } from './MenuFila';
 import { MenuSelectorRecetas } from './MenuSelectorRecetas';
 
 interface Props {
@@ -18,7 +19,9 @@ interface Props {
  * y se puede cambiar desde la propia fila.
  */
 export function MenuEditor({ id, recipes }: Props) {
-  const { menu, items, loading, noEncontrado, error, actualizar, anadir, quitar, cambiarPase } = useMenu(id);
+  const {
+    menu, items, loading, noEncontrado, error, actualizar, anadir, quitar, cambiarPase, mover, fijarRaciones,
+  } = useMenu(id);
 
   const porId = useMemo(() => new Map(recipes.map((r) => [r.id, r])), [recipes]);
   const enMenu = useMemo(() => new Set(items.map((i) => i.receta_id)), [items]);
@@ -74,45 +77,28 @@ export function MenuEditor({ id, recipes }: Props) {
         )}
 
         {PASES.map(({ id: pase, titulo }) => {
-          const delPase = items.filter((i) => i.pase === pase);
+          const delPase = items.filter((i) => i.pase === pase).sort((a, b) => a.orden - b.orden);
           if (delPase.length === 0) return null;
           return (
             <section key={pase}>
               <h3 className="font-display font-black text-2xl text-ink mb-2">{titulo}</h3>
               <ul className="list-none p-0 m-0 border-t border-dashed border-ink/20">
-                {delPase.map((item) => {
+                {delPase.map((item, i) => {
                   const receta = porId.get(item.receta_id);
                   if (!receta) return null;
                   return (
-                    <li key={item.receta_id} className="flex items-center gap-3 py-2 border-b border-dashed border-ink/15">
-                      <a
-                        href={aHash({ vista: 'receta', id: receta.id })}
-                        className="min-w-0 flex-1 text-ink text-[14.5px] hover:text-accent truncate"
-                      >
-                        {receta.titulo}
-                      </a>
-                      {receta.porciones_num != null && (
-                        <span className="hidden sm:inline font-mono text-[11px] text-ink-soft shrink-0">
-                          para {receta.porciones_num}
-                        </span>
-                      )}
-                      <select
-                        value={item.pase}
-                        onChange={(e) => void cambiarPase(item.receta_id, e.target.value as Pase)}
-                        aria-label={`Pase de ${receta.titulo}`}
-                        className="font-mono text-[11.5px] bg-white border border-ink/30 rounded px-1.5 py-1 shrink-0"
-                      >
-                        {PASES.map((p) => <option key={p.id} value={p.id}>{p.titulo}</option>)}
-                      </select>
-                      <button
-                        onClick={() => void quitar(item.receta_id)}
-                        title="Quitar del menú"
-                        aria-label={`Quitar ${receta.titulo} del menú`}
-                        className="text-ink-soft hover:text-hot transition-colors shrink-0"
-                      >
-                        <X size={15} />
-                      </button>
-                    </li>
+                    <MenuFila
+                      key={item.receta_id}
+                      receta={receta}
+                      item={item}
+                      comensales={menu.comensales}
+                      esPrimera={i === 0}
+                      esUltima={i === delPase.length - 1}
+                      onMover={(d) => void mover(item.receta_id, d)}
+                      onCambiarPase={(p) => void cambiarPase(item.receta_id, p)}
+                      onFijarRaciones={(r) => void fijarRaciones(item.receta_id, r)}
+                      onQuitar={() => void quitar(item.receta_id)}
+                    />
                   );
                 })}
               </ul>

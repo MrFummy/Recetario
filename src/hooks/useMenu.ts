@@ -17,6 +17,10 @@ export interface MenuAbierto {
   anadir: (recetaId: string, pase: Pase) => Promise<void>;
   quitar: (recetaId: string) => Promise<void>;
   cambiarPase: (recetaId: string, pase: Pase) => Promise<void>;
+  /** Sube (-1) o baja (1) una receta dentro de su pase. */
+  mover: (recetaId: string, direccion: -1 | 1) => Promise<void>;
+  /** `null` devuelve la receta a las raciones del menú (los comensales). */
+  fijarRaciones: (recetaId: string, raciones: number | null) => Promise<void>;
 }
 
 /**
@@ -101,5 +105,40 @@ export function useMenu(menuId: string): MenuAbierto {
     setError(null);
   }, [menuId]);
 
-  return { menu, items, loading, noEncontrado: !loading && !menu && !error, error, actualizar, anadir, quitar, cambiarPase };
+  const mover = useCallback(async (recetaId: string, direccion: -1 | 1) => {
+    const actual = items.find((i) => i.receta_id === recetaId);
+    if (!actual) return;
+    const delPase = items.filter((i) => i.pase === actual.pase).sort((a, b) => a.orden - b.orden);
+    const vecino = delPase[delPase.indexOf(actual) + direccion];
+    if (!vecino) return;
+
+    // Se intercambian los `orden` en una sola petición, para que no quede a medias
+    // si falla. Lleva las filas enteras porque un upsert también es un INSERT
+    // posible y `pase` es obligatorio.
+    const cambiadas: MenuReceta[] = [
+      { ...actual, orden: vecino.orden },
+      { ...vecino, orden: actual.orden },
+    ];
+    const { error: err } = await supabase
+      .from('menu_recetas').upsert(cambiadas, { onConflict: 'menu_id,receta_id' });
+    if (err) {
+      setError(errorMessage(err, 'No se pudo mover la receta.'));
+      return;
+    }
+    setItems((prev) => prev.map((i) => cambiadas.find((c) => c.receta_id === i.receta_id) ?? i));
+    setError(null);
+  }, [items]);
+
+  const fijarRaciones = useCallback(async (recetaId: string, raciones: number | null) => {
+    const { error: err } = await supabase
+      .from('menu_recetas').update({ raciones }).eq('menu_id', menuId).eq('receta_id', recetaId);
+    if (err) {
+      setError(errorMessage(err, 'No se pudieron guardar las raciones.'));
+      return;
+    }
+    setItems((prev) => prev.map((i) => (i.receta_id === recetaId ? { ...i, raciones } : i)));
+    setError(null);
+  }, [menuId]);
+
+  return { menu, items, loading, noEncontrado: !loading && !menu && !error, error, actualizar, anadir, quitar, cambiarPase, mover, fijarRaciones };
 }

@@ -1,8 +1,8 @@
 # Menús
 
 Diseño del 7 de noviembre de 2026. Es el paso 2 del plan que empezó con
-`porciones_num` (ver [CLAUDE.md](../CLAUDE.md)). **Fase 1 y la entrega A de la fase 2 hechas el 7 de
-noviembre de 2026** (tablas y RLS en producción, [la migración](../supabase/migrations/20261107_menus.sql));
+`porciones_num` (ver [CLAUDE.md](../CLAUDE.md)). **Fase 1 y la fase 2 completa (entregas A y B) hechas el
+7 de noviembre de 2026** (tablas y RLS en producción, [la migración](../supabase/migrations/20261107_menus.sql));
 el resto es el acuerdo de qué se construye y por qué.
 
 Un menú no es semanal: es una selección de recetas para **una ocasión** (una cena,
@@ -97,8 +97,10 @@ el factor antes de sumar. Reglas:
 2. **Lista y editor**: rutas, crear menú, comensales, añadir y quitar recetas por
    pase, orden. **Entrega A hecha el 7 nov** (`#/menus`, `#/menu/<id>`, cambiar de
    pase, aviso de recetas sin `porciones_num`; probada con sesión real en dev: crear,
-   añadir, cambiar pase, quitar, borrar con cascada). **Falta la entrega B**: subir y
-   bajar dentro de un pase y `raciones` por receta.
+   añadir, cambiar pase, quitar, borrar con cascada). **Entrega B hecha el 7 nov**: subir y bajar dentro de un pase
+   (los `orden` de las dos filas se intercambian en un solo `upsert`, para que no
+   quede a medias) y `raciones` por receta (vacío = las del menú). Probado con sesión
+   real.
 3. **Lista de la compra escalada**: factor por receta, líneas «por persona»,
    `raciones` por receta, avisos.
 4. **Notas, fecha e impresión.**
@@ -106,9 +108,9 @@ el factor antes de sumar. Reglas:
 
 ## Preguntas abiertas
 
-- **Brochetas y recetas «por unidad»**: ¿basta con `raciones` a mano o conviene
-  marcarlas en la receta? Se empieza por `raciones` a mano.
-- **Orden dentro de un pase**: ¿arrastrar o botones subir/bajar? Botones primero,
-  que no exige librería.
+- **Brochetas y recetas «por unidad»**: por ahora `raciones` a mano en el menú; sigue
+  abierto si conviene marcarlas en la receta.
+- **Orden dentro de un pase**: se hizo con botones subir/bajar. Arrastrar exigiría
+  una librería; se retoma solo si estorba.
 - **Recetas nuevas sin `porciones_num`**: el alta de n8n no la rellena. Si los menús
   se usan mucho, convendrá que Vertex la estime al dar de alta.
