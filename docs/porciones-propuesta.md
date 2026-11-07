@@ -1,4 +1,7 @@
-# Propuesta de `porciones` (pendiente de revisar)
+# Propuesta de `porciones` (aplicada el 7 nov 2026 en `porciones_num`)
+
+> **Aplicada.** Revisada con el admin y escrita en `recetas.porciones_num` ([migración](../supabase/migrations/20261107_porciones_num.sql)). Cambios respecto a esta tabla: galletas navideñas, orejas y Linzer = 8, y se añadieron las 7 recetas posteriores al 23 oct. Los valores vigentes son los de la base de datos.
+
 
 **Paso 1 del plan de menús.** Estimación mía a partir de las cantidades de
 `recetas.ingredientes` el 23 de octubre de 2026. **No se ha escrito nada en la
