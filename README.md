@@ -183,9 +183,15 @@ Dos trampas que ya costaron un rato:
   (`f1c46dbd-…`) pudo ser, igual que pasó aquí, el uuid del portal y no el del servicio.
 
 Para comprobar que sigue activo, con el nombre real del bundle de `dist/assets/`
-(`curl` no expande comodines en una URL), compara el tamaño descargado con y sin
-compresión: sin gzip son ~600 KB, con gzip ~160 KB. El tamaño es la prueba fiable: con gzip apagado, `curl -I` no enseñó
-`content-encoding` y no dijo nada más.
+(`curl` no expande comodines en una URL). Con gzip debe salir `content-encoding: gzip`
+(y `vary: Accept-Encoding`); sin él, esa línea no aparece:
+
+```bash
+curl -sI -H 'Accept-Encoding: gzip' https://recetario.orballo.link/assets/<bundle>.js | grep -i content-encoding
+```
+
+Y como segunda prueba, el tamaño descargado con y sin compresión: ~600 KB sin gzip y
+~170 KB con gzip (medido el 9 de noviembre de 2026: 598.704 y 168.358 bytes).
 
 ```bash
 curl -s -H 'Accept-Encoding: gzip' -o /dev/null -w 'con gzip: %{size_download} bytes\n' https://recetario.orballo.link/assets/<bundle>.js
