@@ -189,7 +189,7 @@ function App() {
           </SoloLogueados>
         ) : (ruta.vista === 'menus' || ruta.vista === 'menu') ? (
           <SoloLogueados sesionCargada={sesionCargada} logueado={!!user} seccion="tus menús" onLogin={() => setShowLoginModal(true)}>
-            <SeccionMenus ruta={ruta} recipes={recipes} user={user} />
+            <SeccionMenus ruta={ruta} recipes={recipes} despensa={despensa} user={user} />
           </SoloLogueados>
         ) : (ruta.vista === 'pasaporte' || ruta.vista === 'pais') ? (
           <SoloLogueados sesionCargada={sesionCargada} logueado={!!user} seccion="el pasaporte" onLogin={() => setShowLoginModal(true)}>

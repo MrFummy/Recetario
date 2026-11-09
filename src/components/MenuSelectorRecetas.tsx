@@ -14,11 +14,17 @@ interface Props {
 export function MenuSelectorRecetas({ recipes, enMenu, onAnadir }: Props) {
   const [texto, setTexto] = useState('');
 
-  const resultados = useMemo(() => {
+  const { resultados, yaEstan } = useMemo(() => {
     const buscado = normalizeString(texto.trim());
-    return recipes
-      .filter((r) => !enMenu.has(r.id) && (!buscado || normalizeString(r.titulo).includes(buscado)))
-      .sort((a, b) => a.titulo.localeCompare(b.titulo, 'es'));
+    const encajan = recipes.filter((r) => !buscado || normalizeString(r.titulo).includes(buscado));
+    return {
+      resultados: encajan
+        .filter((r) => !enMenu.has(r.id))
+        .sort((a, b) => a.titulo.localeCompare(b.titulo, 'es')),
+      // Las que encajan pero ya están dentro: sin esto, buscar una receta ya añadida
+      // diría que no existe.
+      yaEstan: encajan.filter((r) => enMenu.has(r.id)).length,
+    };
   }, [recipes, enMenu, texto]);
 
   return (
@@ -39,7 +45,11 @@ export function MenuSelectorRecetas({ recipes, enMenu, onAnadir }: Props) {
 
       {resultados.length === 0 ? (
         <p className="font-mono text-[12.5px] text-ink-soft">
-          {texto ? 'Ninguna receta encaja con eso.' : 'Ya has añadido todas las recetas.'}
+          {!texto
+            ? 'Ya has añadido todas las recetas.'
+            : yaEstan > 0
+              ? 'Esa receta ya está en el menú.'
+              : 'Ninguna receta encaja con eso.'}
         </p>
       ) : (
         <ul className="list-none p-0 m-0 max-h-80 overflow-y-auto border-t border-dashed border-ink/20">

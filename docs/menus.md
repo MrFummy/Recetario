@@ -1,8 +1,8 @@
 # Menús
 
 Diseño del 7 de noviembre de 2026. Es el paso 2 del plan que empezó con
-`porciones_num` (ver [CLAUDE.md](../CLAUDE.md)). **Fase 1 y la fase 2 completa (entregas A y B) hechas el
-7 de noviembre de 2026** (tablas y RLS en producción, [la migración](../supabase/migrations/20261107_menus.sql));
+`porciones_num` (ver [CLAUDE.md](../CLAUDE.md)). **Fases 1 y 2 (entregas A y B) hechas el
+7 de noviembre de 2026, y la 3 el 9** (tablas y RLS en producción, [la migración](../supabase/migrations/20261107_menus.sql));
 el resto es el acuerdo de qué se construye y por qué.
 
 Un menú no es semanal: es una selección de recetas para **una ocasión** (una cena,
@@ -101,9 +101,12 @@ el factor antes de sumar. Reglas:
    (los `orden` de las dos filas se intercambian en un solo `upsert`, para que no
    quede a medias) y `raciones` por receta (vacío = las del menú). Probado con sesión
    real.
-3. **Lista de la compra escalada**: factor por receta, líneas «por persona»,
-   `raciones` por receta, avisos.
-4. **Notas, fecha e impresión.**
+3. ~~**Lista de la compra escalada**: factor por receta, líneas «por persona»,
+   `raciones` por receta, avisos.~~ **Hecha el 9 nov.** `lib/escalado.ts` (`multiplicador`,
+   `esPorRacion`, `redondear`) y `listaDeLaCompra` con un `Map` de escalas opcional;
+   sección «Lista de la compra» al final del menú (`MenuCompra.tsx`). Probada con sesión
+   real: 6 y 7 comensales, líneas «por persona» y brochetas con raciones propias.
+4. **Imprimir.** *(Notas y fecha ya están desde la fase 2.)*
 5. *(Más adelante)* Compartir con los afans y por enlace.
 
 ## Preguntas abiertas

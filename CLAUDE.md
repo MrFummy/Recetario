@@ -388,9 +388,9 @@ contaría dos veces.
 
 ## Menús
 
-**Fase 1 y fase 2 hechas el 7 de noviembre de 2026**: base de datos y el frontend en
+**Fases 1 y 2 el 7 de noviembre de 2026; la 3 (lista de la compra escalada), el 9**: base de datos y el frontend en
 `#/menus` y `#/menu/<id>` (crear, comensales, recetas por pase, subir/bajar y `raciones` por receta) ([MenusSection.tsx](src/components/MenusSection.tsx)),
-solo con sesión. **Aún no escala ni genera lista de la compra** (fases 3 y 4).
+solo con sesión. **Falta imprimir** (fase 4).
 Un menú es una selección de recetas para una ocasión (no una semana), con comensales y
 organizada por pases; del menú saldrá la lista de la compra escalada. Diseño y fases en
 [docs/menus.md](docs/menus.md); tablas `menus` y `menu_recetas`
@@ -407,6 +407,16 @@ organizada por pases; del menú saldrá la lista de la compra escalada. Diseño 
 - `useMenus` (lista) y `useMenu` (uno) viven dentro de la sección, no en `App`; el editor
   se monta con `key={id}` y por eso `useMenu` no reinicia su estado al cambiar de id.
   Una receta entra en el pase que le toca por su categoría ([menus.ts](src/lib/menus.ts)).
+- **La lista de la compra del menú** ([MenuCompra.tsx](src/components/MenuCompra.tsx)) reutiliza
+  `listaDeLaCompra` con un `Map<id, Escala>` y escala cada línea con
+  [escalado.ts](src/lib/escalado.ts): `valor × raciones ÷ porciones_num`, con raciones =
+  `menu_recetas.raciones ?? menu.comensales`. **Las líneas «por X»** (13 en el catálogo: «por
+  persona», «por brocheta», «por rollito»…) ya son por ración, así que se multiplican por las
+  raciones **sin dividir** (`esPorRacion` mira el texto de `cantidad`). Sin `porciones_num`
+  la receta no se escala. **Se redondea sobre la suma de todas las recetas**, no línea a línea:
+  unidades enteras (unidad, diente, yema…) hacia arriba, g y ml sin decimales (con uno por
+  debajo de 10), el resto con dos. Sin `escalas` la función se comporta como siempre, que es
+  lo que usa la lista de «para hacer». Lo que no es numérico («al gusto») no se escala.
 - Verificado simulando roles (otro usuario, dueño y anónimo) en una transacción que se
   revierte; el linter no añade avisos.
 

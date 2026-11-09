@@ -1,16 +1,19 @@
 import { useMemo } from 'react';
 import { AlertTriangle, ArrowLeft } from 'lucide-react';
 import type { Recipe } from '../types';
+import type { Despensa } from '../hooks/useDespensa';
 import { useMenu } from '../hooks/useMenu';
 import { PASES, paseSegunCategoria } from '../lib/menus';
 import { aHash } from '../lib/rutas';
 import { MenuCabecera } from './MenuCabecera';
 import { MenuFila } from './MenuFila';
+import { MenuCompra } from './MenuCompra';
 import { MenuSelectorRecetas } from './MenuSelectorRecetas';
 
 interface Props {
   id: string;
   recipes: Recipe[];
+  despensa: Despensa;
 }
 
 /**
@@ -18,7 +21,7 @@ interface Props {
  * añadir más. Cada receta entra en el pase que le corresponde por su categoría
  * y se puede cambiar desde la propia fila.
  */
-export function MenuEditor({ id, recipes }: Props) {
+export function MenuEditor({ id, recipes, despensa }: Props) {
   const {
     menu, items, loading, noEncontrado, error, actualizar, anadir, quitar, cambiarPase, mover, fijarRaciones,
   } = useMenu(id);
@@ -113,6 +116,10 @@ export function MenuEditor({ id, recipes }: Props) {
           enMenu={enMenu}
           onAnadir={(r) => void anadir(r.id, paseSegunCategoria(r.categoria))}
         />
+      </div>
+
+      <div className="mt-12">
+        <MenuCompra menu={menu} items={items} recipes={recipes} despensa={despensa} />
       </div>
     </div>
   );
