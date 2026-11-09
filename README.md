@@ -131,15 +131,32 @@ Con gzip baja a ~160 KB y a ~0,7 s. Si se reinstala el NAS o se recrea el portal
 hay que repetirlo.
 
 El portal de recetario es un bloque `server` generado por Web Station
-(`/usr/local/etc/nginx/sites-available/*.w3conf`, el de
-`server_name recetario.orballo.link`) que incluye
-`/usr/local/etc/nginx/conf.d/<uuid-del-portal>/user.conf`. Ese fichero **sobrevive
-a que Web Station regenere el resto**, así que es el sitio correcto. Por SSH, como
-`root`, con el `<uuid>` de la carpeta que nombra ese bloque (para recetario, el
-`fe681dc0-001c-40b5-831b-b931bc9be4a2`):
+(`/usr/local/etc/nginx/sites-available/<uuid>.w3conf`, el de
+`server_name recetario.orballo.link`). **La carpeta del `user.conf` se llama como el
+servicio, no como el portal**, y hay que sacarla del propio NAS: el bloque `server`
+incluye `conf.d/.service.<uuid-portal>.<uuid-servicio>.conf*`, y ese fichero, a su
+vez, carga `conf.d/<uuid-servicio>/user.conf*`. Ese `user.conf` **sobrevive a que Web
+Station regenere el resto**, así que es el sitio correcto. Por SSH (entrando con tu
+usuario administrador y `sudo -i`), para encontrar la ruta:
 
 ```bash
-cat > /usr/local/etc/nginx/conf.d/<uuid>/user.conf <<'EOF'
+grep -l "recetario.orballo.link" /usr/local/etc/nginx/sites-available/*.w3conf
+```
+
+```bash
+cat /usr/local/etc/nginx/conf.d/.service.<uuid-portal>.<uuid-servicio>.conf
+```
+
+La línea `include /usr/local/etc/nginx/conf.d/<uuid-servicio>/user.conf*;` da la
+carpeta. **Para recetario es `9ea3124c-1868-4ad2-bdd3-6f629017c6ae`** (comprobado el
+9 de noviembre de 2026; el portal es `fe681dc0-…`, y esa carpeta **no existe**: una
+versión anterior de este README la daba por buena y no funcionaba). Como el `include`
+termina en `*`, nginx **ignora sin error un `user.conf` que no existe**, así que su
+ausencia no avisa de nada: el gzip simplemente no está.
+
+```bash
+mkdir -p /usr/local/etc/nginx/conf.d/<uuid-servicio>
+cat > /usr/local/etc/nginx/conf.d/<uuid-servicio>/user.conf <<'EOF'
 gzip on;
 gzip_comp_level 6;
 gzip_min_length 1024;
@@ -150,6 +167,10 @@ nginx -t 2>&1 | grep -v "low address bits"   # debe decir «syntax is ok»
 nginx -s reload                                # solo si el anterior salió bien
 ```
 
+Esto aplica **solo a este portal**: los demás de Web Station (otro bloque `server`,
+otra carpeta) no cambian. Para darles gzip hay que repetir el procedimiento con su
+propio dominio y su propio uuid de servicio.
+
 Dos trampas que ya costaron un rato:
 
 - **No usar `conf.d/http.*.conf`** para esto: se carga a nivel `http` y choca con un
@@ -157,14 +178,18 @@ Dos trampas que ya costaron un rato:
   `nginx -t` falla, `nginx -s reload` no se aplica pero nginx sigue con la
   configuración vieja**, y parece que «no hace nada». Comprobar siempre `-t`
   antes de recargar.
-- Cada portal tiene su propia carpeta de `user.conf`: la de `musas.orballo.link` es
-  otra (`f1c46dbd-…`). No mezclarlas.
+- **No copiar el uuid de otro portal ni el de este README sin comprobarlo.** Cada
+  servicio tiene su carpeta; la anotación antigua de `musas.orballo.link`
+  (`f1c46dbd-…`) pudo ser, igual que pasó aquí, el uuid del portal y no el del servicio.
 
-Para comprobar que sigue activo (debe salir `content-encoding: gzip`), con el
-nombre real del bundle de `dist/assets/` (`curl` no expande comodines en una URL):
+Para comprobar que sigue activo, con el nombre real del bundle de `dist/assets/`
+(`curl` no expande comodines en una URL), compara el tamaño descargado con y sin
+compresión: sin gzip son ~600 KB, con gzip ~160 KB. El tamaño es la prueba fiable: con gzip apagado, `curl -I` no enseñó
+`content-encoding` y no dijo nada más.
 
 ```bash
-curl -sI -H 'Accept-Encoding: gzip' https://recetario.orballo.link/assets/<bundle>.js | grep -i content-encoding
+curl -s -H 'Accept-Encoding: gzip' -o /dev/null -w 'con gzip: %{size_download} bytes\n' https://recetario.orballo.link/assets/<bundle>.js
+curl -s -o /dev/null -w 'sin gzip: %{size_download} bytes\n' https://recetario.orballo.link/assets/<bundle>.js
 ```
 
 ### 3. Rutas: por qué no hace falta tocar Nginx
