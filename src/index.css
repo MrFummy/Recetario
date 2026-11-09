@@ -78,3 +78,17 @@ body {
   gap: 2rem 1.5rem;
   align-items: start;
 }
+
+/* ── Impresión ─────────────────────────────── */
+/* Las hojas de un menú (HojaImpresa) son A4 exactas y se pintan su propio fondo, así que
+   la página va sin márgenes: con ellos el navegador añadiría su URL y su fecha. */
+@page { size: A4; margin: 0; }
+
+@media print {
+  html, body {
+    background: var(--color-paper) !important;
+    background-image: none !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}

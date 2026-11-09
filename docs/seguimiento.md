@@ -132,7 +132,7 @@ formato absoluto.
 | 7 nov 2026 | Menús, fase 2 (entrega A): `#/menus` y `#/menu/<id>`, hooks `useMenus`/`useMenu`, editor por pases | — | Probado con sesión real en dev: crear, añadir, cambiar pase, quitar y borrar (en cascada) |
 | 7 nov 2026 | Menús, fase 2 (entrega B): subir/bajar dentro de un pase y `raciones` por receta | — | Reordenar con un `upsert` atómico. Arreglado de paso: la cabecera desbordaba en móvil y tablet (ver deuda conocida) |
 | 9 nov 2026 | Menús, fase 3: lista de la compra escalada (`escalado.ts`, `MenuCompra.tsx`) | — | Líneas «por X» multiplican por raciones sin dividir; redondeo sobre la suma. Probada con sesión real; además, gzip del NAS arreglado y desplegado |
-| 9 nov 2026 | Menús, fase 4: imprimir (`MenuImprimible.tsx`, botón en el editor, `print:hidden`) | — | Probado emulando el estilo de impresión en pantalla; el salto de página no se vio en una impresión real |
+| 9 nov 2026 | Menús, fase 4: imprimir, con el estilo de los PDF de n8n (`MenuImprimible.tsx`, `HojaImpresa.tsx`, `paginar.ts`) | — | Hojas A4 exactas sin márgenes, `@page { margin: 0 }` global. Probado emulando el estilo de impresión con 25 recetas (6 hojas, sin desborde); no visto en una impresión real |
 
 ---
 

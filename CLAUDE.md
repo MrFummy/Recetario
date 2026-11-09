@@ -417,13 +417,21 @@ organizada por pases; del menú saldrá la lista de la compra escalada. Diseño 
   unidades enteras (unidad, diente, yema…) hacia arriba, g y ml sin decimales (con uno por
   debajo de 10), el resto con dos. Sin `escalas` la función se comporta como siempre, que es
   lo que usa la lista de «para hacer». Lo que no es numérico («al gusto») no se escala.
-- **Imprimir** es CSS de impresión, sin librerías ni n8n: el botón llama a `window.print()`;
-  [MenuImprimible.tsx](src/components/MenuImprimible.tsx) es una hoja `hidden print:block`
-  (invisible en pantalla) y la cabecera de `App` y el editor llevan `print:hidden`. «Guardar
-  como PDF» es del navegador. La pantalla y la hoja comparten `listaDelMenu`
-  ([menus.ts](src/lib/menus.ts)), para que la lista no pueda salir distinta. El salto de página
-  entre el menú y la lista (`break-before-page`) **no se ha visto en una impresión real**: solo
-  se verificó emulando el estilo de impresión en pantalla.
+- **Imprimir** es CSS de impresión, sin librerías ni n8n, y copia el aspecto de los PDF de
+  recetas de n8n. El botón llama a `window.print()`; [MenuImprimible.tsx](src/components/MenuImprimible.tsx)
+  es una hoja `hidden print:block` (invisible en pantalla) y la cabecera de `App` y el editor
+  llevan `print:hidden`. Cada página es una **hoja A4 exacta de 210 × 296 mm**
+  ([HojaImpresa.tsx](src/components/HojaImpresa.tsx)) que se pinta su propio fondo
+  (`print-color-adjust: exact`; los 296 mm y no 297 evitan una página en blanco por
+  redondeo). **`@page { margin: 0 }` es global** (en `index.css`): con márgenes el navegador
+  añade su URL y su fecha a cada página, y sin ellos nada parte el contenido, así que
+  [paginar.ts](src/lib/paginar.ts) lo reparte a mano entre hojas con **pesos medidos en filas
+  de 36 px** (`FILAS_POR_HOJA` = 25; título de sección 1,5; nota y título del menú, en su
+  propio cálculo). Si se cambia el tamaño de letra o el relleno de las filas, **hay que
+  recalcular esos pesos**, o el contenido se saldría de la hoja. Pantalla y hoja comparten
+  `listaDelMenu` ([menus.ts](src/lib/menus.ts)). Verificado emulando el estilo de impresión
+  (convirtiendo las reglas `@media print` en reglas de pantalla) con un menú de 25 recetas; el
+  salto de página **no se ha visto en una impresión real**.
 - Verificado simulando roles (otro usuario, dueño y anónimo) en una transacción que se
   revierte; el linter no añade avisos.
 

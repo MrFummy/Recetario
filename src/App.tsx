@@ -105,7 +105,7 @@ function App() {
   const enCatalogo = !enNueva && !enDespensa && !enListaCompra && !enLaboratorio && !enPasaporte && !enMenus;
 
   return (
-    <div className="min-h-screen pb-20">
+    <div className="min-h-screen pb-20 print:min-h-0 print:pb-0">
       {/* ═════ Header ═════════════════════════════════════ */}
       <header className="bg-paper/85 backdrop-blur-md sticky top-0 z-30 border-b border-dashed border-ink/25 print:hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
@@ -162,7 +162,7 @@ function App() {
       </header>
 
       {/* ═════ Main ═══════════════════════════════════════ */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 print:mt-0 print:p-0 print:max-w-none">
         {error && (
           <div className="bg-hot-soft border-2 border-hot text-hot p-4 rounded-md mb-6 font-mono text-sm">
             Error al cargar recetas: {error}

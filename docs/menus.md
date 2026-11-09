@@ -106,12 +106,19 @@ el factor antes de sumar. Reglas:
    `esPorRacion`, `redondear`) y `listaDeLaCompra` con un `Map` de escalas opcional;
    sección «Lista de la compra» al final del menú (`MenuCompra.tsx`). Probada con sesión
    real: 6 y 7 comensales, líneas «por persona» y brochetas con raciones propias.
-4. ~~**Imprimir.**~~ **Hecha el 9 nov.** Botón «Imprimir» en el menú (desactivado si no hay
-   recetas) que llama a `window.print()`; `MenuImprimible.tsx` es una hoja que solo se ve al
-   imprimir (`hidden print:block`) y la cabecera y el editor llevan `print:hidden`. Sale el
-   menú por pases, las notas y, en otra página, la lista de la compra con casillas. La lista
-   de la pantalla y la de la hoja salen de la misma función (`listaDelMenu`). *(Notas y fecha ya
-   estaban desde la fase 2.)*
+4. ~~**Imprimir.**~~ **Hecha el 9 nov, y rehecha el mismo día con el estilo de los PDF de
+   recetas de n8n.** Botón «Imprimir» (desactivado sin recetas) que llama a `window.print()`.
+   `MenuImprimible.tsx` es una hoja que solo se ve al imprimir (`hidden print:block`); la
+   cabecera y el editor llevan `print:hidden`. Cada página es una **hoja A4 exacta**
+   (`HojaImpresa.tsx`): papel crema, cabecera con el logo y «El Recetario de Markis» en script,
+   título con subrayado amarillo, casillas con sombra, la nota amarilla de la web y un pie en
+   monoespaciada con la ruta (`~/menus/<nombre>.md`), la página y la fecha, como en los PDF.
+   Como con márgenes el navegador añade su URL y su fecha, la página va **sin márgenes**
+   (`@page { margin: 0 }` en `index.css`) y el contenido se reparte a mano entre hojas con
+   `lib/paginar.ts`, por pesos medidos en filas de 36 px. Lo que no cabe pasa a otra hoja, un
+   título de sección no se queda solo al final, y la lista de la compra empieza en página
+   nueva. Verificada emulando el estilo de impresión con un menú de 25 recetas: 6 hojas de
+   210 × 296 mm, ninguna con desborde. *(Notas y fecha ya estaban desde la fase 2.)*
 5. *(Más adelante)* Compartir con los afans y por enlace.
 
 ## Preguntas abiertas
