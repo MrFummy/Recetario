@@ -2,7 +2,7 @@
 
 Diseño del 7 de noviembre de 2026. Es el paso 2 del plan que empezó con
 `porciones_num` (ver [CLAUDE.md](../CLAUDE.md)). **Fases 1 y 2 (entregas A y B) hechas el
-7 de noviembre de 2026, y la 3 el 9** (tablas y RLS en producción, [la migración](../supabase/migrations/20261107_menus.sql));
+7 de noviembre de 2026, y las 3 y 4 el 9** (tablas y RLS en producción, [la migración](../supabase/migrations/20261107_menus.sql));
 el resto es el acuerdo de qué se construye y por qué.
 
 Un menú no es semanal: es una selección de recetas para **una ocasión** (una cena,
@@ -106,7 +106,12 @@ el factor antes de sumar. Reglas:
    `esPorRacion`, `redondear`) y `listaDeLaCompra` con un `Map` de escalas opcional;
    sección «Lista de la compra» al final del menú (`MenuCompra.tsx`). Probada con sesión
    real: 6 y 7 comensales, líneas «por persona» y brochetas con raciones propias.
-4. **Imprimir.** *(Notas y fecha ya están desde la fase 2.)*
+4. ~~**Imprimir.**~~ **Hecha el 9 nov.** Botón «Imprimir» en el menú (desactivado si no hay
+   recetas) que llama a `window.print()`; `MenuImprimible.tsx` es una hoja que solo se ve al
+   imprimir (`hidden print:block`) y la cabecera y el editor llevan `print:hidden`. Sale el
+   menú por pases, las notas y, en otra página, la lista de la compra con casillas. La lista
+   de la pantalla y la de la hoja salen de la misma función (`listaDelMenu`). *(Notas y fecha ya
+   estaban desde la fase 2.)*
 5. *(Más adelante)* Compartir con los afans y por enlace.
 
 ## Preguntas abiertas

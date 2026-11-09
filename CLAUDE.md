@@ -388,9 +388,9 @@ contaría dos veces.
 
 ## Menús
 
-**Fases 1 y 2 el 7 de noviembre de 2026; la 3 (lista de la compra escalada), el 9**: base de datos y el frontend en
+**Fases 1 y 2 el 7 de noviembre de 2026; las 3 (lista de la compra escalada) y 4 (imprimir), el 9**: base de datos y el frontend en
 `#/menus` y `#/menu/<id>` (crear, comensales, recetas por pase, subir/bajar y `raciones` por receta) ([MenusSection.tsx](src/components/MenusSection.tsx)),
-solo con sesión. **Falta imprimir** (fase 4).
+solo con sesión. **Solo queda compartir** (con los afans o por enlace), pensado para más adelante.
 Un menú es una selección de recetas para una ocasión (no una semana), con comensales y
 organizada por pases; del menú saldrá la lista de la compra escalada. Diseño y fases en
 [docs/menus.md](docs/menus.md); tablas `menus` y `menu_recetas`
@@ -417,6 +417,13 @@ organizada por pases; del menú saldrá la lista de la compra escalada. Diseño 
   unidades enteras (unidad, diente, yema…) hacia arriba, g y ml sin decimales (con uno por
   debajo de 10), el resto con dos. Sin `escalas` la función se comporta como siempre, que es
   lo que usa la lista de «para hacer». Lo que no es numérico («al gusto») no se escala.
+- **Imprimir** es CSS de impresión, sin librerías ni n8n: el botón llama a `window.print()`;
+  [MenuImprimible.tsx](src/components/MenuImprimible.tsx) es una hoja `hidden print:block`
+  (invisible en pantalla) y la cabecera de `App` y el editor llevan `print:hidden`. «Guardar
+  como PDF» es del navegador. La pantalla y la hoja comparten `listaDelMenu`
+  ([menus.ts](src/lib/menus.ts)), para que la lista no pueda salir distinta. El salto de página
+  entre el menú y la lista (`break-before-page`) **no se ha visto en una impresión real**: solo
+  se verificó emulando el estilo de impresión en pantalla.
 - Verificado simulando roles (otro usuario, dueño y anónimo) en una transacción que se
   revierte; el linter no añade avisos.
 

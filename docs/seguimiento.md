@@ -66,7 +66,7 @@ registro de abajo).
 1. ~~**Porciones de cada receta**~~ **Hecho el 7 nov 2026**: columna
    `porciones_num` con 74 recetas (raciones de plato, no piezas); ver
    [CLAUDE.md](../CLAUDE.md). **Siguiente: el menú semanal** (paso 2 del plan de
-   menús), que escalará por comensales. Diseño cerrado en [menus.md](menus.md); **fases 1 y 2 el 7 nov** (base de datos y editor con orden y `raciones`) **y la 3 el 9 nov** (lista de la compra escalada); falta la 4 (imprimir; notas y fecha ya están).
+   menús), que escalará por comensales. Diseño cerrado en [menus.md](menus.md); **fases 1 y 2 el 7 nov** (base de datos y editor con orden y `raciones`) **y la 3 y la 4 el 9 nov** (lista de la compra escalada e imprimir); solo queda compartir, para más adelante.
 2. **Detección de duplicados al dar de alta**, comparando el vector de la receta
    nueva con `recetas_embeddings`. Es lo más barato que queda.
 
@@ -132,6 +132,7 @@ formato absoluto.
 | 7 nov 2026 | Menús, fase 2 (entrega A): `#/menus` y `#/menu/<id>`, hooks `useMenus`/`useMenu`, editor por pases | — | Probado con sesión real en dev: crear, añadir, cambiar pase, quitar y borrar (en cascada) |
 | 7 nov 2026 | Menús, fase 2 (entrega B): subir/bajar dentro de un pase y `raciones` por receta | — | Reordenar con un `upsert` atómico. Arreglado de paso: la cabecera desbordaba en móvil y tablet (ver deuda conocida) |
 | 9 nov 2026 | Menús, fase 3: lista de la compra escalada (`escalado.ts`, `MenuCompra.tsx`) | — | Líneas «por X» multiplican por raciones sin dividir; redondeo sobre la suma. Probada con sesión real; además, gzip del NAS arreglado y desplegado |
+| 9 nov 2026 | Menús, fase 4: imprimir (`MenuImprimible.tsx`, botón en el editor, `print:hidden`) | — | Probado emulando el estilo de impresión en pantalla; el salto de página no se vio en una impresión real |
 
 ---
 

@@ -1,47 +1,29 @@
-import { useMemo } from 'react';
 import { ShoppingCart } from 'lucide-react';
-import type { Menu, MenuReceta, Recipe } from '../types';
 import type { Despensa } from '../hooks/useDespensa';
-import type { Escala } from '../lib/escalado';
-import { listaDeLaCompra } from '../lib/listaCompra';
+import type { ItemListaCompra } from '../lib/listaCompra';
 
 interface Props {
-  menu: Menu;
-  items: MenuReceta[];
-  recipes: Recipe[];
+  comensales: number;
+  hayRecetas: boolean;
+  /** Ya calculada con `listaDelMenu`: la misma que sale en la hoja impresa. */
+  lista: ItemListaCompra[];
   despensa: Despensa;
 }
 
 /**
- * La lista de la compra del menú: los ingredientes de sus recetas escalados a las
- * raciones de cada una (las suyas, o los comensales del menú), menos lo que la
- * despensa dice que ya hay. Marcar uno lo añade a la despensa, como en la lista de
- * «para hacer»: no hay un estado de «comprado» aparte.
+ * La lista de la compra del menú. Marcar un ingrediente lo añade a la despensa,
+ * como en la lista de «para hacer»: no hay un estado de «comprado» aparte.
  */
-export function MenuCompra({ menu, items, recipes, despensa }: Props) {
-  const lista = useMemo(() => {
-    const porId = new Map(recipes.map((r) => [r.id, r]));
-    const escalas = new Map<string, Escala>();
-    for (const item of items) {
-      const receta = porId.get(item.receta_id);
-      if (!receta) continue;
-      escalas.set(item.receta_id, {
-        raciones: item.raciones ?? menu.comensales,
-        porciones: receta.porciones_num ?? null,
-      });
-    }
-    return listaDeLaCompra(recipes, new Set(escalas.keys()), despensa.tengo, escalas);
-  }, [recipes, items, menu.comensales, despensa.tengo]);
-
+export function MenuCompra({ comensales, hayRecetas, lista, despensa }: Props) {
   return (
     <section>
       <h3 className="font-display font-black text-2xl text-ink mb-1">Lista de la compra</h3>
       <p className="font-mono text-[11.5px] text-ink-soft leading-snug mb-3">
-        Escalada a {menu.comensales} {menu.comensales === 1 ? 'comensal' : 'comensales'}, sin lo que ya
+        Escalada a {comensales} {comensales === 1 ? 'comensal' : 'comensales'}, sin lo que ya
         tienes en la despensa. Lo que no tiene número («al gusto») no se escala.
       </p>
 
-      {items.length === 0 ? (
+      {!hayRecetas ? (
         <p className="font-mono text-[12.5px] text-ink-soft leading-relaxed border-2 border-dashed border-ink/20 px-4 py-5">
           Aquí saldrá lo que haya que comprar cuando añadas recetas.
         </p>

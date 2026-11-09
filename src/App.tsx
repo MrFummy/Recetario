@@ -107,7 +107,7 @@ function App() {
   return (
     <div className="min-h-screen pb-20">
       {/* ═════ Header ═════════════════════════════════════ */}
-      <header className="bg-paper/85 backdrop-blur-md sticky top-0 z-30 border-b border-dashed border-ink/25">
+      <header className="bg-paper/85 backdrop-blur-md sticky top-0 z-30 border-b border-dashed border-ink/25 print:hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
           <a href={aHash(CATALOGO)} aria-label="El Recetario de Markis, ir al catálogo" className="flex items-center gap-3 group shrink-0">
             <div className="w-10 h-10 bg-ink text-paper rounded-lg flex items-center justify-center
