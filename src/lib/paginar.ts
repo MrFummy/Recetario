@@ -1,4 +1,4 @@
-/** Un trozo de contenido que ocupa `peso` filas de lista (una fila ≈ 9 mm en la hoja). */
+/** Un trozo de contenido que ocupa `peso`, en la misma unidad que las capacidades de `paginar` (px). */
 export interface Bloque<T> {
   peso: number;
   /**
@@ -11,8 +11,8 @@ export interface Bloque<T> {
 
 /**
  * Reparte bloques en páginas de capacidad fija, en orden. `capacidades[i]` es la de la
- * página `i`; las siguientes repiten la última (la primera suele tener menos, por el
- * título).
+ * página `i`; las siguientes repiten la última (la primera podría tener menos, si lleva un
+ * título aparte).
  *
  * Hay que repartirlo a mano porque las hojas son de tamaño fijo, sin márgenes de
  * impresión: así el navegador no añade su URL y su fecha a cada página, pero tampoco

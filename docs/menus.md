@@ -106,19 +106,21 @@ el factor antes de sumar. Reglas:
    `esPorRacion`, `redondear`) y `listaDeLaCompra` con un `Map` de escalas opcional;
    sección «Lista de la compra» al final del menú (`MenuCompra.tsx`). Probada con sesión
    real: 6 y 7 comensales, líneas «por persona» y brochetas con raciones propias.
-4. ~~**Imprimir.**~~ **Hecha el 9 nov, y rehecha el mismo día con el estilo de los PDF de
-   recetas de n8n.** Botón «Imprimir» (desactivado sin recetas) que llama a `window.print()`.
-   `MenuImprimible.tsx` es una hoja que solo se ve al imprimir (`hidden print:block`); la
-   cabecera y el editor llevan `print:hidden`. Cada página es una **hoja A4 exacta**
-   (`HojaImpresa.tsx`): papel crema, cabecera con el logo y «El Recetario de Markis» en script,
-   título con subrayado amarillo, casillas con sombra, la nota amarilla de la web y un pie en
-   monoespaciada con la ruta (`~/menus/<nombre>.md`), la página y la fecha, como en los PDF.
-   Como con márgenes el navegador añade su URL y su fecha, la página va **sin márgenes**
-   (`@page { margin: 0 }` en `index.css`) y el contenido se reparte a mano entre hojas con
-   `lib/paginar.ts`, por pesos medidos en filas de 36 px. Lo que no cabe pasa a otra hoja, un
-   título de sección no se queda solo al final, y la lista de la compra empieza en página
-   nueva. Verificada emulando el estilo de impresión con un menú de 25 recetas: 6 hojas de
-   210 × 296 mm, ninguna con desborde. *(Notas y fecha ya estaban desde la fase 2.)*
+4. ~~**Imprimir.**~~ **Hecha el 9 nov, y rehecha el 10 como réplica de la plantilla de los PDF de
+   recetas de n8n** (el HTML del Drive que rellena el nodo `Rellenar HTML`). Botón «Imprimir»
+   (desactivado sin recetas) que llama a `window.print()`. `MenuImprimible.tsx` es una hoja que
+   solo se ve al imprimir (`hidden print:block`); la cabecera y el editor llevan `print:hidden`.
+   Cada página es una **hoja A4 exacta** (`HojaImpresa.tsx`) con los estilos de la plantilla
+   copiados en `index.css` (`.hoja*`): cuadrícula de fondo, logo «M», título en Fraunces, chips
+   manuscritos (ocasión, comensales, fecha), subrayado amarillo inclinado, platos con **número
+   circulado** como los pasos de una receta, la lista de la compra con ◆ y la cantidad delante,
+   la nota como post-it con cinta y el pie `~/menus/<nombre>.md · marca · fecha · página`.
+   La página va **sin márgenes** (`@page { margin: 0 }`, global) para que el navegador no añada
+   su URL y su fecha, y el contenido se reparte a mano entre hojas con `lib/paginar.ts`, con pesos
+   en px medidos sobre la hoja pintada. Un título de sección no se queda solo al final y la lista
+   empieza en página nueva. Verificada emulando el estilo de impresión con 25 recetas: 5 hojas,
+   sin desborde. **Diferencias con la plantilla**: A4 y no Letter, y sombra sólida en la nota.
+   *(Notas y fecha ya estaban desde la fase 2.)*
 5. *(Más adelante)* Compartir con los afans y por enlace.
 
 ## Preguntas abiertas
