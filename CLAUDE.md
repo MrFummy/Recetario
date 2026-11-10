@@ -11,27 +11,21 @@ despliegue está en el [README](README.md).
 
 ## Empieza por el grafo
 
-`graphify-out/` contiene un grafo de conocimiento del proyecto: 370 nodos y 712
-aristas sobre 69 ficheros, en 29 comunidades. Combina extracción estructural del
-código (AST) con una capa semántica que recoge lo que el código no dice por sí
-solo: la arquitectura, los servicios externos y el modelo de autorización.
+`graphify-out/` contiene un grafo de conocimiento del proyecto: 658 nodos y 1428
+aristas sobre 129 ficheros, en 61 comunidades (10 nov 2026). **Es estructural**: sale
+del código (AST), de los documentos y de las dependencias de `package.json`. **No tiene
+capa semántica** —decisiones, servicios externos, roles, RLS, webhooks—: la hubo hasta
+julio y se perdió en la reconstrucción del 5 de agosto, y desde entonces
+`graphify update .` (sin coste, solo AST) no la regenera. Para recuperarla hace falta
+`/graphify --update`, que extrae con un modelo y sí cuesta. Lo que el grafo no dice
+—por qué hay una RLS, qué trampa tiene n8n— está en este fichero y en `docs/`.
 
-Para orientarte antes de tocar nada:
+Las comunidades se nombran por su fichero central (`MenuEditor.tsx`, `recipeContent.ts`,
+`DespensaSection.tsx`…), así que es más útil preguntar que navegarlas a mano:
 
 ```bash
-graphify query "¿cómo se autoriza el borrado de una receta?"
+graphify query "¿qué ficheros intervienen en los menús?"
 ```
-
-Mapa de comunidades, para saber a cuál preguntar:
-
-| Comunidad | Qué contiene |
-|---|---|
-| Arquitectura, servicios y seguridad | Capa semántica: decisiones, servicios externos, roles, RLS, webhooks |
-| Componentes de interfaz | `App.tsx`, formularios, modales, barra de filtros |
-| Catálogo y búsqueda | `RecipeCard`, `RecipeGrid`, `StarRating`, `ingredientParser` |
-| Detalle y normalización JSONB | `RecipeDetail`, `RecipeContent`, `recipeContent.ts` |
-| Migración de RLS | Policies de Supabase |
-| Config TypeScript / Vite / ESLint / npm | Tooling y dependencias |
 
 ## Estado actual (23 ago 2026)
 
@@ -438,7 +432,7 @@ organizada por pases; del menú saldrá la lista de la compra escalada. Diseño 
   saldría de la hoja. Pantalla y hoja comparten `listaDelMenu` ([menus.ts](src/lib/menus.ts)).
   Verificado emulando el estilo de impresión (convirtiendo las reglas `@media print` en reglas de
   pantalla) con un menú de 25 recetas: 5 hojas de 210 × 296 mm, ninguna con desborde ni solapada
-  con el pie; el salto de página **no se ha visto en una impresión real**.
+  con el pie; el admin la revisó impresa el 10 de noviembre y la ve bien.
 - Verificado simulando roles (otro usuario, dueño y anónimo) en una transacción que se
   revierte; el linter no añade avisos.
 

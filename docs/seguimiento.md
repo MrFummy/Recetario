@@ -6,27 +6,29 @@ duplica [CLAUDE.md](../CLAUDE.md) (el "qué es verdad hoy") ni
 ha movido y qué está abierto ahora mismo". Se actualiza en cada sesión de
 trabajo, no solo al cerrar algo.
 
-Grafo de referencia: `graphify-out/` (579 nodos, 1200 aristas, 52 comunidades
-tras `graphify update .` del 1 nov 2026). Antes de tocar un área, conviene
-`graphify query "<pregunta>"` en vez de grep a ciegas.
+Grafo de referencia: `graphify-out/` (658 nodos, 1428 aristas, 61 comunidades tras
+`graphify update .` del 10 nov 2026). Es **estructural** —código, documentos y
+dependencias—: no tiene capa semántica desde la reconstrucción del 5 ago (ver
+[CLAUDE.md](../CLAUDE.md)). Antes de tocar un área, conviene `graphify query "<pregunta>"`
+en vez de grep a ciegas.
 
 ---
 
 ## Mapa del proyecto
 
-| Área | Dónde vive | Comunidad del grafo |
-|---|---|---|
-| Autorización y seguridad | `supabase/migrations/20260805_endurecer_rls.sql`, `src/lib/n8n.ts` | Arquitectura, servicios y seguridad |
-| Interfaz / formularios | `src/App.tsx`, modales, barra de filtros | Componentes de interfaz |
-| Catálogo y búsqueda | `RecipeCard`, `RecipeGrid`, `StarRating`, `ingredientParser.ts` | Catálogo y búsqueda |
-| Detalle de receta | `RecipeDetail.tsx`, `recipeContent.ts` | Detalle y normalización JSONB |
-| Despensa | `DespensaSection.tsx`, `useDespensa`, `inventario.ts`, tabla `despensa` | — (cruza Interfaz y Arquitectura) |
-| Lista de la compra | `ListaCompraSection.tsx`, `listaCompra.ts` | — (cruza Interfaz y Detalle/JSONB) |
-| Enrutado | `rutas.ts`, `useRuta.ts` | — (cruza Interfaz) |
-| El Laboratorio, Pasaporte, para hacer | `LaboratorioSection.tsx`, `PasaporteSection.tsx`, `useParaHacer` | Cruza Interfaz y Arquitectura |
-| Búsqueda semántica | `supabase/functions/`, `IngredientSearch.tsx` | Arquitectura, servicios y seguridad |
-| Migraciones RLS | `supabase/migrations/*.sql` | Migración de RLS |
-| Tooling | `vite.config.ts`, `tsconfig*.json`, `eslint.config.js` | Config TypeScript / Vite / ESLint / npm |
+| Área | Dónde vive |
+|---|---|
+| Autorización y seguridad | `supabase/migrations/20260805_endurecer_rls.sql`, `src/lib/n8n.ts` |
+| Interfaz y rutas | `src/App.tsx`, `NavPrincipal.tsx`, `rutas.ts`, `useRuta.ts` |
+| Catálogo y búsqueda | `RecipeCard`, `RecipeGrid`, `ingredientParser.ts`, `IngredientSearch.tsx` |
+| Búsqueda semántica | `supabase/functions/buscar-recetas`, `indexar-recetas` |
+| Detalle de receta | `RecipeDetail.tsx`, `recipeContent.ts` |
+| Despensa y lista de la compra | `DespensaSection.tsx`, `useDespensa`, `inventario.ts`, `ListaCompraSection.tsx`, `listaCompra.ts` |
+| Para hacer y realizaciones | `useParaHacer`, `useRealizaciones`, `MuroRealizaciones.tsx` |
+| Menús | `MenusSection.tsx`, `MenuEditor.tsx`, `MenuCompra.tsx`, `MenuImprimible.tsx`, `HojaImpresa.tsx`, `lib/menus.ts`, `escalado.ts`, `paginar.ts` |
+| El Laboratorio y Mi Pasaporte | `LaboratorioSection.tsx`, `PasaporteSection.tsx` |
+| Migraciones | `supabase/migrations/*.sql` |
+| Tooling | `vite.config.ts`, `tsconfig*.json`, `eslint.config.js` |
 
 Servicios externos: **Supabase** (datos + auth + Storage, con RLS como
 autorización real) y **n8n** (webhooks con validación de JWT propia; alta y
@@ -34,7 +36,7 @@ borrado exigen además que el email sea el del admin). No hay backend propio.
 
 ---
 
-## Estado por área (1 nov 2026)
+## Estado por área (10 nov 2026)
 
 | Área | Estado | Última verificación | Ver |
 |---|---|---|---|
@@ -51,7 +53,9 @@ borrado exigen además que el email sea el del admin). No hay backend propio.
 | El Laboratorio (candidatas) | Hecho, reels por Apify; Instagram aparcada | 15 oct 2026 | [candidatas.md](candidatas.md) |
 | Mi Pasaporte | Fases 1-3 hechas; admin verificada con sesión | 21 oct 2026 | [pasaporte.md](pasaporte.md) |
 | Mirón y registrado | Hecho; probado solo como visitante | 30 oct 2026 | [CLAUDE.md § Mirón y registrado](../CLAUDE.md) |
-| Despliegue | `npm run deploy:mac` al NAS, con gzip en el portal | 1 nov 2026 | [README](../README.md) |
+| `porciones_num` | Hecho: 74 recetas; las altas nuevas nacen a `null` | 7 nov 2026 | [CLAUDE.md § porciones_num](../CLAUDE.md) |
+| Menús | Hecho y desplegado: editor por pases, lista de la compra escalada, imprimir como las recetas. Solo falta compartir | 10 nov 2026, con sesión real en dev; la impresión la revisó el admin | [menus.md](menus.md) |
+| Despliegue | `npm run deploy:mac` al NAS; gzip activo con la ruta real del `user.conf` | 10 nov 2026 (170 KB con gzip, 607 KB sin él) | [README](../README.md) |
 | Leaked password protection | No aplicable (requiere plan Pro) | 2026 | aviso permanente del linter |
 
 ---
@@ -63,12 +67,14 @@ de receta, para hacer, modo cocina y búsqueda semántica están hechos (ver el
 registro de abajo).
 
 ### Propuesto
-1. ~~**Porciones de cada receta**~~ **Hecho el 7 nov 2026**: columna
-   `porciones_num` con 74 recetas (raciones de plato, no piezas); ver
-   [CLAUDE.md](../CLAUDE.md). **Siguiente: el menú semanal** (paso 2 del plan de
-   menús), que escalará por comensales. Diseño cerrado en [menus.md](menus.md); **fases 1 y 2 el 7 nov** (base de datos y editor con orden y `raciones`) **y la 3 y la 4 el 9 nov** (lista de la compra escalada e imprimir); solo queda compartir, para más adelante.
-2. **Detección de duplicados al dar de alta**, comparando el vector de la receta
-   nueva con `recetas_embeddings`. Es lo más barato que queda.
+1. **Compartir menús**, con los afans en lectura o por enlace. Está previsto en
+   [menus.md](menus.md) y se dejó para más adelante; exigirá una policy de lectura nueva.
+2. **Detección de duplicados al dar de alta**, comparando el vector de la receta nueva con
+   `recetas_embeddings`. Es lo más barato que queda.
+3. **Que el alta rellene `porciones_num`**: el flujo de n8n no lo hace, así que una receta
+   nueva no se puede escalar en un menú hasta que alguien lo ponga. Vertex podría estimarlo.
+4. **Rellenar las dos recetas sin ingredientes** (*Receta de Alitas Buffalo* y *Solomillo de
+   cerdo con salsa de castañas*), que hoy quedan sin `porciones_num` y fuera de las listas.
 
 ### Sin verificar
 - En un móvil real: la vibración de los temporizadores, que la pantalla siga
@@ -76,6 +82,8 @@ registro de abajo).
 - Con sesión de admin: subir una foto real al Pasaporte, guardar el contexto de
   un país y quitar un país con recetas.
 - Mirón y registrado, con sesión iniciada (solo se probó como visitante).
+- Los menús en producción con sesión: se probaron en desarrollo contra la base real, pero el
+  navegador del panel no tiene sesión en `recetario.orballo.link`.
 
 ### Abierto en El Laboratorio
 - Crear el bot de Telegram (BotFather) y obtener el `chat_id` propio.
@@ -97,6 +105,14 @@ antiguas.
   de `Vertex AI` seguirá generando lo mismo en altas nuevas.
 - El catálogo se carga entero en el cliente y se filtra en memoria; pedirá
   paginación o búsqueda en servidor cuando crezca.
+- **El grafo no tiene capa semántica** (ver arriba). Recuperarla cuesta un
+  `/graphify --update` con modelo; mientras tanto, lo que no está en el código vive en
+  `CLAUDE.md` y `docs/`.
+- La lista de la compra del menú impresa va en dos columnas, en orden alfabético por filas
+  (izquierda, derecha, izquierda…), así que se lee en zigzag. Leerla por columnas exigiría
+  repartirla de otra forma.
+- `@page { margin: 0 }` es global: afecta a cualquier página que se imprima de la web, no
+  solo a los menús. Hoy no hay otra con hoja propia.
 
 ---
 
@@ -117,7 +133,6 @@ formato absoluto.
 | 10 oct 2026 | Lista de la compra (`#/lista-compra`) | `fc5a374` | `listaCompra.ts`, `ListaCompraSection.tsx`; `recipeContent.ts` ya expone `valor`/`unidad`. Verificado en el navegador: suma por `base`+`unidad`, descuenta despensa, persiste selección en localStorage |
 | 10 oct 2026 | `tiempo`/`porciones`/`dificultad`: columnas + webhook + badges en RecipeDetail | — | Sin backfill de recetas antiguas, a propósito. Columnas y `Guardar en Supabase` aplicados directamente en producción (Supabase MCP, n8n MCP) |
 | 10 oct 2026 | Diseño cerrado de "para hacer, realizaciones y muro de notas" (8 decisiones) | — | Solo documentación, sin código. **Prioridad para la próxima sesión**: llevarlo a un plan de implementación |
-| 10 oct 2026 | Lista de la compra, campos de receta, despliegue al NAS | `fc5a374`, `300960b`, `201cbb6` | Ver filas anteriores |
 | 11 oct 2026 | Para hacer, realizaciones y muro de notas | `37b6cfd`, `d9f602d`, `bca061e`, `62ee2ee` | `recetas.rating` pasa a `numeric(2,1)`; el trigger de la media sigue `SECURITY DEFINER` |
 | 13 oct 2026 | Modo cocina con temporizadores, búsqueda semántica (tope de 20 por hora), barra unificada, iconos | `d81d85c`, `629ce39`, `6d266eb`, `a417e0a`, `00669ef` | Edge Functions `buscar-recetas` e `indexar-recetas` |
 | 14 oct 2026 | Marca «sin hacer»; El Laboratorio (candidatas, Telegram, promover al recetario); trampa de n8n con `parameters` anidados | `fb65113`, `0046e53`, `ade589d` | Prompt de Vertex corregido; Instagram aparcada |
@@ -127,19 +142,22 @@ formato absoluto.
 | 23 oct 2026 | Propuesta de porciones (sin escribir en BD) | — | [porciones-propuesta.md](porciones-propuesta.md) |
 | 30 oct 2026 | Mirón y registrado: despensa, compra y pasaporte solo con sesión | `e0bcca5` | Lectura de `paises` y `fotos_pais` pasa a `authenticated` |
 | 1 nov 2026 | Cantidades largas de ingredientes ya no se salen de su columna; push y despliegue; panel de seguimiento actualizado | `401633c` | Detectado con la receta Carbonara Udon |
-| 7 nov 2026 | Columna `porciones_num` (raciones de plato) con 74 recetas | — | Migración `20261107_porciones_num.sql`; 2 recetas sin ingredientes quedan a `null` |
-| 7 nov 2026 | Menús, fase 1: tablas `menus` y `menu_recetas` con RLS, y diseño en `docs/menus.md` | — | Migración `20261107_menus.sql`; RLS verificadas simulando roles |
-| 7 nov 2026 | Menús, fase 2 (entrega A): `#/menus` y `#/menu/<id>`, hooks `useMenus`/`useMenu`, editor por pases | — | Probado con sesión real en dev: crear, añadir, cambiar pase, quitar y borrar (en cascada) |
-| 7 nov 2026 | Menús, fase 2 (entrega B): subir/bajar dentro de un pase y `raciones` por receta | — | Reordenar con un `upsert` atómico. Arreglado de paso: la cabecera desbordaba en móvil y tablet (ver deuda conocida) |
-| 9 nov 2026 | Menús, fase 3: lista de la compra escalada (`escalado.ts`, `MenuCompra.tsx`) | — | Líneas «por X» multiplican por raciones sin dividir; redondeo sobre la suma. Probada con sesión real; además, gzip del NAS arreglado y desplegado |
-| 9 nov 2026 | Menús, fase 4: imprimir, con el estilo de los PDF de n8n (`MenuImprimible.tsx`, `HojaImpresa.tsx`, `paginar.ts`) | — | Hojas A4 exactas sin márgenes, `@page { margin: 0 }` global. Probado emulando el estilo de impresión con 25 recetas (6 hojas, sin desborde); no visto en una impresión real |
-| 10 nov 2026 | El PDF del menú pasa a ser réplica de la plantilla HTML de los PDF de recetas de n8n (cuadrícula, logo «M», números circulados, ◆, chips, post-it) | — | Estilos copiados a `index.css` (`.hoja*`); pesos de paginación recalculados en px. Probado emulando la impresión con 25 recetas (5 hojas, sin desborde); no visto en una impresión real |
+| 7 nov 2026 | Columna `porciones_num` (raciones de plato) con 74 recetas | `ffdf011` | Migración `20261107_porciones_num.sql`; 2 recetas sin ingredientes quedan a `null` |
+| 7 nov 2026 | Menús, fase 1: tablas `menus` y `menu_recetas` con RLS, y diseño en `docs/menus.md` | `dfa6e1d` | Migración `20261107_menus.sql`; RLS verificadas simulando roles |
+| 7 nov 2026 | Menús, fase 2 (entrega A): `#/menus` y `#/menu/<id>`, hooks `useMenus`/`useMenu`, editor por pases | `ff5f96f` | Probado con sesión real en dev: crear, añadir, cambiar pase, quitar y borrar (en cascada) |
+| 7 nov 2026 | Menús, fase 2 (entrega B): subir/bajar dentro de un pase y `raciones` por receta | `a7c6f2b`, `6bf39a4` | Reordenar con un `upsert` atómico. Arreglado de paso: la cabecera desbordaba en móvil y tablet (ver deuda conocida) |
+| 9 nov 2026 | Menús, fase 3: lista de la compra escalada (`escalado.ts`, `MenuCompra.tsx`) | `70ec4b6` | Líneas «por X» multiplican por raciones sin dividir; redondeo sobre la suma. Probada con sesión real; además, gzip del NAS arreglado y desplegado |
+| 9 nov 2026 | Menús, fase 4: imprimir, con el estilo de los PDF de n8n (`MenuImprimible.tsx`, `HojaImpresa.tsx`, `paginar.ts`) | `da1b00e`, `139e7e1` | Hojas A4 exactas sin márgenes, `@page { margin: 0 }` global. Probado emulando el estilo de impresión con 25 recetas (6 hojas, sin desborde); revisado después por el admin, que lo ve bien |
+| 10 nov 2026 | El PDF del menú pasa a ser réplica de la plantilla HTML de los PDF de recetas de n8n (cuadrícula, logo «M», números circulados, ◆, chips, post-it) | `4699913` | Estilos copiados a `index.css` (`.hoja*`); pesos de paginación recalculados en px. Probado emulando la impresión con 25 recetas (5 hojas, sin desborde); revisado después por el admin, que lo ve bien |
+| 9 nov 2026 | Gzip del NAS: la carpeta del `user.conf` es la del **servicio** (`9ea3124c-…`), no la del portal (`fe681dc0-…`, que no existe); el README estaba mal | `c97eb5c`, `fda88f7` | El `include` termina en `*` y nginx ignora sin error un fichero ausente, por eso nadie lo notó. Medido: 170 KB con gzip frente a 607 KB sin él |
+| 9 nov 2026 | Despliegue de la fase 3, la fase 4 y el PDF con el estilo de las recetas | — | Tres despliegues; la hoja del menú la revisó el admin y la ve bien |
+| 10 nov 2026 | Repaso: grafo actualizado (658 nodos), `CLAUDE.md` corregido —el grafo no tiene capa semántica desde el 5 ago—, este panel reordenado y ficha de Notion al día | — | La capa semántica no la perdió ninguna actualización reciente: ya faltaba en la reconstrucción del 5 ago |
 
 ---
 
 ## Cómo mantener esto
 
-- Al cerrar algo de **Pendientes priorizados**, tacharlo aquí y en
+- Al cerrar algo de **Pendientes**, tacharlo aquí y en
   [ideas.md](ideas.md), y mover la fila correspondiente de la tabla de estado.
 - Al terminar una sesión con cambios de código: añadir fila al registro,
   `graphify update .`, y si el cambio afecta a una de las "dos trampas" u
