@@ -701,6 +701,9 @@ que las secciones que no se tocaron ya heredan la paleta.
 - Verificado sin desborde horizontal de 375 a 1280 px en las ocho vistas principales. Sin revisar a mano: el modo
   oscuro (no existe), los temporizadores del modo cocina y el editor de menús.
 
+**Para retomar el rediseño: [docs/pendientes.md](docs/pendientes.md)** (estado en producción con las versiones a las
+que volver, lo pendiente por orden y lo que no se ha comprobado a mano).
+
 ## Hacia dónde puede crecer
 
 [docs/ideas.md](docs/ideas.md) recoge una lluvia de ideas de posibles
