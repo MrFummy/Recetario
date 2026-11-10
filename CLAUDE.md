@@ -458,9 +458,14 @@ organizada por pases; del menú saldrá la lista de la compra escalada. Diseño 
 ## Avisos por correo y «Mi cuenta» (en curso)
 
 **Pasos 1 y 2 hechos el 10 de noviembre de 2026**: la base de datos y la página `#/cuenta`.
-**Faltan el webhook de base de datos y el flujo de n8n que envía los correos**, así que **el
-interruptor de «Mi cuenta» todavía no manda nada**: por eso, de momento, no se ha desplegado a la web
-real. Que los afans reciban un correo cuando se da de alta una receta, si lo piden; el plan completo
+**El flujo de n8n «Aviso de nuevas recetas» (id `Zx0jNA5wC2aTu0U1`) se publicó el 10 de noviembre**:
+sondea cada 5 min las recetas con `aviso_enviado_en` nulo y más de 2 min de antigüedad, las reclama con un
+`PATCH` atómico (como mucho un aviso por receta; si no hay destinatarios, se pierde), pide
+`destinatarios_avisos_recetas()` y manda un Gmail por receta y persona. No usa webhook de BD porque
+`pg_net` no está instalado. Las recetas existentes se marcaron como avisadas
+([la migración](supabase/migrations/20261110_recetas_aviso_enviado.sql)). Probado de punta a punta con
+una receta de prueba y solo el admin como destinatario (correo recibido); datos de prueba borrados. La web
+con «Mi cuenta» aún no se ha desplegado. Que los afans reciban un correo cuando se da de alta una receta, si lo piden; el plan completo
 está en [docs/ideas.md](docs/ideas.md#avisos-por-correo-y-mi-cuenta--decidido-el-10-de-noviembre-de-2026).
 
 - `preferencias (user_id, avisos_recetas default false)` ([la migración](supabase/migrations/20261110_avisos_recetas.sql)):
