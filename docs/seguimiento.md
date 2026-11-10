@@ -69,8 +69,8 @@ registro de abajo).
 ### Propuesto
 1. ~~**Compartir menús**~~ **Hecho el 10 nov**: tres niveles (privado, afans, enlace); ver
    [menus.md § Compartir](menus.md). Con esto el plan de menús queda cerrado.
-2. **Avisos de recetas nuevas por correo (opt-in) y «Mi cuenta»**: *en curso*. Paso 1, base de datos
-   (`preferencias` y `destinatarios_avisos_recetas()`), hecho el 10 nov. Faltan «Mi cuenta», el
+2. **Avisos de recetas nuevas por correo (opt-in) y «Mi cuenta»**: *en curso*. Pasos 1 (base de datos) y 2
+   («Mi cuenta», `#/cuenta`) hechos el 10 nov, **sin desplegar** hasta que el flujo envíe correos. Faltan el
    webhook de base de datos y el flujo de n8n. Diseño en
    [ideas.md](ideas.md#avisos-por-correo-y-mi-cuenta--decidido-el-10-de-noviembre-de-2026).
    El panel de gestión de usuarios (admin) se descartó por ahora.
@@ -88,6 +88,10 @@ registro de abajo).
    cerdo con salsa de castañas*), que hoy quedan sin `porciones_num` y fuera de las listas.
 
 ### Sin verificar
+- **Cambiar la contraseña y el correo desde «Mi cuenta»** (10 nov): solo se probaron las validaciones. Supabase puede
+  pedir reautenticación para la contraseña, y para el correo manda un enlace de confirmación: antes de
+  desplegarlo, comprobar cómo salen hoy los correos de Supabase Auth (si usan su servicio por defecto, tienen
+  un límite de envíos muy bajo).
 - En un móvil real: la vibración de los temporizadores, que la pantalla siga
   encendida con uno en marcha y el manejo con el pulgar del modo cocina.
 - Con sesión de admin: subir una foto real al Pasaporte, guardar el contexto de
@@ -173,6 +177,7 @@ formato absoluto.
 | 10 nov 2026 | El alta de n8n rellena `porciones_num`: `Vertex AI` lo pide con reglas, `Limpia respuesta` lo normaliza (y lo saca de `porciones` si falta) y `Guardar en Supabase` lo escribe | — | Versión `3a62fac0` del flujo, publicada y comprobada (parámetros idénticos a lo esperado, sin claves anidadas, `activeVersionId` = la editada). Cambio solo en n8n; sin probar de punta a punta |
 | 10 nov 2026 | Menús, fase 5: compartir. `menus.visibilidad` (privado, afans, enlace), `ver_menu_compartido` para el enlace, vista de solo lectura, control en el editor y sección «Menús de los afans» | — | Migración `20261110_compartir_menus.sql`. El enlace NO usa una policy pública (listaría todos los menús): lo sirve una función `SECURITY DEFINER` que devuelve uno por id. RLS verificadas simulando roles; probado con y sin sesión, y desplegado el 10 nov: el flujo anónimo, comprobado también en la web real |
 | 10 nov 2026 | Avisos por correo, paso 1: tabla `preferencias` (opt-in, RLS) y `destinatarios_avisos_recetas()` solo para `service_role`; plan acordado de las ideas nuevas; corregido que n8n está autoalojado, no es Cloud | — | Migración `20261110_avisos_recetas.sql`, verificada simulando roles. Solo recibe correo quien lo pidió Y tiene el correo confirmado |
+| 10 nov 2026 | «Mi cuenta» (`#/cuenta`): nombre, correo, contraseña, interruptor de avisos y cerrar sesión; hook `usePreferencias`; icono de cuenta en la cabecera | — | Sin desplegar: el interruptor aún no envía nada. Cabecera: cerrar sesión solo en «Mi cuenta» por debajo de `sm`, sin insignia admin/afan; medida sin desborde de 375 a 1280 px. Probado el interruptor y las validaciones; no el cambio real de contraseña ni de correo |
 
 ---
 

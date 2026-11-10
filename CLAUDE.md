@@ -455,23 +455,36 @@ organizada por pases; del menú saldrá la lista de la compra escalada. Diseño 
 - Verificado simulando roles (otro usuario, dueño y anónimo) en una transacción que se
   revierte; el linter no añade avisos, salvo los dos de `ver_menu_compartido` descritos arriba.
 
-## Avisos por correo (en curso)
+## Avisos por correo y «Mi cuenta» (en curso)
 
-**Paso 1 hecho el 10 de noviembre de 2026**: solo base de datos, **sin frontend ni flujo de n8n
-todavía**. Que los afans reciban un correo cuando se da de alta una receta, si lo piden; el plan
-completo, con «Mi cuenta», está en [docs/ideas.md](docs/ideas.md#avisos-por-correo-y-mi-cuenta--decidido-el-10-de-noviembre-de-2026).
-([la migración](supabase/migrations/20261110_avisos_recetas.sql)).
+**Pasos 1 y 2 hechos el 10 de noviembre de 2026**: la base de datos y la página `#/cuenta`.
+**Faltan el webhook de base de datos y el flujo de n8n que envía los correos**, así que **el
+interruptor de «Mi cuenta» todavía no manda nada**: por eso, de momento, no se ha desplegado a la web
+real. Que los afans reciban un correo cuando se da de alta una receta, si lo piden; el plan completo
+está en [docs/ideas.md](docs/ideas.md#avisos-por-correo-y-mi-cuenta--decidido-el-10-de-noviembre-de-2026).
 
-- `preferencias (user_id, avisos_recetas default false)`: **siempre opt-in**, y en tabla propia y no en
-  `perfiles`, donde `nombre` es obligatorio y solo una cuenta tiene fila. RLS: cada usuario toca solo
-  la suya; el `UPDATE` lleva `with check`. **El correo no se copia aquí**: es el de la cuenta.
+- `preferencias (user_id, avisos_recetas default false)` ([la migración](supabase/migrations/20261110_avisos_recetas.sql)):
+  **siempre opt-in**, y en tabla propia y no en `perfiles`, donde `nombre` es obligatorio y solo una
+  cuenta tiene fila. RLS: cada usuario toca solo la suya; el `UPDATE` lleva `with check`. **El correo no
+  se copia aquí**: es el de la cuenta.
 - `destinatarios_avisos_recetas()` devuelve el correo y el nombre de quien tiene los avisos activados
   **y el correo confirmado** (sin borrar ni bloquear). **Solo `service_role` puede ejecutarla**: es
   `SECURITY DEFINER` porque lee `auth.users`, y Supabase da `EXECUTE` a `anon` y `authenticated` por
   defecto en las funciones nuevas, así que se revoca de forma explícita. Si se recrea la función, hay
-  que repetir los `revoke`.
-- Verificado simulando roles (autor, otro usuario, anónimo y n8n), incluidas cuentas que no deben
-  recibir correo. El linter no añade avisos.
+  que repetir los `revoke`. `service_role` no puede leer `auth.users` directamente: solo por esta función.
+- **`#/cuenta`** ([CuentaSection.tsx](src/components/CuentaSection.tsx)), solo con sesión: nombre (el de
+  `perfiles`, con el que se firma el muro; `usePerfil`), correo y contraseña (`auth.updateUser`),
+  el interruptor de los avisos (`usePreferencias`, optimista) y cerrar sesión. Cambiar el correo manda
+  un enlace de confirmación y la cuenta sigue con el anterior hasta abrirlo.
+- **Cambios de cabecera**: un icono «Mi cuenta» junto a cerrar sesión; **por debajo de `sm` cerrar sesión
+  solo está dentro de «Mi cuenta»** (no cabía) y se **quitó la insignia admin/afan** (el rol se ve en
+  «Mi cuenta»). El relleno de los enlaces de la nav se aprieta entre `sm` y `xl`. Medido sin desborde de
+  375 a 1280 px, como admin y como afan: **cualquier icono más en la cabecera obliga a volver a medirlo**.
+- Verificado: RLS simulando roles (autor, otro usuario, anónimo y n8n), incluidas cuentas que no deben
+  recibir correo; y en el navegador, el interruptor contra la base real (se crea la fila, persiste al
+  recargar, n8n vería 1 destinatario) y las validaciones de los formularios. **No se ha ejercitado**
+  el cambio real de contraseña ni de correo, para no tocar la cuenta del admin ni mandar correos:
+  Supabase puede pedir reautenticación para la contraseña, o limitar los envíos de correo.
 
 ## Modo cocina
 

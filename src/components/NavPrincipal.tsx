@@ -27,7 +27,7 @@ export function NavPrincipal({
   <nav className="flex items-center gap-1">
     <a
       href={aHash(CATALOGO)}
-      className={`px-2 lg:px-3 xl:px-4 py-2 text-sm font-semibold rounded-md transition-colors flex items-center ${enCatalogo
+      className={`px-2 sm:px-1.5 lg:px-2.5 xl:px-4 py-2 text-sm font-semibold rounded-md transition-colors flex items-center ${enCatalogo
         ? 'bg-ink text-paper'
         : 'text-ink hover:bg-ink/5'
         }`}
@@ -43,7 +43,7 @@ export function NavPrincipal({
       href={aHash({ vista: 'despensa' })}
       aria-label="Despensa"
       title="Despensa"
-      className={`px-2 lg:px-3 xl:px-4 py-2 text-sm font-semibold rounded-md transition-colors flex items-center gap-1.5 ${enDespensa
+      className={`px-2 sm:px-1.5 lg:px-2.5 xl:px-4 py-2 text-sm font-semibold rounded-md transition-colors flex items-center gap-1.5 ${enDespensa
         ? 'bg-ink text-paper'
         : 'text-ink hover:bg-ink/5'
         }`}
@@ -60,7 +60,7 @@ export function NavPrincipal({
       href={aHash({ vista: 'lista-compra' })}
       aria-label="Compra"
       title="Compra"
-      className={`px-2 lg:px-3 xl:px-4 py-2 text-sm font-semibold rounded-md transition-colors flex items-center gap-1.5 ${enListaCompra
+      className={`px-2 sm:px-1.5 lg:px-2.5 xl:px-4 py-2 text-sm font-semibold rounded-md transition-colors flex items-center gap-1.5 ${enListaCompra
         ? 'bg-ink text-paper'
         : 'text-ink hover:bg-ink/5'
         }`}
@@ -72,7 +72,7 @@ export function NavPrincipal({
       href={aHash({ vista: 'menus' })}
       aria-label="Menús"
       title="Menús"
-      className={`px-2 lg:px-3 xl:px-4 py-2 text-sm font-semibold rounded-md transition-colors flex items-center gap-1.5 ${enMenus
+      className={`px-2 sm:px-1.5 lg:px-2.5 xl:px-4 py-2 text-sm font-semibold rounded-md transition-colors flex items-center gap-1.5 ${enMenus
         ? 'bg-ink text-paper'
         : 'text-ink hover:bg-ink/5'
         }`}
@@ -84,7 +84,7 @@ export function NavPrincipal({
       href={aHash({ vista: 'pasaporte' })}
       aria-label="Pasaporte"
       title="Pasaporte"
-      className={`px-2 lg:px-3 xl:px-4 py-2 text-sm font-semibold rounded-md transition-colors flex items-center gap-1.5 ${enPasaporte
+      className={`px-2 sm:px-1.5 lg:px-2.5 xl:px-4 py-2 text-sm font-semibold rounded-md transition-colors flex items-center gap-1.5 ${enPasaporte
         ? 'bg-ink text-paper'
         : 'text-ink hover:bg-ink/5'
         }`}
@@ -99,7 +99,7 @@ export function NavPrincipal({
         href={aHash({ vista: 'laboratorio' })}
       aria-label="Laboratorio"
       title="Laboratorio"
-        className={`px-2 lg:px-3 xl:px-4 py-2 text-sm font-semibold rounded-md transition-colors flex items-center gap-1.5 ${enLaboratorio
+        className={`px-2 sm:px-1.5 lg:px-2.5 xl:px-4 py-2 text-sm font-semibold rounded-md transition-colors flex items-center gap-1.5 ${enLaboratorio
           ? 'bg-ink text-paper'
           : 'text-ink hover:bg-ink/5'
           }`}
@@ -113,7 +113,7 @@ export function NavPrincipal({
         href={aHash({ vista: 'nueva' })}
       aria-label="Nueva receta"
       title="Nueva receta"
-        className={`px-2 lg:px-3 xl:px-4 py-2 text-sm font-bold rounded-md transition-transform flex items-center gap-1.5 ${enNueva
+        className={`px-2 sm:px-1.5 lg:px-2.5 xl:px-4 py-2 text-sm font-bold rounded-md transition-transform flex items-center gap-1.5 ${enNueva
           ? 'bg-yellow text-ink -rotate-1 shadow-brut'
           : 'text-ink hover:bg-ink/5'
           }`}

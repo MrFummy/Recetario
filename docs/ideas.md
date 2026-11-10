@@ -289,8 +289,11 @@ nunca han entrado; solo 1 con perfil.
 ([la migración](../supabase/migrations/20261110_avisos_recetas.sql)): tabla `preferencias` con su
 RLS y `destinatarios_avisos_recetas()`, que solo puede ejecutar `service_role`. Verificado simulando
 roles (autor, otro usuario, anónimo y n8n) incluidos los casos que no deben recibir correo: una
-cuenta con el correo sin confirmar y otra que no ha pedido los avisos. Faltan «Mi cuenta», el
-webhook de base de datos y el flujo de n8n.
+cuenta con el correo sin confirmar y otra que no ha pedido los avisos.
+Paso 2, **«Mi cuenta» (`#/cuenta`), hecho el 10 nov**: nombre, correo, contraseña, interruptor de los
+avisos y cerrar sesión; probado en el navegador con la base real. **No se despliega hasta que exista el
+flujo de n8n**, para que nadie active unos avisos que todavía no llegan. Faltan el webhook de base de
+datos y el flujo de n8n.
 
 **A comprobar antes de implementar:** cómo salen hoy los correos de Supabase Auth. Si usan su
 servicio por defecto tienen un límite de envíos muy bajo, y cambiar el correo desde «Mi cuenta»

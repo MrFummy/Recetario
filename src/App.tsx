@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import type { User } from '@supabase/supabase-js';
-import { ChefHat, LogIn, LogOut } from 'lucide-react';
+import { ChefHat, LogIn, LogOut, UserRound } from 'lucide-react';
 import { FilterBar } from './components/FilterBar';
 import { IngredientSearch } from './components/IngredientSearch';
 import { RecipeGrid } from './components/RecipeGrid';
@@ -14,6 +14,7 @@ import { SeccionListaCompra } from './components/ListaCompraSection';
 import { SeccionLaboratorio } from './components/LaboratorioSection';
 import { SeccionPasaporte } from './components/PasaporteSection';
 import { SeccionMenus } from './components/MenusSection';
+import { SeccionCuenta } from './components/CuentaSection';
 import { NavPrincipal } from './components/NavPrincipal';
 import { useRecipes } from './hooks/useRecipes';
 import { useDespensa } from './hooks/useDespensa';
@@ -101,8 +102,9 @@ function App() {
   const enLaboratorio = ruta.vista === 'laboratorio';
   const enPasaporte = ruta.vista === 'pasaporte' || ruta.vista === 'pais';
   const enMenus = ruta.vista === 'menus' || ruta.vista === 'menu';
+  const enCuenta = ruta.vista === 'cuenta';
   // El catálogo queda detrás de la ficha abierta, como hasta ahora.
-  const enCatalogo = !enNueva && !enDespensa && !enListaCompra && !enLaboratorio && !enPasaporte && !enMenus;
+  const enCatalogo = !enNueva && !enDespensa && !enListaCompra && !enLaboratorio && !enPasaporte && !enMenus && !enCuenta;
 
   return (
     <div className="min-h-screen pb-20 print:min-h-0 print:pb-0">
@@ -136,13 +138,19 @@ function App() {
             />
 
             {user ? (
-              <div className="flex items-center gap-2">
-                <span className="hidden xl:inline-block px-2 py-1 bg-accent-soft text-accent text-[10px] font-mono uppercase tracking-wider rounded-sm">
-                  {isAdmin ? 'admin' : 'afan'}
-                </span>
+              <div className="flex items-center gap-1">
+                <a
+                  href={aHash({ vista: 'cuenta' })}
+                  className={`p-1.5 transition-colors ${enCuenta ? 'text-ink' : 'text-ink-soft hover:text-accent'}`}
+                  title="Mi cuenta"
+                  aria-label="Mi cuenta"
+                >
+                  <UserRound size={20} />
+                </a>
+                {/* En pantallas estrechas no cabe junto al icono de la cuenta: cerrar sesión está en «Mi cuenta». */}
                 <button
                   onClick={handleLogout}
-                  className="text-ink-soft hover:text-hot transition-colors p-2"
+                  className="hidden sm:block text-ink-soft hover:text-hot transition-colors p-1.5"
                   title="Cerrar sesión"
                 >
                   <LogOut size={20} />
@@ -186,6 +194,10 @@ function App() {
         ) : enListaCompra ? (
           <SoloLogueados sesionCargada={sesionCargada} logueado={!!user} seccion="la lista de la compra" onLogin={() => setShowLoginModal(true)}>
             <SeccionListaCompra recipes={recipes} despensa={despensa} paraHacer={paraHacer} />
+          </SoloLogueados>
+        ) : ruta.vista === 'cuenta' ? (
+          <SoloLogueados sesionCargada={sesionCargada} logueado={!!user} seccion="tu cuenta" onLogin={() => setShowLoginModal(true)}>
+            {user && <SeccionCuenta user={user} isAdmin={isAdmin} onLogout={() => void handleLogout()} />}
           </SoloLogueados>
         ) : ruta.vista === 'menu' ? (
           // Sin SoloLogueados: un menú compartido por enlace se abre sin cuenta. Qué se ve lo decide
