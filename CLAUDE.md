@@ -293,7 +293,7 @@ Supabase son los de siempre. Probado el 14 de octubre.
   DELETE: sin ella `remove()` responde sin error y no borra nada. Pasó con
   `fotos-candidatas`; no se puede arreglar con SQL (Storage prohíbe el borrado directo en
   `storage.objects`): hay que usar su API.
-- `crypto.randomUUID` **no existe** en el nodo Code de n8n Cloud: el id se genera con un
+- `crypto.randomUUID` **no existe** en el nodo Code de este n8n (autoalojado): el id se genera con un
   uuid v4 propio, o la inserción falla con `invalid input syntax for type uuid`.
 - La entrada por DM de Instagram quedó **aparcada** (la app de Meta tiene que estar en
   vivo para recibir webhooks reales); detalles en el plan.
@@ -454,6 +454,24 @@ organizada por pases; del menú saldrá la lista de la compra escalada. Diseño 
   [docs/menus.md § Compartir](docs/menus.md).
 - Verificado simulando roles (otro usuario, dueño y anónimo) en una transacción que se
   revierte; el linter no añade avisos, salvo los dos de `ver_menu_compartido` descritos arriba.
+
+## Avisos por correo (en curso)
+
+**Paso 1 hecho el 10 de noviembre de 2026**: solo base de datos, **sin frontend ni flujo de n8n
+todavía**. Que los afans reciban un correo cuando se da de alta una receta, si lo piden; el plan
+completo, con «Mi cuenta», está en [docs/ideas.md](docs/ideas.md#avisos-por-correo-y-mi-cuenta--decidido-el-10-de-noviembre-de-2026).
+([la migración](supabase/migrations/20261110_avisos_recetas.sql)).
+
+- `preferencias (user_id, avisos_recetas default false)`: **siempre opt-in**, y en tabla propia y no en
+  `perfiles`, donde `nombre` es obligatorio y solo una cuenta tiene fila. RLS: cada usuario toca solo
+  la suya; el `UPDATE` lleva `with check`. **El correo no se copia aquí**: es el de la cuenta.
+- `destinatarios_avisos_recetas()` devuelve el correo y el nombre de quien tiene los avisos activados
+  **y el correo confirmado** (sin borrar ni bloquear). **Solo `service_role` puede ejecutarla**: es
+  `SECURITY DEFINER` porque lee `auth.users`, y Supabase da `EXECUTE` a `anon` y `authenticated` por
+  defecto en las funciones nuevas, así que se revoca de forma explícita. Si se recrea la función, hay
+  que repetir los `revoke`.
+- Verificado simulando roles (autor, otro usuario, anónimo y n8n), incluidas cuentas que no deben
+  recibir correo. El linter no añade avisos.
 
 ## Modo cocina
 

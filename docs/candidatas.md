@@ -95,8 +95,12 @@ hay que convertirlo a `watch?v=<id>`).
   **Corregido y publicado el 14 de octubre** (también `Guardar en Supabase`, que
   tenía el mismo defecto con `tiempo`/`porciones`/`dificultad`). El flujo de
   candidatas debe copiar el prompt **ya corregido**.
-- **n8n es Cloud** (`n8n.emtel.cloud`): no es autoalojado, así que `yt-dlp` desde
-  el propio n8n probablemente no es una opción para los reels.
+- **n8n está autoalojado** (`n8n.emtel.cloud` es solo el nombre de dominio; el flujo llama a
+  Gotenberg como `gotenberg:3000`, en la misma red de Docker). Este documento decía que era Cloud
+  y que por eso `yt-dlp` no era una opción para los reels; **era un error, corregido el 10 nov
+  2026** a partir de lo que dice el admin. `yt-dlp` desde el propio servidor podría ser posible
+  (habría que comprobar que el contenedor permite ejecutar comandos), pero no se ha probado, y los
+  reels siguen yendo por Apify, que está hecho y funciona.
 ### Resultado de 0a con un reel público (14 oct 2026)
 
 Reel de `chef.clems` («Duck Breast and Peach Gastrique»), solo con el enlace.
@@ -148,8 +152,8 @@ mensaje real a n8n**; solo los de prueba. Lo aprendido, por si se retoma:
 
 ### Reels con Apify — HECHO y probado el 15 oct 2026
 
-Vía elegida para los pasos de un reel: un actor de Apify descarga el vídeo (n8n Cloud no puede
-ejecutar `yt-dlp`). Actor `snapinsta~instagram-downloader-api`: entrada `{url}`, salida
+Vía elegida para los pasos de un reel: un actor de Apify descarga el vídeo (se eligió así
+creyendo que n8n era Cloud y no podía ejecutar `yt-dlp`; ver arriba, la premisa era falsa). Actor `snapinsta~instagram-downloader-api`: entrada `{url}`, salida
 `media[].url` (MP4 temporal), `fileType`, `thumbnail`. Plan gratuito de Apify (5 $/mes); la página
 del actor da 1,20 $ por 1.000 descargas en ese plan (otro listado decía 0,48 $: confirmar).
 
@@ -206,7 +210,7 @@ YouTube**: el Short «Rigatoni al Vodka» → fila en `candidatas` (16 ingredien
 web, texto pegado, duplicados, tope diario y los mensajes de error.
 
 Lo que salió mal por el camino, por si vuelve a pasar:
-- **`crypto.randomUUID` no existe en el Code de n8n Cloud.** El id de la candidata
+- **`crypto.randomUUID` no existe en el Code de este n8n** (observado en esta instancia). El id de la candidata
   necesita un uuid válido: se genera con un v4 propio. Un fallback del estilo
   `Date.now().toString(36)` rompe la inserción (`invalid input syntax for type uuid`).
 - Un error de nombre de variable (`parts` por `partes`) tumbó el nodo `Preparar Gemini`.
@@ -326,6 +330,8 @@ compra.
 
 ## Abierto
 
-- Crear el bot de Telegram (BotFather) y obtener el `chat_id` propio.
+- ~~Crear el bot de Telegram y obtener el `chat_id` propio.~~ **Hecho**: el flujo está activo con el
+  `chat_id` del admin en la lista blanca (comprobado el 10 nov 2026; probado con YouTube el 14 oct).
 - Retomar o no Instagram (publicar la app de Meta, política de privacidad).
-- n8n es Cloud: `yt-dlp` desde n8n probablemente no es posible.
+- Comprobar si `yt-dlp` se puede ejecutar desde este n8n (autoalojado): quizá permitiría leer los
+  pasos de un reel sin Apify. No urgente: Apify funciona.

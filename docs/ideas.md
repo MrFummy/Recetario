@@ -248,6 +248,153 @@ Sois cuatro, así que lo social tiene sentido a escala pequeña:
 
 ---
 
+## Avisos por correo y «Mi cuenta» — decidido el 10 de noviembre de 2026
+
+Que los afans reciban un correo cuando se da de alta una receta, si quieren, y una sección
+personal desde donde gestionarlo. **Decidido, sin empezar.** Se evaluó la viabilidad con los datos
+reales del día: 7 cuentas, 5 con el correo confirmado, 2 activas en los últimos 30 días y 2 que
+nunca han entrado; solo 1 con perfil.
+
+**Decisiones del admin**
+- **Un correo por receta**, no un resumen. Un resumen semanal queda como mejora si resulta pesado
+  (el 27 de octubre se dieron de alta 4 recetas el mismo día).
+- **Contenido:** título, foto, categoría y enlace a la web (`#/receta/<id>`), no el PDF de Drive.
+- **Siempre opt-in**: nadie se suscribe sin pedirlo, tampoco las cuentas actuales.
+- **El panel de gestión de usuarios (admin) no hace falta por ahora.** Queda descartado de este
+  bloque; habría que pensarlo de nuevo si se quiere ver quién se registra o quitar cuentas.
+
+**Diseño propuesto** (aceptado, a confirmar al implementarlo)
+- **El correo es el de la cuenta** (`auth.users`, ya verificado por Supabase); no se pide otro ni
+  se duplica en ninguna tabla.
+- **Preferencia en una tabla aparte**, `preferencias (user_id, avisos_recetas boolean default
+  false)`, y no en `perfiles`: allí `nombre` es obligatorio y solo 1 de 7 cuentas tiene fila.
+  RLS: cada usuario solo toca la suya.
+- **Destinatarios por una función de base de datos que solo pueda llamar n8n** (clave de servicio,
+  no `anon` ni `authenticated`): devuelve los correos de quien tiene los avisos activados **y el
+  correo confirmado**. El esquema `auth` no se expone por la API normal.
+- **Disparador:** un *webhook de base de datos* de Supabase al insertar en `recetas`, que lance un
+  flujo pequeño y aparte de n8n («Aviso de nuevas recetas»). Mejor que añadir nodos al flujo de
+  alta (45 nodos, y la trampa de las claves anidadas): un fallo de correo no rompe el alta, el
+  aviso trae el id de la receta para el enlace (el alta guarda hoy con `return=minimal`, sin
+  devolverlo) y se prueba por separado. Cuesta una pieza más y un secreto compartido.
+- **Envío:** el mismo nodo Gmail de n8n, **un correo por persona** (sin CC, para no exponer
+  direcciones). Se adaptaría `docs/emails/receta-anadida.html`.
+- **Baja:** un enlace al pie que lleva a «Mi cuenta». La baja con un solo clic (con token firmado)
+  sería una mejora posterior.
+- **«Mi cuenta» (`#/cuenta`):** nombre (ya existe `usePerfil`), correo, interruptor de los avisos,
+  cambiar correo y contraseña con Supabase Auth, y cerrar sesión. **Borrar la propia cuenta queda
+  fuera** de la primera versión: exige la clave de servicio, es decir, una función en el servidor.
+
+**Progreso.** Paso 1, base de datos, **hecho el 10 nov**
+([la migración](../supabase/migrations/20261110_avisos_recetas.sql)): tabla `preferencias` con su
+RLS y `destinatarios_avisos_recetas()`, que solo puede ejecutar `service_role`. Verificado simulando
+roles (autor, otro usuario, anónimo y n8n) incluidos los casos que no deben recibir correo: una
+cuenta con el correo sin confirmar y otra que no ha pedido los avisos. Faltan «Mi cuenta», el
+webhook de base de datos y el flujo de n8n.
+
+**A comprobar antes de implementar:** cómo salen hoy los correos de Supabase Auth. Si usan su
+servicio por defecto tienen un límite de envíos muy bajo, y cambiar el correo desde «Mi cuenta»
+mandaría uno.
+
+---
+
+## Buzón de sugerencias de los afans — decidido el 10 de noviembre de 2026
+
+Que los afans manden una receta que les gustaría ver en el recetario, y que el admin decida si la
+cocina y la incorpora. Sirve para que interactúen más con la web: hoy solo 2 de 7 cuentas han
+entrado en 30 días. **Decidido, sin empezar**; va después de los avisos por correo porque reutiliza
+su infraestructura.
+
+**Decisiones del admin**
+- **Privado por ahora**: cada afan ve sus sugerencias y su estado; el admin las ve todas. Votos y
+  comentarios entre afans, solo si el buzón se llena.
+- **Texto y enlace**, sin fotos ni PDF (añadirían almacenamiento y más superficie de abuso).
+- **Aviso al admin** cuando llega una, **por Telegram o por correo** (se elige al implementar; lo
+  más simple es Telegram: el bot del Laboratorio está activo y el `chat_id` del admin ya está en su
+  lista blanca).
+- **Crédito «Sugerida por <nombre>»** en la receta cuando se incorpora, y un correo al autor.
+
+**Diseño propuesto**
+- **Tabla aparte, `sugerencias`**, no escribir en `candidatas`: lo que mandan los afans es entrada no
+  fiable, y `candidatas` son datos estructurados que solo toca el admin. Campos: autor, enlace y/o
+  texto, nota («por qué me gusta»), estado (`pendiente` → `aceptada` / `descartada` → `hecha`).
+  RLS: el autor lee y crea las suyas, solo el admin las lee todas y cambia el estado.
+- **Se convierte solo después de que el admin acepte**, nunca al enviarla. Hacerlo al enviar gastaría
+  cuota de Gemini con cualquier cuenta (el registro es abierto) y haría que el flujo descargue
+  enlaces de desconocidos: riesgo de SSRF y de inyección en el prompt.
+- **Primera versión sin automatizar la conversión**: el aviso lleva el enlace y el admin lo reenvía
+  al bot del Laboratorio, que ya lo convierte en candidata. Un flujo que reciba la sugerencia
+  aceptada y la pase solo a candidata queda para después: el flujo actual tiene disparador de
+  Telegram y no se puede ejecutar a distancia, así que habría que montar otro con webhook.
+- **Límites**: solo cuentas con el correo confirmado y un tope de envíos por día y usuario, con un
+  contador como el de `registrar_busqueda`.
+- **Aviso** con el mismo patrón que las alertas de recetas: un webhook de base de datos al insertar
+  que lance un flujo pequeño de n8n.
+- **Crédito:** una columna `recetas.sugerida_por` (nullable) y mostrar el nombre del perfil, solo si
+  el autor lo ha puesto. Falta decidir al implementar si se pregunta antes («¿puedo citarte?»).
+- **Interfaz:** `#/buzon` («Sugerir una receta» y «Mis sugerencias») para los afans, y una pestaña
+  «Buzón» dentro de `#/laboratorio` para el admin.
+
+**Riesgo honesto:** un buzón vacío no cambia nada. Lo que da vida es el bucle de respuesta —crédito
+y correo al autor—, y para eso hacen falta antes los avisos.
+
+---
+
+## Bot de Telegram para los afans — decidido el 10 de noviembre de 2026
+
+Ampliar el bot para que un afan consulte y mueva sus cosas desde el móvil, sobre todo en el súper.
+**Decidido, sin empezar**; depende de «Mi cuenta» (la vinculación se hace desde allí).
+
+**Decisiones del admin**
+- **Para todos los afans desde el inicio**, no solo para el admin.
+- **Los tres usos:** el súper (consultar y tachar la lista), la cocina («¿qué cocino hoy?») y los
+  recordatorios de menús.
+- **Un segundo bot** para los afans. No es solo por abusos: Telegram admite **un único webhook por
+  bot**, y dos flujos con disparador de Telegram sobre el mismo bot se pisarían. El bot actual queda
+  como el privado del admin (Laboratorio, con Gemini y lista blanca); el nuevo solo consulta.
+- **n8n está autoalojado**, así que no hay cuota de ejecuciones al mes: lo que cuenta es la capacidad
+  del servidor.
+- **Alertas de recetas nuevas por Telegram**: no por ahora, quizá más adelante (iría por correo).
+
+**Diseño propuesto**
+- **Vinculación:** en «Mi cuenta» se genera un código de un solo uso con caducidad; el afan manda
+  `/vincular CÓDIGO` al bot y se guarda su `chat_id` junto a su cuenta. Sin vincular, el bot no
+  responde con datos.
+- **La lógica, en funciones de base de datos** (`bot_despensa(chat_id)`…), ejecutables solo con la
+  clave de servicio y verificables simulando roles; n8n solo recibe el comando, llama, da formato y
+  responde. n8n usa la clave de servicio, que se salta la RLS: si el filtrado por usuario viviera en
+  los nodos, un fallo mezclaría la despensa de unos y otros.
+- **Duplicación a vigilar:** la lista de la compra y «qué cocino» están hoy en TypeScript
+  (`listaCompra.ts`, `escalado.ts`, `inventario.ts`). Portarlas a SQL deja dos versiones que pueden
+  desviarse; los comandos que no necesitan esa suma (`/despensa`, `/parahacer`) no tienen el problema.
+- **Pruebas:** un flujo con disparador de Telegram no se ejecuta a distancia; cada prueba es un
+  mensaje real.
+- **Privacidad:** los datos pasan por los servidores de Telegram, sin cifrado de extremo a extremo.
+  Los afans deberían saberlo al vincular.
+
+**Fases:** 1) vinculación y consultas (`/despensa`, `/parahacer`, `/compra`) más el recordatorio de
+menús el día antes de su fecha; 2) tachar («comprado», con botones para confirmar el ingrediente y no
+ensuciar los `base`), «¿qué cocino hoy?» y «ya la he hecho» con estrellas; 3) buzón por Telegram
+(`/sugerir <enlace>`), buscar receta por frase y cocinar con avisos de temporizador (lo último, y
+dudoso: cada temporizador sería una ejecución en espera, y el modo cocina web ya funciona).
+
+---
+
+## Plan acordado — 10 de noviembre de 2026
+
+Orden en el que se harán las ideas, y por qué.
+
+1. **Avisos por correo y «Mi cuenta»** — *en curso* (paso 1, base de datos, hecho). Va primero porque
+   las otras dos dependen de él: «Mi cuenta» aloja la vinculación de Telegram y los ajustes, y los
+   avisos dan la infraestructura (webhook de base de datos más flujo de n8n) que reutiliza el buzón.
+2. **Copia de seguridad semanal a Drive** — *sugerencia del asistente, pendiente de visto bueno*.
+3. **Buzón de sugerencias de los afans.**
+4. **Bot de Telegram para los afans**, en las fases de arriba.
+5. **Extras sugeridos, sin decidir**, que se intercalan donde convenga: escalado en la ficha de
+   receta, favoritos, detección de duplicados al dar de alta y PWA instalable.
+
+---
+
 ## Orden sugerido
 
 ~~1. Estructurar los ingredientes.~~ **Hecho el 23 de agosto.**

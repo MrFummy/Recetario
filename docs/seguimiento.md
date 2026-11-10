@@ -69,11 +69,22 @@ registro de abajo).
 ### Propuesto
 1. ~~**Compartir menús**~~ **Hecho el 10 nov**: tres niveles (privado, afans, enlace); ver
    [menus.md § Compartir](menus.md). Con esto el plan de menús queda cerrado.
-2. **Detección de duplicados al dar de alta**, comparando el vector de la receta nueva con
-   `recetas_embeddings`. Es lo más barato que queda.
-3. ~~**Que el alta rellene `porciones_num`**~~ **Hecho el 10 nov** en el flujo «Recetas con Frontend»
+2. **Avisos de recetas nuevas por correo (opt-in) y «Mi cuenta»**: *en curso*. Paso 1, base de datos
+   (`preferencias` y `destinatarios_avisos_recetas()`), hecho el 10 nov. Faltan «Mi cuenta», el
+   webhook de base de datos y el flujo de n8n. Diseño en
+   [ideas.md](ideas.md#avisos-por-correo-y-mi-cuenta--decidido-el-10-de-noviembre-de-2026).
+   El panel de gestión de usuarios (admin) se descartó por ahora.
+3. **Copia de seguridad semanal a Drive** (sugerencia; pendiente de visto bueno).
+4. **Buzón de sugerencias de los afans**: decidido, sin empezar; reutiliza la infraestructura de los
+   avisos. [Diseño](ideas.md#buzón-de-sugerencias-de-los-afans--decidido-el-10-de-noviembre-de-2026).
+5. **Bot de Telegram para los afans** (segundo bot, vinculación desde «Mi cuenta», consultas,
+   recordatorios de menús): decidido, sin empezar.
+   [Diseño](ideas.md#bot-de-telegram-para-los-afans--decidido-el-10-de-noviembre-de-2026).
+6. **Extras sugeridos, sin decidir**: escalado en la ficha de receta, favoritos, detección de
+   duplicados al dar de alta (comparando el vector de la receta nueva con `recetas_embeddings`) y PWA.
+7. ~~**Que el alta rellene `porciones_num`**~~ **Hecho el 10 nov** en el flujo «Recetas con Frontend»
    (ver abajo, «Sin verificar»).
-4. **Rellenar las dos recetas sin ingredientes** (*Receta de Alitas Buffalo* y *Solomillo de
+8. **Rellenar las dos recetas sin ingredientes** (*Receta de Alitas Buffalo* y *Solomillo de
    cerdo con salsa de castañas*), que hoy quedan sin `porciones_num` y fuera de las listas.
 
 ### Sin verificar
@@ -89,7 +100,8 @@ registro de abajo).
   navegador del panel no tiene sesión en `recetario.orballo.link`.
 
 ### Abierto en El Laboratorio
-- Crear el bot de Telegram (BotFather) y obtener el `chat_id` propio.
+- ~~Crear el bot de Telegram y obtener el `chat_id`.~~ **Hecho**: el flujo «El Laboratorio - entrada por
+  Telegram» está activo con el `chat_id` del admin en la lista blanca (comprobado el 10 nov).
 - Retomar o no la entrada por Instagram (publicar la app de Meta, política de
   privacidad).
 
@@ -160,6 +172,7 @@ formato absoluto.
 | 10 nov 2026 | Repaso: grafo actualizado (658 nodos), `CLAUDE.md` corregido —el grafo no tiene capa semántica desde el 5 ago—, este panel reordenado y ficha de Notion al día | — | La capa semántica no la perdió ninguna actualización reciente: ya faltaba en la reconstrucción del 5 ago |
 | 10 nov 2026 | El alta de n8n rellena `porciones_num`: `Vertex AI` lo pide con reglas, `Limpia respuesta` lo normaliza (y lo saca de `porciones` si falta) y `Guardar en Supabase` lo escribe | — | Versión `3a62fac0` del flujo, publicada y comprobada (parámetros idénticos a lo esperado, sin claves anidadas, `activeVersionId` = la editada). Cambio solo en n8n; sin probar de punta a punta |
 | 10 nov 2026 | Menús, fase 5: compartir. `menus.visibilidad` (privado, afans, enlace), `ver_menu_compartido` para el enlace, vista de solo lectura, control en el editor y sección «Menús de los afans» | — | Migración `20261110_compartir_menus.sql`. El enlace NO usa una policy pública (listaría todos los menús): lo sirve una función `SECURITY DEFINER` que devuelve uno por id. RLS verificadas simulando roles; probado con y sin sesión, y desplegado el 10 nov: el flujo anónimo, comprobado también en la web real |
+| 10 nov 2026 | Avisos por correo, paso 1: tabla `preferencias` (opt-in, RLS) y `destinatarios_avisos_recetas()` solo para `service_role`; plan acordado de las ideas nuevas; corregido que n8n está autoalojado, no es Cloud | — | Migración `20261110_avisos_recetas.sql`, verificada simulando roles. Solo recibe correo quien lo pidió Y tiene el correo confirmado |
 
 ---
 
