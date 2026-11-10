@@ -39,14 +39,15 @@ export function PortadaCatalogo({ recipes, compacta }: PortadaCatalogoProps) {
           <span className="sello sello-estampa absolute left-[6%] top-[5%] z-10 h-[92px] w-[92px] text-[10px] md:h-28 md:w-28">
             <span><b className="block font-display text-4xl font-black leading-[0.9] tracking-tight">{recipes.length}</b>recetas</span>
           </span>
-          <div className="arco aspect-[1/1.02] bg-rule/60">
+          <div className="arco relative z-0 aspect-[1/1.02] bg-rule/60">
             <img
               src={destacada.foto_url ?? ''}
               alt={destacada.titulo}
               className="h-full w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-105"
             />
           </div>
-          <div className="md:pb-4 md:pl-10">
+          {/* `relative z-10`: la foto hace zoom al pasar el ratón y, al crear su propia capa, tapaba el titular que se le solapa. */}
+          <div className="relative z-10 md:pb-4 md:pl-10">
             <div className="kicker mb-5">{destacada.categoria} · Receta destacada</div>
             <h2 className="mb-6 line-clamp-4 font-display text-[2.6rem] font-light leading-[0.95] tracking-[-0.035em] md:-ml-[7vw] md:text-[clamp(3rem,6vw,5.75rem)]">
               <span className="bg-paper pr-3 [box-decoration-break:clone]">

@@ -8,11 +8,7 @@ interface RecipeCardProps {
   onClick: () => void;
 }
 
-/**
- * Tarjeta del mosaico. La forma de la foto (arco, círculo, cuadrado…) la decide
- * `.mosaico` según la posición, no la tarjeta: así el ritmo del catálogo no
- * depende de qué receta toque en cada hueco.
- */
+/** Tarjeta del catálogo. La forma y la proporción de la foto las fija `.mosaico`, igual para todas. */
 export function RecipeCard({ recipe, onClick }: RecipeCardProps) {
   const imageUrl = recipe.foto_url || placeholderImg;
 
@@ -53,7 +49,7 @@ export function RecipeCard({ recipe, onClick }: RecipeCardProps) {
           <span className="truncate">{recipe.categoria}</span>
           {formattedDate && <span className="ml-auto shrink-0 normal-case tracking-normal">{formattedDate}</span>}
         </div>
-        <h3 className="font-display text-xl font-medium leading-[1.1] tracking-[-0.015em] text-ink sm:text-[1.4rem]">
+        <h3 className="line-clamp-2 font-display text-lg font-medium leading-[1.12] tracking-[-0.015em] text-ink sm:text-xl">
           <span className="titulo-k">{recipe.titulo}</span>
         </h3>
         {recipe.rating ? (

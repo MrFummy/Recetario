@@ -651,7 +651,9 @@ que las secciones que no se tocaron ya heredan la paleta.
 - **Reglas**: borde de 1,5 px; sombra dura solo en sellos, botones y notas; como mucho dos recursos de azulejo por
   pantalla; nada de inclinar tarjetas. `font-mono` es para datos y rótulos, `font-sello` (Bricolage) para sellos y
   botones, `font-script` solo para anotaciones a mano (fecha de la ficha, pie de foto).
-- `.mosaico` decide la forma de cada foto por su posición (arco, círculo, cuadrado), no la receta.
+- `.mosaico` es una rejilla **regular** (3 columnas, 2 en móvil; todas las fotos 4/5 en arco; títulos a dos
+  líneas). Hubo un mosaico asimétrico y se retiró: en 77 recetas se escanea, no se hojea. La asimetría queda en
+  la portada.
 - **Pendiente de decidir**: las hojas impresas (`.hoja*`) y la plantilla de n8n para los PDF siguen con la estética
   de cuaderno; solo cambian de color porque comparten tokens. Si se llevan al nuevo sistema, hay que volver a medir
   `ALTO`/`ALTO_UTIL` de `MenuImprimible.tsx`.

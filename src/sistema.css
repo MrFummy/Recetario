@@ -143,28 +143,20 @@
   z-index: -1;
 }
 
-/* ── Mosaico del catálogo ───────────────────── */
+/* ── Rejilla del catálogo ───────────────────── */
+/* Regular a propósito: en 77 recetas se escanea, no se hojea. Mismo ancho, misma proporción de
+   foto (arco) y títulos de como mucho dos líneas, para que las columnas se lean de arriba abajo.
+   La asimetría de revista se queda en la portada. */
 .mosaico {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 3rem 1.75rem;
   align-items: start;
 }
-.mosaico > * { grid-column: span 4; }
-.mosaico > :nth-child(5n+1) { grid-column: span 5; }
-.mosaico > :nth-child(5n+2) { margin-top: 3.5rem; }
-.mosaico > :nth-child(5n+3) { grid-column: span 3; }
-.mosaico > :nth-child(5n+5) { grid-column: span 5; margin-top: 1.75rem; }
-.mosaico-foto { aspect-ratio: 4 / 5; }
-.mosaico > :nth-child(5n+2) .mosaico-foto, .mosaico > :nth-child(5n+4) .mosaico-foto { aspect-ratio: 1; }
-.mosaico > :nth-child(3n+1) .mosaico-foto { border-radius: 999px 999px 3px 3px; }
-.mosaico > :nth-child(5n+3) .mosaico-foto { border-radius: 50%; aspect-ratio: 1; }
+.mosaico-foto { aspect-ratio: 4 / 5; border-radius: 999px 999px 3px 3px; }
 
 @media (max-width: 760px) {
   .mosaico { grid-template-columns: 1fr 1fr; gap: 1.75rem 0.875rem; }
-  .mosaico > *, .mosaico > :nth-child(n) { grid-column: span 1; margin-top: 0; }
-  .mosaico-foto, .mosaico > :nth-child(n) .mosaico-foto { aspect-ratio: 4 / 5; border-radius: 0; }
-  .mosaico > :nth-child(3n+1) .mosaico-foto { border-radius: 999px 999px 3px 3px; }
 }
 
 /* Rejilla pareja, para listas de tarjetas que no son recetas (laboratorio, etc.) */
