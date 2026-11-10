@@ -15,6 +15,7 @@ import { SeccionLaboratorio } from './components/LaboratorioSection';
 import { SeccionPasaporte } from './components/PasaporteSection';
 import { SeccionMenus } from './components/MenusSection';
 import { SeccionCuenta } from './components/CuentaSection';
+import { SeccionBuzon } from './components/BuzonSection';
 import { NavPrincipal } from './components/NavPrincipal';
 import { useRecipes } from './hooks/useRecipes';
 import { useDespensa } from './hooks/useDespensa';
@@ -102,7 +103,7 @@ function App() {
   const enLaboratorio = ruta.vista === 'laboratorio';
   const enPasaporte = ruta.vista === 'pasaporte' || ruta.vista === 'pais';
   const enMenus = ruta.vista === 'menus' || ruta.vista === 'menu';
-  const enCuenta = ruta.vista === 'cuenta';
+  const enCuenta = ruta.vista === 'cuenta' || ruta.vista === 'buzon';
   // El catálogo queda detrás de la ficha abierta, como hasta ahora.
   const enCatalogo = !enNueva && !enDespensa && !enListaCompra && !enLaboratorio && !enPasaporte && !enMenus && !enCuenta;
 
@@ -194,6 +195,10 @@ function App() {
         ) : enListaCompra ? (
           <SoloLogueados sesionCargada={sesionCargada} logueado={!!user} seccion="la lista de la compra" onLogin={() => setShowLoginModal(true)}>
             <SeccionListaCompra recipes={recipes} despensa={despensa} paraHacer={paraHacer} />
+          </SoloLogueados>
+        ) : ruta.vista === 'buzon' ? (
+          <SoloLogueados sesionCargada={sesionCargada} logueado={!!user} seccion="el buzón de sugerencias" onLogin={() => setShowLoginModal(true)}>
+            {user && <SeccionBuzon user={user} isAdmin={isAdmin} />}
           </SoloLogueados>
         ) : ruta.vista === 'cuenta' ? (
           <SoloLogueados sesionCargada={sesionCargada} logueado={!!user} seccion="tu cuenta" onLogin={() => setShowLoginModal(true)}>

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import type { User } from '@supabase/supabase-js';
-import { LogOut } from 'lucide-react';
+import { LogOut, Lightbulb } from 'lucide-react';
+import { aHash } from '../lib/rutas';
 import { usePerfil } from '../hooks/usePerfil';
 import { usePreferencias } from '../hooks/usePreferencias';
 import { errorMessage } from '../lib/errors';
@@ -83,6 +84,16 @@ export function SeccionCuenta({ user, isAdmin, onLogout }: Props) {
         <CuentaAcceso user={user} />
 
         <CuentaAvisos user={user} preferencias={preferencias} />
+
+        <section>
+          <h3 className="font-mono text-[11px] uppercase tracking-wider text-accent mb-3">Buzón</h3>
+          <a
+            href={aHash({ vista: 'buzon' })}
+            className="inline-flex items-center gap-2 px-4 py-2 border-2 border-ink/30 rounded-md text-sm font-semibold text-ink hover:text-accent hover:border-accent transition-colors"
+          >
+            <Lightbulb size={16} /> Sugerir una receta
+          </a>
+        </section>
 
         <section>
           <h3 className="font-mono text-[11px] uppercase tracking-wider text-accent mb-3">Sesión</h3>

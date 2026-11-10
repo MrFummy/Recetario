@@ -305,8 +305,10 @@ mandaría uno.
 
 Que los afans manden una receta que les gustaría ver en el recetario, y que el admin decida si la
 cocina y la incorpora. Sirve para que interactúen más con la web: hoy solo 2 de 7 cuentas han
-entrado en 30 días. **Decidido, sin empezar**; va después de los avisos por correo porque reutiliza
-su infraestructura.
+entrado en 30 días. **Fase 1 hecha el 10 de noviembre** (tabla `sugerencias` con RLS y tope de 5 al día con correo
+confirmado, [la migración](../supabase/migrations/20261110_sugerencias.sql); página `#/buzon`, enlazada desde «Mi cuenta»,
+con el admin viendo todas y cambiando el estado ahí mismo). **Faltan**: el aviso al admin, el crédito
+«Sugerida por» y el correo al autor.
 
 **Decisiones del admin**
 - **Privado por ahora**: cada afan ve sus sugerencias y su estado; el admin las ve todas. Votos y

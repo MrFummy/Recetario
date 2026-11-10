@@ -20,6 +20,7 @@ export type Ruta =
   | { vista: 'pasaporte' }
   | { vista: 'menus' }
   | { vista: 'cuenta' }
+  | { vista: 'buzon' }
   /** Un menú concreto, por su id. */
   | { vista: 'menu'; id: string }
   /** Un país de «Mi pasaporte», por su código ISO alfa-2 en mayúsculas. */
@@ -43,6 +44,7 @@ export function parsearRuta(hash: string): Ruta {
   if (partes[0] === 'laboratorio') return { vista: 'laboratorio' };
   if (partes[0] === 'menus') return { vista: 'menus' };
   if (partes[0] === 'cuenta') return { vista: 'cuenta' };
+  if (partes[0] === 'buzon') return { vista: 'buzon' };
   if (partes[0] === 'menu' && partes[1]) return { vista: 'menu', id: decodeURIComponent(partes[1]) };
   if (partes[0] === 'pasaporte') {
     // Un código mal escrito cae en el mapa, no en una página de país vacía.
@@ -73,6 +75,8 @@ export function aHash(ruta: Ruta): string {
       return '#/menus';
     case 'cuenta':
       return '#/cuenta';
+    case 'buzon':
+      return '#/buzon';
     case 'menu':
       return `#/menu/${encodeURIComponent(ruta.id)}`;
     case 'pais':
