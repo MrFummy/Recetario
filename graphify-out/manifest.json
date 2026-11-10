@@ -42,15 +42,15 @@
     "semantic_hash": ""
   },
   "src/components/LoginModal.tsx": {
-    "mtime": 1794320815.7239265,
-    "seen": 1794320965.4996889,
-    "ast_hash": "d085f9e5fd5d33169a03ee452172ec95",
+    "mtime": 1794322698.57494,
+    "seen": 1794323301.917181,
+    "ast_hash": "2de6d7d228eefd4368a40c9ca8b4adf0",
     "semantic_hash": ""
   },
   "src/components/RecipeCard.tsx": {
-    "mtime": 1794320644.4464033,
-    "seen": 1794320965.499702,
-    "ast_hash": "fab2186d315a2bff2f830a115cd3fb50",
+    "mtime": 1794321593.9150171,
+    "seen": 1794323301.917197,
+    "ast_hash": "3a5109c8de7e3d56e2265d03185ddca7",
     "semantic_hash": ""
   },
   "src/components/RecipeDetail.tsx": {
@@ -156,9 +156,9 @@
     "semantic_hash": ""
   },
   "public/favicon.svg": {
-    "mtime": 1791902852.6683311,
-    "seen": 1791974866.928289,
-    "ast_hash": "fc6b21c99e9a1dc6c4d81d02f7e469ed",
+    "mtime": 1794322591.4494135,
+    "seen": 1794323301.9172611,
+    "ast_hash": "7358a276a6ea9ca7c077bdc6b400c5b7",
     "semantic_hash": ""
   },
   "public/icons.svg": {
@@ -240,9 +240,9 @@
     "semantic_hash": ""
   },
   "CLAUDE.md": {
-    "mtime": 1794320964.0078728,
-    "seen": 1794320965.499753,
-    "ast_hash": "ce63ee7cf5567e93556374753c1a28fc",
+    "mtime": 1794323572.0686696,
+    "seen": 1794323579.452915,
+    "ast_hash": "91814a4dd6058700f4773f866c28952f",
     "semantic_hash": ""
   },
   "src/hooks/useDespensa.ts": {
@@ -474,21 +474,21 @@
     "semantic_hash": ""
   },
   "public/apple-touch-icon.png": {
-    "mtime": 1791902962.6994078,
-    "seen": 1791974866.928288,
-    "ast_hash": "bded0b136fcf3b6ea0b47308a383e826",
+    "mtime": 1794322620.4669986,
+    "seen": 1794323301.917259,
+    "ast_hash": "3f9920cb670ac9b2b6a329fbff92e604",
     "semantic_hash": ""
   },
   "public/favicon-32.png": {
-    "mtime": 1791903204.0381875,
-    "seen": 1791974866.928288,
-    "ast_hash": "c022169015318ad31195754d8e383f61",
+    "mtime": 1794322620.4631073,
+    "seen": 1794323301.91726,
+    "ast_hash": "9f93f7f122d51bebe852d876349553a5",
     "semantic_hash": ""
   },
   "scripts/icono-ios.svg": {
-    "mtime": 1791902942.652112,
-    "seen": 1791974866.9282901,
-    "ast_hash": "dc32046041880789b49b707d476c23b2",
+    "mtime": 1794322620.4963377,
+    "seen": 1794323301.917262,
+    "ast_hash": "59cf39c036740a026c5bf41f5d7f1d15",
     "semantic_hash": ""
   },
   "scripts/generar-mapamundi.mjs": {
@@ -504,9 +504,9 @@
     "semantic_hash": ""
   },
   "src/components/AltaPais.tsx": {
-    "mtime": 1792076916.1104932,
-    "seen": 1792249003.6642911,
-    "ast_hash": "0bb21d6e6a9b9765b5be6f8ee87656ba",
+    "mtime": 1794323414.2757387,
+    "seen": 1794323579.452831,
+    "ast_hash": "f92c972533bffde9ea0fa34f6c0fe066",
     "semantic_hash": ""
   },
   "src/components/Bandera.tsx": {
@@ -534,9 +534,9 @@
     "semantic_hash": ""
   },
   "src/components/MapaMundi.tsx": {
-    "mtime": 1794320759.1800778,
-    "seen": 1794320965.4996889,
-    "ast_hash": "72c6d3210a07d42f9b2abf61674b5e49",
+    "mtime": 1794323390.087919,
+    "seen": 1794323579.452847,
+    "ast_hash": "1d6d768c9b82208e6c10a7b5ebc6a7f3",
     "semantic_hash": ""
   },
   "src/components/NavPrincipal.tsx": {
@@ -546,27 +546,27 @@
     "semantic_hash": ""
   },
   "src/components/PaisEditor.tsx": {
-    "mtime": 1792577315.958686,
-    "seen": 1793389390.108723,
-    "ast_hash": "5d53c18d0afd88e12560e694a0a34ede",
+    "mtime": 1794323414.275394,
+    "seen": 1794323579.452855,
+    "ast_hash": "9075e0af16ce4b61eceb9d6f1728556d",
     "semantic_hash": ""
   },
   "src/components/PaisEtiqueta.tsx": {
-    "mtime": 1794320720.2417593,
-    "seen": 1794320965.499698,
-    "ast_hash": "99292de82e03dadd2421cd30c9198d88",
+    "mtime": 1794323414.2758777,
+    "seen": 1794323579.452856,
+    "ast_hash": "1aae687df78a24c8e02cf96034916b6b",
     "semantic_hash": ""
   },
   "src/components/PaisPagina.tsx": {
-    "mtime": 1794320837.5533092,
-    "seen": 1794320965.499698,
-    "ast_hash": "a57a5c6750c891572fb6a1e9910157f2",
+    "mtime": 1794323208.919988,
+    "seen": 1794323301.917193,
+    "ast_hash": "54aa8e0d82c582e74dd5922c806662b7",
     "semantic_hash": ""
   },
   "src/components/PasaporteSection.tsx": {
-    "mtime": 1794320878.8292112,
-    "seen": 1794320965.4996989,
-    "ast_hash": "cf5e83433a519223008d94c8207ab08a",
+    "mtime": 1794323166.3256347,
+    "seen": 1794323301.917194,
+    "ast_hash": "5f7069d2d52f482d3627d572ce08d96e",
     "semantic_hash": ""
   },
   "src/components/PromoverModal.tsx": {
@@ -666,9 +666,9 @@
     "semantic_hash": ""
   },
   "src/hooks/useAcentoPais.ts": {
-    "mtime": 1792249371.6426432,
-    "seen": 1792249388.5190709,
-    "ast_hash": "84ea90699a0688e14f66e802526762ec",
+    "mtime": 1794323381.3477898,
+    "seen": 1794323579.452868,
+    "ast_hash": "7a0c05040cfa9b56fd3cf62aa416d95c",
     "semantic_hash": ""
   },
   "src/lib/colorBandera.ts": {
@@ -684,9 +684,9 @@
     "semantic_hash": ""
   },
   "public/icon-256.png": {
-    "mtime": 1792249179.3450274,
-    "seen": 1792249388.519111,
-    "ast_hash": "6201e3ab1e19a6186b70c86067c4e407",
+    "mtime": 1794322620.4650214,
+    "seen": 1794323301.9172611,
+    "ast_hash": "0bd0d196236ebe64c10703f0b1d1f906",
     "semantic_hash": ""
   },
   "src/components/SelloPasaporte.tsx": {
@@ -696,15 +696,15 @@
     "semantic_hash": ""
   },
   "src/components/FichaPais.tsx": {
-    "mtime": 1792577315.9433775,
-    "seen": 1793389390.108716,
-    "ast_hash": "40710c0e288d2720df31c070fbb12221",
+    "mtime": 1794323198.3884573,
+    "seen": 1794323301.917176,
+    "ast_hash": "aad665a1352b5d648a97fd4487de322b",
     "semantic_hash": ""
   },
   "src/components/PlatoEstrella.tsx": {
-    "mtime": 1794320837.553092,
-    "seen": 1794320965.4997,
-    "ast_hash": "a344faca1316e28809fe5ea6b7ce52bc",
+    "mtime": 1794323198.3907604,
+    "seen": 1794323301.917195,
+    "ast_hash": "addd6b63c1802c7cec04d3cb61ed62fa",
     "semantic_hash": ""
   },
   "supabase/migrations/20261021_datos_ficha_pais.sql": {
@@ -966,21 +966,51 @@
     "semantic_hash": ""
   },
   "src/components/Cabecera.tsx": {
-    "mtime": 1794320632.914785,
-    "seen": 1794320965.499681,
-    "ast_hash": "4ba2a72648b102dbabe5bad108a5d47f",
+    "mtime": 1794322680.0440981,
+    "seen": 1794323301.9171698,
+    "ast_hash": "da8020abb141a83a7b0d4ebcdb4ad911",
     "semantic_hash": ""
   },
   "src/components/PortadaCatalogo.tsx": {
-    "mtime": 1794320878.8296802,
-    "seen": 1794320965.4997,
-    "ast_hash": "becec70a60329556c17053782e0d40ea",
+    "mtime": 1794321366.2742715,
+    "seen": 1794323301.917196,
+    "ast_hash": "1af7997942cc867f7e890b24ab37a0f8",
     "semantic_hash": ""
   },
   "src/lib/colorCategoria.ts": {
     "mtime": 1794320644.4285846,
     "seen": 1794320965.499721,
     "ast_hash": "87452b4277f73d9d47e9e021a48081d4",
+    "semantic_hash": ""
+  },
+  "src/components/ListaVisados.tsx": {
+    "mtime": 1794323208.9204576,
+    "seen": 1794323301.9171798,
+    "ast_hash": "f76ac779a8f12fe752566d19c12d60ae",
+    "semantic_hash": ""
+  },
+  "src/components/LogoSarten.tsx": {
+    "mtime": 1794322574.6693943,
+    "seen": 1794323301.917182,
+    "ast_hash": "40a713f0162bd0099928f968c1367bba",
+    "semantic_hash": ""
+  },
+  "src/components/SelloVisado.tsx": {
+    "mtime": 1794323208.9201813,
+    "seen": 1794323301.9172008,
+    "ast_hash": "2da8868d8ee50f18f2d3a71f5bea60bb",
+    "semantic_hash": ""
+  },
+  "src/lib/visados.ts": {
+    "mtime": 1794323208.9203618,
+    "seen": 1794323301.917227,
+    "ast_hash": "3996498fe19fe940a439f71681ddacb1",
+    "semantic_hash": ""
+  },
+  "src/lib/cargarAcento.ts": {
+    "mtime": 1794323381.345402,
+    "seen": 1794323579.45288,
+    "ast_hash": "860200488417c2749f742eec52da2aa0",
     "semantic_hash": ""
   }
 }

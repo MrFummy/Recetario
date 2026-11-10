@@ -1,6 +1,7 @@
 import type { ComponentProps } from 'react';
 import { LogIn, LogOut, UserRound } from 'lucide-react';
 import { NavPrincipal } from './NavPrincipal';
+import { LogoSarten } from './LogoSarten';
 import { aHash, CATALOGO } from '../lib/rutas';
 
 interface CabeceraProps {
@@ -17,11 +18,9 @@ export function Cabecera({ nav, logueado, enCuenta, onLogin, onLogout }: Cabecer
     <header className="sticky top-0 z-30 bg-paper/90 backdrop-blur-md print:hidden">
       <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
         <a href={aHash(CATALOGO)} aria-label="El Recetario de Markis, ir al catálogo" className="group flex shrink-0 items-center gap-3">
-          <span className="sello !h-9 !w-9 !rotate-[-8deg] bg-accent !text-paper text-[17px] !shadow-[2px_2px_0_var(--color-ink)] group-hover:!rotate-12 group-hover:scale-110">
-            M
-          </span>
-          {/* Por debajo de `sm` el título no cabe junto a la nav: queda el sello. */}
-          <span className="hidden font-display text-[1.65rem] font-semibold italic leading-none tracking-[-0.02em] sm:block">
+          <LogoSarten ancho={54} className="shrink-0 transition-transform duration-300 group-hover:-rotate-6 group-hover:scale-105" />
+          {/* Por debajo de `md` el título no cabe junto a la nav (con la sartén ya son 26 px de más a 640): queda solo la sartén. */}
+          <span className="hidden font-display text-[1.65rem] font-semibold italic leading-none tracking-[-0.02em] md:block lg:text-[1.35rem] xl:text-[1.65rem]">
             El Recetario de <b className="font-extrabold not-italic text-accent">Markis</b>
           </span>
         </a>

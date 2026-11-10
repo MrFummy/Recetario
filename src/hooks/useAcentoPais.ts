@@ -1,40 +1,42 @@
 import { useEffect, useState } from 'react';
-import { urlBandera } from '../lib/paises';
-import { acentoDePixeles, type AcentoPais } from '../lib/colorBandera';
-
-const LADO = 24;
-const cache = new Map<string, AcentoPais | null>();
+import { acentoEnCache, cargarAcento } from '../lib/cargarAcento';
+import type { AcentoPais } from '../lib/colorBandera';
 
 /** El acento de un país, sacado de su bandera; `null` mientras carga o si falla. */
 export function useAcentoPais(codigo: string): AcentoPais | null {
   const [resultado, setResultado] = useState<{ codigo: string; acento: AcentoPais | null } | null>(null);
 
   useEffect(() => {
-    if (cache.has(codigo)) return;
+    if (acentoEnCache(codigo) !== undefined) return;
     let activo = true;
-    const img = new Image();
-    img.crossOrigin = 'anonymous';
-    img.onload = () => {
-      let acento: AcentoPais | null = null;
-      try {
-        const canvas = document.createElement('canvas');
-        canvas.width = LADO;
-        canvas.height = LADO;
-        const ctx = canvas.getContext('2d');
-        if (ctx) {
-          ctx.drawImage(img, 0, 0, LADO, LADO);
-          acento = acentoDePixeles(ctx.getImageData(0, 0, LADO, LADO).data);
-        }
-      } catch {
-        // Canvas «manchado» por CORS: sin acento, la página queda como estaba.
-      }
-      cache.set(codigo, acento);
-      if (activo) setResultado({ codigo, acento });
-    };
-    img.src = urlBandera(codigo);
+    void cargarAcento(codigo).then((acento) => { if (activo) setResultado({ codigo, acento }); });
     return () => { activo = false; };
   }, [codigo]);
 
-  if (cache.has(codigo)) return cache.get(codigo) ?? null;
+  const enCache = acentoEnCache(codigo);
+  if (enCache !== undefined) return enCache;
   return resultado?.codigo === codigo ? resultado.acento : null;
+}
+
+/** Los acentos de varios países a la vez (para el mapa); los que aún cargan no aparecen. */
+export function useAcentosPaises(codigos: string[]): Map<string, AcentoPais> {
+  const [, setVersion] = useState(0);
+  const clave = [...codigos].sort().join(',');
+
+  useEffect(() => {
+    let activo = true;
+    for (const codigo of clave.split(',').filter(Boolean)) {
+      if (acentoEnCache(codigo) === undefined) {
+        void cargarAcento(codigo).then(() => { if (activo) setVersion((v) => v + 1); });
+      }
+    }
+    return () => { activo = false; };
+  }, [clave]);
+
+  const mapa = new Map<string, AcentoPais>();
+  for (const codigo of codigos) {
+    const acento = acentoEnCache(codigo);
+    if (acento) mapa.set(codigo, acento);
+  }
+  return mapa;
 }

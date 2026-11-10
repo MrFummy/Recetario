@@ -32,19 +32,19 @@ export function AltaPais({ api }: { api: Paises }) {
   };
 
   return (
-    <details className="max-w-xl mx-auto mb-8 border-[1.5px] border-dashed border-ink/40 bg-paper-2 open:border-ink">
-      <summary className="flex items-center gap-2 px-4 py-2.5 cursor-pointer font-mono text-[12px] text-ink-soft select-none">
+    <details className="panel-admin mb-8 max-w-xl">
+      <summary>
         <Plus size={14} /> Añadir país
       </summary>
-      <div className="px-4 pb-4 flex flex-wrap items-end gap-3">
+      <div className="flex flex-wrap items-end gap-3 p-4">
         <PaisSelect valor={codigo} onChange={setCodigo} textoVacio="Elige un país…" />
-        <label className="flex items-center gap-2 mb-4 font-mono text-[11px] text-ink-soft">
+        <label className="etiqueta-campo mb-4 flex min-w-0 items-center gap-2">
           Cuándo
           <input value={fecha} onChange={(e) => setFecha(e.target.value)} placeholder="abril de 2024"
-            className="border border-ink/30 bg-paper text-ink px-2 py-1 text-[12px] focus:outline-none focus:border-ink" />
+            className="campo-sello !mt-0 w-auto" />
         </label>
         <button onClick={() => void crear()} disabled={!codigo || guardando}
-          className="mb-4 flex items-center gap-1.5 bg-yellow text-ink px-3 py-1.5 text-[13px] font-semibold border-[1.5px] border-ink shadow-brut disabled:opacity-50">
+          className="boton-sello mb-4">
           {guardando && <Loader2 className="animate-spin" size={14} />} Añadir
         </button>
         {error && <p role="alert" className="basis-full -mt-2 font-mono text-[12px] text-hot">{error}</p>}

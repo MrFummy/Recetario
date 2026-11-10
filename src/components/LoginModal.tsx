@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { supabase } from '../lib/supabase';
 import { X, Loader2 } from 'lucide-react';
 import { errorMessage } from '../lib/errors';
+import { LogoSarten } from './LogoSarten';
 
 interface LoginModalProps {
   onClose: () => void;
@@ -67,6 +68,9 @@ export function LoginModal({ onClose, onLoginSuccess }: LoginModalProps) {
         className="bg-paper w-full max-w-sm border-[1.5px] border-ink shadow-brut-lg overflow-hidden flex flex-col animate-in zoom-in-95 duration-200"
         onClick={(e) => e.stopPropagation()}
       >
+        <div className="flex justify-center border-b-[1.5px] border-ink bg-paper-2 pb-4 pt-6">
+          <LogoSarten ancho={190} conTexto />
+        </div>
         <div className="flex items-center justify-between px-5 py-3.5 border-b-2 border-ink bg-paper-2">
           <h2 className="font-display font-light text-xl text-ink">
             {mode === 'login' ? 'Acceso' : 'Nuevo Afan'}

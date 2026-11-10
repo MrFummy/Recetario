@@ -74,82 +74,80 @@ export function PaisEditor({ codigo, nombre, pais, recetas: listaRecetas, fotos,
     });
   };
 
-  const campo = 'w-full border border-ink/30 bg-paper px-2.5 py-1.5 text-[14px] focus:outline-none focus:border-ink';
-
   return (
-    <details className="mb-10 border-[1.5px] border-dashed border-ink/40 bg-paper-2 open:border-ink">
-      <summary className="flex items-center gap-2 px-4 py-2.5 cursor-pointer font-mono text-[12px] text-ink-soft select-none">
+    <details className="panel-admin mb-10">
+      <summary>
         <Settings2 size={14} /> Gestionar país
       </summary>
-      <div className="px-4 pb-4 space-y-4">
-        <label className="block font-mono text-[11px] text-ink-soft">
+      <div className="space-y-4 p-4">
+        <label className="etiqueta-campo">
           Cuándo estuve
-          <input value={fecha} onChange={(e) => setFecha(e.target.value)} placeholder="abril de 2024" className={`${campo} mt-1`} />
+          <input value={fecha} onChange={(e) => setFecha(e.target.value)} placeholder="abril de 2024" className="campo-sello" />
         </label>
-        <label className="block font-mono text-[11px] text-ink-soft">
+        <label className="etiqueta-campo">
           Lema: una frase corta bajo el nombre
           <input value={lema} onChange={(e) => setLema(e.target.value)} maxLength={80}
-            placeholder="Donde el arroz es religión" className={`${campo} mt-1`} />
+            placeholder="Donde el arroz es religión" className="campo-sello" />
         </label>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
           {([['capital', 'Capital', 'Tokio'], ['idioma', 'Idioma', 'Japonés'], ['moneda', 'Moneda', 'Yen (JPY)']] as const).map(([clave, etiqueta, ejemplo]) => (
-            <label key={clave} className="block font-mono text-[11px] text-ink-soft">
+            <label key={clave} className="etiqueta-campo">
               {etiqueta}
               <input value={ficha[clave]} onChange={(e) => setFicha({ ...ficha, [clave]: e.target.value })} maxLength={60}
-                placeholder={ejemplo} className={`${campo} mt-1`} />
+                placeholder={ejemplo} className="campo-sello" />
             </label>
           ))}
         </div>
         {listaRecetas.length > 0 && (
-          <label className="block font-mono text-[11px] text-ink-soft">
+          <label className="etiqueta-campo">
             Plato estrella (sin elegir, sale la mejor valorada)
-            <select value={estrella} onChange={(e) => setEstrella(e.target.value)} className={`${campo} mt-1`}>
+            <select value={estrella} onChange={(e) => setEstrella(e.target.value)} className="campo-sello">
               <option value="">Automático</option>
               {listaRecetas.map((r) => <option key={r.id} value={r.id}>{r.titulo}</option>)}
             </select>
           </label>
         )}
-        <label className="block font-mono text-[11px] text-ink-soft">
+        <label className="etiqueta-campo">
           Contexto: la temática del país, en tus palabras
-          <textarea value={contexto} onChange={(e) => setContexto(e.target.value)} rows={5} className={`${campo} mt-1 resize-y`} />
+          <textarea value={contexto} onChange={(e) => setContexto(e.target.value)} rows={5} className="campo-sello resize-y" />
         </label>
 
         <div className="flex flex-wrap items-center gap-3">
           <button onClick={() => void guardar()} disabled={ocupado !== null}
-            className="flex items-center gap-1.5 bg-yellow text-ink px-3 py-1.5 text-[13px] font-semibold border-[1.5px] border-ink shadow-brut disabled:opacity-60">
+            className="boton-sello">
             {ocupado === 'guardar' ? <Loader2 className="animate-spin" size={14} /> : <Save size={14} />} Guardar
           </button>
           <button onClick={() => entradaFotos.current?.click()} disabled={ocupado !== null}
-            className="flex items-center gap-1.5 bg-paper text-ink px-3 py-1.5 text-[13px] font-semibold border-[1.5px] border-ink hover:bg-yellow transition-colors disabled:opacity-60">
+            className="boton-sello boton-sello-claro">
             {ocupado === 'fotos' ? <Loader2 className="animate-spin" size={14} /> : <ImagePlus size={14} />} Añadir fotos
           </button>
           <input ref={entradaFotos} type="file" accept="image/*" multiple hidden onChange={(e) => subir(e.target.files)} />
           <button onClick={borrar} disabled={ocupado !== null}
-            className="ml-auto flex items-center gap-1.5 text-hot px-3 py-1.5 text-[13px] font-semibold border-[1.5px] border-hot hover:bg-hot-soft transition-colors disabled:opacity-60">
+            className="ml-auto inline-flex cursor-pointer items-center gap-1.5 rounded-full border-[1.5px] border-hot px-3.5 py-1.5 font-sello text-[13px] font-extrabold text-hot transition-colors hover:bg-hot-soft disabled:opacity-60">
             {ocupado === 'borrar' ? <Loader2 className="animate-spin" size={14} /> : <Trash2 size={14} />} Quitar país
           </button>
         </div>
 
         {fotos.length > 0 && (
           <div>
-            <p className="font-mono text-[11px] text-ink-soft mb-2">
+            <p className="etiqueta-campo mb-2">
               Fotos de la cabecera: salen {visibles} como máximo, la portada (★) primero.
             </p>
             <div className="flex flex-wrap gap-2">
               {fotos.map((f) => {
                 const esPortada = pais?.portada_url === f.url;
                 return (
-                  <div key={f.id} className="relative w-24 h-24 border-[1.5px] border-ink">
+                  <div key={f.id} className="relative h-24 w-24 overflow-hidden rounded-[3px] border-[1.5px] border-ink">
                     <img src={f.url} alt={f.pie ?? `Foto de ${nombre}`} loading="lazy" className="w-full h-full object-cover" />
                     <button title={esPortada ? 'Quitar de portada' : 'Usar como portada'} aria-pressed={esPortada}
                       disabled={ocupado !== null}
                       onClick={() => void ejecutar('guardar', () => api.guardar(codigo, { portada_url: esPortada ? null : f.url }))}
-                      className={`absolute top-1 left-1 w-6 h-6 grid place-items-center border-[1.5px] border-ink ${esPortada ? 'bg-yellow' : 'bg-paper hover:bg-yellow'}`}>
+                      className={`absolute top-1 left-1 grid h-6 w-6 place-items-center rounded-full border-[1.5px] border-ink ${esPortada ? 'bg-yellow' : 'bg-paper hover:bg-yellow'}`}>
                       <Star size={12} fill={esPortada ? 'currentColor' : 'none'} />
                     </button>
                     <button title="Borrar foto" disabled={ocupado !== null}
                       onClick={() => { if (window.confirm('¿Borrar esta foto?')) void ejecutar('guardar', () => api.borrarFoto(f)); }}
-                      className="absolute top-1 right-1 w-6 h-6 grid place-items-center bg-paper border-[1.5px] border-ink text-hot hover:bg-hot-soft">
+                      className="absolute right-1 top-1 grid h-6 w-6 place-items-center rounded-full border-[1.5px] border-ink bg-paper text-hot hover:bg-hot-soft">
                       <Trash2 size={12} />
                     </button>
                   </div>

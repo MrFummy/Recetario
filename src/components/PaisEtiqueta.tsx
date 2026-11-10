@@ -23,13 +23,13 @@ interface PaisSelectProps {
 /** Selector de país; la cadena vacía es «sin país». */
 export function PaisSelect({ valor, onChange, textoVacio = 'Sin país' }: PaisSelectProps) {
   return (
-    <label className="flex items-center gap-2 mb-4 font-mono text-[11px] text-ink-soft">
+    <label className="etiqueta-campo mb-4 flex min-w-0 items-center gap-2">
       <Globe2 size={14} />
       País
       <select
         value={valor}
         onChange={(e) => onChange(e.target.value)}
-        className="border border-ink/30 bg-paper text-ink px-2 py-1 text-[12px] focus:outline-none focus:border-ink"
+        className="campo-sello !mt-0 min-w-0 max-w-full flex-1 !py-1 !text-[12px]"
       >
         <option value="">{textoVacio}</option>
         {PAISES.map((p) => (

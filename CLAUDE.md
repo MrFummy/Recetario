@@ -654,6 +654,25 @@ que las secciones que no se tocaron ya heredan la paleta.
 - `.mosaico` es una rejilla **regular** (3 columnas, 2 en móvil; todas las fotos 4/5 en arco; títulos a dos
   líneas). Hubo un mosaico asimétrico y se retiró: en 77 recetas se escanea, no se hojea. La asimetría queda en
   la portada.
+- **La marca es una sartén con un huevo frito** ([LogoSarten.tsx](src/components/LogoSarten.tsx)): sartén de
+  hierro vista desde arriba, sombra dura terracota y, con `conTexto`, el nombre en el aro. **El texto solo se lee
+  por encima de ~100 px**: en la cabecera va la sartén sola, y con aro en el modal de acceso. `public/favicon.svg`
+  y `scripts/icono-ios.svg` son copias con los colores fijos; si cambia el dibujo, hay que tocar las tres y
+  regenerar `favicon-32.png`, `favicon.ico`, `icon-256.png` y `apple-touch-icon.png`. El nombre de la cabecera
+  aparece desde `md` y se encoge en `lg`: con la sartén, más ancha que el sello anterior, a 640 y 1024 px la
+  cabecera desbordaba.
+- **Pasaporte (10 nov 2026)**: la lista son **visados estampados** con la tinta de la bandera
+  ([SelloVisado.tsx](src/components/SelloVisado.tsx), tres formas que se alternan; el color sale de
+  `useAcentoPais` por país, de ahí [ListaVisados.tsx](src/components/ListaVisados.tsx)). La página de país es una
+  portada: nombre enorme, collage de fotos (arco con sombra del color del país, círculo y arco pequeño), el sello
+  de entrada solapando, los datos como un **billete** ([FichaPais.tsx](src/components/FichaPais.tsx)) y el plato
+  estrella en banda. **Mientras se está en un país, la cenefa de la cabecera de la app toma el color de su bandera**
+  (`PaisPagina` pone y quita `--cenefa` en `<html>`). Los pies de foto de la cabecera ya no se ven (quedan como
+  `title`); se editan igual en «Gestionar país». **El mapa** rellena cada país visitado con el color de su bandera
+  (`useAcentosPaises`, sobre `lib/cargarAcento.ts`, que comparten el mapa y la página de país) y deja el resto en
+  crema con contorno de tinta. Los paneles de admin comparten `.panel-admin`, `.campo-sello` y `.etiqueta-campo`.
+- **`sistema.css` va dentro de `@layer components`**: sin capa, el CSS suelto gana siempre a las utilidades de
+  Tailwind (un `flex` no podía con un `display: block` de una clase propia). Las utilidades ganan donde coinciden.
 - **Pendiente de decidir**: las hojas impresas (`.hoja*`) y la plantilla de n8n para los PDF siguen con la estética
   de cuaderno; solo cambian de color porque comparten tokens. Si se llevan al nuevo sistema, hay que volver a medir
   `ALTO`/`ALTO_UTIL` de `MenuImprimible.tsx`.

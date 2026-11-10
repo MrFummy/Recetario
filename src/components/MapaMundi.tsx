@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Loader2, Minus, Plus, RotateCcw } from 'lucide-react';
 import type { PaisVisitado } from '../lib/pasaporte';
+import { useAcentosPaises } from '../hooks/useAcentoPais';
 import { Bandera } from './Bandera';
 
 interface DatosMapa {
@@ -18,8 +19,8 @@ const ZOOM_MAX = 8;
 
 /**
  * El mapamundi: un SVG con cada país como `<path>` (contornos de Natural Earth,
- * ver scripts/generar-mapamundi.mjs). Los visitados se iluminan y se pueden pulsar;
- * el resto queda en gris. Los territorios muy pequeños que no salen en el mapa se
+ * ver scripts/generar-mapamundi.mjs). Los visitados se rellenan con el color de su
+ * bandera y se pueden pulsar; el resto queda en crema con un contorno fino de tinta. Los territorios muy pequeños que no salen en el mapa se
  * alcanzan desde la lista. Zoom con los botones y desplazamiento arrastrando; sin
  * rueda del ratón, para no secuestrar el scroll de la página.
  */
@@ -39,6 +40,8 @@ export function MapaMundi({ visitados, onSelect }: MapaMundiProps) {
       .catch(() => { if (active) setFallo(true); });
     return () => { active = false; };
   }, []);
+
+  const acentos = useAcentosPaises(visitados.map((v) => v.codigo));
 
   if (fallo) {
     return <p className="font-mono text-sm text-hot">No se pudo cargar el mapa. Usa la lista.</p>;
@@ -91,7 +94,7 @@ export function MapaMundi({ visitados, onSelect }: MapaMundiProps) {
   const actual = hover ? porCodigo.get(hover) : null;
 
   return (
-    <div className="relative border-[1.5px] border-ink bg-paper-2 shadow-brut select-none">
+    <div className="relative select-none rounded-[3px] border-[1.5px] border-ink bg-paper-2 [--tierra:color-mix(in_srgb,var(--color-ink)_11%,var(--color-paper-2))]">
       <svg
         ref={svgRef}
         viewBox={`${vista.x} ${vista.y} ${w} ${h}`}
@@ -103,36 +106,47 @@ export function MapaMundi({ visitados, onSelect }: MapaMundiProps) {
         onPointerUp={alSoltar}
         onPointerLeave={alSoltar}
       >
-        {/* Los visitados se pintan al final: van por encima y su zona de clic gana. */}
+        {/* Los visitados se pintan al final: van por encima. Cada uno lleva dos trazos: el visible y
+            otro transparente y ancho que agranda la zona de clic (a escala de mundo, Japón o Italia
+            son pocos píxeles). */}
         {[...mapa.paises].sort((a, b) => Number(porCodigo.has(a[0])) - Number(porCodigo.has(b[0]))).map(([codigo, d]) => {
           const v = porCodigo.get(codigo);
-          const relleno = !v
-            ? 'var(--color-rule)'
-            : hover === codigo ? 'var(--color-yellow)'
-            : v.recetas > 0 ? 'var(--color-accent)' : 'var(--color-accent-soft)';
+          if (!v) {
+            return <path key={codigo} d={d} fill="var(--tierra)" stroke="var(--color-ink-dim)" strokeOpacity="0.55" strokeWidth={0.5} vectorEffect="non-scaling-stroke" />;
+          }
+          const acento = acentos.get(codigo);
+          const vivo = acento?.vivo ?? 'var(--color-accent)';
           return (
-            <path
-              key={codigo}
-              d={d}
-              fill={relleno}
-              // Un trazo transparente y ancho agranda la zona de clic de los países
-              // visitados, que a escala de mundo son pocos píxeles (Japón, Italia…).
-              stroke={v ? 'transparent' : 'var(--color-paper-2)'}
-              strokeWidth={v ? 10 : 0.6}
-              vectorEffect="non-scaling-stroke"
-              className={v ? 'cursor-pointer transition-colors' : undefined}
-              onPointerEnter={v ? () => setHover(codigo) : undefined}
-              onPointerLeave={v ? () => setHover(null) : undefined}
-              onClick={v ? () => { if (!arrastre.current?.moved) onSelect(codigo); } : undefined}
-            >
-              {v && <title>{v.nombre}</title>}
-            </path>
+            <g key={codigo}>
+              <path
+                d={d}
+                fill={hover === codigo ? (acento?.oscuro ?? 'var(--color-accent)') : vivo}
+                fillOpacity={v.recetas > 0 || hover === codigo ? 1 : 0.5}
+                stroke="var(--color-ink)"
+                strokeWidth={1.2}
+                vectorEffect="non-scaling-stroke"
+                pointerEvents="none"
+              />
+              <path
+                d={d}
+                fill="transparent"
+                stroke="transparent"
+                strokeWidth={10}
+                vectorEffect="non-scaling-stroke"
+                className="cursor-pointer"
+                onPointerEnter={() => setHover(codigo)}
+                onPointerLeave={() => setHover(null)}
+                onClick={() => { if (!arrastre.current?.moved) onSelect(codigo); }}
+              >
+                <title>{v.nombre}</title>
+              </path>
+            </g>
           );
         })}
       </svg>
 
       {actual && (
-        <div className="absolute left-3 bottom-3 bg-paper border-[1.5px] border-ink px-3 py-1.5 font-mono text-[12px] shadow-brut pointer-events-none">
+        <div className="pointer-events-none absolute bottom-3 left-3 rounded-full border-[1.5px] border-ink bg-paper px-3.5 py-1.5 font-mono text-[12px]">
           <Bandera codigo={actual.codigo} alto={14} className="mr-1.5 -mt-0.5" />{actual.nombre}
           <span className="text-ink-soft"> · {actual.recetas} {actual.recetas === 1 ? 'receta' : 'recetas'}</span>
         </div>
@@ -145,7 +159,7 @@ export function MapaMundi({ visitados, onSelect }: MapaMundiProps) {
           { etiqueta: 'Restablecer', icono: <RotateCcw size={14} />, accion: () => setVista({ k: 1, x: 0, y: 0 }) },
         ].map((b) => (
           <button key={b.etiqueta} onClick={b.accion} title={b.etiqueta} aria-label={b.etiqueta}
-            className="w-8 h-8 grid place-items-center bg-paper border-[1.5px] border-ink hover:bg-yellow transition-colors">
+            className="grid h-8 w-8 place-items-center rounded-full border-[1.5px] border-ink bg-paper transition-colors hover:bg-yellow">
             {b.icono}
           </button>
         ))}

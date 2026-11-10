@@ -9,165 +9,205 @@
  *   3. El color de categoría solo se usa pequeño (sello, punto, subrayado), nunca de fondo grande.
  */
 
-/* ── Color por categoría ────────────────────── */
-/* Se pone `data-k="<clave>"` (ver lib/categorias.ts) en un contenedor y todo lo de dentro lee
-   `--k` (el color) y `--kt` (el color de texto que contrasta sobre él). */
-[data-k] { --k: var(--color-ink); --kt: var(--color-paper); }
-[data-k="aperitivos"] { --k: var(--color-yellow);  --kt: var(--color-ink); }
-[data-k="postres"]    { --k: var(--color-rose);    --kt: var(--color-ink); }
-[data-k="carnes"]     { --k: var(--color-accent);  --kt: var(--color-paper); }
-[data-k="pescados"]   { --k: var(--color-cobalt);  --kt: var(--color-paper); }
-[data-k="sopas"]      { --k: var(--color-bottle);  --kt: var(--color-paper); }
-[data-k="ensaladas"]  { --k: var(--color-olive);   --kt: var(--color-paper); }
-[data-k="arroces"]    { --k: var(--color-ocre);    --kt: var(--color-ink); }
-[data-k="pastas"]     { --k: var(--color-naranja); --kt: var(--color-ink); }
+/* Todo va en la capa `components` de Tailwind: así las utilidades (`flex`, `hidden`, `mb-4`…)
+ * ganan a estas clases cuando coinciden; sin capa, el CSS suelto ganaría siempre. */
+@layer components {
+  /* ── Color por categoría ────────────────────── */
+  /* Se pone `data-k="<clave>"` (ver lib/categorias.ts) en un contenedor y todo lo de dentro lee
+     `--k` (el color) y `--kt` (el color de texto que contrasta sobre él). */
+  [data-k] { --k: var(--color-ink); --kt: var(--color-paper); }
+  [data-k="aperitivos"] { --k: var(--color-yellow);  --kt: var(--color-ink); }
+  [data-k="postres"]    { --k: var(--color-rose);    --kt: var(--color-ink); }
+  [data-k="carnes"]     { --k: var(--color-accent);  --kt: var(--color-paper); }
+  [data-k="pescados"]   { --k: var(--color-cobalt);  --kt: var(--color-paper); }
+  [data-k="sopas"]      { --k: var(--color-bottle);  --kt: var(--color-paper); }
+  [data-k="ensaladas"]  { --k: var(--color-olive);   --kt: var(--color-paper); }
+  [data-k="arroces"]    { --k: var(--color-ocre);    --kt: var(--color-ink); }
+  [data-k="pastas"]     { --k: var(--color-naranja); --kt: var(--color-ink); }
 
-/* ── Sello circular ─────────────────────────── */
-.sello {
-  display: grid;
-  place-items: center;
-  text-align: center;
-  border-radius: 50%;
-  background: var(--k, var(--color-yellow));
-  color: var(--kt, var(--color-ink));
-  font-family: var(--font-sello);
-  font-weight: 800;
-  text-transform: uppercase;
-  line-height: 1.05;
-  border: 1.5px solid var(--color-ink);
-  box-shadow: 3px 3px 0 var(--color-ink);
-  transform: rotate(12deg);
-  transition: transform 0.35s cubic-bezier(0.3, 1.7, 0.5, 1);
-}
-/* Se estampa al aparecer: entra grande y girado y cae con un rebote. */
-.sello-estampa { animation: estampa 0.9s cubic-bezier(0.3, 1.7, 0.5, 1) both; }
-@keyframes estampa { from { transform: rotate(40deg) scale(2.2); opacity: 0; } }
+  /* ── Sello circular ─────────────────────────── */
+  .sello {
+    display: grid;
+    place-items: center;
+    text-align: center;
+    border-radius: 50%;
+    background: var(--k, var(--color-yellow));
+    color: var(--kt, var(--color-ink));
+    font-family: var(--font-sello);
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 1.05;
+    border: 1.5px solid var(--color-ink);
+    box-shadow: 3px 3px 0 var(--color-ink);
+    transform: rotate(12deg);
+    transition: transform 0.35s cubic-bezier(0.3, 1.7, 0.5, 1);
+  }
+  /* Se estampa al aparecer: entra grande y girado y cae con un rebote. */
+  .sello-estampa { animation: estampa 0.9s cubic-bezier(0.3, 1.7, 0.5, 1) both; }
+  @keyframes estampa { from { transform: rotate(40deg) scale(2.2); opacity: 0; } }
 
-/* ── Etiqueta (píldora con el color de la categoría) ── */
-.etiqueta {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-family: var(--font-sello);
-  font-weight: 800;
-  font-size: 11px;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  padding: 5px 12px;
-  border-radius: 999px;
-  border: 1.5px solid var(--color-ink);
-  background: var(--k, var(--color-yellow));
-  color: var(--kt, var(--color-ink));
-}
-.etiqueta-neutra { background: var(--color-paper); color: var(--color-ink); }
+  /* ── Etiqueta (píldora con el color de la categoría) ── */
+  .etiqueta {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-sello);
+    font-weight: 800;
+    font-size: 11px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 999px;
+    border: 1.5px solid var(--color-ink);
+    background: var(--k, var(--color-yellow));
+    color: var(--kt, var(--color-ink));
+  }
+  .etiqueta-neutra { background: var(--color-paper); color: var(--color-ink); }
 
-/* ── Botón de sello (acción principal) ──────── */
-.boton-sello {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  font-family: var(--font-sello);
-  font-weight: 800;
-  font-size: 13px;
-  padding: 8px 16px;
-  border-radius: 999px;
-  border: 1.5px solid var(--color-ink);
-  background: var(--color-yellow);
-  color: var(--color-ink);
-  box-shadow: 3px 3px 0 var(--color-ink);
-  transition: transform 0.15s, box-shadow 0.15s;
-  cursor: pointer;
-  white-space: nowrap;
-}
-.boton-sello:hover { transform: translate(-1px, -1px); box-shadow: 4px 4px 0 var(--color-ink); }
-.boton-sello:active { transform: translate(2px, 2px); box-shadow: 0 0 0 var(--color-ink); }
-.boton-sello:disabled { opacity: 0.55; pointer-events: none; }
-.boton-sello-claro { background: var(--color-paper); }
+  /* ── Botón de sello (acción principal) ──────── */
+  .boton-sello {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-family: var(--font-sello);
+    font-weight: 800;
+    font-size: 13px;
+    padding: 8px 16px;
+    border-radius: 999px;
+    border: 1.5px solid var(--color-ink);
+    background: var(--color-yellow);
+    color: var(--color-ink);
+    box-shadow: 3px 3px 0 var(--color-ink);
+    transition: transform 0.15s, box-shadow 0.15s;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .boton-sello:hover { transform: translate(-1px, -1px); box-shadow: 4px 4px 0 var(--color-ink); }
+  .boton-sello:active { transform: translate(2px, 2px); box-shadow: 0 0 0 var(--color-ink); }
+  .boton-sello:disabled { opacity: 0.55; pointer-events: none; }
+  .boton-sello-claro { background: var(--color-paper); }
 
-/* ── Cenefa de azulejo ──────────────────────── */
-.cenefa {
-  height: 12px;
-  background: conic-gradient(from 45deg, var(--color-cobalt) 0 25%, var(--color-paper) 0 50%, var(--color-cobalt) 0 75%, var(--color-paper) 0) 0 0 / 24px 24px;
-  border-top: 1.5px solid var(--color-ink);
-  border-bottom: 1.5px solid var(--color-ink);
-}
-.azulejo {
-  background: conic-gradient(from 45deg, var(--color-cobalt) 0 25%, var(--color-paper) 0 50%, var(--color-cobalt) 0 75%, var(--color-paper) 0) 0 0 / 40px 40px;
-}
+  /* ── Cenefa de azulejo ──────────────────────── */
+  .cenefa {
+    height: 12px;
+    background: conic-gradient(from 45deg, var(--cenefa, var(--color-cobalt)) 0 25%, var(--color-paper) 0 50%, var(--cenefa, var(--color-cobalt)) 0 75%, var(--color-paper) 0) 0 0 / 24px 24px;
+    border-top: 1.5px solid var(--color-ink);
+    border-bottom: 1.5px solid var(--color-ink);
+  }
+  .azulejo {
+    background: conic-gradient(from 45deg, var(--color-cobalt) 0 25%, var(--color-paper) 0 50%, var(--color-cobalt) 0 75%, var(--color-paper) 0) 0 0 / 40px 40px;
+  }
 
-/* ── Foto en arco ───────────────────────────── */
-.arco { border-radius: 999px 999px 3px 3px; overflow: hidden; }
+  /* ── Visado del pasaporte ───────────────────── */
+  /* `--tinta` es el color de la bandera; `--giro` y `--retardo` los pone cada visado. */
+  .visado { display: block; text-align: center; cursor: pointer; }
+  .visado svg {
+    width: 100%; max-width: 210px; height: auto; overflow: hidden;
+    color: var(--tinta, var(--color-accent));
+    transform: rotate(var(--giro, 0deg));
+    mix-blend-mode: multiply;
+    transition: transform 0.45s cubic-bezier(0.3, 1.7, 0.5, 1);
+    animation: estampa-visado 0.8s cubic-bezier(0.3, 1.7, 0.5, 1) both;
+    animation-delay: var(--retardo, 0s);
+  }
+  .visado:hover svg { transform: rotate(0) scale(1.07); }
+  @keyframes estampa-visado { from { transform: rotate(calc(var(--giro, 0deg) + 30deg)) scale(2); opacity: 0; } }
 
-/* ── Rótulo en mono (kicker de revista) ─────── */
-.kicker {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-}
-.kicker::before { content: ""; width: 34px; height: 1.5px; background: currentColor; }
+  /* ── Paneles de administración plegables ───── */
+  .panel-admin { border: 1.5px solid var(--color-ink); border-radius: 3px; background: var(--color-paper-2); }
+  .panel-admin > summary {
+    display: flex; align-items: center; gap: 0.5rem;
+    padding: 0.7rem 1rem; cursor: pointer; user-select: none;
+    font-family: var(--font-sello); font-weight: 800; font-size: 13px;
+  }
+  .panel-admin[open] > summary { border-bottom: 1.5px solid var(--color-ink); }
+  .etiqueta-campo {
+    display: block; font-family: var(--font-mono); font-size: 10.5px;
+    letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-ink-soft);
+  }
+  .campo-sello {
+    width: 100%; margin-top: 0.3rem;
+    border: 1.5px solid var(--color-ink); border-radius: 3px;
+    background: var(--color-paper); color: var(--color-ink);
+    padding: 0.4rem 0.65rem; font-size: 14px; text-transform: none; letter-spacing: normal;
+    transition: box-shadow 0.15s, transform 0.15s;
+  }
+  .campo-sello:focus { outline: none; box-shadow: 3px 3px 0 var(--color-accent); transform: translate(-1px, -1px); }
 
-/* ── Subrayado que se dibuja ────────────────── */
-/* Con `group` en un ancestro, el subrayado del color de la categoría crece al pasar el ratón. */
-.titulo-k {
-  display: inline;
-  background: linear-gradient(var(--k, var(--color-yellow)), var(--k, var(--color-yellow))) 0 94% / 0 0.3em no-repeat;
-  transition: background-size 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
-  box-decoration-break: clone;
-  -webkit-box-decoration-break: clone;
-}
-.group:hover .titulo-k, .titulo-k:hover { background-size: 100% 0.3em; }
+  /* ── Foto en arco ───────────────────────────── */
+  .arco { border-radius: 999px 999px 3px 3px; overflow: hidden; }
 
-/* Encabezado de sección con subrayado amarillo (ficha, listas) */
-.seccion-titulo {
-  position: relative;
-  display: inline-block;
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 1.75rem;
-  letter-spacing: -0.02em;
-  isolation: isolate;
-}
-.seccion-titulo::after {
-  content: "";
-  position: absolute;
-  left: -2px; right: -6px; bottom: 3px;
-  height: 0.32em;
-  background: var(--k, var(--color-yellow));
-  opacity: 0.9;
-  z-index: -1;
-}
+  /* ── Rótulo en mono (kicker de revista) ─────── */
+  .kicker {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+  }
+  .kicker::before { content: ""; width: 34px; height: 1.5px; background: currentColor; }
 
-/* ── Rejilla del catálogo ───────────────────── */
-/* Regular a propósito: en 77 recetas se escanea, no se hojea. Mismo ancho, misma proporción de
-   foto (arco) y títulos de como mucho dos líneas, para que las columnas se lean de arriba abajo.
-   La asimetría de revista se queda en la portada. */
-.mosaico {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 3rem 1.75rem;
-  align-items: start;
-}
-.mosaico-foto { aspect-ratio: 4 / 5; border-radius: 999px 999px 3px 3px; }
+  /* ── Subrayado que se dibuja ────────────────── */
+  /* Con `group` en un ancestro, el subrayado del color de la categoría crece al pasar el ratón. */
+  .titulo-k {
+    display: inline;
+    background: linear-gradient(var(--k, var(--color-yellow)), var(--k, var(--color-yellow))) 0 94% / 0 0.3em no-repeat;
+    transition: background-size 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+  }
+  .group:hover .titulo-k, .titulo-k:hover { background-size: 100% 0.3em; }
 
-@media (max-width: 760px) {
-  .mosaico { grid-template-columns: 1fr 1fr; gap: 1.75rem 0.875rem; }
-}
+  /* Encabezado de sección con subrayado amarillo (ficha, listas) */
+  .seccion-titulo {
+    position: relative;
+    display: inline-block;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.75rem;
+    letter-spacing: -0.02em;
+    isolation: isolate;
+  }
+  .seccion-titulo::after {
+    content: "";
+    position: absolute;
+    left: -2px; right: -6px; bottom: 3px;
+    height: 0.32em;
+    background: var(--k, var(--color-yellow));
+    opacity: 0.9;
+    z-index: -1;
+  }
 
-/* Rejilla pareja, para listas de tarjetas que no son recetas (laboratorio, etc.) */
-.rejilla {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 2rem 1.5rem;
-  align-items: start;
-}
+  /* ── Rejilla del catálogo ───────────────────── */
+  /* Regular a propósito: en 77 recetas se escanea, no se hojea. Mismo ancho, misma proporción de
+     foto (arco) y títulos de como mucho dos líneas, para que las columnas se lean de arriba abajo.
+     La asimetría de revista se queda en la portada. */
+  .mosaico {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 3rem 1.75rem;
+    align-items: start;
+  }
+  .mosaico-foto { aspect-ratio: 4 / 5; border-radius: 999px 999px 3px 3px; }
 
-@media (prefers-reduced-motion: reduce) {
-  .sello-estampa { animation: none; }
-  .titulo-k, .sello, .boton-sello { transition: none; }
+  @media (max-width: 760px) {
+    .mosaico { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.75rem 0.875rem; }
+  }
+
+  /* Rejilla pareja, para listas de tarjetas que no son recetas (laboratorio, etc.) */
+  .rejilla {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 2rem 1.5rem;
+    align-items: start;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .sello-estampa, .visado svg { animation: none; }
+    .titulo-k, .sello, .boton-sello { transition: none; }
+  }
 }
