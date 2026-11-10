@@ -32,7 +32,7 @@ export function MenuCompartir({ menu, onCambiar }: Props) {
   }
 
   return (
-    <section className="border-2 border-dashed border-ink/25 p-4">
+    <section className="border-[1.5px] border-dashed border-ink/25 p-4">
       <h3 className="font-mono text-[11px] uppercase tracking-wider text-accent mb-3">Compartir</h3>
 
       <div role="radiogroup" aria-label="Quién puede ver este menú" className="grid gap-2 sm:grid-cols-3">
@@ -45,9 +45,9 @@ export function MenuCompartir({ menu, onCambiar }: Props) {
               role="radio"
               aria-checked={activa}
               onClick={() => { if (!activa) onCambiar(id); }}
-              className={`text-left px-3 py-2 border-2 rounded-md transition-colors ${activa
+              className={`text-left px-3 py-2 border-[1.5px] rounded-[3px] transition-colors ${activa
                 ? 'bg-ink text-paper border-ink'
-                : 'bg-white text-ink border-ink/30 hover:border-ink'}`}
+                : 'bg-paper-2 text-ink border-ink/30 hover:border-ink'}`}
             >
               <span className="block text-sm font-semibold">{titulo}</span>
               <span className={`block font-mono text-[11px] leading-snug ${activa ? 'text-paper/80' : 'text-ink-soft'}`}>{detalle}</span>
@@ -65,12 +65,12 @@ export function MenuCompartir({ menu, onCambiar }: Props) {
               value={enlace}
               onFocus={(e) => e.currentTarget.select()}
               aria-label="Enlace del menú"
-              className="flex-1 min-w-0 px-3 py-2 bg-white border-2 border-ink/30 rounded-md font-mono text-[12px]"
+              className="flex-1 min-w-0 px-3 py-2 bg-paper-2 border-[1.5px] border-ink/30 rounded-[3px] font-mono text-[12px]"
             />
             <button
               type="button"
               onClick={() => void copiar()}
-              className="inline-flex items-center gap-1.5 px-3 py-2 border-2 border-ink/30 rounded-md font-mono text-[12px] text-ink hover:bg-ink/5 transition-colors"
+              className="inline-flex items-center gap-1.5 px-3 py-2 border-[1.5px] border-ink/30 rounded-[3px] font-mono text-[12px] text-ink hover:bg-ink/5 transition-colors"
             >
               {copiado ? <Check size={14} /> : <Copy size={14} />} {copiado ? 'Copiado' : 'Copiar'}
             </button>

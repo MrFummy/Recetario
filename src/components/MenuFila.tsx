@@ -47,7 +47,7 @@ export function MenuFila({
   }
 
   return (
-    <li className="flex flex-wrap items-center gap-x-3 gap-y-1.5 py-2 border-b border-dashed border-ink/15">
+    <li className="flex flex-wrap items-center gap-x-3 gap-y-1.5 py-2 border-b border-ink/15">
       <a
         href={aHash({ vista: 'receta', id: receta.id })}
         className="basis-full sm:basis-0 sm:flex-1 min-w-0 text-ink text-[14.5px] hover:text-accent truncate"
@@ -78,7 +78,7 @@ export function MenuFila({
           onKeyDown={(e) => { if (e.key === 'Enter') e.currentTarget.blur(); }}
           aria-label={`Raciones de ${receta.titulo}`}
           title="Raciones de esta receta; vacío usa las del menú"
-          className="w-10 text-center px-1 py-1 bg-white border border-ink/30 rounded text-[12px] focus:outline-none focus:border-ink"
+          className="w-10 text-center px-1 py-1 bg-paper-2 border border-ink/30 rounded text-[12px] focus:outline-none focus:border-ink"
         />
         raciones
       </label>
@@ -87,7 +87,7 @@ export function MenuFila({
         value={item.pase}
         onChange={(e) => onCambiarPase(e.target.value as Pase)}
         aria-label={`Pase de ${receta.titulo}`}
-        className="font-mono text-[11.5px] bg-white border border-ink/30 rounded px-1.5 py-1 shrink-0"
+        className="font-mono text-[11.5px] bg-paper-2 border border-ink/30 rounded px-1.5 py-1 shrink-0"
       >
         {PASES.map((p) => <option key={p.id} value={p.id}>{p.titulo}</option>)}
       </select>

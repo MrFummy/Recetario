@@ -25,8 +25,6 @@ interface PaisPaginaProps {
   onRecetasCambiadas: () => void;
 }
 
-const GIROS = ['-rotate-3', 'rotate-2', '-rotate-1'];
-
 /** La página de un país: cabecera ambientada con unas pocas fotos, el contexto y sus recetas. */
 export function PaisPagina({ codigo, pais, fotos, recetas, cargando, isAdmin, api, onRecetasCambiadas }: PaisPaginaProps) {
   const nombre = pais?.nombre ?? nombrePais(codigo);
@@ -54,7 +52,7 @@ export function PaisPagina({ codigo, pais, fotos, recetas, cargando, isAdmin, ap
         <div className="relative grid grid-cols-1 md:grid-cols-[1fr_auto] gap-8 items-center p-6 sm:p-10">
           <div>
             <Bandera codigo={codigo} alto={56} className="mb-5" />
-            <h2 className="font-display font-black text-5xl sm:text-6xl leading-none text-ink mb-2"
+            <h2 className="font-display font-light text-5xl sm:text-6xl leading-none text-ink mb-2"
               style={acento ? { color: acento.oscuro } : undefined}>{nombre}</h2>
             {pais?.lema && <p className="font-script text-3xl text-ink-soft leading-tight mb-2">{pais.lema}</p>}
             {pais?.fecha_viaje && <p className="font-script text-3xl text-accent leading-none mb-4">{pais.fecha_viaje}</p>}
@@ -67,9 +65,9 @@ export function PaisPagina({ codigo, pais, fotos, recetas, cargando, isAdmin, ap
             <div className="flex justify-center items-start pb-4 md:pr-4">
               {destacadas.map((f, i) => (
                 <figure key={f.id}
-                  className={`bg-white p-2 pb-8 shadow-md w-40 sm:w-48 ${i > 0 ? '-ml-8 sm:-ml-10' : ''} ${GIROS[i % GIROS.length]}`}
+                  className={`w-40 sm:w-48 ${i > 0 ? '-ml-8 sm:-ml-10' : ''}`}
                   style={{ marginTop: i % 2 ? 28 : 0 }}>
-                  <img src={f.url} alt={f.pie ?? `Foto de ${nombre}`} className="w-full aspect-square object-cover" />
+                  <img src={f.url} alt={f.pie ?? `Foto de ${nombre}`} className={`aspect-square w-full border-[1.5px] border-ink object-cover ${i % 2 ? 'rounded-full' : 'arco'}`} />
                   {f.pie && <figcaption className="font-script text-xl text-center text-ink mt-1 leading-tight">{f.pie}</figcaption>}
                 </figure>
               ))}

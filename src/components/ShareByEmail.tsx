@@ -34,13 +34,13 @@ export function ShareByEmail({ onShare, onError }: ShareByEmailProps) {
       <button
         onClick={() => setIsOpen(!isOpen)}
         title="Enviar por email"
-        className="p-1.5 rounded-md text-ink-soft hover:text-accent hover:bg-accent-soft transition-colors"
+        className="p-1.5 rounded-[3px] text-ink-soft hover:text-accent hover:bg-accent-soft transition-colors"
       >
         <Mail size={18} />
       </button>
 
       {isOpen && (
-        <div className="absolute right-0 top-full mt-2 bg-paper-2 p-3 border-2 border-ink shadow-brut-lg w-72 z-10 animate-in fade-in slide-in-from-top-2">
+        <div className="absolute right-0 top-full mt-2 bg-paper-2 p-3 border-[1.5px] border-ink shadow-brut-lg w-72 z-10 animate-in fade-in slide-in-from-top-2">
           {success ? (
             <div className="text-accent text-sm font-mono text-center py-2">✓ enviada con éxito</div>
           ) : (

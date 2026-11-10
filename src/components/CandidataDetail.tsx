@@ -66,20 +66,20 @@ export function CandidataDetail({ candidata, onClose, onActualizar, onBorrar, on
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-ink/50 backdrop-blur-sm animate-in fade-in duration-200" onClick={onClose}>
       <div
-        className="bg-paper w-full max-w-4xl max-h-[92vh] overflow-hidden flex flex-col shadow-2xl border-2 border-ink animate-in zoom-in-95 duration-200"
+        className="bg-paper w-full max-w-4xl max-h-[92vh] overflow-hidden flex flex-col shadow-2xl border-[1.5px] border-ink animate-in zoom-in-95 duration-200"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="flex items-center justify-between px-5 sm:px-8 py-3 border-b border-dashed border-ink/25 bg-paper-2 shrink-0">
+        <div className="flex items-center justify-between px-5 sm:px-8 py-3 border-b border-ink/25 bg-paper-2 shrink-0">
           <div className="font-mono text-[11px] text-ink-soft">~/laboratorio/{ETIQUETA_FUENTE[candidata.fuente_tipo].toLowerCase()}</div>
           <div className="flex items-center gap-1.5">
             {!editando && (
               <>
                 <button onClick={borrar} disabled={ocupada} title="Borrar"
-                  className="p-1.5 rounded-md text-ink-soft hover:text-hot hover:bg-hot-soft transition-colors disabled:opacity-50">
+                  className="p-1.5 rounded-[3px] text-ink-soft hover:text-hot hover:bg-hot-soft transition-colors disabled:opacity-50">
                   <Trash2 size={18} />
                 </button>
                 <button onClick={() => setEditando(true)} title="Editar"
-                  className="p-1.5 rounded-md text-ink-soft hover:text-accent hover:bg-accent-soft transition-colors">
+                  className="p-1.5 rounded-[3px] text-ink-soft hover:text-accent hover:bg-accent-soft transition-colors">
                   <Edit2 size={18} />
                 </button>
               </>
@@ -90,7 +90,7 @@ export function CandidataDetail({ candidata, onClose, onActualizar, onBorrar, on
                 {ocupada ? <Loader2 className="animate-spin" size={14} /> : <Save size={14} />} guardar
               </button>
             )}
-            <button onClick={onClose} className="p-1.5 rounded-md text-ink-soft hover:text-hot transition-colors"><X size={18} /></button>
+            <button onClick={onClose} className="p-1.5 rounded-[3px] text-ink-soft hover:text-hot transition-colors"><X size={18} /></button>
           </div>
         </div>
 
@@ -103,16 +103,16 @@ export function CandidataDetail({ candidata, onClose, onActualizar, onBorrar, on
 
         <div className="overflow-y-auto px-6 sm:px-10 pt-8 pb-10">
           <div className="grid grid-cols-1 md:grid-cols-[260px_1fr] gap-8 mb-8">
-            <div className="bg-white p-2.5 pb-3.5 shadow-md self-start">
+            <div className="bg-paper-2 p-2.5 pb-3.5 shadow-md self-start">
               <img src={candidata.foto_url || placeholderImg} alt={candidata.titulo} className="w-full aspect-[4/3] object-cover bg-ink/10" />
             </div>
             <div>
               {editando ? (
                 <div className="space-y-3">
                   <input value={titulo} onChange={(e) => setTitulo(e.target.value)} aria-label="Título"
-                    className="w-full font-display font-black text-3xl bg-white border-2 border-ink px-3 py-1.5" />
+                    className="w-full font-display font-black text-3xl bg-paper-2 border-[1.5px] border-ink px-3 py-1.5" />
                   <select value={categoria} onChange={(e) => setCategoria(e.target.value)} aria-label="Categoría"
-                    className="bg-white border-2 border-ink px-3 py-1.5 font-mono text-sm">
+                    className="bg-paper-2 border-[1.5px] border-ink px-3 py-1.5 font-mono text-sm">
                     <option value="">sin categoría</option>
                     {CATEGORIAS.map((c) => <option key={c} value={c}>{c}</option>)}
                   </select>
@@ -124,7 +124,7 @@ export function CandidataDetail({ candidata, onClose, onActualizar, onBorrar, on
                       <span className="opacity-60">#</span>{candidata.categoria}
                     </div>
                   )}
-                  <h2 className="font-display font-black text-3xl sm:text-4xl leading-[1] tracking-tight text-ink mb-3">{candidata.titulo}</h2>
+                  <h2 className="font-display font-light text-3xl sm:text-4xl leading-[1] tracking-[-0.035em] text-ink mb-3">{candidata.titulo}</h2>
                 </>
               )}
 
@@ -143,12 +143,12 @@ export function CandidataDetail({ candidata, onClose, onActualizar, onBorrar, on
 
               <div className="mt-4 space-y-2">
                 {candidata.de_video && (
-                  <p className="border-2 border-dashed border-ink/30 bg-yellow/25 px-3 py-2 font-mono text-[11px] leading-snug text-ink">
+                  <p className="border-[1.5px] border-dashed border-ink/30 bg-yellow/25 px-3 py-2 font-mono text-[11px] leading-snug text-ink">
                     Sacada de un vídeo: revisa las cantidades al cocinarla.
                   </p>
                 )}
                 {sinPasos && (
-                  <p className="border-2 border-dashed border-ink/30 bg-yellow/25 px-3 py-2 font-mono text-[11px] leading-snug text-ink">
+                  <p className="border-[1.5px] border-dashed border-ink/30 bg-yellow/25 px-3 py-2 font-mono text-[11px] leading-snug text-ink">
                     Sin pasos: la fuente solo traía el pie. Complétala al probarla.
                   </p>
                 )}
@@ -169,7 +169,7 @@ export function CandidataDetail({ candidata, onClose, onActualizar, onBorrar, on
             </div>
           </div>
 
-          <h3 className="font-display font-black text-xl mb-2">Ingredientes</h3>
+          <h3 className="font-display font-semibold text-xl mb-2">Ingredientes</h3>
           {ingredientes.length === 0 ? (
             <p className="text-ink-soft italic font-mono text-sm">sin ingredientes</p>
           ) : (
@@ -177,7 +177,7 @@ export function CandidataDetail({ candidata, onClose, onActualizar, onBorrar, on
               {ingredientes.map((i, idx) => i.esGrupo ? (
                 <li key={i.id ?? `g-${idx}`} className="pt-4 pb-1 font-mono text-[11px] uppercase tracking-wider text-accent">{i.name}</li>
               ) : (
-                <li key={i.id ?? idx} className="grid grid-cols-[150px_1fr] sm:grid-cols-[220px_1fr] gap-3 py-1.5 text-[14.5px] leading-snug border-b border-dashed border-ink/15 last:border-0">
+                <li key={i.id ?? idx} className="grid grid-cols-[150px_1fr] sm:grid-cols-[220px_1fr] gap-3 py-1.5 text-[14.5px] leading-snug border-b border-ink/15 last:border-0">
                   <span className="font-mono text-ink-soft">{i.qty || '—'}</span>
                   <span>{i.name}</span>
                 </li>
@@ -185,15 +185,15 @@ export function CandidataDetail({ candidata, onClose, onActualizar, onBorrar, on
             </ul>
           )}
 
-          <h3 className="font-display font-black text-xl mb-2">Preparación</h3>
+          <h3 className="font-display font-semibold text-xl mb-2">Preparación</h3>
           <StepsList data={candidata.pasos} />
 
           {(hasNotas(candidata.notas) || editando) && (
             <>
-              <h3 className="font-display font-black text-xl mt-8 mb-2">Notas</h3>
+              <h3 className="font-display font-semibold text-xl mt-8 mb-2">Notas</h3>
               {editando ? (
                 <textarea value={notas} onChange={(e) => setNotas(e.target.value)} rows={4} aria-label="Notas"
-                  className="w-full bg-white border-2 border-ink px-3 py-2 text-[14.5px]" placeholder="Una nota por línea" />
+                  className="w-full bg-paper-2 border-[1.5px] border-ink px-3 py-2 text-[14.5px]" placeholder="Una nota por línea" />
               ) : (
                 <p className="whitespace-pre-line text-[14.5px] leading-relaxed">{renderNotas(candidata.notas)}</p>
               )}

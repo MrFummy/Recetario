@@ -38,7 +38,7 @@ export function AnadirIngrediente({ catalogo, despensa }: Props) {
 
   return (
     <div className="relative">
-      <div className="flex items-center gap-2 border-2 border-ink bg-white px-3 py-2 shadow-brut">
+      <div className="flex items-center gap-2 border-[1.5px] border-ink bg-paper-2 px-3 py-2 shadow-brut">
         <Search size={16} className="shrink-0 text-ink-soft" />
         <input
           value={texto}
@@ -53,7 +53,7 @@ export function AnadirIngrediente({ catalogo, despensa }: Props) {
       </div>
 
       {escrito && (
-        <div className="mt-2 border-2 border-dashed border-ink/30 bg-paper-2 p-2">
+        <div className="mt-2 border-[1.5px] border-dashed border-ink/30 bg-paper-2 p-2">
           {yaLoTienes && (
             <p className="px-1 py-1.5 font-mono text-[11px] text-ink-soft">
               «{escrito}» ya está en tu despensa.
@@ -78,7 +78,7 @@ export function AnadirIngrediente({ catalogo, despensa }: Props) {
           ))}
 
           {!yaLoTienes && !esConocido && (
-            <div className="px-1 pt-1.5 pb-1 border-t border-dashed border-ink/20 mt-1 first:border-0 first:mt-0 first:pt-1">
+            <div className="px-1 pt-1.5 pb-1 border-t border-ink/20 mt-1 first:border-0 first:mt-0 first:pt-1">
               <p className="font-mono text-[11px] text-ink-soft leading-snug mb-2">
                 «{escrito}» no aparece en ninguna receta.
                 {sugerencias.length > 0 && ' Mira antes si es alguno de arriba.'}

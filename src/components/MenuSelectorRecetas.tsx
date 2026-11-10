@@ -28,11 +28,11 @@ export function MenuSelectorRecetas({ recipes, enMenu, onAnadir }: Props) {
   }, [recipes, enMenu, texto]);
 
   return (
-    <section className="border-2 border-dashed border-ink/25 p-4">
+    <section className="border-[1.5px] border-dashed border-ink/25 p-4">
       <h3 className="font-mono text-[11px] uppercase tracking-wider text-accent mb-3">
         Añadir recetas
       </h3>
-      <div className="flex items-center gap-2 px-3 py-2 bg-white border-2 border-ink/30 rounded-md mb-3">
+      <div className="flex items-center gap-2 px-3 py-2 bg-paper-2 border-[1.5px] border-ink/30 rounded-[3px] mb-3">
         <Search size={16} className="shrink-0 text-ink-soft" />
         <input
           value={texto}
@@ -52,7 +52,7 @@ export function MenuSelectorRecetas({ recipes, enMenu, onAnadir }: Props) {
               : 'Ninguna receta encaja con eso.'}
         </p>
       ) : (
-        <ul className="list-none p-0 m-0 max-h-80 overflow-y-auto border-t border-dashed border-ink/20">
+        <ul className="list-none p-0 m-0 max-h-80 overflow-y-auto border-t border-ink/20">
           {resultados.map((r) => (
             <li key={r.id}>
               <button

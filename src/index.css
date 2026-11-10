@@ -1,41 +1,53 @@
 @import "tailwindcss";
+@import "./sistema.css";
 
 @theme {
-  /* ── Paleta cuaderno ───────────────────────── */
-  --color-paper:       #f6f1e4;
-  --color-paper-2:     #fbf7eb;
-  --color-ink:         #1f2536;
-  --color-ink-soft:    #5a6275;
-  --color-ink-dim:     #8a8576;
-  --color-rule:        #d9d2c0;
-  --color-accent:      #2a5fb8;
-  --color-accent-soft: #d6e4fa;
-  --color-hot:         #d63c2e;
-  --color-hot-soft:    #f6d8d3;
-  --color-yellow:      #ffd45a;
-  --color-yellow-soft: #fff3a8;
-  --color-tape:        rgba(255, 217, 102, 0.55);
-  --color-tape-blue:   rgba(111, 184, 214, 0.55);
+  /* ── Paleta «Mercado y azulejo» ────────────── */
+  /* Base de revista: papel crema y tinta cálida. */
+  --color-paper:       #f4ecdd;
+  --color-paper-2:     #faf5e8;
+  --color-ink:         #2a2118;
+  --color-ink-soft:    #6d5f50;
+  --color-ink-dim:     #8e8070;
+  --color-rule:        #d8cbb4;
+
+  /* Acento principal: terracota. Sustituye al azul antiguo. */
+  --color-accent:      #c2452a;
+  --color-accent-soft: #f3d5cb;
+  --color-hot:         #b3261e;
+  --color-hot-soft:    #f5d3cf;
+
+  /* Colores de azulejo: uno por categoría, solo como acento (sello, punto, subrayado). */
+  --color-yellow:      #f4b623;
+  --color-yellow-soft: #fbe3a0;
+  --color-cobalt:      #1c4fd6;
+  --color-cobalt-soft: #d4defa;
+  --color-bottle:      #0e5b46;
+  --color-olive:       #5d6b3a;
+  --color-rose:        #e58a74;
+  --color-ocre:        #b8862b;
+  --color-naranja:     #e0802c;
+
+  --color-tape:        rgba(244, 182, 35, 0.55);
+  --color-tape-blue:   rgba(28, 79, 214, 0.35);
 
   /* Alias de compatibilidad con el theme antiguo */
-  --color-primary:    #2a5fb8;
-  --color-background: #f6f1e4;
-  --color-text:       #1f2536;
+  --color-primary:    #c2452a;
+  --color-background: #f4ecdd;
+  --color-text:       #2a2118;
 
   /* ── Fuentes ───────────────────────────────── */
+  /* display: titulares y nombres de receta. sello: etiquetas gráficas (sellos, chips, botones).
+     mono: solo datos (cantidades, fechas, rótulos). script: anotaciones a mano, con cuentagotas. */
   --font-sans:    'Schibsted Grotesk', system-ui, sans-serif;
   --font-display: 'Fraunces', Georgia, serif;
+  --font-sello:   'Bricolage Grotesque', 'Schibsted Grotesk', sans-serif;
   --font-script:  'Caveat', cursive;
   --font-mono:    'JetBrains Mono', ui-monospace, monospace;
 }
 
 body {
   background-color: var(--color-paper);
-  background-image:
-    linear-gradient(rgba(31, 37, 54, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(31, 37, 54, 0.06) 1px, transparent 1px);
-  background-size: 28px 28px;
-  background-attachment: fixed;
   color: var(--color-ink);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
@@ -52,10 +64,13 @@ body {
 .no-scrollbar { scrollbar-width: none; }
 .no-scrollbar::-webkit-scrollbar { display: none; }
 
-/* Highlighter de marcador amarillo */
+/* Palabra destacada de un titular: cursiva terracota (antes, marcador amarillo). */
 .hl-mark {
-  background: linear-gradient(180deg, transparent 60%, var(--color-yellow) 60%, var(--color-yellow) 92%, transparent 92%);
-  padding: 0 4px;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--color-accent);
+  background: none;
+  padding: 0;
 }
 
 /* Sombra brutalist (botón/input con offset) */
@@ -70,14 +85,6 @@ body {
 @keyframes blink-soft { 50% { opacity: 0.3; } }
 .dot-blink { animation: blink-soft 1.4s infinite; }
 
-/* ── Masonry grid (preservado del original) ─── */
-.masonry-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  grid-auto-rows: minmax(100px, auto);
-  gap: 2rem 1.5rem;
-  align-items: start;
-}
 
 /* ── Impresión ─────────────────────────────── */
 /* Las hojas de un menú (HojaImpresa) son A4 exactas y se pintan su propio fondo, así que

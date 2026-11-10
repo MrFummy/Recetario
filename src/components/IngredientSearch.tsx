@@ -33,15 +33,15 @@ export function IngredientSearch({ searchQuery, setSearchQuery, matchCount, sema
 
   let ayuda: string;
   if (error) ayuda = error;
-  else if (resultado) ayuda = `// las ${resultado.length} recetas más parecidas, de más a menos · escribe para volver al filtro`;
-  else if (!user) ayuda = '// separá con comas para encontrar recetas con TODOS · inicia sesión para buscar por significado';
-  else ayuda = '// separá con comas para encontrar recetas con TODOS · Enter para buscar por significado';
+  else if (resultado) ayuda = `las ${resultado.length} recetas más parecidas, de más a menos · escribe para volver al filtro`;
+  else if (!user) ayuda = 'separa con comas para encontrar recetas con TODOS · inicia sesión para buscar por significado';
+  else ayuda = 'separa con comas para encontrar recetas con TODOS · Enter para buscar por significado';
 
   return (
-    <div className="w-full max-w-2xl mx-auto mb-8">
+    <div className="mb-10 w-full max-w-2xl">
       <form
         onSubmit={(e) => { e.preventDefault(); if (puedeBuscar) void buscar(searchQuery); }}
-        className="relative flex items-center bg-paper-2 border-2 border-ink shadow-brut-lg focus-within:shadow-[6px_6px_0_var(--color-accent)] focus-within:-translate-x-px focus-within:-translate-y-px transition-all"
+        className="relative flex items-center overflow-hidden rounded-full border-[1.5px] border-ink bg-paper-2 shadow-[3px_3px_0_var(--color-ink)] transition-all focus-within:-translate-x-px focus-within:-translate-y-px focus-within:shadow-[5px_5px_0_var(--color-accent)]"
       >
         <Search className="absolute left-4 text-ink" size={18} strokeWidth={2.2} />
         <input
@@ -53,7 +53,7 @@ export function IngredientSearch({ searchQuery, setSearchQuery, matchCount, sema
           className="min-w-0 flex-1 pl-12 pr-2 py-3.5 bg-transparent text-ink placeholder:text-ink-soft focus:outline-none font-sans text-[15px]"
         />
         {texto && (
-          <span className="shrink-0 bg-accent text-paper text-[11px] font-mono px-2.5 py-1 rounded-sm mr-1.5">
+          <span className="mr-1.5 shrink-0 rounded-full bg-accent px-2.5 py-1 font-mono text-[11px] text-paper">
             {resultado ? `✨ ${resultado.length}` : `${matchCount} ${matchCount === 1 ? 'match' : 'matches'}`}
           </span>
         )}
@@ -66,12 +66,12 @@ export function IngredientSearch({ searchQuery, setSearchQuery, matchCount, sema
           type="submit"
           disabled={!puedeBuscar}
           title={user ? 'Buscar por significado (Enter)' : 'Inicia sesión para buscar por significado'}
-          className="shrink-0 self-stretch px-3.5 bg-ink text-paper flex items-center disabled:opacity-35 disabled:cursor-not-allowed"
+          className="flex shrink-0 items-center self-stretch bg-ink px-4 text-paper transition-colors hover:bg-accent disabled:cursor-not-allowed disabled:opacity-35"
         >
           {cargando ? <Loader2 size={17} className="animate-spin" /> : <Sparkles size={17} />}
         </button>
       </form>
-      <p className={`text-[12px] mt-2.5 text-center font-mono ${error ? 'text-hot' : 'text-ink-soft'}`}>
+      <p className={`mt-3 pl-5 font-mono text-[11.5px] ${error ? 'text-hot' : 'text-ink-soft'}`}>
         {ayuda}
       </p>
     </div>

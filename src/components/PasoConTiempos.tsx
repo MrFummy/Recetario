@@ -18,7 +18,7 @@ export function PasoConTiempos({ texto, onIniciar }: PasoConTiemposProps) {
             key={i}
             onClick={() => onIniciar(f.segundos, f.texto.trim())}
             title={`Poner un temporizador de ${formatearDuracion(f.segundos)}`}
-            className="inline-flex items-center gap-2 mx-1 px-3 py-0.5 align-baseline bg-yellow text-ink font-semibold rounded-md hover:brightness-95 active:scale-95 transition"
+            className="inline-flex items-center gap-2 mx-1 px-3 py-0.5 align-baseline bg-yellow text-ink font-semibold rounded-[3px] hover:brightness-95 active:scale-95 transition"
           >
             <Timer size={28} strokeWidth={2.2} className="shrink-0" />
             {f.texto}

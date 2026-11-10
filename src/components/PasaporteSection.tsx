@@ -54,18 +54,20 @@ export function SeccionPasaporte({ ruta, recipes, loadingRecetas, isAdmin, onRec
 
   return (
     <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
-      <header className="mb-8 text-center">
-        <h2 className="font-display font-black text-4xl sm:text-5xl leading-none text-ink mb-2">Mi pasaporte</h2>
-        <p className="text-ink-soft max-w-xl mx-auto">
-          Los países en los que he estado y lo que he cocinado desde allí.
-        </p>
-        <p className="font-mono text-[12px] tracking-widest uppercase text-accent mt-3">
+      <header className="mb-8">
+        <div className="kicker mb-4">
           {visitados.length} {visitados.length === 1 ? 'país' : 'países'} · {totalRecetas} {totalRecetas === 1 ? 'receta' : 'recetas'}
+        </div>
+        <h2 className="mb-3 font-display text-4xl font-light leading-[0.98] tracking-[-0.035em] text-ink sm:text-6xl">
+          Mi <span className="hl-mark">pasaporte</span>
+        </h2>
+        <p className="text-base leading-relaxed text-ink-soft">
+          Los países en los que he estado y lo que he cocinado desde allí.
         </p>
       </header>
 
       {error && (
-        <div className="flex items-start gap-2 bg-hot-soft border-2 border-hot text-hot p-4 mb-6 font-mono text-sm">
+        <div className="flex items-start gap-2 bg-hot-soft border-[1.5px] border-hot text-hot p-4 mb-6 font-mono text-sm">
           <AlertTriangle size={16} className="shrink-0 mt-0.5" /> {error}
         </div>
       )}
@@ -93,7 +95,7 @@ export function SeccionPasaporte({ ruta, recipes, loadingRecetas, isAdmin, onRec
         <div className={`grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5 ${modo === 'mapa' ? 'mt-10' : ''}`}>
           {visitados.map((v, i) => (
             <a key={v.codigo} href={aHash({ vista: 'pais', codigo: v.codigo })}
-              className={`block bg-paper-2 border-2 border-dashed border-ink/60 p-4 text-center transition-transform hover:rotate-0 hover:scale-[1.03] hover:border-accent ${SELLO_GIROS[i % SELLO_GIROS.length]}`}>
+              className={`block bg-paper-2 border-[1.5px] border-dashed border-ink/60 p-4 text-center transition-transform hover:rotate-0 hover:scale-[1.03] hover:border-accent ${SELLO_GIROS[i % SELLO_GIROS.length]}`}>
               <div className="mb-3"><Bandera codigo={v.codigo} alto={44} /></div>
               <div className="font-display font-bold text-lg leading-tight text-ink">{v.nombre}</div>
               {v.fecha && <div className="font-script text-xl text-accent leading-none mt-1">{v.fecha}</div>}

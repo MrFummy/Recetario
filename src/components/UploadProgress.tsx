@@ -18,7 +18,7 @@ export function UploadProgress({ status, errorMessage }: UploadProgressProps) {
         : 'bg-paper-2 border-ink text-ink';
 
   return (
-    <div className={`mt-6 p-4 border-2 flex items-start gap-3.5 shadow-brut ${tone} animate-in fade-in slide-in-from-bottom-2`}>
+    <div className={`mt-6 p-4 border-[1.5px] flex items-start gap-3.5 shadow-brut ${tone} animate-in fade-in slide-in-from-bottom-2`}>
       <div className="shrink-0 mt-0.5">
         {status === 'uploading' && <Loader2 className="animate-spin" size={20} />}
         {status === 'done' && <CheckCircle size={20} />}

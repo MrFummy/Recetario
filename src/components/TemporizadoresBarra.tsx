@@ -7,13 +7,13 @@ export function TemporizadoresBarra({ temporizadores, ajustar, parar }: Pick<Tem
   if (temporizadores.length === 0) return null;
 
   return (
-    <div className="flex flex-wrap gap-2 px-4 py-2 border-b border-dashed border-paper/25 shrink-0" role="timer" aria-live="off">
+    <div className="flex flex-wrap gap-2 px-4 py-2 border-b border-paper/25 shrink-0" role="timer" aria-live="off">
       {temporizadores.map((t) => {
         const terminado = t.restante === 0;
         return (
           <div
             key={t.id}
-            className={`flex items-center gap-2 pl-3 pr-1 py-1 border-2 ${terminado ? 'bg-yellow text-ink border-yellow animate-pulse' : 'border-paper/50'}`}
+            className={`flex items-center gap-2 pl-3 pr-1 py-1 border-[1.5px] ${terminado ? 'bg-yellow text-ink border-yellow animate-pulse' : 'border-paper/50'}`}
           >
             {terminado && <BellRing size={18} />}
             <span className="font-mono text-xl tabular-nums">{terminado ? '¡Listo!' : formatearReloj(t.restante)}</span>

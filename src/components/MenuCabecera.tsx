@@ -5,7 +5,7 @@ import type { CambiosMenu } from '../hooks/useMenu';
 
 const MAX_COMENSALES = 99;
 
-const CAMPO = 'w-full px-3 py-2 bg-white border-2 border-ink/30 rounded-md text-[14.5px] focus:outline-none focus:border-ink';
+const CAMPO = 'w-full px-3 py-2 bg-paper-2 border-[1.5px] border-ink/30 rounded-[3px] text-[14.5px] focus:outline-none focus:border-ink';
 const ETIQUETA = 'block font-mono text-[11px] uppercase tracking-wider text-accent mb-1';
 
 interface Props {
@@ -93,7 +93,7 @@ export function MenuCabecera({ menu, onCambiar }: Props) {
               onClick={() => fijarComensales(actuales - 1)}
               disabled={actuales <= 1}
               aria-label="Un comensal menos"
-              className="px-2 border-2 border-r-0 border-ink/30 rounded-l-md hover:bg-ink/5 disabled:opacity-30"
+              className="px-2 border-[1.5px] border-r-0 border-ink/30 rounded-l-md hover:bg-ink/5 disabled:opacity-30"
             >
               <Minus size={14} />
             </button>
@@ -104,7 +104,7 @@ export function MenuCabecera({ menu, onCambiar }: Props) {
               onChange={(e) => setComensales(e.target.value.replace(/\D/g, '').slice(0, 2))}
               onBlur={() => fijarComensales(Number(comensales))}
               onKeyDown={(e) => { if (e.key === 'Enter') e.currentTarget.blur(); }}
-              className="w-full min-w-0 text-center px-1 py-2 bg-white border-2 border-ink/30 text-[14.5px]
+              className="w-full min-w-0 text-center px-1 py-2 bg-paper-2 border-[1.5px] border-ink/30 text-[14.5px]
                          focus:outline-none focus:border-ink"
             />
             <button
@@ -112,7 +112,7 @@ export function MenuCabecera({ menu, onCambiar }: Props) {
               onClick={() => fijarComensales(actuales + 1)}
               disabled={actuales >= MAX_COMENSALES}
               aria-label="Un comensal más"
-              className="px-2 border-2 border-l-0 border-ink/30 rounded-r-md hover:bg-ink/5 disabled:opacity-30"
+              className="px-2 border-[1.5px] border-l-0 border-ink/30 rounded-r-md hover:bg-ink/5 disabled:opacity-30"
             >
               <Plus size={14} />
             </button>

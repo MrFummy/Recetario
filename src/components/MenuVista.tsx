@@ -52,7 +52,7 @@ export function MenuVista({ datos, recipes, despensa, user }: Props) {
           <button
             onClick={() => window.print()}
             title="Imprimir o guardar como PDF"
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 border-2 border-ink/30 rounded-md font-mono text-[12px] text-ink hover:bg-ink/5 transition-colors"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 border-[1.5px] border-ink/30 rounded-[3px] font-mono text-[12px] text-ink hover:bg-ink/5 transition-colors"
           >
             <Printer size={14} /> Imprimir
           </button>
@@ -62,7 +62,7 @@ export function MenuVista({ datos, recipes, despensa, user }: Props) {
           <p className="font-mono text-[11px] tracking-[0.18em] uppercase text-accent mb-2">
             {datos.autor ? `Menú compartido por ${datos.autor}` : 'Menú compartido'}
           </p>
-          <h2 className="font-display font-black text-4xl sm:text-5xl leading-[1.02] tracking-tight text-ink mb-3">{menu.nombre}</h2>
+          <h2 className="font-display font-light text-4xl sm:text-5xl leading-[1.02] tracking-[-0.035em] text-ink mb-3">{menu.nombre}</h2>
           <p className="font-mono text-[12.5px] text-ink-soft">{etiquetas.join(' · ')}</p>
         </header>
 
@@ -72,13 +72,13 @@ export function MenuVista({ datos, recipes, despensa, user }: Props) {
             if (delPase.length === 0) return null;
             return (
               <section key={id}>
-                <h3 className="font-display font-black text-2xl text-ink mb-2">{titulo}</h3>
-                <ul className="list-none p-0 m-0 border-t border-dashed border-ink/20">
+                <h3 className="font-display font-semibold text-2xl text-ink mb-2">{titulo}</h3>
+                <ul className="list-none p-0 m-0 border-t border-ink/20">
                   {delPase.map((item) => {
                     const receta = porId.get(item.receta_id);
                     if (!receta) return null;
                     return (
-                      <li key={item.receta_id} className="flex items-baseline justify-between gap-3 py-2 border-b border-dashed border-ink/15">
+                      <li key={item.receta_id} className="flex items-baseline justify-between gap-3 py-2 border-b border-ink/15">
                         <a href={aHash({ vista: 'receta', id: receta.id })} className="text-ink text-[14.5px] hover:text-accent">
                           {receta.titulo}
                         </a>
@@ -96,9 +96,8 @@ export function MenuVista({ datos, recipes, despensa, user }: Props) {
 
         {menu.notas && (
           <div className="mt-10 max-w-xl">
-            <div className="relative bg-yellow px-6 pt-6 pb-7 -rotate-[1.4deg] shadow-xl">
-              <span className="absolute -top-3 left-1/2 -translate-x-1/2 rotate-2 w-24 h-5 shadow-sm" style={{ background: 'var(--color-tape)' }} />
-              <div className="font-script text-[26px] leading-none mb-2 text-ink">~ Notas del menú ~</div>
+            <div className="relative rounded-[3px] border-[1.5px] border-ink bg-yellow-soft px-6 pt-5 pb-6 shadow-[5px_5px_0_var(--color-ink)]">
+              <div className="kicker mb-3">Notas del menú</div>
               <p className="font-script text-[19px] leading-snug text-ink whitespace-pre-line">{menu.notas}</p>
             </div>
           </div>

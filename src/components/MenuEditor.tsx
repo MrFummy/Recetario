@@ -54,7 +54,7 @@ export function MenuEditor({ id, recipes, despensa }: Props) {
     return (
       <div className="max-w-3xl mx-auto">
         <div className="mb-6">{volver}</div>
-        <p className="font-mono text-[12.5px] text-ink-soft border-2 border-dashed border-ink/20 px-4 py-5">
+        <p className="font-mono text-[12.5px] text-ink-soft border-[1.5px] border-dashed border-ink/20 px-4 py-5">
           {noEncontrado ? 'Este menú no existe, no está compartido o no es tuyo.' : error}
         </p>
       </div>
@@ -70,7 +70,7 @@ export function MenuEditor({ id, recipes, despensa }: Props) {
             onClick={() => window.print()}
             disabled={items.length === 0}
             title={items.length === 0 ? 'Añade recetas para poder imprimir' : 'Imprimir o guardar como PDF'}
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 border-2 border-ink/30 rounded-md font-mono text-[12px]
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 border-[1.5px] border-ink/30 rounded-[3px] font-mono text-[12px]
                        text-ink hover:bg-ink/5 transition-colors disabled:opacity-35 disabled:hover:bg-transparent"
           >
             <Printer size={14} /> Imprimir
@@ -86,7 +86,7 @@ export function MenuEditor({ id, recipes, despensa }: Props) {
         {error && <p className="mt-4 font-mono text-[11px] text-hot leading-snug">{error}</p>}
 
         {sinRaciones.length > 0 && (
-          <p className="mt-6 flex items-start gap-2 font-mono text-[12px] text-ink leading-snug bg-yellow/40 border-2 border-dashed border-ink/30 px-3 py-2.5">
+          <p className="mt-6 flex items-start gap-2 font-mono text-[12px] text-ink leading-snug bg-yellow/40 border-[1.5px] border-dashed border-ink/30 px-3 py-2.5">
             <AlertTriangle size={14} className="shrink-0 mt-px" />
             <span>
               Sin raciones definidas: {sinRaciones.map((r) => r.titulo).join(', ')}. No se podrán
@@ -97,7 +97,7 @@ export function MenuEditor({ id, recipes, despensa }: Props) {
 
         <div className="mt-10 space-y-8">
           {items.length === 0 && (
-            <p className="font-mono text-[12.5px] text-ink-soft leading-relaxed border-2 border-dashed border-ink/20 px-4 py-5">
+            <p className="font-mono text-[12.5px] text-ink-soft leading-relaxed border-[1.5px] border-dashed border-ink/20 px-4 py-5">
               El menú está vacío. Busca recetas abajo para empezar.
             </p>
           )}
@@ -107,8 +107,8 @@ export function MenuEditor({ id, recipes, despensa }: Props) {
             if (delPase.length === 0) return null;
             return (
               <section key={pase}>
-                <h3 className="font-display font-black text-2xl text-ink mb-2">{titulo}</h3>
-                <ul className="list-none p-0 m-0 border-t border-dashed border-ink/20">
+                <h3 className="font-display font-semibold text-2xl text-ink mb-2">{titulo}</h3>
+                <ul className="list-none p-0 m-0 border-t border-ink/20">
                   {delPase.map((item, i) => {
                     const receta = porId.get(item.receta_id);
                     if (!receta) return null;

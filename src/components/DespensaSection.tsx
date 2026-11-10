@@ -38,11 +38,10 @@ export function SeccionDespensa({ recipes, despensa, user }: Props) {
   return (
     <div className="animate-in fade-in slide-in-from-bottom-4 duration-500 max-w-3xl mx-auto">
       <header className="mb-8">
-        <div className="inline-flex items-center gap-2 font-mono text-[11px] tracking-[0.18em] uppercase text-accent mb-3">
-          <span className="w-2 h-2 rounded-full bg-hot dot-blink" />
+        <div className="kicker mb-4">
           {despensa.total} {despensa.total === 1 ? 'ingrediente' : 'ingredientes'} en casa
         </div>
-        <h2 className="font-display font-black text-4xl sm:text-6xl leading-[0.98] tracking-tight text-ink mb-3">
+        <h2 className="font-display font-light text-4xl sm:text-6xl leading-[0.98] tracking-[-0.035em] text-ink mb-3">
           Tu <span className="hl-mark">despensa</span>
         </h2>
         <p className="text-base text-ink-soft leading-relaxed">
@@ -52,7 +51,7 @@ export function SeccionDespensa({ recipes, despensa, user }: Props) {
       </header>
 
       {!user && (
-        <div className="mb-6 flex items-start gap-2 border-2 border-dashed border-ink/30 bg-yellow/25 px-3 py-2.5">
+        <div className="mb-6 flex items-start gap-2 border-[1.5px] border-dashed border-ink/30 bg-yellow/25 px-3 py-2.5">
           <LogIn size={15} className="shrink-0 mt-0.5 text-ink" />
           <p className="font-mono text-[11.5px] leading-snug text-ink">
             Sin sesión iniciada.{' '}
@@ -82,7 +81,7 @@ export function SeccionDespensa({ recipes, despensa, user }: Props) {
             <Loader2 size={14} className="animate-spin" /> cargando tu despensa…
           </p>
         ) : vacia ? (
-          <p className="font-mono text-[12.5px] text-ink-soft leading-relaxed border-2 border-dashed border-ink/20 px-4 py-5">
+          <p className="font-mono text-[12.5px] text-ink-soft leading-relaxed border-[1.5px] border-dashed border-ink/20 px-4 py-5">
             Todavía no hay nada. Añade arriba lo que tengas en casa, o ve marcando
             ingredientes dentro de cualquier receta: es la misma despensa.
           </p>
@@ -93,7 +92,7 @@ export function SeccionDespensa({ recipes, despensa, user }: Props) {
                 <button
                   onClick={() => void despensa.quitar(base)}
                   title="Quitar de la despensa"
-                  className="group flex items-center gap-1.5 border-[1.6px] border-ink bg-white
+                  className="group flex items-center gap-1.5 border-[1.6px] border-ink bg-paper-2
                              pl-3 pr-2 py-1.5 text-[14px] text-ink
                              hover:border-hot hover:text-hot transition-colors"
                 >
@@ -117,14 +116,14 @@ export function SeccionDespensa({ recipes, despensa, user }: Props) {
           </p>
 
           {cocinables.length === 0 ? (
-            <p className="font-mono text-[12.5px] text-ink-soft border-2 border-dashed border-ink/20 px-4 py-5">
+            <p className="font-mono text-[12.5px] text-ink-soft border-[1.5px] border-dashed border-ink/20 px-4 py-5">
               Ninguna receta usa lo que tienes. Añade algo más y vuelve.
             </p>
           ) : (
             <>
-              <ul className="list-none p-0 m-0 border-t border-dashed border-ink/20">
+              <ul className="list-none p-0 m-0 border-t border-ink/20">
                 {mostradas.map(({ receta, total, tienes, faltan }) => (
-                  <li key={receta.id} className="border-b border-dashed border-ink/20">
+                  <li key={receta.id} className="border-b border-ink/20">
                     <a
                       href={aHash({ vista: 'receta', id: receta.id })}
                       className="block py-3 group"

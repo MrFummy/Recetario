@@ -44,11 +44,10 @@ export function SeccionListaCompra({ recipes, despensa, paraHacer }: Props) {
   return (
     <div className="animate-in fade-in slide-in-from-bottom-4 duration-500 max-w-3xl mx-auto">
       <header className="mb-8">
-        <div className="inline-flex items-center gap-2 font-mono text-[11px] tracking-[0.18em] uppercase text-accent mb-3">
-          <span className="w-2 h-2 rounded-full bg-hot dot-blink" />
+        <div className="kicker mb-4">
           {seleccionadas.size} {seleccionadas.size === 1 ? 'receta' : 'recetas'} por hacer
         </div>
-        <h2 className="font-display font-black text-4xl sm:text-6xl leading-[0.98] tracking-tight text-ink mb-3">
+        <h2 className="font-display font-light text-4xl sm:text-6xl leading-[0.98] tracking-[-0.035em] text-ink mb-3">
           Lista de la <span className="hl-mark">compra</span>
         </h2>
         <p className="text-base text-ink-soft leading-relaxed">
@@ -64,24 +63,24 @@ export function SeccionListaCompra({ recipes, despensa, paraHacer }: Props) {
         </h3>
 
         {seleccionadas.size === 0 ? (
-          <p className="font-mono text-[12.5px] text-ink-soft leading-relaxed border-2 border-dashed border-ink/20 px-4 py-5">
+          <p className="font-mono text-[12.5px] text-ink-soft leading-relaxed border-[1.5px] border-dashed border-ink/20 px-4 py-5">
             Aquí saldrá lo que te falte comprar.
           </p>
         ) : lista.length === 0 ? (
-          <p className="flex items-center gap-2 font-mono text-[12.5px] text-accent leading-relaxed border-2 border-dashed border-ink/20 px-4 py-5">
+          <p className="flex items-center gap-2 font-mono text-[12.5px] text-accent leading-relaxed border-[1.5px] border-dashed border-ink/20 px-4 py-5">
             <ShoppingCart size={15} /> No te falta nada para estas recetas.
           </p>
         ) : (
-          <ul className="list-none p-0 m-0 border-t border-dashed border-ink/20">
+          <ul className="list-none p-0 m-0 border-t border-ink/20">
             {lista.map((item) => (
               <li
                 key={item.base}
-                className="grid grid-cols-[20px_1fr_auto] gap-2.5 py-2.5 items-baseline border-b border-dashed border-ink/15 cursor-pointer select-none"
+                className="grid grid-cols-[20px_1fr_auto] gap-2.5 py-2.5 items-baseline border-b border-ink/15 cursor-pointer select-none"
                 onClick={() => void despensa.anadir(item.base)}
                 title="Ya lo he comprado"
               >
                 <span
-                  className="relative w-4 h-4 border-[1.6px] border-ink rounded-[3px] self-center bg-white"
+                  className="relative w-4 h-4 border-[1.6px] border-ink rounded-[3px] self-center bg-paper-2"
                   aria-hidden
                 />
                 <span className="text-ink text-[14.5px]">{item.nombre}</span>
@@ -104,17 +103,17 @@ export function SeccionListaCompra({ recipes, despensa, paraHacer }: Props) {
           Recetas por hacer
         </h3>
         {recetasPorHacer.length === 0 ? (
-          <p className="font-mono text-[12.5px] text-ink-soft leading-relaxed border-2 border-dashed border-ink/20 px-4 py-5">
+          <p className="font-mono text-[12.5px] text-ink-soft leading-relaxed border-[1.5px] border-dashed border-ink/20 px-4 py-5">
             Aún no has marcado ninguna. Abre una receta del{' '}
             <a href={aHash(CATALOGO)} className="underline decoration-dotted hover:text-accent">catálogo</a>{' '}
             y pulsa «para hacer».
           </p>
         ) : (
-          <ul className="list-none p-0 m-0 border-t border-dashed border-ink/20">
+          <ul className="list-none p-0 m-0 border-t border-ink/20">
             {recetasPorHacer.map((receta) => (
               <li
                 key={receta.id}
-                className="flex items-center justify-between gap-3 py-2 border-b border-dashed border-ink/15"
+                className="flex items-center justify-between gap-3 py-2 border-b border-ink/15"
               >
                 <a
                   href={aHash({ vista: 'receta', id: receta.id })}

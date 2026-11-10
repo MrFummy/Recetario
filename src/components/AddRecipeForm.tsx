@@ -63,20 +63,19 @@ export function AddRecipeForm({ onSuccess }: AddRecipeFormProps) {
   const isBusy = status === 'uploading';
 
   const dropzone = (active: boolean) =>
-    `relative flex flex-col items-center justify-center p-6 border-2 border-dashed transition-all cursor-pointer ${
+    `relative flex flex-col items-center justify-center p-6 border-[1.5px] border-dashed transition-all cursor-pointer ${
       active
         ? 'border-accent bg-accent-soft text-accent'
         : 'border-ink/40 text-ink-soft hover:border-ink hover:bg-ink/5'
     }`;
 
   return (
-    <div className="max-w-2xl mx-auto bg-paper-2 p-8 sm:p-10 border-2 border-ink shadow-brut-lg">
+    <div className="max-w-2xl mx-auto bg-paper-2 p-8 sm:p-10 border-[1.5px] border-ink shadow-brut-lg">
       <div className="text-center mb-8">
-        <div className="inline-flex items-center gap-2 font-mono text-[11px] tracking-[0.18em] uppercase text-accent mb-3">
-          <span className="w-2 h-2 rounded-full bg-hot dot-blink" />
+        <div className="kicker mb-4">
           nueva-receta.n8n
         </div>
-        <h2 className="font-display font-black text-4xl leading-[0.98] tracking-tight text-ink mb-3">
+        <h2 className="font-display font-light text-4xl leading-[0.98] tracking-[-0.035em] text-ink mb-3">
           Añadir <span className="hl-mark">receta</span>
         </h2>
         <p className="text-ink-soft text-[15px] leading-relaxed max-w-md mx-auto">
@@ -95,7 +94,7 @@ export function AddRecipeForm({ onSuccess }: AddRecipeFormProps) {
               required
               value={nombre}
               onChange={(e) => setNombre(e.target.value)}
-              className="w-full px-3.5 py-2.5 bg-paper border-2 border-ink text-ink placeholder:text-ink-soft/70 focus:outline-none focus:shadow-brut focus:-translate-x-px focus:-translate-y-px transition-all"
+              className="w-full px-3.5 py-2.5 bg-paper border-[1.5px] border-ink text-ink placeholder:text-ink-soft/70 focus:outline-none focus:shadow-brut focus:-translate-x-px focus:-translate-y-px transition-all"
               placeholder="Ej. Lasaña de carne tradicional"
             />
           </div>
@@ -109,7 +108,7 @@ export function AddRecipeForm({ onSuccess }: AddRecipeFormProps) {
               required
               value={fechaClase}
               onChange={(e) => setFechaClase(e.target.value)}
-              className="w-full px-3.5 py-2.5 bg-paper border-2 border-ink text-ink font-mono text-sm focus:outline-none focus:shadow-brut focus:-translate-x-px focus:-translate-y-px transition-all"
+              className="w-full px-3.5 py-2.5 bg-paper border-[1.5px] border-ink text-ink font-mono text-sm focus:outline-none focus:shadow-brut focus:-translate-x-px focus:-translate-y-px transition-all"
             />
           </div>
         </div>
@@ -160,7 +159,7 @@ export function AddRecipeForm({ onSuccess }: AddRecipeFormProps) {
         <button
           type="submit"
           disabled={isBusy || !nombre || !recetaFile}
-          className="w-full mt-2 bg-yellow text-ink py-3.5 font-display font-bold text-[17px] border-2 border-ink shadow-brut hover:-translate-x-px hover:-translate-y-px hover:shadow-brut-lg active:translate-x-0 active:translate-y-0 active:shadow-brut transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:shadow-brut disabled:translate-x-0 disabled:translate-y-0"
+          className="w-full mt-2 bg-yellow text-ink py-3.5 font-display font-bold text-[17px] border-[1.5px] border-ink shadow-brut hover:-translate-x-px hover:-translate-y-px hover:shadow-brut-lg active:translate-x-0 active:translate-y-0 active:shadow-brut transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:shadow-brut disabled:translate-x-0 disabled:translate-y-0"
         >
           {isBusy ? (
             <>Enviando… <Loader2 className="animate-spin" size={18} /></>

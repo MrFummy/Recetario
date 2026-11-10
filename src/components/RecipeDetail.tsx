@@ -11,6 +11,7 @@ import { ShareByEmail } from './ShareByEmail';
 import { ModoCocina } from './ModoCocina';
 import { RecipePolaroid } from './RecipePolaroid';
 import { PaisEtiqueta, PaisSelect } from './PaisEtiqueta';
+import { claveCategoria } from '../lib/colorCategoria';
 import { hasNotas, renderNotas } from '../lib/recipeContent';
 import { errorMessage } from '../lib/errors';
 import placeholderImg from '../assets/placeholder.jpg';
@@ -103,13 +104,14 @@ export function RecipeDetail({ recipe, onClose, isAdmin, user, despensa, paraHac
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-ink/50 backdrop-blur-sm animate-in fade-in duration-200" onClick={onClose}>
       <div
-        className="bg-paper w-full max-w-5xl max-h-[92vh] overflow-hidden flex flex-col shadow-2xl border-2 border-ink animate-in zoom-in-95 duration-200"
+        data-k={claveCategoria(recipe.categoria)}
+        className="bg-paper w-full max-w-5xl max-h-[92vh] overflow-hidden flex flex-col shadow-2xl border-[1.5px] border-ink rounded-[3px] animate-in zoom-in-95 duration-200"
         onClick={(e) => e.stopPropagation()}
       >
         {/* ── Toolbar ──────────────────────────────────────── */}
-        <div className="flex items-center justify-between px-5 sm:px-8 py-3 border-b border-dashed border-ink/25 bg-paper-2 shrink-0">
-          <div className="font-mono text-[11px] text-ink-soft truncate max-w-[60%]">
-            ~/recetas/{(recipe.categoria ?? 'sin-categoria').toLowerCase().replace(/[/ ]+/g, '-')}/{(recipe.titulo ?? 'sin-titulo').toLowerCase().replace(/[^a-z0-9]+/gi, '-')}.md
+        <div className="flex items-center justify-between px-5 sm:px-8 py-3 border-b-[1.5px] border-ink bg-paper-2 shrink-0">
+          <div className="font-mono text-[11px] uppercase tracking-[0.12em] text-ink-soft truncate max-w-[55%]">
+            Catálogo / {recipe.categoria ?? 'sin categoría'}
           </div>
           <div className="flex items-center gap-1.5">
             {isAdmin && !isEditing && (
@@ -119,38 +121,38 @@ export function RecipeDetail({ recipe, onClose, isAdmin, user, despensa, paraHac
                     onClick={() => onToggleSinHacer().catch((err) => setActionError(errorMessage(err, 'No se pudo cambiar la marca.')))}
                     title={recipe.sin_hacer ? 'Quitar la marca "sin hacer"' : 'Marcar como sin hacer'}
                     aria-pressed={!!recipe.sin_hacer}
-                    className={`p-1.5 rounded-md transition-colors ${recipe.sin_hacer
+                    className={`p-1.5 rounded-full transition-colors ${recipe.sin_hacer
                       ? 'bg-yellow text-ink'
                       : 'text-ink-soft hover:text-accent hover:bg-accent-soft'}`}>
                     <Tag size={18} />
                   </button>
                 )}
                 <button onClick={handleDelete} title="Eliminar" disabled={isDeleting}
-                  className="p-1.5 rounded-md text-ink-soft hover:text-hot hover:bg-hot-soft transition-colors disabled:opacity-50">
+                  className="p-1.5 rounded-full text-ink-soft hover:text-hot hover:bg-hot-soft transition-colors disabled:opacity-50">
                   {isDeleting ? <Loader2 className="animate-spin" size={18} /> : <Trash2 size={18} />}
                 </button>
                 <button onClick={() => setIsEditing(true)} title="Editar"
-                  className="p-1.5 rounded-md text-ink-soft hover:text-accent hover:bg-accent-soft transition-colors">
+                  className="p-1.5 rounded-full text-ink-soft hover:text-accent hover:bg-accent-soft transition-colors">
                   <Edit2 size={18} />
                 </button>
               </>
             )}
             {isEditing && (
               <button onClick={handleSave} disabled={isSaving}
-                className="flex items-center gap-1.5 bg-yellow text-ink px-3 py-1.5 text-[13px] font-semibold border-[1.5px] border-ink shadow-brut hover:translate-x-[-1px] hover:translate-y-[-1px] hover:shadow-brut-lg transition-all disabled:opacity-60">
+                className="boton-sello !py-1.5">
                 <Save size={14} /> {isSaving ? 'guardando…' : 'guardar'}
               </button>
             )}
             {!isEditing && (
               <button onClick={() => setCocinando(true)}
-                className="flex items-center gap-1.5 bg-yellow text-ink px-3 py-1.5 text-[13px] font-semibold border-[1.5px] border-ink hover:shadow-brut hover:translate-x-[-1px] hover:translate-y-[-1px] transition-all">
+                className="boton-sello !py-1.5">
                 <CookingPot size={14} /> Cocinar
               </button>
             )}
             {recipe.pdf_url && (isAfan || isAdmin) && !isEditing && (
-              <a href={recipe.pdf_url} target="_blank" rel="noreferrer"
-                className="flex items-center gap-1.5 bg-paper text-ink px-3 py-1.5 text-[13px] font-semibold border-[1.5px] border-ink hover:shadow-brut hover:translate-x-[-1px] hover:translate-y-[-1px] transition-all">
-                Ver PDF <ExternalLink size={13} />
+              <a href={recipe.pdf_url} target="_blank" rel="noreferrer" aria-label="Ver PDF"
+                className="boton-sello boton-sello-claro !py-1.5">
+                <span className="hidden sm:inline">Ver PDF</span> <ExternalLink size={13} />
               </a>
             )}
             {!isEditing && (isAfan || isAdmin) && onShareByEmail && (
@@ -159,7 +161,7 @@ export function RecipeDetail({ recipe, onClose, isAdmin, user, despensa, paraHac
                 onError={setActionError}
               />
             )}
-            <button onClick={onClose} className="p-1.5 rounded-md text-ink-soft hover:text-hot transition-colors"><X size={18} /></button>
+            <button onClick={onClose} className="p-1.5 rounded-full text-ink-soft hover:text-hot transition-colors" aria-label="Cerrar"><X size={18} /></button>
           </div>
         </div>
 
@@ -193,11 +195,10 @@ export function RecipeDetail({ recipe, onClose, isAdmin, user, despensa, paraHac
               puedeQuitarse={tieneFoto && !!onRemovePhoto}
             />
             <div className="pt-2">
-              <div className="inline-flex items-center gap-1.5 font-mono text-[11px] tracking-widest uppercase text-accent bg-accent-soft px-2.5 py-1 mb-4">
-                <span className="opacity-60">#</span>{recipe.categoria}
-              </div>
+              <div className="kicker mb-4">Receta</div>
+              <span className="etiqueta mb-4">{recipe.categoria}</span>
               {isEditing ? (onUpdatePais && <PaisSelect valor={editedPais} onChange={setEditedPais} />) : <PaisEtiqueta codigo={recipe.pais} />}
-              <h2 className="font-display font-black text-4xl sm:text-5xl leading-[0.98] tracking-tight text-ink mb-4">
+              <h2 className="font-display font-light text-5xl sm:text-6xl leading-[0.95] tracking-[-0.035em] text-ink mb-5">
                 {recipe.titulo}
               </h2>
               {recipe.sugerida_por && (
@@ -206,17 +207,17 @@ export function RecipeDetail({ recipe, onClose, isAdmin, user, despensa, paraHac
               {(recipe.tiempo || recipe.porciones || recipe.dificultad) && (
                 <div className="flex flex-wrap items-center gap-2 mb-4">
                   {recipe.tiempo && (
-                    <span className="flex items-center gap-1 font-mono text-[11px] text-ink-soft border border-ink/25 px-2 py-1">
+                    <span className="etiqueta etiqueta-neutra !normal-case !font-mono !font-medium">
                       <Clock size={12} /> {recipe.tiempo}
                     </span>
                   )}
                   {recipe.porciones && (
-                    <span className="flex items-center gap-1 font-mono text-[11px] text-ink-soft border border-ink/25 px-2 py-1">
+                    <span className="etiqueta etiqueta-neutra !normal-case !font-mono !font-medium">
                       <Users size={12} /> {recipe.porciones}
                     </span>
                   )}
                   {recipe.dificultad && (
-                    <span className="flex items-center gap-1 font-mono text-[11px] text-ink-soft border border-ink/25 px-2 py-1">
+                    <span className="etiqueta etiqueta-neutra !normal-case !font-mono !font-medium">
                       <Gauge size={12} /> {recipe.dificultad}
                     </span>
                   )}
@@ -232,41 +233,30 @@ export function RecipeDetail({ recipe, onClose, isAdmin, user, despensa, paraHac
           </div>
 
           {/* Divider */}
-          <div className="flex items-center gap-3 mb-10">
-            <span className="flex-1 border-t border-dashed border-ink/25" />
-            <span className="text-accent text-sm">✦</span>
-            <span className="flex-1 border-t border-dashed border-ink/25" />
-          </div>
+          <div className="cenefa mb-10" />
 
           {/* Body: ingredientes + pasos */}
           <div className="grid grid-cols-1 md:grid-cols-[300px_1fr] gap-12 items-start">
             <section>
-              <h3 className="font-display font-bold text-2xl mb-4 relative inline-block">
-                <span className="relative z-10">Ingredientes</span>
-                <span className="absolute left-[-2px] right-[-4px] bottom-[2px] h-2 bg-yellow -z-0 -skew-x-6" />
-              </h3>
+              <h3 className="seccion-titulo mb-5">Ingredientes</h3>
               <IngredientsList data={recipe.ingredientes} user={user} despensa={despensa} />
             </section>
 
             <section>
-              <h3 className="font-display font-bold text-2xl mb-4 relative inline-block">
-                <span className="relative z-10">Preparación</span>
-                <span className="absolute left-[-2px] right-[-4px] bottom-[2px] h-2 bg-yellow -z-0 -skew-x-6" />
-              </h3>
+              <h3 className="seccion-titulo mb-5">Preparación</h3>
               <StepsList data={recipe.pasos} />
 
               {/* Notas como post-it (solo si hay notas o si estoy editando) */}
               {showNotas && (
                 <div className="mt-10 max-w-xl">
-                  <div className="relative bg-yellow px-6 pt-6 pb-7 -rotate-[1.4deg] shadow-xl">
-                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 rotate-2 w-24 h-5 shadow-sm" style={{ background: 'var(--color-tape)' }} />
-                    <div className="font-script text-[26px] leading-none mb-2 text-ink">~ Notas adicionales ~</div>
+                  <div className="relative rounded-[3px] border-[1.5px] border-ink bg-yellow-soft px-6 pt-5 pb-6 shadow-[5px_5px_0_var(--color-ink)]">
+                    <div className="kicker mb-3">Notas adicionales</div>
                     {isEditing ? (
                       <textarea
                         value={editedNotes}
                         onChange={(e) => setEditedNotes(e.target.value)}
-                        className="w-full h-28 p-2.5 bg-paper border border-ink/30 font-script text-[18px] leading-snug focus:outline-none focus:border-ink resize-none"
-                        placeholder="añadí notas sobre la receta…"
+                        className="w-full h-28 p-2.5 bg-paper border-[1.5px] border-ink/40 font-script text-[19px] leading-snug focus:outline-none focus:border-ink resize-none"
+                        placeholder="añade notas sobre la receta…"
                       />
                     ) : (
                       <div className="font-script text-[19px] leading-snug text-ink whitespace-pre-wrap">

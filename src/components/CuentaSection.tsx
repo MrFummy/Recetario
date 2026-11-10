@@ -42,12 +42,12 @@ function FormNombre({ nombre, onGuardar }: { nombre: string | null; onGuardar: (
           maxLength={40}
           onChange={(e) => { setTexto(e.target.value); setEstado(null); }}
           placeholder="Cómo quieres que te llamen"
-          className="w-full px-3 py-2 bg-white border-2 border-ink/30 rounded-md text-[14.5px] focus:outline-none focus:border-ink"
+          className="w-full px-3 py-2 bg-paper-2 border-[1.5px] border-ink/30 rounded-[3px] text-[14.5px] focus:outline-none focus:border-ink"
         />
         <button
           type="submit"
           disabled={!limpio || limpio === (nombre ?? '')}
-          className="px-4 py-2 bg-ink text-paper text-sm font-semibold rounded-md hover:bg-ink-soft transition-colors disabled:opacity-40"
+          className="px-4 py-2 bg-ink text-paper text-sm font-semibold rounded-full hover:bg-ink-soft transition-colors disabled:opacity-40"
         >
           Guardar
         </button>
@@ -66,11 +66,10 @@ export function SeccionCuenta({ user, isAdmin, onLogout }: Props) {
   return (
     <div className="animate-in fade-in slide-in-from-bottom-4 duration-500 max-w-2xl mx-auto">
       <header className="mb-10">
-        <div className="inline-flex items-center gap-2 font-mono text-[11px] tracking-[0.18em] uppercase text-accent mb-3">
-          <span className="w-2 h-2 rounded-full bg-hot dot-blink" />
+        <div className="kicker mb-4">
           {isAdmin ? 'admin' : 'afan'}
         </div>
-        <h2 className="font-display font-black text-4xl sm:text-6xl leading-[0.98] tracking-tight text-ink">
+        <h2 className="font-display font-light text-4xl sm:text-6xl leading-[0.98] tracking-[-0.035em] text-ink">
           Mi <span className="hl-mark">cuenta</span>
         </h2>
       </header>
@@ -89,7 +88,7 @@ export function SeccionCuenta({ user, isAdmin, onLogout }: Props) {
           <h3 className="font-mono text-[11px] uppercase tracking-wider text-accent mb-3">Buzón</h3>
           <a
             href={aHash({ vista: 'buzon' })}
-            className="inline-flex items-center gap-2 px-4 py-2 border-2 border-ink/30 rounded-md text-sm font-semibold text-ink hover:text-accent hover:border-accent transition-colors"
+            className="inline-flex items-center gap-2 px-4 py-2 border-[1.5px] border-ink/30 rounded-[3px] text-sm font-semibold text-ink hover:text-accent hover:border-accent transition-colors"
           >
             <Lightbulb size={16} /> Sugerir una receta
           </a>
@@ -99,7 +98,7 @@ export function SeccionCuenta({ user, isAdmin, onLogout }: Props) {
           <h3 className="font-mono text-[11px] uppercase tracking-wider text-accent mb-3">Sesión</h3>
           <button
             onClick={onLogout}
-            className="inline-flex items-center gap-2 px-4 py-2 border-2 border-ink/30 rounded-md text-sm font-semibold text-ink hover:text-hot hover:border-hot transition-colors"
+            className="inline-flex items-center gap-2 px-4 py-2 border-[1.5px] border-ink/30 rounded-[3px] text-sm font-semibold text-ink hover:text-hot hover:border-hot transition-colors"
           >
             <LogOut size={16} /> Cerrar sesión
           </button>

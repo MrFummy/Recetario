@@ -6,7 +6,7 @@ import { Bandera } from './Bandera';
 export function PaisEtiqueta({ codigo }: { codigo?: string | null }) {
   if (!codigo) return null;
   return (
-    <span className="inline-flex items-center gap-1.5 font-mono text-[11px] tracking-widest uppercase text-ink bg-yellow/60 px-2.5 py-1 mb-4 ml-2 align-top">
+    <span className="etiqueta etiqueta-neutra mb-4 ml-2 align-top">
       <Bandera codigo={codigo} alto={12} />
       {nombrePais(codigo)}
     </span>

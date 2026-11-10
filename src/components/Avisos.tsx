@@ -35,7 +35,7 @@ export function SoloAdmin({
         <p className="text-ink-soft">No tienes permisos para {accion}.</p>
         <a
           href={aHash(CATALOGO)}
-          className="inline-block mt-6 px-6 py-2 bg-ink text-paper rounded-md hover:bg-ink-soft transition-colors"
+          className="inline-block mt-6 px-6 py-2 bg-ink text-paper rounded-full hover:bg-ink-soft transition-colors"
         >
           Volver al catálogo
         </a>
@@ -79,13 +79,13 @@ export function SoloLogueados({
         <div className="flex items-center justify-center gap-3 mt-6">
           <button
             onClick={onLogin}
-            className="inline-flex items-center gap-2 px-6 py-2 bg-ink text-paper rounded-md hover:bg-ink-soft transition-colors"
+            className="inline-flex items-center gap-2 px-6 py-2 bg-ink text-paper rounded-[3px] hover:bg-ink-soft transition-colors"
           >
             <LogIn size={16} /> Entrar / Registrarse
           </button>
           <a
             href={aHash(CATALOGO)}
-            className="px-6 py-2 border border-ink/30 text-ink rounded-md hover:bg-ink/5 transition-colors"
+            className="px-6 py-2 border border-ink/30 text-ink rounded-full hover:bg-ink/5 transition-colors"
           >
             Volver al catálogo
           </a>
@@ -102,14 +102,14 @@ export function RecetaNoEncontrada() {
   return (
     <div className="fixed inset-0 z-40 bg-ink/70 backdrop-blur-sm flex items-center justify-center p-4
                     animate-in fade-in duration-200">
-      <div className="bg-paper max-w-sm w-full p-8 text-center shadow-brut border-2 border-ink -rotate-1">
+      <div className="bg-paper max-w-sm w-full p-8 text-center shadow-[5px_5px_0_var(--color-ink)] border-[1.5px] border-ink rounded-[3px]">
         <p className="font-display text-2xl text-ink mb-2">Esta receta no está.</p>
         <p className="font-mono text-sm text-ink-soft mb-6">
           O se ha borrado, o el enlace llegó incompleto.
         </p>
         <a
           href={aHash(CATALOGO)}
-          className="inline-block px-6 py-2 bg-ink text-paper rounded-md hover:bg-ink-soft transition-colors"
+          className="inline-block px-6 py-2 bg-ink text-paper rounded-full hover:bg-ink-soft transition-colors"
         >
           Ir al catálogo
         </a>

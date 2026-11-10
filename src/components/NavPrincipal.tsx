@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react';
 import { BookOpen, PlusCircle, ShoppingBasket, ShoppingCart, FlaskConical, Globe2, UtensilsCrossed } from 'lucide-react';
 import { aHash, CATALOGO } from '../lib/rutas';
 
@@ -16,6 +17,38 @@ interface NavPrincipalProps {
   logueado: boolean;
 }
 
+interface EnlaceProps {
+  href: string;
+  etiqueta: string;
+  icono: ReactNode;
+  activo: boolean;
+  /** Por debajo de este ancho solo se ve el icono: la cabecera no da para más. */
+  textoDesde?: 'lg' | 'xl';
+  extra?: ReactNode;
+}
+
+// El subrayado terracota se dibuja al pasar el ratón y se queda en el enlace activo.
+const BASE = 'relative flex items-center gap-1.5 px-2 py-2 text-sm font-semibold text-ink transition-colors sm:px-1.5 lg:px-2.5 xl:px-3.5 '
+  + 'after:absolute after:inset-x-2 after:bottom-0.5 after:h-0.5 after:origin-left after:scale-x-0 after:bg-accent '
+  + 'after:transition-transform after:duration-300 hover:after:scale-x-100 ';
+
+function Enlace({ href, etiqueta, icono, activo, textoDesde = 'lg', extra }: EnlaceProps) {
+  const texto = textoDesde === 'xl' ? 'hidden xl:inline' : 'hidden lg:inline';
+  return (
+    <a
+      href={href}
+      aria-label={etiqueta}
+      title={etiqueta}
+      aria-current={activo ? 'page' : undefined}
+      className={BASE + (activo ? 'text-accent after:scale-x-100' : '')}
+    >
+      {icono}
+      <span className={texto}>{etiqueta}</span>
+      {extra}
+    </a>
+  );
+}
+
 /**
  * Los enlaces de la cabecera. Solo el admin ve «Laboratorio» y «Nueva»; quien
  * autoriza de verdad son las RLS de Supabase y la validación de n8n, no esto.
@@ -24,104 +57,37 @@ export function NavPrincipal({
   enCatalogo, enDespensa, enListaCompra, enLaboratorio, enPasaporte, enMenus, enNueva, totalDespensa, isAdmin, logueado,
 }: NavPrincipalProps) {
   return (
-  <nav className="flex items-center gap-1">
-    <a
-      href={aHash(CATALOGO)}
-      className={`px-2 sm:px-1.5 lg:px-2.5 xl:px-4 py-2 text-sm font-semibold rounded-md transition-colors flex items-center ${enCatalogo
-        ? 'bg-ink text-paper'
-        : 'text-ink hover:bg-ink/5'
-        }`}
-      aria-label="Catálogo"
-      title="Catálogo"
-    >
-      <BookOpen size={16} className="lg:hidden" />
-      <span className="hidden lg:inline">Catálogo</span>
-    </a>
-    {logueado && (
-      <>
-    <a
-      href={aHash({ vista: 'despensa' })}
-      aria-label="Despensa"
-      title="Despensa"
-      className={`px-2 sm:px-1.5 lg:px-2.5 xl:px-4 py-2 text-sm font-semibold rounded-md transition-colors flex items-center gap-1.5 ${enDespensa
-        ? 'bg-ink text-paper'
-        : 'text-ink hover:bg-ink/5'
-        }`}
-    >
-      <ShoppingBasket size={16} />
-      <span className="hidden lg:inline">Despensa</span>
-      {totalDespensa > 0 && (
-        <span className="font-mono text-[10px] px-1.5 py-0.5 rounded-sm bg-yellow text-ink">
-          {totalDespensa}
-        </span>
+    <nav className="flex items-center">
+      <Enlace href={aHash(CATALOGO)} etiqueta="Catálogo" icono={<BookOpen size={16} className="lg:hidden" />} activo={enCatalogo} />
+      {logueado && (
+        <>
+          <Enlace
+            href={aHash({ vista: 'despensa' })} etiqueta="Despensa" icono={<ShoppingBasket size={16} />} activo={enDespensa}
+            extra={totalDespensa > 0 && (
+              <span className="rounded-full border border-ink bg-yellow px-1.5 font-mono text-[10px] leading-4 text-ink">
+                {totalDespensa}
+              </span>
+            )}
+          />
+          <Enlace href={aHash({ vista: 'lista-compra' })} etiqueta="Compra" icono={<ShoppingCart size={16} />} activo={enListaCompra} />
+          <Enlace href={aHash({ vista: 'menus' })} etiqueta="Menús" icono={<UtensilsCrossed size={16} />} activo={enMenus} />
+          <Enlace href={aHash({ vista: 'pasaporte' })} etiqueta="Pasaporte" icono={<Globe2 size={16} />} activo={enPasaporte} />
+        </>
       )}
-    </a>
-    <a
-      href={aHash({ vista: 'lista-compra' })}
-      aria-label="Compra"
-      title="Compra"
-      className={`px-2 sm:px-1.5 lg:px-2.5 xl:px-4 py-2 text-sm font-semibold rounded-md transition-colors flex items-center gap-1.5 ${enListaCompra
-        ? 'bg-ink text-paper'
-        : 'text-ink hover:bg-ink/5'
-        }`}
-    >
-      <ShoppingCart size={16} />
-      <span className="hidden lg:inline">Compra</span>
-    </a>
-    <a
-      href={aHash({ vista: 'menus' })}
-      aria-label="Menús"
-      title="Menús"
-      className={`px-2 sm:px-1.5 lg:px-2.5 xl:px-4 py-2 text-sm font-semibold rounded-md transition-colors flex items-center gap-1.5 ${enMenus
-        ? 'bg-ink text-paper'
-        : 'text-ink hover:bg-ink/5'
-        }`}
-    >
-      <UtensilsCrossed size={16} />
-      <span className="hidden lg:inline">Menús</span>
-    </a>
-    <a
-      href={aHash({ vista: 'pasaporte' })}
-      aria-label="Pasaporte"
-      title="Pasaporte"
-      className={`px-2 sm:px-1.5 lg:px-2.5 xl:px-4 py-2 text-sm font-semibold rounded-md transition-colors flex items-center gap-1.5 ${enPasaporte
-        ? 'bg-ink text-paper'
-        : 'text-ink hover:bg-ink/5'
-        }`}
-    >
-      <Globe2 size={16} />
-      <span className="hidden lg:inline">Pasaporte</span>
-    </a>
-      </>
-    )}
-    {isAdmin && (
-      <a
-        href={aHash({ vista: 'laboratorio' })}
-      aria-label="Laboratorio"
-      title="Laboratorio"
-        className={`px-2 sm:px-1.5 lg:px-2.5 xl:px-4 py-2 text-sm font-semibold rounded-md transition-colors flex items-center gap-1.5 ${enLaboratorio
-          ? 'bg-ink text-paper'
-          : 'text-ink hover:bg-ink/5'
-          }`}
-      >
-        <FlaskConical size={16} />
-        <span className="hidden xl:inline">Laboratorio</span>
-      </a>
-    )}
-    {isAdmin && (
-      <a
-        href={aHash({ vista: 'nueva' })}
-      aria-label="Nueva receta"
-      title="Nueva receta"
-        className={`px-2 sm:px-1.5 lg:px-2.5 xl:px-4 py-2 text-sm font-bold rounded-md transition-transform flex items-center gap-1.5 ${enNueva
-          ? 'bg-yellow text-ink -rotate-1 shadow-brut'
-          : 'text-ink hover:bg-ink/5'
-          }`}
-      >
-        <PlusCircle size={16} />
-        <span className="hidden xl:inline">Nueva</span>
-      </a>
-    )}
-  </nav>
+      {isAdmin && (
+        <Enlace href={aHash({ vista: 'laboratorio' })} etiqueta="Laboratorio" icono={<FlaskConical size={16} />} activo={enLaboratorio} textoDesde="xl" />
+      )}
+      {isAdmin && (
+        <a
+          href={aHash({ vista: 'nueva' })}
+          aria-label="Nueva receta"
+          title="Nueva receta"
+          className={`boton-sello ml-1.5 !px-3 !py-1.5 ${enNueva ? '-rotate-2' : '!bg-paper'}`}
+        >
+          <PlusCircle size={16} />
+          <span className="hidden xl:inline">Nueva</span>
+        </a>
+      )}
+    </nav>
   );
 }

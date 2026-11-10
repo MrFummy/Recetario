@@ -637,6 +637,27 @@ Cosas que no son obvias:
 - Sin índice vectorial: con 61 recetas un recorrido completo es instantáneo y un
   HNSW perdería precisión. Se añadiría si el catálogo llegara a miles.
 
+## Sistema de diseño «Mercado y azulejo»
+
+**Aplicado el 10 de noviembre de 2026** (elegido tras comparar maquetas; ver `scratch/direcciones/`, que está
+fuera de git). Estructura de revista —papel crema, titulares ligeros y grandes en Fraunces, líneas finas, mosaico
+asimétrico— con vocabulario de azulejo por encima: sellos circulares, un color por categoría, fotos en arco y una
+cenefa. Todo vive en [sistema.css](src/sistema.css) y en los tokens de `@theme` de `index.css`; **los nombres de
+token antiguos se conservan con valores nuevos** (`accent` pasó de azul a terracota, `paper`, `ink`, `yellow`…), así
+que las secciones que no se tocaron ya heredan la paleta.
+
+- **El color de categoría** se pone con `data-k` ([colorCategoria.ts](src/lib/colorCategoria.ts), distinto del
+  `categorias.ts` de la lógica) y los hijos leen `--k` y `--kt`. Se usa **pequeño**: sello, punto, subrayado.
+- **Reglas**: borde de 1,5 px; sombra dura solo en sellos, botones y notas; como mucho dos recursos de azulejo por
+  pantalla; nada de inclinar tarjetas. `font-mono` es para datos y rótulos, `font-sello` (Bricolage) para sellos y
+  botones, `font-script` solo para anotaciones a mano (fecha de la ficha, pie de foto).
+- `.mosaico` decide la forma de cada foto por su posición (arco, círculo, cuadrado), no la receta.
+- **Pendiente de decidir**: las hojas impresas (`.hoja*`) y la plantilla de n8n para los PDF siguen con la estética
+  de cuaderno; solo cambian de color porque comparten tokens. Si se llevan al nuevo sistema, hay que volver a medir
+  `ALTO`/`ALTO_UTIL` de `MenuImprimible.tsx`.
+- Verificado sin desborde horizontal de 375 a 1280 px en las ocho vistas principales. Sin revisar a mano: el modo
+  oscuro (no existe), los temporizadores del modo cocina y el editor de menús.
+
 ## Hacia dónde puede crecer
 
 [docs/ideas.md](docs/ideas.md) recoge una lluvia de ideas de posibles

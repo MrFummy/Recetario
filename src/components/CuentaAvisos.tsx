@@ -27,9 +27,9 @@ export function CuentaAvisos({ user, preferencias }: Props) {
           aria-label="Avisarme por correo de las recetas nuevas"
           disabled={cargando}
           onClick={() => void guardarAvisosRecetas(!avisosRecetas)}
-          className={`relative shrink-0 mt-0.5 w-11 h-6 rounded-full border-2 transition-colors disabled:opacity-40 ${avisosRecetas
+          className={`relative shrink-0 mt-0.5 w-11 h-6 rounded-full border-[1.5px] transition-colors disabled:opacity-40 ${avisosRecetas
             ? 'bg-ink border-ink'
-            : 'bg-white border-ink/30'}`}
+            : 'bg-paper-2 border-ink/30'}`}
         >
           <span
             className={`absolute top-0.5 left-0.5 w-4 h-4 rounded-full transition-transform ${avisosRecetas

@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import type { User } from '@supabase/supabase-js';
-import { ChefHat, LogIn, LogOut, UserRound } from 'lucide-react';
 import { FilterBar } from './components/FilterBar';
 import { IngredientSearch } from './components/IngredientSearch';
 import { RecipeGrid } from './components/RecipeGrid';
@@ -16,14 +15,15 @@ import { SeccionPasaporte } from './components/PasaporteSection';
 import { SeccionMenus } from './components/MenusSection';
 import { SeccionCuenta } from './components/CuentaSection';
 import { SeccionBuzon } from './components/BuzonSection';
-import { NavPrincipal } from './components/NavPrincipal';
+import { Cabecera } from './components/Cabecera';
+import { PortadaCatalogo } from './components/PortadaCatalogo';
 import { useRecipes } from './hooks/useRecipes';
 import { useDespensa } from './hooks/useDespensa';
 import { useParaHacer } from './hooks/useParaHacer';
 import { useIngredientSearch } from './hooks/useIngredientSearch';
 import { useBusquedaSemantica } from './hooks/useBusquedaSemantica';
 import { useRuta, irA, reemplazarPor, volverAtras } from './hooks/useRuta';
-import { aHash, CATALOGO } from './lib/rutas';
+import { CATALOGO } from './lib/rutas';
 import { supabase } from './lib/supabase';
 import { errorMessage } from './lib/errors';
 import type { Category } from './types';
@@ -109,69 +109,19 @@ function App() {
 
   return (
     <div className="min-h-screen pb-20 print:min-h-0 print:pb-0">
-      {/* ═════ Header ═════════════════════════════════════ */}
-      <header className="bg-paper/85 backdrop-blur-md sticky top-0 z-30 border-b border-dashed border-ink/25 print:hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
-          <a href={aHash(CATALOGO)} aria-label="El Recetario de Markis, ir al catálogo" className="flex items-center gap-3 group shrink-0">
-            <div className="w-10 h-10 bg-ink text-paper rounded-lg flex items-center justify-center
-                            -rotate-3 group-hover:rotate-6 transition-transform duration-300
-                            shadow-[3px_3px_0_var(--color-yellow)]">
-              <ChefHat size={22} strokeWidth={2.2} />
-            </div>
-            {/* Por debajo de `sm` el título ocupa tres líneas y la cabecera desbordaba: queda el icono. */}
-            <h1 className="hidden sm:block font-script text-2xl sm:text-3xl leading-none">
-              El Recetario de <span className="text-accent font-bold">Markis</span>
-            </h1>
-          </a>
-
-          <div className="flex items-center gap-3">
-            <NavPrincipal
-              enCatalogo={enCatalogo}
-              enDespensa={enDespensa}
-              enListaCompra={enListaCompra}
-              enLaboratorio={enLaboratorio}
-              enPasaporte={enPasaporte}
-              enMenus={enMenus}
-              enNueva={enNueva}
-              totalDespensa={despensa.total}
-              isAdmin={isAdmin}
-              logueado={!!user}
-            />
-
-            {user ? (
-              <div className="flex items-center gap-1">
-                <a
-                  href={aHash({ vista: 'cuenta' })}
-                  className={`p-1.5 transition-colors ${enCuenta ? 'text-ink' : 'text-ink-soft hover:text-accent'}`}
-                  title="Mi cuenta"
-                  aria-label="Mi cuenta"
-                >
-                  <UserRound size={20} />
-                </a>
-                {/* En pantallas estrechas no cabe junto al icono de la cuenta: cerrar sesión está en «Mi cuenta». */}
-                <button
-                  onClick={handleLogout}
-                  className="hidden sm:block text-ink-soft hover:text-hot transition-colors p-1.5"
-                  title="Cerrar sesión"
-                >
-                  <LogOut size={20} />
-                </button>
-              </div>
-            ) : (
-              <button
-                onClick={() => setShowLoginModal(true)}
-                className="text-ink-soft hover:text-accent transition-colors p-2"
-                title="Entrar / Registrarse"
-              >
-                <LogIn size={20} />
-              </button>
-            )}
-          </div>
-        </div>
-      </header>
+      <Cabecera
+        nav={{
+          enCatalogo, enDespensa, enListaCompra, enLaboratorio, enPasaporte, enMenus, enNueva,
+          totalDespensa: despensa.total, isAdmin, logueado: !!user,
+        }}
+        logueado={!!user}
+        enCuenta={enCuenta}
+        onLogin={() => setShowLoginModal(true)}
+        onLogout={() => void handleLogout()}
+      />
 
       {/* ═════ Main ═══════════════════════════════════════ */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 print:mt-0 print:p-0 print:max-w-none">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 print:mt-0 print:p-0 print:max-w-none">
         {error && (
           <div className="bg-hot-soft border-2 border-hot text-hot p-4 rounded-md mb-6 font-mono text-sm">
             Error al cargar recetas: {error}
@@ -222,23 +172,10 @@ function App() {
           </SoloAdmin>
         ) : (
           <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
-            {/* ── Hero ───────────────────────────────────── */}
-            <div className="text-center mb-10 relative">
-              <div className="inline-flex items-center gap-2 font-mono text-[11px] tracking-[0.18em] uppercase text-accent mb-4">
-                <span className="w-2 h-2 rounded-full bg-hot dot-blink" />
-                cocinando.exe · {recipes.length} recetas en local
-              </div>
-              <h2 className="font-display font-black text-5xl sm:text-7xl leading-[0.98] tracking-tight text-ink mb-3 max-w-3xl mx-auto">
-                ¿Qué cocinamos <span className="hl-mark">hoy?</span>{' '}
-                <span className="font-script font-bold text-accent -rotate-2 inline-block text-[0.85em]">
-                  by un chef novato
-                </span>
-              </h2>
-              <p className="text-base sm:text-lg text-ink-soft max-w-xl mx-auto leading-relaxed">
-                Explora el recetario o busca por ingredientes. Sin algoritmos sospechosos,
-                sin ads, sin "primero te cuento la historia de mi abuela".
-              </p>
-            </div>
+            <PortadaCatalogo
+              recipes={recipes}
+              compacta={!!searchQuery.trim() || !!semantica.resultado || activeCategory !== 'Todas' || soloSinHacer}
+            />
 
             <IngredientSearch
               searchQuery={searchQuery}

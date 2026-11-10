@@ -45,7 +45,7 @@ export function ModoCocina({ recipe, onClose }: ModoCocinaProps) {
 
   return (
     <div className="fixed inset-0 z-[60] bg-ink text-paper flex flex-col" onClick={(e) => e.stopPropagation()} role="dialog" aria-label={`Modo cocina: ${recipe.titulo}`}>
-      <div className="flex items-center justify-between gap-3 px-5 py-3 border-b border-dashed border-paper/25 shrink-0">
+      <div className="flex items-center justify-between gap-3 px-5 py-3 border-b border-paper/25 shrink-0">
         <h2 className="font-display font-bold text-lg truncate">{recipe.titulo}</h2>
         <div className="flex items-center gap-2 shrink-0">
           <button
@@ -98,18 +98,18 @@ export function ModoCocina({ recipe, onClose }: ModoCocinaProps) {
         )}
       </div>
 
-      <div className="grid grid-cols-2 gap-3 p-4 border-t border-dashed border-paper/25 shrink-0">
+      <div className="grid grid-cols-2 gap-3 p-4 border-t border-paper/25 shrink-0">
         <button
           onClick={anterior}
           disabled={indice === 0 || verIngredientes}
-          className="flex items-center justify-center gap-2 py-5 text-xl font-semibold border-2 border-paper/60 hover:bg-paper/10 disabled:opacity-30 disabled:hover:bg-transparent transition-colors"
+          className="flex items-center justify-center gap-2 py-5 text-xl font-semibold border-[1.5px] border-paper/60 hover:bg-paper/10 disabled:opacity-30 disabled:hover:bg-transparent transition-colors"
         >
           <ChevronLeft size={26} /> Anterior
         </button>
         <button
           onClick={indice === ultimo ? onClose : siguiente}
           disabled={verIngredientes}
-          className="flex items-center justify-center gap-2 py-5 text-xl font-bold bg-yellow text-ink border-2 border-yellow disabled:opacity-30 transition-opacity"
+          className="flex items-center justify-center gap-2 py-5 text-xl font-bold bg-yellow text-ink border-[1.5px] border-yellow disabled:opacity-30 transition-opacity"
         >
           {indice === ultimo ? '¡Listo!' : <>Siguiente <ChevronRight size={26} /></>}
         </button>

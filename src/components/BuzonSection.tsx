@@ -19,7 +19,7 @@ const ETIQUETA: Record<EstadoSugerencia, string> = {
   hecha: 'hecha',
 };
 
-const campo = 'w-full px-3 py-2 bg-white border-2 border-ink/30 rounded-md text-[14.5px] focus:outline-none focus:border-ink';
+const campo = 'w-full px-3 py-2 bg-paper-2 border-[1.5px] border-ink/30 rounded-[3px] text-[14.5px] focus:outline-none focus:border-ink';
 const etiqueta = 'block font-mono text-[11px] uppercase tracking-wider text-ink-soft mb-1';
 
 /** Enlace solo si es http(s): lo que escribe un afan no es de fiar. */
@@ -42,7 +42,7 @@ function Fila({ s, esAdmin, recipes, onEstado, onReceta, onBorrar }: {
 }) {
   const puedeBorrar = esAdmin || s.estado === 'pendiente';
   return (
-    <li className="py-3 border-b border-dashed border-ink/20">
+    <li className="py-3 border-b border-ink/20">
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0 font-mono text-[12.5px] leading-relaxed text-ink">
           {s.enlace && <div><EnlaceSeguro url={s.enlace} /></div>}
@@ -58,7 +58,7 @@ function Fila({ s, esAdmin, recipes, onEstado, onReceta, onBorrar }: {
               <select
                 value={s.receta_id ?? ''}
                 onChange={(e) => onReceta(e.target.value || null)}
-                className="px-2 py-1 bg-white border-2 border-ink/30 rounded-md font-mono text-[11.5px] max-w-[220px]"
+                className="px-2 py-1 bg-paper-2 border-[1.5px] border-ink/30 rounded-[3px] font-mono text-[11.5px] max-w-[220px]"
               >
                 <option value="">— elegir —</option>
                 {recipes.map((r) => <option key={r.id} value={r.id}>{r.titulo}</option>)}
@@ -75,7 +75,7 @@ function Fila({ s, esAdmin, recipes, onEstado, onReceta, onBorrar }: {
               value={s.estado}
               onChange={(e) => onEstado(e.target.value as EstadoSugerencia)}
               aria-label="Estado"
-              className="px-2 py-1 bg-white border-2 border-ink/30 rounded-md font-mono text-[11.5px]"
+              className="px-2 py-1 bg-paper-2 border-[1.5px] border-ink/30 rounded-[3px] font-mono text-[11.5px]"
             >
               {(Object.keys(ETIQUETA) as EstadoSugerencia[]).map((e) => <option key={e} value={e}>{ETIQUETA[e]}</option>)}
             </select>
@@ -135,7 +135,7 @@ export function SeccionBuzon({ user, isAdmin, recipes }: Props) {
         <ArrowLeft size={14} /> Mi cuenta
       </a>
       <header className="mb-10">
-        <h2 className="font-display font-black text-4xl sm:text-6xl leading-[0.98] tracking-tight text-ink">
+        <h2 className="font-display font-light text-4xl sm:text-6xl leading-[0.98] tracking-[-0.035em] text-ink">
           Sugerir una <span className="hl-mark">receta</span>
         </h2>
         <p className="mt-3 font-mono text-[12.5px] text-ink-soft leading-relaxed">
@@ -164,7 +164,7 @@ export function SeccionBuzon({ user, isAdmin, recipes }: Props) {
         <button
           type="submit"
           disabled={!hayContenido || !enlaceValido || enviando}
-          className="px-4 py-2 bg-ink text-paper text-sm font-semibold rounded-md hover:bg-ink-soft transition-colors disabled:opacity-40"
+          className="px-4 py-2 bg-ink text-paper text-sm font-semibold rounded-full hover:bg-ink-soft transition-colors disabled:opacity-40"
         >
           Enviar al buzón
         </button>
@@ -180,7 +180,7 @@ export function SeccionBuzon({ user, isAdmin, recipes }: Props) {
         ) : propias.length === 0 ? (
           <p className="font-mono text-[12.5px] text-ink-soft">Todavía no has enviado ninguna.</p>
         ) : (
-          <ul className="list-none p-0 m-0 border-t border-dashed border-ink/20">
+          <ul className="list-none p-0 m-0 border-t border-ink/20">
             {propias.map((s) => (
               <Fila key={s.id} s={s} esAdmin={isAdmin} recipes={recipes} onReceta={(r) => void enlazarReceta(s.id, r)} onEstado={(e) => void cambiarEstado(s.id, e)} onBorrar={() => void borrar(s.id)} />
             ))}
@@ -194,7 +194,7 @@ export function SeccionBuzon({ user, isAdmin, recipes }: Props) {
           {ajenas.length === 0 ? (
             <p className="font-mono text-[12.5px] text-ink-soft">Nada por ahora.</p>
           ) : (
-            <ul className="list-none p-0 m-0 border-t border-dashed border-ink/20">
+            <ul className="list-none p-0 m-0 border-t border-ink/20">
               {ajenas.map((s) => (
                 <Fila key={s.id} s={s} esAdmin recipes={recipes} onReceta={(r) => void enlazarReceta(s.id, r)} onEstado={(e) => void cambiarEstado(s.id, e)} onBorrar={() => void borrar(s.id)} />
               ))}

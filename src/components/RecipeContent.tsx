@@ -41,7 +41,7 @@ export function IngredientsList({ data, user, despensa }: IngredientsListProps) 
             return (
               <li
                 key={item.id ?? `grupo-${idx}`}
-                className="pt-4 pb-1 first:pt-0 font-mono text-[11px] uppercase tracking-wider text-accent"
+                className="pt-5 pb-1 first:pt-0 kicker"
               >
                 {item.name}
               </li>
@@ -52,21 +52,19 @@ export function IngredientsList({ data, user, despensa }: IngredientsListProps) 
           return (
             <li
               key={item.id ?? idx}
-              className={`grid grid-cols-[20px_fit-content(45%)_minmax(0,1fr)] gap-2.5 py-2 text-[14.5px] leading-snug items-baseline border-b border-dashed border-ink/15 last:border-0 cursor-pointer select-none ${done ? 'opacity-40' : ''}`}
+              className={`grid grid-cols-[22px_fit-content(45%)_minmax(0,1fr)] gap-2.5 py-2.5 text-[14.5px] leading-snug items-center border-b border-rule last:border-0 cursor-pointer select-none ${done ? 'opacity-50' : ''}`}
               onClick={() => clave && void alternar(clave)}
             >
               <span
-                className={`relative w-4 h-4 border-[1.6px] border-ink rounded-[3px] self-center transition-colors ${done ? 'bg-ink' : 'bg-white'}`}
+                className={`grid h-[22px] w-[22px] place-items-center rounded-full border-[1.5px] border-ink transition-all duration-300 [transition-timing-function:cubic-bezier(.3,1.7,.5,1)] ${done ? 'rotate-[-12deg] scale-110 bg-accent text-paper shadow-[2px_2px_0_var(--color-ink)]' : 'bg-paper-2'}`}
                 aria-hidden
               >
-                {done && (
-                  <span className="absolute -top-1 left-px font-script text-[22px] leading-none text-hot">✓</span>
-                )}
+                {done && <span className="text-[12px] font-extrabold leading-none">✓</span>}
               </span>
-              <span className={`font-mono text-[12.5px] font-medium text-accent break-words ${done ? 'line-through decoration-hot decoration-[1.5px]' : ''}`}>
+              <span className={`w-fit rounded-full bg-cobalt px-2.5 py-0.5 font-sello text-[11px] font-extrabold uppercase text-paper break-words ${done ? 'line-through' : ''}`}>
                 {item.qty || '—'}
               </span>
-              <span className={`text-ink ${done ? 'line-through decoration-hot decoration-[1.5px]' : ''}`}>
+              <span className={`text-ink ${done ? 'line-through decoration-accent decoration-[1.5px]' : ''}`}>
                 {item.name}
               </span>
             </li>
@@ -112,7 +110,7 @@ export function IngredientsList({ data, user, despensa }: IngredientsListProps) 
         síntoma —marco algo y al volver no está— parece un fallo del programa.
       */}
       {!user && (
-        <div className="mt-3 flex items-start gap-2 border-2 border-dashed border-ink/30 bg-yellow/25 px-3 py-2">
+        <div className="mt-3 flex items-start gap-2 rounded-[3px] border-[1.5px] border-ink bg-yellow-soft px-3 py-2">
           <LogIn size={14} className="shrink-0 mt-0.5 text-ink" />
           <p className="font-mono text-[11px] leading-snug text-ink">
             Sin sesión iniciada.{' '}
@@ -126,7 +124,7 @@ export function IngredientsList({ data, user, despensa }: IngredientsListProps) 
   );
 }
 
-/** Lista de pasos numerados con números circulados a mano. */
+/** Lista de pasos numerados; cada número es un sello con el color de la categoría. */
 export function StepsList({ data }: { data: Json }) {
   const steps = normalizeSteps(data);
 
@@ -139,12 +137,10 @@ export function StepsList({ data }: { data: Json }) {
       {steps.map((text, idx) => (
         <li
           key={idx}
-          className="grid grid-cols-[56px_1fr] gap-[18px] py-4 items-start border-b border-dashed border-ink/15 last:border-0"
+          className="grid grid-cols-[56px_1fr] gap-[18px] py-4 items-start border-b border-rule last:border-0"
         >
-          <div className="relative w-12 h-12 grid place-items-center font-display font-black text-[28px] text-ink leading-none">
-            <span className="absolute inset-0 border-[2.2px] border-ink rounded-full -rotate-[4deg] scale-x-[1.05] scale-y-[0.92]" />
-            <span className="absolute inset-[3px] border border-ink/40 rounded-full rotate-[6deg] scale-x-100 scale-y-[0.96]" />
-            <span className="relative">{idx + 1}</span>
+          <div className="sello !h-11 !w-11 !-rotate-6 font-display text-[22px] !font-extrabold !shadow-[2px_2px_0_var(--color-ink)]">
+            {idx + 1}
           </div>
           <div className="pt-2.5 text-[15px] leading-relaxed text-ink">{text}</div>
         </li>

@@ -3,9 +3,9 @@ import type { User } from '@supabase/supabase-js';
 import { supabase } from '../lib/supabase';
 import { errorMessage } from '../lib/errors';
 
-const CAMPO = 'w-full px-3 py-2 bg-white border-2 border-ink/30 rounded-md text-[14.5px] focus:outline-none focus:border-ink';
+const CAMPO = 'w-full px-3 py-2 bg-paper-2 border-[1.5px] border-ink/30 rounded-[3px] text-[14.5px] focus:outline-none focus:border-ink';
 const ETIQUETA = 'block font-mono text-[11px] uppercase tracking-wider text-ink-soft mb-1';
-const BOTON = 'px-4 py-2 bg-ink text-paper text-sm font-semibold rounded-md hover:bg-ink-soft transition-colors disabled:opacity-40';
+const BOTON = 'px-4 py-2 bg-ink text-paper text-sm font-semibold rounded-full hover:bg-ink-soft transition-colors disabled:opacity-40';
 
 type Mensaje = { tipo: 'ok' | 'error'; texto: string } | null;
 

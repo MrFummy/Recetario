@@ -91,7 +91,7 @@ export function MapaMundi({ visitados, onSelect }: MapaMundiProps) {
   const actual = hover ? porCodigo.get(hover) : null;
 
   return (
-    <div className="relative border-2 border-ink bg-paper-2 shadow-brut select-none">
+    <div className="relative border-[1.5px] border-ink bg-paper-2 shadow-brut select-none">
       <svg
         ref={svgRef}
         viewBox={`${vista.x} ${vista.y} ${w} ${h}`}

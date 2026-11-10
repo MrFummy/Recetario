@@ -17,8 +17,6 @@ interface Props {
   onCambio: () => void;
 }
 
-const GIROS = ['-rotate-[1.5deg]', 'rotate-[1deg]', '-rotate-[0.6deg]', 'rotate-[1.8deg]'];
-
 function formatearFecha(fecha: string): string {
   return new Date(`${fecha}T00:00:00`).toLocaleDateString('es-ES', {
     day: 'numeric', month: 'short', year: 'numeric',
@@ -95,19 +93,19 @@ export function MuroRealizaciones({ recetaId, user, isAdmin, paraHacer, onCambio
       {(aviso || error) && <p className="mb-3 font-mono text-[11px] text-hot">{aviso ?? error}</p>}
 
       {!user ? (
-        <p className="font-mono text-[12.5px] text-ink-soft border-2 border-dashed border-ink/20 px-4 py-5">
+        <p className="font-mono text-[12.5px] text-ink-soft border-[1.5px] border-dashed border-ink/20 px-4 py-5">
           Inicia sesión para ver las notas de los afans y apuntar las tuyas.
         </p>
       ) : realizaciones.length === 0 ? (
-        <p className="font-mono text-[12.5px] text-ink-soft border-2 border-dashed border-ink/20 px-4 py-5">
+        <p className="font-mono text-[12.5px] text-ink-soft border-[1.5px] border-dashed border-ink/20 px-4 py-5">
           Nadie ha apuntado todavía que la haya hecho.
         </p>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          {realizaciones.map((r, i) => {
+          {realizaciones.map((r) => {
             const propia = r.user_id === user.id;
             return (
-              <div key={r.id} className={`relative bg-yellow px-5 pt-5 pb-4 shadow-lg ${GIROS[i % GIROS.length]}`}>
+              <div key={r.id} className="relative rounded-[3px] border-[1.5px] border-ink bg-yellow-soft px-5 pt-5 pb-4 shadow-[3px_3px_0_var(--color-ink)]">
                 <div className="flex items-baseline justify-between gap-2 font-mono text-[11px] text-ink-soft mb-1">
                   <span>{r.nombre ?? 'un afan'} · {formatearFecha(r.fecha)}</span>
                   <span className="flex items-center gap-1.5 shrink-0">

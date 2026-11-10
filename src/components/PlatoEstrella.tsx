@@ -16,17 +16,17 @@ export function PlatoEstrella({ receta, acento, onClick }: PlatoEstrellaProps) {
 
   return (
     <button type="button" onClick={onClick}
-      className="group w-full text-left grid grid-cols-1 sm:grid-cols-[minmax(0,5fr)_minmax(0,6fr)] gap-6 items-center mb-12 p-5 sm:p-8 bg-paper-2 border-[1.5px] border-ink shadow-brut transition-transform hover:-translate-y-1"
+      className="group w-full text-left grid grid-cols-1 sm:grid-cols-[minmax(0,5fr)_minmax(0,6fr)] gap-6 items-center mb-12 p-5 sm:p-8 bg-paper-2 border-[1.5px] border-ink rounded-[3px] transition-transform hover:-translate-y-1"
       style={acento ? { borderLeft: `8px solid ${acento.vivo}` } : undefined}>
-      <div className="bg-white p-2.5 pb-4 shadow-md -rotate-1 group-hover:rotate-0 transition-transform">
-        <img src={receta.foto_url || placeholderImg} alt={receta.titulo} className="w-full aspect-[4/3] object-cover" />
+      <div className="arco aspect-[4/4.6] border-[1.5px] border-ink">
+        <img src={receta.foto_url || placeholderImg} alt={receta.titulo} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
       </div>
       <div>
         <p className="flex items-center gap-1.5 font-mono text-[12px] uppercase tracking-wider mb-2"
           style={acento ? { color: acento.oscuro } : undefined}>
           <Star size={14} fill="currentColor" /> Plato estrella
         </p>
-        <h3 className="font-display font-black text-3xl sm:text-4xl leading-tight text-ink group-hover:text-accent transition-colors mb-3">
+        <h3 className="font-display font-semibold text-3xl sm:text-4xl leading-tight text-ink group-hover:text-accent transition-colors mb-3">
           {receta.titulo}
         </h3>
         {receta.rating ? <StarRating rating={receta.rating} size={16} /> : null}

@@ -39,7 +39,7 @@ export function RealizacionForm({ inicial, pedirNombre, onGuardar, onCancelar }:
   };
 
   return (
-    <div className="border-2 border-ink bg-paper-2 p-4 mb-6 max-w-xl shadow-brut">
+    <div className="border-[1.5px] border-ink bg-paper-2 p-4 mb-6 max-w-xl shadow-brut">
       {pedirNombre && (
         <label className="block mb-3">
           <span className="font-mono text-[11px] uppercase tracking-wider text-accent">

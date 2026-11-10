@@ -20,12 +20,12 @@ export function CandidataCard({ candidata, onClick }: Props) {
       onClick={onClick}
       className="group cursor-pointer transition-transform duration-200 hover:-translate-y-1"
     >
-      <div className="relative bg-white p-2.5 pb-3.5 shadow-md group-hover:shadow-xl transition-shadow duration-300">
-        <span className="absolute top-3 left-3 z-[1] bg-white/95 border border-ink px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider text-ink">
+      <div className="relative overflow-hidden rounded-[3px] border-[1.5px] border-ink bg-paper-2 p-2.5 pb-3.5 transition-shadow duration-300 group-hover:shadow-[4px_4px_0_var(--color-ink)]">
+        <span className="absolute top-3 left-3 z-[1] rounded-full bg-paper-2 border-[1.5px] border-ink px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-wider text-ink">
           {ETIQUETA_FUENTE[candidata.fuente_tipo]}
         </span>
         {probada && (
-          <span className="absolute top-3 right-3 z-[1] flex items-center gap-1 bg-yellow border border-ink px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider text-ink">
+          <span className="absolute top-3 right-3 z-[1] flex items-center gap-1 rounded-full bg-yellow border-[1.5px] border-ink px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-wider text-ink">
             <Check size={11} /> probada
           </span>
         )}

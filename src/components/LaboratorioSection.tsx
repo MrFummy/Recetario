@@ -40,16 +40,19 @@ export function SeccionLaboratorio({ onRecetaCreada }: { onRecetaCreada: () => v
 
   return (
     <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
-      <header className="mb-8 text-center">
-        <h2 className="font-display font-black text-4xl sm:text-5xl leading-none text-ink mb-2">El Laboratorio</h2>
-        <p className="text-ink-soft max-w-xl mx-auto">
+      <header className="mb-8">
+        <div className="kicker mb-4">{candidatas.length} candidatas</div>
+        <h2 className="mb-3 font-display text-4xl font-light leading-[0.98] tracking-[-0.035em] text-ink sm:text-6xl">
+          El <span className="hl-mark">Laboratorio</span>
+        </h2>
+        <p className="text-base leading-relaxed text-ink-soft">
           Recetas que quieres probar antes de meterlas al recetario. Mándale un enlace
           (YouTube, reel, web) o el texto de la receta al bot de Telegram y aparecen aquí.
         </p>
       </header>
 
       {error && (
-        <div className="flex items-start gap-2 bg-hot-soft border-2 border-hot text-hot p-4 mb-6 font-mono text-sm">
+        <div className="flex items-start gap-2 bg-hot-soft border-[1.5px] border-hot text-hot p-4 mb-6 font-mono text-sm">
           <AlertTriangle size={16} className="shrink-0 mt-0.5" /> {error}
         </div>
       )}
@@ -87,7 +90,7 @@ export function SeccionLaboratorio({ onRecetaCreada }: { onRecetaCreada: () => v
           </p>
         </div>
       ) : (
-        <div className="masonry-grid">
+        <div className="rejilla">
           {visibles.map((c) => (
             <CandidataCard key={c.id} candidata={c} onClick={() => setAbiertaId(c.id)} />
           ))}
