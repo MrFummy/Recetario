@@ -186,9 +186,9 @@
     "semantic_hash": ""
   },
   "src/components/RecipeContent.tsx": {
-    "mtime": 1794320720.2420855,
-    "seen": 1794320965.499703,
-    "ast_hash": "8c1b19d897a5816b54854f690365fc71",
+    "mtime": 1794324459.1156633,
+    "seen": 1794324519.3243032,
+    "ast_hash": "78609ac7d792266da481271be3dcd804",
     "semantic_hash": ""
   },
   "src/components/ShareByEmail.tsx": {
@@ -240,9 +240,9 @@
     "semantic_hash": ""
   },
   "CLAUDE.md": {
-    "mtime": 1794323572.0686696,
-    "seen": 1794323579.452915,
-    "ast_hash": "91814a4dd6058700f4773f866c28952f",
+    "mtime": 1794324459.1162205,
+    "seen": 1794324519.3243551,
+    "ast_hash": "ed813043c4d03cbf112ceec3e3a4823b",
     "semantic_hash": ""
   },
   "src/hooks/useDespensa.ts": {
@@ -516,21 +516,21 @@
     "semantic_hash": ""
   },
   "src/components/CandidataCard.tsx": {
-    "mtime": 1794320878.8294764,
-    "seen": 1794320965.499682,
-    "ast_hash": "ba1d7b29a39f2b0e7916aa177e6234db",
+    "mtime": 1794324392.5634615,
+    "seen": 1794324519.324277,
+    "ast_hash": "83628deb2422a88bb4d52444da6c15b5",
     "semantic_hash": ""
   },
   "src/components/CandidataDetail.tsx": {
-    "mtime": 1794320815.7243898,
-    "seen": 1794320965.499682,
-    "ast_hash": "5e08ab8c5461a6b05cd88f5d8bf124e3",
+    "mtime": 1794324459.1152642,
+    "seen": 1794324519.324278,
+    "ast_hash": "4c7896e3847c537f39507b003a316c27",
     "semantic_hash": ""
   },
   "src/components/LaboratorioSection.tsx": {
-    "mtime": 1794320878.8293545,
-    "seen": 1794320965.499687,
-    "ast_hash": "14fa1d6a8d795295a3708157c8b674ca",
+    "mtime": 1794324392.6179824,
+    "seen": 1794324519.3242838,
+    "ast_hash": "1010fc9dab3e98ee24c5d46bffafb25a",
     "semantic_hash": ""
   },
   "src/components/MapaMundi.tsx": {
@@ -540,9 +540,9 @@
     "semantic_hash": ""
   },
   "src/components/NavPrincipal.tsx": {
-    "mtime": 1794320632.912689,
-    "seen": 1794320965.499697,
-    "ast_hash": "533322e879254b3e415f605d1f9c1e82",
+    "mtime": 1794324491.62967,
+    "seen": 1794324519.324297,
+    "ast_hash": "cf955646f94f107b91d47651da14a7b7",
     "semantic_hash": ""
   },
   "src/components/PaisEditor.tsx": {
@@ -570,9 +570,9 @@
     "semantic_hash": ""
   },
   "src/components/PromoverModal.tsx": {
-    "mtime": 1794320815.72646,
-    "seen": 1794320965.499701,
-    "ast_hash": "15b88fb935497d20a9a19178bb69ce09",
+    "mtime": 1794324426.2634854,
+    "seen": 1794324519.324301,
+    "ast_hash": "1ae67ef141168b3442f0e3be81120f0d",
     "semantic_hash": ""
   },
   "src/hooks/useCandidatas.ts": {

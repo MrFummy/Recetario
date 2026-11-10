@@ -36,6 +36,11 @@ export function SeccionLaboratorio({ onRecetaCreada }: { onRecetaCreada: () => v
     [candidatas, estado, categoria],
   );
   const abierta = candidatas.find((c) => c.id === abiertaId) ?? null;
+  // El número de muestra sale de la antigüedad (la más antigua es la 1) y no del puesto en pantalla.
+  const numeros = useMemo(() => {
+    const porAntiguedad = [...candidatas].sort((a, b) => a.created_at.localeCompare(b.created_at));
+    return new Map(porAntiguedad.map((c, i) => [c.id, i + 1]));
+  }, [candidatas]);
   const cuenta = (e: FiltroEstado) => (e === 'todas' ? candidatas.length : candidatas.filter((c) => c.estado === e).length);
 
   return (
@@ -62,13 +67,13 @@ export function SeccionLaboratorio({ onRecetaCreada }: { onRecetaCreada: () => v
           const activo = estado === f.valor;
           return (
             <button key={f.valor} onClick={() => setEstado(f.valor)} aria-pressed={activo}
-              className={`whitespace-nowrap px-3.5 py-1.5 rounded-full text-[13px] font-semibold border-[1.5px] transition-all ${activo ? 'bg-ink text-paper border-ink shadow-brut' : 'bg-transparent text-ink border-ink hover:bg-ink/5'}`}>
+              className={`whitespace-nowrap rounded-full border-[1.5px] border-ink px-3.5 py-1.5 text-[13px] font-semibold transition-all duration-200 ${activo ? '-translate-x-px -translate-y-px bg-ink text-paper shadow-[2px_2px_0_var(--color-accent)]' : 'bg-transparent text-ink hover:bg-ink/5'}`}>
               {f.etiqueta} <span className="font-mono text-[11px] opacity-70">{cuenta(f.valor)}</span>
             </button>
           );
         })}
         <select value={categoria} onChange={(e) => setCategoria(e.target.value)} aria-label="Filtrar por categoría"
-          className="ml-auto bg-transparent border-[1.5px] border-ink rounded-full px-3 py-1.5 text-[13px] font-semibold">
+          className="campo-sello ml-auto !mt-0 !w-auto rounded-full !px-4 !py-1.5 text-[13px] font-semibold">
           <option value="">Todas las categorías</option>
           {CATEGORIAS.map((c) => <option key={c} value={c}>{c}</option>)}
         </select>
@@ -79,8 +84,9 @@ export function SeccionLaboratorio({ onRecetaCreada }: { onRecetaCreada: () => v
           <Loader2 size={18} className="animate-spin" /> Cargando el laboratorio…
         </div>
       ) : visibles.length === 0 ? (
-        <div className="text-center py-16">
-          <p className="font-display text-2xl text-ink mb-2">
+        <div className="py-16 text-center">
+          <div className="sello mx-auto mb-6 h-28 w-28 px-3 text-[13px]" data-k="otro">sin muestras todavía</div>
+          <p className="mb-2 font-display text-3xl font-medium tracking-tight text-ink">
             {candidatas.length === 0 ? 'Aquí todavía no hay nada.' : 'Ninguna candidata con ese filtro.'}
           </p>
           <p className="font-mono text-sm text-ink-soft">
@@ -90,9 +96,9 @@ export function SeccionLaboratorio({ onRecetaCreada }: { onRecetaCreada: () => v
           </p>
         </div>
       ) : (
-        <div className="rejilla">
+        <div className="mosaico">
           {visibles.map((c) => (
-            <CandidataCard key={c.id} candidata={c} onClick={() => setAbiertaId(c.id)} />
+            <CandidataCard key={c.id} candidata={c} numero={numeros.get(c.id) ?? 0} onClick={() => setAbiertaId(c.id)} />
           ))}
         </div>
       )}

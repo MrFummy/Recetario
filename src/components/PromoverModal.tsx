@@ -52,9 +52,9 @@ export function PromoverModal({ candidata, onCerrar, onPromover }: Props) {
   return (
     <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-ink/60 backdrop-blur-sm"
       onClick={bloqueado ? undefined : onCerrar}>
-      <div className="bg-paper w-full max-w-md border-[1.5px] border-ink shadow-brut p-6" onClick={(e) => e.stopPropagation()}>
+      <div className="w-full max-w-md rounded-[3px] border-[1.5px] border-ink bg-paper p-6 shadow-[5px_5px_0_var(--color-ink)]" onClick={(e) => e.stopPropagation()}>
         <div className="flex items-start justify-between gap-4 mb-4">
-          <h2 className="font-display font-light text-2xl leading-tight">Pasar al recetario</h2>
+          <h2 className="font-display text-3xl font-light leading-tight tracking-[-0.03em]">Pasar al <span className="hl-mark">recetario</span></h2>
           {!bloqueado && <button onClick={onCerrar} aria-label="Cerrar" className="text-ink-soft hover:text-hot"><X size={18} /></button>}
         </div>
 
@@ -63,8 +63,8 @@ export function PromoverModal({ candidata, onCerrar, onPromover }: Props) {
             <p className="flex items-start gap-2 text-[15px]"><Check size={18} className="shrink-0 mt-0.5 text-accent" /> «{candidata.titulo}» ya está en el recetario.</p>
             <div className="flex gap-3">
               <a href={aHash({ vista: 'receta', id: recetaId })} onClick={onCerrar}
-                className="px-4 py-2 bg-yellow border-[1.5px] border-ink font-semibold text-[13px] shadow-brut">Ver la receta</a>
-              <button onClick={onCerrar} className="px-4 py-2 border-[1.5px] border-ink font-semibold text-[13px]">Cerrar</button>
+                className="boton-sello">Ver la receta</a>
+              <button onClick={onCerrar} className="boton-sello boton-sello-claro">Cerrar</button>
             </div>
           </div>
         ) : fase === 'tarde' ? (
@@ -73,7 +73,7 @@ export function PromoverModal({ candidata, onCerrar, onPromover }: Props) {
               La receta no ha aparecido todavía. Puede que n8n siga trabajando o que algo haya fallado.
               <strong> La candidata sigue aquí, sin borrar.</strong> Mira el catálogo en un par de minutos y,
               si no está, revisa la ejecución en n8n.</p>
-            <button onClick={onCerrar} className="px-4 py-2 border-[1.5px] border-ink font-semibold text-[13px]">Cerrar</button>
+            <button onClick={onCerrar} className="boton-sello boton-sello-claro">Cerrar</button>
           </div>
         ) : (
           <div className="space-y-4">
@@ -81,25 +81,25 @@ export function PromoverModal({ candidata, onCerrar, onPromover }: Props) {
               Crea la receta con su PDF y la sincroniza con Notion, Drive y Sheets. Tarda cerca de un minuto.
               Sube <strong>la foto de tu plato</strong>: la de ejemplo de la candidata no se usa.
             </p>
-            <label className="block font-mono text-[11px] uppercase tracking-wider text-ink-soft">Categoría
+            <label className="etiqueta-campo">Categoría
               <select value={categoria} onChange={(e) => setCategoria(e.target.value)} disabled={bloqueado}
-                className="mt-1 w-full bg-paper-2 border-[1.5px] border-ink px-3 py-1.5 text-[14px] normal-case tracking-normal text-ink">
+                className="campo-sello">
                 <option value="">elige una…</option>
                 {CATEGORIAS.map((c) => <option key={c} value={c}>{c}</option>)}
               </select>
             </label>
-            <label className="block font-mono text-[11px] uppercase tracking-wider text-ink-soft">Fecha en que la cocinaste
+            <label className="etiqueta-campo">Fecha en que la cocinaste
               <input type="date" value={fecha} onChange={(e) => setFecha(e.target.value)} disabled={bloqueado}
-                className="mt-1 w-full bg-paper-2 border-[1.5px] border-ink px-3 py-1.5 text-[14px] text-ink" />
+                className="campo-sello" />
             </label>
-            <label className="flex items-center gap-2 border-[1.5px] border-dashed border-ink/40 px-3 py-2.5 cursor-pointer text-[13px] text-ink-soft hover:bg-ink/5">
+            <label className="flex items-center gap-2 rounded-[3px] border-[1.5px] border-dashed border-ink/50 px-3 py-2.5 cursor-pointer text-[13px] text-ink-soft hover:bg-ink/5">
               <ImagePlus size={16} /> {foto ? foto.name : 'Añadir la foto de tu plato (opcional)'}
               <input type="file" accept="image/*" className="hidden" disabled={bloqueado}
                 onChange={(e) => setFoto(e.target.files?.[0] ?? null)} />
             </label>
             {fallo && <p className="flex items-start gap-2 text-hot font-mono text-[12px]"><AlertTriangle size={14} className="shrink-0 mt-0.5" /> {fallo}</p>}
             <button onClick={() => void enviar()} disabled={bloqueado}
-              className="w-full flex items-center justify-center gap-2 px-4 py-2.5 bg-yellow border-[1.5px] border-ink font-semibold shadow-brut disabled:opacity-70">
+              className="boton-sello w-full !py-2.5">
               {bloqueado ? <><Loader2 size={16} className="animate-spin" /> Creando la receta…</> : 'Pasar al recetario'}
             </button>
           </div>

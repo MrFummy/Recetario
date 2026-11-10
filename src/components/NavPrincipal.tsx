@@ -64,7 +64,8 @@ export function NavPrincipal({
           <Enlace
             href={aHash({ vista: 'despensa' })} etiqueta="Despensa" icono={<ShoppingBasket size={16} />} activo={enDespensa}
             extra={totalDespensa > 0 && (
-              <span className="rounded-full border border-ink bg-yellow px-1.5 font-mono text-[10px] leading-4 text-ink">
+              // Por debajo de `lg` solo hay iconos y no sobra ancho: el contador se posa sobre el icono en lugar de ocupar sitio.
+              <span className="absolute -right-0.5 top-0 rounded-full border border-ink bg-yellow px-1 font-mono text-[9px] leading-[14px] text-ink lg:static lg:px-1.5 lg:text-[10px] lg:leading-4">
                 {totalDespensa}
               </span>
             )}

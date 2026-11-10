@@ -7,6 +7,7 @@ import { ETIQUETA_FUENTE } from '../lib/fuentes';
 import { CATEGORIAS } from '../lib/categorias';
 import { hasNotas, normalizeIngredients, renderNotas } from '../lib/recipeContent';
 import { errorMessage } from '../lib/errors';
+import { claveCategoria } from '../lib/colorCategoria';
 import placeholderImg from '../assets/placeholder.jpg';
 
 interface Props {
@@ -66,31 +67,32 @@ export function CandidataDetail({ candidata, onClose, onActualizar, onBorrar, on
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-ink/50 backdrop-blur-sm animate-in fade-in duration-200" onClick={onClose}>
       <div
-        className="bg-paper w-full max-w-4xl max-h-[92vh] overflow-hidden flex flex-col shadow-2xl border-[1.5px] border-ink animate-in zoom-in-95 duration-200"
+        data-k={claveCategoria(candidata.categoria)}
+        className="bg-paper w-full max-w-4xl max-h-[92vh] overflow-hidden flex flex-col shadow-2xl border-[1.5px] border-ink rounded-[3px] animate-in zoom-in-95 duration-200"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="flex items-center justify-between px-5 sm:px-8 py-3 border-b border-ink/25 bg-paper-2 shrink-0">
-          <div className="font-mono text-[11px] text-ink-soft">~/laboratorio/{ETIQUETA_FUENTE[candidata.fuente_tipo].toLowerCase()}</div>
+        <div className="flex items-center justify-between px-5 sm:px-8 py-3 border-b-[1.5px] border-ink bg-paper-2 shrink-0">
+          <div className="font-mono text-[11px] uppercase tracking-[0.12em] text-ink-soft">Laboratorio / {ETIQUETA_FUENTE[candidata.fuente_tipo]}</div>
           <div className="flex items-center gap-1.5">
             {!editando && (
               <>
                 <button onClick={borrar} disabled={ocupada} title="Borrar"
-                  className="p-1.5 rounded-[3px] text-ink-soft hover:text-hot hover:bg-hot-soft transition-colors disabled:opacity-50">
+                  className="p-1.5 rounded-full text-ink-soft hover:text-hot hover:bg-hot-soft transition-colors disabled:opacity-50">
                   <Trash2 size={18} />
                 </button>
                 <button onClick={() => setEditando(true)} title="Editar"
-                  className="p-1.5 rounded-[3px] text-ink-soft hover:text-accent hover:bg-accent-soft transition-colors">
+                  className="p-1.5 rounded-full text-ink-soft hover:text-accent hover:bg-accent-soft transition-colors">
                   <Edit2 size={18} />
                 </button>
               </>
             )}
             {editando && (
               <button onClick={guardar} disabled={ocupada}
-                className="flex items-center gap-1.5 bg-yellow text-ink px-3 py-1.5 text-[13px] font-semibold border-[1.5px] border-ink shadow-brut disabled:opacity-60">
+                className="boton-sello !py-1.5">
                 {ocupada ? <Loader2 className="animate-spin" size={14} /> : <Save size={14} />} guardar
               </button>
             )}
-            <button onClick={onClose} className="p-1.5 rounded-[3px] text-ink-soft hover:text-hot transition-colors"><X size={18} /></button>
+            <button onClick={onClose} className="p-1.5 rounded-full text-ink-soft hover:text-hot transition-colors"><X size={18} /></button>
           </div>
         </div>
 
@@ -103,52 +105,49 @@ export function CandidataDetail({ candidata, onClose, onActualizar, onBorrar, on
 
         <div className="overflow-y-auto px-6 sm:px-10 pt-8 pb-10">
           <div className="grid grid-cols-1 md:grid-cols-[260px_1fr] gap-8 mb-8">
-            <div className="bg-paper-2 p-2.5 pb-3.5 shadow-md self-start">
-              <img src={candidata.foto_url || placeholderImg} alt={candidata.titulo} className="w-full aspect-[4/3] object-cover bg-ink/10" />
+            <div className="arco aspect-[4/5] self-start border-[1.5px] border-ink bg-rule/60 shadow-[6px_6px_0_var(--k)]">
+              <img src={candidata.foto_url || placeholderImg} alt={candidata.titulo} className="h-full w-full object-cover" />
             </div>
             <div>
               {editando ? (
                 <div className="space-y-3">
                   <input value={titulo} onChange={(e) => setTitulo(e.target.value)} aria-label="Título"
-                    className="w-full font-display font-black text-3xl bg-paper-2 border-[1.5px] border-ink px-3 py-1.5" />
+                    className="campo-sello !mt-0 font-display text-3xl font-medium" />
                   <select value={categoria} onChange={(e) => setCategoria(e.target.value)} aria-label="Categoría"
-                    className="bg-paper-2 border-[1.5px] border-ink px-3 py-1.5 font-mono text-sm">
+                    className="campo-sello !mt-0 !w-auto font-mono !text-sm">
                     <option value="">sin categoría</option>
                     {CATEGORIAS.map((c) => <option key={c} value={c}>{c}</option>)}
                   </select>
                 </div>
               ) : (
                 <>
-                  {candidata.categoria && (
-                    <div className="inline-flex items-center gap-1.5 font-mono text-[11px] tracking-widest uppercase text-accent bg-accent-soft px-2.5 py-1 mb-3">
-                      <span className="opacity-60">#</span>{candidata.categoria}
-                    </div>
-                  )}
-                  <h2 className="font-display font-light text-3xl sm:text-4xl leading-[1] tracking-[-0.035em] text-ink mb-3">{candidata.titulo}</h2>
+                  <div className="kicker mb-3">Muestra del laboratorio</div>
+                  {candidata.categoria && <span className="etiqueta mb-4">{candidata.categoria}</span>}
+                  <h2 className="font-display font-light text-4xl sm:text-5xl leading-[0.97] tracking-[-0.035em] text-ink mb-3">{candidata.titulo}</h2>
                 </>
               )}
 
               <div className="flex flex-wrap items-center gap-2 mt-3">
-                {candidata.tiempo && <span className="flex items-center gap-1 font-mono text-[11px] text-ink-soft border border-ink/25 px-2 py-1"><Clock size={12} /> {candidata.tiempo}</span>}
-                {candidata.porciones && <span className="flex items-center gap-1 font-mono text-[11px] text-ink-soft border border-ink/25 px-2 py-1"><Users size={12} /> {candidata.porciones}</span>}
-                {candidata.dificultad && <span className="flex items-center gap-1 font-mono text-[11px] text-ink-soft border border-ink/25 px-2 py-1"><Gauge size={12} /> {candidata.dificultad}</span>}
+                {candidata.tiempo && <span className="etiqueta etiqueta-neutra !normal-case !font-mono !font-medium"><Clock size={12} /> {candidata.tiempo}</span>}
+                {candidata.porciones && <span className="etiqueta etiqueta-neutra !normal-case !font-mono !font-medium"><Users size={12} /> {candidata.porciones}</span>}
+                {candidata.dificultad && <span className="etiqueta etiqueta-neutra !normal-case !font-mono !font-medium"><Gauge size={12} /> {candidata.dificultad}</span>}
               </div>
 
               {candidata.fuente_url && (
                 <a href={candidata.fuente_url} target="_blank" rel="noreferrer"
-                  className="inline-flex items-center gap-1.5 mt-4 font-mono text-[12px] text-accent hover:underline break-all">
+                  className="mt-4 inline-flex items-center gap-1.5 break-all font-mono text-[12px] text-accent underline decoration-dotted underline-offset-4 hover:decoration-solid">
                   Ver la fuente <ExternalLink size={12} />
                 </a>
               )}
 
               <div className="mt-4 space-y-2">
                 {candidata.de_video && (
-                  <p className="border-[1.5px] border-dashed border-ink/30 bg-yellow/25 px-3 py-2 font-mono text-[11px] leading-snug text-ink">
+                  <p className="rounded-[3px] border-[1.5px] border-ink bg-yellow-soft px-3 py-2 font-mono text-[11px] leading-snug text-ink">
                     Sacada de un vídeo: revisa las cantidades al cocinarla.
                   </p>
                 )}
                 {sinPasos && (
-                  <p className="border-[1.5px] border-dashed border-ink/30 bg-yellow/25 px-3 py-2 font-mono text-[11px] leading-snug text-ink">
+                  <p className="rounded-[3px] border-[1.5px] border-ink bg-yellow-soft px-3 py-2 font-mono text-[11px] leading-snug text-ink">
                     Sin pasos: la fuente solo traía el pie. Complétala al probarla.
                   </p>
                 )}
@@ -156,44 +155,44 @@ export function CandidataDetail({ candidata, onClose, onActualizar, onBorrar, on
 
               {!editando && (
                 <button onClick={onPromover} disabled={ocupada}
-                  className="mt-5 mr-3 inline-flex items-center gap-1.5 px-3 py-1.5 text-[13px] font-semibold border-[1.5px] border-ink bg-ink text-paper disabled:opacity-60">
+                  className="boton-sello mr-3 mt-5 !bg-ink !text-paper">
                   <BookPlus size={14} /> Pasar al recetario
                 </button>
               )}
               {!editando && (
                 <button onClick={alternarEstado} disabled={ocupada}
-                  className={`mt-5 inline-flex items-center gap-1.5 px-3 py-1.5 text-[13px] font-semibold border-[1.5px] border-ink transition-all disabled:opacity-60 ${probada ? 'bg-paper text-ink' : 'bg-yellow text-ink shadow-brut'}`}>
+                  className={`boton-sello mt-5 ${probada ? 'boton-sello-claro' : ''}`}>
                   {probada ? <><Undo2 size={14} /> Volver a «por probar»</> : <><Check size={14} /> Marcar como probada</>}
                 </button>
               )}
             </div>
           </div>
 
-          <h3 className="font-display font-semibold text-xl mb-2">Ingredientes</h3>
+          <h3 className="seccion-titulo mb-4 !text-2xl">Ingredientes</h3>
           {ingredientes.length === 0 ? (
             <p className="text-ink-soft italic font-mono text-sm">sin ingredientes</p>
           ) : (
             <ul className="list-none p-0 m-0 mb-8 max-w-xl">
               {ingredientes.map((i, idx) => i.esGrupo ? (
-                <li key={i.id ?? `g-${idx}`} className="pt-4 pb-1 font-mono text-[11px] uppercase tracking-wider text-accent">{i.name}</li>
+                <li key={i.id ?? `g-${idx}`} className="kicker pb-1 pt-5">{i.name}</li>
               ) : (
-                <li key={i.id ?? idx} className="grid grid-cols-[150px_1fr] sm:grid-cols-[220px_1fr] gap-3 py-1.5 text-[14.5px] leading-snug border-b border-ink/15 last:border-0">
-                  <span className="font-mono text-ink-soft">{i.qty || '—'}</span>
+                <li key={i.id ?? idx} className="grid grid-cols-[150px_1fr] sm:grid-cols-[220px_1fr] gap-3 py-1.5 text-[14.5px] leading-snug border-b border-rule last:border-0">
+                  <span className={`w-fit rounded-full px-2.5 py-0.5 font-sello text-[11px] font-extrabold uppercase ${i.qty ? 'bg-cobalt text-paper' : 'bg-rule text-ink-soft'}`}>{i.qty || '—'}</span>
                   <span>{i.name}</span>
                 </li>
               ))}
             </ul>
           )}
 
-          <h3 className="font-display font-semibold text-xl mb-2">Preparación</h3>
+          <h3 className="seccion-titulo mb-4 !text-2xl">Preparación</h3>
           <StepsList data={candidata.pasos} />
 
           {(hasNotas(candidata.notas) || editando) && (
             <>
-              <h3 className="font-display font-semibold text-xl mt-8 mb-2">Notas</h3>
+              <h3 className="seccion-titulo mb-4 mt-8 !text-2xl">Notas</h3>
               {editando ? (
                 <textarea value={notas} onChange={(e) => setNotas(e.target.value)} rows={4} aria-label="Notas"
-                  className="w-full bg-paper-2 border-[1.5px] border-ink px-3 py-2 text-[14.5px]" placeholder="Una nota por línea" />
+                  className="campo-sello !mt-0 text-[14.5px]" placeholder="Una nota por línea" />
               ) : (
                 <p className="whitespace-pre-line text-[14.5px] leading-relaxed">{renderNotas(candidata.notas)}</p>
               )}

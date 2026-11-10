@@ -1,17 +1,17 @@
 # Graph Report - Recetario  (2026-11-10)
 
 ## Corpus Check
-- 153 files · ~86,978 words
+- 153 files · ~87,142 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 6 file(s) not represented in the graph (top: (none) 2, .css 2, .example 1)
 
 ## Summary
-- 779 nodes · 1726 edges · 75 communities (43 shown, 14 thin omitted)
+- 779 nodes · 1732 edges · 74 communities (42 shown, 14 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 5 edges (avg confidence: 0.78)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `d55848be`
+- Built from commit: `5d0f534f`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -33,7 +33,6 @@
 - public.despensa
 - tsconfig.json
 - tiempos.ts
-- PortadaCatalogo.tsx
 - public.recetas
 - 20261011_para_hacer_y_realizaciones.sql
 - public.recetas
@@ -101,7 +100,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (75 total, 14 thin omitted)
+## Communities (74 total, 14 thin omitted)
 
 ### Community 0 - "Mi Recetario (SPA)"
 Cohesion: 0.08
@@ -120,8 +119,8 @@ Cohesion: 0.11
 Nodes (17): compilerOptions, allowImportingTsExtensions, erasableSyntaxOnly, lib, module, moduleDetection, moduleResolution, noEmit (+9 more)
 
 ### Community 4 - "types.ts"
-Cohesion: 0.09
-Nodes (43): CandidataCard(), Props, CandidataDetail(), Props, FiltroEstado, FILTROS, SeccionLaboratorio(), ModoCocina() (+35 more)
+Cohesion: 0.07
+Nodes (53): CandidataCard(), Props, CandidataDetail(), Props, FilterBar(), FilterBarProps, FiltroEstado, FILTROS (+45 more)
 
 ### Community 5 - "DespensaSection.tsx"
 Cohesion: 0.26
@@ -162,10 +161,6 @@ Nodes (3): cors, embeber(), json()
 ### Community 20 - "tiempos.ts"
 Cohesion: 0.13
 Nodes (18): PasoConTiempos(), PasoConTiemposProps, TemporizadoresBarra(), pitar(), Temporizador, Temporizadores, useTemporizadores(), aNumero() (+10 more)
-
-### Community 24 - "PortadaCatalogo.tsx"
-Cohesion: 0.18
-Nodes (13): FilterBar(), FilterBarProps, destacadaDelDia(), PortadaCatalogo(), PortadaCatalogoProps, RecipeCard(), RecipeCardProps, RecipeGrid() (+5 more)
 
 ### Community 26 - "20261011_para_hacer_y_realizaciones.sql"
 Cohesion: 0.33
@@ -212,8 +207,8 @@ Cohesion: 0.25
 Nodes (8): Compartir, Decisiones tomadas, Escalado y lista de la compra, Fases, Menús, Modelo de datos (propuesta), Preguntas abiertas, Rutas e interfaz
 
 ### Community 47 - "Recipe"
-Cohesion: 0.07
-Nodes (57): Cabecera(), CabeceraProps, Props, HojaImpresa(), Props, Props, SeccionListaCompra(), MenuCabecera() (+49 more)
+Cohesion: 0.06
+Nodes (60): Cabecera(), CabeceraProps, Props, HojaImpresa(), Props, Props, SeccionListaCompra(), MenuCabecera() (+52 more)
 
 ### Community 48 - "dependencies"
 Cohesion: 0.22
@@ -284,9 +279,9 @@ Nodes (6): aResumen(), Fila, MenuDeOtro, MenuResumen, Menus, cargar()
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `react` connect `App.tsx` to `PaisPagina.tsx`, `types.ts`, `DespensaSection.tsx`, `AddRecipeForm.tsx`, `package.json`, `@supabase/supabase-js`, `lucide-react`, `BuzonSection.tsx`, `errorMessage`, `supabase.ts`, `useMenus.ts`, `Recipe`, `tiempos.ts`?**
-  _High betweenness centrality (0.098) - this node is a cross-community bridge._
+  _High betweenness centrality (0.099) - this node is a cross-community bridge._
 - **Why does `lucide-react` connect `lucide-react` to `PaisPagina.tsx`, `types.ts`, `DespensaSection.tsx`, `AddRecipeForm.tsx`, `package.json`, `App.tsx`, `@supabase/supabase-js`, `BuzonSection.tsx`, `errorMessage`, `Recipe`, `tiempos.ts`?**
-  _High betweenness centrality (0.055) - this node is a cross-community bridge._
+  _High betweenness centrality (0.056) - this node is a cross-community bridge._
 - **Why does `errorMessage()` connect `errorMessage` to `PaisPagina.tsx`, `types.ts`, `AddRecipeForm.tsx`, `@supabase/supabase-js`, `App.tsx`, `lucide-react`, `BuzonSection.tsx`, `supabase.ts`, `useMenus.ts`, `Recipe`?**
   _High betweenness centrality (0.041) - this node is a cross-community bridge._
 - **What connects `name`, `private`, `version` to the rest of the system?**

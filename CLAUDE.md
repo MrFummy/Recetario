@@ -671,6 +671,10 @@ que las secciones que no se tocaron ya heredan la paleta.
   `title`); se editan igual en «Gestionar país». **El mapa** rellena cada país visitado con el color de su bandera
   (`useAcentosPaises`, sobre `lib/cargarAcento.ts`, que comparten el mapa y la página de país) y deja el resto en
   crema con contorno de tinta. Los paneles de admin comparten `.panel-admin`, `.campo-sello` y `.etiqueta-campo`.
+- **El Laboratorio (10 nov 2026)** usa el mismo mosaico y la misma foto en arco que el catálogo; lo suyo es el sello
+  de la fuente (Instagram, YouTube…) en la esquina, el estado sobre la foto (amarillo «por probar», verde «probada»)
+  y un **número de muestra** que sale de la antigüedad y no cambia al filtrar. Nombre, ruta (`#/laboratorio`) y flujo
+  de n8n se mantienen: renombrarlo implica tocar los tres.
 - **`sistema.css` va dentro de `@layer components`**: sin capa, el CSS suelto gana siempre a las utilidades de
   Tailwind (un `flex` no podía con un `display: block` de una clase propia). Las utilidades ganan donde coinciden.
 - **Pendiente de decidir**: las hojas impresas (`.hoja*`) y la plantilla de n8n para los PDF siguen con la estética

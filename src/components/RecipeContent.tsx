@@ -61,7 +61,7 @@ export function IngredientsList({ data, user, despensa }: IngredientsListProps) 
               >
                 {done && <span className="text-[12px] font-extrabold leading-none">✓</span>}
               </span>
-              <span className={`w-fit rounded-full bg-cobalt px-2.5 py-0.5 font-sello text-[11px] font-extrabold uppercase text-paper break-words ${done ? 'line-through' : ''}`}>
+              <span className={`w-fit rounded-full px-2.5 py-0.5 font-sello text-[11px] font-extrabold uppercase break-words ${item.qty ? 'bg-cobalt text-paper' : 'bg-rule text-ink-soft'} ${done ? 'line-through' : ''}`}>
                 {item.qty || '—'}
               </span>
               <span className={`text-ink ${done ? 'line-through decoration-accent decoration-[1.5px]' : ''}`}>
