@@ -54,7 +54,7 @@ borrado exigen además que el email sea el del admin). No hay backend propio.
 | Mi Pasaporte | Fases 1-3 hechas; admin verificada con sesión | 21 oct 2026 | [pasaporte.md](pasaporte.md) |
 | Mirón y registrado | Hecho; probado solo como visitante | 30 oct 2026 | [CLAUDE.md § Mirón y registrado](../CLAUDE.md) |
 | `porciones_num` | Hecho: 74 recetas, y el alta de n8n lo estima y lo guarda desde el 10 nov | 7 nov 2026; el alta, sin probar de punta a punta | [CLAUDE.md § porciones_num](../CLAUDE.md) |
-| Menús | Hecho: editor por pases, lista de la compra escalada, imprimir como las recetas y compartir (privado, afans, enlace). Plan cerrado | 10 nov 2026, con sesión real en dev; la impresión la revisó el admin | [menus.md](menus.md) |
+| Menús | Hecho y desplegado: editor por pases, lista de la compra escalada, imprimir como las recetas y compartir (privado, afans, enlace). Plan cerrado | 10 nov 2026, con sesión real en dev; la impresión la revisó el admin | [menus.md](menus.md) |
 | Despliegue | `npm run deploy:mac` al NAS; gzip activo con la ruta real del `user.conf` | 10 nov 2026 (170 KB con gzip, 607 KB sin él) | [README](../README.md) |
 | Leaked password protection | No aplicable (requiere plan Pro) | 2026 | aviso permanente del linter |
 
@@ -159,7 +159,7 @@ formato absoluto.
 | 9 nov 2026 | Despliegue de la fase 3, la fase 4 y el PDF con el estilo de las recetas | — | Tres despliegues; la hoja del menú la revisó el admin y la ve bien |
 | 10 nov 2026 | Repaso: grafo actualizado (658 nodos), `CLAUDE.md` corregido —el grafo no tiene capa semántica desde el 5 ago—, este panel reordenado y ficha de Notion al día | — | La capa semántica no la perdió ninguna actualización reciente: ya faltaba en la reconstrucción del 5 ago |
 | 10 nov 2026 | El alta de n8n rellena `porciones_num`: `Vertex AI` lo pide con reglas, `Limpia respuesta` lo normaliza (y lo saca de `porciones` si falta) y `Guardar en Supabase` lo escribe | — | Versión `3a62fac0` del flujo, publicada y comprobada (parámetros idénticos a lo esperado, sin claves anidadas, `activeVersionId` = la editada). Cambio solo en n8n; sin probar de punta a punta |
-| 10 nov 2026 | Menús, fase 5: compartir. `menus.visibilidad` (privado, afans, enlace), `ver_menu_compartido` para el enlace, vista de solo lectura, control en el editor y sección «Menús de los afans» | — | Migración `20261110_compartir_menus.sql`. El enlace NO usa una policy pública (listaría todos los menús): lo sirve una función `SECURITY DEFINER` que devuelve uno por id. RLS verificadas simulando roles; probado con y sin sesión |
+| 10 nov 2026 | Menús, fase 5: compartir. `menus.visibilidad` (privado, afans, enlace), `ver_menu_compartido` para el enlace, vista de solo lectura, control en el editor y sección «Menús de los afans» | — | Migración `20261110_compartir_menus.sql`. El enlace NO usa una policy pública (listaría todos los menús): lo sirve una función `SECURITY DEFINER` que devuelve uno por id. RLS verificadas simulando roles; probado con y sin sesión, y desplegado el 10 nov: el flujo anónimo, comprobado también en la web real |
 
 ---
 
