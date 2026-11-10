@@ -307,7 +307,10 @@ Que los afans manden una receta que les gustaría ver en el recetario, y que el 
 cocina y la incorpora. Sirve para que interactúen más con la web: hoy solo 2 de 7 cuentas han
 entrado en 30 días. **Fase 1 hecha el 10 de noviembre** (tabla `sugerencias` con RLS y tope de 5 al día con correo
 confirmado, [la migración](../supabase/migrations/20261110_sugerencias.sql); página `#/buzon`, enlazada desde «Mi cuenta»,
-con el admin viendo todas y cambiando el estado ahí mismo). **Faltan**: el aviso al admin, el crédito
+con el admin viendo todas y cambiando el estado ahí mismo). **Aviso al admin hecho el mismo día**: flujo de n8n «Aviso de sugerencias» (id `SW6Xku2rud6sWYa1`) que
+sondea cada 5 min `sugerencias.avisada_en` nulo ([la migración](../supabase/migrations/20261110_sugerencias_avisada.sql)),
+la reclama con un PATCH atómico y manda un mensaje al `chat_id` del admin con el bot de Telegram. Se
+probó la ejecución y la marca; el mensaje en el móvil, sin confirmar. **Faltan**: el crédito
 «Sugerida por» y el correo al autor.
 
 **Decisiones del admin**
