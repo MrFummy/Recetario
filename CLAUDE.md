@@ -11,8 +11,8 @@ despliegue está en el [README](README.md).
 
 ## Empieza por el grafo
 
-`graphify-out/` contiene un grafo de conocimiento del proyecto: 658 nodos y 1428
-aristas sobre 129 ficheros, en 61 comunidades (10 nov 2026). **Es estructural**: sale
+`graphify-out/` contiene un grafo de conocimiento del proyecto: 748 nodos y 1638
+aristas sobre 148 ficheros, en 69 comunidades (10 nov 2026). **Es estructural**: sale
 del código (AST), de los documentos y de las dependencias de `package.json`. **No tiene
 capa semántica** —decisiones, servicios externos, roles, RLS, webhooks—: la hubo hasta
 julio y se perdió en la reconstrucción del 5 de agosto, y desde entonces
@@ -455,9 +455,9 @@ organizada por pases; del menú saldrá la lista de la compra escalada. Diseño 
 - Verificado simulando roles (otro usuario, dueño y anónimo) en una transacción que se
   revierte; el linter no añade avisos, salvo los dos de `ver_menu_compartido` descritos arriba.
 
-## Avisos por correo y «Mi cuenta» (en curso)
+## Avisos por correo y «Mi cuenta»
 
-**Pasos 1 y 2 hechos el 10 de noviembre de 2026**: la base de datos y la página `#/cuenta`.
+**Hecho y desplegado el 10 de noviembre de 2026**: la base de datos, la página `#/cuenta` y el flujo de envío.
 **El flujo de n8n «Aviso de nuevas recetas» (id `Zx0jNA5wC2aTu0U1`) se publicó el 10 de noviembre**:
 sondea cada 5 min las recetas con `aviso_enviado_en` nulo y más de 2 min de antigüedad, las reclama con un
 `PATCH` atómico (como mucho un aviso por receta; si no hay destinatarios, se pierde), pide
@@ -490,6 +490,24 @@ está en [docs/ideas.md](docs/ideas.md#avisos-por-correo-y-mi-cuenta--decidido-e
   recargar, n8n vería 1 destinatario) y las validaciones de los formularios. **No se ha ejercitado**
   el cambio real de contraseña ni de correo, para no tocar la cuenta del admin ni mandar correos:
   Supabase puede pedir reautenticación para la contraseña, o limitar los envíos de correo.
+
+## Buzón de sugerencias
+
+**Hecho y desplegado el 10 de noviembre de 2026** (migraciones `20261110_sugerencias*.sql`; diseño y decisiones
+en [docs/ideas.md](docs/ideas.md)). `#/buzon` (enlazado desde «Mi cuenta», no hay icono nuevo en la cabecera):
+un afan envía un enlace y/o texto con una nota; ve las suyas, el admin todas y cambia el estado
+(`pendiente`/`aceptada`/`descartada`/`hecha`). Tabla `sugerencias`: el autor crea (solo `pendiente`) y lee las
+suyas; solo el admin actualiza. Un trigger `SECURITY DEFINER` exige correo confirmado y máximo 5 al día.
+
+- **No se convierte nada al enviar** (cuota de Gemini, SSRF): el admin reenvía el enlace al bot del Laboratorio.
+- **Tres flujos de n8n por sondeo** (cada 5 min, marca atómica con `PATCH ... is.null`, como mucho un aviso):
+  «Aviso de nuevas recetas» (correo a quien activó los avisos), «Aviso de sugerencias» (Telegram al admin,
+  `avisada_en`) y «Aviso al autor de una sugerencia» (correo, `autor_avisado_en`). **Sondeo y no webhook de
+  BD porque `pg_net` no está instalado.** Los flujos que marcan antes de enviar pierden el aviso si el envío falla.
+- **Crédito:** al marcar «hecha» el admin elige la receta creada; un trigger copia el nombre del autor a
+  `recetas.sugerida_por` (instantánea, solo si `sugerencias.citar`) y la ficha enseña «Sugerida por…».
+  `autores_sugerencias_hechas()` es solo para `service_role`, como `destinatarios_avisos_recetas()`.
+- Sin verificar: como afan normal, el mensaje de Telegram en el móvil y el desplegable en el navegador.
 
 ## Modo cocina
 

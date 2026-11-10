@@ -1,17 +1,17 @@
 # Graph Report - Recetario  (2026-11-10)
 
 ## Corpus Check
-- 129 files · ~72,959 words
+- 145 files · ~83,841 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 5 file(s) not represented in the graph (top: (none) 2, .example 1, .ico 1)
 
 ## Summary
-- 658 nodes · 1428 edges · 61 communities (33 shown, 12 thin omitted)
-- Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 4 edges (avg confidence: 0.76)
+- 748 nodes · 1638 edges · 69 communities (37 shown, 14 thin omitted)
+- Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 5 edges (avg confidence: 0.78)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `4699913b`
+- Built from commit: `3ce18d82`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -20,8 +20,8 @@
 - compilerOptions
 - devDependencies
 - compilerOptions
-- types.ts
-- DespensaSection.tsx
+- CandidataDetail.tsx
+- recipeContent.ts
 - package.json
 - indexar-recetas/index.ts
 - errorMessage
@@ -32,8 +32,8 @@
 - buscar-recetas/index.ts
 - public.despensa
 - tsconfig.json
-- App.tsx
-- tiempos.ts
+- PlatoEstrella.tsx
+- ModoCocina.tsx
 - public.recetas
 - 20261011_para_hacer_y_realizaciones.sql
 - public.recetas
@@ -41,7 +41,7 @@
 - 20261014_sin_hacer.sql
 - deploy.sh script
 - public.recetas
-- Recipe
+- PaisPagina.tsx
 - Mi Recetario — contexto del proyecto
 - generar-mapamundi.mjs
 - 20261015_pasaporte.sql
@@ -51,7 +51,7 @@
 - Pendientes
 - Propuesta de `porciones` (aplicada el 7 nov 2026 en `porciones_num`)
 - Menús
-- MenuEditor.tsx
+- types.ts
 - dependencies
 - scripts
 - 20261107_menus.sql
@@ -61,18 +61,24 @@
 - public.paises
 - Fase 0 — experimento (media tarde, antes de construir nada)
 - public.recetas
+- public.autores_sugerencias_hechas
+- 20261110_avisos_recetas.sql
+- 20261110_sugerencias.sql
+- public.ver_menu_compartido
+- public.recetas
+- public.sugerencias
 
 ## God Nodes (most connected - your core abstractions)
-1. `errorMessage()` - 53 edges
-2. `react` - 47 edges
-3. `Recipe` - 41 edges
-4. `lucide-react` - 40 edges
-5. `aHash()` - 30 edges
-6. `normalizeIngredients()` - 19 edges
-7. `@supabase/supabase-js` - 17 edges
-8. `Despensa` - 17 edges
-9. `compilerOptions` - 17 edges
-10. `irA()` - 16 edges
+1. `errorMessage()` - 71 edges
+2. `react` - 55 edges
+3. `Recipe` - 47 edges
+4. `lucide-react` - 44 edges
+5. `aHash()` - 39 edges
+6. `@supabase/supabase-js` - 24 edges
+7. `Despensa` - 21 edges
+8. `normalizeIngredients()` - 19 edges
+9. `supabase` - 19 edges
+10. `compilerOptions` - 17 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `Mi Recetario (SPA)` --incluye--> `Valoraciones`  [EXTRACTED]
@@ -89,7 +95,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (61 total, 12 thin omitted)
+## Communities (69 total, 14 thin omitted)
 
 ### Community 0 - "Mi Recetario (SPA)"
 Cohesion: 0.08
@@ -107,13 +113,13 @@ Nodes (13): devDependencies, eslint, @eslint/js, eslint-plugin-react-hooks, esli
 Cohesion: 0.11
 Nodes (17): compilerOptions, allowImportingTsExtensions, erasableSyntaxOnly, lib, module, moduleDetection, moduleResolution, noEmit (+9 more)
 
-### Community 4 - "types.ts"
+### Community 4 - "CandidataDetail.tsx"
 Cohesion: 0.08
-Nodes (44): CandidataCard(), Props, Props, FilterBar(), FilterBarProps, FiltroEstado, FILTROS, SeccionLaboratorio() (+36 more)
+Nodes (36): AddRecipeFormProps, Props, CandidataDetail(), ejecutar(), Props, FilterBar(), FilterBarProps, FiltroEstado (+28 more)
 
-### Community 5 - "DespensaSection.tsx"
-Cohesion: 0.18
-Nodes (18): AnadirIngrediente(), Props, Props, SeccionDespensa(), Props, MenuSelectorRecetas(), Props, Despensa (+10 more)
+### Community 5 - "recipeContent.ts"
+Cohesion: 0.14
+Nodes (22): AnadirIngrediente(), CandidataCard(), SeccionDespensa(), useIngredientSearch(), ETIQUETA_FUENTE, extractIngredientsText(), normalizeString(), recipeMatchesIngredients() (+14 more)
 
 ### Community 6 - "package.json"
 Cohesion: 0.12
@@ -125,7 +131,7 @@ Nodes (6): cors, embeberLote(), json(), Receta, textoDe(), trozos()
 
 ### Community 8 - "errorMessage"
 Cohesion: 0.06
-Nodes (58): react, @supabase/supabase-js, AddRecipeForm(), AddRecipeFormProps, CandidataDetail(), ejecutar(), Props, LoginModal() (+50 more)
+Nodes (66): react, @supabase/supabase-js, App(), CATEGORIES, AddRecipeForm(), ETIQUETA, Fila(), Props (+58 more)
 
 ### Community 10 - "20260805_endurecer_rls.sql"
 Cohesion: 0.40
@@ -147,13 +153,13 @@ Nodes (10): Abierto, Decisiones tomadas, Después, si apetece, Fase 1 — base d
 Cohesion: 0.50
 Nodes (3): cors, embeber(), json()
 
-### Community 20 - "App.tsx"
-Cohesion: 0.13
-Nodes (30): lucide-react, App(), CATEGORIES, AltaPais(), RecetaNoEncontrada(), SoloAdmin(), SoloLogueados(), IngredientSearch() (+22 more)
+### Community 20 - "PlatoEstrella.tsx"
+Cohesion: 0.18
+Nodes (11): PlatoEstrella(), PlatoEstrellaProps, RecipeCard(), RecipeCardProps, tiltFor(), RecipeGrid(), RecipeGridProps, SKELETON_TILTS (+3 more)
 
-### Community 24 - "tiempos.ts"
-Cohesion: 0.21
-Nodes (12): PasoConTiempos(), PasoConTiemposProps, aNumero(), detectarTiempos(), formatearDuracion(), Fragmento, NUM, NUMEROS_EN_LETRAS (+4 more)
+### Community 24 - "ModoCocina.tsx"
+Cohesion: 0.13
+Nodes (21): ModoCocina(), ModoCocinaProps, PasoConTiempos(), PasoConTiemposProps, TemporizadoresBarra(), pitar(), Temporizador, Temporizadores (+13 more)
 
 ### Community 26 - "20261011_para_hacer_y_realizaciones.sql"
 Cohesion: 0.33
@@ -163,13 +169,13 @@ Nodes (6): public.para_hacer, public.perfiles, auth.users, public.recetas, publi
 Cohesion: 0.60
 Nodes (4): busquedas_uso_user_fecha, public.busquedas_uso, public.registrar_busqueda(), auth.users
 
-### Community 34 - "Recipe"
-Cohesion: 0.07
-Nodes (52): Bandera(), BanderaProps, DATOS, FichaPais(), DatosMapa, MapaMundi(), MapaMundiProps, PaisEditor() (+44 more)
+### Community 34 - "PaisPagina.tsx"
+Cohesion: 0.06
+Nodes (56): AltaPais(), Bandera(), BanderaProps, DATOS, FichaPais(), DatosMapa, MapaMundi(), MapaMundiProps (+48 more)
 
 ### Community 35 - "Mi Recetario — contexto del proyecto"
 Cohesion: 0.09
-Nodes (22): Búsqueda semántica, Camino feliz, verificado el 8 ago 2026, El Laboratorio (recetas candidatas), Empieza por el grafo, Estado actual (23 ago 2026), graphify, Hacia dónde puede crecer, La despensa (+14 more)
+Nodes (23): Avisos por correo y «Mi cuenta» (en curso), Búsqueda semántica, Camino feliz, verificado el 8 ago 2026, El Laboratorio (recetas candidatas), Empieza por el grafo, Estado actual (23 ago 2026), graphify, Hacia dónde puede crecer (+15 more)
 
 ### Community 36 - "generar-mapamundi.mjs"
 Cohesion: 0.20
@@ -180,8 +186,8 @@ Cohesion: 0.47
 Nodes (5): fotos_pais_pais_idx, public.fotos_pais, public.paises, recetas_pais_idx, public.recetas
 
 ### Community 40 - "Ideas para el Recetario"
-Cohesion: 0.15
-Nodes (13): Automatismos con n8n, Cocinar de verdad, Dar de alta con menos fricción, Decidido: la despensa NO guarda cantidades, Dos avisos de realidad, El punto de partida: datos que ya se pagan y se tiran — hecho, Encontrar recetas, Ideas para el Recetario (+5 more)
+Cohesion: 0.12
+Nodes (17): Automatismos con n8n, Avisos por correo y «Mi cuenta» — decidido el 10 de noviembre de 2026, Bot de Telegram para los afans — decidido el 10 de noviembre de 2026, Buzón de sugerencias de los afans — decidido el 10 de noviembre de 2026, Cocinar de verdad, Dar de alta con menos fricción, Decidido: la despensa NO guarda cantidades, Dos avisos de realidad (+9 more)
 
 ### Community 41 - "Mi pasaporte — plan"
 Cohesion: 0.18
@@ -189,19 +195,19 @@ Nodes (11): Administración (solo admin), Cambios del 17 de octubre de 2026, Cam
 
 ### Community 42 - "Pendientes"
 Cohesion: 0.18
-Nodes (11): Abierto en El Laboratorio, Cómo mantener esto, Deuda conocida, Estado por área (1 nov 2026), Ideas sin desarrollar ([ideas.md](ideas.md)), Mapa del proyecto, Pendientes, Propuesto (+3 more)
+Nodes (11): Abierto en El Laboratorio, Cómo mantener esto, Deuda conocida, Estado por área (10 nov 2026), Ideas sin desarrollar ([ideas.md](ideas.md)), Mapa del proyecto, Pendientes, Propuesto (+3 more)
 
 ### Community 43 - "Propuesta de `porciones` (aplicada el 7 nov 2026 en `porciones_num`)"
 Cohesion: 0.25
 Nodes (8): Aperitivos, Arroces y pastas, Carnes, Hallazgos que afectan al diseño, Pescados y mariscos / Ensaladas, Postres, Propuesta de `porciones` (aplicada el 7 nov 2026 en `porciones_num`), Sopas y cremas
 
 ### Community 45 - "Menús"
-Cohesion: 0.29
-Nodes (7): Decisiones tomadas, Escalado y lista de la compra, Fases, Menús, Modelo de datos (propuesta), Preguntas abiertas, Rutas e interfaz
+Cohesion: 0.25
+Nodes (8): Compartir, Decisiones tomadas, Escalado y lista de la compra, Fases, Menús, Modelo de datos (propuesta), Preguntas abiertas, Rutas e interfaz
 
-### Community 47 - "MenuEditor.tsx"
-Cohesion: 0.09
-Nodes (34): HojaImpresa(), Props, MenuCabecera(), Props, MenuCompra(), Props, MenuEditor(), MenuFila() (+26 more)
+### Community 47 - "types.ts"
+Cohesion: 0.06
+Nodes (73): lucide-react, Props, RecetaNoEncontrada(), SoloAdmin(), SoloLogueados(), Props, HojaImpresa(), Props (+65 more)
 
 ### Community 48 - "dependencies"
 Cohesion: 0.22
@@ -223,22 +229,38 @@ Nodes (3): @tailwindcss/vite, vite, @vitejs/plugin-react
 Cohesion: 0.40
 Nodes (5): Fase 0 — experimento (media tarde, antes de construir nada), Instagram, aparcada (14 oct 2026), Reels con Apify — HECHO y probado el 15 oct 2026, Resultado de 0a con un reel público (14 oct 2026), Resultado de 0a con YouTube (14 oct 2026)
 
+### Community 61 - "public.autores_sugerencias_hechas"
+Cohesion: 0.22
+Nodes (7): public.acreditar_sugerencia, acreditar_sugerencia, public.autores_sugerencias_hechas(), auth.users, public.perfiles, public.recetas, public.sugerencias
+
+### Community 62 - "20261110_avisos_recetas.sql"
+Cohesion: 0.32
+Nodes (6): public.preferencias_marca_cambio, preferencias_marca_cambio, public.destinatarios_avisos_recetas(), public.preferencias, auth.users, public.perfiles
+
+### Community 63 - "20261110_sugerencias.sql"
+Cohesion: 0.33
+Nodes (5): public.limitar_sugerencias, limitar_sugerencias, public.sugerencias, auth.users, sugerencias_user_id_idx
+
+### Community 64 - "public.ver_menu_compartido"
+Cohesion: 0.40
+Nodes (4): public.menu_recetas, public.menus, public.ver_menu_compartido(), public.perfiles
+
 ## Knowledge Gaps
-- **216 isolated node(s):** `name`, `private`, `version`, `type`, `dev` (+211 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 264 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **12 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **228 isolated node(s):** `name`, `private`, `version`, `type`, `dev` (+223 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 300 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **14 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `react` connect `errorMessage` to `Recipe`, `types.ts`, `DespensaSection.tsx`, `package.json`, `MenuEditor.tsx`, `App.tsx`?**
-  _High betweenness centrality (0.078) - this node is a cross-community bridge._
-- **Why does `lucide-react` connect `App.tsx` to `Recipe`, `types.ts`, `DespensaSection.tsx`, `package.json`, `errorMessage`, `MenuEditor.tsx`, `tiempos.ts`?**
+- **Why does `react` connect `errorMessage` to `PaisPagina.tsx`, `CandidataDetail.tsx`, `recipeContent.ts`, `package.json`, `types.ts`, `ModoCocina.tsx`?**
   _High betweenness centrality (0.075) - this node is a cross-community bridge._
-- **Why does `errorMessage()` connect `errorMessage` to `Recipe`, `App.tsx`, `types.ts`, `MenuEditor.tsx`?**
-  _High betweenness centrality (0.030) - this node is a cross-community bridge._
+- **Why does `lucide-react` connect `types.ts` to `PaisPagina.tsx`, `CandidataDetail.tsx`, `recipeContent.ts`, `package.json`, `errorMessage`, `PlatoEstrella.tsx`, `ModoCocina.tsx`?**
+  _High betweenness centrality (0.065) - this node is a cross-community bridge._
+- **Why does `errorMessage()` connect `errorMessage` to `PaisPagina.tsx`, `CandidataDetail.tsx`, `types.ts`?**
+  _High betweenness centrality (0.042) - this node is a cross-community bridge._
 - **What connects `name`, `private`, `version` to the rest of the system?**
-  _216 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _228 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Mi Recetario (SPA)` be split into smaller, more focused modules?**
   _Cohesion score 0.07777777777777778 - nodes in this community are weakly interconnected._
 - **Should `compilerOptions` be split into smaller, more focused modules?**

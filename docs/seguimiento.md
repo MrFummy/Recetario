@@ -69,14 +69,13 @@ registro de abajo).
 ### Propuesto
 1. ~~**Compartir menús**~~ **Hecho el 10 nov**: tres niveles (privado, afans, enlace); ver
    [menus.md § Compartir](menus.md). Con esto el plan de menús queda cerrado.
-2. **Avisos de recetas nuevas por correo (opt-in) y «Mi cuenta»**: *en curso*. Pasos 1 (base de datos) y 2
-   («Mi cuenta», `#/cuenta`) hechos el 10 nov, **sin desplegar** hasta que el flujo envíe correos. Faltan el
-   webhook de base de datos y el flujo de n8n. Diseño en
+2. ~~**Avisos de recetas nuevas por correo (opt-in) y «Mi cuenta»**~~ **Hecho y desplegado el 10 nov**:
+   flujo de n8n «Aviso de nuevas recetas» por sondeo (`recetas.aviso_enviado_en`), probado con el admin como
+   único destinatario. Diseño en
    [ideas.md](ideas.md#avisos-por-correo-y-mi-cuenta--decidido-el-10-de-noviembre-de-2026).
-   El panel de gestión de usuarios (admin) se descartó por ahora.
 3. **Copia de seguridad semanal a Drive** (sugerencia; pendiente de visto bueno).
-4. **Buzón de sugerencias de los afans**: decidido, sin empezar; reutiliza la infraestructura de los
-   avisos. [Diseño](ideas.md#buzón-de-sugerencias-de-los-afans--decidido-el-10-de-noviembre-de-2026).
+4. ~~**Buzón de sugerencias de los afans**~~ **Hecho y desplegado el 10 nov**: `#/buzon`, aviso al admin por
+   Telegram, crédito «Sugerida por» y correo al autor. [Diseño](ideas.md#buzón-de-sugerencias-de-los-afans--decidido-el-10-de-noviembre-de-2026).
 5. **Bot de Telegram para los afans** (segundo bot, vinculación desde «Mi cuenta», consultas,
    recordatorios de menús): decidido, sin empezar.
    [Diseño](ideas.md#bot-de-telegram-para-los-afans--decidido-el-10-de-noviembre-de-2026).
@@ -88,9 +87,10 @@ registro de abajo).
    cerdo con salsa de castañas*), que hoy quedan sin `porciones_num` y fuera de las listas.
 
 ### Sin verificar
+- **Buzón en producción** (10 nov): probado en desarrollo con la sesión del admin; no como afan normal, ni el
+  mensaje de Telegram en el móvil, ni el desplegable «Receta creada» en el navegador.
 - **Cambiar la contraseña y el correo desde «Mi cuenta»** (10 nov): solo se probaron las validaciones. Supabase puede
-  pedir reautenticación para la contraseña, y para el correo manda un enlace de confirmación: antes de
-  desplegarlo, comprobar cómo salen hoy los correos de Supabase Auth (si usan su servicio por defecto, tienen
+  pedir reautenticación para la contraseña, y para el correo manda un enlace de confirmación: (ya desplegado) comprobar cómo salen hoy los correos de Supabase Auth (si usan su servicio por defecto, tienen
   un límite de envíos muy bajo).
 - En un móvil real: la vibración de los temporizadores, que la pantalla siga
   encendida con uno en marcha y el manejo con el pulgar del modo cocina.
@@ -178,6 +178,8 @@ formato absoluto.
 | 10 nov 2026 | Menús, fase 5: compartir. `menus.visibilidad` (privado, afans, enlace), `ver_menu_compartido` para el enlace, vista de solo lectura, control en el editor y sección «Menús de los afans» | — | Migración `20261110_compartir_menus.sql`. El enlace NO usa una policy pública (listaría todos los menús): lo sirve una función `SECURITY DEFINER` que devuelve uno por id. RLS verificadas simulando roles; probado con y sin sesión, y desplegado el 10 nov: el flujo anónimo, comprobado también en la web real |
 | 10 nov 2026 | Avisos por correo, paso 1: tabla `preferencias` (opt-in, RLS) y `destinatarios_avisos_recetas()` solo para `service_role`; plan acordado de las ideas nuevas; corregido que n8n está autoalojado, no es Cloud | — | Migración `20261110_avisos_recetas.sql`, verificada simulando roles. Solo recibe correo quien lo pidió Y tiene el correo confirmado |
 | 10 nov 2026 | «Mi cuenta» (`#/cuenta`): nombre, correo, contraseña, interruptor de avisos y cerrar sesión; hook `usePreferencias`; icono de cuenta en la cabecera | — | Sin desplegar: el interruptor aún no envía nada. Cabecera: cerrar sesión solo en «Mi cuenta» por debajo de `sm`, sin insignia admin/afan; medida sin desborde de 375 a 1280 px. Probado el interruptor y las validaciones; no el cambio real de contraseña ni de correo |
+| 10 nov 2026 | Avisos por correo, paso 3: flujo de n8n «Aviso de nuevas recetas» (sondeo cada 5 min, marca `aviso_enviado_en`); «Mi cuenta» y avisos desplegados | `8b93ad5` | Probado de punta a punta con el admin como único destinatario; datos de prueba borrados |
+| 10 nov 2026 | Buzón de sugerencias: tabla `sugerencias` (RLS, 5 al día, correo confirmado), `#/buzon`, aviso al admin por Telegram (flujo «Aviso de sugerencias»), crédito `recetas.sugerida_por` y correo al autor (flujo «Aviso al autor de una sugerencia») | varios | Migraciones `20261110_sugerencias*.sql`; RLS simuladas por rol; desplegado |
 
 ---
 
