@@ -54,7 +54,7 @@ borrado exigen además que el email sea el del admin). No hay backend propio.
 | Mi Pasaporte | Fases 1-3 hechas; admin verificada con sesión | 21 oct 2026 | [pasaporte.md](pasaporte.md) |
 | Mirón y registrado | Hecho; probado solo como visitante | 30 oct 2026 | [CLAUDE.md § Mirón y registrado](../CLAUDE.md) |
 | `porciones_num` | Hecho: 74 recetas, y el alta de n8n lo estima y lo guarda desde el 10 nov | 7 nov 2026; el alta, sin probar de punta a punta | [CLAUDE.md § porciones_num](../CLAUDE.md) |
-| Menús | Hecho y desplegado: editor por pases, lista de la compra escalada, imprimir como las recetas. Solo falta compartir | 10 nov 2026, con sesión real en dev; la impresión la revisó el admin | [menus.md](menus.md) |
+| Menús | Hecho: editor por pases, lista de la compra escalada, imprimir como las recetas y compartir (privado, afans, enlace). Plan cerrado | 10 nov 2026, con sesión real en dev; la impresión la revisó el admin | [menus.md](menus.md) |
 | Despliegue | `npm run deploy:mac` al NAS; gzip activo con la ruta real del `user.conf` | 10 nov 2026 (170 KB con gzip, 607 KB sin él) | [README](../README.md) |
 | Leaked password protection | No aplicable (requiere plan Pro) | 2026 | aviso permanente del linter |
 
@@ -67,8 +67,8 @@ de receta, para hacer, modo cocina y búsqueda semántica están hechos (ver el
 registro de abajo).
 
 ### Propuesto
-1. **Compartir menús**, con los afans en lectura o por enlace. Está previsto en
-   [menus.md](menus.md) y se dejó para más adelante; exigirá una policy de lectura nueva.
+1. ~~**Compartir menús**~~ **Hecho el 10 nov**: tres niveles (privado, afans, enlace); ver
+   [menus.md § Compartir](menus.md). Con esto el plan de menús queda cerrado.
 2. **Detección de duplicados al dar de alta**, comparando el vector de la receta nueva con
    `recetas_embeddings`. Es lo más barato que queda.
 3. ~~**Que el alta rellene `porciones_num`**~~ **Hecho el 10 nov** en el flujo «Recetas con Frontend»
@@ -101,6 +101,9 @@ ordenar por dificultad, y backfill de `tiempo`/`porciones`/`dificultad` de las
 antiguas.
 
 ### Deuda conocida
+- Compartir menús: la base de datos avisa en el linter de que `anon` y `authenticated` ejecutan
+  `ver_menu_compartido` (`SECURITY DEFINER`): es intencionado. Además, quien abre un menú que no
+  existe sin sesión ve el enlace «← Mis menús», que le pide iniciar sesión; es un detalle menor.
 - ~~**La cabecera desborda en móvil**~~ **Arreglada el 7 nov.** Medido el desborde a 375 px (408 px de ancho para un afan, 488 para el admin) y a 640 px (hasta 587 px de más para el admin): ya pasaba antes de «Menús». Ahora el título solo sale desde `sm`; las etiquetas del menú desde `lg` (Laboratorio y Nueva, solo admin, desde `xl`, igual que la insignia «admin»); por debajo son iconos con `aria-label` y `title`. Sin desborde en 375, 640, 768, 1024, 1100 y 1280 px, como admin y como afan.
 - Receta *Carbonara Udon* (31 oct): `base` incoherentes (`yema de huevo` en vez de
   `huevo`, `queso parmesano`), `tiempo` y `dificultad` guardados como `""` y
@@ -156,6 +159,7 @@ formato absoluto.
 | 9 nov 2026 | Despliegue de la fase 3, la fase 4 y el PDF con el estilo de las recetas | — | Tres despliegues; la hoja del menú la revisó el admin y la ve bien |
 | 10 nov 2026 | Repaso: grafo actualizado (658 nodos), `CLAUDE.md` corregido —el grafo no tiene capa semántica desde el 5 ago—, este panel reordenado y ficha de Notion al día | — | La capa semántica no la perdió ninguna actualización reciente: ya faltaba en la reconstrucción del 5 ago |
 | 10 nov 2026 | El alta de n8n rellena `porciones_num`: `Vertex AI` lo pide con reglas, `Limpia respuesta` lo normaliza (y lo saca de `porciones` si falta) y `Guardar en Supabase` lo escribe | — | Versión `3a62fac0` del flujo, publicada y comprobada (parámetros idénticos a lo esperado, sin claves anidadas, `activeVersionId` = la editada). Cambio solo en n8n; sin probar de punta a punta |
+| 10 nov 2026 | Menús, fase 5: compartir. `menus.visibilidad` (privado, afans, enlace), `ver_menu_compartido` para el enlace, vista de solo lectura, control en el editor y sección «Menús de los afans» | — | Migración `20261110_compartir_menus.sql`. El enlace NO usa una policy pública (listaría todos los menús): lo sirve una función `SECURITY DEFINER` que devuelve uno por id. RLS verificadas simulando roles; probado con y sin sesión |
 
 ---
 

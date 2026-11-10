@@ -4,7 +4,7 @@ import { errorMessage } from '../lib/errors';
 import type { Menu, MenuReceta, Pase } from '../types';
 
 /** Lo que se puede cambiar de un menú desde su cabecera. */
-export type CambiosMenu = Partial<Pick<Menu, 'nombre' | 'ocasion' | 'fecha' | 'comensales' | 'notas'>>;
+export type CambiosMenu = Partial<Pick<Menu, 'nombre' | 'ocasion' | 'fecha' | 'comensales' | 'notas' | 'visibilidad'>>;
 
 export interface MenuAbierto {
   menu: Menu | null;

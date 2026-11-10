@@ -1,4 +1,4 @@
-import type { Menu, MenuReceta, Pase, Recipe } from '../types';
+import type { Menu, MenuReceta, Pase, Recipe, Visibilidad } from '../types';
 import { listaDeLaCompra, type ItemListaCompra } from './listaCompra';
 import type { Escala } from './escalado';
 
@@ -54,3 +54,10 @@ export function listaDelMenu(
   }
   return listaDeLaCompra(recipes, new Set(escalas.keys()), tengo, escalas);
 }
+
+/** Los tres niveles de visibilidad de un menú, con lo que significa cada uno. */
+export const VISIBILIDADES: { id: Visibilidad; titulo: string; detalle: string }[] = [
+  { id: 'privado', titulo: 'Privado', detalle: 'Solo tú lo ves.' },
+  { id: 'afans', titulo: 'Los afans', detalle: 'Cualquier usuario con sesión, desde su lista de menús.' },
+  { id: 'enlace', titulo: 'Enlace', detalle: 'Cualquiera con el enlace, también sin cuenta.' },
+];

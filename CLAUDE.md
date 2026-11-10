@@ -390,7 +390,7 @@ contaría dos veces.
 
 **Fases 1 y 2 el 7 de noviembre de 2026; las 3 (lista de la compra escalada) y 4 (imprimir), el 9**: base de datos y el frontend en
 `#/menus` y `#/menu/<id>` (crear, comensales, recetas por pase, subir/bajar y `raciones` por receta) ([MenusSection.tsx](src/components/MenusSection.tsx)),
-solo con sesión. **Solo queda compartir** (con los afans o por enlace), pensado para más adelante.
+solo con sesión. Y el 10, **compartirlos**: el plan de menús queda cerrado.
 Un menú es una selección de recetas para una ocasión (no una semana), con comensales y
 organizada por pases; del menú saldrá la lista de la compra escalada. Diseño y fases en
 [docs/menus.md](docs/menus.md); tablas `menus` y `menu_recetas`
@@ -439,8 +439,21 @@ organizada por pases; del menú saldrá la lista de la compra escalada. Diseño 
   Verificado emulando el estilo de impresión (convirtiendo las reglas `@media print` en reglas de
   pantalla) con un menú de 25 recetas: 5 hojas de 210 × 296 mm, ninguna con desborde ni solapada
   con el pie; el admin la revisó impresa el 10 de noviembre y la ve bien.
+- **Compartir** ([la migración](supabase/migrations/20261110_compartir_menus.sql)): `menus.visibilidad`
+  es `privado` (por defecto), `afans` (cualquier usuario con sesión) o `enlace` (cualquiera con el
+  enlace, sin cuenta). **El enlace NO se abre con una policy de lectura pública sobre `menus`**: con
+  ella, cualquiera con la clave anónima —que va en el bundle— listaría todos los menús compartidos.
+  Lo sirve `ver_menu_compartido(id)`, `SECURITY DEFINER`: devuelve un menú por su id, sin `user_id`, y
+  `null` si no existe, es privado o es «afans» sin sesión (no distingue entre «no existe» y «no es
+  tuyo»). El nombre del autor solo sale con sesión. **El linter avisa de que `anon` y `authenticated`
+  pueden ejecutarla: es intencionado.** Los menús «afans» sí se abren a `select` de la tabla (una
+  policy en `menus` y otra en `menu_recetas`, solo `authenticated`); la escritura sigue siendo del
+  autor. **Como la tabla ya devuelve menús ajenos, `useMenus` filtra «Mis menús» por `user_id`**: la
+  RLS no basta. `#/menu/<id>` ya no pasa por `SoloLogueados` (`MenuPagina` decide: vista de solo
+  lectura, editor o «no existe»); `#/menus` sí. Se comparten también las notas. Detalle en
+  [docs/menus.md § Compartir](docs/menus.md).
 - Verificado simulando roles (otro usuario, dueño y anónimo) en una transacción que se
-  revierte; el linter no añade avisos.
+  revierte; el linter no añade avisos, salvo los dos de `ver_menu_compartido` descritos arriba.
 
 ## Modo cocina
 

@@ -6,6 +6,7 @@ import { useMenu } from '../hooks/useMenu';
 import { PASES, listaDelMenu, paseSegunCategoria } from '../lib/menus';
 import { aHash } from '../lib/rutas';
 import { MenuCabecera } from './MenuCabecera';
+import { MenuCompartir } from './MenuCompartir';
 import { MenuFila } from './MenuFila';
 import { MenuCompra } from './MenuCompra';
 import { MenuImprimible } from './MenuImprimible';
@@ -54,7 +55,7 @@ export function MenuEditor({ id, recipes, despensa }: Props) {
       <div className="max-w-3xl mx-auto">
         <div className="mb-6">{volver}</div>
         <p className="font-mono text-[12.5px] text-ink-soft border-2 border-dashed border-ink/20 px-4 py-5">
-          {noEncontrado ? 'Este menú no existe, o no es tuyo.' : error}
+          {noEncontrado ? 'Este menú no existe, no está compartido o no es tuyo.' : error}
         </p>
       </div>
     );
@@ -77,6 +78,10 @@ export function MenuEditor({ id, recipes, despensa }: Props) {
         </div>
 
         <MenuCabecera key={menu.id} menu={menu} onCambiar={(c) => void actualizar(c)} />
+
+        <div className="mt-6">
+          <MenuCompartir menu={menu} onCambiar={(visibilidad) => void actualizar({ visibilidad })} />
+        </div>
 
         {error && <p className="mt-4 font-mono text-[11px] text-hot leading-snug">{error}</p>}
 

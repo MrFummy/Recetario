@@ -3,7 +3,7 @@ import type { Recipe } from '../types';
 import type { Despensa } from '../hooks/useDespensa';
 import type { Ruta } from '../lib/rutas';
 import { MenusLista } from './MenusLista';
-import { MenuEditor } from './MenuEditor';
+import { MenuPagina } from './MenuPagina';
 
 interface Props {
   ruta: Extract<Ruta, { vista: 'menus' | 'menu' }>;
@@ -15,6 +15,6 @@ interface Props {
 /** `#/menus` es la lista; `#/menu/<id>`, un menú abierto. */
 export function SeccionMenus({ ruta, recipes, despensa, user }: Props) {
   return ruta.vista === 'menu'
-    ? <MenuEditor key={ruta.id} id={ruta.id} recipes={recipes} despensa={despensa} />
+    ? <MenuPagina key={ruta.id} id={ruta.id} recipes={recipes} despensa={despensa} user={user} />
     : <MenusLista user={user} />;
 }

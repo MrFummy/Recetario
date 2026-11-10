@@ -101,10 +101,14 @@ export interface Candidata {
 /** Los pases de un menú, en el orden en que se sirven. */
 export type Pase = 'aperitivo' | 'entrante' | 'principal' | 'postre' | 'otro';
 
+/** Quién puede ver un menú: solo su autor, cualquier usuario con sesión, o cualquiera con el enlace. */
+export type Visibilidad = 'privado' | 'afans' | 'enlace';
+
 /** Un menú: recetas para una ocasión, con comensales (tabla `menus`). */
 export interface Menu {
   id: string;
   user_id: string;
+  visibilidad: Visibilidad;
   nombre: string;
   ocasion: string | null;
   fecha: string | null;
@@ -121,4 +125,16 @@ export interface MenuReceta {
   orden: number;
   /** `null` significa «las del menú», es decir, los comensales. */
   raciones: number | null;
+}
+
+/**
+ * Lo que devuelve `ver_menu_compartido`: un menú ajeno (o el propio, si está compartido) sin
+ * `user_id` —quien abre un enlace no debe saber de quién es la cuenta—, con el nombre del autor
+ * solo si quien pregunta tiene sesión.
+ */
+export interface MenuCompartido {
+  menu: Omit<Menu, 'user_id'>;
+  es_mio: boolean;
+  autor: string | null;
+  recetas: Omit<MenuReceta, 'menu_id'>[];
 }

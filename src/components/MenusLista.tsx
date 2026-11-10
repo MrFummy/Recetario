@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import type { User } from '@supabase/supabase-js';
-import { Trash2, Users } from 'lucide-react';
+import { Share2, Trash2, Users } from 'lucide-react';
 import { useMenus } from '../hooks/useMenus';
 import { irA } from '../hooks/useRuta';
 import { aHash } from '../lib/rutas';
 
 /** Los menús del usuario, con un formulario mínimo para crear otro. */
 export function MenusLista({ user }: { user: User | null }) {
-  const { menus, loading, error, crear, borrar } = useMenus(user);
+  const { menus, compartidos, loading, error, crear, borrar } = useMenus(user);
   const [nombre, setNombre] = useState('');
   const [creando, setCreando] = useState(false);
 
@@ -75,6 +75,11 @@ export function MenusLista({ user }: { user: User | null }) {
           {menus.map((m) => (
             <li key={m.id} className="flex items-center justify-between gap-3 py-3 border-b border-dashed border-ink/15">
               <a href={aHash({ vista: 'menu', id: m.id })} className="min-w-0 flex-1 group">
+                {m.visibilidad !== 'privado' && (
+                  <span className="inline-flex items-center gap-1 mb-0.5 font-mono text-[10.5px] uppercase tracking-wider text-accent">
+                    <Share2 size={11} /> {m.visibilidad === 'afans' ? 'Con los afans' : 'Por enlace'}
+                  </span>
+                )}
                 <span className="block text-ink text-[16px] font-semibold group-hover:text-accent truncate">
                   {m.nombre}
                 </span>
@@ -101,6 +106,38 @@ export function MenusLista({ user }: { user: User | null }) {
           ))}
         </ul>
       )}
+
+      <section className="mt-14">
+        <h3 className="font-display font-black text-2xl text-ink mb-1">Menús de los afans</h3>
+        <p className="font-mono text-[11.5px] text-ink-soft leading-snug mb-3">
+          Los que otros han compartido con todos los usuarios. Los compartidos solo por enlace no salen aquí.
+        </p>
+        {compartidos.length === 0 ? (
+          <p className="font-mono text-[12.5px] text-ink-soft leading-relaxed border-2 border-dashed border-ink/20 px-4 py-5">
+            Aún nadie ha compartido ningún menú con los afans.
+          </p>
+        ) : (
+          <ul className="list-none p-0 m-0 border-t border-dashed border-ink/20">
+            {compartidos.map((m) => (
+              <li key={m.id} className="flex items-center justify-between gap-3 py-3 border-b border-dashed border-ink/15">
+                <a href={aHash({ vista: 'menu', id: m.id })} className="min-w-0 flex-1 group">
+                  <span className="block text-ink text-[16px] font-semibold group-hover:text-accent truncate">{m.nombre}</span>
+                  <span className="block font-mono text-[11.5px] text-ink-soft">
+                    {[
+                      m.autor ? `de ${m.autor}` : 'de un afan',
+                      m.ocasion,
+                      `${m.recetas} ${m.recetas === 1 ? 'receta' : 'recetas'}`,
+                    ].filter(Boolean).join(' · ')}
+                  </span>
+                </a>
+                <span className="flex items-center gap-1 font-mono text-[12px] text-ink-soft shrink-0">
+                  <Users size={13} /> {m.comensales}
+                </span>
+              </li>
+            ))}
+          </ul>
+        )}
+      </section>
     </div>
   );
 }

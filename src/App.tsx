@@ -187,7 +187,11 @@ function App() {
           <SoloLogueados sesionCargada={sesionCargada} logueado={!!user} seccion="la lista de la compra" onLogin={() => setShowLoginModal(true)}>
             <SeccionListaCompra recipes={recipes} despensa={despensa} paraHacer={paraHacer} />
           </SoloLogueados>
-        ) : (ruta.vista === 'menus' || ruta.vista === 'menu') ? (
+        ) : ruta.vista === 'menu' ? (
+          // Sin SoloLogueados: un menú compartido por enlace se abre sin cuenta. Qué se ve lo decide
+          // la base de datos; si no hay nada que enseñar, el propio componente lo dice.
+          <SeccionMenus ruta={ruta} recipes={recipes} despensa={despensa} user={user} />
+        ) : ruta.vista === 'menus' ? (
           <SoloLogueados sesionCargada={sesionCargada} logueado={!!user} seccion="tus menús" onLogin={() => setShowLoginModal(true)}>
             <SeccionMenus ruta={ruta} recipes={recipes} despensa={despensa} user={user} />
           </SoloLogueados>
