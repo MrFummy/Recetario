@@ -675,10 +675,28 @@ que las secciones que no se tocaron ya heredan la paleta.
   de la fuente (Instagram, YouTube…) en la esquina, el estado sobre la foto (amarillo «por probar», verde «probada»)
   y un **número de muestra** que sale de la antigüedad y no cambia al filtrar. Nombre, ruta (`#/laboratorio`) y flujo
   de n8n se mantienen: renombrarlo implica tocar los tres.
+- **PDF y correos (10 nov 2026)**: las fuentes viven en [n8n/](n8n/) y se copian a n8n a mano (no hay despliegue
+  automático). [receta-pdf.html](n8n/receta-pdf.html) es la plantilla del PDF —**subida a Drive como «Receta -
+  Plantilla n8n v3 mercado y azulejo.html»** (`1IWUaLVN5ygOmfvBPSSlRl9a3nDuSoOZ7`); la v2 de cuaderno sigue en Drive,
+  para volver cambiando el ID de `Leer plantilla HTML`— y [rellenar-html.js](n8n/rellenar-html.js) es el nodo
+  `Rellenar HTML` de «Recetas con Frontend» (color por categoría, todo escapado). Los cinco correos salen de
+  [correo-base.js](n8n/correo-base.js): `node n8n/generar-correos.mjs vista <html>` los dibuja con datos de ejemplo y
+  `nodos <carpeta>` saca los textos para pegar. Los tres de «Recetas con Frontend» (compartir, receta añadida, error)
+  llevan la plantilla en una expresión del nodo Gmail; «Aviso de nuevas recetas» y «Aviso al autor» la llevan dentro
+  del nodo `Montar correos`. **Si se cambia `correo-base.js`, hay que volver a pegarlo en esos cinco sitios.** El logo
+  de los correos se sirve desde el propio sitio (`recetario.orballo.link/icon-256.png`): no borrarlo del build.
+  Versión previa del flujo principal: `3a62fac0`. **Probado de punta a punta el 10 de noviembre de 2026** con una
+  alta real (PDF de Gotenberg, correo de «receta añadida», aviso a los afans y correo de error): todo bien.
+  **Trampa que mordió en esa prueba**: el alta nombra la foto por el título (`<Título>.jpg`) y la sube
+  sobrescribiendo, y el borrado busca la fila de Google Sheets por título. **Dar de alta una receta con un título que
+  ya existe pisa la foto de la anterior y, al borrar, puede llevarse su fila de Sheets**. Para probar el alta, usar
+  un PDF cuyo título no exista. Pendiente: darle a la foto un nombre único.
+  Pendiente: los PDF ya generados (77) siguen en estilo cuaderno, las hojas de menús impresas (`.hoja*`), y las
+  plantillas de correo de Supabase Auth (confirmar cuenta, restablecer contraseña), que se editan en su panel.
 - **`sistema.css` va dentro de `@layer components`**: sin capa, el CSS suelto gana siempre a las utilidades de
   Tailwind (un `flex` no podía con un `display: block` de una clase propia). Las utilidades ganan donde coinciden.
-- **Pendiente de decidir**: las hojas impresas (`.hoja*`) y la plantilla de n8n para los PDF siguen con la estética
-  de cuaderno; solo cambian de color porque comparten tokens. Si se llevan al nuevo sistema, hay que volver a medir
+- **Pendiente de decidir**: las hojas impresas de los menús (`.hoja*`) siguen con la estética de cuaderno; solo
+  cambian de color porque comparten tokens. Si se llevan al nuevo sistema, hay que volver a medir
   `ALTO`/`ALTO_UTIL` de `MenuImprimible.tsx`.
 - Verificado sin desborde horizontal de 375 a 1280 px en las ocho vistas principales. Sin revisar a mano: el modo
   oscuro (no existe), los temporizadores del modo cocina y el editor de menús.
