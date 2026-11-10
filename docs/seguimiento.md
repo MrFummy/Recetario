@@ -53,7 +53,7 @@ borrado exigen además que el email sea el del admin). No hay backend propio.
 | El Laboratorio (candidatas) | Hecho, reels por Apify; Instagram aparcada | 15 oct 2026 | [candidatas.md](candidatas.md) |
 | Mi Pasaporte | Fases 1-3 hechas; admin verificada con sesión | 21 oct 2026 | [pasaporte.md](pasaporte.md) |
 | Mirón y registrado | Hecho; probado solo como visitante | 30 oct 2026 | [CLAUDE.md § Mirón y registrado](../CLAUDE.md) |
-| `porciones_num` | Hecho: 74 recetas; las altas nuevas nacen a `null` | 7 nov 2026 | [CLAUDE.md § porciones_num](../CLAUDE.md) |
+| `porciones_num` | Hecho: 74 recetas, y el alta de n8n lo estima y lo guarda desde el 10 nov | 7 nov 2026; el alta, sin probar de punta a punta | [CLAUDE.md § porciones_num](../CLAUDE.md) |
 | Menús | Hecho y desplegado: editor por pases, lista de la compra escalada, imprimir como las recetas. Solo falta compartir | 10 nov 2026, con sesión real en dev; la impresión la revisó el admin | [menus.md](menus.md) |
 | Despliegue | `npm run deploy:mac` al NAS; gzip activo con la ruta real del `user.conf` | 10 nov 2026 (170 KB con gzip, 607 KB sin él) | [README](../README.md) |
 | Leaked password protection | No aplicable (requiere plan Pro) | 2026 | aviso permanente del linter |
@@ -71,8 +71,8 @@ registro de abajo).
    [menus.md](menus.md) y se dejó para más adelante; exigirá una policy de lectura nueva.
 2. **Detección de duplicados al dar de alta**, comparando el vector de la receta nueva con
    `recetas_embeddings`. Es lo más barato que queda.
-3. **Que el alta rellene `porciones_num`**: el flujo de n8n no lo hace, así que una receta
-   nueva no se puede escalar en un menú hasta que alguien lo ponga. Vertex podría estimarlo.
+3. ~~**Que el alta rellene `porciones_num`**~~ **Hecho el 10 nov** en el flujo «Recetas con Frontend»
+   (ver abajo, «Sin verificar»).
 4. **Rellenar las dos recetas sin ingredientes** (*Receta de Alitas Buffalo* y *Solomillo de
    cerdo con salsa de castañas*), que hoy quedan sin `porciones_num` y fuera de las listas.
 
@@ -82,6 +82,9 @@ registro de abajo).
 - Con sesión de admin: subir una foto real al Pasaporte, guardar el contexto de
   un país y quitar un país con recetas.
 - Mirón y registrado, con sesión iniciada (solo se probó como visitante).
+- **El alta con `porciones_num`** (n8n, 10 nov): no se pudo probar de punta a punta, porque el webhook
+  exige sesión de admin. Con la próxima receta que se dé de alta, comprobar que `porciones_num` queda
+  con un entero razonable; si el alta falla, restaurar la versión `4397ffb8` del flujo.
 - Los menús en producción con sesión: se probaron en desarrollo contra la base real, pero el
   navegador del panel no tiene sesión en `recetario.orballo.link`.
 
@@ -152,6 +155,7 @@ formato absoluto.
 | 9 nov 2026 | Gzip del NAS: la carpeta del `user.conf` es la del **servicio** (`9ea3124c-…`), no la del portal (`fe681dc0-…`, que no existe); el README estaba mal | `c97eb5c`, `fda88f7` | El `include` termina en `*` y nginx ignora sin error un fichero ausente, por eso nadie lo notó. Medido: 170 KB con gzip frente a 607 KB sin él |
 | 9 nov 2026 | Despliegue de la fase 3, la fase 4 y el PDF con el estilo de las recetas | — | Tres despliegues; la hoja del menú la revisó el admin y la ve bien |
 | 10 nov 2026 | Repaso: grafo actualizado (658 nodos), `CLAUDE.md` corregido —el grafo no tiene capa semántica desde el 5 ago—, este panel reordenado y ficha de Notion al día | — | La capa semántica no la perdió ninguna actualización reciente: ya faltaba en la reconstrucción del 5 ago |
+| 10 nov 2026 | El alta de n8n rellena `porciones_num`: `Vertex AI` lo pide con reglas, `Limpia respuesta` lo normaliza (y lo saca de `porciones` si falta) y `Guardar en Supabase` lo escribe | — | Versión `3a62fac0` del flujo, publicada y comprobada (parámetros idénticos a lo esperado, sin claves anidadas, `activeVersionId` = la editada). Cambio solo en n8n; sin probar de punta a punta |
 
 ---
 

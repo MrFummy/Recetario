@@ -129,5 +129,5 @@ el factor antes de sumar. Reglas:
   abierto si conviene marcarlas en la receta.
 - **Orden dentro de un pase**: se hizo con botones subir/bajar. Arrastrar exigiría
   una librería; se retoma solo si estorba.
-- **Recetas nuevas sin `porciones_num`**: el alta de n8n no la rellena. Si los menús
-  se usan mucho, convendrá que Vertex la estime al dar de alta.
+- ~~**Recetas nuevas sin `porciones_num`**~~ **Resuelto el 10 nov**: el alta de n8n lo estima y lo
+  guarda (ver [CLAUDE.md](../CLAUDE.md)). Falta confirmarlo con la próxima receta que se dé de alta.

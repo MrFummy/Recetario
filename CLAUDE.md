@@ -373,8 +373,14 @@ no, un menú para 4 pediría 4/30 de tanda. Los valores son estimaciones mías r
 con el admin (la tabla y su fiabilidad A/M/B están en
 [docs/porciones-propuesta.md](docs/porciones-propuesta.md)): 74 recetas con valor.
 **Quedan en `null` las alitas buffalo y el solomillo de cerdo con castañas**, que no
-tienen ingredientes en la BD. El alta de n8n no la rellena: **una receta nueva nace
-con `porciones_num` a `null`** hasta que alguien la ponga. Antes de escalar, hay que
+tienen ingredientes en la BD. **El alta la rellena desde el 10 de noviembre de 2026** (flujo «Recetas con Frontend», versión
+`3a62fac0`): el prompt del nodo `Vertex AI` pide `porciones_num` con sus reglas (raciones de plato,
+no piezas; nunca `null`), `Limpia respuesta` lo normaliza a un entero de 1 a 99 —y lo saca de
+`porciones` si el modelo no lo da, que es lo que pasa con las candidatas del Laboratorio; un rango
+dio su punto medio— y `Guardar en Supabase` lo escribe. **Sin probar de punta a punta**: el webhook
+exige sesión de admin y un alta real crea receta, PDF, Notion y correo; se comprobará con la próxima
+receta que se dé de alta (`select titulo, porciones, porciones_num from recetas order by created_at
+desc limit 3`). Para revertir, restaurar en n8n la versión `4397ffb8`. Antes de escalar, hay que
 tratar aparte las 6 recetas que ya llevan alguna cantidad «por persona» (risotto,
 tallarines con pesto, wok de tallarines, pescado al papillote, peras y sabayon) y la
 Brochetas Caprese, cuyos ingredientes ya van «por brocheta»: multiplicarlas sin más
