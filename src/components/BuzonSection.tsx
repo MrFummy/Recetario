@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import type { User } from '@supabase/supabase-js';
+import type { Recipe } from '../types';
 import { ArrowLeft, ExternalLink, Trash2 } from 'lucide-react';
 import { useSugerencias, type EstadoSugerencia, type Sugerencia } from '../hooks/useSugerencias';
 import { errorMessage } from '../lib/errors';
@@ -8,6 +9,7 @@ import { aHash } from '../lib/rutas';
 interface Props {
   user: User;
   isAdmin: boolean;
+  recipes: Recipe[];
 }
 
 const ETIQUETA: Record<EstadoSugerencia, string> = {
@@ -30,10 +32,12 @@ function EnlaceSeguro({ url }: { url: string }) {
   );
 }
 
-function Fila({ s, esAdmin, onEstado, onBorrar }: {
+function Fila({ s, esAdmin, recipes, onEstado, onReceta, onBorrar }: {
   s: Sugerencia;
   esAdmin: boolean;
+  recipes: Recipe[];
   onEstado: (e: EstadoSugerencia) => void;
+  onReceta: (id: string | null) => void;
   onBorrar: () => void;
 }) {
   const puedeBorrar = esAdmin || s.estado === 'pendiente';
@@ -44,7 +48,26 @@ function Fila({ s, esAdmin, onEstado, onBorrar }: {
           {s.enlace && <div><EnlaceSeguro url={s.enlace} /></div>}
           {s.texto && <p className="m-0 whitespace-pre-wrap">{s.texto}</p>}
           {s.nota && <p className="m-0 mt-1 text-ink-soft">«{s.nota}»</p>}
-          <p className="m-0 mt-1 text-[11px] text-ink-soft">{new Date(s.created_at).toLocaleDateString('es-ES')}</p>
+          <p className="m-0 mt-1 text-[11px] text-ink-soft">
+            {new Date(s.created_at).toLocaleDateString('es-ES')}
+            {esAdmin && !s.citar && ' · no quiere que la citen'}
+          </p>
+          {esAdmin && s.estado === 'hecha' && (
+            <label className="mt-2 flex items-center gap-2 text-[11.5px] text-ink-soft">
+              Receta creada
+              <select
+                value={s.receta_id ?? ''}
+                onChange={(e) => onReceta(e.target.value || null)}
+                className="px-2 py-1 bg-white border-2 border-ink/30 rounded-md font-mono text-[11.5px] max-w-[220px]"
+              >
+                <option value="">— elegir —</option>
+                {recipes.map((r) => <option key={r.id} value={r.id}>{r.titulo}</option>)}
+              </select>
+            </label>
+          )}
+          {!esAdmin && s.estado === 'hecha' && s.receta_id && (
+            <p className="m-0 mt-1"><a href={aHash({ vista: 'receta', id: s.receta_id })} className="text-accent hover:underline">Ver la receta →</a></p>
+          )}
         </div>
         <div className="shrink-0 flex items-center gap-2">
           {esAdmin ? (
@@ -76,11 +99,12 @@ function Fila({ s, esAdmin, onEstado, onBorrar }: {
  * `#/buzon`: un afan propone una receta con un enlace y/o unas líneas. El admin ve las de todos y
  * cambia su estado; el resto solo las suyas. No se convierte nada al enviar.
  */
-export function SeccionBuzon({ user, isAdmin }: Props) {
-  const { lista, cargando, error, enviar, cambiarEstado, borrar } = useSugerencias(user.id);
+export function SeccionBuzon({ user, isAdmin, recipes }: Props) {
+  const { lista, cargando, error, enviar, cambiarEstado, enlazarReceta, borrar } = useSugerencias(user.id);
   const [enlace, setEnlace] = useState('');
   const [texto, setTexto] = useState('');
   const [nota, setNota] = useState('');
+  const [citar, setCitar] = useState(true);
   const [msg, setMsg] = useState<{ ok: boolean; texto: string } | null>(null);
   const [enviando, setEnviando] = useState(false);
 
@@ -92,7 +116,7 @@ export function SeccionBuzon({ user, isAdmin }: Props) {
     setEnviando(true);
     setMsg(null);
     try {
-      await enviar({ enlace, texto, nota });
+      await enviar({ enlace, texto, nota, citar });
       setEnlace(''); setTexto(''); setNota('');
       setMsg({ ok: true, texto: '¡Gracias! Tu sugerencia está en el buzón.' });
     } catch (err) {
@@ -133,6 +157,10 @@ export function SeccionBuzon({ user, isAdmin }: Props) {
           <label className={etiqueta} htmlFor="bz-nota">¿Por qué te gusta? (opcional)</label>
           <input id="bz-nota" value={nota} maxLength={500} onChange={(e) => setNota(e.target.value)} className={campo} />
         </div>
+        <label className="flex items-center gap-2 font-mono text-[12px] text-ink-soft">
+          <input type="checkbox" checked={citar} onChange={(e) => setCitar(e.target.checked)} />
+          Puedes citarme como «Sugerida por» si la incorporas
+        </label>
         <button
           type="submit"
           disabled={!hayContenido || !enlaceValido || enviando}
@@ -154,7 +182,7 @@ export function SeccionBuzon({ user, isAdmin }: Props) {
         ) : (
           <ul className="list-none p-0 m-0 border-t border-dashed border-ink/20">
             {propias.map((s) => (
-              <Fila key={s.id} s={s} esAdmin={isAdmin} onEstado={(e) => void cambiarEstado(s.id, e)} onBorrar={() => void borrar(s.id)} />
+              <Fila key={s.id} s={s} esAdmin={isAdmin} recipes={recipes} onReceta={(r) => void enlazarReceta(s.id, r)} onEstado={(e) => void cambiarEstado(s.id, e)} onBorrar={() => void borrar(s.id)} />
             ))}
           </ul>
         )}
@@ -168,7 +196,7 @@ export function SeccionBuzon({ user, isAdmin }: Props) {
           ) : (
             <ul className="list-none p-0 m-0 border-t border-dashed border-ink/20">
               {ajenas.map((s) => (
-                <Fila key={s.id} s={s} esAdmin onEstado={(e) => void cambiarEstado(s.id, e)} onBorrar={() => void borrar(s.id)} />
+                <Fila key={s.id} s={s} esAdmin recipes={recipes} onReceta={(r) => void enlazarReceta(s.id, r)} onEstado={(e) => void cambiarEstado(s.id, e)} onBorrar={() => void borrar(s.id)} />
               ))}
             </ul>
           )}

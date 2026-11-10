@@ -11,6 +11,9 @@ export interface Sugerencia {
   texto: string | null;
   nota: string | null;
   estado: EstadoSugerencia;
+  citar: boolean;
+  /** La receta creada a partir de ella; solo la pone el admin. */
+  receta_id: string | null;
   created_at: string;
 }
 
@@ -18,6 +21,7 @@ export interface NuevaSugerencia {
   enlace: string;
   texto: string;
   nota: string;
+  citar: boolean;
 }
 
 /**
@@ -56,6 +60,7 @@ export function useSugerencias(userId: string) {
       enlace: n.enlace.trim() || null,
       texto: n.texto.trim() || null,
       nota: n.nota.trim() || null,
+      citar: n.citar,
     });
     if (err) throw err;
     const { data, err: errLeer } = await leer();
@@ -68,11 +73,17 @@ export function useSugerencias(userId: string) {
     else setLista((l) => l.map((s) => (s.id === id ? { ...s, estado } : s)));
   }, []);
 
+  const enlazarReceta = useCallback(async (id: string, recetaId: string | null) => {
+    const { error: err } = await supabase.from('sugerencias').update({ receta_id: recetaId }).eq('id', id);
+    if (err) setError(errorMessage(err, 'No se pudo enlazar la receta.'));
+    else setLista((l) => l.map((s) => (s.id === id ? { ...s, receta_id: recetaId } : s)));
+  }, []);
+
   const borrar = useCallback(async (id: string) => {
     const { error: err } = await supabase.from('sugerencias').delete().eq('id', id);
     if (err) setError(errorMessage(err, 'No se pudo borrar.'));
     else setLista((l) => l.filter((s) => s.id !== id));
   }, []);
 
-  return { lista, cargando, error, enviar, cambiarEstado, borrar };
+  return { lista, cargando, error, enviar, cambiarEstado, enlazarReceta, borrar };
 }

@@ -17,6 +17,8 @@ export interface Recipe {
   rating?: number;
   /** Marca manual del admin; la quita un trigger al registrar una realización. */
   sin_hacer?: boolean;
+  /** Nombre de quien sugirió la receta desde el buzón, si se incorporó y quiso que lo citaran. */
+  sugerida_por?: string | null;
   /** Código ISO alfa-2 del país de «Mi pasaporte» (`PT`); `null` si no tiene. */
   pais?: string | null;
   /**

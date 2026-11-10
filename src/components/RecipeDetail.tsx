@@ -200,6 +200,9 @@ export function RecipeDetail({ recipe, onClose, isAdmin, user, despensa, paraHac
               <h2 className="font-display font-black text-4xl sm:text-5xl leading-[0.98] tracking-tight text-ink mb-4">
                 {recipe.titulo}
               </h2>
+              {recipe.sugerida_por && (
+                <p className="font-mono text-[11.5px] text-accent mb-3">💡 Sugerida por {recipe.sugerida_por}</p>
+              )}
               {(recipe.tiempo || recipe.porciones || recipe.dificultad) && (
                 <div className="flex flex-wrap items-center gap-2 mb-4">
                   {recipe.tiempo && (

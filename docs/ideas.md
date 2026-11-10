@@ -310,8 +310,13 @@ confirmado, [la migración](../supabase/migrations/20261110_sugerencias.sql); p�
 con el admin viendo todas y cambiando el estado ahí mismo). **Aviso al admin hecho el mismo día**: flujo de n8n «Aviso de sugerencias» (id `SW6Xku2rud6sWYa1`) que
 sondea cada 5 min `sugerencias.avisada_en` nulo ([la migración](../supabase/migrations/20261110_sugerencias_avisada.sql)),
 la reclama con un PATCH atómico y manda un mensaje al `chat_id` del admin con el bot de Telegram. Se
-probó la ejecución y la marca; el mensaje en el móvil, sin confirmar. **Faltan**: el crédito
-«Sugerida por» y el correo al autor.
+probó la ejecución y la marca; el mensaje en el móvil, sin confirmar. **Bucle cerrado el mismo día** ([la migración](../supabase/migrations/20261110_sugerencias_credito.sql)):
+al marcar una sugerencia como «hecha» el admin elige la receta creada en el desplegable; un trigger
+`SECURITY DEFINER` copia el nombre del autor a `recetas.sugerida_por` (instantánea; solo si el autor dejó
+marcado «puedes citarme», `sugerencias.citar`) y la ficha enseña «Sugerida por…». El flujo de n8n
+«Aviso al autor de una sugerencia» (id `8NAHa0mnbcFazLd6`) sondea `autores_sugerencias_hechas()` (solo
+`service_role`), reclama con `autor_avisado_en` y manda el correo. Probado con una sugerencia de prueba
+a nombre del admin (correo recibido, crédito puesto); datos de prueba revertidos.
 
 **Decisiones del admin**
 - **Privado por ahora**: cada afan ve sus sugerencias y su estado; el admin las ve todas. Votos y

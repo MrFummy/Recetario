@@ -198,7 +198,7 @@ function App() {
           </SoloLogueados>
         ) : ruta.vista === 'buzon' ? (
           <SoloLogueados sesionCargada={sesionCargada} logueado={!!user} seccion="el buzón de sugerencias" onLogin={() => setShowLoginModal(true)}>
-            {user && <SeccionBuzon user={user} isAdmin={isAdmin} />}
+            {user && <SeccionBuzon user={user} isAdmin={isAdmin} recipes={recipes} />}
           </SoloLogueados>
         ) : ruta.vista === 'cuenta' ? (
           <SoloLogueados sesionCargada={sesionCargada} logueado={!!user} seccion="tu cuenta" onLogin={() => setShowLoginModal(true)}>
