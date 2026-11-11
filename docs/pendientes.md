@@ -50,7 +50,7 @@ El nombre de versión de «Aviso de nuevas recetas» salió con las tildes mal e
      salta se localiza por `modifiedTime` en Drive y se repite (en la última pasada fueron 3 de 77).
    - **`Separar recetas`** (heredado) solo pasaba el primer elemento; con una receta de prueba no se notaba.
    Si se repite el lote: dejar activo `Respaldar PDF antiguo` solo la primera vez (si no, copia el PDF nuevo), y comprobar en Drive.
-   **Sin comprobar a mano:** que Notion y Google Sheets siguen apuntando bien (no se tocaron; los enlaces son los mismos).
+   **Comprobado el 11 de noviembre:** Notion tiene 79 filas y sus 79 enlaces coinciden con los `pdf_url` de las 79 recetas de Supabase; en Sheets las últimas filas son las últimas recetas, sin restos de pruebas.
    **Plantilla v5** (arregla que las recetas que pasan por poco de una página salieran con la primera hoja solo con la cabecera):
    `.content` en flujo de bloque, lateral flotante, `flow-root` en `.main`, pie `fixed`.
 6. ~~**PDF de receta en A4**~~ **Hecho y probado el 11 de noviembre** (flujo `573d1ad0`). Plantilla v4 en Drive (`update_file` no
@@ -61,7 +61,7 @@ El nombre de versión de «Aviso de nuevas recetas» salió con las tildes mal e
    altas reales dieron `MediaBox` 595,92 × 841,92, una página, a sangre. También se confirmó `porciones_num` en el alta.
    Se borraron las dos de prueba desde la web (Supabase, Storage y Drive a la papelera; el borrado usa un `window.confirm`).
    Vuelta atrás: ID de la v3 Letter en `Leer plantilla HTML` y quitar los cuatro parámetros de papel y márgenes.
-   **Sin comprobar a mano:** que Notion y Google Sheets quedaron limpios de esas dos pruebas.
+   **Comprobado:** Notion y Sheets quedaron limpios de esas dos pruebas.
 
 7. ~~**Flujo de altas con la v5**~~ **Hecho el 11 de noviembre** (flujo `cbc916b9`): plantilla v5, espera de fuentes y 3 reintentos en
    Gotenberg, y prefijo `arroc` en `Rellenar HTML` (el color de arroces salía negro: `arroz` no encaja con «Arroces»). Probado con una
