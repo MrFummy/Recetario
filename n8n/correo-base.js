@@ -4,7 +4,7 @@
 // Todos los textos que se le pasan son HTML ya escapado por quien llama.
 //
 // Pensado para clientes de correo: tablas, estilos en línea, sin conic-gradient ni SVG. La cenefa
-// es una fila de triángulos de texto; la sombra dura de los botones, un borde inferior y derecho.
+// es una tabla de celdas con bgcolor; la sombra dura de los botones, un borde inferior y derecho.
 const SITIO = 'https://recetario.orballo.link/';
 const LOGO = SITIO + 'icon-256.png';
 const TINTA = '#2a2118', PAPEL = '#f4ecdd', PAPEL2 = '#faf5e8', SUAVE = '#6d5f50', TERRA = '#c2452a', COBALTO = '#1c4fd6', AMARILLO = '#f4b623';

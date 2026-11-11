@@ -101,10 +101,17 @@ if (modo === 'nodos') {
   const c = { compartir: cComp.compartir, anadida: cAlta.anadida, error: cAlta.error };
   // Los correos con expresiones no conocen la categoría al generarse: la píldora y la sombra llevan el terracota de la marca.
   const fijaColor = (html) => html;
+  // La cenefa son 120 celdas iguales: en una expresión de n8n se escribe con `.repeat(30)` y sale el mismo HTML con
+  // un 40 % menos de texto que pegar.
+  const par = (a, b) => `<td bgcolor="${a}" height="6"></td><td bgcolor="${b}" height="6"></td>`;
+  const repetir = (a, b) => `{{ '${par(a, b)}'.repeat(30) }}`;
+  const compactar = (html) => html
+    .replace(new RegExp(`(?:${par('#1c4fd6', '#f4ecdd')}){30}`), repetir('#1c4fd6', '#f4ecdd'))
+    .replace(new RegExp(`(?:${par('#f4ecdd', '#1c4fd6')}){30}`), repetir('#f4ecdd', '#1c4fd6'));
   const salida = {
-    compartir: '=' + fijaColor(c.compartir),
-    anadida: '=' + fijaColor(c.anadida),
-    error: '=' + fijaColor(c.error),
+    compartir: '=' + compactar(fijaColor(c.compartir)),
+    anadida: '=' + compactar(fijaColor(c.anadida)),
+    error: '=' + compactar(fijaColor(c.error)),
   };
   const colorBase = `\nconst COLOR_FIJO = ${JSON.stringify(terra)};\n`;
   const codigoNueva = base + `

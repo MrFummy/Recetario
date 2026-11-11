@@ -9,9 +9,9 @@ El detalle de cómo está construido todo está en la sección *Sistema de dise�
 | Qué | Ahora | Anterior |
 |---|---|---|
 | Web (NAS `/Volumes/web/recetario`) | commit `0c41176`, bundle `index-DH9LXMbZ.js` | commit `bb932a8` (`git checkout bb932a8 && npm run deploy:mac`) |
-| «Recetas con Frontend» (`bN99xqHFvUTriCKc`) | `3a7bfe9f` | `4cd0c01d` (y antes `3a62fac0`) |
-| «Aviso de nuevas recetas» (`Zx0jNA5wC2aTu0U1`) | `c9b2b212` | `13aedc94` |
-| «Aviso al autor de una sugerencia» (`8NAHa0mnbcFazLd6`) | `df5c2f29` | `25cc2e1f` |
+| «Recetas con Frontend» (`bN99xqHFvUTriCKc`) | `9f252cab` | `3a7bfe9f` (y antes `4cd0c01d`, `3a62fac0`) |
+| «Aviso de nuevas recetas» (`Zx0jNA5wC2aTu0U1`) | `2cf9905d` | `c9b2b212` (y antes `13aedc94`) |
+| «Aviso al autor de una sugerencia» (`8NAHa0mnbcFazLd6`) | `e889ea12` | `df5c2f29` (y antes `25cc2e1f`) |
 | Plantilla del PDF en Drive | v3 `1IWUaLVN5ygOmfvBPSSlRl9a3nDuSoOZ7` | v2 de cuaderno `1yLgKKr5VWKjVvH8bHN5WT7egbNkQ1ctH` (cambiar el ID en `Leer plantilla HTML`) |
 
 El nombre de versión de «Aviso de nuevas recetas» salió con las tildes mal escritas: es solo la etiqueta.
@@ -30,7 +30,12 @@ El nombre de versión de «Aviso de nuevas recetas» salió con las tildes mal e
 3. **Plantillas de correo de Supabase Auth**: **generadas el 11 de noviembre** en
    [supabase/plantillas-correo/](../supabase/plantillas-correo/) (confirmar registro, cambiar correo, restablecer
    contraseña y reautenticación), con un [LEEME](../supabase/plantillas-correo/LEEME.md) que dice qué pegar en cada sitio.
-   **Falta pegarlas a mano en el panel de Supabase** (*Authentication → Email Templates*) y probar con un registro real.
+   **Pegadas a mano en el panel de Supabase el 11 de noviembre.** Si el logo no sale, es el cliente de correo: Outlook
+   bloquea por defecto las imágenes remotas hasta pulsar «Mostrar contenido bloqueado» (comprobado así), y la vista previa
+   del panel de Supabase tampoco las carga. La imagen se sirve bien. **Falta volver a pegarlas con la cenefa nueva**
+   (`supabase/plantillas-correo/copiar.html`) y probar con un registro real (un alias `+prueba` de Gmail). **La web no
+   tiene botón «Olvidé mi contraseña»** (nunca se hizo): la plantilla de restablecer no se envía a nadie hasta que exista.
+   La cenefa de los cinco correos de n8n ya es la de celdas de color (11 de noviembre).
 4. **Hojas de menús impresas** (`.hoja*` en `index.css`): siguen con la estética de cuaderno. Llevarlas al sistema
    nuevo exige volver a medir `ALTO` y `ALTO_UTIL` en `MenuImprimible.tsx`.
 5. **Los 77 PDFs ya generados** siguen en estilo cuaderno. Regenerarlos con «Regenerar PDFs antiguos» (inactivo)

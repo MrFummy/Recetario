@@ -685,7 +685,7 @@ que las secciones que no se tocaron ya heredan la paleta.
   llevan la plantilla en una expresión del nodo Gmail; «Aviso de nuevas recetas» y «Aviso al autor» la llevan dentro
   del nodo `Montar correos`. **Si se cambia `correo-base.js`, hay que volver a pegarlo en esos cinco sitios.** El logo
   de los correos se sirve desde el propio sitio (`recetario.orballo.link/icon-256.png`): no borrarlo del build.
-  Versión previa del flujo principal: `3a62fac0`. **Probado de punta a punta el 10 de noviembre de 2026** con una
+  Versión previa del flujo principal: `3a62fac0`. **La cenefa es una tabla de 2 × 60 celdas con `bgcolor`** (la de triángulos de texto no llenaba el ancho): en los tres correos del flujo principal se escribe con `{{ '…'.repeat(30) }}` (lo emite `generar-correos.mjs nodos`) para que el texto sea un 40 % más corto; flujo `9f252cab`. **Probado de punta a punta el 10 de noviembre de 2026** con una
   alta real (PDF de Gotenberg, correo de «receta añadida», aviso a los afans y correo de error): todo bien.
   **Trampa que mordió en esa prueba, corregida el 11 de noviembre de 2026** (flujo `3a7bfe9f`; antes `4cd0c01d`):
   el alta nombraba la foto por el título y la subía sobrescribiendo, y el borrado buscaba la fila de Google Sheets
