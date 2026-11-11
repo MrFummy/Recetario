@@ -27,9 +27,10 @@ El nombre de versión de «Aviso de nuevas recetas» salió con las tildes mal e
    por borrado y la otra receta conservó foto, PDF y fila hasta que se borró. No quedó nada de la prueba. Matiz: el
    título sale del documento que lee Gemini, no del formulario, así que dos altas con el «mismo» título pueden salir
    con títulos algo distintos; el nombre único protege igualmente.
-3. **Plantillas de correo de Supabase Auth** (confirmar cuenta, restablecer contraseña): se editan en el panel
-   (*Authentication → Email Templates*). Generarlas con `n8n/correo-base.js` y pegarlas; usan variables como
-   `{{ .ConfirmationURL }}`.
+3. **Plantillas de correo de Supabase Auth**: **generadas el 11 de noviembre** en
+   [supabase/plantillas-correo/](../supabase/plantillas-correo/) (confirmar registro, cambiar correo, restablecer
+   contraseña y reautenticación), con un [LEEME](../supabase/plantillas-correo/LEEME.md) que dice qué pegar en cada sitio.
+   **Falta pegarlas a mano en el panel de Supabase** (*Authentication → Email Templates*) y probar con un registro real.
 4. **Hojas de menús impresas** (`.hoja*` en `index.css`): siguen con la estética de cuaderno. Llevarlas al sistema
    nuevo exige volver a medir `ALTO` y `ALTO_UTIL` en `MenuImprimible.tsx`.
 5. **Los 77 PDFs ya generados** siguen en estilo cuaderno. Regenerarlos con «Regenerar PDFs antiguos» (inactivo)

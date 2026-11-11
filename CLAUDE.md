@@ -695,8 +695,9 @@ que las secciones que no se tocaron ya heredan la paleta.
   columna **Enlace** con el `pdf_url` (el mismo valor que escribe `Actualizar recetario`). **Las fotos anteriores al
   11 de noviembre siguen con el nombre `<Título>.jpg`**; el borrado lee el nombre de `foto_url`, así que funciona con
   los dos. Si se toca el nombre de la foto, hay cuatro sitios que lo leen.
-  Pendiente: los PDF ya generados (77) siguen en estilo cuaderno, las hojas de menús impresas (`.hoja*`), y las
-  plantillas de correo de Supabase Auth (confirmar cuenta, restablecer contraseña), que se editan en su panel.
+  Las **plantillas de correo de Supabase Auth** están generadas en [supabase/plantillas-correo/](supabase/plantillas-correo/)
+  (se pegan a mano en el panel; ver su LEEME). Pendiente: los PDF ya generados (77) siguen en estilo cuaderno y las hojas
+  de menús impresas (`.hoja*`).
 - **`sistema.css` va dentro de `@layer components`**: sin capa, el CSS suelto gana siempre a las utilidades de
   Tailwind (un `flex` no podía con un `display: block` de una clase propia). Las utilidades ganan donde coinciden.
 - **Pendiente de decidir**: las hojas impresas de los menús (`.hoja*`) siguen con la estética de cuaderno; solo
