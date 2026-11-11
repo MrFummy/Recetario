@@ -36,7 +36,7 @@ El nombre de versión de «Aviso de nuevas recetas» salió con las tildes mal e
    de la plantilla v5 (sartén, cenefa, kicker, titular, sellos de color por categoría, casillas redondas, nota amarilla), `ALTO` y
    `ALTO_UTIL` (968) remedidos sobre la hoja pintada, y comprobado que no desborda con menús de 3 a 45 recetas ni deja páginas
    en blanco al imprimir. De paso se corrigió el prefijo `arroz`→`arroc` de `colorCategoria.ts`: **en la web las recetas de arroces
-   salían en color neutro** (misma errata que en n8n). Pendiente: probar con papel real o con un menú real del admin.
+   salían en color neutro** (misma errata que en n8n). Probado con un menú real el 11 de noviembre.
 5. ~~**Los 77 PDFs ya generados**~~ **Hecho el 11 de noviembre**: los 77 regenerados en A4 y estilo «Mercado y azulejo», con el flujo
    «Regenerar PDFs antiguos» (`uLBelHfEjdbxDbaS`, inactivo, manual; sobrescribe el contenido del **mismo fichero de Drive**, así que
    los enlaces no cambian). Copias de los PDF antiguos en «Respaldo PDFs estilo cuaderno (Letter)» (`1ypKTHcCDCYhZpWKSaIGCbF03oujWkwE-`,
@@ -71,12 +71,9 @@ El nombre de versión de «Aviso de nuevas recetas» salió con las tildes mal e
 
 ## Sin comprobar a mano
 
-- Los correos nuevos en un cliente real, sobre todo móvil (Gmail ignora la fuente Fraunces; Outlook de escritorio
-  no redondea la foto en arco). Solo se ha visto el de error, que llegó a tu bandeja.
-- El PDF de una receta larga, para ver cómo parte las páginas (hay `break-inside: avoid` en pasos y notas).
-- Editor de menús, muro de notas, buzón, modo cocina con temporizadores y la app con una cuenta que no sea la tuya.
-- El mapa del pasaporte arrastrando con el dedo, y la edición real de un país (guardar, subir fotos, quitar país).
-- Todo en un móvil real: se midió en el panel del navegador (390–1280 px), no en un teléfono.
+Nada. El 11 de noviembre de 2026 se pasó a mano [el guion de pruebas](guion-pruebas.md) completo y salió todo bien:
+hoja impresa de menús, editor de menús, pasaporte (admin), cuenta que no es la del admin (muro, buzón, avisos),
+correos en Gmail y Outlook, y la web en un móvil real (modo cocina, mapa, impresión).
 
 ## Detalles y mejoras
 
