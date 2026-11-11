@@ -13,7 +13,7 @@ const COLORES = {
   sopas: ['#0e5b46', PAPEL], ensaladas: ['#5d6b3a', PAPEL], arroces: ['#b8862b', TINTA], pastas: ['#e0802c', TINTA], otro: [TINTA, PAPEL],
 };
 const PREFIJOS = [['aperit', 'aperitivos'], ['postre', 'postres'], ['carne', 'carnes'], ['pescad', 'pescados'], ['sopa', 'sopas'],
-  ['crema', 'sopas'], ['ensal', 'ensaladas'], ['arroz', 'arroces'], ['pasta', 'pastas']];
+  ['crema', 'sopas'], ['ensal', 'ensaladas'], ['arroc', 'arroces'], ['pasta', 'pastas']];
 function colorCategoria(categoria) {
   const c = String(categoria || '').trim().toLowerCase();
   const hallado = PREFIJOS.find(([p]) => c.startsWith(p));

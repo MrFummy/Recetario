@@ -13,7 +13,7 @@ const COLORES = {
   arroces: ["#b8862b", "#2a2118"], pastas: ["#e0802c", "#2a2118"], otro: ["#2a2118", "#f4ecdd"],
 };
 const PREFIJOS = [["aperit", "aperitivos"], ["postre", "postres"], ["carne", "carnes"], ["pescad", "pescados"],
-  ["sopa", "sopas"], ["crema", "sopas"], ["ensal", "ensaladas"], ["arroz", "arroces"], ["pasta", "pastas"]];
+  ["sopa", "sopas"], ["crema", "sopas"], ["ensal", "ensaladas"], ["arroc", "arroces"], ["pasta", "pastas"]];
 const categoria = (limpia.categoria || "").trim();
 const clave = (PREFIJOS.find(([p]) => categoria.toLowerCase().startsWith(p)) || [])[1] || "otro";
 const [kColor, kTexto] = COLORES[clave];

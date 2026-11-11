@@ -9,10 +9,10 @@ El detalle de cómo está construido todo está en la sección *Sistema de dise�
 | Qué | Ahora | Anterior |
 |---|---|---|
 | Web (NAS `/Volumes/web/recetario`) | commit `3c797b1`, bundle `index-CUeSkwVP.js` | commit `0c41176` (`git checkout 0c41176 && npm run deploy:mac`) |
-| «Recetas con Frontend» (`bN99xqHFvUTriCKc`) | `573d1ad0` | `6cbe04ff` (y antes `9f252cab`, `3a7bfe9f`, `4cd0c01d`, `3a62fac0`) |
+| «Recetas con Frontend» (`bN99xqHFvUTriCKc`) | `cbc916b9` | `573d1ad0` (y antes `6cbe04ff`, `9f252cab`, `3a7bfe9f`, `4cd0c01d`, `3a62fac0`) |
 | «Aviso de nuevas recetas» (`Zx0jNA5wC2aTu0U1`) | `2cf9905d` | `c9b2b212` (y antes `13aedc94`) |
 | «Aviso al autor de una sugerencia» (`8NAHa0mnbcFazLd6`) | `e889ea12` | `df5c2f29` (y antes `25cc2e1f`) |
-| Plantilla del PDF en Drive | v4 A4 `1zbidS7zDsJ_72aY1Y0gSPx7EEwjOgWtR` | v3 Letter `1IWUaLVN5ygOmfvBPSSlRl9a3nDuSoOZ7` y v2 de cuaderno `1yLgKKr5VWKjVvH8bHN5WT7egbNkQ1ctH` (cambiar el ID en `Leer plantilla HTML`) |
+| Plantilla del PDF en Drive | v5 A4 `1J829L5djRXW_x05PWS8OaLrF0HEN4CT6` | v4 A4 `1zbidS7zDsJ_72aY1Y0gSPx7EEwjOgWtR` (con el fallo de la primera hoja vacía), v3 Letter `1IWUaLVN5ygOmfvBPSSlRl9a3nDuSoOZ7`, v2 de cuaderno `1yLgKKr5VWKjVvH8bHN5WT7egbNkQ1ctH` (cambiar el ID en `Leer plantilla HTML`) |
 
 El nombre de versión de «Aviso de nuevas recetas» salió con las tildes mal escritas: es solo la etiqueta.
 
@@ -34,20 +34,22 @@ El nombre de versión de «Aviso de nuevas recetas» salió con las tildes mal e
    La cenefa de los cinco correos de n8n ya es la de celdas de color.
 4. **Hojas de menús impresas** (`.hoja*` en `index.css`): siguen con la estética de cuaderno. Llevarlas al sistema
    nuevo exige volver a medir `ALTO` y `ALTO_UTIL` en `MenuImprimible.tsx`.
-5. **Los 77 PDFs ya generados** siguen en estilo cuaderno y en Letter. **En curso (11 de noviembre).** Se regeneran con el flujo
-   «Regenerar PDFs antiguos» (`uLBelHfEjdbxDbaS`, inactivo, manual), reconstruido: lee Supabase, rellena con el **mismo código
-   que el alta** (`n8n/regenerar-pdfs.js`, copiado de `rellenar-html.js`), Gotenberg con A4 explícito y **sobrescribe el
-   contenido del mismo fichero de Drive** (mismo ID y enlace: Notion, Sheets y Supabase no cambian). Antes copia el PDF antiguo
-   a la carpeta de respaldo «Respaldo PDFs estilo cuaderno (Letter)» (`1ypKTHcCDCYhZpWKSaIGCbF03oujWkwE-`); además Drive guarda
-   la revisión previa. **Excluidas a propósito** las 2 recetas sin ingredientes en la base (Alitas Buffalo y Solomillo con
-   castañas): regenerarlas las dejaría sin ingredientes (`ingredientes=not.is.null` en la URL). **Probado con 1** (Crema de
-   zanahoria, ejecución 117500): A4, una página, copia de respaldo hecha. **Ahora el nodo `Obtener recetas` lleva `&id=eq.…`:
-   quitar ese filtro para el lote.** Medido en local con las 77: 57 caben en una página, 20 ocupan dos, 3 con la segunda casi
-   vacía.
-   **Plantilla v5** (`1J829L5djRXW_x05PWS8OaLrF0HEN4CT6`): arregla un fallo de la v4 en las recetas que pasan por poco de una
-   página, cuya primera hoja salía **solo con la cabecera** (el `grid` de una fila no se parte entre páginas; ahora columna
-   lateral flotante, `flow-root` en `.main`, pie `fixed` repetido en cada página y pasos algo más compactos). **«Recetas con
-   Frontend» sigue con la v4** (`1zbidS7z…`): hay que apuntarla a la v5 para que las altas nuevas no tengan ese fallo.
+5. ~~**Los 77 PDFs ya generados**~~ **Hecho el 11 de noviembre**: los 77 regenerados en A4 y estilo «Mercado y azulejo», con el flujo
+   «Regenerar PDFs antiguos» (`uLBelHfEjdbxDbaS`, inactivo, manual; sobrescribe el contenido del **mismo fichero de Drive**, así que
+   los enlaces no cambian). Copias de los PDF antiguos en «Respaldo PDFs estilo cuaderno (Letter)» (`1ypKTHcCDCYhZpWKSaIGCbF03oujWkwE-`,
+   77 ficheros «<título> (cuaderno)»). **Excluidas a propósito** las 2 sin ingredientes en la base (Alitas Buffalo, Solomillo con
+   castañas): conservan el PDF antiguo en Letter. Código en `n8n/regenerar-pdfs.js` (la maquetación se copia de `rellenar-html.js`).
+   **Tres trampas del proceso, por si se repite:**
+   - **Fuentes:** Gotenberg a veces imprime antes de que Google Fonts sirva todas, y el PDF sale con Liberation/Noto en vez de Bricolage,
+     Caveat y Schibsted (se ve la letra de las notas en serif negrita). Por eso `waitDelay 2s` + `waitForExpression
+     document.fonts.status === 'loaded'`, y el nodo `Comprobar fuentes` **descarta** los PDF sin las cinco fuentes (las busca en los bytes).
+   - **503 de Gotenberg** ante muchas peticiones seguidas: pausa de 1,5 s (`batching`), 5 reintentos y `continueRegularOutput`; lo que se
+     salta se localiza por `modifiedTime` en Drive y se repite (en la última pasada fueron 3 de 77).
+   - **`Separar recetas`** (heredado) solo pasaba el primer elemento; con una receta de prueba no se notaba.
+   Si se repite el lote: dejar activo `Respaldar PDF antiguo` solo la primera vez (si no, copia el PDF nuevo), y comprobar en Drive.
+   **Sin comprobar a mano:** que Notion y Google Sheets siguen apuntando bien (no se tocaron; los enlaces son los mismos).
+   **Plantilla v5** (arregla que las recetas que pasan por poco de una página salieran con la primera hoja solo con la cabecera):
+   `.content` en flujo de bloque, lateral flotante, `flow-root` en `.main`, pie `fixed`.
 6. ~~**PDF de receta en A4**~~ **Hecho y probado el 11 de noviembre** (flujo `573d1ad0`). Plantilla v4 en Drive (`update_file` no
    cambia contenido, así que es un fichero nuevo) con `@page { size: A4 }` y cuerpo de `210mm × 296mm` (296 y no 297, como las
    hojas de menús, para no generar una página en blanco por redondeo). **Trampa:** Gotenberg respeta los márgenes del `@page`
@@ -57,6 +59,12 @@ El nombre de versión de «Aviso de nuevas recetas» salió con las tildes mal e
    Se borraron las dos de prueba desde la web (Supabase, Storage y Drive a la papelera; el borrado usa un `window.confirm`).
    Vuelta atrás: ID de la v3 Letter en `Leer plantilla HTML` y quitar los cuatro parámetros de papel y márgenes.
    **Sin comprobar a mano:** que Notion y Google Sheets quedaron limpios de esas dos pruebas.
+
+7. ~~**Flujo de altas con la v5**~~ **Hecho el 11 de noviembre** (flujo `cbc916b9`): plantilla v5, espera de fuentes y 3 reintentos en
+   Gotenberg, y prefijo `arroc` en `Rellenar HTML` (el color de arroces salía negro: `arroz` no encaja con «Arroces»). Probado con una
+   alta de arroz: A4, una página, las seis fuentes, ocre; borrada después. **Pendiente:** `n8n/correo-base.js` ya lleva el prefijo
+   `arroc`, pero los cinco correos de n8n siguen con el viejo (la píldora de categoría de una receta de arroces sale oscura); se
+   arregla al volver a pegar el correo base la próxima vez que se toque.
 
 ## Sin comprobar a mano
 
