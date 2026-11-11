@@ -493,7 +493,7 @@ está en [docs/ideas.md](docs/ideas.md#avisos-por-correo-y-mi-cuenta--decidido-e
 
 ## Recuperar la contraseña
 
-**Hecho y desplegado el 11 de noviembre de 2026; sin probar con un correo real.** En el modal de acceso, «¿Olvidaste tu contraseña?»
+**Hecho, desplegado y probado de punta a punta el 11 de noviembre de 2026** (correo real, enlace y contraseña nueva). En el modal de acceso, «¿Olvidaste tu contraseña?»
 ([LoginModal.tsx](src/components/LoginModal.tsx), modo `olvido`) llama a `resetPasswordForEmail` y enseña siempre el mismo aviso,
 exista o no la cuenta. El enlace del correo (plantilla de Supabase Auth «Restablecer contraseña») vuelve a la web con
 `#access_token=…&type=recovery`, y [NuevaClaveModal.tsx](src/components/NuevaClaveModal.tsx) pide la contraseña nueva
@@ -504,7 +504,9 @@ exista o no la cuenta. El enlace del correo (plantilla de Supabase Auth «Restab
   `LLEGA_DE_RECUPERACION` y `ENLACE_CADUCADO`: el evento `PASSWORD_RECOVERY` puede dispararse antes de que `App` se suscriba.
 - `redirectTo` es la propia web. **Tiene que estar en *Authentication → URL Configuration → Redirect URLs*** de Supabase (o
   ser el *Site URL*); si no, el enlace cae en el *Site URL*. Sin comprobar.
-- Probado en el navegador de desarrollo: el enlace, la validación y el aviso de caducado. **No se ha enviado ningún correo.**
+- **Supabase envía por el SMTP de Gmail** (contraseña de aplicación), no por el servicio de serie: ese solo manda unos 2
+  correos por hora y solo a miembros del equipo. El tope por hora se ajusta en *Authentication → Rate Limits*.
+- Verificado en el navegador de desarrollo (enlace, validación, aviso de caducado) y con un correo real en producción.
 
 ## Buzón de sugerencias
 

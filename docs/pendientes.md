@@ -27,15 +27,13 @@ El nombre de versión de «Aviso de nuevas recetas» salió con las tildes mal e
    por borrado y la otra receta conservó foto, PDF y fila hasta que se borró. No quedó nada de la prueba. Matiz: el
    título sale del documento que lee Gemini, no del formulario, así que dos altas con el «mismo» título pueden salir
    con títulos algo distintos; el nombre único protege igualmente.
-3. **Plantillas de correo de Supabase Auth**: **generadas el 11 de noviembre** en
-   [supabase/plantillas-correo/](../supabase/plantillas-correo/) (confirmar registro, cambiar correo, restablecer
-   contraseña y reautenticación), con un [LEEME](../supabase/plantillas-correo/LEEME.md) que dice qué pegar en cada sitio.
-   **Pegadas a mano en el panel de Supabase el 11 de noviembre.** Si el logo no sale, es el cliente de correo: Outlook
-   bloquea por defecto las imágenes remotas hasta pulsar «Mostrar contenido bloqueado» (comprobado así), y la vista previa
-   del panel de Supabase tampoco las carga. La imagen se sirve bien. **Falta volver a pegarlas con la cenefa nueva**
-   (`supabase/plantillas-correo/copiar.html`) y probar con un registro real (un alias `+prueba` de Gmail). **La web no
-   tiene botón «Olvidé mi contraseña»** (nunca se hizo): la plantilla de restablecer no se envía a nadie hasta que exista.
-   La cenefa de los cinco correos de n8n ya es la de celdas de color (11 de noviembre).
+3. ~~**Plantillas de correo de Supabase Auth**~~ **Hecho el 11 de noviembre.** Generadas en
+   [supabase/plantillas-correo/](../supabase/plantillas-correo/) (con su [LEEME](../supabase/plantillas-correo/LEEME.md)) y
+   pegadas a mano en el panel. Supabase envía por el SMTP de Gmail (el de serie solo manda ~2 correos/hora a miembros del
+   equipo). **Probado de punta a punta:** «¿Olvidaste tu contraseña?» → correo → enlace → contraseña nueva. Si el logo no sale,
+   es el cliente: Outlook bloquea las imágenes remotas hasta pulsar «Mostrar contenido bloqueado». **Sin confirmar** que las
+   cuatro plantillas pegadas lleven ya la cenefa de celdas (`copiar.html`); si el correo la muestra cortada, hay que repegarlas.
+   La cenefa de los cinco correos de n8n ya es la de celdas de color.
 4. **Hojas de menús impresas** (`.hoja*` en `index.css`): siguen con la estética de cuaderno. Llevarlas al sistema
    nuevo exige volver a medir `ALTO` y `ALTO_UTIL` en `MenuImprimible.tsx`.
 5. **Los 77 PDFs ya generados** siguen en estilo cuaderno. Regenerarlos con «Regenerar PDFs antiguos» (inactivo)
