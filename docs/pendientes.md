@@ -65,9 +65,7 @@ El nombre de versión de «Aviso de nuevas recetas» salió con las tildes mal e
 
 7. ~~**Flujo de altas con la v5**~~ **Hecho el 11 de noviembre** (flujo `cbc916b9`): plantilla v5, espera de fuentes y 3 reintentos en
    Gotenberg, y prefijo `arroc` en `Rellenar HTML` (el color de arroces salía negro: `arroz` no encaja con «Arroces»). Probado con una
-   alta de arroz: A4, una página, las seis fuentes, ocre; borrada después. **Pendiente:** `n8n/correo-base.js` ya lleva el prefijo
-   `arroc`, pero los cinco correos de n8n siguen con el viejo (la píldora de categoría de una receta de arroces sale oscura); se
-   arregla al volver a pegar el correo base la próxima vez que se toque.
+   alta de arroz: A4, una página, las seis fuentes, ocre; borrada después. **Hecho también:** `correo-base.js` repegado el 11 de noviembre en los dos flujos que usan la categoría (`Aviso de nuevas recetas` `bb91da63`, antes `2cf9905d`; `Aviso al autor` `98ea072b`, antes `e889ea12`). Los tres correos del flujo principal llevan color terracota fijo, así que no dependen del prefijo y no hizo falta tocarlos.
 
 ## Sin comprobar a mano
 
