@@ -702,7 +702,7 @@ que las secciones que no se tocaron ya heredan la paleta.
   [correo-base.js](n8n/correo-base.js): `node n8n/generar-correos.mjs vista <html>` los dibuja con datos de ejemplo y
   `nodos <carpeta>` saca los textos para pegar. Los tres de «Recetas con Frontend» (compartir, receta añadida, error)
   llevan la plantilla en una expresión del nodo Gmail; «Aviso de nuevas recetas» y «Aviso al autor» la llevan dentro
-  del nodo `Montar correos`. **Si se cambia `correo-base.js`, hay que volver a pegarlo en esos cinco sitios.** El logo
+  del nodo `Montar correos`. **Si se cambia `correo-base.js`, hay que volver a pegarlo en esos cinco sitios** (el 11 de noviembre se repegó el prefijo `arroc` solo en los dos flujos de avisos, que son los que calculan el color por categoría; los tres del flujo principal llevan terracota fijo). El logo
   de los correos se sirve desde el propio sitio (`recetario.orballo.link/icon-256.png`): no borrarlo del build.
   **Gotenberg y las fuentes (11 nov 2026):** imprime a veces antes de que Google Fonts termine y el PDF sale con fuentes de reserva; el nodo espera `document.fonts` (+2 s) y reintenta. **Los 77 PDF anteriores se regeneraron en A4 el mismo día** sobrescribiendo el fichero de Drive (enlaces intactos; copias en la carpeta «Respaldo PDFs estilo cuaderno (Letter)»; detalle y trampas en [docs/pendientes.md](docs/pendientes.md)). **El PDF de receta es A4 desde el 11 de noviembre de 2026** (plantilla v4 de Drive; el nodo de Gotenberg pasa el papel explícito porque ignora el tamaño del `@page`; ver [docs/pendientes.md](docs/pendientes.md)). Versión previa del flujo principal: `3a62fac0`. **La cenefa es una tabla de 2 × 60 celdas con `bgcolor`** (la de triángulos de texto no llenaba el ancho): en los tres correos del flujo principal se escribe con `{{ '…'.repeat(30) }}` (lo emite `generar-correos.mjs nodos`) para que el texto sea un 40 % más corto; flujo `9f252cab`. **Probado de punta a punta el 10 de noviembre de 2026** con una
   alta real (PDF de Gotenberg, correo de «receta añadida», aviso a los afans y correo de error): todo bien.
@@ -723,7 +723,7 @@ que las secciones que no se tocaron ya heredan la paleta.
 - Verificado sin desborde horizontal de 375 a 1280 px en las ocho vistas principales. Sin revisar a mano: el modo
   oscuro (no existe), los temporizadores del modo cocina y el editor de menús.
 
-**Para retomar el rediseño: [docs/pendientes.md](docs/pendientes.md)** (estado en producción con las versiones a las
+**Para retomar el rediseño: [docs/pendientes.md](docs/pendientes.md)** (11 nov 2026: lista cerrada y [guion de pruebas a mano](docs/guion-pruebas.md) pasado sin fallos) (estado en producción con las versiones a las
 que volver, lo pendiente por orden y lo que no se ha comprobado a mano).
 
 ## Hacia dónde puede crecer
