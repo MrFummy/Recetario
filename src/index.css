@@ -101,13 +101,13 @@ body {
 }
 
 /* ── Hoja impresa de un menú ───────────────── */
-/* Réplica de la plantilla HTML con la que n8n genera los PDF de las recetas (la del Drive
-   «Receta - Plantilla n8n v2 cuaderno»): mismos tamaños, colores, tipografías y recursos
-   —cuadrícula, subrayado inclinado, números circulados, chips y post-it—. Las medidas son
-   las de la plantilla, en px; solo cambia el papel: aquí es A4 y allí Letter. Si se retoca
-   la plantilla, conviene retocar esto, y recalcular los pesos de `paginar` si cambian las
-   alturas. Las sombras con desenfoque se cambian por sombras sólidas: al imprimir salen
-   como un rectángulo gris. */
+/* Réplica de la plantilla del PDF de receta (`n8n/receta-pdf.html`, la v5 «Mercado y azulejo»):
+   mismas medidas en px, tipografías y recursos —logo de la sartén, cenefa, kicker, titular
+   ligero con la última palabra en cursiva terracota, chips de mono, sello con el color de la
+   categoría, subrayado, casilla redonda y nota amarilla con sombra dura—. Solo cambia el
+   papel (aquí A4 y allí también) y que la hoja lleva su propio fondo. Si se retoca la
+   plantilla, conviene retocar esto, y volver a medir los pesos de `MenuImprimible.tsx`
+   (`ALTO`) si cambian las alturas. */
 .hoja {
   position: relative;
   width: 210mm;
@@ -117,10 +117,6 @@ body {
   display: flex;
   flex-direction: column;
   background-color: var(--color-paper);
-  background-image:
-    linear-gradient(rgba(31, 37, 54, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(31, 37, 54, 0.06) 1px, transparent 1px);
-  background-size: 24px 24px;
   color: var(--color-ink);
   font-family: var(--font-sans);
   font-size: 12px;
@@ -130,196 +126,148 @@ body {
 }
 
 .hoja-cabecera {
-  padding: 18px 48px 14px;
-  border-bottom: 1.5px dashed rgba(31, 37, 54, 0.25);
+  padding: 16px 44px 14px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 24px;
   flex-shrink: 0;
 }
-.hoja-cabecera-izq { display: flex; align-items: center; gap: 10px; }
-.hoja-logo {
-  width: 32px;
-  height: 32px;
-  background: var(--color-ink);
-  color: var(--color-paper);
-  border-radius: 6px;
-  display: grid;
-  place-items: center;
+.hoja-cabecera-izq { display: flex; align-items: center; gap: 12px; }
+.hoja-marca {
   font-family: var(--font-display);
-  font-weight: 900;
-  font-size: 20px;
-  transform: rotate(-3deg);
-  box-shadow: 2px 2px 0 var(--color-yellow);
+  font-style: italic;
+  font-weight: 600;
+  font-size: 25px;
+  letter-spacing: -0.02em;
   line-height: 1;
-  padding-bottom: 2px;
 }
-.hoja-marca { font-family: var(--font-script); font-size: 24px; line-height: 1; }
-.hoja-marca b { color: var(--color-accent); font-weight: 700; }
+.hoja-marca b { font-style: normal; font-weight: 600; color: var(--color-accent); }
 .hoja-cabecera-der {
   display: flex;
   align-items: baseline;
-  gap: 10px;
+  gap: 8px;
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 10.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   color: var(--color-ink-soft);
-  text-transform: lowercase;
-  letter-spacing: 0.04em;
 }
 .hoja-cabecera-der .fecha { color: var(--color-ink); font-weight: 500; }
 
-.hoja-contenido { flex: 1; min-height: 0; padding: 22px 48px; }
+.hoja-contenido { flex: 1; min-height: 0; padding: 22px 44px 0; }
 
-.hoja-categoria {
-  display: inline-block;
-  font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-  background: var(--color-accent-soft);
-  padding: 4px 10px;
-  margin-bottom: 10px;
-  white-space: nowrap;
-}
-.hoja-categoria::before { content: "#"; opacity: 0.6; margin-right: 2px; }
+/* El kicker es el de sistema.css; aquí solo su aire. */
+.hoja .kicker { font-size: 10px; margin-bottom: 12px; }
 
 .hoja-titulo {
   font-family: var(--font-display);
-  font-weight: 900;
-  font-size: 38px;
-  line-height: 1;
-  letter-spacing: -0.02em;
-  margin: 0 0 10px;
+  font-weight: 300;
+  font-size: 46px;
+  line-height: 0.96;
+  letter-spacing: -0.035em;
+  margin: 0 0 14px;
   text-wrap: balance;
 }
+.hoja-titulo em { font-style: italic; font-weight: 400; color: var(--color-accent); }
 
-.hoja-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.hoja-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 4px; }
 .hoja-chip {
-  font-family: var(--font-script);
-  font-size: 16px;
-  line-height: 1;
-  padding: 3px 10px 4px;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  padding: 4px 11px;
   border: 1.5px solid var(--color-ink);
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.5);
-  transform: rotate(-1deg);
+  background: var(--color-paper-2);
   white-space: nowrap;
 }
-.hoja-chip:nth-child(2) { transform: rotate(0.8deg); }
-.hoja-chip:nth-child(3) { transform: rotate(-0.4deg); }
-.hoja-chip:nth-child(4) { transform: rotate(1.2deg); }
-.hoja-chip:nth-child(5) { transform: rotate(-1deg); }
-
-.hoja-ornamento { display: flex; align-items: center; gap: 10px; margin: 14px 0 16px; width: 100%; }
-.hoja-ornamento-linea { flex: 1; border-top: 1.5px dashed rgba(31, 37, 54, 0.25); }
-.hoja-ornamento-punto { color: var(--color-accent); font-size: 12px; }
 
 /* `isolation` hace que el subrayado (z-index negativo) quede tras el texto pero sobre el papel. */
 .hoja-seccion {
   font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 22px;
-  margin: 0 0 10px;
+  font-weight: 600;
+  font-size: 23px;
+  letter-spacing: -0.02em;
+  margin: 0;
   position: relative;
   display: inline-block;
-  letter-spacing: -0.01em;
   isolation: isolate;
 }
 .hoja-seccion::after {
   content: "";
   position: absolute;
   left: -2px;
-  right: -4px;
-  bottom: 1px;
-  height: 7px;
-  background: var(--color-yellow);
+  right: -6px;
+  bottom: 3px;
+  height: 0.32em;
+  background: var(--k, var(--color-yellow));
+  opacity: 0.9;
   z-index: -1;
-  transform: skew(-6deg);
 }
-/* La plantilla solo tiene una sección por columna; con varias, aire por encima del título. */
-.hoja-seccion-bloque { margin: 14px 0 10px; }
+/* Con varias secciones, aire por encima del título. */
+.hoja-seccion-bloque { margin: 22px 0 12px; }
 
-.hoja-nota-pie { font-family: var(--font-mono); font-size: 10.5px; color: var(--color-ink-soft); margin: 0 0 8px; }
+.hoja-nota-pie { font-family: var(--font-mono); font-size: 10.5px; color: var(--color-ink-soft); margin: 8px 0 0; }
 
+/* Plato: número en sello del color de su categoría (`data-k`, de sistema.css). */
 .hoja-paso {
   display: grid;
-  grid-template-columns: 40px 1fr;
+  grid-template-columns: 42px 1fr;
   gap: 14px;
-  padding: 10px 0;
-  align-items: start;
-  border-bottom: 1px dashed rgba(31, 37, 54, 0.15);
+  padding: 8px 0;
+  align-items: center;
+  border-bottom: 1px solid var(--color-rule);
 }
 .hoja-num {
-  position: relative;
-  width: 36px;
-  height: 36px;
-  display: grid;
-  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--k, var(--color-ink));
+  color: var(--kt, var(--color-paper));
+  border: 1.5px solid var(--color-ink);
+  box-shadow: 2px 2px 0 var(--color-ink);
   font-family: var(--font-display);
-  font-weight: 900;
-  font-size: 20px;
+  font-weight: 600;
+  font-size: 17px;
   line-height: 1;
+  transform: rotate(-6deg);
 }
-.hoja-num::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border: 2px solid var(--color-ink);
-  border-radius: 50%;
-  transform: rotate(-4deg) scale(1.05, 0.92);
-}
-.hoja-num::after {
-  content: "";
-  position: absolute;
-  inset: 2px;
-  border: 1px solid var(--color-ink);
-  border-radius: 50%;
-  opacity: 0.4;
-  transform: rotate(6deg) scale(1, 0.96);
-}
-.hoja-num span { position: relative; z-index: 1; }
-.hoja-paso-texto { font-size: 12px; line-height: 1.5; padding-top: 7px; }
-.hoja-paso-detalle { display: block; font-family: var(--font-mono); font-size: 10px; color: var(--color-ink-soft); }
+.hoja-paso-titulo { font-family: var(--font-display); font-weight: 500; font-size: 16px; line-height: 1.2; letter-spacing: -0.01em; }
+.hoja-paso-detalle { display: block; margin-top: 2px; font-family: var(--font-mono); font-size: 10px; color: var(--color-ink-soft); }
 
+/* Lista de la compra: casilla redonda como los ingredientes de la receta. */
 .hoja-ingredientes { display: grid; grid-template-columns: 1fr 1fr; column-gap: 30px; }
 .hoja-ing {
   display: grid;
-  grid-template-columns: 14px 1fr;
-  gap: 8px;
-  padding: 5px 0;
+  grid-template-columns: 16px 1fr;
+  gap: 9px;
+  padding: 6px 0;
   font-size: 12px;
-  line-height: 1.4;
-  border-bottom: 1px dashed rgba(31, 37, 54, 0.18);
-  align-items: baseline;
+  line-height: 1.35;
+  border-bottom: 1px solid var(--color-rule);
+  align-items: center;
 }
+.hoja-casilla { width: 14px; height: 14px; border: 1.5px solid var(--color-ink); border-radius: 50%; background: var(--color-paper-2); }
 
-.hoja-notas-envoltorio { margin-top: 18px; display: flex; justify-content: flex-start; }
+/* Notas del menú: la nota amarilla del sistema, con sombra dura. */
+.hoja-notas-envoltorio { padding-top: 20px; }
 .hoja-notas {
-  background: var(--color-yellow);
-  padding: 16px 22px 20px;
-  max-width: 480px;
-  box-shadow: 2px 3px 0 rgba(31, 37, 54, 0.12);
-  transform: rotate(-1.4deg);
-  position: relative;
+  max-width: 470px;
+  background: var(--color-yellow-soft);
+  border: 1.5px solid var(--color-ink);
+  border-radius: 3px;
+  padding: 14px 20px 16px;
+  box-shadow: 4px 4px 0 var(--color-ink);
 }
-.hoja-notas::before {
-  content: "";
-  position: absolute;
-  top: -10px;
-  left: 50%;
-  transform: translateX(-50%) rotate(2deg);
-  width: 80px;
-  height: 18px;
-  background: var(--color-tape);
-}
-.hoja-notas-titulo { font-family: var(--font-script); font-size: 22px; line-height: 1; margin-bottom: 4px; }
-.hoja-notas-texto { font-family: var(--font-script); font-size: 17px; line-height: 1.3; white-space: pre-line; }
+.hoja-notas .kicker { margin-bottom: 6px; }
+.hoja-notas-texto { font-family: var(--font-script); font-weight: 600; font-size: 19px; line-height: 1.25; white-space: pre-line; }
 
 .hoja-pie {
-  padding: 10px 48px 14px;
-  border-top: 1.5px dashed rgba(31, 37, 54, 0.25);
+  padding: 10px 44px 14px;
+  border-top: 1.5px solid var(--color-ink);
   display: flex;
   justify-content: space-between;
   align-items: center;

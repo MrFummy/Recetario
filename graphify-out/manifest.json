@@ -6,10 +6,10 @@
     "semantic_hash": "acf7bb39a4e2edc71202148d5b08be1a"
   },
   "eslint.config.js": {
-    "mtime": 1779042821.3644986,
-    "seen": 1791901115.1973639,
-    "ast_hash": "0355276bc79439afe3c53e3a2470ca1e",
-    "semantic_hash": "0355276bc79439afe3c53e3a2470ca1e"
+    "mtime": 1794407951.1378326,
+    "seen": 1794407954.768176,
+    "ast_hash": "11ae8d9eaf2a80dd343523334b881564",
+    "semantic_hash": ""
   },
   "package.json": {
     "mtime": 1791902166.1003768,
@@ -240,9 +240,9 @@
     "semantic_hash": ""
   },
   "CLAUDE.md": {
-    "mtime": 1794400630.1980665,
-    "seen": 1794400631.777857,
-    "ast_hash": "233e7c16bfa1a6e70f51c703870b0cdb",
+    "mtime": 1794407951.1383429,
+    "seen": 1794407954.768265,
+    "ast_hash": "9fbb0848b5f7c45067d38df6da42d0e5",
     "semantic_hash": ""
   },
   "src/hooks/useDespensa.ts": {
@@ -768,9 +768,9 @@
     "semantic_hash": ""
   },
   "src/components/HojaImpresa.tsx": {
-    "mtime": 1794303323.6386142,
-    "seen": 1794303843.359956,
-    "ast_hash": "0a0efd806e8156694d11ee53dea0b4b9",
+    "mtime": 1794407782.0182257,
+    "seen": 1794407954.768196,
+    "ast_hash": "b04dda7e516433e42dadd648bbbf5f87",
     "semantic_hash": ""
   },
   "src/components/MenuCabecera.tsx": {
@@ -798,9 +798,9 @@
     "semantic_hash": ""
   },
   "src/components/MenuImprimible.tsx": {
-    "mtime": 1794303488.2686071,
-    "seen": 1794303843.3599622,
-    "ast_hash": "a45bc33d48ca299f02fb69ccdca38cf4",
+    "mtime": 1794407849.961485,
+    "seen": 1794407954.768203,
+    "ast_hash": "09dec45d3481328a86038b50f9adbf4e",
     "semantic_hash": ""
   },
   "src/components/MenuSelectorRecetas.tsx": {
@@ -978,9 +978,9 @@
     "semantic_hash": ""
   },
   "src/lib/colorCategoria.ts": {
-    "mtime": 1794320644.4285846,
-    "seen": 1794320965.499721,
-    "ast_hash": "87452b4277f73d9d47e9e021a48081d4",
+    "mtime": 1794407763.774336,
+    "seen": 1794407954.768233,
+    "ast_hash": "3f1d16f27cdd0521566ba9954889525d",
     "semantic_hash": ""
   },
   "src/components/ListaVisados.tsx": {
@@ -1014,9 +1014,9 @@
     "semantic_hash": ""
   },
   "n8n/correo-base.js": {
-    "mtime": 1794400241.4645789,
-    "seen": 1794400631.7777731,
-    "ast_hash": "992b98e913459008e6e7cb3f8153db1f",
+    "mtime": 1794404313.8178554,
+    "seen": 1794407954.768178,
+    "ast_hash": "304b57f802f445afded699263d82875b",
     "semantic_hash": ""
   },
   "n8n/generar-correos.mjs": {
@@ -1026,9 +1026,9 @@
     "semantic_hash": ""
   },
   "n8n/rellenar-html.js": {
-    "mtime": 1794389287.6862056,
-    "seen": 1794400631.777775,
-    "ast_hash": "962d96fd258c897bf8d6458f5a372b62",
+    "mtime": 1794404313.8152442,
+    "seen": 1794407954.768181,
+    "ast_hash": "17ac96364fdea43b19818fbb3b7ea25c",
     "semantic_hash": ""
   },
   "src/components/NuevaClaveModal.tsx": {
@@ -1044,15 +1044,15 @@
     "semantic_hash": ""
   },
   "docs/pendientes.md": {
-    "mtime": 1794400241.4640167,
-    "seen": 1794400631.777864,
-    "ast_hash": "10721dbb2839b9fdcd87f4de14071ef3",
+    "mtime": 1794407951.1385627,
+    "seen": 1794407954.7682712,
+    "ast_hash": "0b9b8c37a9c7cbce7ea36ac4e46f8876",
     "semantic_hash": ""
   },
   "n8n/receta-pdf.html": {
-    "mtime": 1794326269.2490036,
-    "seen": 1794400631.777867,
-    "ast_hash": "8c8de2338e94fb9225e36b8b037a88f4",
+    "mtime": 1794403359.1597464,
+    "seen": 1794407954.7682738,
+    "ast_hash": "cb6a4f94837661ced8ff1c7744995392",
     "semantic_hash": ""
   },
   "supabase/plantillas-correo/LEEME.md": {
@@ -1089,6 +1089,12 @@
     "mtime": 1794391168.7948778,
     "seen": 1794400631.7778702,
     "ast_hash": "e3a50ddb2b9afd660eb56c0cc21bfc1e",
+    "semantic_hash": ""
+  },
+  "n8n/regenerar-pdfs.js": {
+    "mtime": 1794404313.8157957,
+    "seen": 1794407954.76818,
+    "ast_hash": "c8295a813fcf63d4fccc923e9a2c28df",
     "semantic_hash": ""
   }
 }

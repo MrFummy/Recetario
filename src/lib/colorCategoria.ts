@@ -10,7 +10,7 @@ export type ClaveCategoria =
 const PREFIJOS: [string, ClaveCategoria][] = [
   ['aperit', 'aperitivos'], ['postre', 'postres'], ['carne', 'carnes'],
   ['pescad', 'pescados'], ['sopa', 'sopas'], ['crema', 'sopas'],
-  ['ensal', 'ensaladas'], ['arroz', 'arroces'], ['pasta', 'pastas'],
+  ['ensal', 'ensaladas'], ['arroc', 'arroces'], ['pasta', 'pastas'],
 ];
 
 export function claveCategoria(categoria: string | null | undefined): ClaveCategoria {

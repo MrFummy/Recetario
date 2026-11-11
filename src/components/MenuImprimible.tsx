@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 import type { Menu, MenuReceta, Recipe } from '../types';
 import type { ItemListaCompra } from '../lib/listaCompra';
 import { PASES } from '../lib/menus';
+import { claveCategoria } from '../lib/colorCategoria';
 import { paginar, type Bloque } from '../lib/paginar';
 import { HojaImpresa } from './HojaImpresa';
 
@@ -13,29 +14,30 @@ interface Props {
 }
 
 /**
- * Alto útil de una hoja, en px: entre la cabecera y el pie quedan 969, menos un margen de 7
- * por si una estimación se queda corta. Los pesos de `ALTO` están medidos sobre la hoja ya
- * pintada y aciertan al píxel o casi, así que el margen puede ser pequeño.
+ * Alto útil de una hoja, en px: entre la cabecera con su cenefa y el pie quedan 975 (la
+ * hoja mide 1119; el contenido arranca con 22 de relleno), menos un margen de 7 por si una
+ * estimación se queda corta. Los pesos de `ALTO` están medidos sobre la hoja ya pintada
+ * (11 nov 2026) y aciertan al píxel o se pasan por poco, así que el margen puede ser pequeño.
  */
-const ALTO_UTIL = 962;
+const ALTO_UTIL = 968;
 
 /**
  * Altura de cada bloque, en px, con sus márgenes. Si se cambian tamaños de letra o rellenos
  * en `.hoja*` hay que volver a medirlas, o el contenido se saldría de la hoja.
  */
 const ALTO = {
-  paso: 61, // número circulado, título y detalle
-  linea: 18, // cada línea más que se parta en un paso
-  seccion: 67, // título de sección, con su margen superior e inferior
-  ingrediente: 28, // fila de la lista, de una línea
-  ingredienteLargo: 45, // y de dos
-  categoria: 33,
-  titulo: 38, // por línea
-  chips: 25, // primera fila
-  filaChips: 31, // cada fila más
-  ornamento: 48,
-  nota: 80, // post-it sin texto, con su margen
-  lineaNota: 22,
+  paso: 54, // sello numerado, título de una línea y detalle (53,2 medido)
+  linea: 20, // cada línea más que se parta en el título de un plato (19,2)
+  seccion: 69, // título de sección, con su margen superior e inferior (68,5)
+  ingrediente: 30, // fila de la lista, de una línea (29,2)
+  ingredienteLargo: 46, // y de dos (45,4)
+  kicker: 27, // con su margen
+  titulo: 45, // por línea (44,2)
+  bajoTitulo: 14,
+  chips: 30, // primera fila, con su margen
+  filaChips: 34, // cada fila más
+  nota: 74, // nota amarilla sin texto, con el aire de encima
+  lineaNota: 24, // por línea de texto (23,75)
 } as const;
 
 /** `31/10/2026`, como en los PDF de recetas. */
@@ -57,23 +59,21 @@ export function MenuImprimible({ menu, items, recipes, lista }: Props) {
   });
   const chips = [menu.ocasion, comensales, fechaLarga].filter((c): c is string => !!c);
 
-  const lineasTitulo = Math.ceil(menu.nombre.length / 30);
+  const palabras = menu.nombre.trim().split(' ');
+  const ultima = palabras.length > 1 ? palabras.pop() : null;
+  const lineasTitulo = Math.ceil(menu.nombre.length / 28);
   const filasChips = Math.ceil(chips.join('').length / 70);
   const bloquesMenu: Bloque<ReactNode>[] = [
     {
-      // El margen de 10 px bajo el título se funde con el de 8 px sobre los chips.
-      peso: ALTO.categoria + lineasTitulo * ALTO.titulo + 10 + ALTO.chips + (filasChips - 1) * ALTO.filaChips + ALTO.ornamento,
+      peso: ALTO.kicker + lineasTitulo * ALTO.titulo + ALTO.bajoTitulo + ALTO.chips + (filasChips - 1) * ALTO.filaChips,
       contenido: (
         <div key="cabeza">
-          <div className="hoja-categoria">menú</div>
-          <h1 className="hoja-titulo">{menu.nombre}</h1>
+          <div className="kicker">menú</div>
+          <h1 className="hoja-titulo">
+            {ultima ? <>{palabras.join(' ')} <em>{ultima}</em></> : <em>{menu.nombre}</em>}
+          </h1>
           <div className="hoja-chips">
             {chips.map((c) => <span key={c} className="hoja-chip">{c}</span>)}
-          </div>
-          <div className="hoja-ornamento" aria-hidden>
-            <span className="hoja-ornamento-linea" />
-            <span className="hoja-ornamento-punto">✦</span>
-            <span className="hoja-ornamento-linea" />
           </div>
         </div>
       ),
@@ -102,12 +102,12 @@ export function MenuImprimible({ menu, items, recipes, lista }: Props) {
         .filter(Boolean)
         .join(' · ');
       bloquesMenu.push({
-        peso: ALTO.paso + (receta.titulo.length > 90 ? ALTO.linea : 0),
+        peso: ALTO.paso + (receta.titulo.length > 80 ? ALTO.linea : 0),
         contenido: (
-          <div key={`${id}-${item.receta_id}`} className="hoja-paso">
-            <div className="hoja-num"><span>{numero}</span></div>
-            <div className="hoja-paso-texto">
-              <b>{receta.titulo}</b>
+          <div key={`${id}-${item.receta_id}`} className="hoja-paso" data-k={claveCategoria(receta.categoria)}>
+            <div className="hoja-num">{numero}</div>
+            <div>
+              <div className="hoja-paso-titulo">{receta.titulo}</div>
               <span className="hoja-paso-detalle">{detalle}</span>
             </div>
           </div>
@@ -118,12 +118,12 @@ export function MenuImprimible({ menu, items, recipes, lista }: Props) {
 
   if (menu.notas) {
     bloquesMenu.push({
-      // Unos 60 caracteres por línea en letra script.
-      peso: ALTO.nota + Math.ceil(menu.notas.length / 60) * ALTO.lineaNota,
+      // Unos 55 caracteres por línea en letra script.
+      peso: ALTO.nota + Math.ceil(menu.notas.length / 52) * ALTO.lineaNota,
       contenido: (
         <div key="notas" className="hoja-notas-envoltorio">
           <div className="hoja-notas">
-            <div className="hoja-notas-titulo">~ Notas del menú ~</div>
+            <div className="kicker">notas del menú</div>
             <div className="hoja-notas-texto">{menu.notas}</div>
           </div>
         </div>
@@ -135,7 +135,7 @@ export function MenuImprimible({ menu, items, recipes, lista }: Props) {
   const bloquesLista: Bloque<ReactNode>[] = [];
   if (lista.length > 0) {
     bloquesLista.push({
-      peso: ALTO.seccion + 26, // y su línea de explicación
+      peso: ALTO.seccion + 24, // y su línea de explicación (92,3 medido)
       pegado: true,
       contenido: (
         <div key="lista-titulo" className="hoja-seccion-bloque">
@@ -153,7 +153,7 @@ export function MenuImprimible({ menu, items, recipes, lista }: Props) {
           <div key={`par-${par[0].base}`} className="hoja-ingredientes">
             {par.map((item) => (
               <div key={item.base} className="hoja-ing">
-                <span>◆</span>
+                <span className="hoja-casilla" />
                 <span>{texto(item)}</span>
               </div>
             ))}
@@ -167,7 +167,7 @@ export function MenuImprimible({ menu, items, recipes, lista }: Props) {
     ...paginar(bloquesMenu, [ALTO_UTIL]),
     ...(bloquesLista.length > 0 ? paginar(bloquesLista, [ALTO_UTIL]) : []),
   ];
-  const ruta = `~/menus/${menu.nombre.split(' ').slice(0, 4).join(' ')}.md`;
+  const ruta = `menú · ${menu.nombre}`;
   const etiqueta = (menu.ocasion ?? 'menú').slice(0, 40);
 
   return (

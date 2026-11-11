@@ -32,8 +32,11 @@ El nombre de versión de «Aviso de nuevas recetas» salió con las tildes mal e
    es el cliente: Outlook bloquea las imágenes remotas hasta pulsar «Mostrar contenido bloqueado». **Sin confirmar** que las
    cuatro plantillas pegadas lleven ya la cenefa de celdas (`copiar.html`); si el correo la muestra cortada, hay que repegarlas.
    La cenefa de los cinco correos de n8n ya es la de celdas de color.
-4. **Hojas de menús impresas** (`.hoja*` en `index.css`): siguen con la estética de cuaderno. Llevarlas al sistema
-   nuevo exige volver a medir `ALTO` y `ALTO_UTIL` en `MenuImprimible.tsx`.
+4. ~~**Hojas de menús impresas**~~ **Hecho el 11 de noviembre** (sin desplegar hasta confirmarlo): `.hoja*` reescritas como réplica
+   de la plantilla v5 (sartén, cenefa, kicker, titular, sellos de color por categoría, casillas redondas, nota amarilla), `ALTO` y
+   `ALTO_UTIL` (968) remedidos sobre la hoja pintada, y comprobado que no desborda con menús de 3 a 45 recetas ni deja páginas
+   en blanco al imprimir. De paso se corrigió el prefijo `arroz`→`arroc` de `colorCategoria.ts`: **en la web las recetas de arroces
+   salían en color neutro** (misma errata que en n8n). Pendiente: probar con papel real o con un menú real del admin.
 5. ~~**Los 77 PDFs ya generados**~~ **Hecho el 11 de noviembre**: los 77 regenerados en A4 y estilo «Mercado y azulejo», con el flujo
    «Regenerar PDFs antiguos» (`uLBelHfEjdbxDbaS`, inactivo, manual; sobrescribe el contenido del **mismo fichero de Drive**, así que
    los enlaces no cambian). Copias de los PDF antiguos en «Respaldo PDFs estilo cuaderno (Letter)» (`1ypKTHcCDCYhZpWKSaIGCbF03oujWkwE-`,

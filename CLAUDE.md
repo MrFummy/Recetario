@@ -417,14 +417,13 @@ organizada por pases; del menú saldrá la lista de la compra escalada. Diseño 
   unidades enteras (unidad, diente, yema…) hacia arriba, g y ml sin decimales (con uno por
   debajo de 10), el resto con dos. Sin `escalas` la función se comporta como siempre, que es
   lo que usa la lista de «para hacer». Lo que no es numérico («al gusto») no se escala.
-- **Imprimir** es CSS de impresión, sin librerías ni n8n, y **es una réplica de la plantilla HTML
-  con la que n8n genera los PDF de las recetas** (un fichero del Drive, «Receta - Plantilla n8n
-  v2 cuaderno», que el nodo `Rellenar HTML` rellena; Gotenberg la convierte con
-  `printBackground`): cuadrícula de 24 px, logo «M», marcas ◆, números circulados, chips,
-  subrayado inclinado y post-it. Sus estilos están copiados en `index.css` como clases `.hoja*`,
-  con sus mismas medidas en px. **Cambios respecto a la plantilla**: papel A4 y no Letter, y
-  sombras sólidas en la nota (las difuminadas salen como un rectángulo gris al imprimir). Si se
-  retoca la plantilla, conviene retocar `.hoja*`.
+- **Imprimir** es CSS de impresión, sin librerías ni n8n, y **es una réplica de la plantilla v5 del PDF
+  de receta** («Mercado y azulejo», `n8n/receta-pdf.html`; desde el 11 de noviembre de 2026, antes imitaba la
+  «v2 cuaderno»): logo de la sartén, cenefa, kicker en mono, titular ligero con la última palabra en cursiva
+  terracota, chips de mono, números en sello **del color de la categoría de cada plato** (`data-k`), subrayado
+  de sección, casilla redonda en la lista de la compra y nota amarilla con sombra dura. Sus estilos están
+  copiados en `index.css` como clases `.hoja*`, con las mismas medidas en px. Si se retoca la plantilla,
+  conviene retocar `.hoja*`.
   El botón llama a `window.print()`; [MenuImprimible.tsx](src/components/MenuImprimible.tsx) es
   una hoja `hidden print:block` (invisible en pantalla) y la cabecera de `App` y el editor llevan
   `print:hidden`. Cada página es una **hoja A4 exacta de 210 × 296 mm**
@@ -433,12 +432,15 @@ organizada por pases; del menú saldrá la lista de la compra escalada. Diseño 
   **`@page { margin: 0 }` es global** (en `index.css`): con márgenes el navegador añade su URL y
   su fecha a cada página, y sin ellos nada parte el contenido, así que
   [paginar.ts](src/lib/paginar.ts) lo reparte a mano entre hojas con **pesos en px medidos sobre
-  la hoja pintada** (`ALTO` y `ALTO_UTIL` = 962 en `MenuImprimible.tsx`). Si se cambia el tamaño
+  la hoja pintada** (`ALTO` y `ALTO_UTIL` = 968 en `MenuImprimible.tsx`, remedidos el 11 de noviembre con el estilo nuevo). Si se cambia el tamaño
   de letra o el relleno de algo en `.hoja*`, **hay que volver a medirlos**, o el contenido se
   saldría de la hoja. Pantalla y hoja comparten `listaDelMenu` ([menus.ts](src/lib/menus.ts)).
-  Verificado emulando el estilo de impresión (convirtiendo las reglas `@media print` en reglas de
-  pantalla) con un menú de 25 recetas: 5 hojas de 210 × 296 mm, ninguna con desborde ni solapada
-  con el pie; el admin la revisó impresa el 10 de noviembre y la ve bien.
+  **Para volver a medir** (11 nov 2026): una página temporal en la raíz (`medir.html` + `src/_medir.tsx`) que
+  renderiza `MenuImprimible` con datos inventados y un estilo `.hidden{display:block!important}`; se mide
+  con `getBoundingClientRect` y se comprueba que el último bloque de cada hoja acaba antes que su caja
+  (holgura mínima 21 px con 3, 12, 25 y 45 recetas, con y sin notas y con un título muy largo) y, imprimiendo
+  esa página con Chrome (`--print-to-pdf`), que salen tantas páginas A4 como hojas y ninguna en blanco.
+  Ya no existe: se borra al terminar, hay que recrearla. Revisado a ojo el PDF impreso, no en papel.
 - **Compartir** ([la migración](supabase/migrations/20261110_compartir_menus.sql)): `menus.visibilidad`
   es `privado` (por defecto), `afans` (cualquier usuario con sesión) o `enlace` (cualquiera con el
   enlace, sin cuenta). **El enlace NO se abre con una policy de lectura pública sobre `menus`**: con
@@ -717,9 +719,7 @@ que las secciones que no se tocaron ya heredan la paleta.
   de menús impresas (`.hoja*`).
 - **`sistema.css` va dentro de `@layer components`**: sin capa, el CSS suelto gana siempre a las utilidades de
   Tailwind (un `flex` no podía con un `display: block` de una clase propia). Las utilidades ganan donde coinciden.
-- **Pendiente de decidir**: las hojas impresas de los menús (`.hoja*`) siguen con la estética de cuaderno; solo
-  cambian de color porque comparten tokens. Si se llevan al nuevo sistema, hay que volver a medir
-  `ALTO`/`ALTO_UTIL` de `MenuImprimible.tsx`.
+- **Hojas impresas de los menús (11 nov 2026)**: ya en el sistema nuevo (ver *Menús › Imprimir*).
 - Verificado sin desborde horizontal de 375 a 1280 px en las ocho vistas principales. Sin revisar a mano: el modo
   oscuro (no existe), los temporizadores del modo cocina y el editor de menús.
 
