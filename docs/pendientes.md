@@ -21,10 +21,12 @@ El nombre de versión de «Aviso de nuevas recetas» salió con las tildes mal e
 1. **Borrar a mano la fila de prueba de Google Sheets** (hoja «Recetario»): «Lasaña de carne» con fecha «10 de
    noviembre de 2026» y enlace que termina en `…1nqFcaowrchTLOFFKxQQ79tU1TOYtw-UE`. La de mayo es la buena. Nada
    más de esa prueba queda en Supabase, Notion, Drive ni Storage.
-2. ~~**Foto con nombre único en el alta de recetas**~~ **Hecho el 11 de noviembre** (flujo `3a7bfe9f`): `Recupera foto`
-   fija `foto_nombre` y el borrado de Sheets busca por enlace. **Falta comprobarlo de punta a punta con un título
-   repetido** (necesita sesión de admin en el panel del navegador): dos altas «PRUEBA Sopa de Nube», borrar una por la
-   app y ver que la otra conserva foto, PDF y fila de Sheets; luego borrar la segunda.
+2. ~~**Foto con nombre único en el alta de recetas**~~ **Hecho y probado el 11 de noviembre** (flujo `3a7bfe9f`): `Recupera foto`
+   fija `foto_nombre` y el borrado de Sheets busca por enlace. Probado con dos altas (una con foto propia y otra con la
+   de por defecto: dos ficheros distintos) y dos borrados: `Buscar receta en Google Sheets` devolvió **una sola fila**
+   por borrado y la otra receta conservó foto, PDF y fila hasta que se borró. No quedó nada de la prueba. Matiz: el
+   título sale del documento que lee Gemini, no del formulario, así que dos altas con el «mismo» título pueden salir
+   con títulos algo distintos; el nombre único protege igualmente.
 3. **Plantillas de correo de Supabase Auth** (confirmar cuenta, restablecer contraseña): se editan en el panel
    (*Authentication → Email Templates*). Generarlas con `n8n/correo-base.js` y pegarlas; usan variables como
    `{{ .ConfirmationURL }}`.
