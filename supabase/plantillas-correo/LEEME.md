@@ -14,6 +14,10 @@ Las cuatro salen de la misma base que los avisos de n8n ([n8n/correo-base.js](..
 Las variables son las de Supabase (`{{ .ConfirmationURL }}`, `{{ .Email }}`, `{{ .NewEmail }}`, `{{ .Token }}`) y se dejan tal cual:
 las rellena Supabase al enviar.
 
+**Para copiarlas sin pelearse con los ficheros**: abre [copiar.html](copiar.html) en el navegador; cada asunto y cada
+HTML tiene su botón «Copiar» (`node supabase/plantillas-correo/generar.mjs copiar supabase/plantillas-correo/copiar.html`
+lo regenera).
+
 **Para regenerarlas** tras tocar la base: `node supabase/plantillas-correo/generar.mjs` (reescribe los `.html`) y
 `node supabase/plantillas-correo/generar.mjs vista <fichero.html>` para ver las cuatro con datos de ejemplo.
 

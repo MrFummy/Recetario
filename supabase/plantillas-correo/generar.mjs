@@ -3,6 +3,7 @@
 // el panel (Authentication → Email Templates). Ver LEEME.md.
 //   node supabase/plantillas-correo/generar.mjs            → escribe los .html junto a este fichero
 //   node supabase/plantillas-correo/generar.mjs vista <f>  → una página con las cuatro, con enlaces de ejemplo
+//   node supabase/plantillas-correo/generar.mjs copiar <f> → una página con botones «Copiar» para pegar en el panel
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -64,7 +65,26 @@ export const PLANTILLAS = {
 };
 
 const modo = process.argv[2];
-if (modo === 'vista') {
+if (modo === 'copiar') {
+  // Página de ayuda para pegar las plantillas en el panel: cada asunto y cada HTML con su botón «Copiar».
+  const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  const pasos = Object.entries(PLANTILLAS).map(([k, p], i) => `<section>
+  <h2>${i + 1}. ${p.ajuste}</h2>
+  <p>En el panel: <b>Authentication → Email Templates → ${p.ajuste}</b></p>
+  <label>Subject <button data-copiar="a${i}">Copiar asunto</button></label>
+  <textarea id="a${i}" rows="1" readonly>${esc(p.asunto)}</textarea>
+  <label>Message body <button data-copiar="h${i}">Copiar HTML</button></label>
+  <textarea id="h${i}" rows="6" readonly>${esc(p.html)}</textarea>
+</section>`).join('');
+  fs.writeFileSync(process.argv[3], `<!doctype html><html lang="es"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Pegar las plantillas en Supabase</title>
+<style>body{font:15px/1.5 system-ui;max-width:760px;margin:0 auto;padding:20px 16px 60px;background:#faf5e8;color:#2a2118}h1{font:600 26px Georgia,serif;margin:0 0 6px}h2{font:600 20px Georgia,serif;margin:30px 0 4px}p{margin:4px 0 10px;color:#6d5f50}section{border-top:1.5px solid #2a2118;margin-top:22px}label{display:flex;justify-content:space-between;align-items:center;font:600 12px ui-monospace,monospace;text-transform:uppercase;letter-spacing:.08em;margin:12px 0 4px}textarea{width:100%;box-sizing:border-box;font:12px ui-monospace,monospace;padding:8px;border:1.5px solid #2a2118;border-radius:3px;background:#fff;color:#2a2118}button{font:700 13px system-ui;padding:7px 14px;border:1.5px solid #2a2118;border-radius:999px;background:#f4b623;cursor:pointer}button.ok{background:#0e5b46;color:#fff}ol{padding-left:20px}</style>
+<h1>Pegar las plantillas en Supabase</h1>
+<p>Para cada plantilla: pulsa <b>Copiar asunto</b> y pégalo en «Subject»; pulsa <b>Copiar HTML</b> y pégalo en «Message body». Si el botón no copia, pulsa dentro del cuadro, <b>Ctrl/Cmd + A</b> y <b>Ctrl/Cmd + C</b>.</p>
+<ol><li>Abre el panel de Supabase del proyecto → <b>Authentication</b> → <b>Email Templates</b>.</li><li>Haz las cuatro plantillas de abajo, una por una.</li><li>Pulsa <b>Save</b> en cada una.</li></ol>
+${pasos}
+<script>document.querySelectorAll('button[data-copiar]').forEach(b=>b.onclick=async()=>{const t=document.getElementById(b.dataset.copiar);try{await navigator.clipboard.writeText(t.value)}catch(e){t.select();document.execCommand('copy')}const o=b.textContent;b.textContent='¡Copiado!';b.classList.add('ok');setTimeout(()=>{b.textContent=o;b.classList.remove('ok')},1600)});document.querySelectorAll('textarea').forEach(t=>t.addEventListener('focus',()=>t.select()));</script></html>`);
+  console.log('página de copia escrita');
+} else if (modo === 'vista') {
   const demo = (h) => h.replaceAll('{{ .ConfirmationURL }}', 'https://recetario.orballo.link/#/ejemplo').replaceAll('{{ .Email }}', 'ana@ejemplo.com').replaceAll('{{ .NewEmail }}', 'ana.nueva@ejemplo.com').replaceAll('{{ .Token }}', '482915');
   // También se escapan < y >: sin ello, el servidor de desarrollo de Vite cree que el primer `<head>` de la página
   // es suyo e inyecta su script dentro del srcdoc.
