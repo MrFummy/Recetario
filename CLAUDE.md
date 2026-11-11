@@ -493,7 +493,7 @@ está en [docs/ideas.md](docs/ideas.md#avisos-por-correo-y-mi-cuenta--decidido-e
 
 ## Recuperar la contraseña
 
-**Hecho el 11 de noviembre de 2026; sin desplegar ni probar con un correo real.** En el modal de acceso, «¿Olvidaste tu contraseña?»
+**Hecho y desplegado el 11 de noviembre de 2026; sin probar con un correo real.** En el modal de acceso, «¿Olvidaste tu contraseña?»
 ([LoginModal.tsx](src/components/LoginModal.tsx), modo `olvido`) llama a `resetPasswordForEmail` y enseña siempre el mismo aviso,
 exista o no la cuenta. El enlace del correo (plantilla de Supabase Auth «Restablecer contraseña») vuelve a la web con
 `#access_token=…&type=recovery`, y [NuevaClaveModal.tsx](src/components/NuevaClaveModal.tsx) pide la contraseña nueva

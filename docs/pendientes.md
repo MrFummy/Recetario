@@ -8,7 +8,7 @@ El detalle de cómo está construido todo está en la sección *Sistema de dise�
 
 | Qué | Ahora | Anterior |
 |---|---|---|
-| Web (NAS `/Volumes/web/recetario`) | commit `0c41176`, bundle `index-DH9LXMbZ.js` | commit `bb932a8` (`git checkout bb932a8 && npm run deploy:mac`) |
+| Web (NAS `/Volumes/web/recetario`) | commit `3c797b1`, bundle `index-CUeSkwVP.js` | commit `0c41176` (`git checkout 0c41176 && npm run deploy:mac`) |
 | «Recetas con Frontend» (`bN99xqHFvUTriCKc`) | `9f252cab` | `3a7bfe9f` (y antes `4cd0c01d`, `3a62fac0`) |
 | «Aviso de nuevas recetas» (`Zx0jNA5wC2aTu0U1`) | `2cf9905d` | `c9b2b212` (y antes `13aedc94`) |
 | «Aviso al autor de una sugerencia» (`8NAHa0mnbcFazLd6`) | `e889ea12` | `df5c2f29` (y antes `25cc2e1f`) |
