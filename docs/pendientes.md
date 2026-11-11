@@ -18,9 +18,7 @@ El nombre de versión de «Aviso de nuevas recetas» salió con las tildes mal e
 
 ## Para hacer, por orden
 
-1. **Borrar a mano la fila de prueba de Google Sheets** (hoja «Recetario»): «Lasaña de carne» con fecha «10 de
-   noviembre de 2026» y enlace que termina en `…1nqFcaowrchTLOFFKxQQ79tU1TOYtw-UE`. La de mayo es la buena. Nada
-   más de esa prueba queda en Supabase, Notion, Drive ni Storage.
+1. ~~**Borrar a mano la fila de prueba de Google Sheets**~~ **Hecho el 11 de noviembre** (la de «Lasaña de carne» del 10 de noviembre de 2026).
 2. ~~**Foto con nombre único en el alta de recetas**~~ **Hecho y probado el 11 de noviembre** (flujo `3a7bfe9f`): `Recupera foto`
    fija `foto_nombre` y el borrado de Sheets busca por enlace. Probado con dos altas (una con foto propia y otra con la
    de por defecto: dos ficheros distintos) y dos borrados: `Buscar receta en Google Sheets` devolvió **una sola fila**
