@@ -8,7 +8,7 @@ El detalle de cómo está construido todo está en la sección *Sistema de dise�
 
 | Qué | Ahora | Anterior |
 |---|---|---|
-| Web (NAS `/Volumes/web/recetario`) | commit `3c797b1`, bundle `index-CUeSkwVP.js` | commit `0c41176` (`git checkout 0c41176 && npm run deploy:mac`) |
+| Web (NAS `/Volumes/web/recetario`) | commit `d11fb9f`, bundle `index-DnFZCMd5.js` | commit `3c797b1` (`git checkout 3c797b1 && npm run deploy:mac`) |
 | «Recetas con Frontend» (`bN99xqHFvUTriCKc`) | `cbc916b9` | `573d1ad0` (y antes `6cbe04ff`, `9f252cab`, `3a7bfe9f`, `4cd0c01d`, `3a62fac0`) |
 | «Aviso de nuevas recetas» (`Zx0jNA5wC2aTu0U1`) | `2cf9905d` | `c9b2b212` (y antes `13aedc94`) |
 | «Aviso al autor de una sugerencia» (`8NAHa0mnbcFazLd6`) | `e889ea12` | `df5c2f29` (y antes `25cc2e1f`) |
@@ -32,7 +32,7 @@ El nombre de versión de «Aviso de nuevas recetas» salió con las tildes mal e
    es el cliente: Outlook bloquea las imágenes remotas hasta pulsar «Mostrar contenido bloqueado». **Sin confirmar** que las
    cuatro plantillas pegadas lleven ya la cenefa de celdas (`copiar.html`); si el correo la muestra cortada, hay que repegarlas.
    La cenefa de los cinco correos de n8n ya es la de celdas de color.
-4. ~~**Hojas de menús impresas**~~ **Hecho el 11 de noviembre** (sin desplegar hasta confirmarlo): `.hoja*` reescritas como réplica
+4. ~~**Hojas de menús impresas**~~ **Hecho y desplegado el 11 de noviembre**: `.hoja*` reescritas como réplica
    de la plantilla v5 (sartén, cenefa, kicker, titular, sellos de color por categoría, casillas redondas, nota amarilla), `ALTO` y
    `ALTO_UTIL` (968) remedidos sobre la hoja pintada, y comprobado que no desborda con menús de 3 a 45 recetas ni deja páginas
    en blanco al imprimir. De paso se corrigió el prefijo `arroz`→`arroc` de `colorCategoria.ts`: **en la web las recetas de arroces
