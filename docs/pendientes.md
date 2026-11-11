@@ -9,10 +9,10 @@ El detalle de cómo está construido todo está en la sección *Sistema de dise�
 | Qué | Ahora | Anterior |
 |---|---|---|
 | Web (NAS `/Volumes/web/recetario`) | commit `3c797b1`, bundle `index-CUeSkwVP.js` | commit `0c41176` (`git checkout 0c41176 && npm run deploy:mac`) |
-| «Recetas con Frontend» (`bN99xqHFvUTriCKc`) | `9f252cab` | `3a7bfe9f` (y antes `4cd0c01d`, `3a62fac0`) |
+| «Recetas con Frontend» (`bN99xqHFvUTriCKc`) | `6cbe04ff` | `9f252cab` (y antes `3a7bfe9f`, `4cd0c01d`, `3a62fac0`) |
 | «Aviso de nuevas recetas» (`Zx0jNA5wC2aTu0U1`) | `2cf9905d` | `c9b2b212` (y antes `13aedc94`) |
 | «Aviso al autor de una sugerencia» (`8NAHa0mnbcFazLd6`) | `e889ea12` | `df5c2f29` (y antes `25cc2e1f`) |
-| Plantilla del PDF en Drive | v3 `1IWUaLVN5ygOmfvBPSSlRl9a3nDuSoOZ7` | v2 de cuaderno `1yLgKKr5VWKjVvH8bHN5WT7egbNkQ1ctH` (cambiar el ID en `Leer plantilla HTML`) |
+| Plantilla del PDF en Drive | v4 A4 `1zbidS7zDsJ_72aY1Y0gSPx7EEwjOgWtR` | v3 Letter `1IWUaLVN5ygOmfvBPSSlRl9a3nDuSoOZ7` y v2 de cuaderno `1yLgKKr5VWKjVvH8bHN5WT7egbNkQ1ctH` (cambiar el ID en `Leer plantilla HTML`) |
 
 El nombre de versión de «Aviso de nuevas recetas» salió con las tildes mal escritas: es solo la etiqueta.
 
@@ -36,14 +36,13 @@ El nombre de versión de «Aviso de nuevas recetas» salió con las tildes mal e
    nuevo exige volver a medir `ALTO` y `ALTO_UTIL` en `MenuImprimible.tsx`.
 5. **Los 77 PDFs ya generados** siguen en estilo cuaderno. Regenerarlos con «Regenerar PDFs antiguos» (inactivo)
    toca Drive, Notion y Supabase: probar primero con una sola receta y con una copia, no con el catálogo entero.
-6. **PDF de receta en A4** (decidido el 11 de noviembre). **Hecho en el repo:** `n8n/receta-pdf.html` lleva `@page { size: A4 }`
-   y el cuerpo mide `210mm × 296mm` (296 y no 297, como las hojas de menús, para no generar una página en blanco por
-   redondeo; en Letter la receta corta salía con una segunda página vacía por lo mismo). **El nodo de Gotenberg no hay que
-   tocarlo**: no pasa tamaño de papel y respeta el `@page` de la plantilla (el PDF de producción mide 612 × 792 y va a sangre).
-   Probado en local rellenando la plantilla con `rellenar-html.js` y una receta corta y otra larga, e imprimiendo con Chrome:
-   `MediaBox` 595 × 842, la corta en 1 página y la larga continúa bien en la 2.ª. **Falta**: subir la plantilla a Drive como
-   fichero nuevo (`update_file` no cambia el contenido), apuntar `Leer plantilla HTML` al ID nuevo, publicar y hacer una alta
-   de prueba (el PDF solo lo genera n8n). La v3 en Letter (`1IWUaLVN5ygOmfvBPSSlRl9a3nDuSoOZ7`) queda como vuelta atrás.
+6. **PDF de receta en A4** (decidido el 11 de noviembre). **Activado en producción el mismo día** (flujo `6cbe04ff`): plantilla v4
+   subida a Drive (`update_file` no cambia contenido, así que es un fichero nuevo) y `Leer plantilla HTML` apuntando a ella.
+   `n8n/receta-pdf.html` lleva `@page { size: A4 }` y el cuerpo mide `210mm × 296mm` (296 y no 297, como las hojas de
+   menús, para no generar una página en blanco por redondeo; en Letter la receta corta salía con una segunda página vacía).
+   El nodo de Gotenberg no pasa tamaño de papel y respeta el `@page` de la plantilla. Probado en local con Chrome (`MediaBox`
+   595 × 842, la corta en 1 página, la larga continúa bien en la 2.ª). **Falta una alta real** para ver el PDF de Gotenberg.
+   Vuelta atrás: poner en `Leer plantilla HTML` el ID de la v3 Letter.
 
 ## Sin comprobar a mano
 
