@@ -18,9 +18,9 @@
     "semantic_hash": ""
   },
   "src/App.tsx": {
-    "mtime": 1794320644.4490328,
-    "seen": 1794320965.4996748,
-    "ast_hash": "bf030908a810cdfeaeb38d6ef4e088b0",
+    "mtime": 1794400534.5312812,
+    "seen": 1794400631.77778,
+    "ast_hash": "0452b77a691a2436cdc91283f399a041",
     "semantic_hash": ""
   },
   "src/components/AddRecipeForm.tsx": {
@@ -42,9 +42,9 @@
     "semantic_hash": ""
   },
   "src/components/LoginModal.tsx": {
-    "mtime": 1794322698.57494,
-    "seen": 1794323301.917181,
-    "ast_hash": "2de6d7d228eefd4368a40c9ca8b4adf0",
+    "mtime": 1794400583.95719,
+    "seen": 1794400631.777792,
+    "ast_hash": "53c4b2ef6c239503afaf6e403caaf691",
     "semantic_hash": ""
   },
   "src/components/RecipeCard.tsx": {
@@ -96,10 +96,10 @@
     "semantic_hash": ""
   },
   "src/lib/supabase.ts": {
-    "mtime": 1785937749.0529873,
-    "seen": 1791901115.197387,
-    "ast_hash": "29fc12f2758e674989cd0b0bc3f8e050",
-    "semantic_hash": "29fc12f2758e674989cd0b0bc3f8e050"
+    "mtime": 1794400534.531585,
+    "seen": 1794400631.777834,
+    "ast_hash": "9b7f40fac3e5b011db0b67afd676c3d3",
+    "semantic_hash": ""
   },
   "src/main.tsx": {
     "mtime": 1779042821.5566196,
@@ -240,9 +240,9 @@
     "semantic_hash": ""
   },
   "CLAUDE.md": {
-    "mtime": 1794324459.1162205,
-    "seen": 1794324519.3243551,
-    "ast_hash": "ed813043c4d03cbf112ceec3e3a4823b",
+    "mtime": 1794400630.1980665,
+    "seen": 1794400631.777857,
+    "ast_hash": "233e7c16bfa1a6e70f51c703870b0cdb",
     "semantic_hash": ""
   },
   "src/hooks/useDespensa.ts": {
@@ -1011,6 +1011,84 @@
     "mtime": 1794323381.345402,
     "seen": 1794323579.45288,
     "ast_hash": "860200488417c2749f742eec52da2aa0",
+    "semantic_hash": ""
+  },
+  "n8n/correo-base.js": {
+    "mtime": 1794400241.4645789,
+    "seen": 1794400631.7777731,
+    "ast_hash": "992b98e913459008e6e7cb3f8153db1f",
+    "semantic_hash": ""
+  },
+  "n8n/generar-correos.mjs": {
+    "mtime": 1794400107.4945183,
+    "seen": 1794400631.777774,
+    "ast_hash": "2d0d6a99bb0fe7b77dfb7098598c3224",
+    "semantic_hash": ""
+  },
+  "n8n/rellenar-html.js": {
+    "mtime": 1794389287.6862056,
+    "seen": 1794400631.777775,
+    "ast_hash": "962d96fd258c897bf8d6458f5a372b62",
+    "semantic_hash": ""
+  },
+  "src/components/NuevaClaveModal.tsx": {
+    "mtime": 1794400515.1590443,
+    "seen": 1794400631.777802,
+    "ast_hash": "ee5a51d9fda1fbe2c099278e10263230",
+    "semantic_hash": ""
+  },
+  "supabase/plantillas-correo/generar.mjs": {
+    "mtime": 1794390820.7495902,
+    "seen": 1794400631.777854,
+    "ast_hash": "35b9285ad7ba96ec34dfc5e7edbd5461",
+    "semantic_hash": ""
+  },
+  "docs/pendientes.md": {
+    "mtime": 1794400241.4640167,
+    "seen": 1794400631.777864,
+    "ast_hash": "10721dbb2839b9fdcd87f4de14071ef3",
+    "semantic_hash": ""
+  },
+  "n8n/receta-pdf.html": {
+    "mtime": 1794326269.2490036,
+    "seen": 1794400631.777867,
+    "ast_hash": "8c8de2338e94fb9225e36b8b037a88f4",
+    "semantic_hash": ""
+  },
+  "supabase/plantillas-correo/LEEME.md": {
+    "mtime": 1794390855.3726444,
+    "seen": 1794400631.777867,
+    "ast_hash": "d39aeb45f849c91fe4faac8ebc3c7384",
+    "semantic_hash": ""
+  },
+  "supabase/plantillas-correo/cambiar-correo.html": {
+    "mtime": 1794391168.7947288,
+    "seen": 1794400631.777868,
+    "ast_hash": "71221d0098df41965e912cde2210b61b",
+    "semantic_hash": ""
+  },
+  "supabase/plantillas-correo/confirmar-registro.html": {
+    "mtime": 1794391168.7945294,
+    "seen": 1794400631.777868,
+    "ast_hash": "ad822d4699bbad0e8b6c996d61a169ce",
+    "semantic_hash": ""
+  },
+  "supabase/plantillas-correo/copiar.html": {
+    "mtime": 1794391168.820498,
+    "seen": 1794400631.777869,
+    "ast_hash": "161e85903be7096bd3a9d78780e15e31",
+    "semantic_hash": ""
+  },
+  "supabase/plantillas-correo/reautenticacion.html": {
+    "mtime": 1794391168.7950459,
+    "seen": 1794400631.777869,
+    "ast_hash": "8c1a7421dedeae27823e4a96f5c866d3",
+    "semantic_hash": ""
+  },
+  "supabase/plantillas-correo/restablecer-contrasena.html": {
+    "mtime": 1794391168.7948778,
+    "seen": 1794400631.7778702,
+    "ast_hash": "e3a50ddb2b9afd660eb56c0cc21bfc1e",
     "semantic_hash": ""
   }
 }

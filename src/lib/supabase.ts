@@ -7,6 +7,13 @@ if (!supabaseUrl || !supabaseAnonKey) {
   throw new Error('Missing Supabase environment variables');
 }
 
+// El enlace del correo de «restablecer contraseña» vuelve a la web con `#access_token=…&type=recovery` en el hash, y
+// supabase-js lo consume y lo borra al arrancar. Se lee ANTES de crear el cliente: el evento `PASSWORD_RECOVERY` puede
+// dispararse antes de que `App` se suscriba, y entonces la pantalla de «nueva contraseña» no saldría nunca.
+const hashInicial = typeof window === 'undefined' ? '' : window.location.hash;
+export const LLEGA_DE_RECUPERACION = /[#&]type=recovery(&|$)/.test(hashInicial);
+export const ENLACE_CADUCADO = /[#&]error_code=otp_expired(&|$)/.test(hashInicial);
+
 export const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
 /**

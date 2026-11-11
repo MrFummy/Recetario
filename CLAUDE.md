@@ -491,6 +491,21 @@ está en [docs/ideas.md](docs/ideas.md#avisos-por-correo-y-mi-cuenta--decidido-e
   el cambio real de contraseña ni de correo, para no tocar la cuenta del admin ni mandar correos:
   Supabase puede pedir reautenticación para la contraseña, o limitar los envíos de correo.
 
+## Recuperar la contraseña
+
+**Hecho el 11 de noviembre de 2026; sin desplegar ni probar con un correo real.** En el modal de acceso, «¿Olvidaste tu contraseña?»
+([LoginModal.tsx](src/components/LoginModal.tsx), modo `olvido`) llama a `resetPasswordForEmail` y enseña siempre el mismo aviso,
+exista o no la cuenta. El enlace del correo (plantilla de Supabase Auth «Restablecer contraseña») vuelve a la web con
+`#access_token=…&type=recovery`, y [NuevaClaveModal.tsx](src/components/NuevaClaveModal.tsx) pide la contraseña nueva
+(`updateUser`; la sesión de recuperación ya la abrió Supabase).
+
+- **El router va por el hash, y Supabase también.** [supabase.ts](src/lib/supabase.ts) lee `type=recovery` y
+  `error_code=otp_expired` del hash **antes** de crear el cliente (que lo consume y lo borra) y los exporta como
+  `LLEGA_DE_RECUPERACION` y `ENLACE_CADUCADO`: el evento `PASSWORD_RECOVERY` puede dispararse antes de que `App` se suscriba.
+- `redirectTo` es la propia web. **Tiene que estar en *Authentication → URL Configuration → Redirect URLs*** de Supabase (o
+  ser el *Site URL*); si no, el enlace cae en el *Site URL*. Sin comprobar.
+- Probado en el navegador de desarrollo: el enlace, la validación y el aviso de caducado. **No se ha enviado ningún correo.**
+
 ## Buzón de sugerencias
 
 **Hecho y desplegado el 10 de noviembre de 2026** (migraciones `20261110_sugerencias*.sql`; diseño y decisiones

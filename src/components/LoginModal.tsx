@@ -10,14 +10,14 @@ interface LoginModalProps {
 }
 
 export function LoginModal({ onClose, onLoginSuccess }: LoginModalProps) {
-  const [mode, setMode] = useState<'login' | 'register'>('login');
+  const [mode, setMode] = useState<'login' | 'register' | 'olvido'>('login');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState<string | null>(null);
   const [notice, setNotice] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
 
-  const switchMode = (next: 'login' | 'register') => {
+  const switchMode = (next: 'login' | 'register' | 'olvido') => {
     setMode(next);
     setError(null);
     setNotice(null);
@@ -30,6 +30,15 @@ export function LoginModal({ onClose, onLoginSuccess }: LoginModalProps) {
     setNotice(null);
 
     try {
+      if (mode === 'olvido') {
+        // Supabase no dice si el correo existe (así no se pueden enumerar cuentas): el aviso es el mismo siempre.
+        const { error } = await supabase.auth.resetPasswordForEmail(email, {
+          redirectTo: window.location.origin + window.location.pathname,
+        });
+        if (error) throw error;
+        setNotice('Si hay una cuenta con ese correo, te hemos enviado un enlace para elegir una contraseña nueva.');
+        return;
+      }
       if (mode === 'login') {
         const { error } = await supabase.auth.signInWithPassword({ email, password });
         if (error) throw error;
@@ -73,7 +82,7 @@ export function LoginModal({ onClose, onLoginSuccess }: LoginModalProps) {
         </div>
         <div className="flex items-center justify-between px-5 py-3.5 border-b-2 border-ink bg-paper-2">
           <h2 className="font-display font-light text-xl text-ink">
-            {mode === 'login' ? 'Acceso' : 'Nuevo Afan'}
+            {mode === 'login' ? 'Acceso' : mode === 'register' ? 'Nuevo Afan' : 'Recuperar acceso'}
           </h2>
           <button
             onClick={onClose}
@@ -84,14 +93,16 @@ export function LoginModal({ onClose, onLoginSuccess }: LoginModalProps) {
           </button>
         </div>
 
-        <div className="flex border-b-2 border-ink">
-          <button className={tab(mode === 'login')} onClick={() => switchMode('login')}>
-            Iniciar sesión
-          </button>
-          <button className={tab(mode === 'register')} onClick={() => switchMode('register')}>
-            Registrarse
-          </button>
-        </div>
+        {mode !== 'olvido' && (
+          <div className="flex border-b-2 border-ink">
+            <button className={tab(mode === 'login')} onClick={() => switchMode('login')}>
+              Iniciar sesión
+            </button>
+            <button className={tab(mode === 'register')} onClick={() => switchMode('register')}>
+              Registrarse
+            </button>
+          </div>
+        )}
 
         <form onSubmit={handleSubmit} className="p-6 space-y-4">
           {error && (
@@ -119,19 +130,34 @@ export function LoginModal({ onClose, onLoginSuccess }: LoginModalProps) {
             />
           </div>
 
-          <div>
-            <label className="block font-mono text-[10px] uppercase tracking-wider text-ink-soft mb-1.5">
-              Contraseña
-            </label>
-            <input
-              type="password"
-              required
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              minLength={6}
-              className={field}
-            />
-          </div>
+          {mode === 'olvido' ? (
+            <p className="text-[14px] leading-snug text-ink-soft">
+              Escribe el correo de tu cuenta y te mandamos un enlace para elegir una contraseña nueva.
+            </p>
+          ) : (
+            <div>
+              <label className="block font-mono text-[10px] uppercase tracking-wider text-ink-soft mb-1.5">
+                Contraseña
+              </label>
+              <input
+                type="password"
+                required
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                minLength={6}
+                className={field}
+              />
+              {mode === 'login' && (
+                <button
+                  type="button"
+                  onClick={() => switchMode('olvido')}
+                  className="mt-2 font-mono text-[11px] text-accent underline underline-offset-2 hover:text-ink"
+                >
+                  ¿Olvidaste tu contraseña?
+                </button>
+              )}
+            </div>
+          )}
 
           <button
             type="submit"
@@ -139,8 +165,18 @@ export function LoginModal({ onClose, onLoginSuccess }: LoginModalProps) {
             className="w-full py-3 mt-2 bg-yellow text-ink font-display font-bold text-[16px] border-[1.5px] border-ink shadow-brut hover:-translate-x-px hover:-translate-y-px hover:shadow-brut-lg active:translate-x-0 active:translate-y-0 transition-all flex items-center justify-center gap-2 disabled:opacity-60 disabled:translate-x-0 disabled:translate-y-0"
           >
             {loading && <Loader2 className="animate-spin" size={16} />}
-            {loading ? 'Procesando…' : mode === 'login' ? 'Entrar' : 'Crear cuenta'}
+            {loading ? 'Procesando…' : mode === 'login' ? 'Entrar' : mode === 'register' ? 'Crear cuenta' : 'Enviar enlace'}
           </button>
+
+          {mode === 'olvido' && (
+            <button
+              type="button"
+              onClick={() => switchMode('login')}
+              className="w-full font-mono text-[11px] text-ink-soft underline underline-offset-2 hover:text-ink"
+            >
+              Volver a iniciar sesión
+            </button>
+          )}
         </form>
       </div>
     </div>

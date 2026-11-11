@@ -6,6 +6,7 @@ import { RecipeGrid } from './components/RecipeGrid';
 import { RecipeDetail } from './components/RecipeDetail';
 import { AddRecipeForm } from './components/AddRecipeForm';
 import { LoginModal } from './components/LoginModal';
+import { NuevaClaveModal } from './components/NuevaClaveModal';
 import { ReindexarBusqueda } from './components/ReindexarBusqueda';
 import { RecetaNoEncontrada, SoloAdmin, SoloLogueados } from './components/Avisos';
 import { SeccionDespensa } from './components/DespensaSection';
@@ -24,7 +25,7 @@ import { useIngredientSearch } from './hooks/useIngredientSearch';
 import { useBusquedaSemantica } from './hooks/useBusquedaSemantica';
 import { useRuta, irA, reemplazarPor, volverAtras } from './hooks/useRuta';
 import { CATALOGO } from './lib/rutas';
-import { supabase } from './lib/supabase';
+import { supabase, LLEGA_DE_RECUPERACION, ENLACE_CADUCADO } from './lib/supabase';
 import { errorMessage } from './lib/errors';
 import type { Category } from './types';
 
@@ -39,7 +40,11 @@ function App() {
   const [soloSinHacer, setSoloSinHacer] = useState(false);
 
   const [showLoginModal, setShowLoginModal] = useState(false);
-  const [authError, setAuthError] = useState<string | null>(null);
+  const [authError, setAuthError] = useState<string | null>(
+    ENLACE_CADUCADO ? 'El enlace ha caducado o ya se usó. Pide otro desde «¿Olvidaste tu contraseña?».' : null,
+  );
+  // Se abre al llegar por el enlace del correo de «restablecer contraseña».
+  const [eligiendoClave, setEligiendoClave] = useState(LLEGA_DE_RECUPERACION);
   const [user, setUser] = useState<User | null>(null);
   // `getSession` es asíncrono: hasta que resuelve no sabemos si hay admin. Sin
   // esto, entrar directo a #/nueva enseña "acceso denegado" y un instante
@@ -67,7 +72,10 @@ function App() {
       setSesionCargada(true);
     });
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
-      (_event, session) => setUser(session?.user || null)
+      (evento, session) => {
+        setUser(session?.user || null);
+        if (evento === 'PASSWORD_RECOVERY') setEligiendoClave(true);
+      }
     );
     return () => subscription.unsubscribe();
   }, []);
@@ -240,6 +248,7 @@ function App() {
           onLoginSuccess={() => setShowLoginModal(false)}
         />
       )}
+      {eligiendoClave && <NuevaClaveModal onClose={() => setEligiendoClave(false)} />}
     </div>
   );
 }

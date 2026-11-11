@@ -147,19 +147,6 @@
       "source_location": "L17"
     },
     {
-      "id": "src_components_pasaportesection_modo",
-      "label": "Modo",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 34,
-      "community_name": "PaisPagina.tsx",
-      "file_type": "code",
-      "norm_label": "modo",
-      "source_file": "src/components/PasaporteSection.tsx",
-      "source_location": "L13"
-    },
-    {
       "id": "src_components_platoestrella_platoestrellaprops",
       "label": "PlatoEstrellaProps",
       "_callable": true,
@@ -171,6 +158,19 @@
       "norm_label": "platoestrellaprops",
       "source_file": "src/components/PlatoEstrella.tsx",
       "source_location": "L6"
+    },
+    {
+      "id": "src_components_recipegrid_recipegridprops",
+      "label": "RecipeGridProps",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 34,
+      "community_name": "PaisPagina.tsx",
+      "file_type": "code",
+      "norm_label": "recipegridprops",
+      "source_file": "src/components/RecipeGrid.tsx",
+      "source_location": "L4"
     },
     {
       "id": "src_components_sellopasaporte_sellopasaporteprops",
@@ -433,19 +433,6 @@
       "source_location": "L8"
     },
     {
-      "id": "src_components_recipegrid_recipegridprops",
-      "label": "RecipeGridProps",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "types.ts",
-      "file_type": "code",
-      "norm_label": "recipegridprops",
-      "source_file": "src/components/RecipeGrid.tsx",
-      "source_location": "L4"
-    },
-    {
       "id": "src_components_recipepolaroid_recipepolaroidprops",
       "label": "RecipePolaroidProps",
       "_callable": true,
@@ -457,6 +444,19 @@
       "norm_label": "recipepolaroidprops",
       "source_file": "src/components/RecipePolaroid.tsx",
       "source_location": "L4"
+    },
+    {
+      "id": "src_components_starrating_starratingprops",
+      "label": "StarRatingProps",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "types.ts",
+      "file_type": "code",
+      "norm_label": "starratingprops",
+      "source_file": "src/components/StarRating.tsx",
+      "source_location": "L3"
     },
     {
       "id": "src_hooks_usecandidatas_cambioscandidata",
@@ -587,19 +587,6 @@
       "norm_label": "json",
       "source_file": "src/types.ts",
       "source_location": "L2"
-    },
-    {
-      "id": "src_components_cabecera_cabeceraprops",
-      "label": "CabeceraProps",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 47,
-      "community_name": "Recipe",
-      "file_type": "code",
-      "norm_label": "cabeceraprops",
-      "source_file": "src/components/Cabecera.tsx",
-      "source_location": "L7"
     },
     {
       "id": "src_components_despensasection_props",
@@ -758,58 +745,6 @@
       "source_location": "L11"
     },
     {
-      "id": "src_components_navprincipal_enlaceprops",
-      "label": "EnlaceProps",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 47,
-      "community_name": "Recipe",
-      "file_type": "code",
-      "norm_label": "enlaceprops",
-      "source_file": "src/components/NavPrincipal.tsx",
-      "source_location": "L20"
-    },
-    {
-      "id": "src_components_navprincipal_navprincipalprops",
-      "label": "NavPrincipalProps",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 47,
-      "community_name": "Recipe",
-      "file_type": "code",
-      "norm_label": "navprincipalprops",
-      "source_file": "src/components/NavPrincipal.tsx",
-      "source_location": "L5"
-    },
-    {
-      "id": "src_components_pasaportesection_pasaportesectionprops",
-      "label": "PasaporteSectionProps",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 47,
-      "community_name": "Recipe",
-      "file_type": "code",
-      "norm_label": "pasaportesectionprops",
-      "source_file": "src/components/PasaporteSection.tsx",
-      "source_location": "L15"
-    },
-    {
-      "id": "src_components_portadacatalogo_portadacatalogoprops",
-      "label": "PortadaCatalogoProps",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 47,
-      "community_name": "Recipe",
-      "file_type": "code",
-      "norm_label": "portadacatalogoprops",
-      "source_file": "src/components/PortadaCatalogo.tsx",
-      "source_location": "L5"
-    },
-    {
       "id": "src_components_recipedetail_recipedetailprops",
       "label": "RecipeDetailProps",
       "_callable": true,
@@ -912,19 +847,6 @@
       "norm_label": "bloque",
       "source_file": "src/lib/paginar.ts",
       "source_location": "L2"
-    },
-    {
-      "id": "src_lib_rutas_ruta",
-      "label": "Ruta",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 47,
-      "community_name": "Recipe",
-      "file_type": "code",
-      "norm_label": "ruta",
-      "source_file": "src/lib/rutas.ts",
-      "source_location": "L14"
     },
     {
       "id": "src_types_menu",
@@ -1044,6 +966,32 @@
       "source_location": "L49"
     },
     {
+      "id": "src_components_loginmodal_loginmodalprops",
+      "label": "LoginModalProps",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 58,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "loginmodalprops",
+      "source_file": "src/components/LoginModal.tsx",
+      "source_location": "L7"
+    },
+    {
+      "id": "src_components_logosarten_logosartenprops",
+      "label": "LogoSartenProps",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 58,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "logosartenprops",
+      "source_file": "src/components/LogoSarten.tsx",
+      "source_location": "L3"
+    },
+    {
       "id": "src_components_sharebyemail_sharebyemailprops",
       "label": "ShareByEmailProps",
       "_callable": true,
@@ -1076,7 +1024,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 70,
-      "community_name": "AddRecipeForm.tsx",
+      "community_name": "errors.ts",
       "file_type": "code",
       "norm_label": "addrecipeformprops",
       "source_file": "src/components/AddRecipeForm.tsx",
@@ -1089,7 +1037,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 70,
-      "community_name": "AddRecipeForm.tsx",
+      "community_name": "errors.ts",
       "file_type": "code",
       "norm_label": "uploadprogressprops",
       "source_file": "src/components/UploadProgress.tsx",
@@ -1102,24 +1050,11 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 70,
-      "community_name": "AddRecipeForm.tsx",
+      "community_name": "errors.ts",
       "file_type": "code",
       "norm_label": "uploadstatus",
       "source_file": "src/components/UploadProgress.tsx",
       "source_location": "L3"
-    },
-    {
-      "id": "src_components_cuentaacceso_mensaje",
-      "label": "Mensaje",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 71,
-      "community_name": "@supabase/supabase-js",
-      "file_type": "code",
-      "norm_label": "mensaje",
-      "source_file": "src/components/CuentaAcceso.tsx",
-      "source_location": "L10"
     },
     {
       "id": "src_components_cuentaavisos_props",
@@ -1167,7 +1102,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 72,
-      "community_name": "lucide-react",
+      "community_name": "MuroRealizaciones.tsx",
       "file_type": "code",
       "norm_label": "props",
       "source_file": "src/components/MuroRealizaciones.tsx",
@@ -1180,24 +1115,11 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 72,
-      "community_name": "lucide-react",
+      "community_name": "MuroRealizaciones.tsx",
       "file_type": "code",
       "norm_label": "props",
       "source_file": "src/components/RealizacionForm.tsx",
       "source_location": "L7"
-    },
-    {
-      "id": "src_components_starrating_starratingprops",
-      "label": "StarRatingProps",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 72,
-      "community_name": "lucide-react",
-      "file_type": "code",
-      "norm_label": "starratingprops",
-      "source_file": "src/components/StarRating.tsx",
-      "source_location": "L3"
     },
     {
       "id": "src_hooks_userealizaciones_datosrealizacion",
@@ -1206,7 +1128,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 72,
-      "community_name": "lucide-react",
+      "community_name": "MuroRealizaciones.tsx",
       "file_type": "code",
       "norm_label": "datosrealizacion",
       "source_file": "src/hooks/useRealizaciones.ts",
@@ -1219,11 +1141,24 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 72,
-      "community_name": "lucide-react",
+      "community_name": "MuroRealizaciones.tsx",
       "file_type": "code",
       "norm_label": "realizacion",
       "source_file": "src/hooks/useRealizaciones.ts",
       "source_location": "L7"
+    },
+    {
+      "id": "src_components_cuentaacceso_mensaje",
+      "label": "Mensaje",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 73,
+      "community_name": "supabase.ts",
+      "file_type": "code",
+      "norm_label": "mensaje",
+      "source_file": "src/components/CuentaAcceso.tsx",
+      "source_location": "L10"
     },
     {
       "id": "src_hooks_usemenucompartido_menucompartidocargado",
@@ -1237,6 +1172,19 @@
       "norm_label": "menucompartidocargado",
       "source_file": "src/hooks/useMenuCompartido.ts",
       "source_location": "L6"
+    },
+    {
+      "id": "src_lib_busquedasemantica_resultadoindexacion",
+      "label": "ResultadoIndexacion",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 73,
+      "community_name": "supabase.ts",
+      "file_type": "code",
+      "norm_label": "resultadoindexacion",
+      "source_file": "src/lib/busquedaSemantica.ts",
+      "source_location": "L4"
     },
     {
       "id": "src_types_menucompartido",
@@ -1356,6 +1304,19 @@
       "source_location": "L11"
     },
     {
+      "id": "src_components_cabecera_cabeceraprops",
+      "label": "CabeceraProps",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "cabeceraprops",
+      "source_file": "src/components/Cabecera.tsx",
+      "source_location": "L7"
+    },
+    {
       "id": "src_components_ingredientsearch_ingredientsearchprops",
       "label": "IngredientSearchProps",
       "_callable": true,
@@ -1369,30 +1330,69 @@
       "source_location": "L5"
     },
     {
-      "id": "src_components_loginmodal_loginmodalprops",
-      "label": "LoginModalProps",
+      "id": "src_components_navprincipal_enlaceprops",
+      "label": "EnlaceProps",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 8,
       "community_name": "App.tsx",
       "file_type": "code",
-      "norm_label": "loginmodalprops",
-      "source_file": "src/components/LoginModal.tsx",
-      "source_location": "L7"
+      "norm_label": "enlaceprops",
+      "source_file": "src/components/NavPrincipal.tsx",
+      "source_location": "L20"
     },
     {
-      "id": "src_components_logosarten_logosartenprops",
-      "label": "LogoSartenProps",
+      "id": "src_components_navprincipal_navprincipalprops",
+      "label": "NavPrincipalProps",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 8,
       "community_name": "App.tsx",
       "file_type": "code",
-      "norm_label": "logosartenprops",
-      "source_file": "src/components/LogoSarten.tsx",
-      "source_location": "L3"
+      "norm_label": "navprincipalprops",
+      "source_file": "src/components/NavPrincipal.tsx",
+      "source_location": "L5"
+    },
+    {
+      "id": "src_components_pasaportesection_modo",
+      "label": "Modo",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "modo",
+      "source_file": "src/components/PasaporteSection.tsx",
+      "source_location": "L13"
+    },
+    {
+      "id": "src_components_pasaportesection_pasaportesectionprops",
+      "label": "PasaporteSectionProps",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "pasaportesectionprops",
+      "source_file": "src/components/PasaporteSection.tsx",
+      "source_location": "L15"
+    },
+    {
+      "id": "src_components_portadacatalogo_portadacatalogoprops",
+      "label": "PortadaCatalogoProps",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "portadacatalogoprops",
+      "source_file": "src/components/PortadaCatalogo.tsx",
+      "source_location": "L5"
     },
     {
       "id": "src_hooks_usebusquedasemantica_busquedasemantica",
@@ -1408,17 +1408,17 @@
       "source_location": "L54"
     },
     {
-      "id": "src_lib_busquedasemantica_resultadoindexacion",
-      "label": "ResultadoIndexacion",
+      "id": "src_lib_rutas_ruta",
+      "label": "Ruta",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 8,
       "community_name": "App.tsx",
       "file_type": "code",
-      "norm_label": "resultadoindexacion",
-      "source_file": "src/lib/busquedaSemantica.ts",
-      "source_location": "L4"
+      "norm_label": "ruta",
+      "source_file": "src/lib/rutas.ts",
+      "source_location": "L14"
     },
     {
       "id": "supabase_functions_buscar_recetas_index_embeber",
@@ -1565,16 +1565,40 @@
       "source_location": "L51"
     },
     {
-      "id": "src_components_altapais_altapais",
-      "label": "AltaPais()",
+      "id": "n8n_rellenar_html_esc",
+      "label": "esc()",
       "_callable": true,
       "_origin": "ast",
-      "community": 34,
-      "community_name": "PaisPagina.tsx",
+      "community": 24,
+      "community_name": "rellenar-html.js",
       "file_type": "code",
-      "norm_label": "altapais()",
-      "source_file": "src/components/AltaPais.tsx",
-      "source_location": "L13"
+      "norm_label": "esc()",
+      "source_file": "n8n/rellenar-html.js",
+      "source_location": "L5"
+    },
+    {
+      "id": "n8n_rellenar_html_escabecera",
+      "label": "esCabecera()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 24,
+      "community_name": "rellenar-html.js",
+      "file_type": "code",
+      "norm_label": "escabecera()",
+      "source_file": "n8n/rellenar-html.js",
+      "source_location": "L39"
+    },
+    {
+      "id": "n8n_rellenar_html_sinraya",
+      "label": "sinRaya()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 24,
+      "community_name": "rellenar-html.js",
+      "file_type": "code",
+      "norm_label": "sinraya()",
+      "source_file": "n8n/rellenar-html.js",
+      "source_location": "L40"
     },
     {
       "id": "src_components_bandera_bandera",
@@ -1637,42 +1661,6 @@
       "source_location": "L27"
     },
     {
-      "id": "src_components_menuslista_menuslista",
-      "label": "MenusLista()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 34,
-      "community_name": "PaisPagina.tsx",
-      "file_type": "code",
-      "norm_label": "menuslista()",
-      "source_file": "src/components/MenusLista.tsx",
-      "source_location": "L9"
-    },
-    {
-      "id": "src_components_menuslista_menuslista_alborrar",
-      "label": "alBorrar()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 34,
-      "community_name": "PaisPagina.tsx",
-      "file_type": "code",
-      "norm_label": "alborrar()",
-      "source_file": "src/components/MenusLista.tsx",
-      "source_location": "L26"
-    },
-    {
-      "id": "src_components_menuslista_menuslista_alcrear",
-      "label": "alCrear()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 34,
-      "community_name": "PaisPagina.tsx",
-      "file_type": "code",
-      "norm_label": "alcrear()",
-      "source_file": "src/components/MenusLista.tsx",
-      "source_location": "L14"
-    },
-    {
       "id": "src_components_paiseditor_paiseditor",
       "label": "PaisEditor()",
       "_callable": true,
@@ -1709,30 +1697,6 @@
       "source_location": "L24"
     },
     {
-      "id": "src_components_paispagina_paispagina",
-      "label": "PaisPagina()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 34,
-      "community_name": "PaisPagina.tsx",
-      "file_type": "code",
-      "norm_label": "paispagina()",
-      "source_file": "src/components/PaisPagina.tsx",
-      "source_location": "L30"
-    },
-    {
-      "id": "src_components_pasaportesection_seccionpasaporte",
-      "label": "SeccionPasaporte()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 34,
-      "community_name": "PaisPagina.tsx",
-      "file_type": "code",
-      "norm_label": "seccionpasaporte()",
-      "source_file": "src/components/PasaporteSection.tsx",
-      "source_location": "L29"
-    },
-    {
       "id": "src_components_platoestrella_partirtitulo",
       "label": "partirTitulo()",
       "_callable": true,
@@ -1755,6 +1719,18 @@
       "norm_label": "platoestrella()",
       "source_file": "src/components/PlatoEstrella.tsx",
       "source_location": "L21"
+    },
+    {
+      "id": "src_components_recipegrid_recipegrid",
+      "label": "RecipeGrid()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 34,
+      "community_name": "PaisPagina.tsx",
+      "file_type": "code",
+      "norm_label": "recipegrid()",
+      "source_file": "src/components/RecipeGrid.tsx",
+      "source_location": "L10"
     },
     {
       "id": "src_components_sellopasaporte_lineasfecha",
@@ -1853,18 +1829,6 @@
       "source_location": "L22"
     },
     {
-      "id": "src_hooks_usemenus_usemenus",
-      "label": "useMenus()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 34,
-      "community_name": "PaisPagina.tsx",
-      "file_type": "code",
-      "norm_label": "usemenus()",
-      "source_file": "src/hooks/useMenus.ts",
-      "source_location": "L32"
-    },
-    {
       "id": "src_hooks_usepaises_rutaenbucket",
       "label": "rutaEnBucket()",
       "_callable": true,
@@ -1899,54 +1863,6 @@
       "norm_label": "load()",
       "source_file": "src/hooks/usePaises.ts",
       "source_location": "L50"
-    },
-    {
-      "id": "src_hooks_useruta_ira",
-      "label": "irA()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 34,
-      "community_name": "PaisPagina.tsx",
-      "file_type": "code",
-      "norm_label": "ira()",
-      "source_file": "src/hooks/useRuta.ts",
-      "source_location": "L17"
-    },
-    {
-      "id": "src_hooks_useruta_useruta",
-      "label": "useRuta()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 34,
-      "community_name": "PaisPagina.tsx",
-      "file_type": "code",
-      "norm_label": "useruta()",
-      "source_file": "src/hooks/useRuta.ts",
-      "source_location": "L38"
-    },
-    {
-      "id": "src_hooks_useruta_useruta_alcambiar",
-      "label": "alCambiar()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 34,
-      "community_name": "PaisPagina.tsx",
-      "file_type": "code",
-      "norm_label": "alcambiar()",
-      "source_file": "src/hooks/useRuta.ts",
-      "source_location": "L42"
-    },
-    {
-      "id": "src_hooks_useruta_volveratras",
-      "label": "volverAtras()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 34,
-      "community_name": "PaisPagina.tsx",
-      "file_type": "code",
-      "norm_label": "volveratras()",
-      "source_file": "src/hooks/useRuta.ts",
-      "source_location": "L32"
     },
     {
       "id": "src_lib_cargaracento_acentoencache",
@@ -2033,30 +1949,6 @@
       "source_location": "L56"
     },
     {
-      "id": "src_lib_pasaporte_paisesvisitados",
-      "label": "paisesVisitados()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 34,
-      "community_name": "PaisPagina.tsx",
-      "file_type": "code",
-      "norm_label": "paisesvisitados()",
-      "source_file": "src/lib/pasaporte.ts",
-      "source_location": "L18"
-    },
-    {
-      "id": "src_lib_rutas_parsearruta",
-      "label": "parsearRuta()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 34,
-      "community_name": "PaisPagina.tsx",
-      "file_type": "code",
-      "norm_label": "parsearruta()",
-      "source_file": "src/lib/rutas.ts",
-      "source_location": "L38"
-    },
-    {
       "id": "src_components_candidatacard_candidatacard",
       "label": "CandidataCard()",
       "_callable": true,
@@ -2117,18 +2009,6 @@
       "source_location": "L20"
     },
     {
-      "id": "src_components_promovermodal_promovermodal",
-      "label": "PromoverModal()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "types.ts",
-      "file_type": "code",
-      "norm_label": "promovermodal()",
-      "source_file": "src/components/PromoverModal.tsx",
-      "source_location": "L25"
-    },
-    {
       "id": "src_components_recipecard_recipecard",
       "label": "RecipeCard()",
       "_callable": true,
@@ -2177,18 +2057,6 @@
       "source_location": "L40"
     },
     {
-      "id": "src_components_recipegrid_recipegrid",
-      "label": "RecipeGrid()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "types.ts",
-      "file_type": "code",
-      "norm_label": "recipegrid()",
-      "source_file": "src/components/RecipeGrid.tsx",
-      "source_location": "L10"
-    },
-    {
       "id": "src_components_recipepolaroid_recipepolaroid",
       "label": "RecipePolaroid()",
       "_callable": true,
@@ -2201,6 +2069,18 @@
       "source_location": "L22"
     },
     {
+      "id": "src_components_starrating_starrating",
+      "label": "StarRating()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "types.ts",
+      "file_type": "code",
+      "norm_label": "starrating()",
+      "source_file": "src/components/StarRating.tsx",
+      "source_location": "L16"
+    },
+    {
       "id": "src_hooks_usecandidatas_usecandidatas",
       "label": "useCandidatas()",
       "_callable": true,
@@ -2211,30 +2091,6 @@
       "norm_label": "usecandidatas()",
       "source_file": "src/hooks/useCandidatas.ts",
       "source_location": "L37"
-    },
-    {
-      "id": "src_hooks_usecandidatas_usecandidatas_cargar",
-      "label": "cargar()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "types.ts",
-      "file_type": "code",
-      "norm_label": "cargar()",
-      "source_file": "src/hooks/useCandidatas.ts",
-      "source_location": "L46"
-    },
-    {
-      "id": "src_hooks_useingredientsearch_useingredientsearch",
-      "label": "useIngredientSearch()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "types.ts",
-      "file_type": "code",
-      "norm_label": "useingredientsearch()",
-      "source_file": "src/hooks/useIngredientSearch.ts",
-      "source_location": "L5"
     },
     {
       "id": "src_hooks_usewakelock_usewakelock",
@@ -2261,28 +2117,28 @@
       "source_location": "L22"
     },
     {
-      "id": "src_lib_ingredientparser_extractingredientstext",
-      "label": "extractIngredientsText()",
+      "id": "src_lib_n8n_posttowebhook",
+      "label": "postToWebhook()",
       "_callable": true,
       "_origin": "ast",
       "community": 4,
       "community_name": "types.ts",
       "file_type": "code",
-      "norm_label": "extractingredientstext()",
-      "source_file": "src/lib/ingredientParser.ts",
-      "source_location": "L19"
+      "norm_label": "posttowebhook()",
+      "source_file": "src/lib/n8n.ts",
+      "source_location": "L28"
     },
     {
-      "id": "src_lib_ingredientparser_recipematchesingredients",
-      "label": "recipeMatchesIngredients()",
+      "id": "src_lib_promover_enviaralta",
+      "label": "enviarAlta()",
       "_callable": true,
       "_origin": "ast",
       "community": 4,
       "community_name": "types.ts",
       "file_type": "code",
-      "norm_label": "recipematchesingredients()",
-      "source_file": "src/lib/ingredientParser.ts",
-      "source_location": "L30"
+      "norm_label": "enviaralta()",
+      "source_file": "src/lib/promover.ts",
+      "source_location": "L25"
     },
     {
       "id": "src_lib_promover_esperarreceta",
@@ -2393,18 +2249,6 @@
       "source_location": "L129"
     },
     {
-      "id": "src_components_cabecera_cabecera",
-      "label": "Cabecera()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 47,
-      "community_name": "Recipe",
-      "file_type": "code",
-      "norm_label": "cabecera()",
-      "source_file": "src/components/Cabecera.tsx",
-      "source_location": "L16"
-    },
-    {
       "id": "src_components_hojaimpresa_hojaimpresa",
       "label": "HojaImpresa()",
       "_callable": true,
@@ -2415,18 +2259,6 @@
       "norm_label": "hojaimpresa()",
       "source_file": "src/components/HojaImpresa.tsx",
       "source_location": "L26"
-    },
-    {
-      "id": "src_components_listacomprasection_seccionlistacompra",
-      "label": "SeccionListaCompra()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 47,
-      "community_name": "Recipe",
-      "file_type": "code",
-      "norm_label": "seccionlistacompra()",
-      "source_file": "src/components/ListaCompraSection.tsx",
-      "source_location": "L29"
     },
     {
       "id": "src_components_menucabecera_menucabecera",
@@ -2597,66 +2429,6 @@
       "source_location": "L23"
     },
     {
-      "id": "src_components_navprincipal_enlace",
-      "label": "Enlace()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 47,
-      "community_name": "Recipe",
-      "file_type": "code",
-      "norm_label": "enlace()",
-      "source_file": "src/components/NavPrincipal.tsx",
-      "source_location": "L35"
-    },
-    {
-      "id": "src_components_navprincipal_navprincipal",
-      "label": "NavPrincipal()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 47,
-      "community_name": "Recipe",
-      "file_type": "code",
-      "norm_label": "navprincipal()",
-      "source_file": "src/components/NavPrincipal.tsx",
-      "source_location": "L56"
-    },
-    {
-      "id": "src_components_portadacatalogo_destacadadeldia",
-      "label": "destacadaDelDia()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 47,
-      "community_name": "Recipe",
-      "file_type": "code",
-      "norm_label": "destacadadeldia()",
-      "source_file": "src/components/PortadaCatalogo.tsx",
-      "source_location": "L12"
-    },
-    {
-      "id": "src_components_portadacatalogo_portadacatalogo",
-      "label": "PortadaCatalogo()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 47,
-      "community_name": "Recipe",
-      "file_type": "code",
-      "norm_label": "portadacatalogo()",
-      "source_file": "src/components/PortadaCatalogo.tsx",
-      "source_location": "L20"
-    },
-    {
-      "id": "src_components_promovermodal_promovermodal_enviar",
-      "label": "enviar()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 47,
-      "community_name": "Recipe",
-      "file_type": "code",
-      "norm_label": "enviar()",
-      "source_file": "src/components/PromoverModal.tsx",
-      "source_location": "L33"
-    },
-    {
       "id": "src_lib_escalado_esporracion",
       "label": "esPorRacion()",
       "_callable": true,
@@ -2741,18 +2513,6 @@
       "source_location": "L22"
     },
     {
-      "id": "src_lib_rutas_ahash",
-      "label": "aHash()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 47,
-      "community_name": "Recipe",
-      "file_type": "code",
-      "norm_label": "ahash()",
-      "source_file": "src/lib/rutas.ts",
-      "source_location": "L62"
-    },
-    {
       "id": "src_components_anadiringrediente_anadiringrediente",
       "label": "AnadirIngrediente()",
       "_callable": true,
@@ -2789,6 +2549,30 @@
       "source_location": "L14"
     },
     {
+      "id": "src_hooks_useingredientsearch_useingredientsearch",
+      "label": "useIngredientSearch()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "DespensaSection.tsx",
+      "file_type": "code",
+      "norm_label": "useingredientsearch()",
+      "source_file": "src/hooks/useIngredientSearch.ts",
+      "source_location": "L5"
+    },
+    {
+      "id": "src_lib_ingredientparser_extractingredientstext",
+      "label": "extractIngredientsText()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "DespensaSection.tsx",
+      "file_type": "code",
+      "norm_label": "extractingredientstext()",
+      "source_file": "src/lib/ingredientParser.ts",
+      "source_location": "L19"
+    },
+    {
       "id": "src_lib_ingredientparser_normalizestring",
       "label": "normalizeString()",
       "_callable": true,
@@ -2799,6 +2583,18 @@
       "norm_label": "normalizestring()",
       "source_file": "src/lib/ingredientParser.ts",
       "source_location": "L7"
+    },
+    {
+      "id": "src_lib_ingredientparser_recipematchesingredients",
+      "label": "recipeMatchesIngredients()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "DespensaSection.tsx",
+      "file_type": "code",
+      "norm_label": "recipematchesingredients()",
+      "source_file": "src/lib/ingredientParser.ts",
+      "source_location": "L30"
     },
     {
       "id": "src_lib_inventario_basesdereceta",
@@ -2847,6 +2643,42 @@
       "norm_label": "ordenarporloquefalta()",
       "source_file": "src/lib/inventario.ts",
       "source_location": "L66"
+    },
+    {
+      "id": "src_components_loginmodal_loginmodal",
+      "label": "LoginModal()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 58,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "loginmodal()",
+      "source_file": "src/components/LoginModal.tsx",
+      "source_location": "L12"
+    },
+    {
+      "id": "src_components_logosarten_logosarten",
+      "label": "LogoSarten()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 58,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "logosarten()",
+      "source_file": "src/components/LogoSarten.tsx",
+      "source_location": "L16"
+    },
+    {
+      "id": "src_components_nuevaclavemodal_nuevaclavemodal",
+      "label": "NuevaClaveModal()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 58,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "nuevaclavemodal()",
+      "source_file": "src/components/NuevaClaveModal.tsx",
+      "source_location": "L11"
     },
     {
       "id": "src_components_candidatadetail_candidatadetail_ejecutar",
@@ -2921,6 +2753,30 @@
       "source_location": "L22"
     },
     {
+      "id": "src_components_promovermodal_promovermodal",
+      "label": "PromoverModal()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 69,
+      "community_name": "errorMessage",
+      "file_type": "code",
+      "norm_label": "promovermodal()",
+      "source_file": "src/components/PromoverModal.tsx",
+      "source_location": "L25"
+    },
+    {
+      "id": "src_components_promovermodal_promovermodal_enviar",
+      "label": "enviar()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 69,
+      "community_name": "errorMessage",
+      "file_type": "code",
+      "norm_label": "enviar()",
+      "source_file": "src/components/PromoverModal.tsx",
+      "source_location": "L33"
+    },
+    {
       "id": "src_components_sharebyemail_sharebyemail",
       "label": "ShareByEmail()",
       "_callable": true,
@@ -2933,31 +2789,7 @@
       "source_location": "L11"
     },
     {
-      "id": "src_hooks_usedespensa_clavedespensa",
-      "label": "claveDespensa()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 69,
-      "community_name": "errorMessage",
-      "file_type": "code",
-      "norm_label": "clavedespensa()",
-      "source_file": "src/hooks/useDespensa.ts",
-      "source_location": "L7"
-    },
-    {
-      "id": "src_hooks_usedespensa_usedespensa",
-      "label": "useDespensa()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 69,
-      "community_name": "errorMessage",
-      "file_type": "code",
-      "norm_label": "usedespensa()",
-      "source_file": "src/hooks/useDespensa.ts",
-      "source_location": "L36"
-    },
-    {
-      "id": "src_hooks_usedespensa_usedespensa_cargar",
+      "id": "src_hooks_usecandidatas_usecandidatas_cargar",
       "label": "cargar()",
       "_callable": true,
       "_origin": "ast",
@@ -2965,8 +2797,8 @@
       "community_name": "errorMessage",
       "file_type": "code",
       "norm_label": "cargar()",
-      "source_file": "src/hooks/useDespensa.ts",
-      "source_location": "L48"
+      "source_file": "src/hooks/useCandidatas.ts",
+      "source_location": "L46"
     },
     {
       "id": "src_hooks_usemenu_usemenu",
@@ -3039,6 +2871,30 @@
       "norm_label": "cargar()",
       "source_file": "src/hooks/useParaHacer.ts",
       "source_location": "L36"
+    },
+    {
+      "id": "src_hooks_usepreferencias_usepreferencias",
+      "label": "usePreferencias()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 69,
+      "community_name": "errorMessage",
+      "file_type": "code",
+      "norm_label": "usepreferencias()",
+      "source_file": "src/hooks/usePreferencias.ts",
+      "source_location": "L19"
+    },
+    {
+      "id": "src_hooks_usepreferencias_usepreferencias_cargar",
+      "label": "cargar()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 69,
+      "community_name": "errorMessage",
+      "file_type": "code",
+      "norm_label": "cargar()",
+      "source_file": "src/hooks/usePreferencias.ts",
+      "source_location": "L30"
     },
     {
       "id": "src_lib_errors_errormessage",
@@ -3118,7 +2974,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 70,
-      "community_name": "AddRecipeForm.tsx",
+      "community_name": "errors.ts",
       "file_type": "code",
       "norm_label": "addrecipeform()",
       "source_file": "src/components/AddRecipeForm.tsx",
@@ -3130,11 +2986,47 @@
       "_callable": true,
       "_origin": "ast",
       "community": 70,
-      "community_name": "AddRecipeForm.tsx",
+      "community_name": "errors.ts",
       "file_type": "code",
       "norm_label": "uploadprogress()",
       "source_file": "src/components/UploadProgress.tsx",
       "source_location": "L10"
+    },
+    {
+      "id": "src_hooks_userecipes_userecipes",
+      "label": "useRecipes()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 70,
+      "community_name": "errors.ts",
+      "file_type": "code",
+      "norm_label": "userecipes()",
+      "source_file": "src/hooks/useRecipes.ts",
+      "source_location": "L9"
+    },
+    {
+      "id": "src_hooks_userecipes_userecipes_load",
+      "label": "load()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 70,
+      "community_name": "errors.ts",
+      "file_type": "code",
+      "norm_label": "load()",
+      "source_file": "src/hooks/useRecipes.ts",
+      "source_location": "L27"
+    },
+    {
+      "id": "src_lib_errors_idunico",
+      "label": "idUnico()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 70,
+      "community_name": "errors.ts",
+      "file_type": "code",
+      "norm_label": "idunico()",
+      "source_file": "src/lib/errors.ts",
+      "source_location": "L8"
     },
     {
       "id": "src_lib_imagen_comprimirfotoreceta",
@@ -3142,7 +3034,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 70,
-      "community_name": "AddRecipeForm.tsx",
+      "community_name": "errors.ts",
       "file_type": "code",
       "norm_label": "comprimirfotoreceta()",
       "source_file": "src/lib/imagen.ts",
@@ -3154,23 +3046,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 70,
-      "community_name": "AddRecipeForm.tsx",
+      "community_name": "errors.ts",
       "file_type": "code",
       "norm_label": "comprimirimagen()",
       "source_file": "src/lib/imagen.ts",
       "source_location": "L10"
-    },
-    {
-      "id": "src_components_cuentaacceso_aviso",
-      "label": "Aviso()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 71,
-      "community_name": "@supabase/supabase-js",
-      "file_type": "code",
-      "norm_label": "aviso()",
-      "source_file": "src/components/CuentaAcceso.tsx",
-      "source_location": "L12"
     },
     {
       "id": "src_components_cuentaavisos_cuentaavisos",
@@ -3183,18 +3063,6 @@
       "norm_label": "cuentaavisos()",
       "source_file": "src/components/CuentaAvisos.tsx",
       "source_location": "L14"
-    },
-    {
-      "id": "src_components_cuentasection_seccioncuenta",
-      "label": "SeccionCuenta()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 71,
-      "community_name": "@supabase/supabase-js",
-      "file_type": "code",
-      "norm_label": "seccioncuenta()",
-      "source_file": "src/components/CuentaSection.tsx",
-      "source_location": "L62"
     },
     {
       "id": "src_hooks_useperfil_useperfil",
@@ -3221,36 +3089,12 @@
       "source_location": "L17"
     },
     {
-      "id": "src_hooks_usepreferencias_usepreferencias",
-      "label": "usePreferencias()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 71,
-      "community_name": "@supabase/supabase-js",
-      "file_type": "code",
-      "norm_label": "usepreferencias()",
-      "source_file": "src/hooks/usePreferencias.ts",
-      "source_location": "L19"
-    },
-    {
-      "id": "src_hooks_usepreferencias_usepreferencias_cargar",
-      "label": "cargar()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 71,
-      "community_name": "@supabase/supabase-js",
-      "file_type": "code",
-      "norm_label": "cargar()",
-      "source_file": "src/hooks/usePreferencias.ts",
-      "source_location": "L30"
-    },
-    {
       "id": "src_components_murorealizaciones_formatearfecha",
       "label": "formatearFecha()",
       "_callable": true,
       "_origin": "ast",
       "community": 72,
-      "community_name": "lucide-react",
+      "community_name": "MuroRealizaciones.tsx",
       "file_type": "code",
       "norm_label": "formatearfecha()",
       "source_file": "src/components/MuroRealizaciones.tsx",
@@ -3262,7 +3106,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 72,
-      "community_name": "lucide-react",
+      "community_name": "MuroRealizaciones.tsx",
       "file_type": "code",
       "norm_label": "murorealizaciones()",
       "source_file": "src/components/MuroRealizaciones.tsx",
@@ -3274,23 +3118,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 72,
-      "community_name": "lucide-react",
+      "community_name": "MuroRealizaciones.tsx",
       "file_type": "code",
       "norm_label": "realizacionform()",
       "source_file": "src/components/RealizacionForm.tsx",
       "source_location": "L21"
-    },
-    {
-      "id": "src_components_starrating_starrating",
-      "label": "StarRating()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 72,
-      "community_name": "lucide-react",
-      "file_type": "code",
-      "norm_label": "starrating()",
-      "source_file": "src/components/StarRating.tsx",
-      "source_location": "L16"
     },
     {
       "id": "src_hooks_userealizaciones_userealizaciones",
@@ -3298,7 +3130,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 72,
-      "community_name": "lucide-react",
+      "community_name": "MuroRealizaciones.tsx",
       "file_type": "code",
       "norm_label": "userealizaciones()",
       "source_file": "src/hooks/useRealizaciones.ts",
@@ -3310,71 +3142,47 @@
       "_callable": true,
       "_origin": "ast",
       "community": 72,
-      "community_name": "lucide-react",
+      "community_name": "MuroRealizaciones.tsx",
       "file_type": "code",
       "norm_label": "cargar()",
       "source_file": "src/hooks/useRealizaciones.ts",
       "source_location": "L47"
     },
     {
-      "id": "src_hooks_userecipes_userecipes",
-      "label": "useRecipes()",
+      "id": "src_components_cuentaacceso_aviso",
+      "label": "Aviso()",
       "_callable": true,
       "_origin": "ast",
       "community": 73,
       "community_name": "supabase.ts",
       "file_type": "code",
-      "norm_label": "userecipes()",
-      "source_file": "src/hooks/useRecipes.ts",
-      "source_location": "L9"
+      "norm_label": "aviso()",
+      "source_file": "src/components/CuentaAcceso.tsx",
+      "source_location": "L12"
     },
     {
-      "id": "src_hooks_userecipes_userecipes_load",
-      "label": "load()",
+      "id": "src_components_reindexarbusqueda_reindexarbusqueda",
+      "label": "ReindexarBusqueda()",
       "_callable": true,
       "_origin": "ast",
       "community": 73,
       "community_name": "supabase.ts",
       "file_type": "code",
-      "norm_label": "load()",
-      "source_file": "src/hooks/useRecipes.ts",
-      "source_location": "L27"
+      "norm_label": "reindexarbusqueda()",
+      "source_file": "src/components/ReindexarBusqueda.tsx",
+      "source_location": "L7"
     },
     {
-      "id": "src_lib_errors_idunico",
-      "label": "idUnico()",
+      "id": "src_lib_busquedasemantica_reindexarbusqueda",
+      "label": "reindexarBusqueda()",
       "_callable": true,
       "_origin": "ast",
       "community": 73,
       "community_name": "supabase.ts",
       "file_type": "code",
-      "norm_label": "idunico()",
-      "source_file": "src/lib/errors.ts",
-      "source_location": "L8"
-    },
-    {
-      "id": "src_lib_n8n_posttowebhook",
-      "label": "postToWebhook()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 73,
-      "community_name": "supabase.ts",
-      "file_type": "code",
-      "norm_label": "posttowebhook()",
-      "source_file": "src/lib/n8n.ts",
-      "source_location": "L28"
-    },
-    {
-      "id": "src_lib_promover_enviaralta",
-      "label": "enviarAlta()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 73,
-      "community_name": "supabase.ts",
-      "file_type": "code",
-      "norm_label": "enviaralta()",
-      "source_file": "src/lib/promover.ts",
-      "source_location": "L25"
+      "norm_label": "reindexarbusqueda()",
+      "source_file": "src/lib/busquedaSemantica.ts",
+      "source_location": "L15"
     },
     {
       "id": "src_components_buzonsection_enlaceseguro",
@@ -3473,6 +3281,102 @@
       "source_location": "L44"
     },
     {
+      "id": "n8n_correo_base_boton",
+      "label": "boton()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 77,
+      "community_name": "correo-base.js",
+      "file_type": "code",
+      "norm_label": "boton()",
+      "source_file": "n8n/correo-base.js",
+      "source_location": "L27"
+    },
+    {
+      "id": "n8n_correo_base_cenefa",
+      "label": "cenefa()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 77,
+      "community_name": "correo-base.js",
+      "file_type": "code",
+      "norm_label": "cenefa()",
+      "source_file": "n8n/correo-base.js",
+      "source_location": "L52"
+    },
+    {
+      "id": "n8n_correo_base_colorcategoria",
+      "label": "colorCategoria()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 77,
+      "community_name": "correo-base.js",
+      "file_type": "code",
+      "norm_label": "colorcategoria()",
+      "source_file": "n8n/correo-base.js",
+      "source_location": "L17"
+    },
+    {
+      "id": "n8n_correo_base_correo",
+      "label": "correo()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 77,
+      "community_name": "correo-base.js",
+      "file_type": "code",
+      "norm_label": "correo()",
+      "source_file": "n8n/correo-base.js",
+      "source_location": "L61"
+    },
+    {
+      "id": "n8n_correo_base_tarjeta",
+      "label": "tarjeta()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 77,
+      "community_name": "correo-base.js",
+      "file_type": "code",
+      "norm_label": "tarjeta()",
+      "source_file": "n8n/correo-base.js",
+      "source_location": "L33"
+    },
+    {
+      "id": "n8n_generar_correos_correos",
+      "label": "correos()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 78,
+      "community_name": "generar-correos.mjs",
+      "file_type": "code",
+      "norm_label": "correos()",
+      "source_file": "n8n/generar-correos.mjs",
+      "source_location": "L17"
+    },
+    {
+      "id": "n8n_generar_correos_esc",
+      "label": "esc()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 78,
+      "community_name": "generar-correos.mjs",
+      "file_type": "code",
+      "norm_label": "esc()",
+      "source_file": "n8n/generar-correos.mjs",
+      "source_location": "L11"
+    },
+    {
+      "id": "supabase_plantillas_correo_generar_em",
+      "label": "em()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 79,
+      "community_name": "generar.mjs",
+      "file_type": "code",
+      "norm_label": "em()",
+      "source_file": "supabase/plantillas-correo/generar.mjs",
+      "source_location": "L18"
+    },
+    {
       "id": "src_app_app",
       "label": "App()",
       "_callable": true,
@@ -3482,7 +3386,19 @@
       "file_type": "code",
       "norm_label": "app()",
       "source_file": "src/App.tsx",
-      "source_location": "L36"
+      "source_location": "L37"
+    },
+    {
+      "id": "src_components_altapais_altapais",
+      "label": "AltaPais()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "altapais()",
+      "source_file": "src/components/AltaPais.tsx",
+      "source_location": "L13"
     },
     {
       "id": "src_components_avisos_recetanoencontrada",
@@ -3521,6 +3437,30 @@
       "source_location": "L55"
     },
     {
+      "id": "src_components_cabecera_cabecera",
+      "label": "Cabecera()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "cabecera()",
+      "source_file": "src/components/Cabecera.tsx",
+      "source_location": "L16"
+    },
+    {
+      "id": "src_components_cuentasection_seccioncuenta",
+      "label": "SeccionCuenta()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "seccioncuenta()",
+      "source_file": "src/components/CuentaSection.tsx",
+      "source_location": "L62"
+    },
+    {
       "id": "src_components_ingredientsearch_ingredientsearch",
       "label": "IngredientSearch()",
       "_callable": true,
@@ -3533,28 +3473,52 @@
       "source_location": "L19"
     },
     {
-      "id": "src_components_loginmodal_loginmodal",
-      "label": "LoginModal()",
+      "id": "src_components_listacomprasection_seccionlistacompra",
+      "label": "SeccionListaCompra()",
       "_callable": true,
       "_origin": "ast",
       "community": 8,
       "community_name": "App.tsx",
       "file_type": "code",
-      "norm_label": "loginmodal()",
-      "source_file": "src/components/LoginModal.tsx",
-      "source_location": "L12"
+      "norm_label": "seccionlistacompra()",
+      "source_file": "src/components/ListaCompraSection.tsx",
+      "source_location": "L29"
     },
     {
-      "id": "src_components_logosarten_logosarten",
-      "label": "LogoSarten()",
+      "id": "src_components_menuslista_menuslista",
+      "label": "MenusLista()",
       "_callable": true,
       "_origin": "ast",
       "community": 8,
       "community_name": "App.tsx",
       "file_type": "code",
-      "norm_label": "logosarten()",
-      "source_file": "src/components/LogoSarten.tsx",
-      "source_location": "L16"
+      "norm_label": "menuslista()",
+      "source_file": "src/components/MenusLista.tsx",
+      "source_location": "L9"
+    },
+    {
+      "id": "src_components_menuslista_menuslista_alborrar",
+      "label": "alBorrar()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "alborrar()",
+      "source_file": "src/components/MenusLista.tsx",
+      "source_location": "L26"
+    },
+    {
+      "id": "src_components_menuslista_menuslista_alcrear",
+      "label": "alCrear()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "alcrear()",
+      "source_file": "src/components/MenusLista.tsx",
+      "source_location": "L14"
     },
     {
       "id": "src_components_menussection_seccionmenus",
@@ -3569,16 +3533,76 @@
       "source_location": "L16"
     },
     {
-      "id": "src_components_reindexarbusqueda_reindexarbusqueda",
-      "label": "ReindexarBusqueda()",
+      "id": "src_components_navprincipal_enlace",
+      "label": "Enlace()",
       "_callable": true,
       "_origin": "ast",
       "community": 8,
       "community_name": "App.tsx",
       "file_type": "code",
-      "norm_label": "reindexarbusqueda()",
-      "source_file": "src/components/ReindexarBusqueda.tsx",
-      "source_location": "L7"
+      "norm_label": "enlace()",
+      "source_file": "src/components/NavPrincipal.tsx",
+      "source_location": "L35"
+    },
+    {
+      "id": "src_components_navprincipal_navprincipal",
+      "label": "NavPrincipal()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "navprincipal()",
+      "source_file": "src/components/NavPrincipal.tsx",
+      "source_location": "L56"
+    },
+    {
+      "id": "src_components_paispagina_paispagina",
+      "label": "PaisPagina()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "paispagina()",
+      "source_file": "src/components/PaisPagina.tsx",
+      "source_location": "L30"
+    },
+    {
+      "id": "src_components_pasaportesection_seccionpasaporte",
+      "label": "SeccionPasaporte()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "seccionpasaporte()",
+      "source_file": "src/components/PasaporteSection.tsx",
+      "source_location": "L29"
+    },
+    {
+      "id": "src_components_portadacatalogo_destacadadeldia",
+      "label": "destacadaDelDia()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "destacadadeldia()",
+      "source_file": "src/components/PortadaCatalogo.tsx",
+      "source_location": "L12"
+    },
+    {
+      "id": "src_components_portadacatalogo_portadacatalogo",
+      "label": "PortadaCatalogo()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "portadacatalogo()",
+      "source_file": "src/components/PortadaCatalogo.tsx",
+      "source_location": "L20"
     },
     {
       "id": "src_hooks_usebusquedasemantica_usebusquedasemantica",
@@ -3593,6 +3617,66 @@
       "source_location": "L13"
     },
     {
+      "id": "src_hooks_usedespensa_clavedespensa",
+      "label": "claveDespensa()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "clavedespensa()",
+      "source_file": "src/hooks/useDespensa.ts",
+      "source_location": "L7"
+    },
+    {
+      "id": "src_hooks_usedespensa_usedespensa",
+      "label": "useDespensa()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "usedespensa()",
+      "source_file": "src/hooks/useDespensa.ts",
+      "source_location": "L36"
+    },
+    {
+      "id": "src_hooks_usedespensa_usedespensa_cargar",
+      "label": "cargar()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "cargar()",
+      "source_file": "src/hooks/useDespensa.ts",
+      "source_location": "L48"
+    },
+    {
+      "id": "src_hooks_usemenus_usemenus",
+      "label": "useMenus()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "usemenus()",
+      "source_file": "src/hooks/useMenus.ts",
+      "source_location": "L32"
+    },
+    {
+      "id": "src_hooks_useruta_ira",
+      "label": "irA()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "ira()",
+      "source_file": "src/hooks/useRuta.ts",
+      "source_location": "L17"
+    },
+    {
       "id": "src_hooks_useruta_reemplazarpor",
       "label": "reemplazarPor()",
       "_callable": true,
@@ -3603,6 +3687,42 @@
       "norm_label": "reemplazarpor()",
       "source_file": "src/hooks/useRuta.ts",
       "source_location": "L26"
+    },
+    {
+      "id": "src_hooks_useruta_useruta",
+      "label": "useRuta()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "useruta()",
+      "source_file": "src/hooks/useRuta.ts",
+      "source_location": "L38"
+    },
+    {
+      "id": "src_hooks_useruta_useruta_alcambiar",
+      "label": "alCambiar()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "alcambiar()",
+      "source_file": "src/hooks/useRuta.ts",
+      "source_location": "L42"
+    },
+    {
+      "id": "src_hooks_useruta_volveratras",
+      "label": "volverAtras()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "volveratras()",
+      "source_file": "src/hooks/useRuta.ts",
+      "source_location": "L32"
     },
     {
       "id": "src_lib_busquedasemantica_buscarsemantico",
@@ -3617,16 +3737,40 @@
       "source_location": "L32"
     },
     {
-      "id": "src_lib_busquedasemantica_reindexarbusqueda",
-      "label": "reindexarBusqueda()",
+      "id": "src_lib_pasaporte_paisesvisitados",
+      "label": "paisesVisitados()",
       "_callable": true,
       "_origin": "ast",
       "community": 8,
       "community_name": "App.tsx",
       "file_type": "code",
-      "norm_label": "reindexarbusqueda()",
-      "source_file": "src/lib/busquedaSemantica.ts",
-      "source_location": "L15"
+      "norm_label": "paisesvisitados()",
+      "source_file": "src/lib/pasaporte.ts",
+      "source_location": "L18"
+    },
+    {
+      "id": "src_lib_rutas_ahash",
+      "label": "aHash()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "ahash()",
+      "source_file": "src/lib/rutas.ts",
+      "source_location": "L62"
+    },
+    {
+      "id": "src_lib_rutas_parsearruta",
+      "label": "parsearRuta()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "parsearruta()",
+      "source_file": "src/lib/rutas.ts",
+      "source_location": "L38"
     },
     {
       "id": "tsconfig_app",
@@ -4063,18 +4207,6 @@
       "source_location": "L325"
     },
     {
-      "id": "docs_candidatas_fase_0_experimento_media_tarde_antes_de_construir_nada",
-      "label": "Fase 0 \u2014 experimento (media tarde, antes de construir nada)",
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "Recetas candidatas \u2014 plan",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "fase 0 \u2014 experimento (media tarde, antes de construir nada)",
-      "source_file": "docs/candidatas.md",
-      "source_location": "L46"
-    },
-    {
       "id": "docs_candidatas_fase_1_base_de_datos_migraci\u00f3n_hecha_el_14_oct_2026",
       "label": "Fase 1 \u2014 base de datos (migraci\u00f3n) \u2014 HECHA el 14 oct 2026",
       "_origin": "ast",
@@ -4135,18 +4267,6 @@
       "source_location": "L317"
     },
     {
-      "id": "docs_candidatas_instagram_aparcada_14_oct_2026",
-      "label": "Instagram, aparcada (14 oct 2026)",
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "Recetas candidatas \u2014 plan",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "instagram, aparcada (14 oct 2026)",
-      "source_file": "docs/candidatas.md",
-      "source_location": "L127"
-    },
-    {
       "id": "docs_candidatas_lo_que_ya_existe_y_condiciona_el_dise\u00f1o",
       "label": "Lo que ya existe y condiciona el dise\u00f1o",
       "_origin": "ast",
@@ -4169,42 +4289,6 @@
       "norm_label": "recetas candidatas \u2014 plan",
       "source_file": "docs/candidatas.md",
       "source_location": "L1"
-    },
-    {
-      "id": "docs_candidatas_reels_con_apify_hecho_y_probado_el_15_oct_2026",
-      "label": "Reels con Apify \u2014 HECHO y probado el 15 oct 2026",
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "Recetas candidatas \u2014 plan",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "reels con apify \u2014 hecho y probado el 15 oct 2026",
-      "source_file": "docs/candidatas.md",
-      "source_location": "L153"
-    },
-    {
-      "id": "docs_candidatas_resultado_de_0a_con_un_reel_p\u00fablico_14_oct_2026",
-      "label": "Resultado de 0a con un reel p\u00fablico (14 oct 2026)",
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "Recetas candidatas \u2014 plan",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "resultado de 0a con un reel publico (14 oct 2026)",
-      "source_file": "docs/candidatas.md",
-      "source_location": "L104"
-    },
-    {
-      "id": "docs_candidatas_resultado_de_0a_con_youtube_14_oct_2026",
-      "label": "Resultado de 0a con YouTube (14 oct 2026)",
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "Recetas candidatas \u2014 plan",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "resultado de 0a con youtube (14 oct 2026)",
-      "source_file": "docs/candidatas.md",
-      "source_location": "L68"
     },
     {
       "id": "supabase_functions_buscar_recetas_index",
@@ -4590,6 +4674,138 @@
       "norm_label": "20261010_partir_base_combinados.sql",
       "source_file": "supabase/migrations/20261010_partir_base_combinados.sql",
       "source_location": null
+    },
+    {
+      "id": "n8n_rellenar_html",
+      "label": "rellenar-html.js",
+      "_origin": "ast",
+      "community": 24,
+      "community_name": "rellenar-html.js",
+      "file_type": "code",
+      "norm_label": "rellenar-html.js",
+      "source_file": "n8n/rellenar-html.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "n8n_rellenar_html_categoria",
+      "label": "categoria",
+      "_origin": "ast",
+      "community": 24,
+      "community_name": "rellenar-html.js",
+      "file_type": "code",
+      "norm_label": "categoria",
+      "source_file": "n8n/rellenar-html.js",
+      "source_location": "L17"
+    },
+    {
+      "id": "n8n_rellenar_html_chips",
+      "label": "chips",
+      "_origin": "ast",
+      "community": 24,
+      "community_name": "rellenar-html.js",
+      "file_type": "code",
+      "norm_label": "chips",
+      "source_file": "n8n/rellenar-html.js",
+      "source_location": "L28"
+    },
+    {
+      "id": "n8n_rellenar_html_colores",
+      "label": "COLORES",
+      "_origin": "ast",
+      "community": 24,
+      "community_name": "rellenar-html.js",
+      "file_type": "code",
+      "norm_label": "colores",
+      "source_file": "n8n/rellenar-html.js",
+      "source_location": "L10"
+    },
+    {
+      "id": "n8n_rellenar_html_fecha",
+      "label": "fecha",
+      "_origin": "ast",
+      "community": 24,
+      "community_name": "rellenar-html.js",
+      "file_type": "code",
+      "norm_label": "fecha",
+      "source_file": "n8n/rellenar-html.js",
+      "source_location": "L24"
+    },
+    {
+      "id": "n8n_rellenar_html_html",
+      "label": "html",
+      "_origin": "ast",
+      "community": 24,
+      "community_name": "rellenar-html.js",
+      "file_type": "code",
+      "norm_label": "html",
+      "source_file": "n8n/rellenar-html.js",
+      "source_location": "L7"
+    },
+    {
+      "id": "n8n_rellenar_html_inghtml",
+      "label": "ingHtml",
+      "_origin": "ast",
+      "community": 24,
+      "community_name": "rellenar-html.js",
+      "file_type": "code",
+      "norm_label": "inghtml",
+      "source_file": "n8n/rellenar-html.js",
+      "source_location": "L44"
+    },
+    {
+      "id": "n8n_rellenar_html_palabras",
+      "label": "palabras",
+      "_origin": "ast",
+      "community": 24,
+      "community_name": "rellenar-html.js",
+      "file_type": "code",
+      "norm_label": "palabras",
+      "source_file": "n8n/rellenar-html.js",
+      "source_location": "L25"
+    },
+    {
+      "id": "n8n_rellenar_html_pasoshtml",
+      "label": "pasosHtml",
+      "_origin": "ast",
+      "community": 24,
+      "community_name": "rellenar-html.js",
+      "file_type": "code",
+      "norm_label": "pasoshtml",
+      "source_file": "n8n/rellenar-html.js",
+      "source_location": "L56"
+    },
+    {
+      "id": "n8n_rellenar_html_prefijos",
+      "label": "PREFIJOS",
+      "_origin": "ast",
+      "community": 24,
+      "community_name": "rellenar-html.js",
+      "file_type": "code",
+      "norm_label": "prefijos",
+      "source_file": "n8n/rellenar-html.js",
+      "source_location": "L15"
+    },
+    {
+      "id": "n8n_rellenar_html_titulocorto",
+      "label": "tituloCorto",
+      "_origin": "ast",
+      "community": 24,
+      "community_name": "rellenar-html.js",
+      "file_type": "code",
+      "norm_label": "titulocorto",
+      "source_file": "n8n/rellenar-html.js",
+      "source_location": "L23"
+    },
+    {
+      "id": "n8n_rellenar_html_valores",
+      "label": "valores",
+      "_origin": "ast",
+      "community": 24,
+      "community_name": "rellenar-html.js",
+      "file_type": "code",
+      "norm_label": "valores",
+      "source_file": "n8n/rellenar-html.js",
+      "source_location": "L31"
     },
     {
       "id": "supabase_migrations_20261010_anade_tiempo_porciones_dificultad_sql_public_recetas",
@@ -5051,17 +5267,6 @@
       "source_location": ""
     },
     {
-      "id": "src_components_altapais",
-      "label": "AltaPais.tsx",
-      "_origin": "ast",
-      "community": 34,
-      "community_name": "PaisPagina.tsx",
-      "file_type": "code",
-      "norm_label": "altapais.tsx",
-      "source_file": "src/components/AltaPais.tsx",
-      "source_location": "L1"
-    },
-    {
       "id": "src_components_bandera",
       "label": "Bandera.tsx",
       "_origin": "ast",
@@ -5128,17 +5333,6 @@
       "source_location": "L1"
     },
     {
-      "id": "src_components_menuslista",
-      "label": "MenusLista.tsx",
-      "_origin": "ast",
-      "community": 34,
-      "community_name": "PaisPagina.tsx",
-      "file_type": "code",
-      "norm_label": "menuslista.tsx",
-      "source_file": "src/components/MenusLista.tsx",
-      "source_location": "L1"
-    },
-    {
       "id": "src_components_paiseditor",
       "label": "PaisEditor.tsx",
       "_origin": "ast",
@@ -5172,17 +5366,6 @@
       "source_location": "L1"
     },
     {
-      "id": "src_components_pasaportesection",
-      "label": "PasaporteSection.tsx",
-      "_origin": "ast",
-      "community": 34,
-      "community_name": "PaisPagina.tsx",
-      "file_type": "code",
-      "norm_label": "pasaportesection.tsx",
-      "source_file": "src/components/PasaporteSection.tsx",
-      "source_location": "L1"
-    },
-    {
       "id": "src_components_platoestrella",
       "label": "PlatoEstrella.tsx",
       "_origin": "ast",
@@ -5191,6 +5374,17 @@
       "file_type": "code",
       "norm_label": "platoestrella.tsx",
       "source_file": "src/components/PlatoEstrella.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_components_recipegrid",
+      "label": "RecipeGrid.tsx",
+      "_origin": "ast",
+      "community": 34,
+      "community_name": "PaisPagina.tsx",
+      "file_type": "code",
+      "norm_label": "recipegrid.tsx",
+      "source_file": "src/components/RecipeGrid.tsx",
       "source_location": "L1"
     },
     {
@@ -5235,17 +5429,6 @@
       "file_type": "code",
       "norm_label": "usepaises.ts",
       "source_file": "src/hooks/usePaises.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_hooks_useruta",
-      "label": "useRuta.ts",
-      "_origin": "ast",
-      "community": 34,
-      "community_name": "PaisPagina.tsx",
-      "file_type": "code",
-      "norm_label": "useruta.ts",
-      "source_file": "src/hooks/useRuta.ts",
       "source_location": "L1"
     },
     {
@@ -5402,7 +5585,7 @@
       "node_kind": "heading",
       "norm_label": "buzon de sugerencias",
       "source_file": "CLAUDE.md",
-      "source_location": "L494"
+      "source_location": "L509"
     },
     {
       "id": "claude_b\u00fasqueda_sem\u00e1ntica",
@@ -5414,7 +5597,7 @@
       "node_kind": "heading",
       "norm_label": "busqueda semantica",
       "source_file": "CLAUDE.md",
-      "source_location": "L573"
+      "source_location": "L588"
     },
     {
       "id": "claude_camino_feliz_verificado_el_8_ago_2026",
@@ -5474,7 +5657,7 @@
       "node_kind": "heading",
       "norm_label": "graphify",
       "source_file": "CLAUDE.md",
-      "source_location": "L695"
+      "source_location": "L736"
     },
     {
       "id": "claude_hacia_d\u00f3nde_puede_crecer",
@@ -5486,7 +5669,7 @@
       "node_kind": "heading",
       "norm_label": "hacia donde puede crecer",
       "source_file": "CLAUDE.md",
-      "source_location": "L686"
+      "source_location": "L727"
     },
     {
       "id": "claude_la_despensa",
@@ -5594,7 +5777,7 @@
       "node_kind": "heading",
       "norm_label": "modo cocina",
       "source_file": "CLAUDE.md",
-      "source_location": "L512"
+      "source_location": "L527"
     },
     {
       "id": "claude_para_hacer_realizaciones_y_muro_de_notas",
@@ -5645,6 +5828,18 @@
       "source_location": "L247"
     },
     {
+      "id": "claude_recuperar_la_contrase\u00f1a",
+      "label": "Recuperar la contrase\u00f1a",
+      "_origin": "ast",
+      "community": 35,
+      "community_name": "Mi Recetario \u2014 contexto del proyecto",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "recuperar la contrasena",
+      "source_file": "CLAUDE.md",
+      "source_location": "L494"
+    },
+    {
       "id": "claude_sistema_de_dise\u00f1o_mercado_y_azulejo",
       "label": "Sistema de dise\u00f1o \u00abMercado y azulejo\u00bb",
       "_origin": "ast",
@@ -5654,7 +5849,7 @@
       "node_kind": "heading",
       "norm_label": "sistema de diseno \u00abmercado y azulejo\u00bb",
       "source_file": "CLAUDE.md",
-      "source_location": "L640"
+      "source_location": "L655"
     },
     {
       "id": "claude_temporizadores",
@@ -5666,7 +5861,7 @@
       "node_kind": "heading",
       "norm_label": "temporizadores",
       "source_file": "CLAUDE.md",
-      "source_location": "L539"
+      "source_location": "L554"
     },
     {
       "id": "claude_tiempo_porciones_y_dificultad",
@@ -6000,17 +6195,6 @@
       "source_location": "L1"
     },
     {
-      "id": "src_components_recipegrid",
-      "label": "RecipeGrid.tsx",
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "types.ts",
-      "file_type": "code",
-      "norm_label": "recipegrid.tsx",
-      "source_file": "src/components/RecipeGrid.tsx",
-      "source_location": "L1"
-    },
-    {
       "id": "src_components_recipepolaroid",
       "label": "RecipePolaroid.tsx",
       "_origin": "ast",
@@ -6022,6 +6206,17 @@
       "source_location": "L1"
     },
     {
+      "id": "src_components_starrating",
+      "label": "StarRating.tsx",
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "types.ts",
+      "file_type": "code",
+      "norm_label": "starrating.tsx",
+      "source_file": "src/components/StarRating.tsx",
+      "source_location": "L1"
+    },
+    {
       "id": "src_hooks_usecandidatas",
       "label": "useCandidatas.ts",
       "_origin": "ast",
@@ -6030,17 +6225,6 @@
       "file_type": "code",
       "norm_label": "usecandidatas.ts",
       "source_file": "src/hooks/useCandidatas.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_hooks_useingredientsearch",
-      "label": "useIngredientSearch.ts",
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "types.ts",
-      "file_type": "code",
-      "norm_label": "useingredientsearch.ts",
-      "source_file": "src/hooks/useIngredientSearch.ts",
       "source_location": "L1"
     },
     {
@@ -6121,14 +6305,14 @@
       "source_location": "L4"
     },
     {
-      "id": "src_lib_ingredientparser",
-      "label": "ingredientParser.ts",
+      "id": "src_lib_promover",
+      "label": "promover.ts",
       "_origin": "ast",
       "community": 4,
       "community_name": "types.ts",
       "file_type": "code",
-      "norm_label": "ingredientparser.ts",
-      "source_file": "src/lib/ingredientParser.ts",
+      "norm_label": "promover.ts",
+      "source_file": "src/lib/promover.ts",
       "source_location": "L1"
     },
     {
@@ -6152,6 +6336,17 @@
       "norm_label": "types.ts",
       "source_file": "src/types.ts",
       "source_location": "L1"
+    },
+    {
+      "id": "ref_lucide_react",
+      "label": "lucide-react",
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "types.ts",
+      "file_type": "concept",
+      "norm_label": "lucide-react",
+      "source_file": "package.json",
+      "source_location": "L18"
     },
     {
       "id": "docs_ideas_automatismos_con_n8n",
@@ -6909,17 +7104,6 @@
       "source_location": null
     },
     {
-      "id": "src_components_cabecera",
-      "label": "Cabecera.tsx",
-      "_origin": "ast",
-      "community": 47,
-      "community_name": "Recipe",
-      "file_type": "code",
-      "norm_label": "cabecera.tsx",
-      "source_file": "src/components/Cabecera.tsx",
-      "source_location": "L1"
-    },
-    {
       "id": "src_components_hojaimpresa",
       "label": "HojaImpresa.tsx",
       "_origin": "ast",
@@ -7052,28 +7236,6 @@
       "source_location": "L1"
     },
     {
-      "id": "src_components_navprincipal",
-      "label": "NavPrincipal.tsx",
-      "_origin": "ast",
-      "community": 47,
-      "community_name": "Recipe",
-      "file_type": "code",
-      "norm_label": "navprincipal.tsx",
-      "source_file": "src/components/NavPrincipal.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_portadacatalogo",
-      "label": "PortadaCatalogo.tsx",
-      "_origin": "ast",
-      "community": 47,
-      "community_name": "Recipe",
-      "file_type": "code",
-      "norm_label": "portadacatalogo.tsx",
-      "source_file": "src/components/PortadaCatalogo.tsx",
-      "source_location": "L1"
-    },
-    {
       "id": "src_hooks_usedespensa",
       "label": "useDespensa.ts",
       "_origin": "ast",
@@ -7171,28 +7333,6 @@
       "norm_label": "paginar.ts",
       "source_file": "src/lib/paginar.ts",
       "source_location": "L1"
-    },
-    {
-      "id": "src_lib_rutas",
-      "label": "rutas.ts",
-      "_origin": "ast",
-      "community": 47,
-      "community_name": "Recipe",
-      "file_type": "code",
-      "norm_label": "rutas.ts",
-      "source_file": "src/lib/rutas.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_lib_rutas_catalogo",
-      "label": "CATALOGO",
-      "_origin": "ast",
-      "community": 47,
-      "community_name": "Recipe",
-      "file_type": "code",
-      "norm_label": "catalogo",
-      "source_file": "src/lib/rutas.ts",
-      "source_location": "L30"
     },
     {
       "id": "package_dependencies",
@@ -7404,6 +7544,28 @@
       "source_location": "L1"
     },
     {
+      "id": "src_hooks_useingredientsearch",
+      "label": "useIngredientSearch.ts",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "DespensaSection.tsx",
+      "file_type": "code",
+      "norm_label": "useingredientsearch.ts",
+      "source_file": "src/hooks/useIngredientSearch.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_lib_ingredientparser",
+      "label": "ingredientParser.ts",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "DespensaSection.tsx",
+      "file_type": "code",
+      "norm_label": "ingredientparser.ts",
+      "source_file": "src/lib/ingredientParser.ts",
+      "source_location": "L1"
+    },
+    {
       "id": "src_lib_inventario",
       "label": "inventario.ts",
       "_origin": "ast",
@@ -7600,6 +7762,50 @@
       "norm_label": "20261030_pasaporte_solo_logueados.sql",
       "source_file": "supabase/migrations/20261030_pasaporte_solo_logueados.sql",
       "source_location": null
+    },
+    {
+      "id": "src_components_loginmodal",
+      "label": "LoginModal.tsx",
+      "_origin": "ast",
+      "community": 58,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "loginmodal.tsx",
+      "source_file": "src/components/LoginModal.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_components_logosarten",
+      "label": "LogoSarten.tsx",
+      "_origin": "ast",
+      "community": 58,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "logosarten.tsx",
+      "source_file": "src/components/LogoSarten.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_components_nuevaclavemodal",
+      "label": "NuevaClaveModal.tsx",
+      "_origin": "ast",
+      "community": 58,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "nuevaclavemodal.tsx",
+      "source_file": "src/components/NuevaClaveModal.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "ref_react",
+      "label": "react",
+      "_origin": "ast",
+      "community": 58,
+      "community_name": "react",
+      "file_type": "concept",
+      "norm_label": "react",
+      "source_file": "package.json",
+      "source_location": "L19"
     },
     {
       "id": "supabase_migrations_20261107_porciones_num",
@@ -8218,6 +8424,17 @@
       "source_location": "L1"
     },
     {
+      "id": "src_hooks_useparahacer",
+      "label": "useParaHacer.ts",
+      "_origin": "ast",
+      "community": 69,
+      "community_name": "errorMessage",
+      "file_type": "code",
+      "norm_label": "useparahacer.ts",
+      "source_file": "src/hooks/useParaHacer.ts",
+      "source_location": "L1"
+    },
+    {
       "id": "supabase_functions_indexar_recetas_index",
       "label": "indexar-recetas/index.ts",
       "_origin": "ast",
@@ -8244,7 +8461,7 @@
       "label": "AddRecipeForm.tsx",
       "_origin": "ast",
       "community": 70,
-      "community_name": "AddRecipeForm.tsx",
+      "community_name": "errors.ts",
       "file_type": "code",
       "norm_label": "addrecipeform.tsx",
       "source_file": "src/components/AddRecipeForm.tsx",
@@ -8255,10 +8472,32 @@
       "label": "UploadProgress.tsx",
       "_origin": "ast",
       "community": 70,
-      "community_name": "AddRecipeForm.tsx",
+      "community_name": "errors.ts",
       "file_type": "code",
       "norm_label": "uploadprogress.tsx",
       "source_file": "src/components/UploadProgress.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_hooks_userecipes",
+      "label": "useRecipes.ts",
+      "_origin": "ast",
+      "community": 70,
+      "community_name": "errors.ts",
+      "file_type": "code",
+      "norm_label": "userecipes.ts",
+      "source_file": "src/hooks/useRecipes.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_lib_errors",
+      "label": "errors.ts",
+      "_origin": "ast",
+      "community": 70,
+      "community_name": "errors.ts",
+      "file_type": "code",
+      "norm_label": "errors.ts",
+      "source_file": "src/lib/errors.ts",
       "source_location": "L1"
     },
     {
@@ -8266,22 +8505,55 @@
       "label": "imagen.ts",
       "_origin": "ast",
       "community": 70,
-      "community_name": "AddRecipeForm.tsx",
+      "community_name": "errors.ts",
       "file_type": "code",
       "norm_label": "imagen.ts",
       "source_file": "src/lib/imagen.ts",
       "source_location": "L1"
     },
     {
-      "id": "src_components_cuentaacceso",
-      "label": "CuentaAcceso.tsx",
+      "id": "src_lib_n8n",
+      "label": "n8n.ts",
       "_origin": "ast",
-      "community": 71,
-      "community_name": "@supabase/supabase-js",
+      "community": 70,
+      "community_name": "errors.ts",
       "file_type": "code",
-      "norm_label": "cuentaacceso.tsx",
-      "source_file": "src/components/CuentaAcceso.tsx",
+      "norm_label": "n8n.ts",
+      "source_file": "src/lib/n8n.ts",
       "source_location": "L1"
+    },
+    {
+      "id": "src_lib_n8n_base",
+      "label": "base",
+      "_origin": "ast",
+      "community": 70,
+      "community_name": "errors.ts",
+      "file_type": "code",
+      "norm_label": "base",
+      "source_file": "src/lib/n8n.ts",
+      "source_location": "L9"
+    },
+    {
+      "id": "src_lib_n8n_n8n_webhooks",
+      "label": "N8N_WEBHOOKS",
+      "_origin": "ast",
+      "community": 70,
+      "community_name": "errors.ts",
+      "file_type": "code",
+      "norm_label": "n8n_webhooks",
+      "source_file": "src/lib/n8n.ts",
+      "source_location": "L11"
+    },
+    {
+      "id": "src_lib_supabase_supabase_anon_key",
+      "label": "SUPABASE_ANON_KEY",
+      "_origin": "ast",
+      "community": 70,
+      "community_name": "errors.ts",
+      "file_type": "code",
+      "norm_label": "supabase_anon_key",
+      "source_file": "src/lib/supabase.ts",
+      "source_location": "L24"
     },
     {
       "id": "src_components_cuentaavisos",
@@ -8343,7 +8615,7 @@
       "label": "MuroRealizaciones.tsx",
       "_origin": "ast",
       "community": 72,
-      "community_name": "lucide-react",
+      "community_name": "MuroRealizaciones.tsx",
       "file_type": "code",
       "norm_label": "murorealizaciones.tsx",
       "source_file": "src/components/MuroRealizaciones.tsx",
@@ -8354,21 +8626,10 @@
       "label": "RealizacionForm.tsx",
       "_origin": "ast",
       "community": 72,
-      "community_name": "lucide-react",
+      "community_name": "MuroRealizaciones.tsx",
       "file_type": "code",
       "norm_label": "realizacionform.tsx",
       "source_file": "src/components/RealizacionForm.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_starrating",
-      "label": "StarRating.tsx",
-      "_origin": "ast",
-      "community": 72,
-      "community_name": "lucide-react",
-      "file_type": "code",
-      "norm_label": "starrating.tsx",
-      "source_file": "src/components/StarRating.tsx",
       "source_location": "L1"
     },
     {
@@ -8376,33 +8637,33 @@
       "label": "useRealizaciones.ts",
       "_origin": "ast",
       "community": 72,
-      "community_name": "lucide-react",
+      "community_name": "MuroRealizaciones.tsx",
       "file_type": "code",
       "norm_label": "userealizaciones.ts",
       "source_file": "src/hooks/useRealizaciones.ts",
       "source_location": "L1"
     },
     {
-      "id": "src_lib_errors",
-      "label": "errors.ts",
+      "id": "src_components_cuentaacceso",
+      "label": "CuentaAcceso.tsx",
       "_origin": "ast",
-      "community": 72,
-      "community_name": "lucide-react",
+      "community": 73,
+      "community_name": "supabase.ts",
       "file_type": "code",
-      "norm_label": "errors.ts",
-      "source_file": "src/lib/errors.ts",
+      "norm_label": "cuentaacceso.tsx",
+      "source_file": "src/components/CuentaAcceso.tsx",
       "source_location": "L1"
     },
     {
-      "id": "ref_lucide_react",
-      "label": "lucide-react",
+      "id": "src_components_reindexarbusqueda",
+      "label": "ReindexarBusqueda.tsx",
       "_origin": "ast",
-      "community": 72,
-      "community_name": "lucide-react",
-      "file_type": "concept",
-      "norm_label": "lucide-react",
-      "source_file": "package.json",
-      "source_location": "L18"
+      "community": 73,
+      "community_name": "supabase.ts",
+      "file_type": "code",
+      "norm_label": "reindexarbusqueda.tsx",
+      "source_file": "src/components/ReindexarBusqueda.tsx",
+      "source_location": "L1"
     },
     {
       "id": "src_hooks_usemenucompartido",
@@ -8416,69 +8677,14 @@
       "source_location": "L1"
     },
     {
-      "id": "src_hooks_useparahacer",
-      "label": "useParaHacer.ts",
+      "id": "src_lib_busquedasemantica",
+      "label": "busquedaSemantica.ts",
       "_origin": "ast",
       "community": 73,
       "community_name": "supabase.ts",
       "file_type": "code",
-      "norm_label": "useparahacer.ts",
-      "source_file": "src/hooks/useParaHacer.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_hooks_userecipes",
-      "label": "useRecipes.ts",
-      "_origin": "ast",
-      "community": 73,
-      "community_name": "supabase.ts",
-      "file_type": "code",
-      "norm_label": "userecipes.ts",
-      "source_file": "src/hooks/useRecipes.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_lib_n8n",
-      "label": "n8n.ts",
-      "_origin": "ast",
-      "community": 73,
-      "community_name": "supabase.ts",
-      "file_type": "code",
-      "norm_label": "n8n.ts",
-      "source_file": "src/lib/n8n.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_lib_n8n_base",
-      "label": "base",
-      "_origin": "ast",
-      "community": 73,
-      "community_name": "supabase.ts",
-      "file_type": "code",
-      "norm_label": "base",
-      "source_file": "src/lib/n8n.ts",
-      "source_location": "L9"
-    },
-    {
-      "id": "src_lib_n8n_n8n_webhooks",
-      "label": "N8N_WEBHOOKS",
-      "_origin": "ast",
-      "community": 73,
-      "community_name": "supabase.ts",
-      "file_type": "code",
-      "norm_label": "n8n_webhooks",
-      "source_file": "src/lib/n8n.ts",
-      "source_location": "L11"
-    },
-    {
-      "id": "src_lib_promover",
-      "label": "promover.ts",
-      "_origin": "ast",
-      "community": 73,
-      "community_name": "supabase.ts",
-      "file_type": "code",
-      "norm_label": "promover.ts",
-      "source_file": "src/lib/promover.ts",
+      "norm_label": "busquedasemantica.ts",
+      "source_file": "src/lib/busquedaSemantica.ts",
       "source_location": "L1"
     },
     {
@@ -8493,6 +8699,28 @@
       "source_location": "L1"
     },
     {
+      "id": "src_lib_supabase_enlace_caducado",
+      "label": "ENLACE_CADUCADO",
+      "_origin": "ast",
+      "community": 73,
+      "community_name": "supabase.ts",
+      "file_type": "code",
+      "norm_label": "enlace_caducado",
+      "source_file": "src/lib/supabase.ts",
+      "source_location": "L15"
+    },
+    {
+      "id": "src_lib_supabase_llega_de_recuperacion",
+      "label": "LLEGA_DE_RECUPERACION",
+      "_origin": "ast",
+      "community": 73,
+      "community_name": "supabase.ts",
+      "file_type": "code",
+      "norm_label": "llega_de_recuperacion",
+      "source_file": "src/lib/supabase.ts",
+      "source_location": "L14"
+    },
+    {
       "id": "src_lib_supabase_supabase",
       "label": "supabase",
       "_origin": "ast",
@@ -8500,17 +8728,6 @@
       "community_name": "supabase.ts",
       "file_type": "code",
       "norm_label": "supabase",
-      "source_file": "src/lib/supabase.ts",
-      "source_location": "L10"
-    },
-    {
-      "id": "src_lib_supabase_supabase_anon_key",
-      "label": "SUPABASE_ANON_KEY",
-      "_origin": "ast",
-      "community": 73,
-      "community_name": "supabase.ts",
-      "file_type": "code",
-      "norm_label": "supabase_anon_key",
       "source_file": "src/lib/supabase.ts",
       "source_location": "L17"
     },
@@ -8559,6 +8776,234 @@
       "source_location": "L1"
     },
     {
+      "id": "docs_pendientes",
+      "label": "pendientes.md",
+      "_origin": "ast",
+      "community": 76,
+      "community_name": "Pendientes del redise\u00f1o \u2014 para retomar",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "pendientes.md",
+      "source_file": "docs/pendientes.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "docs_pendientes_detalles_y_mejoras",
+      "label": "Detalles y mejoras",
+      "_origin": "ast",
+      "community": 76,
+      "community_name": "Pendientes del redise\u00f1o \u2014 para retomar",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "detalles y mejoras",
+      "source_file": "docs/pendientes.md",
+      "source_location": "L54"
+    },
+    {
+      "id": "docs_pendientes_estado_en_producci\u00f3n_para_poder_volver_atr\u00e1s",
+      "label": "Estado en producci\u00f3n (para poder volver atr\u00e1s)",
+      "_origin": "ast",
+      "community": 76,
+      "community_name": "Pendientes del redise\u00f1o \u2014 para retomar",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "estado en produccion (para poder volver atras)",
+      "source_file": "docs/pendientes.md",
+      "source_location": "L7"
+    },
+    {
+      "id": "docs_pendientes_para_hacer_por_orden",
+      "label": "Para hacer, por orden",
+      "_origin": "ast",
+      "community": 76,
+      "community_name": "Pendientes del redise\u00f1o \u2014 para retomar",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "para hacer, por orden",
+      "source_file": "docs/pendientes.md",
+      "source_location": "L19"
+    },
+    {
+      "id": "docs_pendientes_pendientes_del_redise\u00f1o_para_retomar",
+      "label": "Pendientes del redise\u00f1o \u2014 para retomar",
+      "_origin": "ast",
+      "community": 76,
+      "community_name": "Pendientes del redise\u00f1o \u2014 para retomar",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "pendientes del rediseno \u2014 para retomar",
+      "source_file": "docs/pendientes.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "docs_pendientes_sin_comprobar_a_mano",
+      "label": "Sin comprobar a mano",
+      "_origin": "ast",
+      "community": 76,
+      "community_name": "Pendientes del redise\u00f1o \u2014 para retomar",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "sin comprobar a mano",
+      "source_file": "docs/pendientes.md",
+      "source_location": "L45"
+    },
+    {
+      "id": "supabase_plantillas_correo_leeme",
+      "label": "LEEME.md",
+      "_origin": "ast",
+      "community": 76,
+      "community_name": "Pendientes del redise\u00f1o \u2014 para retomar",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "leeme.md",
+      "source_file": "supabase/plantillas-correo/LEEME.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "supabase_plantillas_correo_leeme_plantillas_de_correo_de_supabase_auth",
+      "label": "Plantillas de correo de Supabase Auth",
+      "_origin": "ast",
+      "community": 76,
+      "community_name": "Pendientes del redise\u00f1o \u2014 para retomar",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "plantillas de correo de supabase auth",
+      "source_file": "supabase/plantillas-correo/LEEME.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "n8n_correo_base",
+      "label": "correo-base.js",
+      "_origin": "ast",
+      "community": 77,
+      "community_name": "correo-base.js",
+      "file_type": "code",
+      "norm_label": "correo-base.js",
+      "source_file": "n8n/correo-base.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "n8n_correo_base_colores",
+      "label": "COLORES",
+      "_origin": "ast",
+      "community": 77,
+      "community_name": "correo-base.js",
+      "file_type": "code",
+      "norm_label": "colores",
+      "source_file": "n8n/correo-base.js",
+      "source_location": "L11"
+    },
+    {
+      "id": "n8n_correo_base_prefijos",
+      "label": "PREFIJOS",
+      "_origin": "ast",
+      "community": 77,
+      "community_name": "correo-base.js",
+      "file_type": "code",
+      "norm_label": "prefijos",
+      "source_file": "n8n/correo-base.js",
+      "source_location": "L15"
+    },
+    {
+      "id": "n8n_generar_correos",
+      "label": "generar-correos.mjs",
+      "_origin": "ast",
+      "community": 78,
+      "community_name": "generar-correos.mjs",
+      "file_type": "code",
+      "norm_label": "generar-correos.mjs",
+      "source_file": "n8n/generar-correos.mjs",
+      "source_location": "L1"
+    },
+    {
+      "id": "n8n_generar_correos_aqui",
+      "label": "aqui",
+      "_origin": "ast",
+      "community": 78,
+      "community_name": "generar-correos.mjs",
+      "file_type": "code",
+      "norm_label": "aqui",
+      "source_file": "n8n/generar-correos.mjs",
+      "source_location": "L8"
+    },
+    {
+      "id": "n8n_generar_correos_base",
+      "label": "base",
+      "_origin": "ast",
+      "community": 78,
+      "community_name": "generar-correos.mjs",
+      "file_type": "code",
+      "norm_label": "base",
+      "source_file": "n8n/generar-correos.mjs",
+      "source_location": "L9"
+    },
+    {
+      "id": "n8n_generar_correos_correo",
+      "label": "{ correo }",
+      "_origin": "ast",
+      "community": 78,
+      "community_name": "generar-correos.mjs",
+      "file_type": "code",
+      "norm_label": "{ correo }",
+      "source_file": "n8n/generar-correos.mjs",
+      "source_location": "L10"
+    },
+    {
+      "id": "supabase_plantillas_correo_generar",
+      "label": "generar.mjs",
+      "_origin": "ast",
+      "community": 79,
+      "community_name": "generar.mjs",
+      "file_type": "code",
+      "norm_label": "generar.mjs",
+      "source_file": "supabase/plantillas-correo/generar.mjs",
+      "source_location": "L1"
+    },
+    {
+      "id": "supabase_plantillas_correo_generar_aqui",
+      "label": "aqui",
+      "_origin": "ast",
+      "community": 79,
+      "community_name": "generar.mjs",
+      "file_type": "code",
+      "norm_label": "aqui",
+      "source_file": "supabase/plantillas-correo/generar.mjs",
+      "source_location": "L11"
+    },
+    {
+      "id": "supabase_plantillas_correo_generar_base",
+      "label": "base",
+      "_origin": "ast",
+      "community": 79,
+      "community_name": "generar.mjs",
+      "file_type": "code",
+      "norm_label": "base",
+      "source_file": "supabase/plantillas-correo/generar.mjs",
+      "source_location": "L12"
+    },
+    {
+      "id": "supabase_plantillas_correo_generar_correo",
+      "label": "{ correo }",
+      "_origin": "ast",
+      "community": 79,
+      "community_name": "generar.mjs",
+      "file_type": "code",
+      "norm_label": "{ correo }",
+      "source_file": "supabase/plantillas-correo/generar.mjs",
+      "source_location": "L13"
+    },
+    {
+      "id": "supabase_plantillas_correo_generar_plantillas",
+      "label": "PLANTILLAS",
+      "_origin": "ast",
+      "community": 79,
+      "community_name": "generar.mjs",
+      "file_type": "code",
+      "norm_label": "plantillas",
+      "source_file": "supabase/plantillas-correo/generar.mjs",
+      "source_location": "L21"
+    },
+    {
       "id": "src_app",
       "label": "App.tsx",
       "_origin": "ast",
@@ -8578,7 +9023,18 @@
       "file_type": "code",
       "norm_label": "categories",
       "source_file": "src/App.tsx",
-      "source_location": "L31"
+      "source_location": "L32"
+    },
+    {
+      "id": "src_components_altapais",
+      "label": "AltaPais.tsx",
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "altapais.tsx",
+      "source_file": "src/components/AltaPais.tsx",
+      "source_location": "L1"
     },
     {
       "id": "src_components_avisos",
@@ -8589,6 +9045,17 @@
       "file_type": "code",
       "norm_label": "avisos.tsx",
       "source_file": "src/components/Avisos.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_components_cabecera",
+      "label": "Cabecera.tsx",
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "cabecera.tsx",
+      "source_file": "src/components/Cabecera.tsx",
       "source_location": "L1"
     },
     {
@@ -8603,36 +9070,47 @@
       "source_location": "L1"
     },
     {
-      "id": "src_components_loginmodal",
-      "label": "LoginModal.tsx",
+      "id": "src_components_menuslista",
+      "label": "MenusLista.tsx",
       "_origin": "ast",
       "community": 8,
       "community_name": "App.tsx",
       "file_type": "code",
-      "norm_label": "loginmodal.tsx",
-      "source_file": "src/components/LoginModal.tsx",
+      "norm_label": "menuslista.tsx",
+      "source_file": "src/components/MenusLista.tsx",
       "source_location": "L1"
     },
     {
-      "id": "src_components_logosarten",
-      "label": "LogoSarten.tsx",
+      "id": "src_components_navprincipal",
+      "label": "NavPrincipal.tsx",
       "_origin": "ast",
       "community": 8,
       "community_name": "App.tsx",
       "file_type": "code",
-      "norm_label": "logosarten.tsx",
-      "source_file": "src/components/LogoSarten.tsx",
+      "norm_label": "navprincipal.tsx",
+      "source_file": "src/components/NavPrincipal.tsx",
       "source_location": "L1"
     },
     {
-      "id": "src_components_reindexarbusqueda",
-      "label": "ReindexarBusqueda.tsx",
+      "id": "src_components_pasaportesection",
+      "label": "PasaporteSection.tsx",
       "_origin": "ast",
       "community": 8,
       "community_name": "App.tsx",
       "file_type": "code",
-      "norm_label": "reindexarbusqueda.tsx",
-      "source_file": "src/components/ReindexarBusqueda.tsx",
+      "norm_label": "pasaportesection.tsx",
+      "source_file": "src/components/PasaporteSection.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_components_portadacatalogo",
+      "label": "PortadaCatalogo.tsx",
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "portadacatalogo.tsx",
+      "source_file": "src/components/PortadaCatalogo.tsx",
       "source_location": "L1"
     },
     {
@@ -8647,15 +9125,37 @@
       "source_location": "L1"
     },
     {
-      "id": "src_lib_busquedasemantica",
-      "label": "busquedaSemantica.ts",
+      "id": "src_hooks_useruta",
+      "label": "useRuta.ts",
       "_origin": "ast",
       "community": 8,
       "community_name": "App.tsx",
       "file_type": "code",
-      "norm_label": "busquedasemantica.ts",
-      "source_file": "src/lib/busquedaSemantica.ts",
+      "norm_label": "useruta.ts",
+      "source_file": "src/hooks/useRuta.ts",
       "source_location": "L1"
+    },
+    {
+      "id": "src_lib_rutas",
+      "label": "rutas.ts",
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "rutas.ts",
+      "source_file": "src/lib/rutas.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_lib_rutas_catalogo",
+      "label": "CATALOGO",
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "catalogo",
+      "source_file": "src/lib/rutas.ts",
+      "source_location": "L30"
     },
     {
       "id": "src_main",
@@ -8669,15 +9169,64 @@
       "source_location": "L1"
     },
     {
-      "id": "ref_react",
-      "label": "react",
+      "id": "docs_candidatas_fase_0_experimento_media_tarde_antes_de_construir_nada",
+      "label": "Fase 0 \u2014 experimento (media tarde, antes de construir nada)",
       "_origin": "ast",
-      "community": 8,
-      "community_name": "App.tsx",
-      "file_type": "concept",
-      "norm_label": "react",
-      "source_file": "package.json",
-      "source_location": "L19"
+      "community": 80,
+      "community_name": "Fase 0 \u2014 experimento (media tarde, antes de construir nada)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "fase 0 \u2014 experimento (media tarde, antes de construir nada)",
+      "source_file": "docs/candidatas.md",
+      "source_location": "L46"
+    },
+    {
+      "id": "docs_candidatas_instagram_aparcada_14_oct_2026",
+      "label": "Instagram, aparcada (14 oct 2026)",
+      "_origin": "ast",
+      "community": 80,
+      "community_name": "Fase 0 \u2014 experimento (media tarde, antes de construir nada)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "instagram, aparcada (14 oct 2026)",
+      "source_file": "docs/candidatas.md",
+      "source_location": "L127"
+    },
+    {
+      "id": "docs_candidatas_reels_con_apify_hecho_y_probado_el_15_oct_2026",
+      "label": "Reels con Apify \u2014 HECHO y probado el 15 oct 2026",
+      "_origin": "ast",
+      "community": 80,
+      "community_name": "Fase 0 \u2014 experimento (media tarde, antes de construir nada)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "reels con apify \u2014 hecho y probado el 15 oct 2026",
+      "source_file": "docs/candidatas.md",
+      "source_location": "L153"
+    },
+    {
+      "id": "docs_candidatas_resultado_de_0a_con_un_reel_p\u00fablico_14_oct_2026",
+      "label": "Resultado de 0a con un reel p\u00fablico (14 oct 2026)",
+      "_origin": "ast",
+      "community": 80,
+      "community_name": "Fase 0 \u2014 experimento (media tarde, antes de construir nada)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "resultado de 0a con un reel publico (14 oct 2026)",
+      "source_file": "docs/candidatas.md",
+      "source_location": "L104"
+    },
+    {
+      "id": "docs_candidatas_resultado_de_0a_con_youtube_14_oct_2026",
+      "label": "Resultado de 0a con YouTube (14 oct 2026)",
+      "_origin": "ast",
+      "community": 80,
+      "community_name": "Fase 0 \u2014 experimento (media tarde, antes de construir nada)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "resultado de 0a con youtube (14 oct 2026)",
+      "source_file": "docs/candidatas.md",
+      "source_location": "L68"
     },
     {
       "id": "supabase_migrations_20261010_anade_tiempo_porciones_dificultad",
@@ -9137,99 +9686,147 @@
   ],
   "links": [
     {
-      "source": "src_app_app",
-      "target": "src_hooks_useruta_reemplazarpor",
+      "source": "n8n_correo_base_correo",
+      "target": "n8n_correo_base_colorcategoria",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "call",
-      "source_file": "src/App.tsx",
-      "source_location": "L228",
+      "source_file": "n8n/correo-base.js",
+      "source_location": "L63",
       "weight": 1.0
     },
     {
-      "source": "src_app_app",
-      "target": "src_hooks_useruta_useruta",
+      "source": "n8n_correo_base_correo",
+      "target": "n8n_correo_base_cenefa",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "call",
-      "source_file": "src/App.tsx",
-      "source_location": "L37",
+      "source_file": "n8n/correo-base.js",
+      "source_location": "L70",
       "weight": 1.0
     },
     {
-      "source": "src_app_app",
-      "target": "src_hooks_userecipes_userecipes",
+      "source": "n8n_correo_base_correo",
+      "target": "n8n_correo_base_tarjeta",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "call",
-      "source_file": "src/App.tsx",
-      "source_location": "L56",
+      "source_file": "n8n/correo-base.js",
+      "source_location": "L75",
       "weight": 1.0
     },
     {
-      "source": "src_app_app",
-      "target": "src_hooks_usedespensa_usedespensa",
+      "source": "n8n_correo_base_correo",
+      "target": "n8n_correo_base_boton",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "call",
-      "source_file": "src/App.tsx",
-      "source_location": "L60",
-      "weight": 1.0
-    },
-    {
-      "source": "src_app_app",
-      "target": "src_hooks_useparahacer_useparahacer",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/App.tsx",
-      "source_location": "L62",
-      "weight": 1.0
-    },
-    {
-      "source": "src_app_app",
-      "target": "src_lib_errors_errormessage",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/App.tsx",
-      "source_location": "L78",
-      "weight": 1.0
-    },
-    {
-      "source": "src_app_app",
-      "target": "src_hooks_useruta_ira",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/App.tsx",
+      "source_file": "n8n/correo-base.js",
       "source_location": "L82",
       "weight": 1.0
     },
     {
-      "source": "src_app_app",
-      "target": "src_hooks_useingredientsearch_useingredientsearch",
+      "source": "n8n_rellenar_html_chips",
+      "target": "n8n_rellenar_html_esc",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "call",
-      "source_file": "src/App.tsx",
-      "source_location": "L91",
+      "source_file": "n8n/rellenar-html.js",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "n8n_rellenar_html_inghtml",
+      "target": "n8n_rellenar_html_escabecera",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "n8n/rellenar-html.js",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "n8n_rellenar_html_inghtml",
+      "target": "n8n_rellenar_html_sinraya",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "n8n/rellenar-html.js",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "n8n_rellenar_html_inghtml",
+      "target": "n8n_rellenar_html_esc",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "n8n/rellenar-html.js",
+      "source_location": "L47",
+      "weight": 1.0
+    },
+    {
+      "source": "n8n_rellenar_html_pasoshtml",
+      "target": "n8n_rellenar_html_escabecera",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "n8n/rellenar-html.js",
+      "source_location": "L57",
+      "weight": 1.0
+    },
+    {
+      "source": "n8n_rellenar_html_pasoshtml",
+      "target": "n8n_rellenar_html_sinraya",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "n8n/rellenar-html.js",
+      "source_location": "L57",
+      "weight": 1.0
+    },
+    {
+      "source": "n8n_rellenar_html_pasoshtml",
+      "target": "n8n_rellenar_html_esc",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "n8n/rellenar-html.js",
+      "source_location": "L59",
+      "weight": 1.0
+    },
+    {
+      "source": "n8n_rellenar_html_sinraya",
+      "target": "n8n_rellenar_html_esc",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "n8n/rellenar-html.js",
+      "source_location": "L40",
       "weight": 1.0
     },
     {
@@ -9241,7 +9838,103 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/App.tsx",
-      "source_location": "L92",
+      "source_location": "L100",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_app",
+      "target": "src_hooks_useruta_reemplazarpor",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/App.tsx",
+      "source_location": "L236",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_app",
+      "target": "src_hooks_useruta_useruta",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/App.tsx",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_app",
+      "target": "src_hooks_userecipes_userecipes",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/App.tsx",
+      "source_location": "L61",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_app",
+      "target": "src_hooks_usedespensa_usedespensa",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/App.tsx",
+      "source_location": "L65",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_app",
+      "target": "src_hooks_useparahacer_useparahacer",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/App.tsx",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_app",
+      "target": "src_lib_errors_errormessage",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/App.tsx",
+      "source_location": "L86",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_app",
+      "target": "src_hooks_useruta_ira",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/App.tsx",
+      "source_location": "L90",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_app",
+      "target": "src_hooks_useingredientsearch_useingredientsearch",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/App.tsx",
+      "source_location": "L99",
       "weight": 1.0
     },
     {
@@ -9781,7 +10474,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/LoginModal.tsx",
-      "source_location": "L48",
+      "source_location": "L57",
       "weight": 1.0
     },
     {
@@ -10094,6 +10787,18 @@
       "context": "call",
       "source_file": "src/components/NavPrincipal.tsx",
       "source_location": "L61",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_nuevaclavemodal_nuevaclavemodal",
+      "target": "src_lib_errors_errormessage",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/components/NuevaClaveModal.tsx",
+      "source_location": "L26",
       "weight": 1.0
     },
     {
@@ -12882,43 +13587,19 @@
     },
     {
       "source": "src_app",
+      "target": "src_components_reindexarbusqueda_reindexarbusqueda",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/App.tsx",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app",
       "target": "src_components_avisos_recetanoencontrada",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/App.tsx",
-      "source_location": "L10",
-      "weight": 1.0
-    },
-    {
-      "source": "src_app",
-      "target": "src_components_avisos_soloadmin",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/App.tsx",
-      "source_location": "L10",
-      "weight": 1.0
-    },
-    {
-      "source": "src_app",
-      "target": "src_components_avisos_solologueados",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/App.tsx",
-      "source_location": "L10",
-      "weight": 1.0
-    },
-    {
-      "source": "src_app",
-      "target": "src_components_despensasection_secciondespensa",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -12930,7 +13611,31 @@
     },
     {
       "source": "src_app",
-      "target": "src_components_listacomprasection_seccionlistacompra",
+      "target": "src_components_avisos_soloadmin",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/App.tsx",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app",
+      "target": "src_components_avisos_solologueados",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/App.tsx",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app",
+      "target": "src_components_despensasection_secciondespensa",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -12942,7 +13647,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_components_laboratoriosection_seccionlaboratorio",
+      "target": "src_components_listacomprasection_seccionlistacompra",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -12954,7 +13659,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_components_pasaportesection_seccionpasaporte",
+      "target": "src_components_laboratoriosection_seccionlaboratorio",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -12966,7 +13671,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_components_menussection_seccionmenus",
+      "target": "src_components_pasaportesection_seccionpasaporte",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -12978,7 +13683,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_components_cuentasection_seccioncuenta",
+      "target": "src_components_menussection_seccionmenus",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -12990,7 +13695,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_components_buzonsection_seccionbuzon",
+      "target": "src_components_cuentasection_seccioncuenta",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -13002,7 +13707,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_components_cabecera_cabecera",
+      "target": "src_components_buzonsection_seccionbuzon",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -13014,7 +13719,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_components_portadacatalogo_portadacatalogo",
+      "target": "src_components_cabecera_cabecera",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -13026,7 +13731,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_hooks_userecipes_userecipes",
+      "target": "src_components_portadacatalogo_portadacatalogo",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -13038,7 +13743,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_hooks_usedespensa_usedespensa",
+      "target": "src_hooks_userecipes_userecipes",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -13050,7 +13755,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_hooks_useparahacer_useparahacer",
+      "target": "src_hooks_usedespensa_usedespensa",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -13062,7 +13767,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_hooks_useingredientsearch_useingredientsearch",
+      "target": "src_hooks_useparahacer_useparahacer",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -13074,7 +13779,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_hooks_usebusquedasemantica_usebusquedasemantica",
+      "target": "src_hooks_useingredientsearch_useingredientsearch",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -13086,55 +13791,19 @@
     },
     {
       "source": "src_app",
+      "target": "src_hooks_usebusquedasemantica_usebusquedasemantica",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/App.tsx",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app",
       "target": "src_hooks_useruta_ira",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/App.tsx",
-      "source_location": "L25",
-      "weight": 1.0
-    },
-    {
-      "source": "src_app",
-      "target": "src_hooks_useruta_reemplazarpor",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/App.tsx",
-      "source_location": "L25",
-      "weight": 1.0
-    },
-    {
-      "source": "src_app",
-      "target": "src_hooks_useruta_useruta",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/App.tsx",
-      "source_location": "L25",
-      "weight": 1.0
-    },
-    {
-      "source": "src_app",
-      "target": "src_hooks_useruta_volveratras",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/App.tsx",
-      "source_location": "L25",
-      "weight": 1.0
-    },
-    {
-      "source": "src_app",
-      "target": "src_lib_rutas_catalogo",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -13146,7 +13815,43 @@
     },
     {
       "source": "src_app",
-      "target": "src_lib_supabase_supabase",
+      "target": "src_hooks_useruta_reemplazarpor",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/App.tsx",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app",
+      "target": "src_hooks_useruta_useruta",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/App.tsx",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app",
+      "target": "src_hooks_useruta_volveratras",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/App.tsx",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app",
+      "target": "src_lib_rutas_catalogo",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -13158,7 +13863,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_lib_errors_errormessage",
+      "target": "src_lib_supabase_enlace_caducado",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -13170,7 +13875,31 @@
     },
     {
       "source": "src_app",
-      "target": "src_types_category",
+      "target": "src_lib_supabase_llega_de_recuperacion",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/App.tsx",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app",
+      "target": "src_lib_supabase_supabase",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/App.tsx",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app",
+      "target": "src_lib_errors_errormessage",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -13190,6 +13919,18 @@
       "context": "import",
       "source_file": "src/App.tsx",
       "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app",
+      "target": "src_types_category",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/App.tsx",
+      "source_location": "L30",
       "weight": 1.0
     },
     {
@@ -13254,7 +13995,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_components_reindexarbusqueda_reindexarbusqueda",
+      "target": "src_components_nuevaclavemodal_nuevaclavemodal",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -15218,6 +15959,42 @@
       "context": "import",
       "source_file": "src/components/NavPrincipal.tsx",
       "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_nuevaclavemodal",
+      "target": "src_lib_supabase_supabase",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/NuevaClaveModal.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_nuevaclavemodal",
+      "target": "src_lib_errors_errormessage",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/NuevaClaveModal.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_nuevaclavemodal",
+      "target": "src_components_logosarten_logosarten",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/NuevaClaveModal.tsx",
+      "source_location": "L5",
       "weight": 1.0
     },
     {
@@ -17418,7 +18195,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_components_avisos",
+      "target": "src_components_reindexarbusqueda",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -17430,7 +18207,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_components_despensasection",
+      "target": "src_components_avisos",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -17442,7 +18219,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_components_listacomprasection",
+      "target": "src_components_despensasection",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -17454,7 +18231,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_components_laboratoriosection",
+      "target": "src_components_listacomprasection",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -17466,7 +18243,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_components_pasaportesection",
+      "target": "src_components_laboratoriosection",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -17478,7 +18255,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_components_menussection",
+      "target": "src_components_pasaportesection",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -17490,7 +18267,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_components_cuentasection",
+      "target": "src_components_menussection",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -17502,7 +18279,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_components_buzonsection",
+      "target": "src_components_cuentasection",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -17514,7 +18291,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_components_cabecera",
+      "target": "src_components_buzonsection",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -17526,7 +18303,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_components_portadacatalogo",
+      "target": "src_components_cabecera",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -17551,7 +18328,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_hooks_userecipes",
+      "target": "src_components_portadacatalogo",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -17563,7 +18340,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_hooks_usedespensa",
+      "target": "src_hooks_userecipes",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -17575,7 +18352,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_hooks_useparahacer",
+      "target": "src_hooks_usedespensa",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -17587,7 +18364,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_hooks_useingredientsearch",
+      "target": "src_hooks_useparahacer",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -17599,7 +18376,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_hooks_usebusquedasemantica",
+      "target": "src_hooks_useingredientsearch",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -17611,7 +18388,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_hooks_useruta",
+      "target": "src_hooks_usebusquedasemantica",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -17623,7 +18400,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_lib_rutas",
+      "target": "src_hooks_useruta",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -17635,7 +18412,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_lib_supabase",
+      "target": "src_lib_rutas",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -17647,7 +18424,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_lib_errors",
+      "target": "src_lib_supabase",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -17659,7 +18436,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_types",
+      "target": "src_lib_errors",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -17667,7 +18444,6 @@
       "context": "import",
       "source_file": "src/App.tsx",
       "source_location": "L29",
-      "type_only": true,
       "weight": 1.0
     },
     {
@@ -17680,6 +18456,19 @@
       "context": "import",
       "source_file": "src/App.tsx",
       "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app",
+      "target": "src_types",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/App.tsx",
+      "source_location": "L30",
+      "type_only": true,
       "weight": 1.0
     },
     {
@@ -17744,7 +18533,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_components_reindexarbusqueda",
+      "target": "src_components_nuevaclavemodal",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -20198,6 +20987,66 @@
       "context": "import",
       "source_file": "src/components/NavPrincipal.tsx",
       "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_nuevaclavemodal",
+      "target": "ref_react",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/NuevaClaveModal.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_nuevaclavemodal",
+      "target": "ref_lucide_react",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/NuevaClaveModal.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_nuevaclavemodal",
+      "target": "src_lib_supabase",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/NuevaClaveModal.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_nuevaclavemodal",
+      "target": "src_lib_errors",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/NuevaClaveModal.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_nuevaclavemodal",
+      "target": "src_components_logosarten",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/NuevaClaveModal.tsx",
+      "source_location": "L5",
       "weight": 1.0
     },
     {
@@ -22801,7 +23650,7 @@
     },
     {
       "source": "claude_mi_recetario_contexto_del_proyecto",
-      "target": "claude_buz\u00f3n_de_sugerencias",
+      "target": "claude_recuperar_la_contrase\u00f1a",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -22812,13 +23661,24 @@
     },
     {
       "source": "claude_mi_recetario_contexto_del_proyecto",
+      "target": "claude_buz\u00f3n_de_sugerencias",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": "L509",
+      "weight": 1.0
+    },
+    {
+      "source": "claude_mi_recetario_contexto_del_proyecto",
       "target": "claude_modo_cocina",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CLAUDE.md",
-      "source_location": "L512",
+      "source_location": "L527",
       "weight": 1.0
     },
     {
@@ -22829,7 +23689,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CLAUDE.md",
-      "source_location": "L573",
+      "source_location": "L588",
       "weight": 1.0
     },
     {
@@ -22840,7 +23700,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CLAUDE.md",
-      "source_location": "L640",
+      "source_location": "L655",
       "weight": 1.0
     },
     {
@@ -22851,7 +23711,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CLAUDE.md",
-      "source_location": "L686",
+      "source_location": "L727",
       "weight": 1.0
     },
     {
@@ -22862,7 +23722,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CLAUDE.md",
-      "source_location": "L695",
+      "source_location": "L736",
       "weight": 1.0
     },
     {
@@ -22873,7 +23733,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CLAUDE.md",
-      "source_location": "L539",
+      "source_location": "L554",
       "weight": 1.0
     },
     {
@@ -23449,6 +24309,61 @@
       "weight": 1.0
     },
     {
+      "source": "docs_pendientes",
+      "target": "docs_pendientes_pendientes_del_redise\u00f1o_para_retomar",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/pendientes.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_pendientes_pendientes_del_redise\u00f1o_para_retomar",
+      "target": "docs_pendientes_para_hacer_por_orden",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/pendientes.md",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_pendientes_pendientes_del_redise\u00f1o_para_retomar",
+      "target": "docs_pendientes_sin_comprobar_a_mano",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/pendientes.md",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_pendientes_pendientes_del_redise\u00f1o_para_retomar",
+      "target": "docs_pendientes_detalles_y_mejoras",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/pendientes.md",
+      "source_location": "L54",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_pendientes_pendientes_del_redise\u00f1o_para_retomar",
+      "target": "docs_pendientes_estado_en_producci\u00f3n_para_poder_volver_atr\u00e1s",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/pendientes.md",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
       "source": "docs_porciones_propuesta",
       "target": "docs_porciones_propuesta_propuesta_de_porciones_aplicada_el_7_nov_2026_en_porciones_num",
       "relation": "contains",
@@ -23699,6 +24614,281 @@
       "confidence_score": 1.0,
       "source_file": "graphify-out/memory/query_20260726_092833_por_que_supabase_js_client_with_no_backend_layer_a.md",
       "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "n8n_correo_base",
+      "target": "n8n_correo_base_colores",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "n8n/correo-base.js",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "n8n_correo_base",
+      "target": "n8n_correo_base_prefijos",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "n8n/correo-base.js",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "n8n_correo_base",
+      "target": "n8n_correo_base_colorcategoria",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "n8n/correo-base.js",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "n8n_correo_base",
+      "target": "n8n_correo_base_boton",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "n8n/correo-base.js",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "n8n_correo_base",
+      "target": "n8n_correo_base_tarjeta",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "n8n/correo-base.js",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "n8n_correo_base",
+      "target": "n8n_correo_base_cenefa",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "n8n/correo-base.js",
+      "source_location": "L52",
+      "weight": 1.0
+    },
+    {
+      "source": "n8n_correo_base",
+      "target": "n8n_correo_base_correo",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "n8n/correo-base.js",
+      "source_location": "L61",
+      "weight": 1.0
+    },
+    {
+      "source": "n8n_generar_correos",
+      "target": "n8n_generar_correos_correo",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "n8n/generar-correos.mjs",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "n8n_generar_correos",
+      "target": "n8n_generar_correos_esc",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "n8n/generar-correos.mjs",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "n8n_generar_correos",
+      "target": "n8n_generar_correos_correos",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "n8n/generar-correos.mjs",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "n8n_generar_correos",
+      "target": "n8n_generar_correos_aqui",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "n8n/generar-correos.mjs",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "n8n_generar_correos",
+      "target": "n8n_generar_correos_base",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "n8n/generar-correos.mjs",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "n8n_rellenar_html",
+      "target": "n8n_rellenar_html_colores",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "n8n/rellenar-html.js",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "n8n_rellenar_html",
+      "target": "n8n_rellenar_html_prefijos",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "n8n/rellenar-html.js",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "n8n_rellenar_html",
+      "target": "n8n_rellenar_html_categoria",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "n8n/rellenar-html.js",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "n8n_rellenar_html",
+      "target": "n8n_rellenar_html_titulocorto",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "n8n/rellenar-html.js",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "n8n_rellenar_html",
+      "target": "n8n_rellenar_html_fecha",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "n8n/rellenar-html.js",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "n8n_rellenar_html",
+      "target": "n8n_rellenar_html_palabras",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "n8n/rellenar-html.js",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "n8n_rellenar_html",
+      "target": "n8n_rellenar_html_chips",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "n8n/rellenar-html.js",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "n8n_rellenar_html",
+      "target": "n8n_rellenar_html_valores",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "n8n/rellenar-html.js",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "n8n_rellenar_html",
+      "target": "n8n_rellenar_html_escabecera",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "n8n/rellenar-html.js",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "n8n_rellenar_html",
+      "target": "n8n_rellenar_html_sinraya",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "n8n/rellenar-html.js",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "n8n_rellenar_html",
+      "target": "n8n_rellenar_html_inghtml",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "n8n/rellenar-html.js",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "n8n_rellenar_html",
+      "target": "n8n_rellenar_html_pasoshtml",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "n8n/rellenar-html.js",
+      "source_location": "L56",
+      "weight": 1.0
+    },
+    {
+      "source": "n8n_rellenar_html",
+      "target": "n8n_rellenar_html_html",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "n8n/rellenar-html.js",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -24182,7 +25372,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/App.tsx",
-      "source_location": "L31",
+      "source_location": "L32",
       "weight": 1.0
     },
     {
@@ -24193,7 +25383,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/App.tsx",
-      "source_location": "L36",
+      "source_location": "L37",
       "weight": 1.0
     },
     {
@@ -25184,6 +26374,17 @@
       "confidence_score": 1.0,
       "source_file": "src/components/NavPrincipal.tsx",
       "source_location": "L56",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_nuevaclavemodal",
+      "target": "src_components_nuevaclavemodal_nuevaclavemodal",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/NuevaClaveModal.tsx",
+      "source_location": "L11",
       "weight": 1.0
     },
     {
@@ -27058,13 +28259,35 @@
     },
     {
       "source": "src_lib_supabase",
+      "target": "src_lib_supabase_llega_de_recuperacion",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/lib/supabase.ts",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "src_lib_supabase",
+      "target": "src_lib_supabase_enlace_caducado",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/lib/supabase.ts",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "src_lib_supabase",
       "target": "src_lib_supabase_supabase",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/lib/supabase.ts",
-      "source_location": "L10",
+      "source_location": "L17",
       "weight": 1.0
     },
     {
@@ -27075,7 +28298,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/lib/supabase.ts",
-      "source_location": "L17",
+      "source_location": "L24",
       "weight": 1.0
     },
     {
@@ -27871,6 +29094,72 @@
       "weight": 1.0
     },
     {
+      "source": "supabase_plantillas_correo_generar",
+      "target": "supabase_plantillas_correo_generar_aqui",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "supabase/plantillas-correo/generar.mjs",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "supabase_plantillas_correo_generar",
+      "target": "supabase_plantillas_correo_generar_base",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "supabase/plantillas-correo/generar.mjs",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "supabase_plantillas_correo_generar",
+      "target": "supabase_plantillas_correo_generar_correo",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "supabase/plantillas-correo/generar.mjs",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "supabase_plantillas_correo_generar",
+      "target": "supabase_plantillas_correo_generar_em",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "supabase/plantillas-correo/generar.mjs",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "supabase_plantillas_correo_generar",
+      "target": "supabase_plantillas_correo_generar_plantillas",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "supabase/plantillas-correo/generar.mjs",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "supabase_plantillas_correo_leeme",
+      "target": "supabase_plantillas_correo_leeme_plantillas_de_correo_de_supabase_auth",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "supabase/plantillas-correo/LEEME.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
       "source": "tsconfig",
       "target": "tsconfig_files",
       "relation": "contains",
@@ -28564,6 +29853,28 @@
       "weight": 1.0
     },
     {
+      "source": "claude",
+      "target": "docs_pendientes",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": "L724",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_pendientes",
+      "target": "supabase_plantillas_correo_leeme",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/pendientes.md",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
       "source": "docs_seguimiento",
       "target": "docs_porciones_propuesta",
       "relation": "references",
@@ -28825,6 +30136,18 @@
       "confidence_score": 1.0,
       "source_file": "supabase/migrations/20261110_sugerencias.sql",
       "source_location": "L71",
+      "weight": 1.0
+    },
+    {
+      "source": "n8n_rellenar_html",
+      "target": "n8n_rellenar_html_esc",
+      "relation": "indirect_call",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "context": "argument",
+      "source_file": "n8n/rellenar-html.js",
+      "source_location": "L66",
       "weight": 1.0
     },
     {
@@ -29465,5 +30788,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "5d0f534f249e0a34d6da8b4bb1d0be42ab1622aa"
+  "built_at_commit": "9654964dbf025545be35a88cfb4458cfd5e9e833"
 }
