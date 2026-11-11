@@ -46,17 +46,28 @@ function tarjeta(t, k, kt) {
     + '</table></td></tr>';
 }
 
+// Cenefa de azulejo: dos filas de celdas de color en damero. Antes eran triángulos de texto y no llenaban el ancho
+// (dependían de la fuente) ni se recortaban en todos los clientes; las celdas con bgcolor van en todos. Las columnas
+// salen iguales por `table-layout:fixed`, así que llenan el ancho sea cual sea.
+function cenefa() {
+  const fila = function (empieza) {
+    let celdas = '';
+    for (let n = 0; n < 60; n++) celdas += '<td bgcolor="' + ((n + empieza) % 2 ? PAPEL : COBALTO) + '" height="6"></td>';
+    return '<tr>' + celdas + '</tr>';
+  };
+  return '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="table-layout:fixed;font-size:0;line-height:0;">' + fila(0) + fila(1) + '</table>';
+}
+
 function correo(o) {
   // `color` fija el par [fondo, texto] cuando la categoría no se conoce al generar el HTML (correos con expresiones).
   const color = o.color || colorCategoria(o.categoria);
   const k = color[0], kt = color[1];
   const filas = [];
   filas.push('<tr><td class="px" style="padding:22px 36px 16px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>'
-    + '<td width="58" valign="middle"><a href="' + SITIO + '"><img src="' + LOGO + '" alt="" width="52" height="52" style="display:block;border:0;" /></a></td>'
+    + '<td width="58" valign="middle"><a href="' + SITIO + '"><img src="' + LOGO + '" alt="El Recetario de Markis" width="52" height="52" style="display:block;border:0;font-family:' + SANS + ';font-size:11px;color:' + SUAVE + ';" /></a></td>'
     + '<td valign="middle" style="padding-left:12px;"><span style="font-family:' + SERIF + ';font-style:italic;font-weight:600;font-size:23px;letter-spacing:-.02em;color:' + TINTA + ';line-height:1.1;">El Recetario de <span style="font-style:normal;font-weight:700;color:' + TERRA + ';">Markis</span></span></td>'
     + '</tr></table></td></tr>');
-  filas.push('<tr><td style="border-top:1.5px solid ' + TINTA + ';border-bottom:1.5px solid ' + TINTA + ';height:12px;line-height:10px;font-size:13px;color:' + COBALTO
-    + ';white-space:nowrap;overflow:hidden;background-color:' + PAPEL + ';">&#9650;&#9650;&#9650;&#9650;&#9650;&#9650;&#9650;&#9650;&#9650;&#9650;&#9650;&#9650;&#9650;&#9650;&#9650;&#9650;&#9650;&#9650;&#9650;&#9650;&#9650;&#9650;&#9650;&#9650;&#9650;&#9650;&#9650;&#9650;&#9650;&#9650;&#9650;&#9650;&#9650;&#9650;&#9650;&#9650;&#9650;&#9650;&#9650;&#9650;&#9650;&#9650;&#9650;&#9650;&#9650;&#9650;&#9650;&#9650;&#9650;</td></tr>');
+  filas.push('<tr><td style="border-top:1.5px solid ' + TINTA + ';border-bottom:1.5px solid ' + TINTA + ';font-size:0;line-height:0;">' + cenefa() + '</td></tr>');
   filas.push('<tr><td class="px" style="padding:30px 36px 8px;">'
     + (o.kicker ? '<div style="font-family:' + MONO + ';font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:' + TERRA + ';margin:0 0 14px;">&mdash;&mdash; ' + o.kicker + '</div>' : '')
     + '<div class="titulo" style="font-family:' + SERIF + ';font-weight:300;font-size:36px;line-height:1.02;letter-spacing:-.035em;color:' + TINTA + ';margin:0 0 14px;">' + o.titulo + '</div>'
