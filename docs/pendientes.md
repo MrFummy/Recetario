@@ -36,7 +36,14 @@ El nombre de versión de «Aviso de nuevas recetas» salió con las tildes mal e
    nuevo exige volver a medir `ALTO` y `ALTO_UTIL` en `MenuImprimible.tsx`.
 5. **Los 77 PDFs ya generados** siguen en estilo cuaderno. Regenerarlos con «Regenerar PDFs antiguos» (inactivo)
    toca Drive, Notion y Supabase: probar primero con una sola receta y con una copia, no con el catálogo entero.
-6. **Decidir Letter o A4** para el PDF de receta (hoy Letter; los menús ya van en A4).
+6. **PDF de receta en A4** (decidido el 11 de noviembre). **Hecho en el repo:** `n8n/receta-pdf.html` lleva `@page { size: A4 }`
+   y el cuerpo mide `210mm × 296mm` (296 y no 297, como las hojas de menús, para no generar una página en blanco por
+   redondeo; en Letter la receta corta salía con una segunda página vacía por lo mismo). **El nodo de Gotenberg no hay que
+   tocarlo**: no pasa tamaño de papel y respeta el `@page` de la plantilla (el PDF de producción mide 612 × 792 y va a sangre).
+   Probado en local rellenando la plantilla con `rellenar-html.js` y una receta corta y otra larga, e imprimiendo con Chrome:
+   `MediaBox` 595 × 842, la corta en 1 página y la larga continúa bien en la 2.ª. **Falta**: subir la plantilla a Drive como
+   fichero nuevo (`update_file` no cambia el contenido), apuntar `Leer plantilla HTML` al ID nuevo, publicar y hacer una alta
+   de prueba (el PDF solo lo genera n8n). La v3 en Letter (`1IWUaLVN5ygOmfvBPSSlRl9a3nDuSoOZ7`) queda como vuelta atrás.
 
 ## Sin comprobar a mano
 

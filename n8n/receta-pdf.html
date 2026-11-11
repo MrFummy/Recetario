@@ -9,7 +9,7 @@
 <style>
   /* Plantilla «Mercado y azulejo» (nov 2026). Réplica del sistema de la web: ver src/sistema.css.
      {{kColor}} y {{kTexto}} son el color de la categoría y el que contrasta sobre él. */
-  @page { size: letter; margin: 0; }
+  @page { size: A4; margin: 0; }
   :root {
     --paper: #f4ecdd; --paper-2: #faf5e8; --ink: #2a2118; --ink-soft: #6d5f50; --rule: #d8cbb4;
     --accent: #c2452a; --cobalt: #1c4fd6; --yellow: #f4b623; --yellow-soft: #fbe3a0;
@@ -18,7 +18,7 @@
   *, *::before, *::after { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   html, body { margin: 0; padding: 0; }
   body {
-    width: 8.5in; min-height: 11in; background: var(--paper); color: var(--ink);
+    width: 210mm; min-height: 296mm; background: var(--paper); color: var(--ink);
     font-family: 'Schibsted Grotesk', -apple-system, system-ui, sans-serif; font-size: 12px; line-height: 1.5;
     display: flex; flex-direction: column;
   }
