@@ -1,0 +1,88 @@
+// Contenido del nodo Code «Rellenar HTML» del flujo «Regenerar PDFs antiguos» (n8n).
+// Misma maquetación que n8n/rellenar-html.js (alta de recetas): el cuerpo de `rellenar` se copia de ahí, así que si se
+// cambia aquel, hay que volver a generar este (ver CLAUDE.md). Lee las recetas de Supabase y NO toca nada más.
+const plantilla64 = $('Extraer plantilla HTML').first().json.htmlTemplate;
+const FOTO_POR_DEFECTO = 'https://gtqqqmethhakpybnuxin.supabase.co/storage/v1/object/public/fotos-recetas/_default.jpg';
+
+function rellenar(limpia, fotoUrl, plantilla) {
+  const esc = (s) => String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+  let html = Buffer.from(plantilla, "base64").toString("utf-8");
+
+  // Color de la categoría: el mismo mapa que src/lib/colorCategoria.ts y src/sistema.css.
+  const COLORES = {
+    aperitivos: ["#f4b623", "#2a2118"], postres: ["#e58a74", "#2a2118"], carnes: ["#c2452a", "#f4ecdd"],
+    pescados: ["#1c4fd6", "#f4ecdd"], sopas: ["#0e5b46", "#f4ecdd"], ensaladas: ["#5d6b3a", "#f4ecdd"],
+    arroces: ["#b8862b", "#2a2118"], pastas: ["#e0802c", "#2a2118"], otro: ["#2a2118", "#f4ecdd"],
+  };
+  const PREFIJOS = [["aperit", "aperitivos"], ["postre", "postres"], ["carne", "carnes"], ["pescad", "pescados"],
+    ["sopa", "sopas"], ["crema", "sopas"], ["ensal", "ensaladas"], ["arroz", "arroces"], ["pasta", "pastas"]];
+  const categoria = (limpia.categoria || "").trim();
+  const clave = (PREFIJOS.find(([p]) => categoria.toLowerCase().startsWith(p)) || [])[1] || "otro";
+  const [kColor, kTexto] = COLORES[clave];
+
+  // El nombre de la foto lo fija `Recupera foto` (título + sufijo al azar): así dos recetas con el mismo título no se pisan la foto.
+  const tituloCorto = limpia.titulo.split(" ").slice(0, 4).join(" ");
+  const fecha = new Date(limpia.fecha_iso + "T12:00:00");
+  const palabras = limpia.titulo.trim().split(" ");
+  const ultima = palabras.length > 1 ? palabras.pop() : null;
+  const tituloHtml = ultima ? esc(palabras.join(" ")) + " <em>" + esc(ultima) + "</em>" : "<em>" + esc(limpia.titulo) + "</em>";
+  const chips = [limpia.tiempo, limpia.porciones, limpia.dificultad].filter(Boolean)
+    .map((d) => '<span class="chip">' + esc(d) + "</span>").join("");
+
+  const valores = {
+    titulo: esc(limpia.titulo), tituloCorto: esc(tituloCorto), tituloHtml, categoria: esc(categoria),
+    categoriaCorta: esc(categoria.split(/[\/ ]/)[0]), kColor, kTexto, chips, imagen: fotoUrl,
+    fechaNumerica: fecha.toLocaleDateString("es-ES"),
+    fechaLarga: fecha.toLocaleDateString("es-ES", { day: "numeric", month: "long", year: "numeric" }),
+  };
+  html = html.replace(/\{\{(\w+)\}\}/g, (todo, nombre) => (nombre in valores ? valores[nombre] : todo));
+
+  const esCabecera = (t) => t.startsWith("— ") && t.endsWith(" —");
+  const sinRaya = (t) => esc(t.replace(/^— /, "").replace(/ —$/, ""));
+
+  // Ingredientes: las cabeceras de grupo son cadenas y los ingredientes, objetos {nombre, cantidad, ...};
+  // se aceptan también ingredientes en cadena.
+  const ingHtml = limpia.ingredientes.map((i) => {
+    if (typeof i === "string") {
+      if (esCabecera(i)) return '<li class="ing-grupo">' + sinRaya(i) + "</li>";
+      return '<li class="ing-item"><span class="ing-mark"></span><span style="grid-column:2 / 4">' + esc(i) + "</span></li>";
+    }
+    const q = i.cantidad ? '<span class="ing-q">' + esc(i.cantidad) + "</span>" : '<span class="ing-q vacia">—</span>';
+    return '<li class="ing-item"><span class="ing-mark"></span>' + q + "<span>" + esc(i.nombre || "") + "</span></li>";
+  }).join("\n");
+  html = html.replace(/\{\{#each ingredientes\}\}[\s\S]*?\{\{\/each\}\}/, () => ingHtml);
+
+  // Pasos: el contador salta las cabeceras de fase.
+  let contador = 0;
+  const pasosHtml = limpia.pasos.map((p) => {
+    if (esCabecera(p)) return '<li class="paso-fase">' + sinRaya(p) + "</li>";
+    contador++;
+    return '<li class="paso-item"><div class="paso-num">' + contador + '</div><div class="paso-texto">' + esc(p) + "</div></li>";
+  }).join("\n");
+  html = html.replace(/\{\{#each pasos\}\}[\s\S]*?\{\{\/each\}\}/, () => pasosHtml);
+
+  // Notas: {{#if notas}} se resuelve a mano.
+  if (limpia.notas && limpia.notas.length > 0) {
+    // Las notas llegan partidas en las líneas del PDF original: solo se corta tras un punto final.
+    const notasTexto = limpia.notas.map(esc).reduce((acc, linea, i) => (i === 0 ? linea : acc + (/[.!?:]$/.test(acc) ? "<br>" : " ") + linea), "");
+    html = html.replace(/\{\{#if notas\}\}/, "").replace(/\{\{\/if\}\}/, "").replace(/\{\{notas\}\}/, () => notasTexto);
+  } else {
+    html = html.replace(/\{\{#if notas\}\}[\s\S]*?\{\{\/if\}\}/, "");
+  }
+
+  return html;
+}
+
+const salida = [];
+for (const item of $('Separar recetas').all()) {
+  const r = item.json;
+  // `Limpia respuesta` entrega `fecha_iso`; en Supabase la columna es `fecha_clase`.
+  const limpia = { ...r, fecha_iso: r.fecha_clase, notas: Array.isArray(r.notas) ? r.notas : [] };
+  const html = rellenar(limpia, r.foto_url || FOTO_POR_DEFECTO, plantilla64);
+  const idDrive = ((r.pdf_url || '').match(/\/d\/([^/?]+)/) || [])[1] || '';
+  salida.push({
+    json: { id: r.id, titulo: r.titulo, idDrive },
+    binary: { data: { data: Buffer.from(html).toString('base64'), mimeType: 'text/html', fileName: 'index.html', fileExtension: 'html' } },
+  });
+}
+return salida;

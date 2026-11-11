@@ -34,8 +34,20 @@ El nombre de versión de «Aviso de nuevas recetas» salió con las tildes mal e
    La cenefa de los cinco correos de n8n ya es la de celdas de color.
 4. **Hojas de menús impresas** (`.hoja*` en `index.css`): siguen con la estética de cuaderno. Llevarlas al sistema
    nuevo exige volver a medir `ALTO` y `ALTO_UTIL` en `MenuImprimible.tsx`.
-5. **Los 77 PDFs ya generados** siguen en estilo cuaderno. Regenerarlos con «Regenerar PDFs antiguos» (inactivo)
-   toca Drive, Notion y Supabase: probar primero con una sola receta y con una copia, no con el catálogo entero.
+5. **Los 77 PDFs ya generados** siguen en estilo cuaderno y en Letter. **En curso (11 de noviembre).** Se regeneran con el flujo
+   «Regenerar PDFs antiguos» (`uLBelHfEjdbxDbaS`, inactivo, manual), reconstruido: lee Supabase, rellena con el **mismo código
+   que el alta** (`n8n/regenerar-pdfs.js`, copiado de `rellenar-html.js`), Gotenberg con A4 explícito y **sobrescribe el
+   contenido del mismo fichero de Drive** (mismo ID y enlace: Notion, Sheets y Supabase no cambian). Antes copia el PDF antiguo
+   a la carpeta de respaldo «Respaldo PDFs estilo cuaderno (Letter)» (`1ypKTHcCDCYhZpWKSaIGCbF03oujWkwE-`); además Drive guarda
+   la revisión previa. **Excluidas a propósito** las 2 recetas sin ingredientes en la base (Alitas Buffalo y Solomillo con
+   castañas): regenerarlas las dejaría sin ingredientes (`ingredientes=not.is.null` en la URL). **Probado con 1** (Crema de
+   zanahoria, ejecución 117500): A4, una página, copia de respaldo hecha. **Ahora el nodo `Obtener recetas` lleva `&id=eq.…`:
+   quitar ese filtro para el lote.** Medido en local con las 77: 57 caben en una página, 20 ocupan dos, 3 con la segunda casi
+   vacía.
+   **Plantilla v5** (`1J829L5djRXW_x05PWS8OaLrF0HEN4CT6`): arregla un fallo de la v4 en las recetas que pasan por poco de una
+   página, cuya primera hoja salía **solo con la cabecera** (el `grid` de una fila no se parte entre páginas; ahora columna
+   lateral flotante, `flow-root` en `.main`, pie `fixed` repetido en cada página y pasos algo más compactos). **«Recetas con
+   Frontend» sigue con la v4** (`1zbidS7z…`): hay que apuntarla a la v5 para que las altas nuevas no tengan ese fallo.
 6. ~~**PDF de receta en A4**~~ **Hecho y probado el 11 de noviembre** (flujo `573d1ad0`). Plantilla v4 en Drive (`update_file` no
    cambia contenido, así que es un fichero nuevo) con `@page { size: A4 }` y cuerpo de `210mm × 296mm` (296 y no 297, como las
    hojas de menús, para no generar una página en blanco por redondeo). **Trampa:** Gotenberg respeta los márgenes del `@page`

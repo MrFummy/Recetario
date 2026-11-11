@@ -20,7 +20,6 @@
   body {
     width: 210mm; min-height: 296mm; background: var(--paper); color: var(--ink);
     font-family: 'Schibsted Grotesk', -apple-system, system-ui, sans-serif; font-size: 12px; line-height: 1.5;
-    display: flex; flex-direction: column;
   }
 
   /* ── Cabecera ── */
@@ -37,9 +36,14 @@
   }
 
   /* ── Cuerpo en dos columnas ── */
-  .content { flex: 1; display: grid; grid-template-columns: 300px 1fr; gap: 34px; padding: 26px 44px 22px; min-height: 0; }
-  .side { display: flex; flex-direction: column; gap: 24px; }
-  .main { min-width: 0; }
+  /* Dos columnas con flotante y no con grid ni flex: Chrome no parte un grid de una sola fila entre páginas y el contenido
+     saltaba entero a la siguiente, dejando la cabecera sola. `flow-root` en `.main` evita que el texto se enrosque bajo la
+     lateral. El pie es `fixed`: se repite al pie de cada página y no ocupa flujo (si ocupara, una receta que cabe por una
+     línea mandaba el pie solo a una página nueva); de ahí el relleno inferior. */
+  .content { display: block; padding: 22px 44px 46px; }
+  .content::after { content: ""; display: block; clear: both; }
+  .side { float: left; width: 300px; margin-right: 34px; display: flex; flex-direction: column; gap: 24px; }
+  .main { display: flow-root; min-width: 0; }
 
   .foto-wrap { position: relative; padding-right: 8px; }
   .arco {
@@ -81,7 +85,7 @@
   .ing-grupo { margin-top: 12px; padding-top: 2px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); }
 
   /* Pasos: número en sello del color de la categoría */
-  .paso-item { break-inside: avoid; display: grid; grid-template-columns: 42px 1fr; gap: 14px; padding: 11px 0; align-items: start; border-bottom: 1px solid var(--rule); }
+  .paso-item { break-inside: avoid; display: grid; grid-template-columns: 42px 1fr; gap: 14px; padding: 8px 0; align-items: start; border-bottom: 1px solid var(--rule); }
   .paso-item:last-child { border-bottom: none; }
   .paso-num {
     width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
@@ -92,13 +96,13 @@
   .paso-fase { margin-top: 10px; padding-top: 2px; list-style: none; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); }
 
   /* Notas: tarjeta amarilla con sombra dura (la «nota» del sistema) */
-  .notas-wrap { margin-top: 20px; break-inside: avoid; }
+  .notas-wrap { padding-top: 20px; break-inside: avoid; }
   .notas { max-width: 470px; background: var(--yellow-soft); border: 1.5px solid var(--ink); border-radius: 3px; padding: 14px 20px 16px; box-shadow: 4px 4px 0 var(--ink); }
   .notas .kicker { margin-bottom: 6px; }
   .notas-texto { font-family: 'Caveat', cursive; font-weight: 600; font-size: 19px; line-height: 1.25; }
 
   /* ── Pie ── */
-  .footer { padding: 10px 44px 14px; border-top: 1.5px solid var(--ink); display: flex; justify-content: space-between; align-items: center; font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--ink-soft); flex-shrink: 0; }
+  .footer { position: fixed; left: 0; right: 0; bottom: 0; background: var(--paper); padding: 10px 44px 14px; border-top: 1.5px solid var(--ink); display: flex; justify-content: space-between; align-items: center; font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--ink-soft); flex-shrink: 0; }
   .footer .nombre { color: var(--accent); }
 </style>
 </head>
