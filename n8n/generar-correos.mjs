@@ -89,7 +89,8 @@ if (modo === 'nodos') {
   };
   // «Compartir» vive en la rama del webhook Mail (nodo «Obtener receta real»); «añadida» y el error, en la del alta.
   const tituloAlta = E(`String(${L}.titulo).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')`);
-  const fotoAlta = E(`$('Guardar en Supabase').item.json.foto_url ?? ('https://gtqqqmethhakpybnuxin.supabase.co/storage/v1/object/public/fotos-recetas/' + ${L}.titulo.replace(/[^a-zA-Z0-9\\-_\\.]/g, '_') + '.jpg')`);
+  // El nombre de la foto sale de `Recupera foto` (título + sufijo al azar), igual que en el alta y en `Rellenar HTML`.
+  const fotoAlta = E(`'https://gtqqqmethhakpybnuxin.supabase.co/storage/v1/object/public/fotos-recetas/' + $('Recupera foto').item.json.foto_nombre`);
   const cComp = correos({ ...comun, foto: E(`${R}.foto_url`), titulo: tituloSeguro, etiquetas: [], fecha: '', enlacePdf: '' });
   const cAlta = correos({
     ...comun, foto: fotoAlta, titulo: tituloAlta,

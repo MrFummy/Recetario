@@ -687,10 +687,14 @@ que las secciones que no se tocaron ya heredan la paleta.
   de los correos se sirve desde el propio sitio (`recetario.orballo.link/icon-256.png`): no borrarlo del build.
   Versión previa del flujo principal: `3a62fac0`. **Probado de punta a punta el 10 de noviembre de 2026** con una
   alta real (PDF de Gotenberg, correo de «receta añadida», aviso a los afans y correo de error): todo bien.
-  **Trampa que mordió en esa prueba**: el alta nombra la foto por el título (`<Título>.jpg`) y la sube
-  sobrescribiendo, y el borrado busca la fila de Google Sheets por título. **Dar de alta una receta con un título que
-  ya existe pisa la foto de la anterior y, al borrar, puede llevarse su fila de Sheets**. Para probar el alta, usar
-  un PDF cuyo título no exista. Pendiente: darle a la foto un nombre único.
+  **Trampa que mordió en esa prueba, corregida el 11 de noviembre de 2026** (flujo `3a7bfe9f`; antes `4cd0c01d`):
+  el alta nombraba la foto por el título y la subía sobrescribiendo, y el borrado buscaba la fila de Google Sheets
+  por título; con un título repetido se pisaba la foto de la receta anterior y el borrado podía llevarse su fila.
+  Ahora `Recupera foto` fija **una vez** `foto_nombre` (`<Título>-<6 al azar>.jpg`) y lo leen `Sube foto a Supabase`,
+  `Guardar en Supabase`, `Rellenar HTML` y `Mail receta añadida`; y `Buscar receta en Google Sheets` busca por la
+  columna **Enlace** con el `pdf_url` (el mismo valor que escribe `Actualizar recetario`). **Las fotos anteriores al
+  11 de noviembre siguen con el nombre `<Título>.jpg`**; el borrado lee el nombre de `foto_url`, así que funciona con
+  los dos. Si se toca el nombre de la foto, hay cuatro sitios que lo leen.
   Pendiente: los PDF ya generados (77) siguen en estilo cuaderno, las hojas de menús impresas (`.hoja*`), y las
   plantillas de correo de Supabase Auth (confirmar cuenta, restablecer contraseña), que se editan en su panel.
 - **`sistema.css` va dentro de `@layer components`**: sin capa, el CSS suelto gana siempre a las utilidades de

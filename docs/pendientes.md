@@ -9,7 +9,7 @@ El detalle de cómo está construido todo está en la sección *Sistema de dise�
 | Qué | Ahora | Anterior |
 |---|---|---|
 | Web (NAS `/Volumes/web/recetario`) | commit `0c41176`, bundle `index-DH9LXMbZ.js` | commit `bb932a8` (`git checkout bb932a8 && npm run deploy:mac`) |
-| «Recetas con Frontend» (`bN99xqHFvUTriCKc`) | `4cd0c01d` | `3a62fac0` |
+| «Recetas con Frontend» (`bN99xqHFvUTriCKc`) | `3a7bfe9f` | `4cd0c01d` (y antes `3a62fac0`) |
 | «Aviso de nuevas recetas» (`Zx0jNA5wC2aTu0U1`) | `c9b2b212` | `13aedc94` |
 | «Aviso al autor de una sugerencia» (`8NAHa0mnbcFazLd6`) | `df5c2f29` | `25cc2e1f` |
 | Plantilla del PDF en Drive | v3 `1IWUaLVN5ygOmfvBPSSlRl9a3nDuSoOZ7` | v2 de cuaderno `1yLgKKr5VWKjVvH8bHN5WT7egbNkQ1ctH` (cambiar el ID en `Leer plantilla HTML`) |
@@ -21,10 +21,10 @@ El nombre de versión de «Aviso de nuevas recetas» salió con las tildes mal e
 1. **Borrar a mano la fila de prueba de Google Sheets** (hoja «Recetario»): «Lasaña de carne» con fecha «10 de
    noviembre de 2026» y enlace que termina en `…1nqFcaowrchTLOFFKxQQ79tU1TOYtw-UE`. La de mayo es la buena. Nada
    más de esa prueba queda en Supabase, Notion, Drive ni Storage.
-2. **Foto con nombre único en el alta de recetas** (flujo «Recetas con Frontend», nodos `Recupera foto` y
-   `Sube foto a Supabase`). Hoy se llama `<Título>.jpg` y se sube sobrescribiendo: una receta con título repetido pisa
-   la foto de la anterior. De paso, `Buscar receta en Google Sheets` busca por título: mejor por el enlace del PDF.
-   Hasta entonces, **probar altas solo con títulos que no existan**.
+2. ~~**Foto con nombre único en el alta de recetas**~~ **Hecho el 11 de noviembre** (flujo `3a7bfe9f`): `Recupera foto`
+   fija `foto_nombre` y el borrado de Sheets busca por enlace. **Falta comprobarlo de punta a punta con un título
+   repetido** (necesita sesión de admin en el panel del navegador): dos altas «PRUEBA Sopa de Nube», borrar una por la
+   app y ver que la otra conserva foto, PDF y fila de Sheets; luego borrar la segunda.
 3. **Plantillas de correo de Supabase Auth** (confirmar cuenta, restablecer contraseña): se editan en el panel
    (*Authentication → Email Templates*). Generarlas con `n8n/correo-base.js` y pegarlas; usan variables como
    `{{ .ConfirmationURL }}`.

@@ -18,7 +18,8 @@ const categoria = (limpia.categoria || "").trim();
 const clave = (PREFIJOS.find(([p]) => categoria.toLowerCase().startsWith(p)) || [])[1] || "otro";
 const [kColor, kTexto] = COLORES[clave];
 
-const fotoUrl = "https://gtqqqmethhakpybnuxin.supabase.co/storage/v1/object/public/fotos-recetas/" + limpia.titulo.replace(/[^a-zA-Z0-9\-_\.]/g, "_") + ".jpg";
+// El nombre de la foto lo fija `Recupera foto` (título + sufijo al azar): así dos recetas con el mismo título no se pisan la foto.
+const fotoUrl = "https://gtqqqmethhakpybnuxin.supabase.co/storage/v1/object/public/fotos-recetas/" + $("Recupera foto").first().json.foto_nombre;
 const tituloCorto = limpia.titulo.split(" ").slice(0, 4).join(" ");
 const fecha = new Date(limpia.fecha_iso + "T12:00:00");
 const palabras = limpia.titulo.trim().split(" ");
